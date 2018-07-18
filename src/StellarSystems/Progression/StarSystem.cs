@@ -57,7 +57,7 @@ namespace StellarMap.Progression
         {
             ObjectNamedIdentifiers identifiers = base.GetObjectNamedIdentifiers(name, create);
 
-            if (identifiers == null && name == "ProgressionStar")
+            if (identifiers == null && (name == Constants.BodyTypes.Star || name == ProgressionConstants.BodyType.ProgressionStar))
             {
                 if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Stars))
                     identifiers = ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars];

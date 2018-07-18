@@ -216,6 +216,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
             solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Bernard", "Ross");
             solCluster.Add(bridge);
+            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Procyon", "Ceti");
+            solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Procyon", "Lalande");
             solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Lalande", "Epsilon Eridani");
@@ -225,8 +227,6 @@ namespace StellarMap.Progression.DefaultSettingMaps
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Aquarii", "Wolf");
             solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Sirius", "Luyten");
-            solCluster.Add(bridge);
-            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Procyon", "Ceti");
             solCluster.Add(bridge);
             #endregion
 
@@ -868,27 +868,27 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Bridges
             ERBridge bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Altair", "Krell");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Altair", "Mobius");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Altair", "Bellerophon");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Altair", "Adams");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Krell", "Id");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Krell", "Omicron");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Mobius", "Bellerophon");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Mobius", "Id");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Mobius", "Adams");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Bellerophon", "Lacerta");
-            system.Add(bridge);
+            cluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, cluster, "Lacerta", "Gateway");
-            system.Add(bridge);
+            cluster.Add(bridge);
             #endregion
 
             return cluster;

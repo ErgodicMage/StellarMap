@@ -22,9 +22,10 @@ namespace StellarMap.Progression
         #endregion
 
         #region Properties
+        [DataMember (Order = 11)]
         public string ContainerType { get; protected set; }
 
-        [DataMember(Order = 11)]
+        [DataMember(Order = 12)]
         public GroupNamedIdentifiers ContainerGroupIdentifiers { get; set; }
 
         public IDictionary<string, string> Bridges { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges].Identifiers; } }

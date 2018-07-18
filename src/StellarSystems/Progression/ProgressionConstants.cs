@@ -35,7 +35,7 @@ namespace StellarMap.Progression
         {
             public const string ERBridges = "ERBridges";
             public const string Habitats = "Habitats";
-            public const string StarSystems = "StarSystem";
+            public const string StarSystems = "StarSystems";
             public const string Clusters = "Clusters";
             public const string Sectors = "Sectors";
             public const string Regions = "Regions";
