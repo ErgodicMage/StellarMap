@@ -18,7 +18,7 @@ namespace StellarMap.Core.Bodies
         {
         }
 
-        public Star(string name) : base(name)
+        public Star(string name) : base(name, Constants.BodyTypes.Star)
         {
             //Initialize();
         }

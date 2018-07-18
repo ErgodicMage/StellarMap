@@ -9,7 +9,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
-    [DataContract (Name = "ERBridge")]
+    [DataContract (Name = ProgressionConstants.BodyType.ERBridge)]
     public class ERBridge : StellarBody
     {
         #region Constructors
@@ -18,8 +18,9 @@ namespace StellarMap.Progression
 
         }
 
-        public ERBridge(string type, StarSystem system1, StarSystem system2)
+        public ERBridge(string type, StarSystem system1, StarSystem system2) // : base(string.Empty, ProgressionConstants.BodyType.ERBridge)
         {
+            BodyType = ProgressionConstants.BodyType.ERBridge;
             BridgeType = type;
             Map = system1.Map;
             (Map as ProgressionMap).Add(this);

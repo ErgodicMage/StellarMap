@@ -9,6 +9,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
+    [DataContract (Name = ProgressionConstants.BodyType.Sector)]
     public class Sector : ProgressionContainer
     {
         #region Constructors
@@ -16,7 +17,7 @@ namespace StellarMap.Progression
         {
         }
 
-        public Sector(string name) : base(name)
+        public Sector(string name) : base(name, ProgressionConstants.ContainerTypes.Sector)
         {
         }
         #endregion
@@ -39,7 +40,7 @@ namespace StellarMap.Progression
         protected override void Initialize()
         {
             base.Initialize();
-            ContainerType = ProgressionConstants.ContainerTypes.Cluster;
+            ContainerType = ProgressionConstants.ContainerTypes.Sector;
         }
 
         protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)

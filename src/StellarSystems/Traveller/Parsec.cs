@@ -8,6 +8,7 @@ using StellarMap.Core.Types;
 
 namespace StellarMap.Traveller
 {
+    [DataContract (Name = "Parsec")]
     public class Parsec : StellarBodywithObjects
     {
         #region Constructors
@@ -15,7 +16,7 @@ namespace StellarMap.Traveller
         {
         }
 
-        public Parsec(string name) : base(name)
+        public Parsec(string name) : base(name, "Parsec")
         {
         }
         #endregion

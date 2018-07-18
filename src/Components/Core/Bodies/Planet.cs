@@ -18,7 +18,7 @@ namespace StellarMap.Core.Bodies
         {
         }
 
-        public Planet(string name) : base(name)
+        public Planet(string name) : base(name, Constants.BodyTypes.Planet)
         {
         }
         #endregion

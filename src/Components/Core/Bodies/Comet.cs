@@ -16,7 +16,7 @@ namespace StellarMap.Core.Bodies
 
         }
 
-        public Comet(string name) : base(name)
+        public Comet(string name) : base(name, Constants.BodyTypes.Comet)
         {
             //Initialize();
         }

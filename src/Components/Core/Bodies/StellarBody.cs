@@ -17,10 +17,11 @@ namespace StellarMap.Core.Bodies
         {
         }
 
-        public StellarBody(string name)
+        public StellarBody(string name, string bodytype)
         {
             Initialize();
             Name = name;
+            BodyType = bodytype;
         }
         #endregion
 
@@ -35,6 +36,9 @@ namespace StellarMap.Core.Bodies
         public string Name { get; set; }
 
         [DataMember (Order = 4)]
+        public string BodyType { get; set; }
+
+        [DataMember (Order = 5)]
         public IDictionary<string, GroupProperties> AllGroupProperties { get; set; }
 
         public IDictionary<string, string> BasicProperties { get { return AllGroupProperties["Basic"].Properties; } }
@@ -69,7 +73,7 @@ namespace StellarMap.Core.Bodies
         {
         }
 
-        public StellarBodywithObjects(string name) : base(name)
+        public StellarBodywithObjects(string name, string bodytype) : base(name, bodytype)
         {
         }
         #endregion

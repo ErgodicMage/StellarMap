@@ -9,7 +9,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
-    [DataContract(Name = "ProgressionPlanet")]
+    [DataContract(Name = ProgressionConstants.BodyType.ProgressionPlanet)]
     public class ProgressionPlanet : Planet
     {
         #region Constructors

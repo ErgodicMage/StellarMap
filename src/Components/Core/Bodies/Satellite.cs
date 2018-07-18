@@ -15,7 +15,7 @@ namespace StellarMap.Core.Bodies
         {
         }
 
-        public Satellite(string name) : base(name)
+        public Satellite(string name) : base(name, Constants.BodyTypes.Satellite)
         {
             //Initialize();
         }

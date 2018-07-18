@@ -16,9 +16,8 @@ namespace StellarMap.Core.Bodies
 
         }
 
-        public Asteroid(string name) : base(name)
+        public Asteroid(string name) : base(name, Constants.BodyTypes.Asteroid)
         {
-            //Initialize();
         }
         #endregion
 

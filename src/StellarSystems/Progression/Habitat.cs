@@ -10,7 +10,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
-    [DataContract (Name = "Habitat")]
+    [DataContract (Name = ProgressionConstants.BodyType.Habitat)]
     public class Habitat : StellarBody
     {
         #region Constructors
@@ -19,10 +19,8 @@ namespace StellarMap.Progression
 
         }
 
-        public Habitat(string name)
+        public Habitat(string name) : base (name, ProgressionConstants.BodyType.Habitat)
         {
-            Name = name;
-            Initialize();
         }
         #endregion
 

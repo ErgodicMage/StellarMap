@@ -9,6 +9,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
+    [DataContract (Name = ProgressionConstants.BodyType.Cluster)]
     public class Cluster : ProgressionContainer
     {
         #region Constructors
@@ -16,7 +17,7 @@ namespace StellarMap.Progression
         {
         }
 
-        public Cluster(string name) : base(name)
+        public Cluster(string name) : base(name, ProgressionConstants.ContainerTypes.Cluster)
         {
         }
         #endregion

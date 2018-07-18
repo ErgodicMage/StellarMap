@@ -16,7 +16,7 @@ namespace StellarMap.Progression
         {
         }
 
-        public ProgressionContainer(string name) : base(name)
+        public ProgressionContainer(string name, string bodytype) : base(name, bodytype)
         {
         }
         #endregion

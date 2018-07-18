@@ -12,6 +12,8 @@ namespace StellarMap.Progression
         {
             public const string ERBridge = "ERBridge";
             public const string Habitat = "Habitat";
+            public const string ProgressionPlanet = "ProgressionPlanet";
+            public const string ProgressionStar = "ProgressionStar";
             public const string StarSystem = "StarSystem";
             public const string Cluster = "Cluster";
             public const string Sector = "Sector";

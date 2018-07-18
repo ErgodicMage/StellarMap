@@ -9,7 +9,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
-    [DataContract(Name = "ProgressionStar")]
+    [DataContract(Name = ProgressionConstants.BodyType.ProgressionStar)]
     public class ProgressionStar : Star
     {
         #region Consturctors
@@ -45,7 +45,7 @@ namespace StellarMap.Progression
         protected override void Initialize()
         {
             base.Initialize();
-            StarGroupIdentifiers.Name = "GroupIdentifiers-ProgressionStarSystem";
+            StarGroupIdentifiers.Name = "GroupIdentifiers-ProgressionStar";
         }
 
         protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
@@ -65,7 +65,7 @@ namespace StellarMap.Progression
                             identifiers = StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
                         }
                         break;
-                    case "ProgressionPlane":
+                    case "ProgressionPlanet":
                         if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Planets))
                             identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
                         else if (create)
