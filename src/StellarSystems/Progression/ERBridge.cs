@@ -12,21 +12,6 @@ namespace StellarMap.Progression
     [DataContract (Name = "ERBridge")]
     public class ERBridge : StellarBody
     {
-        #region BridgeTypes
-        public static class BridgeTypes
-        {
-            public static string StarSystem = "StarSystem";
-            public static string Cluster = "Cluster";
-            public static string Sector = "Sector";
-            public static string Region = "Region";
-            public static string District = "District";
-            public static string Zone = "Zone";
-            public static string Sphere = "Sphere";
-            public static string Quadrant = "Quadrant";
-            public static string Galaxy = "Galaxy";
-        }
-        #endregion
-
         #region Constructors
         public ERBridge()
         {

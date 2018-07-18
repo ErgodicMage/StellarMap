@@ -191,11 +191,11 @@ namespace StellarMap.Core.Types
         {
             IList<string> bodytypes = new List<string>()
             {
-                "Star",
-                "Planet",
-                "Satellite",
-                "Asteroid",
-                "Comet"
+                Constants.BodyTypes.Star,
+                Constants.BodyTypes.Planet,
+                Constants.BodyTypes.Satellite,
+                Constants.BodyTypes.Asteroid,
+                Constants.BodyTypes.Comet
             };
 
             return bodytypes;
@@ -207,19 +207,19 @@ namespace StellarMap.Core.Types
 
             switch (bodytype)
             {
-                case "Star":
+                case Constants.BodyTypes.Star:
                     body = Stars;
                     break;
-                case "Planet":
+                case Constants.BodyTypes.Planet:
                     body = Planets;
                     break;
-                case "Satellite":
+                case Constants.BodyTypes.Satellite:
                     body = Satellites;
                     break;
-                case "Asteroid":
+                case Constants.BodyTypes.Asteroid:
                     body = Asteroids;
                     break;
-                case "Comet":
+                case Constants.BodyTypes.Comet:
                     body = Comets;
                     break;
             }
@@ -233,19 +233,19 @@ namespace StellarMap.Core.Types
 
             switch (bodytype)
             {
-                case "Star":
+                case Constants.BodyTypes.Star:
                     t = typeof(Dictionary<string, Star>);
                     break;
-                case "Planet":
+                case Constants.BodyTypes.Planet:
                     t = typeof(Dictionary<string, Planet>);
                     break;
-                case "Satellite":
+                case Constants.BodyTypes.Satellite:
                     t = typeof(Dictionary<string, Satellite>);
                     break;
-                case "Asteroid":
+                case Constants.BodyTypes.Asteroid:
                     t = typeof(Dictionary<string, Asteroid>);
                     break;
-                case "Comet":
+                case Constants.BodyTypes.Comet:
                     t = typeof(Dictionary<string, Comet>);
                     break;
             }
@@ -258,23 +258,23 @@ namespace StellarMap.Core.Types
             bool bret = false;
             switch (bodytype)
             {
-                case "Star":
+                case Constants.BodyTypes.Star:
                     Stars = (Dictionary<string, Star>)data;
                     bret = true;
                     break;
-                case "Planet":
+                case Constants.BodyTypes.Planet:
                     Planets = (Dictionary<string, Planet>)data;
                     bret = true;
                     break;
-                case "Satellite":
+                case Constants.BodyTypes.Satellite:
                     Satellites = (Dictionary<string, Satellite>)data;
                     bret = true;
                     break;
-                case "Asteroid":
+                case Constants.BodyTypes.Asteroid:
                     Asteroids = (Dictionary<string, Asteroid>)data;
                     bret = true;
                     break;
-                case "Comet":
+                case Constants.BodyTypes.Comet:
                     Comets = (Dictionary<string, Comet>)data;
                     bret = true;
                     break;

@@ -25,7 +25,7 @@ namespace StellarMap.Progression
             system1.Map = map;
             system2.Map = map;
 
-            ERBridge bridge = new ERBridge(ERBridge.BridgeTypes.StarSystem, system1, system2);
+            ERBridge bridge = new ERBridge(ProgressionConstants.BridgeTypes.StarSystem, system1, system2);
 
             system1.Add(bridge.Portals[0]);
             system2.Add(bridge.Portals[1]);
@@ -65,7 +65,7 @@ namespace StellarMap.Progression
             if (system1 == null || system2 == null || cluster1 == null || cluster2 == null || cluster1.Identifier == cluster2.Identifier)
                 return null;
 
-            ERBridge bridge = new ERBridge(ERBridge.BridgeTypes.Cluster, system1, system2);
+            ERBridge bridge = new ERBridge(ProgressionConstants.BridgeTypes.Cluster, system1, system2);
 
             system1.Add(bridge.Portals[0]);
             system2.Add(bridge.Portals[1]);

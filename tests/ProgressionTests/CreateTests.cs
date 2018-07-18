@@ -77,8 +77,8 @@ namespace ProgressionTests
                     writer.Write(" : ");
                     writer.Write(system.Value.Name);
                     writer.Write(" : ");
-                    if (system.Value.BasicProperties.ContainsKey(Star.Designation))
-                        writer.Write(system.Value.BasicProperties[Star.Designation]);
+                    if (system.Value.BasicProperties.ContainsKey(Constants.PropertyNames.Designation))
+                        writer.Write(system.Value.BasicProperties[Constants.PropertyNames.Designation]);
                     else
                         writer.Write("None");
                     writer.WriteLine();

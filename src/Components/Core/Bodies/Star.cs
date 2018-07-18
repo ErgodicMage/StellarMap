@@ -10,15 +10,9 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Core.Bodies
 {
-    [DataContract (Name = "Star")]
+    [DataContract (Name = Constants.BodyTypes.Star)]
     public class Star : StellarBodywithObjects
     {
-        #region Properties Constants
-        public static string Designation = "Designation";
-        public static string ProperName = "ProperName";
-        public static string StellarClass = "StellarClass";
-        #endregion
-
         #region Constructors
         public Star() : base()
         {
@@ -34,11 +28,11 @@ namespace StellarMap.Core.Bodies
         [DataMember (Order = 11)]
         public GroupNamedIdentifiers StarGroupIdentifiers { get; set; }
 
-        public IDictionary<string, string> Planets { get { return StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Planets].Identifiers; } }
+        public IDictionary<string, string> Planets { get { return StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets].Identifiers; } }
 
-        public IDictionary<string, string> Asteroids { get { return StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Asteroids].Identifiers; } }
+        public IDictionary<string, string> Asteroids { get { return StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Asteroids].Identifiers; } }
 
-        public IDictionary<string, string> Comets { get { return StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Comets].Identifiers; } }
+        public IDictionary<string, string> Comets { get { return StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Comets].Identifiers; } }
         #endregion
 
         #region Get Functions
@@ -77,37 +71,36 @@ namespace StellarMap.Core.Bodies
         {
             ObjectNamedIdentifiers identifiers = null;
 
-            if (name == "Planet")
+            switch (name)
             {
-                if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(GroupNamedIdentifiers.Planets))
-                    identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Planets];
-                else if (create)
-                {
-                    StarGroupIdentifiers.Add(GroupNamedIdentifiers.Planets);
-                    identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Planets];
-                }
+                case Constants.BodyTypes.Planet:
+                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Planets))
+                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
+                    else if (create)
+                    {
+                        StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Planets);
+                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
+                    }
+                    break;
+                case Constants.BodyTypes.Asteroid:
+                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Asteroids))
+                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Asteroids];
+                    else if (create)
+                    {
+                        StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Asteroids);
+                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Asteroids];
+                    }
+                    break;
+                case Constants.BodyTypes.Comet:
+                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Comets))
+                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Comets];
+                    else if (create)
+                    {
+                        StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Comets);
+                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Comets];
+                    }
+                    break;
             }
-            else if (name == "Asteroid")
-            {
-                if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(GroupNamedIdentifiers.Asteroids))
-                    identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Asteroids];
-                else if (create)
-                {
-                    StarGroupIdentifiers.Add(GroupNamedIdentifiers.Asteroids);
-                    identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Asteroids];
-                }
-            }
-            else if (name == "Comet")
-            {
-                if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(GroupNamedIdentifiers.Comets))
-                    identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Comets];
-                else if (create)
-                {
-                    StarGroupIdentifiers.Add(GroupNamedIdentifiers.Comets);
-                    identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Comets];
-                }
-            }
-
             return identifiers;
         }
 

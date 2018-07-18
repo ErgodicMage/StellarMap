@@ -7,6 +7,7 @@ using StellarMap.Core.Types;
 
 namespace StellarMap.Core.Bodies
 {
+    [DataContract (Name = Constants.BodyTypes.Comet)]
     public class Comet : StellarBody
     {
         #region Constructors

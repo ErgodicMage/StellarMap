@@ -22,7 +22,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
-        public IDictionary<string, string> StarSystems { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.StarSystem].Identifiers; } }
+        public IDictionary<string, string> StarSystems { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.StarSystems].Identifiers; } }
         #endregion
 
         #region Get Methods
@@ -39,7 +39,7 @@ namespace StellarMap.Progression
         protected override void Initialize()
         {
             base.Initialize();
-            ContainerType = ContainerTypes.Cluster;
+            ContainerType = ProgressionConstants.ContainerTypes.Cluster;
         }
 
         protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
@@ -48,24 +48,14 @@ namespace StellarMap.Progression
 
             if (identifiers == null)
             {
-                if (name == "StarSystem")
+                if (name == ProgressionConstants.BodyType.StarSystem)
                 {
-                    if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionGroupNamedIdentifiers.StarSystem))
-                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.StarSystem];
+                    if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.StarSystems))
+                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.StarSystems];
                     else if (create)
                     {
-                        ContainerGroupIdentifiers.Add(ProgressionGroupNamedIdentifiers.StarSystem);
-                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.StarSystem];
-                    }
-                }
-                else if (name == "Cluster")
-                {
-                    if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionGroupNamedIdentifiers.Clusters))
-                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Clusters];
-                    else if (create)
-                    {
-                        ContainerGroupIdentifiers.Add(ProgressionGroupNamedIdentifiers.Clusters);
-                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Clusters];
+                        ContainerGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.StarSystems);
+                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.StarSystems];
                     }
                 }
             }

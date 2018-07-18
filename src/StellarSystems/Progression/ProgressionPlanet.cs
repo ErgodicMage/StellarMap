@@ -23,7 +23,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
-        public IDictionary<string, string> Habitats { get { return PlanetGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Habitats].Identifiers; } }
+        public IDictionary<string, string> Habitats { get { return PlanetGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats].Identifiers; } }
         #endregion
 
         #region Get Methods
@@ -47,14 +47,14 @@ namespace StellarMap.Progression
         {
             ObjectNamedIdentifiers identifiers = base.GetObjectNamedIdentifiers(name, create);
 
-            if (identifiers == null && name == "Habitat")
+            if (identifiers == null && name == ProgressionConstants.BodyType.Habitat)
             {
-                if (PlanetGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionGroupNamedIdentifiers.Habitats))
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Habitats];
+                if (PlanetGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.Habitats))
+                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
                 else if (create)
                 {
-                    PlanetGroupIdentifiers.Add(ProgressionGroupNamedIdentifiers.Habitats);
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Habitats];
+                    PlanetGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.Habitats);
+                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
                 }
             }
 

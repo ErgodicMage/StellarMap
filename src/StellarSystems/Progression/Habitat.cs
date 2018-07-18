@@ -13,7 +13,7 @@ namespace StellarMap.Progression
     [DataContract (Name = "Habitat")]
     public class Habitat : StellarBody
     {
-        #region
+        #region Constructors
         public Habitat()
         {
 

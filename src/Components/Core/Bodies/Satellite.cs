@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
+using StellarMap.Core.Types;
+
 namespace StellarMap.Core.Bodies
 {
-    [DataContract (Name = "Satelite")]
+    [DataContract (Name = Constants.BodyTypes.Satellite)]
     public class Satellite : StellarBody
     {
         #region Constructors

@@ -14,7 +14,7 @@ namespace StorageTests
             BaseStellarMap sm = new BaseStellarMap("SolarSystem");
 
             Star sol = new Star("Sol");
-            sol.BasicProperties.Add(Star.StellarClass, "G2V");
+            sol.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
             sm.Add(sol);
 
             sol.Add(new Planet("Mercury"));

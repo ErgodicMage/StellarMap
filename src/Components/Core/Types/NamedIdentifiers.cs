@@ -66,14 +66,6 @@ namespace StellarMap.Core.Types
     [DataContract]
     public class GroupNamedIdentifiers
     {
-        #region Default Group Names
-        public static string Planets = "Planets";
-        public static string Stars = "Stars";
-        public static string Satellites = "Satellites";
-        public static string Asteroids = "Asteroids";
-        public static string Comets = "Comets";
-        #endregion
-
         #region Constructors
         public GroupNamedIdentifiers()
         {

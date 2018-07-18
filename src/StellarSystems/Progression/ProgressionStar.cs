@@ -24,7 +24,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
-        public IDictionary<string, string> Habitats { get { return StarGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Habitats].Identifiers; } }
+        public IDictionary<string, string> Habitats { get { return StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats].Identifiers; } }
         #endregion
 
         #region Get Methods
@@ -54,25 +54,26 @@ namespace StellarMap.Progression
 
             if (identifiers == null)
             {
-                if (name == "Habitat")
+                switch (name)
                 {
-                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionGroupNamedIdentifiers.Habitats))
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Habitats];
-                    else if (create)
-                    {
-                        StarGroupIdentifiers.Add(ProgressionGroupNamedIdentifiers.Habitats);
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Habitats];
-                    }
-                }
-                else if (name == "ProgressionPlanet")
-                {
-                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(GroupNamedIdentifiers.Planets))
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Planets];
-                    else if (create)
-                    {
-                        StarGroupIdentifiers.Add(GroupNamedIdentifiers.Planets);
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Planets];
-                    }
+                    case ProgressionConstants.BodyType.Habitat:
+                        if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.Habitats))
+                            identifiers = StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
+                        else if (create)
+                        {
+                            StarGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.Habitats);
+                            identifiers = StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
+                        }
+                        break;
+                    case "ProgressionPlane":
+                        if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Planets))
+                            identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
+                        else if (create)
+                        {
+                            StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Planets);
+                            identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
+                        }
+                        break;
                 }
             }
 

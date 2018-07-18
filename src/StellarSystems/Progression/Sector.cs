@@ -22,7 +22,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
-        public IDictionary<string, string> Clusters { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Clusters].Identifiers; } }
+        public IDictionary<string, string> Clusters { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Clusters].Identifiers; } }
         #endregion
 
         #region Get Methods
@@ -39,21 +39,21 @@ namespace StellarMap.Progression
         protected override void Initialize()
         {
             base.Initialize();
-            ContainerType = ContainerTypes.Cluster;
+            ContainerType = ProgressionConstants.ContainerTypes.Cluster;
         }
 
         protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
         {
             ObjectNamedIdentifiers identifiers = base.GetObjectNamedIdentifiers(name, create);
 
-            if (identifiers == null && name == "Sector")
+            if (identifiers == null && name == ProgressionConstants.BodyType.Cluster)
             {
-                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionGroupNamedIdentifiers.Sectors))
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Sectors];
+                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.Clusters))
+                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Clusters];
                 else if (create)
                 {
-                    ContainerGroupIdentifiers.Add(ProgressionGroupNamedIdentifiers.Sectors);
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Sectors];
+                    ContainerGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.Clusters);
+                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Clusters];
                 }
             }
 

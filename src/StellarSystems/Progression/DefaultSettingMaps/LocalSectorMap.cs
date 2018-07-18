@@ -39,8 +39,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
             ProgressionStar sol = new ProgressionStar("Sun");
 
             Map.Add<Star>(sol);
-            sol.BasicProperties.Add(Star.Designation, "Sol");
-            sol.BasicProperties.Add(Star.StellarClass, "G2V");
+            sol.BasicProperties.Add(Constants.PropertyNames.Designation, "Sol");
+            sol.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
 
             sol.Add(new Planet("Mercury"));
             sol.Add(new Planet("Venus"));
@@ -84,122 +84,122 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Bernard's Star
             system = new StarSystem("Bernard");
-            system.BasicProperties.Add(Star.Designation, "Gl 699");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 699");
             Map.Add(system);
             star = new ProgressionStar("Bernard's Star");
-            star.BasicProperties.Add(Star.Designation, "Gl 699");
-            star.BasicProperties.Add(Star.StellarClass, "sdM4");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 699");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "sdM4");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Sirius
             system = new StarSystem("Sirius");
-            system.BasicProperties.Add(Star.Designation, "Gl 244");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 244");
             Map.Add(system);
             star = new ProgressionStar("Sirius");
-            star.BasicProperties.Add(Star.Designation, "Gl 244");
-            star.BasicProperties.Add(Star.StellarClass, "A0mA1Va");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 244");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "A0mA1Va");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Luyten's Star
             system = new StarSystem("Luyten");
-            system.BasicProperties.Add(Star.Designation, "Gl 273");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 273");
             Map.Add(system);
             star = new ProgressionStar("Luyten's Star");
-            star.BasicProperties.Add(Star.Designation, "Gl 273");
-            star.BasicProperties.Add(Star.StellarClass, "M5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 273");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Procyon
             system = new StarSystem("Procyon");
-            system.BasicProperties.Add(Star.Designation, "Gl 280");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
             Map.Add(system);
             star = new ProgressionStar("Procyon");
-            star.BasicProperties.Add(Star.Designation, "Gl 280");
-            star.BasicProperties.Add(Star.StellarClass, "F5IV-V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "F5IV-V");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Lalande
             system = new StarSystem("Lalande");
-            system.BasicProperties.Add(Star.Designation, "Gl 441");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 441");
             Map.Add(system);
             star = new ProgressionStar("Lalande");
-            star.BasicProperties.Add(Star.Designation, "Gl 411");
-            star.BasicProperties.Add(Star.StellarClass, "M2V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 411");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Epsilon Eridani
             system = new StarSystem("Epsilon Eridani");
-            system.BasicProperties.Add(Star.Designation, "Gl 144");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
             Map.Add(system);
             star = new ProgressionStar("Epsilon Eridani");
-            star.BasicProperties.Add(Star.Designation, "Gl 144");
-            star.BasicProperties.Add(Star.StellarClass, "K2V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K2V");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Ross
             system = new StarSystem("Ross");
-            system.BasicProperties.Add(Star.Designation, "Gl 447");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447");
             Map.Add(system);
             star = new ProgressionStar("Pocks");
-            star.BasicProperties.Add(Star.Designation, "Gl 447/Ross 128");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447/Ross 128");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5V");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Aquarii 
             system = new StarSystem("Aquarii");
-            system.BasicProperties.Add(Star.Designation, "Gl 866");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866");
             Map.Add(system);
             star = new ProgressionStar("Alvin");
-            star.BasicProperties.Add(Star.Designation, "Gl 866 A");
-            star.BasicProperties.Add(Star.StellarClass, "M5VJ");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5VJ");
             system.Add(star);
             star = new ProgressionStar("Bruce");
-            star.BasicProperties.Add(Star.Designation, "Gl 866 B");
-            star.BasicProperties.Add(Star.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
             system.Add(star);
             star = new ProgressionStar("Calvin");
-            star.BasicProperties.Add(Star.Designation, "Gl 866 C");
-            star.BasicProperties.Add(Star.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 C");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Wolf
             system = new StarSystem("Wolf");
-            system.BasicProperties.Add(Star.Designation, "Gl 406");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
             Map.Add(system);
             star = new ProgressionStar("Wolf");
-            star.BasicProperties.Add(Star.Designation, "Gl 406");
-            star.BasicProperties.Add(Star.StellarClass, "M6");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6");
             system.Add(star);
             solCluster.Add(system);
             #endregion
 
             #region Ceti
             system = new StarSystem("Ceti");
-            system.BasicProperties.Add(Star.Designation, "Gl 65");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65");
             Map.Add(system);
             star = new ProgressionStar("BL");
-            star.BasicProperties.Add(Star.Designation, "Gl 65 A");
-            star.BasicProperties.Add(Star.StellarClass, "dM5.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
             system.Add(star);
             star = new ProgressionStar("UV");
-            star.BasicProperties.Add(Star.Designation, "Gl 65 B");
-            star.BasicProperties.Add(Star.StellarClass, "dM5.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -243,125 +243,125 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Centauri
             system = new StarSystem("Centauri");
-            system.BasicProperties.Add(Star.Designation, "Gl 559");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 559");
             Map.Add(system);
             star = new ProgressionStar("Alpha");
-            star.BasicProperties.Add(Star.Designation, "Gl 559 A");
-            star.BasicProperties.Add(Star.StellarClass, "G2V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 559 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
             system.Add(star);
             star = new ProgressionStar("Beta");
-            star.BasicProperties.Add(Star.Designation, "Gl 559 B");
-            star.BasicProperties.Add(Star.StellarClass, "K1V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 559 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K1V");
             system.Add(star);
             star = new ProgressionStar("Proxima");
-            star.BasicProperties.Add(Star.Designation, "Gl 551");
-            star.BasicProperties.Add(Star.StellarClass, "M5Ve");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 551");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5Ve");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Tau Ceti
             system = new StarSystem("Tau Ceti");
-            system.BasicProperties.Add(Star.Designation, "Gl 71");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 71");
             Map.Add(system);
             star = new ProgressionStar("Tau Ceti");
-            star.BasicProperties.Add(Star.Designation, "Gl 71");
-            star.BasicProperties.Add(Star.StellarClass, "G8V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 71");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G8V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Groombridge
             system = new StarSystem("Groombridge");
-            system.BasicProperties.Add(Star.Designation, "Gl 380");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 380");
             Map.Add(system);
             star = new ProgressionStar("Groombridge");
-            star.BasicProperties.Add(Star.Designation, "Gl 380");
-            star.BasicProperties.Add(Star.StellarClass, "K8V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 380");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K8V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Kruger
             system = new StarSystem("Kruger");
-            system.BasicProperties.Add(Star.Designation, "Gl 860");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 860");
             Map.Add(system);
             star = new ProgressionStar("Kruger");
-            star.BasicProperties.Add(Star.Designation, "Gl 860 A");
-            star.BasicProperties.Add(Star.StellarClass, "M2V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 860 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
             system.Add(star);
             star = new ProgressionStar("Potter");
-            star.BasicProperties.Add(Star.Designation, "Gl 860 B");
-            star.BasicProperties.Add(Star.StellarClass, "M6V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 860 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6V");
             cluster.Add(system);
             #endregion
 
             #region Lacaille
             system = new StarSystem("Lacaille");
-            system.BasicProperties.Add(Star.Designation, "Gl 825");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 825");
             Map.Add(system);
             star = new ProgressionStar("Lacaille");
-            star.BasicProperties.Add(Star.Designation, "Gl 825");
-            star.BasicProperties.Add(Star.StellarClass, "M1/M2V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 825");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M1/M2V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Gleine
             system = new StarSystem("Gleine");
-            system.BasicProperties.Add(Star.Designation, "Gl 725");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 725");
             Map.Add(system);
             star = new ProgressionStar("Gleine");
-            star.BasicProperties.Add(Star.Designation, "Gl 725");
-            star.BasicProperties.Add(Star.StellarClass, "K5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 725");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Kapteyn
             system = new StarSystem("Kapteyn");
-            system.BasicProperties.Add(Star.Designation, "Gl 191");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 191");
             Map.Add(system);
             star = new ProgressionStar("Kapteyn's Star");
-            star.BasicProperties.Add(Star.Designation, "Gl 191");
-            star.BasicProperties.Add(Star.StellarClass, "M0V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 191");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M0V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Vista
             system = new StarSystem("Vista");
-            system.BasicProperties.Add(Star.Designation, "Gl 473");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 473");
             Map.Add(system);
             star = new ProgressionStar("Vista");
-            star.BasicProperties.Add(Star.Designation, "Gl 473 A");
-            star.BasicProperties.Add(Star.StellarClass, "M5.5eJ");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 473 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5.5eJ");
             system.Add(star);
             star = new ProgressionStar("Point");
-            star.BasicProperties.Add(Star.Designation, "Gl 473 B");
-            star.BasicProperties.Add(Star.StellarClass, "M7");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 473 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M7");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Bihar
             system = new StarSystem("Bihar");
-            system.BasicProperties.Add(Star.Designation, "Gl 1061");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 1061");
             Map.Add(system);
             star = new ProgressionStar("Bihar");
-            star.BasicProperties.Add(Star.Designation, "GJ 1061");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1061");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Inne
             system = new StarSystem("Inne");
-            system.BasicProperties.Add(Star.Designation, "NN 3618");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3618");
             Map.Add(system);
             star = new ProgressionStar("Inne's Star");
-            star.BasicProperties.Add(Star.Designation, "NN 3618");
-            star.BasicProperties.Add(Star.StellarClass, "M5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3618");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5V");
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -402,164 +402,164 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Wolf's Den
             system = new StarSystem("Wolf's Den");
-            system.BasicProperties.Add(Star.Designation, "Gl 406");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
             Map.Add(system);
             star = new ProgressionStar("Wolf's Den");
-            star.BasicProperties.Add(Star.Designation, "Gl 406");
-            star.BasicProperties.Add(Star.StellarClass, "M6");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Andromeda
             system = new StarSystem("Andromeda");
-            system.BasicProperties.Add(Star.Designation, "Gl 15");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 15");
             Map.Add(system);
             star = new ProgressionStar("Andomeda A");
-            star.BasicProperties.Add(Star.Designation, "Gl 15 A");
-            star.BasicProperties.Add(Star.StellarClass, "M1V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 15 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M1V");
             system.Add(star);
             star = new ProgressionStar("Andromeda B");
-            star.BasicProperties.Add(Star.Designation, "Gl 15 B");
-            star.BasicProperties.Add(Star.StellarClass, "M6Ve");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 15 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6Ve");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Sutter
             system = new StarSystem("Sutter");
-            system.BasicProperties.Add(Star.Designation, "Gl 687");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 687");
             Map.Add(system);
             star = new ProgressionStar("Sutter");
-            star.BasicProperties.Add(Star.Designation, "Gl 687");
-            star.BasicProperties.Add(Star.StellarClass, "M3.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 687");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Siera
             system = new StarSystem("Siera");
-            system.BasicProperties.Add(Star.Designation, "Gl 234");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 234");
             Map.Add(system);
             star = new ProgressionStar("Bright");
-            star.BasicProperties.Add(Star.Designation, "Gl 234 A");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5Ve");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 234 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5Ve");
             system.Add(star);
             star = new ProgressionStar("Dim");
-            star.BasicProperties.Add(Star.Designation, "Gl 234 B");
-            star.BasicProperties.Add(Star.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 234 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
             cluster.Add(system);
             #endregion
 
             #region YZ Ceti
             system = new StarSystem("YZ Ceti");
-            system.BasicProperties.Add(Star.Designation, "Gl 54.1");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 54.1");
             Map.Add(system);
             star = new ProgressionStar("YZ Ceti");
-            star.BasicProperties.Add(Star.Designation, "Gl 54.1");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 54.1");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Kercur
             system = new StarSystem("Kercur");
-            system.BasicProperties.Add(Star.Designation, "GJ 3622");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 3622");
             Map.Add(system);
             star = new ProgressionStar("Kercur");
-            star.BasicProperties.Add(Star.Designation, "GJ 3622");
-            star.BasicProperties.Add(Star.StellarClass, "M6.5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 3622");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6.5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Nuone
             system = new StarSystem("Nuone");
-            system.BasicProperties.Add(Star.Designation, "Gl 1");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 1");
             Map.Add(system);
             star = new ProgressionStar("Nuone");
-            star.BasicProperties.Add(Star.Designation, "Gl 1");
-            star.BasicProperties.Add(Star.StellarClass, "M2V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 1");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Leonis
             system = new StarSystem("Leonis");
-            system.BasicProperties.Add(Star.Designation, "Gl 388");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 388");
             Map.Add(system);
             star = new ProgressionStar("Leonis");
-            star.BasicProperties.Add(Star.Designation, "Gl 388");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5Ve");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 388");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5Ve");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Ophir
             system = new StarSystem("Ophir");
-            system.BasicProperties.Add(Star.Designation, "SCR 1845");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "SCR 1845");
             Map.Add(system);
             star = new ProgressionStar("Red");
-            star.BasicProperties.Add(Star.Designation, "SCR 1845 A");
-            star.BasicProperties.Add(Star.StellarClass, "M8.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "SCR 1845 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M8.5V");
             system.Add(star);
             star = new ProgressionStar("Brown");
-            star.BasicProperties.Add(Star.Designation, "SCR 1845 B");
-            star.BasicProperties.Add(Star.StellarClass, "T6V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "SCR 1845 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T6V");
             cluster.Add(system);
             #endregion
 
             #region Cancri
             system = new StarSystem("Cancri");
-            system.BasicProperties.Add(Star.Designation, "GJ 1111");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1111");
             Map.Add(system);
             star = new ProgressionStar("Cancri");
-            star.BasicProperties.Add(Star.Designation, "GJ 1111");
-            star.BasicProperties.Add(Star.StellarClass, "M6.5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1111");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6.5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Eureka
             system = new StarSystem("Eureka");
-            system.BasicProperties.Add(Star.Designation, "Gl 440");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 440");
             Map.Add(system);
             star = new ProgressionStar("Eureka");
-            star.BasicProperties.Add(Star.Designation, "Gl 440");
-            star.BasicProperties.Add(Star.StellarClass, "DC:");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 440");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "DC:");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region TeeGarden
             system = new StarSystem("TeeGarden");
-            system.BasicProperties.Add(Star.Designation, "SO025300.5+165258");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "SO025300.5+165258");
             Map.Add(system);
             star = new ProgressionStar("TeeGarden");
-            star.BasicProperties.Add(Star.Designation, "SO025300.5+165258");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "SO025300.5+165258");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Van Maanen
             system = new StarSystem("Van Maanen");
-            system.BasicProperties.Add(Star.Designation, "Gl 35");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 35");
             Map.Add(system);
             star = new ProgressionStar("Van Maanen");
-            star.BasicProperties.Add(Star.Designation, "Gl 35");
-            star.BasicProperties.Add(Star.StellarClass, "DG");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 35");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "DG");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Knob
             system = new StarSystem("Knob");
-            system.BasicProperties.Add(Star.Designation, "UGPS 0722-05");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "UGPS 0722-05");
             Map.Add(system);
             star = new ProgressionStar("Ross");
-            star.BasicProperties.Add(Star.Designation, "UGPS 0722-05");
-            star.BasicProperties.Add(Star.StellarClass, "T10");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "UGPS 0722-05");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T10");
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -610,111 +610,111 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Cygni
             system = new StarSystem("Cygni");
-            system.BasicProperties.Add(Star.Designation, "Gl 820");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 820");
             Map.Add(system);
             star = new ProgressionStar("Bradley");
-            star.BasicProperties.Add(Star.Designation, "Gl 820 A");
-            star.BasicProperties.Add(Star.StellarClass, "K5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 820 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5V");
             system.Add(star);
             star = new ProgressionStar("Paizzi");
-            star.BasicProperties.Add(Star.Designation, "Gl 820 B");
-            star.BasicProperties.Add(Star.StellarClass, "K7V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 820 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K7V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Epsilon Indi
             system = new StarSystem("Epsilon Indi");
-            system.BasicProperties.Add(Star.Designation, "Gl 845");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845");
             Map.Add(system);
             star = new ProgressionStar("Indus");
-            star.BasicProperties.Add(Star.Designation, "Gl 845 A");
-            star.BasicProperties.Add(Star.StellarClass, "K5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5V");
             system.Add(star);
             star = new ProgressionStar("Ghaggar");
-            star.BasicProperties.Add(Star.Designation, "Gl 845 B");
-            star.BasicProperties.Add(Star.StellarClass, "T1V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T1V");
             system.Add(star);
             star = new ProgressionStar("Hakra");
-            star.BasicProperties.Add(Star.Designation, "Gl 845B");
-            star.BasicProperties.Add(Star.StellarClass, "T6V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T6V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Arietis
             system = new StarSystem("Arietis");
-            system.BasicProperties.Add(Star.Designation, "Gl 83");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 83");
             Map.Add(system);
             star = new ProgressionStar("Arietis");
-            star.BasicProperties.Add(Star.Designation, "Gl 83.1");
-            star.BasicProperties.Add(Star.StellarClass, "M8e");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 83.1");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M8e");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Flare
             system = new StarSystem("Flare");
-            system.BasicProperties.Add(Star.Designation, "DEN 1048-3956");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "DEN 1048-3956");
             Map.Add(system);
             star = new ProgressionStar("Flare");
-            star.BasicProperties.Add(Star.Designation, "DEN 1048-3956");
-            star.BasicProperties.Add(Star.StellarClass, "M8.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "DEN 1048-3956");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M8.5V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Demic
             system = new StarSystem("Demic");
-            system.BasicProperties.Add(Star.Designation, "Gl 412");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 412");
             Map.Add(system);
             star = new ProgressionStar("Demic");
-            star.BasicProperties.Add(Star.Designation, "Gl 412 A");
-            star.BasicProperties.Add(Star.StellarClass, "M2V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 412 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
             system.Add(star);
             star = new ProgressionStar("Wax");
-            star.BasicProperties.Add(Star.Designation, "Gl 412 B");
-            star.BasicProperties.Add(Star.StellarClass, "M63");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 412 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M63");
             cluster.Add(system);
             #endregion
 
             #region Lapis
             system = new StarSystem("Lapis");
-            system.BasicProperties.Add(Star.Designation, "Gl 628");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 628");
             Map.Add(system);
             star = new ProgressionStar("Lapis");
-            star.BasicProperties.Add(Star.Designation, "Gl 628");
-            star.BasicProperties.Add(Star.StellarClass, "M3.5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 628");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Banawali
             system = new StarSystem("Banawali");
-            system.BasicProperties.Add(Star.Designation, "Gl 876");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 876");
             Map.Add(system);
             star = new ProgressionStar("Banawali");
-            star.BasicProperties.Add(Star.Designation, "Gl 876");
-            star.BasicProperties.Add(Star.StellarClass, "M5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 876");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Rudra
             system = new StarSystem("Rudra");
-            system.BasicProperties.Add(Star.Designation, "GJ 1245");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245");
             Map.Add(system);
             star = new ProgressionStar("Rudra");
-            star.BasicProperties.Add(Star.Designation, "GJ 1245 A");
-            star.BasicProperties.Add(Star.StellarClass, "M5.5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5.5V");
             system.Add(star);
             star = new ProgressionStar("Pashupati");
-            star.BasicProperties.Add(Star.Designation, "GJ 1245 B");
-            star.BasicProperties.Add(Star.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
             system.Add(star);
             star = new ProgressionStar("Agni");
-            star.BasicProperties.Add(Star.Designation, "GJ 1245 C");
-            star.BasicProperties.Add(Star.StellarClass, "M6V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245 C");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6V");
             cluster.Add(system);
             #endregion
 
@@ -753,115 +753,115 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Altair
             system = new StarSystem("Altair");
-            system.BasicProperties.Add(Star.Designation, "Gl 768");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 768");
             Map.Add(system);
             star = new ProgressionStar("Altaira");
-            star.BasicProperties.Add(Star.Designation, "Gl 768");
-            star.BasicProperties.Add(Star.StellarClass, "A7Vn");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 768");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "A7Vn");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Krell
             system = new StarSystem("Krell");
-            system.BasicProperties.Add(Star.Designation, "Gl 702");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 702");
             Map.Add(system);
             star = new ProgressionStar("Krell");
-            star.BasicProperties.Add(Star.Designation, "Gl 702 A");
-            star.BasicProperties.Add(Star.StellarClass, "K1V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 702 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K1V");
             system.Add(star);
             star = new ProgressionStar("Robby");
-            star.BasicProperties.Add(Star.Designation, "Gl 702 B");
-            star.BasicProperties.Add(Star.StellarClass, "K5V");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 702 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5V");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Mobius
             system = new StarSystem("Mobius");
-            system.BasicProperties.Add(Star.Designation, "GJ 1116");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1116");
             Map.Add(system);
             star = new ProgressionStar("Mobius");
-            star.BasicProperties.Add(Star.Designation, "GJ 1116 A");
-            star.BasicProperties.Add(Star.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1116 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
             system.Add(star);
             star = new ProgressionStar("Pidgeon");
-            star.BasicProperties.Add(Star.Designation, "GJ 1116 B");
-            star.BasicProperties.Add(Star.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1116 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Bellerophon
             system = new StarSystem("Bellerophon");
-            system.BasicProperties.Add(Star.Designation, "Gl 205");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 205");
             Map.Add(system);
             star = new ProgressionStar("Bellerophon");
-            star.BasicProperties.Add(Star.Designation, "Gl 205");
-            star.BasicProperties.Add(Star.StellarClass, "M1.5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 205");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M1.5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Id
             system = new StarSystem("Id");
-            system.BasicProperties.Add(Star.Designation, "Gl 445");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 445");
             Map.Add(system);
             star = new ProgressionStar("Id");
-            star.BasicProperties.Add(Star.Designation, "Gl 445");
-            star.BasicProperties.Add(Star.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 445");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Adams
             system = new StarSystem("Adams");
-            system.BasicProperties.Add(Star.Designation, "Gl 251");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 251");
             Map.Add(system);
             star = new ProgressionStar("Adams");
-            star.BasicProperties.Add(Star.Designation, "Gl 251");
-            star.BasicProperties.Add(Star.StellarClass, "M3");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 251");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Lacerta
             system = new StarSystem("Lacerta");
-            system.BasicProperties.Add(Star.Designation, "Gl 873");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 873");
             Map.Add(system);
             star = new ProgressionStar("Lacerta");
-            star.BasicProperties.Add(Star.Designation, "Gl 873");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 873");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Gateway
             system = new StarSystem("Gateway");
-            system.BasicProperties.Add(Star.Designation, "Gl 693");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 693");
             Map.Add(system);
             star = new ProgressionStar("Lacerta");
-            star.BasicProperties.Add(Star.Designation, "Gl 693");
-            star.BasicProperties.Add(Star.StellarClass, "M2");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 693");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2");
             system.Add(star);
             cluster.Add(system);
             #endregion
 
             #region Omicron
             system = new StarSystem("Omicron");
-            system.BasicProperties.Add(Star.Designation, "Gl 166");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166");
             Map.Add(system);
             star = new ProgressionStar("Keid");
-            star.BasicProperties.Add(Star.Designation, "Gl 166 A");
-            star.BasicProperties.Add(Star.StellarClass, "K1");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K1");
             system.Add(star);
             star = new ProgressionStar("Little White");
-            star.BasicProperties.Add(Star.Designation, "Gl 166 B");
-            star.BasicProperties.Add(Star.StellarClass, "DA4");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "DA4");
             system.Add(star);
             star = new ProgressionStar("Little Red");
-            star.BasicProperties.Add(Star.Designation, "Gl 166 C");
-            star.BasicProperties.Add(Star.StellarClass, "M4.5e");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166 C");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5e");
             system.Add(star);
             cluster.Add(system);
             #endregion

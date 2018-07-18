@@ -22,7 +22,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
-        public IDictionary<string, string> Stars { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Stars].Identifiers; } }
+        public IDictionary<string, string> Stars { get { return ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars].Identifiers; } }
 
         [DataMember(Order = 21)]
         public IList<Portal> Portals { get; set; }
@@ -49,7 +49,7 @@ namespace StellarMap.Progression
         protected override void Initialize()
         {
             base.Initialize();
-            ContainerType = ContainerTypes.StarSystem;
+            ContainerType = ProgressionConstants.ContainerTypes.StarSystem;
         }
 
         protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
@@ -58,12 +58,12 @@ namespace StellarMap.Progression
 
             if (identifiers == null && name == "ProgressionStar")
             {
-                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionGroupNamedIdentifiers.Stars))
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Stars];
+                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Stars))
+                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars];
                 else if (create)
                 {
-                    ContainerGroupIdentifiers.Add(ProgressionGroupNamedIdentifiers.Stars);
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.Stars];
+                    ContainerGroupIdentifiers.Add(Constants.NamedIdentifiers.Stars);
+                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars];
                 }
             }
 

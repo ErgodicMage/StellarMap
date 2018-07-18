@@ -10,7 +10,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Core.Bodies
 {
-    [DataContract (Name = "Planet")]
+    [DataContract (Name = Constants.BodyTypes.Planet)]
     public class Planet : StellarBodywithObjects
     {
         #region Cosntructors
@@ -27,7 +27,7 @@ namespace StellarMap.Core.Bodies
         [DataMember(Order = 11)]
         public GroupNamedIdentifiers PlanetGroupIdentifiers { get; set; }
 
-        public IDictionary<string, string> Satellites { get { return PlanetGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Satellites].Identifiers; } }
+        public IDictionary<string, string> Satellites { get { return PlanetGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Satellites].Identifiers; } }
         #endregion
 
         #region Get Functions
@@ -52,14 +52,14 @@ namespace StellarMap.Core.Bodies
         {
             ObjectNamedIdentifiers identifiers = null;
 
-            if (name == "Satellite")
+            if (name == Constants.BodyTypes.Satellite)
             {
-                if (PlanetGroupIdentifiers.GroupIdentifiers.ContainsKey(GroupNamedIdentifiers.Satellites))
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Satellites];
+                if (PlanetGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Satellites))
+                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Satellites];
                 else if (create)
                 {
-                    PlanetGroupIdentifiers.Add(GroupNamedIdentifiers.Satellites);
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[GroupNamedIdentifiers.Satellites];
+                    PlanetGroupIdentifiers.Add(Constants.NamedIdentifiers.Satellites);
+                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Satellites];
                 }
             }
 

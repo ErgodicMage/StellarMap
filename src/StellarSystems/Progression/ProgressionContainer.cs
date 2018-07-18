@@ -11,21 +11,6 @@ namespace StellarMap.Progression
 {
     public class ProgressionContainer : StellarBodywithObjects
     {
-        #region Progression Container Types
-        public static class ContainerTypes
-        {
-            public static string StarSystem = "StarSystem";
-            public static string Cluster = "Cluster";
-            public static string Sector = "Sector";
-            public static string Region = "Region";
-            public static string District = "District";
-            public static string Zone = "Zone";
-            public static string Sphere = "Sphere";
-            public static string Quadrant = "Quadrant";
-            public static string Galaxy = "Galaxy";
-        }
-        #endregion
-
         #region Constructors
         public ProgressionContainer()
         {
@@ -42,7 +27,7 @@ namespace StellarMap.Progression
         [DataMember(Order = 11)]
         public GroupNamedIdentifiers ContainerGroupIdentifiers { get; set; }
 
-        public IDictionary<string, string> Bridges { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.ERBridges].Identifiers; } }
+        public IDictionary<string, string> Bridges { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges].Identifiers; } }
         #endregion
 
         #region Get Methods
@@ -66,14 +51,14 @@ namespace StellarMap.Progression
         {
             ObjectNamedIdentifiers identifiers = base.GetObjectNamedIdentifiers(name, create);
 
-            if (identifiers == null && name == "ERBridge")
+            if (identifiers == null && name == ProgressionConstants.BodyType.ERBridge)
             {
-                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionGroupNamedIdentifiers.ERBridges))
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.ERBridges];
+                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.ERBridges))
+                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges];
                 else if (create)
                 {
-                    ContainerGroupIdentifiers.Add(ProgressionGroupNamedIdentifiers.ERBridges);
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionGroupNamedIdentifiers.ERBridges];
+                    ContainerGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.ERBridges);
+                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges];
                 }
             }
 

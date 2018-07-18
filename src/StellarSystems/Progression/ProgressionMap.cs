@@ -130,53 +130,53 @@ namespace StellarMap.Progression
 
             switch (dt.Name)
             {
-                case "Planet":
-                    prefix = "Planet";
+                case Constants.BodyTypes.Planet:
+                    prefix = Constants.BodyTypes.Planet;
                     if (Planets != null)
                         count = Planets.Count;
                     break;
-                case "Star":
-                    prefix = "Star";
+                case Constants.BodyTypes.Star:
+                    prefix = Constants.BodyTypes.Star;
                     if (Stars != null)
                         count = Stars.Count;
                     break;
-                case "StarSystem":
-                    prefix = "StarSystem";
+                case ProgressionConstants.BodyType.StarSystem:
+                    prefix = ProgressionConstants.BodyType.StarSystem;
                     if (StarSystems != null)
                         count = StarSystems.Count;
                     break;
-                case "Cluster":
-                    prefix = "Cluster";
+                case ProgressionConstants.BodyType.Cluster:
+                    prefix = ProgressionConstants.BodyType.Cluster;
                     if (Clusters != null)
                         count = Clusters.Count;
                     break;
-                case "Sector":
-                    prefix = "Sector";
+                case ProgressionConstants.BodyType.Sector:
+                    prefix = ProgressionConstants.BodyType.Sector;
                     if (Sectors != null)
                         count = Sectors.Count;
                     break;
-                case "Satellite":
-                    prefix = "Satellite";
+                case Constants.BodyTypes.Satellite:
+                    prefix = Constants.BodyTypes.Satellite;
                     if (Satellites != null)
                         count = Satellites.Count;
                     break;
-                case "Asteroid":
-                    prefix = "Asteroid";
+                case Constants.BodyTypes.Asteroid:
+                    prefix = Constants.BodyTypes.Asteroid;
                     if (Asteroids != null)
                         count = Asteroids.Count;
                     break;
-                case "Comet":
-                    prefix = "Comet";
+                case Constants.BodyTypes.Comet:
+                    prefix = Constants.BodyTypes.Comet;
                     if (Comets != null)
                         count = Comets.Count;
                     break;
-                case "Habitat":
-                    prefix = "Habitat";
+                case ProgressionConstants.BodyType.Habitat:
+                    prefix = ProgressionConstants.BodyType.Habitat;
                     if (Habitats != null)
                         count = Habitats.Count;
                     break;
-                case "ERBridge":
-                    prefix = "ERBridge";
+                case ProgressionConstants.BodyType.ERBridge:
+                    prefix = ProgressionConstants.BodyType.ERBridge;
                     if (Bridges != null)
                         count = Bridges.Count;
                     break;
@@ -250,11 +250,11 @@ namespace StellarMap.Progression
         {
             IList<string> bodytypes = base.GetBodyTypes();
 
-            bodytypes.Add("Habitat");
-            bodytypes.Add("Bridge");
-            bodytypes.Add("StarSystem");
-            bodytypes.Add("Cluster");
-            bodytypes.Add("Sector");
+            bodytypes.Add(ProgressionConstants.BodyType.Habitat);
+            bodytypes.Add(ProgressionConstants.BodyType.ERBridge);
+            bodytypes.Add(ProgressionConstants.BodyType.StarSystem);
+            bodytypes.Add(ProgressionConstants.BodyType.Cluster);
+            bodytypes.Add(ProgressionConstants.BodyType.Sector);
 
             return bodytypes;
         }
@@ -267,19 +267,19 @@ namespace StellarMap.Progression
             {
                 switch (bodytype)
                 {
-                    case "Habitat":
+                    case ProgressionConstants.BodyType.Habitat:
                         body = Habitats;
                         break;
-                    case "Bridge":
+                    case ProgressionConstants.BodyType.ERBridge:
                         body = Bridges;
                         break;
-                    case "StarSystem":
+                    case ProgressionConstants.BodyType.StarSystem:
                         body = StarSystems;
                         break;
-                    case "Cluster":
+                    case ProgressionConstants.BodyType.Cluster:
                         body = Clusters;
                         break;
-                    case "Sector":
+                    case ProgressionConstants.BodyType.Sector:
                         body = Sectors;
                         break;
                 }
@@ -296,19 +296,19 @@ namespace StellarMap.Progression
             {
                 switch (bodytype)
                 {
-                    case "Habitat":
+                    case ProgressionConstants.BodyType.Habitat:
                         t = typeof(Dictionary<string, Habitat>);
                         break;
-                    case "Bridge":
+                    case ProgressionConstants.BodyType.ERBridge:
                         t = typeof(Dictionary<string, ERBridge>);
                         break;
-                    case "StarSystem":
+                    case ProgressionConstants.BodyType.StarSystem:
                         t = typeof(Dictionary<string, StarSystem>);
                         break;
-                    case "Cluster":
+                    case ProgressionConstants.BodyType.Cluster:
                         t = typeof(Dictionary<string, Cluster>);
                         break;
-                    case "Sector":
+                    case ProgressionConstants.BodyType.Sector:
                         t = typeof(Dictionary<string, Sector>);
                         break;
                 }
@@ -325,23 +325,23 @@ namespace StellarMap.Progression
             {
                 switch (bodytype)
                 {
-                    case "Habitat":
+                    case ProgressionConstants.BodyType.Habitat:
                         Habitats = (Dictionary<string, Habitat>)data;
                         bret = true;
                         break;
-                    case "Bridge":
+                    case ProgressionConstants.BodyType.ERBridge:
                         Bridges = (Dictionary<string, ERBridge>)data;
                         bret = true;
                         break;
-                    case "StarSystem":
+                    case ProgressionConstants.BodyType.StarSystem:
                         StarSystems = (Dictionary<string, StarSystem>)data;
                         bret = true;
                         break;
-                    case "Cluster":
+                    case ProgressionConstants.BodyType.Cluster:
                         Clusters = (Dictionary<string, Cluster>)data;
                         bret = true;
                         break;
-                    case "Sector":
+                    case ProgressionConstants.BodyType.Sector:
                         Sectors = (Dictionary<string, Sector>)data;
                         bret = true;
                         break;

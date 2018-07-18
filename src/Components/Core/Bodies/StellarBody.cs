@@ -9,7 +9,7 @@ using StellarMap.Core.Types;
 
 namespace StellarMap.Core.Bodies
 {
-    [DataContract (Name = "StellarBody")]
+    [DataContract (Name = Constants.BodyTypes.StellarBody)]
     public abstract class StellarBody
     {
         #region Cosntructors
