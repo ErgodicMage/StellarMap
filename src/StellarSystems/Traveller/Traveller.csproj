@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>StellarMap.Traveller</AssemblyName>
     <RootNamespace>StellarMap.Traveller</RootNamespace>
+    <Version>0.1.0</Version>
+    <Authors>Ergodic Mage</Authors>
+    <Product>StellarMap</Product>
   </PropertyGroup>
 
   <ItemGroup>

@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>StellarMap.Storage</AssemblyName>
     <RootNamespace>StellarMap.Storage</RootNamespace>
+    <Version>0.1.0</Version>
+    <Authors>Ergodic Mage</Authors>
+    <Company>Ergodic Mage</Company>
+    <Product>StellarMap</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

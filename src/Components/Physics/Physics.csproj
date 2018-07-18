@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>StellarMap.Physics</AssemblyName>
     <RootNamespace>StellarMap.Physics</RootNamespace>
+    <Version>0.1.0</Version>
+    <Authors>Ergodic Mage</Authors>
+    <Product>StellarMap</Product>
   </PropertyGroup>
 
 </Project>

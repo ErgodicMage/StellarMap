@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>StellarMap.HabHyg</AssemblyName>
     <RootNamespace>StellarMap.Catalogues</RootNamespace>
+    <Authors>Ergodic Mage</Authors>
+    <Product>StellarMap</Product>
+    <Version>0.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

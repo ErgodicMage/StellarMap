@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>StellarMap.Core</AssemblyName>
     <RootNamespace>StellarMap.Core</RootNamespace>
+    <Version>0.1.0</Version>
+    <Authors>Ergodic Mage</Authors>
+    <Product>StellarMap</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
