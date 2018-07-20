@@ -11,7 +11,7 @@ using StellarMap.Math.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.Planet)]
-    public class Planet : StellarBodywithObjects
+    public class Planet : StellarBodywithBodies
     {
         #region Cosntructors
         public Planet() : base()

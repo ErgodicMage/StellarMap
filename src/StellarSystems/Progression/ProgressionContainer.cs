@@ -9,7 +9,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
-    public class ProgressionContainer : StellarBodywithObjects
+    public class ProgressionContainer : StellarBodywithBodies
     {
         #region Constructors
         public ProgressionContainer()

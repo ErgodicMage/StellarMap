@@ -66,14 +66,14 @@ namespace StellarMap.Core.Bodies
         #endregion
     }
 
-    public abstract class StellarBodywithObjects : StellarBody
+    public abstract class StellarBodywithBodies : StellarBody
     {
         #region Constructors
-        public StellarBodywithObjects() : base()
+        public StellarBodywithBodies() : base()
         {
         }
 
-        public StellarBodywithObjects(string name, string bodytype) : base(name, bodytype)
+        public StellarBodywithBodies(string name, string bodytype) : base(name, bodytype)
         {
         }
         #endregion
