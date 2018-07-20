@@ -44,7 +44,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Storage", "src\Components\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorageTests", "tests\StorageTests\StorageTests.csproj", "{4A5DFB54-1BF7-4E14-B4CE-10E7B6D32DB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traveller", "src\StellarSystems\Traveller\Traveller.csproj", "{8C991363-2C2A-4D2D-89BC-6EFE60D3B2D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Traveller", "src\StellarSystems\Traveller\Traveller.csproj", "{8C991363-2C2A-4D2D-89BC-6EFE60D3B2D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FB05A161-D02A-4E07-B3D0-3B6927069559}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
