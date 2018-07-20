@@ -6,15 +6,15 @@ using System.Text;
 namespace StellarMap.Core.Types
 {
     [DataContract]
-    public class ObjectNamedIdentifiers
+    public class BodyNamedIdentifiers
     {
         #region Constructors
-        public ObjectNamedIdentifiers()
+        public BodyNamedIdentifiers()
         {
 
         }
 
-        public ObjectNamedIdentifiers(string name)
+        public BodyNamedIdentifiers(string name)
         {
             this.Name = name;
             Initialize();
@@ -83,17 +83,17 @@ namespace StellarMap.Core.Types
         public string Name { get; set; }
 
         [DataMember (Order = 2)]
-        public IDictionary<string, ObjectNamedIdentifiers> GroupIdentifiers { get; set; }
+        public IDictionary<string, BodyNamedIdentifiers> GroupIdentifiers { get; set; }
         #endregion
 
         #region Public Functions
         public void Add(string name)
         {
             if (!GroupIdentifiers.ContainsKey(name))
-                GroupIdentifiers.Add(name, new ObjectNamedIdentifiers(name));
+                GroupIdentifiers.Add(name, new BodyNamedIdentifiers(name));
         }
 
-        public void Add(ObjectNamedIdentifiers identifiers, bool addto = false)
+        public void Add(BodyNamedIdentifiers identifiers, bool addto = false)
         {
             Add(identifiers.Name, identifiers.Identifiers, addto);
         }
@@ -102,14 +102,14 @@ namespace StellarMap.Core.Types
         {
             if (!GroupIdentifiers.ContainsKey(name))
             {
-                ObjectNamedIdentifiers obj = new ObjectNamedIdentifiers(name);
+                BodyNamedIdentifiers obj = new BodyNamedIdentifiers(name);
                 GroupIdentifiers.Add(name, obj);
                 foreach (KeyValuePair<string, string> kvp in identifiers)
                     obj.Identifiers.Add(kvp);
             }
             else if (addto)
             {
-                ObjectNamedIdentifiers obj = GroupIdentifiers[name];
+                BodyNamedIdentifiers obj = GroupIdentifiers[name];
                 if (obj != null)
                 {
                     foreach (KeyValuePair<string, string> kvp in identifiers)
@@ -131,7 +131,7 @@ namespace StellarMap.Core.Types
         #region Protected Functions
         protected virtual void Initialize()
         {
-            GroupIdentifiers = new Dictionary<string, ObjectNamedIdentifiers>();
+            GroupIdentifiers = new Dictionary<string, BodyNamedIdentifiers>();
         }
         #endregion
     }

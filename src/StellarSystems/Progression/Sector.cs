@@ -43,9 +43,9 @@ namespace StellarMap.Progression
             ContainerType = ProgressionConstants.ContainerTypes.Sector;
         }
 
-        protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
+        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
-            ObjectNamedIdentifiers identifiers = base.GetObjectNamedIdentifiers(name, create);
+            BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
 
             if (identifiers == null && name == ProgressionConstants.BodyType.Cluster)
             {

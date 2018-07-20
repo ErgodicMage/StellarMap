@@ -84,7 +84,7 @@ namespace StellarMap.Core.Bodies
             T t = null;
 
             Type ty = typeof(T);
-            ObjectNamedIdentifiers identifiers = GetObjectNamedIdentifiers(ty.Name, false);
+            BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, false);
 
             if (identifiers != null)
             {
@@ -102,7 +102,7 @@ namespace StellarMap.Core.Bodies
         public virtual IDictionary<string, T> GetAll<T>() where T : StellarBody
         {
             Type ty = typeof(T);
-            ObjectNamedIdentifiers identifiers = GetObjectNamedIdentifiers(ty.Name, false);
+            BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, false);
 
             if (identifiers == null)
                 return null;
@@ -132,7 +132,7 @@ namespace StellarMap.Core.Bodies
                     Map.Add<T>(t);
 
                 Type ty = typeof(T);
-                ObjectNamedIdentifiers identifiers = GetObjectNamedIdentifiers(ty.Name, true);
+                BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, true);
 
                 if (identifiers != null)
                     identifiers.Add(t.Name, t.Identifier);
@@ -141,7 +141,7 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region Protected Methods
-        protected virtual ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
+        protected virtual BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             return null;
         }

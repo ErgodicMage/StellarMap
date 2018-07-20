@@ -48,9 +48,9 @@ namespace StellarMap.Core.Bodies
             base.Initialize();
         }
 
-        protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
+        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
-            ObjectNamedIdentifiers identifiers = null;
+            BodyNamedIdentifiers identifiers = null;
 
             if (name == Constants.BodyTypes.Satellite)
             {

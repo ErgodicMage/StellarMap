@@ -67,9 +67,9 @@ namespace StellarMap.Core.Bodies
             //StarGroupIdentifiers.Add(GroupNamedIdentifiers.Comets);
         }
 
-        protected override ObjectNamedIdentifiers GetObjectNamedIdentifiers(string name, bool create)
+        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
-            ObjectNamedIdentifiers identifiers = null;
+            BodyNamedIdentifiers identifiers = null;
 
             switch (name)
             {
