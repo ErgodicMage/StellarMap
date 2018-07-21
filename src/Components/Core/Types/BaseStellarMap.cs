@@ -47,9 +47,9 @@ namespace StellarMap.Core.Types
         #endregion
 
         #region Public Get Functions
-        public virtual T Get<T>(string id) where T : StellarBody
+        public virtual T Get<T>(string id) where T : IStellarBody
         {
-            T t = null;
+            T t = default(T);
 
             if (!string.IsNullOrEmpty(id))
             {
@@ -62,7 +62,7 @@ namespace StellarMap.Core.Types
             return t;
         }
 
-        public virtual void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) where T : StellarBody
+        public virtual void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) where T : IStellarBody
         {
             foreach (string id in identifiers)
             {
@@ -74,7 +74,7 @@ namespace StellarMap.Core.Types
         #endregion
 
         #region Public Add Functions
-        public virtual void Add<T>(T t) where T : StellarBody
+        public virtual void Add<T>(T t) where T : IStellarBody
         {
             IDictionary<string, T> dict = GetDictionary<T>(true);
 
@@ -88,7 +88,7 @@ namespace StellarMap.Core.Types
             }
         }
 
-        public virtual void Add<T>(ICollection<T> ts) where T : StellarBody
+        public virtual void Add<T>(ICollection<T> ts) where T : IStellarBody
         {
             IDictionary<string, T> dict = GetDictionary<T>(false);
 
@@ -107,7 +107,7 @@ namespace StellarMap.Core.Types
         #endregion
 
         #region Public Methods
-        public virtual string GenerateIdentifier<T>() where T : StellarBody
+        public virtual string GenerateIdentifier<T>() where T : IStellarBody
         {
             return Guid.NewGuid().ToString();
         }
@@ -210,7 +210,7 @@ namespace StellarMap.Core.Types
         #endregion
 
         #region Protected Functions
-        protected virtual IDictionary<string, T> GetDictionary<T>(bool create) where T : StellarBody
+        protected virtual IDictionary<string, T> GetDictionary<T>(bool create) where T : IStellarBody
         {
             IDictionary<string, T> dict = null;
             Type dt = typeof(T);

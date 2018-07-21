@@ -10,7 +10,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.StellarBody)]
-    public abstract class StellarBody
+    public abstract class StellarBody : IStellarBody
     {
         #region Cosntructors
         public StellarBody()
@@ -66,7 +66,7 @@ namespace StellarMap.Core.Bodies
         #endregion
     }
 
-    public abstract class StellarBodywithBodies : StellarBody
+    public abstract class StellarBodywithBodies : StellarBody, IStallarBodyWithBodies
     {
         #region Constructors
         public StellarBodywithBodies() : base()
@@ -79,9 +79,9 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region Get Methods
-        public virtual T Get<T>(string name) where T : StellarBody
+        public virtual T Get<T>(string name) where T : IStellarBody
         {
-            T t = null;
+            T t = default(T);
 
             Type ty = typeof(T);
             BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, false);
@@ -99,7 +99,7 @@ namespace StellarMap.Core.Bodies
 
         }
 
-        public virtual IDictionary<string, T> GetAll<T>() where T : StellarBody
+        public virtual IDictionary<string, T> GetAll<T>() where T : IStellarBody
         {
             Type ty = typeof(T);
             BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, false);
@@ -121,7 +121,7 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region Add Methods
-        public virtual void Add<T>(T t) where T : StellarBody
+        public virtual void Add<T>(T t) where T : IStellarBody
         {
             if (t != null)
             {
