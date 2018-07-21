@@ -44,7 +44,7 @@ namespace StellarMap.Progression
         public StarSystem GetStarSystem(int end)
         {
             string identifier = Portals[end].StarIdentifier;
-            StarSystem system = (Map as ProgressionMap).GetStarSystem(identifier);
+            StarSystem system = (Map as ProgressionMap).Get<StarSystem>(identifier);
             return system;
         }
         #endregion
@@ -56,7 +56,7 @@ namespace StellarMap.Progression
 
             foreach (Portal p in Portals)
             {
-                system = (Map as ProgressionMap).GetStarSystem(p.StarIdentifier);
+                system = (Map as ProgressionMap).Get<StarSystem>(p.StarIdentifier);
                 if (system != null && system.Name == name)
                     break;
             }
@@ -70,7 +70,7 @@ namespace StellarMap.Progression
 
             foreach (Portal p in Portals)
             {
-                StarSystem s = (Map as ProgressionMap).GetStarSystem(p.StarIdentifier);
+                StarSystem s = (Map as ProgressionMap).Get<StarSystem>(p.StarIdentifier);
                 systems.Add(s.Name, s);
             }
 
@@ -92,7 +92,7 @@ namespace StellarMap.Progression
             bool bFirst = true;
             foreach (Portal p in Portals)
             {
-                StarSystem system = (Map as ProgressionMap).GetStarSystem(p.StarIdentifier);
+                StarSystem system = (Map as ProgressionMap).Get<StarSystem>(p.StarIdentifier);
                 if (system != null)
                 {
                     if (!bFirst)

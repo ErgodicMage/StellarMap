@@ -26,50 +26,10 @@ namespace StellarMap.Core.Types
 
         void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) where T : StellarBody;
 
-        Star GetStar(string id);
-
-        IDictionary<string, Star> GetStars(ICollection<string> identifiers);
-
-        Planet GetPlanet(string id);
-
-        IDictionary<string, Planet> GetPlanets(ICollection<string> identifiers);
-
-        Satellite GetSatellite(string id);
-
-        IDictionary<string, Satellite> GetSatellites(ICollection<string> identifiers);
-
-        Asteroid GetAsteroid(string id);
-
-        IDictionary<string, Asteroid> GetAsteroids(ICollection<string> identifiers);
-
-        Comet GetComet(string id);
-
-        IDictionary<string, Comet> GetComets(ICollection<string> identifiers);
-
         // Add Methods
         void Add<T>(T t) where T : StellarBody;
 
         void Add<T>(ICollection<T> ts) where T : StellarBody;
-
-        void Add(Star star);
-
-        void Add(ICollection<Star> stars);
-
-        void Add(Planet planet);
-
-        void Add(ICollection<Planet> planets);
-
-        void Add(Satellite satelite);
-
-        void Add(ICollection<Satellite> satelites);
-
-        void Add(Asteroid asteroid);
-
-        void Add(ICollection<Asteroid> asteroids);
-
-        void Add(Comet comet);
-
-        void Add(ICollection<Comet> comets);
 
         string GenerateIdentifier<T>() where T : StellarBody;
 

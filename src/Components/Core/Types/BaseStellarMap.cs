@@ -71,61 +71,6 @@ namespace StellarMap.Core.Types
                     output.Add(id, t);
             }
         }
-
-        public virtual Star GetStar(string id) => Get<Star>(id);
-
-        public virtual IDictionary<string, Star> GetStars(ICollection<string> identifiers)
-        {
-            IDictionary<string, Star> stars = new Dictionary<string, Star>();
-
-            Get<Star>(identifiers, stars);
-
-            return stars;
-        }
-
-        public virtual Planet GetPlanet(string id) => Get<Planet>(id);
-
-        public virtual IDictionary<string, Planet> GetPlanets(ICollection<string> identifiers)
-        {
-            IDictionary<string, Planet> planets = new Dictionary<string, Planet>();
-
-            Get<Planet>(identifiers, planets);
-
-            return planets;
-        }
-
-        public virtual Satellite GetSatellite(string id) => Get<Satellite>(id);
-
-        public virtual IDictionary<string, Satellite> GetSatellites(ICollection<string> identifiers)
-        {
-            IDictionary<string, Satellite> satellites = new Dictionary<string, Satellite>();
-
-            Get<Satellite>(identifiers, satellites);
-
-            return satellites;
-        }
-
-        public virtual Asteroid GetAsteroid(string id) => Get<Asteroid>(id);
-
-        public virtual IDictionary<string, Asteroid> GetAsteroids(ICollection<string> identifiers)
-        {
-            IDictionary<string, Asteroid> asteroids = new Dictionary<string, Asteroid>();
-
-            Get<Asteroid>(identifiers, asteroids);
-
-            return asteroids;
-        }
-
-        public virtual Comet GetComet(string id) => Get<Comet>(id);
-
-        public virtual IDictionary<string, Comet> GetComets(ICollection<string> identifiers)
-        {
-            IDictionary<string, Comet> comets = new Dictionary<string, Comet>();
-
-            Get<Comet>(identifiers, comets);
-
-            return comets;
-        }
         #endregion
 
         #region Public Add Functions
@@ -159,26 +104,6 @@ namespace StellarMap.Core.Types
                 }
             }
         }
-
-        public virtual void Add(Star star) => Add<Star>(star);
-
-        public virtual void Add(ICollection<Star> stars) => Add<Star>(stars);
-
-        public virtual void Add(Planet planet) => Add<Planet>(planet);
-
-        public virtual void Add(ICollection<Planet> planets) => Add<Planet>(planets);
-
-        public virtual void Add(Satellite satellite) => Add<Satellite>(satellite);
-
-        public virtual void Add(ICollection<Satellite> satellites) => Add<Satellite>(satellites);
-
-        public virtual void Add(Asteroid asteroid) => Add<Asteroid>(asteroid);
-
-        public virtual void Add(ICollection<Asteroid> asteroids) => Add<Asteroid>(asteroids);
-
-        public virtual void Add(Comet comet) => Add<Comet>(comet);
-
-        public virtual void Add(ICollection<Comet> comets) => Add<Comet>(comets);
         #endregion
 
         #region Public Methods
