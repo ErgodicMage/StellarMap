@@ -9,7 +9,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Traveller
 {
     [DataContract (Name = "Parsec")]
-    public class Parsec : StellarBodywithBodies
+    public class Parsec : StellarParentBody
     {
         #region Constructors
         public Parsec()

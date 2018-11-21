@@ -14,7 +14,7 @@ namespace StellarMap.Core.Types
         IStellarMap Map { get; set; }
     }
 
-    public interface IStallarBodyWithBodies
+    public interface IStellarParentBody : IStellarBody
     {
         T Get<T> (string name) where T : IStellarBody;
 
