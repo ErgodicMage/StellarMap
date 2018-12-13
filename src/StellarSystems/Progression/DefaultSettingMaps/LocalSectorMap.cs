@@ -41,6 +41,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             Map.Add<Star>(sol);
             sol.BasicProperties.Add(Constants.PropertyNames.Designation, "Sol");
             sol.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
+            GroupProperties catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "0");
+            catalogue.Properties.Add("Hip", "0");
+            sol.AllGroupProperties.Add("Catalogue", catalogue);
 
             sol.Add(new Planet("Mercury"));
             sol.Add(new Planet("Venus"));
@@ -78,6 +82,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             StarSystem system = null;
             ProgressionStar star = null;
+            GroupProperties catalogue = null;
 
             system = CreateSolSystem();
             solCluster.Add(system);
@@ -89,6 +94,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Bernard's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 699");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "sdM4");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "4");
+            catalogue.Properties.Add("Hip", "87937");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -100,6 +109,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Sirius");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 244");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "A0mA1Va");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "10");
+            catalogue.Properties.Add("Hip", "32349");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -111,6 +124,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Luyten's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 273");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "28");
+            catalogue.Properties.Add("Hip", "36208");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -122,6 +139,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Procyon");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "F5IV-V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "18");
+            catalogue.Properties.Add("Hip", "37279");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -133,6 +154,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Lalande");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 411");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "6");
+            catalogue.Properties.Add("Hip", "54035");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -144,6 +169,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Epsilon Eridani");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K2V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "13");
+            catalogue.Properties.Add("Hip", "16537");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -155,6 +184,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Pocks");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447/Ross 128");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "14");
+            catalogue.Properties.Add("Hip", "57548");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -166,14 +199,26 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Alvin");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5VJ");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "16");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Bruce");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "16");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Calvin");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 C");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "16");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -185,6 +230,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Wolf");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "5");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -196,10 +245,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("BL");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "7");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("UV");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "7");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
             #endregion
@@ -240,6 +297,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             StarSystem system = null;
             ProgressionStar star = null;
+            GroupProperties catalogue = null;
 
             #region Centauri
             system = new StarSystem("Centauri");
@@ -248,14 +306,26 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Alpha");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 559 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "3");
+            catalogue.Properties.Add("Hip", "71863");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Beta");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 559 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K1V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "2");
+            catalogue.Properties.Add("Hip", "71861");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Proxima");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 551");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5Ve");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "1");
+            catalogue.Properties.Add("Hip", "70890");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -267,6 +337,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Tau Ceti");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 71");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G8V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "25");
+            catalogue.Properties.Add("Hip", "8102");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -278,6 +352,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Groombridge");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 380");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K8V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "59");
+            catalogue.Properties.Add("Hip", "49908");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -289,10 +367,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Kruger");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 860 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "32");
+            catalogue.Properties.Add("Hip", "110893");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Potter");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 860 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "32");
+            catalogue.Properties.Add("Hip", "110893");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             cluster.Add(system);
             #endregion
 
@@ -303,6 +389,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Lacaille");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 825");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M1/M2V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "30");
+            catalogue.Properties.Add("Hip", "105090");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -313,9 +403,20 @@ namespace StellarMap.Progression.DefaultSettingMaps
             Map.Add(system);
             star = new ProgressionStar("Gleine");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 725");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "26");
+            catalogue.Properties.Add("Hip", "91768");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
-            cluster.Add(system);
+            star = new ProgressionStar("Struve");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 725 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "19");
+            catalogue.Properties.Add("Hip", "91772");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
+            system.Add(star); cluster.Add(system);
             #endregion
 
             #region Kapteyn
@@ -325,6 +426,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Kapteyn's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 191");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M0V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "29");
+            catalogue.Properties.Add("Hip", "24186");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -336,10 +441,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Vista");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 473 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5.5eJ");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "36");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Point");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 473 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M7");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "37");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -351,6 +464,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Bihar");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1061");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "35");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -362,6 +479,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Inne's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3618");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "45");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -399,14 +520,19 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             StarSystem system = null;
             ProgressionStar star = null;
+            GroupProperties catalogue = null;
 
             #region Wolf's Den
             system = new StarSystem("Wolf's Den");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3622");
             Map.Add(system);
             star = new ProgressionStar("Wolf's Den");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3622");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "46");
+            catalogue.Properties.Add("Hip", "0");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -418,10 +544,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Andomeda A");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 15 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M1V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "24");
+            catalogue.Properties.Add("Hip", "1475");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Andromeda B");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 15 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6Ve");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "22");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -433,6 +567,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Sutter");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 687");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "49");
+            catalogue.Properties.Add("Hip", "86162");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -444,10 +582,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Bright");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 234 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5Ve");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "34");
+            catalogue.Properties.Add("Hip", "30920");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Dim");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 234 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "33");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             cluster.Add(system);
             #endregion
 
@@ -458,6 +604,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("YZ Ceti");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 54.1");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -469,6 +619,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Kercur");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 3622");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -480,6 +634,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Nuone");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 1");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "40");
+            catalogue.Properties.Add("Hip", "439");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -491,6 +649,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Leonis");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 388");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5Ve");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "58");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -502,10 +664,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Red");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "SCR 1845 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M8.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Brown");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "SCR 1845 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T6V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             cluster.Add(system);
             #endregion
 
@@ -516,6 +686,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Cancri");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1111");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "23");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -527,6 +701,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Eureka");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 440");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "DC:");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "50");
+            catalogue.Properties.Add("Hip", "57367");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -538,6 +716,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("TeeGarden");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "SO025300.5+165258");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -549,6 +731,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Van Maanen");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 35");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "DG");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "41");
+            catalogue.Properties.Add("Hip", "3829");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -560,6 +746,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Ross");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "UGPS 0722-05");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T10");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -607,6 +797,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             StarSystem system = null;
             ProgressionStar star = null;
+            GroupProperties catalogue = null;
 
             #region Cygni
             system = new StarSystem("Cygni");
@@ -615,10 +806,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Bradley");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 820 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "20");
+            catalogue.Properties.Add("Hip", "104214");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Paizzi");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 820 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K7V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "21");
+            catalogue.Properties.Add("Hip", "104217");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -630,14 +829,26 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Indus");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "27");
+            catalogue.Properties.Add("Hip", "108870");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Ghaggar");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T1V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "27");
+            catalogue.Properties.Add("Hip", "108870");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Hakra");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845B");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845 C");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "T6V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "27");
+            catalogue.Properties.Add("Hip", "108870");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -649,6 +860,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Arietis");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 83.1");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M8e");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "43");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -660,6 +875,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Flare");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "DEN 1048-3956");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M8.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -671,10 +890,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Demic");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 412 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "57");
+            catalogue.Properties.Add("Hip", "54211");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Wax");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 412 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M63");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "56");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             cluster.Add(system);
             #endregion
 
@@ -685,6 +912,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Lapis");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 628");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "39");
+            catalogue.Properties.Add("Hip", "80824");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -696,6 +927,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Banawali");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 876");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "55");
+            catalogue.Properties.Add("Hip", "113020");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -707,14 +942,26 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Rudra");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5.5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "53");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Pashupati");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "53");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Agni");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245 C");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "-1");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             cluster.Add(system);
             #endregion
 
@@ -750,6 +997,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             StarSystem system = null;
             ProgressionStar star = null;
+            GroupProperties catalogue = null;
 
             #region Altair
             system = new StarSystem("Altair");
@@ -758,6 +1006,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Altaira");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 768");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "A7Vn");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "70");
+            catalogue.Properties.Add("Hip", "97649");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -769,10 +1021,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Krell");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 702 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K1V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "69");
+            catalogue.Properties.Add("Hip", "88601");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Robby");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 702 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K5V");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "68");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -784,10 +1044,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Mobius");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1116 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "71");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Pidgeon");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1116 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "72");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -799,6 +1067,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Bellerophon");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 205");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M1.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "85");
+            catalogue.Properties.Add("Hip", "25878");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -810,6 +1082,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Id");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 445");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "75");
+            catalogue.Properties.Add("Hip", "57544");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -821,6 +1097,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Adams");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 251");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "87");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -832,6 +1112,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Lacerta");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 873");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "67");
+            catalogue.Properties.Add("Hip", "112460");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -843,6 +1127,10 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Lacerta");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 693");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M2");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "90");
+            catalogue.Properties.Add("Hip", "86990");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion
@@ -854,14 +1142,26 @@ namespace StellarMap.Progression.DefaultSettingMaps
             star = new ProgressionStar("Keid");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166 A");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K1");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "65");
+            catalogue.Properties.Add("Hip", "19849");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Little White");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166 B");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "DA4");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "63");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Little Red");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166 C");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5e");
+            catalogue = new GroupProperties("Catalogue");
+            catalogue.Properties.Add("HabHyg", "64");
+            catalogue.Properties.Add("Hip", "-1");
+            star.AllGroupProperties.Add("Catalogue", catalogue);
             system.Add(star);
             cluster.Add(system);
             #endregion

@@ -7,8 +7,8 @@ using System.Text;
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
 
-using CsvHelper;
-using CsvHelper.Configuration;
+//using CsvHelper;
+//using CsvHelper.Configuration;
 
 
 namespace StellarMap.Catalogues
@@ -46,9 +46,10 @@ namespace StellarMap.Catalogues
 
         public void Get(IStellarMap map)
         {
-            Load();
+            HabHYGCsvReader reader = new HabHYGCsvReader();
+            reader.Load(Location);
 
-            foreach (HabHygRecord record in catalogue)
+            foreach (HabHygRecord record in reader.Catalogue)
             {
                 Star star = Convert(record);
                 map.Add<Star>(star);
@@ -66,9 +67,10 @@ namespace StellarMap.Catalogues
         {
             double parsecs = ly / 3.261633;
 
-            Load();
+            HabHYGCsvReader reader = new HabHYGCsvReader();
+            reader.Load(Location);
 
-            var records = catalogue.Where<HabHygRecord>(c => c.Distance < parsecs);
+            var records = reader.Catalogue.Where<HabHygRecord>(c => c.Distance < parsecs);
 
             foreach(HabHygRecord record in records)
             {
@@ -89,9 +91,10 @@ namespace StellarMap.Catalogues
         {
             double parsecs = ly / 3.261633;
 
-            Load();
+            HabHYGCsvReader reader = new HabHYGCsvReader();
+            reader.Load(Location);
 
-            var records = catalogue.Where<HabHygRecord>(c => c.Distance < parsecs && c.AbsMag > magnitude);
+            var records = reader.Catalogue.Where<HabHygRecord>(c => c.Distance < parsecs && c.AbsMag > magnitude);
 
             foreach (HabHygRecord record in records)
             {
@@ -109,9 +112,10 @@ namespace StellarMap.Catalogues
 
         public void GetMagnitude(IStellarMap map, double magnitude)
         {
-            Load();
+            HabHYGCsvReader reader = new HabHYGCsvReader();
+            reader.Load(Location);
 
-            var records = catalogue.Where<HabHygRecord>(c => c.AbsMag > magnitude);
+            var records = reader.Catalogue.Where<HabHygRecord>(c => c.AbsMag > magnitude);
 
             foreach (HabHygRecord record in records)
             {
@@ -122,66 +126,13 @@ namespace StellarMap.Catalogues
 
         public IList<HabHygRecord> GetRaw()
         {
-            Load();
-            return catalogue;
+            HabHYGCsvReader reader = new HabHYGCsvReader();
+            reader.Load(Location);
+            return reader.Catalogue;
         }
         #endregion
 
         #region Private Functions
-        public class HabHygRecord
-        {
-            public long HabHyg { get; set; }
-            public string Hip { get; set; }
-            public string Hab { get; set; }
-            public string DisplayName { get; set; }
-            public string Hyg { get; set; }
-            public string BayerFlamsteed { get; set; }
-            public string Gliese { get; set; }
-            public string BD { get; set; }
-            public string HD { get; set; }
-            public string HR { get; set; }
-            public string ProperName { get; set; }
-            public string SpectralClass { get; set; }
-            public double Distance { get; set; }
-            public string Xg { get; set; }
-            public string Yg { get; set; }
-            public string Zg { get; set; }
-            public double AbsMag { get; set; }
-        }
-
-        public class HabHYGRecordMap : ClassMap<HabHygRecord>
-        {
-            public HabHYGRecordMap()
-            {
-                AutoMap();
-                Map(m => m.Hab).Name("Hab?");
-                Map(m => m.DisplayName).Name("Display Name");
-                Map(m => m.ProperName).Name("Proper Name");
-                Map(m => m.SpectralClass).Name("Spectral Class");
-            }
-        }
-
-
-        private IList<HabHygRecord> catalogue;
-
-        private void Load()
-        {
-            if (catalogue == null)
-            {
-                catalogue = new List<HabHygRecord>();
-
-                CsvReader reader = new CsvReader(File.OpenText(Location));
-                reader.Configuration.RegisterClassMap<HabHYGRecordMap>();
-                reader.Read();
-                reader.ReadHeader();
-                while (reader.Read())
-                {
-                    HabHygRecord record = reader.GetRecord<HabHygRecord>();
-                    catalogue.Add(record);
-                }
-            }
-        }
-
         private Star Convert(HabHygRecord record)
         {
             Star star = new Star(record.DisplayName);
