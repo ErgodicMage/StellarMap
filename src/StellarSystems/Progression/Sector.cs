@@ -13,12 +13,9 @@ namespace StellarMap.Progression
     public class Sector : ProgressionContainer
     {
         #region Constructors
-        public Sector()
-        {
-        }
-
         public Sector(string name) : base(name, ProgressionConstants.ContainerTypes.Sector)
         {
+            ContainerType = ProgressionConstants.ContainerTypes.Sector;
         }
         #endregion
 
@@ -37,12 +34,6 @@ namespace StellarMap.Progression
         #endregion
 
         #region Protected Methods
-        protected override void Initialize()
-        {
-            base.Initialize();
-            ContainerType = ProgressionConstants.ContainerTypes.Sector;
-        }
-
         protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);

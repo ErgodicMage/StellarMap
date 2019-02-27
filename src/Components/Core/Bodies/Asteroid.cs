@@ -11,20 +11,8 @@ namespace StellarMap.Core.Bodies
     public class Asteroid : StellarBody
     {
         #region Constructors
-        public Asteroid()
-        {
-
-        }
-
         public Asteroid(string name) : base(name, Constants.BodyTypes.Asteroid)
         {
-        }
-        #endregion
-
-        #region Protected Functions
-        protected override void Initialize()
-        {
-            base.Initialize();
         }
         #endregion
     }

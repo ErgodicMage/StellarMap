@@ -12,12 +12,9 @@ namespace StellarMap.Progression
     public class ProgressionContainer : StellarParentBody
     {
         #region Constructors
-        public ProgressionContainer()
-        {
-        }
-
         public ProgressionContainer(string name, string bodytype) : base(name, bodytype)
         {
+            ContainerGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-ProgressionContainer");
         }
         #endregion
 
@@ -42,12 +39,6 @@ namespace StellarMap.Progression
         #endregion
 
         #region Protected Functions
-        protected override void Initialize()
-        {
-            base.Initialize();
-            ContainerGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-ProgressionContainer");
-        }
-
         protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);

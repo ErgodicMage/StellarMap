@@ -13,12 +13,9 @@ namespace StellarMap.Progression
     public class StarSystem : ProgressionContainer
     {
         #region Constructors
-        public StarSystem()
-        {
-        }
-
         public StarSystem(string name) : base(name, ProgressionConstants.ContainerTypes.StarSystem)
         {
+            ContainerType = ProgressionConstants.ContainerTypes.StarSystem;
         }
         #endregion
 
@@ -47,12 +44,6 @@ namespace StellarMap.Progression
         #endregion
 
         #region Protected Methods
-        protected override void Initialize()
-        {
-            base.Initialize();
-            ContainerType = ProgressionConstants.ContainerTypes.StarSystem;
-        }
-
         protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);

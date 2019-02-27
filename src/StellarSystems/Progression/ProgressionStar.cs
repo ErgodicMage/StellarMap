@@ -13,13 +13,9 @@ namespace StellarMap.Progression
     public class ProgressionStar : Star
     {
         #region Consturctors
-        public ProgressionStar()
-        {
-
-        }
-
         public ProgressionStar(string name) : base(name)
         {
+            StarGroupIdentifiers.Name = "GroupIdentifiers-ProgressionStar";
         }
         #endregion
 
@@ -42,12 +38,6 @@ namespace StellarMap.Progression
         #endregion
 
         #region Protected Methods
-        protected override void Initialize()
-        {
-            base.Initialize();
-            StarGroupIdentifiers.Name = "GroupIdentifiers-ProgressionStar";
-        }
-
         protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);

@@ -8,16 +8,11 @@ namespace StellarMap.Core.Types
     [DataContract]
     public class BodyNamedIdentifiers
     {
-        #region Constructors
-        public BodyNamedIdentifiers()
-        {
-
-        }
-
+        #region Constructor
         public BodyNamedIdentifiers(string name)
         {
             this.Name = name;
-            Initialize();
+            Identifiers = new Dictionary<string, string>();
         }
 
         #endregion
@@ -54,27 +49,16 @@ namespace StellarMap.Core.Types
             }
         }
         #endregion
-
-        #region Protected Functions
-        protected virtual void Initialize()
-        {
-            Identifiers = new Dictionary<string, string>();
-        }
-        #endregion
     }
 
     [DataContract]
     public class GroupNamedIdentifiers
     {
         #region Constructors
-        public GroupNamedIdentifiers()
-        {
-        }
-
         public GroupNamedIdentifiers(string name)
         {
             this.Name = name;
-            Initialize();
+            GroupIdentifiers = new Dictionary<string, BodyNamedIdentifiers>();
         }
         #endregion
 
@@ -125,13 +109,6 @@ namespace StellarMap.Core.Types
         {
             if (GroupIdentifiers.ContainsKey(name))
                 GroupIdentifiers.Remove(name);
-        }
-        #endregion
-
-        #region Protected Functions
-        protected virtual void Initialize()
-        {
-            GroupIdentifiers = new Dictionary<string, BodyNamedIdentifiers>();
         }
         #endregion
     }

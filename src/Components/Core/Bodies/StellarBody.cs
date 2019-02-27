@@ -13,10 +13,6 @@ namespace StellarMap.Core.Bodies
     public abstract class StellarBody : IStellarBody
     {
         #region Cosntructors
-        public StellarBody()
-        {
-        }
-
         public StellarBody(string name, string bodytype)
         {
             Initialize();
@@ -69,10 +65,6 @@ namespace StellarMap.Core.Bodies
     public abstract class StellarParentBody : StellarBody, IStellarParentBody
     {
         #region Constructors
-        public StellarParentBody() : base()
-        {
-        }
-
         public StellarParentBody(string name, string bodytype) : base(name, bodytype)
         {
         }

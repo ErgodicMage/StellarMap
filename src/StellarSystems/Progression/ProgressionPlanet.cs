@@ -13,10 +13,6 @@ namespace StellarMap.Progression
     public class ProgressionPlanet : Planet
     {
         #region Constructors
-        public ProgressionPlanet()
-        {
-        }
-
         public ProgressionPlanet(string name) : base(name)
         {
         }

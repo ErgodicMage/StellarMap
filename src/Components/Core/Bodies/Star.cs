@@ -14,13 +14,9 @@ namespace StellarMap.Core.Bodies
     public class Star : StellarParentBody
     {
         #region Constructors
-        public Star() : base()
-        {
-        }
-
         public Star(string name) : base(name, Constants.BodyTypes.Star)
         {
-            //Initialize();
+            StarGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-Star");
         }
         #endregion
 
@@ -58,15 +54,6 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region Protected Functions
-        protected override void Initialize()
-        {
-            base.Initialize();
-            StarGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-Star");
-            //StarGroupIdentifiers.Add(GroupNamedIdentifiers.Planets);
-            //StarGroupIdentifiers.Add(GroupNamedIdentifiers.Asteroids);
-            //StarGroupIdentifiers.Add(GroupNamedIdentifiers.Comets);
-        }
-
         protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             BodyNamedIdentifiers identifiers = null;

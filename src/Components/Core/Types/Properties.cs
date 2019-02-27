@@ -10,10 +10,6 @@ namespace StellarMap.Core.Types
     public class GroupProperties
     {
         #region Constructors
-        public GroupProperties()
-        {
-            //Properties = new Dictionary<string, string>();
-        }
         public GroupProperties(string name)
         {
             Name = name;

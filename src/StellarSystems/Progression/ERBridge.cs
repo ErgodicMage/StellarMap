@@ -13,18 +13,14 @@ namespace StellarMap.Progression
     public class ERBridge : StellarBody
     {
         #region Constructors
-        public ERBridge()
-        {
-
-        }
-
-        public ERBridge(string type, StarSystem system1, StarSystem system2) // : base(string.Empty, ProgressionConstants.BodyType.ERBridge)
+        public ERBridge(string type, StarSystem system1, StarSystem system2) : base(string.Empty, ProgressionConstants.BodyType.ERBridge)
         {
             BodyType = ProgressionConstants.BodyType.ERBridge;
             BridgeType = type;
             Map = system1.Map;
             (Map as ProgressionMap).Add(this);
-            Initialize();
+            //Initialize();
+            Portals = new Portal[2];
             Portals[0].StarIdentifier = system1.Identifier;
             Portals[0].ERBridgeIdentifier = this.Identifier;
             Portals[1].StarIdentifier = system2.Identifier;
@@ -79,12 +75,6 @@ namespace StellarMap.Progression
         #endregion
 
         #region Protected Methods
-        protected override void Initialize()
-        {
-            base.Initialize();
-            Portals = new Portal[2];
-        }
-
         protected void SetName()
         {
             StringBuilder sb = new StringBuilder();

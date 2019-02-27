@@ -13,12 +13,9 @@ namespace StellarMap.Progression
     public class Cluster : ProgressionContainer
     {
         #region Constructors
-        public Cluster()
-        {
-        }
-
         public Cluster(string name) : base(name, ProgressionConstants.ContainerTypes.Cluster)
         {
+            ContainerType = ProgressionConstants.ContainerTypes.Cluster;
         }
         #endregion
 
@@ -37,12 +34,6 @@ namespace StellarMap.Progression
         #endregion
 
         #region Protected Methods
-        protected override void Initialize()
-        {
-            base.Initialize();
-            ContainerType = ProgressionConstants.ContainerTypes.Cluster;
-        }
-
         protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
