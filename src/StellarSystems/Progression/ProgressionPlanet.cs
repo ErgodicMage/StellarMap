@@ -15,6 +15,7 @@ namespace StellarMap.Progression
         #region Constructors
         public ProgressionPlanet(string name) : base(name)
         {
+            PlanetGroupIdentifiers.Name = "GroupIdentifiers-ProgressionPlanet";
         }
         #endregion
 
@@ -33,12 +34,6 @@ namespace StellarMap.Progression
         #endregion
 
         #region Protected Methods
-        protected override void Initialize()
-        {
-            base.Initialize();
-            PlanetGroupIdentifiers.Name = "GroupIdentifiers-ProgressionPlanet";
-        }
-
         protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
         {
             BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);

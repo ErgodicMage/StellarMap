@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Components\Core\Core.csproj" />
+    <ProjectReference Include="..\..\StellarSystems\Progression\Progression.csproj" />
+    <ProjectReference Include="..\..\Components\Storage\Storage.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+</Project>

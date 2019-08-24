@@ -19,5 +19,7 @@ namespace StellarMap.Core.Types
         T Get<T> (string name) where T : IStellarBody;
 
         IDictionary<string, T> GetAll<T>() where T : IStellarBody;
+
+        void Add<T>(T t)  where T : IStellarBody;
     }
 }
