@@ -29,9 +29,9 @@ namespace GenerateMaps
             LocalSectorMap create = new LocalSectorMap(localsector);
             create.CreateLocalSector();
 
-            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
-            string filename = dir + "LocalSector.json";
+            string filename = dir + "LocalSector.zip";
 
             if (File.Exists(filename))
                 File.Delete(filename);
