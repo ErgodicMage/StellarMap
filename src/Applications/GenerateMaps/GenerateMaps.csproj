@@ -4,6 +4,7 @@
     <ProjectReference Include="..\..\Components\Core\Core.csproj" />
     <ProjectReference Include="..\..\StellarSystems\Progression\Progression.csproj" />
     <ProjectReference Include="..\..\Components\Storage\Storage.csproj" />
+    <ProjectReference Include="..\..\Catalogues\HabHyg\HabHyg.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
