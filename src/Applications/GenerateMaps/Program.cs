@@ -50,20 +50,40 @@ namespace GenerateMaps
         {
             string outfile = dir + "AreasForStars_" + ly.ToString() + "LY.txt";
             string catalogueFile = dir + "HabHYG.csv";
+            
+            HabHYGCsvReader reader = new HabHYGCsvReader();
+            reader.Load(catalogueFile);
+
+            var records = reader.Catalogue.Where<HabHygRecord>(c => c.Distance < ((1.5 * ly) / 3.261633));
+            IList<HabHygRecord> stars = records.ToList<HabHygRecord>();
+
+            CubeAreaStarLocation areaLocations = new CubeAreaStarLocation();
+            IDictionary<string, IList<HabHygRecord>> areaMappings = areaLocations.GetAreaMappings(ly, stars);
 
             if (File.Exists(outfile))
                 File.Delete(outfile);
 
-            HabHYGCsvReader reader = new HabHYGCsvReader();
-            reader.Load(catalogueFile);
-
-            double parsecs = ly / 3.261633;
-
-            var records = reader.Catalogue.Where<HabHygRecord>(c => c.Distance < parsecs);
-
             using (StreamWriter sw = new StreamWriter(outfile))
             {
-                records.ToList().ForEach(c => {sw.WriteLine(c.DisplayName + " " + c.Distance.ToString());});
+                foreach (KeyValuePair<string, IList<HabHygRecord>> area in areaMappings)
+                {
+                    sw.Write("Area ");
+                    sw.Write(area.Key);
+                    sw.WriteLine(":");
+
+                    foreach(HabHygRecord rec in area.Value)
+                    {
+                        sw.Write(rec.DisplayName);
+                        sw.Write(" -- (");
+                        sw.Write(rec.Xg);
+                        sw.Write(",");
+                        sw.Write(rec.Yg);
+                        sw.Write(",");
+                        sw.Write(rec.Zg);
+                        sw.WriteLine(")");
+                    }
+                    sw.WriteLine("-------");
+                }
             }
         }
     }
