@@ -101,7 +101,7 @@ namespace StellarMap.Core.Bodies
 
             IDictionary<string, T> all = new Dictionary<string, T>();
 
-            foreach(KeyValuePair<string, string> kvp in identifiers.Identifiers)
+            foreach(var kvp in identifiers.Identifiers)
             {
                 T t = Map.Get<T>(kvp.Value);
                 if (t != null)

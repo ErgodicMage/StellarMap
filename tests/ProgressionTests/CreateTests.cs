@@ -71,7 +71,7 @@ namespace ProgressionTests
 
             using (StreamWriter writer = new StreamWriter(outfile))
             {
-                foreach (KeyValuePair<string, StarSystem> system in map.StarSystems)
+                foreach (var system in map.StarSystems)
                 {
                     writer.Write(system.Key);
                     writer.Write(" : ");

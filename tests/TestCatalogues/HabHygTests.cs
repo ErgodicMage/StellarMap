@@ -81,7 +81,7 @@ namespace TestCatalogues
                 File.Delete(outfile);
             using (StreamWriter sw = new StreamWriter(outfile))
             {
-                foreach (KeyValuePair<string, IList<HabHygRecord>> area in areaMappings)
+                foreach (var area in areaMappings)
                 {
                     sw.Write("Area ");
                     sw.Write(area.Key);

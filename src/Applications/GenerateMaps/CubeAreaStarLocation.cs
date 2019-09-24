@@ -57,7 +57,7 @@ namespace StellarMap.GenerateMaps
         {
             string area = string.Empty;
 
-            foreach (KeyValuePair<string, Func<double, double, double, double, bool>> kvp in AreaMappings)
+            foreach (var kvp in AreaMappings)
             {
                 if (kvp.Value(l, x, y, z))
                 {

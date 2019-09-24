@@ -88,7 +88,7 @@ namespace StellarMap.Core.Types
             {
                 BodyNamedIdentifiers obj = new BodyNamedIdentifiers(name);
                 GroupIdentifiers.Add(name, obj);
-                foreach (KeyValuePair<string, string> kvp in identifiers)
+                foreach (var kvp in identifiers)
                     obj.Identifiers.Add(kvp);
             }
             else if (addto)
@@ -96,7 +96,7 @@ namespace StellarMap.Core.Types
                 BodyNamedIdentifiers obj = GroupIdentifiers[name];
                 if (obj != null)
                 {
-                    foreach (KeyValuePair<string, string> kvp in identifiers)
+                    foreach (var kvp in identifiers)
                     {
                         if (!obj.Identifiers.ContainsKey(kvp.Key))
                             obj.Identifiers.Add(kvp);

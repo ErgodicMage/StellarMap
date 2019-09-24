@@ -42,7 +42,7 @@ namespace StellarMap.Progression
             StarSystem system2 = null;
             Cluster cluster2 = null;
 
-            foreach(KeyValuePair<string, Cluster> kvp in map.Clusters)
+            foreach(var kvp in map.Clusters)
             {
                 if (system1 == null)
                 {
