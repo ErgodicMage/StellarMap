@@ -4,7 +4,7 @@ using System.Text;
 
 using StellarMap.Catalogues;
 
-namespace GenerateMaps
+namespace StellarMap.GenerateMaps
 {
     public class CubeAreaStarLocation
     {

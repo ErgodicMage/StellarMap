@@ -13,7 +13,7 @@ using StellarMap.Catalogues;
 using StellarMap.Progression;
 using StellarMap.Progression.DefaultSettingMaps;
 
-namespace GenerateMaps
+namespace StellarMap.GenerateMaps
 {
     class Program
     {
