@@ -4,12 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "~/Development/StellarMap/src/Applications/GenerateMaps/bin/Debug/netcoreapp2.2/GenerateMaps.dll",
+            "program": "~/Development/StellarMap/src/Applications/GenerateMaps/bin/Debug/netcoreapp2.0/StellarMap.GenerateMaps.dll",
             "args": [],
             "cwd": "~/Development/StellarMap/src/Applications/GenerateMaps",
             "stopAtEntry": false,
