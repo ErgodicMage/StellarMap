@@ -112,7 +112,7 @@ namespace TestCatalogues
                 mappings.Add("A(1,-1,-1)", new List<HabHygRecord>());
             }
 
-            double parsec = l * 3.261633;
+            double parsec = l / 3.261633;
 
             foreach (HabHygRecord rec in stars)
             {
