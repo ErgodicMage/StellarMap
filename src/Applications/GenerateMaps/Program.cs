@@ -20,8 +20,13 @@ namespace StellarMap.GenerateMaps
         static void Main(string[] args)
         {
             //LocateStarsInCube(20);
+
             //GenerateLocalSector();
-            RetrieveLocalSector();
+            //RetrieveLocalSector();
+
+            StoreSolarSystem();
+            RetrieveSolarSystem();
+
             Console.WriteLine("Complete");
         }
 
@@ -55,6 +60,39 @@ namespace StellarMap.GenerateMaps
                 //GenerateLocalSector();
 
             IStellarMap map = new ProgressionMap();
+            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                store.Retreive(reader, map);
+            }
+        }
+
+        public static void StoreSolarSystem()
+        {
+            IStellarMap map = SolarSystem.CreateSolSystem();
+
+            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+
+            string filename = dir + "SolarSystem.json";
+
+            if (File.Exists(filename))
+                File.Delete(filename);
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            {
+                store.Store(map, writer);
+            }
+        }
+
+        public static void RetrieveSolarSystem()
+        {
+            string filename = dir + "SolarSystem.json";
+
+            if (!File.Exists(filename))
+                StoreSolarSystem();
+
+            IStellarMap map = new BaseStellarMap();
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
             using (StreamReader reader = new StreamReader(filename))
