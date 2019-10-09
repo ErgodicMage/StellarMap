@@ -19,14 +19,15 @@ namespace StellarMap.GenerateMaps
     {
         static void Main(string[] args)
         {
-            LocateStarsInCube(20);
-            //GenerateLocalSectorJson();
+            //LocateStarsInCube(20);
+            //GenerateLocalSector();
+            RetrieveLocalSector();
             Console.WriteLine("Complete");
         }
 
         static string dir = "/home/harry/Development/StellarMap/Data/";
 
-        public static void GenerateLocalSectorJson()
+        public static void GenerateLocalSector()
         {
             ProgressionMap localsector = new ProgressionMap("Local Sector");
 
@@ -43,6 +44,22 @@ namespace StellarMap.GenerateMaps
             using (StreamWriter writer = new StreamWriter(filename))
             {
                 store.Store(localsector, writer);
+            }
+        }
+
+        public static void RetrieveLocalSector()
+        {
+            string filename = dir + "LocalSector.json";
+
+            //if (!File.Exists(filename))
+                //GenerateLocalSector();
+
+            IStellarMap map = new ProgressionMap();
+            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                store.Retreive(reader, map);
             }
         }
 
