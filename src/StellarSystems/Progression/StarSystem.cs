@@ -13,6 +13,10 @@ namespace StellarMap.Progression
     public class StarSystem : ProgressionContainer
     {
         #region Constructors
+        public StarSystem()
+        {            
+        }
+        
         public StarSystem(string name) : base(name, ProgressionConstants.ContainerTypes.StarSystem)
         {
             ContainerType = ProgressionConstants.ContainerTypes.StarSystem;
@@ -20,6 +24,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
+        [IgnoreDataMember]
         public IDictionary<string, string> Stars { get { return ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars].Identifiers; } }
 
         [DataMember(Order = 21)]

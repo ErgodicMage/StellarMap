@@ -141,25 +141,25 @@ namespace StellarMap.Catalogues
 
             if (AddDataAsProperties)
             {
-                GroupProperties prop = new GroupProperties("HabHyg");
-                prop.Properties.Add("HabHyg", record.HabHyg.ToString());
-                prop.Properties.Add("Hip", record.Hip);
-                prop.Properties.Add("Hab", record.Hab);
-                prop.Properties.Add("Display Name", record.DisplayName);
-                prop.Properties.Add("Hyg", record.Hyg);
-                prop.Properties.Add("BayerFlamsteed", record.BayerFlamsteed);
-                prop.Properties.Add("Gliese", record.Gliese);
-                prop.Properties.Add("BD", record.BD);
-                prop.Properties.Add("HD", record.HD);
-                prop.Properties.Add("HR", record.HR);
-                prop.Properties.Add("Proper Name", record.ProperName);
-                prop.Properties.Add("Spectral Class", record.SpectralClass);
-                prop.Properties.Add("Distance", record.Distance.ToString());
-                prop.Properties.Add("Xg", record.Xg);
-                prop.Properties.Add("Yg", record.Yg);
-                prop.Properties.Add("Zg", record.Zg);
-                prop.Properties.Add("AbsMag", record.AbsMag.ToString());
-                star.AllGroupProperties.Add("HabHyg", prop);
+                IDictionary<string, string> prop = new Dictionary<string, string>();
+                prop.Add("HabHyg", record.HabHyg.ToString());
+                prop.Add("Hip", record.Hip);
+                prop.Add("Hab", record.Hab);
+                prop.Add("Display Name", record.DisplayName);
+                prop.Add("Hyg", record.Hyg);
+                prop.Add("BayerFlamsteed", record.BayerFlamsteed);
+                prop.Add("Gliese", record.Gliese);
+                prop.Add("BD", record.BD);
+                prop.Add("HD", record.HD);
+                prop.Add("HR", record.HR);
+                prop.Add("Proper Name", record.ProperName);
+                prop.Add("Spectral Class", record.SpectralClass);
+                prop.Add("Distance", record.Distance.ToString());
+                prop.Add("Xg", record.Xg);
+                prop.Add("Yg", record.Yg);
+                prop.Add("Zg", record.Zg);
+                prop.Add("AbsMag", record.AbsMag.ToString());
+                star.Properties.AddGroup("HabHyg", prop);
             }
 
             return star;

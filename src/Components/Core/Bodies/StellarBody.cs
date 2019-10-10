@@ -13,9 +13,17 @@ namespace StellarMap.Core.Bodies
     public abstract class StellarBody : IStellarBody
     {
         #region Cosntructors
+        public StellarBody()
+        {            
+        }
+        
         public StellarBody(string name, string bodytype)
         {
-            Initialize();
+            Properties = new GroupedProperties("Basic");
+
+            if (Map == null)
+                Map = BaseStellarMap.DefaultMap;
+
             Name = name;
             BodyType = bodytype;
         }
@@ -35,36 +43,23 @@ namespace StellarMap.Core.Bodies
         public string BodyType { get; set; }
 
         [DataMember (Order = 5)]
-        public IDictionary<string, GroupProperties> AllGroupProperties { get; set; }
+        public GroupedProperties Properties { get; set; }
 
-        public IDictionary<string, string> BasicProperties { get { return AllGroupProperties["Basic"].Properties; } }
+        [IgnoreDataMember]
+        public IDictionary<string, string> BasicProperties { get { return Properties.GetProperties("Basic"); } }
 
         public IStellarMap Map { get; set; }
-        #endregion
-
-        #region Protected Functions
-        protected virtual void Initialize()
-        {
-            //if (!string.IsNullOrEmpty(Identifier))
-            //    Identifier = Guid.NewGuid().ToString();
-            if (AllGroupProperties == null)
-                AllGroupProperties = new Dictionary<string, GroupProperties>();
-
-            if (!AllGroupProperties.ContainsKey("Basic"))
-            {
-                GroupProperties basic = new GroupProperties("Basic");
-                AllGroupProperties.Add("Basic", basic);
-            }
-
-            if (Map == null)
-                Map = BaseStellarMap.DefaultMap;
-        }
         #endregion
     }
 
     public abstract class StellarParentBody : StellarBody, IStellarParentBody
     {
         #region Constructors
+        public StellarParentBody()
+        {
+
+        }
+        
         public StellarParentBody(string name, string bodytype) : base(name, bodytype)
         {
         }

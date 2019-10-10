@@ -6,17 +6,13 @@
       "ParentIdentifier": "StarSystem-00001",
       "Name": "Sun",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Sol",
             "StellarClass": "G2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "0",
             "Hip": "0"
           }
@@ -68,17 +64,13 @@
       "ParentIdentifier": "StarSystem-00002",
       "Name": "Bernard's Star",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 699",
             "StellarClass": "sdM4"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "4",
             "Hip": "87937"
           }
@@ -94,17 +86,13 @@
       "ParentIdentifier": "StarSystem-00003",
       "Name": "Sirius",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 244",
             "StellarClass": "A0mA1Va"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "10",
             "Hip": "32349"
           }
@@ -120,17 +108,13 @@
       "ParentIdentifier": "StarSystem-00004",
       "Name": "Luyten's Star",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 273",
             "StellarClass": "M5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "28",
             "Hip": "36208"
           }
@@ -146,17 +130,13 @@
       "ParentIdentifier": "StarSystem-00005",
       "Name": "Procyon",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 280",
             "StellarClass": "F5IV-V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "18",
             "Hip": "37279"
           }
@@ -172,17 +152,13 @@
       "ParentIdentifier": "StarSystem-00006",
       "Name": "Lalande",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 411",
             "StellarClass": "M2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "6",
             "Hip": "54035"
           }
@@ -198,17 +174,13 @@
       "ParentIdentifier": "StarSystem-00007",
       "Name": "Epsilon Eridani",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 144",
             "StellarClass": "K2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "13",
             "Hip": "16537"
           }
@@ -224,17 +196,13 @@
       "ParentIdentifier": "StarSystem-00008",
       "Name": "Pocks",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 447/Ross 128",
             "StellarClass": "M4.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "14",
             "Hip": "57548"
           }
@@ -250,17 +218,13 @@
       "ParentIdentifier": "StarSystem-00009",
       "Name": "Alvin",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 866 A",
             "StellarClass": "M5VJ"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "16",
             "Hip": "-1"
           }
@@ -276,17 +240,13 @@
       "ParentIdentifier": "StarSystem-00009",
       "Name": "Bruce",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 866 B",
             "StellarClass": "M"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "16",
             "Hip": "-1"
           }
@@ -302,17 +262,13 @@
       "ParentIdentifier": "StarSystem-00009",
       "Name": "Calvin",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 866 C",
             "StellarClass": "M"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "16",
             "Hip": "-1"
           }
@@ -328,17 +284,13 @@
       "ParentIdentifier": "StarSystem-00010",
       "Name": "Wolf",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 406",
             "StellarClass": "M6"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "5",
             "Hip": "-1"
           }
@@ -354,17 +306,13 @@
       "ParentIdentifier": "StarSystem-00011",
       "Name": "BL",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 65 A",
             "StellarClass": "dM5.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "7",
             "Hip": "-1"
           }
@@ -380,17 +328,13 @@
       "ParentIdentifier": "StarSystem-00011",
       "Name": "UV",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 65 B",
             "StellarClass": "dM5.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "7",
             "Hip": "-1"
           }
@@ -406,17 +350,13 @@
       "ParentIdentifier": "StarSystem-00012",
       "Name": "Alpha",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 559 A",
             "StellarClass": "G2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "3",
             "Hip": "71863"
           }
@@ -432,17 +372,13 @@
       "ParentIdentifier": "StarSystem-00012",
       "Name": "Beta",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 559 B",
             "StellarClass": "K1V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "2",
             "Hip": "71861"
           }
@@ -458,17 +394,13 @@
       "ParentIdentifier": "StarSystem-00012",
       "Name": "Proxima",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 551",
             "StellarClass": "M5Ve"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "1",
             "Hip": "70890"
           }
@@ -484,17 +416,13 @@
       "ParentIdentifier": "StarSystem-00013",
       "Name": "Tau Ceti",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 71",
             "StellarClass": "G8V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "25",
             "Hip": "8102"
           }
@@ -510,17 +438,13 @@
       "ParentIdentifier": "StarSystem-00014",
       "Name": "Groombridge",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 380",
             "StellarClass": "K8V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "59",
             "Hip": "49908"
           }
@@ -536,17 +460,13 @@
       "ParentIdentifier": "StarSystem-00015",
       "Name": "Kruger",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 860 A",
             "StellarClass": "M2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "32",
             "Hip": "110893"
           }
@@ -562,17 +482,13 @@
       "ParentIdentifier": "StarSystem-00016",
       "Name": "Lacaille",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 825",
             "StellarClass": "M1/M2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "30",
             "Hip": "105090"
           }
@@ -588,17 +504,13 @@
       "ParentIdentifier": "StarSystem-00017",
       "Name": "Gleine",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 725",
             "StellarClass": "M3"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "26",
             "Hip": "91768"
           }
@@ -614,17 +526,13 @@
       "ParentIdentifier": "StarSystem-00017",
       "Name": "Struve",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 725 B",
             "StellarClass": "M3.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "19",
             "Hip": "91772"
           }
@@ -640,17 +548,13 @@
       "ParentIdentifier": "StarSystem-00018",
       "Name": "Kapteyn's Star",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 191",
             "StellarClass": "M0V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "29",
             "Hip": "24186"
           }
@@ -666,17 +570,13 @@
       "ParentIdentifier": "StarSystem-00019",
       "Name": "Vista",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 473 A",
             "StellarClass": "M5.5eJ"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "36",
             "Hip": "-1"
           }
@@ -692,17 +592,13 @@
       "ParentIdentifier": "StarSystem-00019",
       "Name": "Point",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 473 B",
             "StellarClass": "M7"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "37",
             "Hip": "-1"
           }
@@ -718,17 +614,13 @@
       "ParentIdentifier": "StarSystem-00020",
       "Name": "Bihar",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1061",
             "StellarClass": "M4.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "35",
             "Hip": "-1"
           }
@@ -744,17 +636,13 @@
       "ParentIdentifier": "StarSystem-00021",
       "Name": "Inne's Star",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "NN 3618",
             "StellarClass": "M5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "45",
             "Hip": "-1"
           }
@@ -770,17 +658,13 @@
       "ParentIdentifier": "StarSystem-00022",
       "Name": "Wolf's Den",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "NN 3622",
             "StellarClass": "M6.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "46",
             "Hip": "0"
           }
@@ -796,17 +680,13 @@
       "ParentIdentifier": "StarSystem-00023",
       "Name": "Andomeda A",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 15 A",
             "StellarClass": "M1V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "24",
             "Hip": "1475"
           }
@@ -822,17 +702,13 @@
       "ParentIdentifier": "StarSystem-00023",
       "Name": "Andromeda B",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 15 B",
             "StellarClass": "M6Ve"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "22",
             "Hip": "-1"
           }
@@ -848,17 +724,13 @@
       "ParentIdentifier": "StarSystem-00024",
       "Name": "Sutter",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 687",
             "StellarClass": "M3.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "49",
             "Hip": "86162"
           }
@@ -874,17 +746,13 @@
       "ParentIdentifier": "StarSystem-00025",
       "Name": "Bright",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 234 A",
             "StellarClass": "M4.5Ve"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "34",
             "Hip": "30920"
           }
@@ -900,17 +768,13 @@
       "ParentIdentifier": "StarSystem-00026",
       "Name": "YZ Ceti",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 54.1",
             "StellarClass": "M4.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "-1",
             "Hip": "-1"
           }
@@ -926,17 +790,13 @@
       "ParentIdentifier": "StarSystem-00027",
       "Name": "Kercur",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 3622",
             "StellarClass": "M6.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "-1",
             "Hip": "-1"
           }
@@ -952,17 +812,13 @@
       "ParentIdentifier": "StarSystem-00028",
       "Name": "Nuone",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 1",
             "StellarClass": "M2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "40",
             "Hip": "439"
           }
@@ -978,17 +834,13 @@
       "ParentIdentifier": "StarSystem-00029",
       "Name": "Leonis",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 388",
             "StellarClass": "M4.5Ve"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "58",
             "Hip": "-1"
           }
@@ -1004,17 +856,13 @@
       "ParentIdentifier": "StarSystem-00030",
       "Name": "Red",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "SCR 1845 A",
             "StellarClass": "M8.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "-1",
             "Hip": "-1"
           }
@@ -1030,17 +878,13 @@
       "ParentIdentifier": "StarSystem-00031",
       "Name": "Cancri",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1111",
             "StellarClass": "M6.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "23",
             "Hip": "-1"
           }
@@ -1056,17 +900,13 @@
       "ParentIdentifier": "StarSystem-00032",
       "Name": "Eureka",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 440",
             "StellarClass": "DC:"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "50",
             "Hip": "57367"
           }
@@ -1082,17 +922,13 @@
       "ParentIdentifier": "StarSystem-00033",
       "Name": "TeeGarden",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "SO025300.5+165258",
             "StellarClass": "M4.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "-1",
             "Hip": "-1"
           }
@@ -1108,17 +944,13 @@
       "ParentIdentifier": "StarSystem-00034",
       "Name": "Van Maanen",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 35",
             "StellarClass": "DG"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "41",
             "Hip": "3829"
           }
@@ -1134,17 +966,13 @@
       "ParentIdentifier": "StarSystem-00035",
       "Name": "Ross",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "UGPS 0722-05",
             "StellarClass": "T10"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "-1",
             "Hip": "-1"
           }
@@ -1160,17 +988,13 @@
       "ParentIdentifier": "StarSystem-00036",
       "Name": "Bradley",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 820 A",
             "StellarClass": "K5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "20",
             "Hip": "104214"
           }
@@ -1186,17 +1010,13 @@
       "ParentIdentifier": "StarSystem-00036",
       "Name": "Paizzi",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 820 B",
             "StellarClass": "K7V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "21",
             "Hip": "104217"
           }
@@ -1212,17 +1032,13 @@
       "ParentIdentifier": "StarSystem-00037",
       "Name": "Indus",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 845 A",
             "StellarClass": "K5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "27",
             "Hip": "108870"
           }
@@ -1238,17 +1054,13 @@
       "ParentIdentifier": "StarSystem-00037",
       "Name": "Ghaggar",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 845 B",
             "StellarClass": "T1V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "27",
             "Hip": "108870"
           }
@@ -1264,17 +1076,13 @@
       "ParentIdentifier": "StarSystem-00037",
       "Name": "Hakra",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 845 C",
             "StellarClass": "T6V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "27",
             "Hip": "108870"
           }
@@ -1290,17 +1098,13 @@
       "ParentIdentifier": "StarSystem-00038",
       "Name": "Arietis",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 83.1",
             "StellarClass": "M8e"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "43",
             "Hip": "-1"
           }
@@ -1316,17 +1120,13 @@
       "ParentIdentifier": "StarSystem-00039",
       "Name": "Flare",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "DEN 1048-3956",
             "StellarClass": "M8.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "-1",
             "Hip": "-1"
           }
@@ -1342,17 +1142,13 @@
       "ParentIdentifier": "StarSystem-00040",
       "Name": "Demic",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 412 A",
             "StellarClass": "M2V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "57",
             "Hip": "54211"
           }
@@ -1368,17 +1164,13 @@
       "ParentIdentifier": "StarSystem-00041",
       "Name": "Lapis",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 628",
             "StellarClass": "M3.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "39",
             "Hip": "80824"
           }
@@ -1394,17 +1186,13 @@
       "ParentIdentifier": "StarSystem-00042",
       "Name": "Banawali",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 876",
             "StellarClass": "M5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "55",
             "Hip": "113020"
           }
@@ -1420,17 +1208,13 @@
       "ParentIdentifier": "StarSystem-00043",
       "Name": "Rudra",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1245 A",
             "StellarClass": "M5.5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "53",
             "Hip": "-1"
           }
@@ -1446,17 +1230,13 @@
       "ParentIdentifier": "StarSystem-00043",
       "Name": "Pashupati",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1245 B",
             "StellarClass": "M"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "53",
             "Hip": "-1"
           }
@@ -1472,17 +1252,13 @@
       "ParentIdentifier": "StarSystem-00044",
       "Name": "Altaira",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 768",
             "StellarClass": "A7Vn"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "70",
             "Hip": "97649"
           }
@@ -1498,17 +1274,13 @@
       "ParentIdentifier": "StarSystem-00045",
       "Name": "Krell",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 702 A",
             "StellarClass": "K1V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "69",
             "Hip": "88601"
           }
@@ -1524,17 +1296,13 @@
       "ParentIdentifier": "StarSystem-00045",
       "Name": "Robby",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 702 B",
             "StellarClass": "K5V"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "68",
             "Hip": "-1"
           }
@@ -1550,17 +1318,13 @@
       "ParentIdentifier": "StarSystem-00046",
       "Name": "Mobius",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1116 A",
             "StellarClass": "M"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "71",
             "Hip": "-1"
           }
@@ -1576,17 +1340,13 @@
       "ParentIdentifier": "StarSystem-00046",
       "Name": "Pidgeon",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1116 B",
             "StellarClass": "M"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "72",
             "Hip": "-1"
           }
@@ -1602,17 +1362,13 @@
       "ParentIdentifier": "StarSystem-00047",
       "Name": "Bellerophon",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 205",
             "StellarClass": "M1.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "85",
             "Hip": "25878"
           }
@@ -1628,17 +1384,13 @@
       "ParentIdentifier": "StarSystem-00048",
       "Name": "Id",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 445",
             "StellarClass": "M"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "75",
             "Hip": "57544"
           }
@@ -1654,17 +1406,13 @@
       "ParentIdentifier": "StarSystem-00049",
       "Name": "Adams",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 251",
             "StellarClass": "M3"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "87",
             "Hip": "-1"
           }
@@ -1680,17 +1428,13 @@
       "ParentIdentifier": "StarSystem-00050",
       "Name": "Lacerta",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 873",
             "StellarClass": "M4.5"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "67",
             "Hip": "112460"
           }
@@ -1706,17 +1450,13 @@
       "ParentIdentifier": "StarSystem-00051",
       "Name": "Lacerta",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 693",
             "StellarClass": "M2"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "90",
             "Hip": "86990"
           }
@@ -1732,17 +1472,13 @@
       "ParentIdentifier": "StarSystem-00052",
       "Name": "Keid",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 166 A",
             "StellarClass": "K1"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "65",
             "Hip": "19849"
           }
@@ -1758,17 +1494,13 @@
       "ParentIdentifier": "StarSystem-00052",
       "Name": "Little White",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 166 B",
             "StellarClass": "DA4"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "63",
             "Hip": "-1"
           }
@@ -1784,17 +1516,13 @@
       "ParentIdentifier": "StarSystem-00052",
       "Name": "Little Red",
       "BodyType": "Star",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 166 C",
             "StellarClass": "M4.5e"
-          }
-        },
-        "Catalogue": {
-          "Name": "Catalogue",
-          "Properties": {
+          },
+          "Catalogue": {
             "HabHyg": "64",
             "Hip": "-1"
           }
@@ -1812,10 +1540,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Mercury",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1828,10 +1555,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Venus",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1844,10 +1570,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Earth",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1874,10 +1599,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Mars",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1890,10 +1614,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Jupiter",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1906,10 +1629,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Saturn",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1922,10 +1644,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Uranus",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1938,10 +1659,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Neptune",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1954,10 +1674,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Pluto",
       "BodyType": "Planet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -1972,10 +1691,9 @@
       "ParentIdentifier": "Planet-00003",
       "Name": "Moon",
       "BodyType": "Satellite",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     }
@@ -1986,10 +1704,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Ceres",
       "BodyType": "Asteroid",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     },
@@ -1998,10 +1715,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Pallas",
       "BodyType": "Asteroid",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     },
@@ -2010,10 +1726,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Juno",
       "BodyType": "Asteroid",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     }
@@ -2024,10 +1739,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Haley's",
       "BodyType": "Comet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     },
@@ -2036,10 +1750,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Caeser's",
       "BodyType": "Comet",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     }
@@ -2050,10 +1763,9 @@
       "ParentIdentifier": "Planet-00003",
       "Name": "Space Station V",
       "BodyType": "Habitat",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     },
@@ -2062,10 +1774,9 @@
       "ParentIdentifier": "Planet-00003",
       "Name": "Moon Base 1",
       "BodyType": "Habitat",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     },
@@ -2074,10 +1785,9 @@
       "ParentIdentifier": "Star-00001",
       "Name": "Ceres Station",
       "BodyType": "Habitat",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       }
     }
@@ -2088,10 +1798,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Sol-Bernard",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2121,10 +1830,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Sol-Epsilon Eridani",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2154,10 +1862,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Sol-Procyon",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2187,10 +1894,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Bernard-Sirius",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2220,10 +1926,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Bernard-Ross",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2253,10 +1958,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Procyon-Ceti",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2286,10 +1990,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Procyon-Lalande",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2319,10 +2022,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Lalande-Epsilon Eridani",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2352,10 +2054,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Ross-Aquarii",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2385,10 +2086,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Aquarii-Wolf",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2418,10 +2118,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Sirius-Luyten",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2451,10 +2150,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Kruger-Centauri",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2484,10 +2182,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Kruger-Lacaille",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2517,10 +2214,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Centauri-Lacaille",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2550,10 +2246,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Lacaille-Tau Ceti",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2583,10 +2278,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Lacaille-Gleine",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2616,10 +2310,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Gleine-Kapteyn",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2649,10 +2342,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Kruger-Vista",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2682,10 +2374,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Vista-Bihar",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2715,10 +2406,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Gleine-Inne",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2748,10 +2438,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Groombridge-Bihar",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2781,10 +2470,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Wolf's Den-Siera",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2814,10 +2502,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Siera-Leonis",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2847,10 +2534,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Leonis-Ophir",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2880,10 +2566,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Leonis-TeeGarden",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2913,10 +2598,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: TeeGarden-Van Maanen",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2946,10 +2630,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: TeeGarden-Cancri",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -2979,10 +2662,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Van Maanen-YZ Ceti",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3012,10 +2694,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Van Maanen-Eureka",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3045,10 +2726,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Cancri-Nuone",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3078,10 +2758,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: YZ Ceti-Andromeda",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3111,10 +2790,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Andromeda-Kercur",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3144,10 +2822,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Kercur-Nuone",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3177,10 +2854,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Nuone-Sutter",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3210,10 +2886,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Nuone-Eureka",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3243,10 +2918,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Eureka-Knob",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3276,10 +2950,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Cygni-Epsilon Indi",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3309,10 +2982,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Cygni-Arietis",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3342,10 +3014,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Epsilon Indi-Flare",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3375,10 +3046,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Flare-Lapis",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3408,10 +3078,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Arietis-Demic",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3441,10 +3110,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Arietis-Lapis",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3474,10 +3142,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Flare-Demic",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3507,10 +3174,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Demic-Banawali",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3540,10 +3206,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Demic-Rudra",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3573,10 +3238,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Krell",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3606,10 +3270,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Mobius",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3639,10 +3302,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Bellerophon",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3672,10 +3334,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Adams",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3705,10 +3366,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Krell-Id",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3738,10 +3398,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Krell-Omicron",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3771,10 +3430,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Mobius-Bellerophon",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3804,10 +3462,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Mobius-Id",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3837,10 +3494,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Mobius-Adams",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3870,10 +3526,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Bellerophon-Lacerta",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3903,10 +3558,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Lacerta-Gateway",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "StarSystem",
@@ -3936,10 +3590,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Bridge: Sirius-Wolf's Den",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "Cluster",
@@ -3969,10 +3622,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Bridge: Lalande-Kruger",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "Cluster",
@@ -4002,10 +3654,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Bridge: Van Maanen-Lacaille",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "Cluster",
@@ -4035,10 +3686,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Bridge: Tau Ceti-Cygni",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "Cluster",
@@ -4068,10 +3718,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Bridge: Rudra-Altair",
       "BodyType": "ERBridge",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "BridgeType": "Cluster",
@@ -4103,10 +3752,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Sol",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "ContainerType": "StarSystem",
@@ -4156,10 +3804,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bernard",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 699"
           }
         }
@@ -4211,10 +3858,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Sirius",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 244"
           }
         }
@@ -4266,10 +3912,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Luyten",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 273"
           }
         }
@@ -4303,10 +3948,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Procyon",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 280"
           }
         }
@@ -4358,10 +4002,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Lalande",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 441"
           }
         }
@@ -4413,10 +4056,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Epsilon Eridani",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 144"
           }
         }
@@ -4459,10 +4101,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Ross",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 447"
           }
         }
@@ -4505,10 +4146,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Aquarii",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 866"
           }
         }
@@ -4553,10 +4193,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Wolf",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 406"
           }
         }
@@ -4590,10 +4229,9 @@
       "ParentIdentifier": "Cluster-00001",
       "Name": "Ceti",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 65"
           }
         }
@@ -4628,10 +4266,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Centauri",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 559"
           }
         }
@@ -4676,10 +4313,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Tau Ceti",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 71"
           }
         }
@@ -4722,10 +4358,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Groombridge",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 380"
           }
         }
@@ -4759,10 +4394,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Kruger",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 860"
           }
         }
@@ -4823,10 +4457,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Lacaille",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 825"
           }
         }
@@ -4896,10 +4529,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Gleine",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 725"
           }
         }
@@ -4952,10 +4584,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Kapteyn",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 191"
           }
         }
@@ -4989,10 +4620,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Vista",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 473"
           }
         }
@@ -5036,10 +4666,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bihar",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 1061"
           }
         }
@@ -5082,10 +4711,9 @@
       "ParentIdentifier": "Cluster-00002",
       "Name": "Inne",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "NN 3618"
           }
         }
@@ -5119,10 +4747,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Wolf's Den",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "NN 3622"
           }
         }
@@ -5165,10 +4792,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Andromeda",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 15"
           }
         }
@@ -5212,10 +4838,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Sutter",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 687"
           }
         }
@@ -5249,10 +4874,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Siera",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 234"
           }
         }
@@ -5295,10 +4919,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "YZ Ceti",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 54.1"
           }
         }
@@ -5341,10 +4964,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Kercur",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 3622"
           }
         }
@@ -5387,10 +5009,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Nuone",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 1"
           }
         }
@@ -5451,10 +5072,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Leonis",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 388"
           }
         }
@@ -5506,10 +5126,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Ophir",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "SCR 1845"
           }
         }
@@ -5543,10 +5162,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Cancri",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1111"
           }
         }
@@ -5589,10 +5207,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Eureka",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 440"
           }
         }
@@ -5644,10 +5261,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "TeeGarden",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "SO025300.5+165258"
           }
         }
@@ -5699,10 +5315,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Van Maanen",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 35"
           }
         }
@@ -5763,10 +5378,9 @@
       "ParentIdentifier": "Cluster-00003",
       "Name": "Knob",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "UGPS 0722-05"
           }
         }
@@ -5800,10 +5414,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Cygni",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 820"
           }
         }
@@ -5856,10 +5469,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Epsilon Indi",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 845"
           }
         }
@@ -5904,10 +5516,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Arietis",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 83"
           }
         }
@@ -5959,10 +5570,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Flare",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "DEN 1048-3956"
           }
         }
@@ -6014,10 +5624,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Demic",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 412"
           }
         }
@@ -6078,10 +5687,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Lapis",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 628"
           }
         }
@@ -6124,10 +5732,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Banawali",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 876"
           }
         }
@@ -6161,10 +5768,9 @@
       "ParentIdentifier": "Cluster-00004",
       "Name": "Rudra",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1245"
           }
         }
@@ -6208,10 +5814,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Altair",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 768"
           }
         }
@@ -6281,10 +5886,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Krell",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 702"
           }
         }
@@ -6337,10 +5941,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Mobius",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "GJ 1116"
           }
         }
@@ -6402,10 +6005,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bellerophon",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 205"
           }
         }
@@ -6457,10 +6059,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Id",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 445"
           }
         }
@@ -6503,10 +6104,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Adams",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 251"
           }
         }
@@ -6549,10 +6149,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Lacerta",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 873"
           }
         }
@@ -6595,10 +6194,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Gateway",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 693"
           }
         }
@@ -6632,10 +6230,9 @@
       "ParentIdentifier": "Cluster-00005",
       "Name": "Omicron",
       "BodyType": "StarSystem",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
             "Designation": "Gl 166"
           }
         }
@@ -6673,10 +6270,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Sol Cluster",
       "BodyType": "Cluster",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "ContainerType": "Cluster",
@@ -6723,10 +6319,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Centauri Cluster",
       "BodyType": "Cluster",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "ContainerType": "Cluster",
@@ -6771,10 +6366,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Dwarf Cluster",
       "BodyType": "Cluster",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "ContainerType": "Cluster",
@@ -6828,10 +6422,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Cygni Cluster",
       "BodyType": "Cluster",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "ContainerType": "Cluster",
@@ -6873,10 +6466,9 @@
       "ParentIdentifier": "Sector-00001",
       "Name": "Altair",
       "BodyType": "Cluster",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "ContainerType": "Cluster",
@@ -6923,10 +6515,9 @@
       "ParentIdentifier": null,
       "Name": "Local Sector",
       "BodyType": "Sector",
-      "AllGroupProperties": {
-        "Basic": {
-          "Name": "Basic",
-          "Properties": {}
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
         }
       },
       "ContainerType": "Sector",

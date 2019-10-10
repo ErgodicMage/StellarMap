@@ -16,7 +16,6 @@ namespace StellarMap.Progression
         #region Constructors
         public ProgressionMap()
         {
-
         }
 
         public ProgressionMap(string name) : base(name)

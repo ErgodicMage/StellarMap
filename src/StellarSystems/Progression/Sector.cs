@@ -13,6 +13,10 @@ namespace StellarMap.Progression
     public class Sector : ProgressionContainer
     {
         #region Constructors
+        public Sector()
+        {            
+        }
+        
         public Sector(string name) : base(name, ProgressionConstants.ContainerTypes.Sector)
         {
             ContainerType = ProgressionConstants.ContainerTypes.Sector;
@@ -20,6 +24,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
+        [IgnoreDataMember]
         public IDictionary<string, string> Clusters { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Clusters].Identifiers; } }
         #endregion
 

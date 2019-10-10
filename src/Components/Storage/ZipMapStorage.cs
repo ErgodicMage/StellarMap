@@ -64,9 +64,9 @@ namespace StellarMap.Storage
             //stream.Finish(); // this writes the entries at the end of the zip stream but does not close the stream.
         }
 
-        public bool Retreive(StreamReader reader, IStellarMap map)
+        public T Retreive<T>(StreamReader reader)  where T : IStellarMap, new()
         {
-            bool bret = true;
+            T map = new T();
 
             ZipConstants.DefaultCodePage = Encoding.UTF8.CodePage;
             byte[] buffer = new byte[4096];            
@@ -98,14 +98,14 @@ namespace StellarMap.Storage
                             Type t = map.GetTypeOfBody(bodytype);
                             object data = JsonConvert.DeserializeObject(json, t);
 
-                            bret = map.SetBody(bodytype, data);
+                            map.SetBody(bodytype, data);
                         }
                     }
 
                 }
             }
 
-            return bret;
+            return map;
         }
     }
 }

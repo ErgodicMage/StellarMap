@@ -9,7 +9,7 @@ namespace StellarMap.Core.Types
         string ParentIdentifier { get; set; }
         string Name { get; set; }
         string BodyType { get; set; }
-        IDictionary<string, GroupProperties> AllGroupProperties { get; set; }
+        GroupedProperties Properties { get; set; }
 
         IStellarMap Map { get; set; }
     }
