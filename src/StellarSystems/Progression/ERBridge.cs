@@ -13,6 +13,10 @@ namespace StellarMap.Progression
     public class ERBridge : StellarBody
     {
         #region Constructors
+        public ERBridge()
+        {            
+        }
+        
         public ERBridge(string type, StarSystem system1, StarSystem system2) : base(string.Empty, ProgressionConstants.BodyType.ERBridge)
         {
             BodyType = ProgressionConstants.BodyType.ERBridge;

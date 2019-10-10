@@ -21,8 +21,11 @@ namespace StellarMap.GenerateMaps
         {
             //LocateStarsInCube(20);
 
-            //GenerateLocalSector();
-            //RetrieveLocalSector();
+            JsonGenerateLocalSector();
+            JsonRetrieveLocalSector();
+
+            ZipGenerateLocalSector();
+            ZipRetrieveLocalSector();
 
             StoreSolarSystem();
             RetrieveSolarSystem();
@@ -32,7 +35,43 @@ namespace StellarMap.GenerateMaps
 
         static string dir = "/home/harry/Development/StellarMap/Data/";
 
-        public static void GenerateLocalSector()
+        public static void JsonGenerateLocalSector()
+        {
+            ProgressionMap localsector = new ProgressionMap("Local Sector");
+
+            LocalSectorMap create = new LocalSectorMap(localsector);
+            create.CreateLocalSector();
+
+            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+
+            string filename = dir + "LocalSector.json";
+
+            if (File.Exists(filename))
+                File.Delete(filename);
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            {
+                store.Store(localsector, writer);
+            }
+        }
+
+        public static void JsonRetrieveLocalSector()
+        {
+            string filename = dir + "LocalSector.json";
+
+            //if (!File.Exists(filename))
+                //GenerateLocalSector();
+
+            IStellarMap map;
+            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                map = store.Retreive<ProgressionMap>(reader);
+            }
+        }
+
+        public static void ZipGenerateLocalSector()
         {
             ProgressionMap localsector = new ProgressionMap("Local Sector");
 
@@ -52,22 +91,21 @@ namespace StellarMap.GenerateMaps
             }
         }
 
-        public static void RetrieveLocalSector()
+        public static void ZipRetrieveLocalSector()
         {
-            string filename = dir + "LocalSector.json";
+            string filename = dir + "LocalSector.zip";
 
             //if (!File.Exists(filename))
                 //GenerateLocalSector();
 
-            IStellarMap map = new ProgressionMap();
-            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+            IStellarMap map;
+            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
             using (StreamReader reader = new StreamReader(filename))
             {
-                store.Retreive(reader, map);
+                map = store.Retreive<ProgressionMap>(reader);
             }
         }
-
         public static void StoreSolarSystem()
         {
             IStellarMap map = SolarSystem.CreateSolSystem();
@@ -92,12 +130,12 @@ namespace StellarMap.GenerateMaps
             if (!File.Exists(filename))
                 StoreSolarSystem();
 
-            IStellarMap map = new BaseStellarMap();
+            IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
             using (StreamReader reader = new StreamReader(filename))
             {
-                store.Retreive(reader, map);
+                map = store.Retreive<BaseStellarMap>(reader);
             }
         }
 

@@ -12,6 +12,10 @@ namespace StellarMap.Progression
     public class ProgressionContainer : StellarParentBody
     {
         #region Constructors
+        public ProgressionContainer()
+        {            
+        }
+        
         public ProgressionContainer(string name, string bodytype) : base(name, bodytype)
         {
             ContainerGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-ProgressionContainer");
@@ -25,6 +29,7 @@ namespace StellarMap.Progression
         [DataMember(Order = 12)]
         public GroupNamedIdentifiers ContainerGroupIdentifiers { get; set; }
 
+        [IgnoreDataMember]
         public IDictionary<string, string> Bridges { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges].Identifiers; } }
         #endregion
 

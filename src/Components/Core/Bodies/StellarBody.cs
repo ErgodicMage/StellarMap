@@ -13,6 +13,10 @@ namespace StellarMap.Core.Bodies
     public abstract class StellarBody : IStellarBody
     {
         #region Cosntructors
+        public StellarBody()
+        {            
+        }
+        
         public StellarBody(string name, string bodytype)
         {
             Properties = new GroupedProperties("Basic");
@@ -41,6 +45,7 @@ namespace StellarMap.Core.Bodies
         [DataMember (Order = 5)]
         public GroupedProperties Properties { get; set; }
 
+        [IgnoreDataMember]
         public IDictionary<string, string> BasicProperties { get { return Properties.GetProperties("Basic"); } }
 
         public IStellarMap Map { get; set; }
@@ -50,6 +55,11 @@ namespace StellarMap.Core.Bodies
     public abstract class StellarParentBody : StellarBody, IStellarParentBody
     {
         #region Constructors
+        public StellarParentBody()
+        {
+
+        }
+        
         public StellarParentBody(string name, string bodytype) : base(name, bodytype)
         {
         }

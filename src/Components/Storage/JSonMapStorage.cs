@@ -26,13 +26,13 @@ namespace StellarMap.Storage
             writer.Write(json);
         }
 
-        public bool Retreive(StreamReader reader, IStellarMap map)
+        public T Retreive<T>(StreamReader reader) where T : IStellarMap, new()
         {
             string json = reader.ReadToEnd();
 
-            map = JsonConvert.DeserializeObject(json) as IStellarMap;
+            T map = JsonConvert.DeserializeObject<T>(json);
 
-            return (map == null) ? false : true;
+            return map;
         }
     }
 }

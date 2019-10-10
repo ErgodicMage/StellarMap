@@ -13,6 +13,10 @@ namespace StellarMap.Progression
     public class ProgressionStar : Star
     {
         #region Consturctors
+        public ProgressionStar()
+        {            
+        }
+        
         public ProgressionStar(string name) : base(name)
         {
             StarGroupIdentifiers.Name = "GroupIdentifiers-ProgressionStar";
@@ -20,6 +24,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region Public Properties
+        [IgnoreDataMember]
         public IDictionary<string, string> Habitats { get { return StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats].Identifiers; } }
         #endregion
 

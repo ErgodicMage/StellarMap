@@ -50,12 +50,12 @@ namespace StorageTests
             if (!File.Exists(filename))
                 JsonStoreLocalSector();
 
-            IStellarMap map = new ProgressionMap();
+            IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
             using (StreamReader reader = new StreamReader(filename))
             {
-                store.Retreive(reader, map);
+                map = store.Retreive<ProgressionMap>(reader);
             }
         }
 
@@ -88,12 +88,12 @@ namespace StorageTests
             if (!File.Exists(filename))
                 ZipStoreLocalSector();
 
-            IStellarMap map = new ProgressionMap();
+            IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
             using (StreamReader reader = new StreamReader(filename))
             {
-                store.Retreive(reader, map);
+                map = store.Retreive<ProgressionMap>(reader);
             }
 
             // now serialize it to json file to inspect

@@ -1,0 +1,268 @@
+{
+  "Name": "SolarSystem",
+  "Stars": {
+    "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab": {
+      "Identifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "ParentIdentifier": null,
+      "Name": "Sol",
+      "BodyType": "Star",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {
+            "StellarClass": "G2V"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Star",
+        "GroupIdentifiers": {
+          "Planets": {
+            "Name": "Planets",
+            "Identifiers": {
+              "Mercury": "18ccc2f2-5e37-43c4-8023-6c01b0394755",
+              "Venus": "e16093de-f71b-466a-8f30-b5b28cb71969",
+              "Earth": "2746533a-6143-4efa-a118-7b1e9a87b090",
+              "Mars": "46dfcbc9-0fe8-4699-a69b-6ceff3e4bfe6",
+              "Jupiter": "f0fb3771-5aab-4b85-a924-5c283a23c2d3",
+              "Saturn": "17abe1a6-41f9-49c3-809d-25da3e75f73a",
+              "Uranus": "0f3b7bf3-b76b-453e-b4c1-cc47dc941b5e",
+              "Neptune": "1904265b-7eb5-4bd2-830f-09f747573090",
+              "Pluto": "53803e56-fd60-4207-b31c-31f13fe4529d"
+            }
+          },
+          "Asteroids": {
+            "Name": "Asteroids",
+            "Identifiers": {
+              "Ceres": "6faa82f9-07ee-4c30-9c4c-75a69dcd0ef1",
+              "Pallas": "cc8a79db-1b18-4a50-bd00-4080521d81b9",
+              "Juno": "5bcec14a-7000-4082-99db-87ca039147ef"
+            }
+          },
+          "Comets": {
+            "Name": "Comets",
+            "Identifiers": {
+              "Haley's": "7993c6d0-fa82-4368-9c47-8bfc6d9d8258",
+              "Caeser's": "32fcfdb7-b90c-4001-bc78-ca9dad62ebb9"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Planets": {
+    "18ccc2f2-5e37-43c4-8023-6c01b0394755": {
+      "Identifier": "18ccc2f2-5e37-43c4-8023-6c01b0394755",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Mercury",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "e16093de-f71b-466a-8f30-b5b28cb71969": {
+      "Identifier": "e16093de-f71b-466a-8f30-b5b28cb71969",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Venus",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "2746533a-6143-4efa-a118-7b1e9a87b090": {
+      "Identifier": "2746533a-6143-4efa-a118-7b1e9a87b090",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Earth",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {
+          "Satellites": {
+            "Name": "Satellites",
+            "Identifiers": {
+              "Moon": "4e014824-e643-4709-bdab-9f347ff1e7a8"
+            }
+          }
+        }
+      }
+    },
+    "46dfcbc9-0fe8-4699-a69b-6ceff3e4bfe6": {
+      "Identifier": "46dfcbc9-0fe8-4699-a69b-6ceff3e4bfe6",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Mars",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "f0fb3771-5aab-4b85-a924-5c283a23c2d3": {
+      "Identifier": "f0fb3771-5aab-4b85-a924-5c283a23c2d3",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Jupiter",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "17abe1a6-41f9-49c3-809d-25da3e75f73a": {
+      "Identifier": "17abe1a6-41f9-49c3-809d-25da3e75f73a",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Saturn",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "0f3b7bf3-b76b-453e-b4c1-cc47dc941b5e": {
+      "Identifier": "0f3b7bf3-b76b-453e-b4c1-cc47dc941b5e",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Uranus",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "1904265b-7eb5-4bd2-830f-09f747573090": {
+      "Identifier": "1904265b-7eb5-4bd2-830f-09f747573090",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Neptune",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "53803e56-fd60-4207-b31c-31f13fe4529d": {
+      "Identifier": "53803e56-fd60-4207-b31c-31f13fe4529d",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Pluto",
+      "BodyType": "Planet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    }
+  },
+  "Satellites": {
+    "4e014824-e643-4709-bdab-9f347ff1e7a8": {
+      "Identifier": "4e014824-e643-4709-bdab-9f347ff1e7a8",
+      "ParentIdentifier": null,
+      "Name": "Moon",
+      "BodyType": "Satellite",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Asteroids": {
+    "6faa82f9-07ee-4c30-9c4c-75a69dcd0ef1": {
+      "Identifier": "6faa82f9-07ee-4c30-9c4c-75a69dcd0ef1",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Ceres",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      }
+    },
+    "cc8a79db-1b18-4a50-bd00-4080521d81b9": {
+      "Identifier": "cc8a79db-1b18-4a50-bd00-4080521d81b9",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Pallas",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      }
+    },
+    "5bcec14a-7000-4082-99db-87ca039147ef": {
+      "Identifier": "5bcec14a-7000-4082-99db-87ca039147ef",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Juno",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Comets": {
+    "7993c6d0-fa82-4368-9c47-8bfc6d9d8258": {
+      "Identifier": "7993c6d0-fa82-4368-9c47-8bfc6d9d8258",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Haley's",
+      "BodyType": "Comet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      }
+    },
+    "32fcfdb7-b90c-4001-bc78-ca9dad62ebb9": {
+      "Identifier": "32fcfdb7-b90c-4001-bc78-ca9dad62ebb9",
+      "ParentIdentifier": "4a0bdfd5-c5b2-4abd-a2b5-2f93ad3ec9ab",
+      "Name": "Caeser's",
+      "BodyType": "Comet",
+      "Properties": {
+        "AllProperties": {
+          "Basic": {}
+        }
+      }
+    }
+  }
+}

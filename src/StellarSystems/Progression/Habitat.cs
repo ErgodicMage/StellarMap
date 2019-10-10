@@ -14,6 +14,10 @@ namespace StellarMap.Progression
     public class Habitat : StellarBody
     {
         #region Constructors
+        public Habitat()
+        {            
+        }
+        
         public Habitat(string name) : base (name, ProgressionConstants.BodyType.Habitat)
         {
         }

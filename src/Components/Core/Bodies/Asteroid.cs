@@ -11,6 +11,10 @@ namespace StellarMap.Core.Bodies
     public class Asteroid : StellarBody
     {
         #region Constructors
+        public Asteroid()
+        {            
+        }
+
         public Asteroid(string name) : base(name, Constants.BodyTypes.Asteroid)
         {
         }

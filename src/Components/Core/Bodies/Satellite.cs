@@ -11,6 +11,10 @@ namespace StellarMap.Core.Bodies
     public class Satellite : StellarBody
     {
         #region Constructors
+        public Satellite()
+        {
+        }
+
         public Satellite(string name) : base(name, Constants.BodyTypes.Satellite)
         {
         }

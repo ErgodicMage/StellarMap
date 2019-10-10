@@ -11,6 +11,10 @@ namespace StellarMap.Core.Bodies
     public class Comet : StellarBody
     {
         #region Constructors
+        public Comet() : base()
+        {            
+        }
+
         public Comet(string name) : base(name, Constants.BodyTypes.Comet)
         {
         }

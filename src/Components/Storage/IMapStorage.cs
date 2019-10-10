@@ -12,6 +12,6 @@ namespace StellarMap.Storage
     {
         void Store(IStellarMap map, StreamWriter writer);
 
-        bool Retreive(StreamReader reader, IStellarMap map);
+        T Retreive<T>(StreamReader reader) where T : IStellarMap, new();
     }
 }

@@ -14,6 +14,10 @@ namespace StellarMap.Core.Bodies
     public class Planet : StellarParentBody
     {
         #region Cosntructors
+        public Planet()
+        {            
+        }
+        
         public Planet(string name) : base(name, Constants.BodyTypes.Planet)
         {
             PlanetGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-Planet");
@@ -24,6 +28,7 @@ namespace StellarMap.Core.Bodies
         [DataMember(Order = 11)]
         public GroupNamedIdentifiers PlanetGroupIdentifiers { get; set; }
 
+        [IgnoreDataMember]
         public IDictionary<string, string> Satellites { get { return PlanetGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Satellites].Identifiers; } }
         #endregion
 
