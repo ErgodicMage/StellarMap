@@ -22,7 +22,7 @@ namespace StellarMap.Core.Types
         #endregion
 
         [DataMember (Order = 1)]
-        public IDictionary<string, IDictionary<string, string>> AllProperties;
+        public IDictionary<string, IDictionary<string, string>> AllProperties { get; set;}
 
         #region Indexers
         public IDictionary<string, string> this[string group] => AllProperties[group];

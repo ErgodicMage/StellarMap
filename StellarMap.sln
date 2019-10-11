@@ -53,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateMaps", "src\Applications\GenerateMaps\GenerateMaps.csproj", "{25F1CD69-B650-451A-8ECD-A4A4B0B04956}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreTests", "tests\CoreTests\CoreTests.csproj", "{D7D981B0-2E29-4C33-B76B-3EBC7E020319}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{25F1CD69-B650-451A-8ECD-A4A4B0B04956}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25F1CD69-B650-451A-8ECD-A4A4B0B04956}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25F1CD69-B650-451A-8ECD-A4A4B0B04956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D981B0-2E29-4C33-B76B-3EBC7E020319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D981B0-2E29-4C33-B76B-3EBC7E020319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D981B0-2E29-4C33-B76B-3EBC7E020319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D981B0-2E29-4C33-B76B-3EBC7E020319}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -135,6 +141,7 @@ Global
 		{4A5DFB54-1BF7-4E14-B4CE-10E7B6D32DB5} = {B833C15F-7913-4F34-BA0A-D0742AD8A8B6}
 		{8C991363-2C2A-4D2D-89BC-6EFE60D3B2D1} = {AE400E61-F442-43B2-AB3E-986E2F0FD3AA}
 		{25F1CD69-B650-451A-8ECD-A4A4B0B04956} = {56A66D20-C56F-11E9-B024-BD9A4BF73668}
+		{D7D981B0-2E29-4C33-B76B-3EBC7E020319} = {B833C15F-7913-4F34-BA0A-D0742AD8A8B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3088D9F5-33E7-427C-BC8A-EF8AE66CB4D9}
