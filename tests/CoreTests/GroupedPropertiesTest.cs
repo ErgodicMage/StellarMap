@@ -13,10 +13,10 @@ namespace CoreTests
         private const string NotDefault = "NotDefault";
         private const string Name = "Name";
         private const string NotName = "NotName";
-        private const string NameValue = "Harry Miller";
-        private const string NotNameValue = "Not Harry Miller";
+        private const string NameValue = "Ergodic Mage";
+        private const string NotNameValue = "Not Ergodic Mage";
         private const string Email = "Email";
-        private const string EmailValue = "harry.miller@rrd.com";
+        private const string EmailValue = "ErgodicMage@gmail.com";
 
         [TestMethod]
         //[TestCategory(TestCategories.UnitTest)]
