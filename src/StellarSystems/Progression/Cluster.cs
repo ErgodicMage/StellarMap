@@ -29,36 +29,14 @@ namespace StellarMap.Progression
         #endregion
 
         #region Get Methods
-        public virtual StarSystem GetStarSystem(string name) => Get<StarSystem>(name);
+        public virtual StarSystem GetStarSystem(string name) => Get<StarSystem>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
 
-        public virtual IDictionary<string, StarSystem> GetStarSystems() => GetAll<StarSystem>();
+        public virtual IDictionary<string, StarSystem> GetStarSystems() => GetAll<StarSystem>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
         #endregion
 
         #region Add Methods
-        public void Add(StarSystem system) => Add<StarSystem>(system);
+        public void Add(StarSystem system) => Add<StarSystem>(system, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
         #endregion
 
-        #region Protected Methods
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
-
-            if (identifiers == null)
-            {
-                if (name == ProgressionConstants.BodyType.StarSystem)
-                {
-                    if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.StarSystems))
-                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.StarSystems];
-                    else if (create)
-                    {
-                        ContainerGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.StarSystems);
-                        identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.StarSystems];
-                    }
-                }
-            }
-
-            return identifiers;
-        }
-        #endregion
     }
 }

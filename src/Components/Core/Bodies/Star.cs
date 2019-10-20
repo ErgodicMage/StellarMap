@@ -39,65 +39,26 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region Get Functions
-        public virtual Planet GetPlanet(string name) => Get<Planet>(name);
+        public virtual Planet GetPlanet(string name) => Get<Planet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-        public virtual IDictionary<string, Planet> GetPlanets() => GetAll<Planet>();
+        public virtual IDictionary<string, Planet> GetPlanets() => GetAll<Planet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-        public virtual Asteroid GetAsteroid(string name) => Get<Asteroid>(name);
+        public virtual Asteroid GetAsteroid(string name) => Get<Asteroid>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-        public virtual IDictionary<string, Asteroid> GetAsteroids() => GetAll<Asteroid>();
+        public virtual IDictionary<string, Asteroid> GetAsteroids() => GetAll<Asteroid>(StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-        public virtual Comet GetComet(string name) => Get<Comet>(name);
+        public virtual Comet GetComet(string name) => Get<Comet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
 
-        public virtual IDictionary<string, Comet> GetComets() => GetAll<Comet>();
+        public virtual IDictionary<string, Comet> GetComets() => GetAll<Comet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
         #endregion
 
         #region Public Add Functions
-        public void Add(Planet planet) => Add<Planet>(planet);
+        public void Add(Planet planet) => Add<Planet>(planet, StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-        public void Add(Asteroid asteroid) => Add<Asteroid>(asteroid);
+        public void Add(Asteroid asteroid) => Add<Asteroid>(asteroid, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-        public void Add(Comet comet) => Add<Comet>(comet);
+        public void Add(Comet comet) => Add<Comet>(comet, StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
         #endregion
 
-        #region Protected Functions
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = null;
-
-            switch (name)
-            {
-                case Constants.BodyTypes.Planet:
-                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Planets))
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
-                    else if (create)
-                    {
-                        StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Planets);
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
-                    }
-                    break;
-                case Constants.BodyTypes.Asteroid:
-                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Asteroids))
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Asteroids];
-                    else if (create)
-                    {
-                        StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Asteroids);
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Asteroids];
-                    }
-                    break;
-                case Constants.BodyTypes.Comet:
-                    if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Comets))
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Comets];
-                    else if (create)
-                    {
-                        StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Comets);
-                        identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Comets];
-                    }
-                    break;
-            }
-            return identifiers;
-        }
-
-        #endregion
     }
 }

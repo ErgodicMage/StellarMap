@@ -29,33 +29,14 @@ namespace StellarMap.Progression
         #endregion
 
         #region Get Methods
-        public virtual Cluster GetCluster(string name) => Get<Cluster>(name);
+        public virtual Cluster GetCluster(string name) => Get<Cluster>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
 
-        public virtual IDictionary<string, Cluster> GetClusters() => GetAll<Cluster>();
+        public virtual IDictionary<string, Cluster> GetClusters() => GetAll<Cluster>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
         #endregion
 
         #region Add Methods
-        public void Add(Cluster cluster) => Add<Cluster>(cluster);
+        public void Add(Cluster cluster) => Add<Cluster>(cluster, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
         #endregion
 
-        #region Protected Methods
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
-
-            if (identifiers == null && name == ProgressionConstants.BodyType.Cluster)
-            {
-                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.Clusters))
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Clusters];
-                else if (create)
-                {
-                    ContainerGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.Clusters);
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Clusters];
-                }
-            }
-
-            return identifiers;
-        }
-        #endregion
     }
 }

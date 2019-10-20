@@ -32,13 +32,13 @@ namespace StellarMap.Progression
         #endregion
 
         #region Get Methods
-        public virtual ProgressionStar GetStar(string name) => (ProgressionStar)Get<Star>(name);
+        public virtual ProgressionStar GetStar(string name) => (ProgressionStar)Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
 
-        public virtual IDictionary<string, Star> GetStars() => GetAll<Star>();
+        public virtual IDictionary<string, Star> GetStars() => GetAll<Star>(ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
         #endregion
 
         #region Add Methods
-        public void Add(ProgressionStar star) => Add<Star>(star);
+        public void Add(ProgressionStar star) => Add<Star>(star, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
 
         public void Add(Portal portal)
         {
@@ -48,24 +48,5 @@ namespace StellarMap.Progression
         }
         #endregion
 
-        #region Protected Methods
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
-
-            if (identifiers == null && (name == Constants.BodyTypes.Star || name == ProgressionConstants.BodyType.ProgressionStar))
-            {
-                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Stars))
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars];
-                else if (create)
-                {
-                    ContainerGroupIdentifiers.Add(Constants.NamedIdentifiers.Stars);
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars];
-                }
-            }
-
-            return identifiers;
-        }
-        #endregion
     }
 }

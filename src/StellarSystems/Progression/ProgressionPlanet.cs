@@ -29,33 +29,14 @@ namespace StellarMap.Progression
         #endregion
 
         #region Get Methods
-        public virtual Habitat GeHabitat(string name) => Get<Habitat>(name);
+        public virtual Habitat GeHabitat(string name) => Get<Habitat>(name, PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
-        public virtual IDictionary<string, Habitat> GetHabitats() => GetAll<Habitat>();
+        public virtual IDictionary<string, Habitat> GetHabitats() => GetAll<Habitat>(PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
         #endregion
 
         #region Add Methods
-        public void Add(Habitat habitat) => Add<Habitat>(habitat);
+        public void Add(Habitat habitat) => Add<Habitat>(habitat, PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
         #endregion
 
-        #region Protected Methods
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
-
-            if (identifiers == null && name == ProgressionConstants.BodyType.Habitat)
-            {
-                if (PlanetGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.Habitats))
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
-                else if (create)
-                {
-                    PlanetGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.Habitats);
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
-                }
-            }
-
-            return identifiers;
-        }
-        #endregion
     }
 }

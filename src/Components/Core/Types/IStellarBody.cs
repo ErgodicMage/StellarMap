@@ -16,10 +16,10 @@ namespace StellarMap.Core.Types
 
     public interface IStellarParentBody : IStellarBody
     {
-        T Get<T> (string name) where T : IStellarBody;
+        T Get<T> (string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody;
 
-        IDictionary<string, T> GetAll<T>() where T : IStellarBody;
+        IDictionary<string, T> GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody;
 
-        void Add<T>(T t)  where T : IStellarBody;
+        void Add<T>(T t, GroupNamedIdentifiers groupIdentifiers, string groupName)  where T : IStellarBody;
     }
 }

@@ -29,51 +29,18 @@ namespace StellarMap.Progression
         #endregion
 
         #region Get Methods
-        public virtual Habitat GeHabitat(string name) => Get<Habitat>(name);
+        public virtual Habitat GeHabitat(string name) => Get<Habitat>(name, StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
-        public virtual IDictionary<string, Habitat> GetHabitats() => GetAll<Habitat>();
+        public virtual IDictionary<string, Habitat> GetHabitats() => GetAll<Habitat>(StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
         #endregion
 
         #region Add Methods
-        public void Add(Habitat habitat) => Add<Habitat>(habitat);
+        public void Add(Habitat habitat) => Add<Habitat>(habitat, StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
         #endregion
 
         #region Public Methods
         #endregion
 
-        #region Protected Methods
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
-
-            if (identifiers == null)
-            {
-                switch (name)
-                {
-                    case ProgressionConstants.BodyType.Habitat:
-                        if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.Habitats))
-                            identifiers = StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
-                        else if (create)
-                        {
-                            StarGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.Habitats);
-                            identifiers = StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats];
-                        }
-                        break;
-                    case "ProgressionPlanet":
-                        if (StarGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Planets))
-                            identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
-                        else if (create)
-                        {
-                            StarGroupIdentifiers.Add(Constants.NamedIdentifiers.Planets);
-                            identifiers = StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets];
-                        }
-                        break;
-                }
-            }
-
-            return identifiers;
-        }
-        #endregion
     }
 }

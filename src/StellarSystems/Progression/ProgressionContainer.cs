@@ -34,33 +34,14 @@ namespace StellarMap.Progression
         #endregion
 
         #region Get Methods
-        public virtual ERBridge GetBridge(string name) => Get<ERBridge>(name);
+        public virtual ERBridge GetBridge(string name) => Get<ERBridge>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
 
-        public virtual IDictionary<string, ERBridge> GetBridges() => GetAll<ERBridge>();
+        public virtual IDictionary<string, ERBridge> GetBridges() => GetAll<ERBridge>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
         #endregion
 
         #region Add Methods
-        public void Add(ERBridge bridge) => Add<ERBridge>(bridge);
+        public void Add(ERBridge bridge) => Add<ERBridge>(bridge, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
         #endregion
 
-        #region Protected Functions
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = base.GetBodyNamedIdentifiers(name, create);
-
-            if (identifiers == null && name == ProgressionConstants.BodyType.ERBridge)
-            {
-                if (ContainerGroupIdentifiers.GroupIdentifiers.ContainsKey(ProgressionConstants.NamedIdentifiers.ERBridges))
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges];
-                else if (create)
-                {
-                    ContainerGroupIdentifiers.Add(ProgressionConstants.NamedIdentifiers.ERBridges);
-                    identifiers = ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges];
-                }
-            }
-
-            return identifiers;
-        }
-        #endregion
     }
 }

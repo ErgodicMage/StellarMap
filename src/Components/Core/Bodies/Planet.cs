@@ -33,33 +33,14 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region Get Functions
-        public virtual Satellite GetSatellite(string name) => Get<Satellite>(name);
+        public virtual Satellite GetSatellite(string name) => Get<Satellite>(name, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
 
-        public virtual IDictionary<string, Satellite> GetSatellites() => GetAll<Satellite>();
+        public virtual IDictionary<string, Satellite> GetSatellites() => GetAll<Satellite>(PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
         #endregion
 
         #region Public Add Functions
-        public void Add(Satellite satellite) => Add<Satellite>(satellite);
+        public void Add(Satellite satellite) => Add<Satellite>(satellite, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
         #endregion
 
-        #region Protected Functions
-        protected override BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            BodyNamedIdentifiers identifiers = null;
-
-            if (name == Constants.BodyTypes.Satellite)
-            {
-                if (PlanetGroupIdentifiers.GroupIdentifiers.ContainsKey(Constants.NamedIdentifiers.Satellites))
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Satellites];
-                else if (create)
-                {
-                    PlanetGroupIdentifiers.Add(Constants.NamedIdentifiers.Satellites);
-                    identifiers = PlanetGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Satellites];
-                }
-            }
-
-            return identifiers;
-        }
-        #endregion
     }
 }

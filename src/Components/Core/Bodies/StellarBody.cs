@@ -59,48 +59,44 @@ namespace StellarMap.Core.Bodies
         {
 
         }
-        
+
         public StellarParentBody(string name, string bodytype) : base(name, bodytype)
         {
         }
         #endregion
 
         #region Get Methods
-        public virtual T Get<T>(string name) where T : IStellarBody
+        public virtual T Get<T>(string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
         {
             T t = default(T);
 
             Type ty = typeof(T);
-            BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, false);
+            BodyNamedIdentifiers identifiers = null;
+            string id = string.Empty;
 
-            if (identifiers != null)
-            {
-                if (identifiers.Identifiers.ContainsKey(name))
-                {
-                    string id = identifiers.Identifiers[name];
-                    t = Map.Get<T>(id);
-                }
-            }
+            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers) && identifiers.Identifiers.TryGetValue(name, out id))
+                t = Map.Get<T>(id);
 
             return t;
 
         }
 
-        public virtual IDictionary<string, T> GetAll<T>() where T : IStellarBody
+        public virtual IDictionary<string, T> GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
         {
             Type ty = typeof(T);
-            BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, false);
+            BodyNamedIdentifiers identifiers = null;
+            IDictionary<string, T> all = null;
 
-            if (identifiers == null)
-                return null;
-
-            IDictionary<string, T> all = new Dictionary<string, T>();
-
-            foreach(var kvp in identifiers.Identifiers)
+            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers))
             {
-                T t = Map.Get<T>(kvp.Value);
-                if (t != null)
-                    all.Add(kvp.Key, t);
+                all = new Dictionary<string, T>();
+
+                foreach (var kvp in identifiers.Identifiers)
+                {
+                    T t = Map.Get<T>(kvp.Value);
+                    if (t != null)
+                        all.Add(kvp.Key, t);
+                }
             }
 
             return all;
@@ -108,7 +104,7 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region Add Methods
-        public virtual void Add<T>(T t) where T : IStellarBody
+        public virtual void Add<T>(T t, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
         {
             if (t != null)
             {
@@ -119,18 +115,16 @@ namespace StellarMap.Core.Bodies
                     Map.Add<T>(t);
 
                 Type ty = typeof(T);
-                BodyNamedIdentifiers identifiers = GetBodyNamedIdentifiers(ty.Name, true);
+                BodyNamedIdentifiers identifiers = null;
 
-                if (identifiers != null)
+                if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers))
                     identifiers.Add(t.Name, t.Identifier);
+                else
+                {
+                    groupIdentifiers.Add(groupName);
+                    groupIdentifiers.GroupIdentifiers[groupName].Add(t.Name, t.Identifier);
+                }
             }
-        }
-        #endregion
-
-        #region Protected Methods
-        protected virtual BodyNamedIdentifiers GetBodyNamedIdentifiers(string name, bool create)
-        {
-            return null;
         }
         #endregion
     }
