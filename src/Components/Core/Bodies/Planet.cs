@@ -29,7 +29,7 @@ namespace StellarMap.Core.Bodies
         public GroupNamedIdentifiers PlanetGroupIdentifiers { get; set; }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> Satellites { get { return PlanetGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Satellites].Identifiers; } }
+        public IDictionary<string, string> Satellites { get { return PlanetGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Satellites); } }
         #endregion
 
         #region Get Functions

@@ -25,7 +25,7 @@ namespace StellarMap.Progression
 
         #region Public Properties
         [IgnoreDataMember]
-        public IDictionary<string, string> StarSystems { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.StarSystems].Identifiers; } }
+        public IDictionary<string, string> StarSystems { get { return ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.StarSystems); } }
         #endregion
 
         #region Get Methods

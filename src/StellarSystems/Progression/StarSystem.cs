@@ -25,7 +25,7 @@ namespace StellarMap.Progression
 
         #region Public Properties
         [IgnoreDataMember]
-        public IDictionary<string, string> Stars { get { return ContainerGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Stars].Identifiers; } }
+        public IDictionary<string, string> Stars { get { return ContainerGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Stars); } }
 
         [DataMember(Order = 21)]
         public IList<Portal> Portals { get; set; }
