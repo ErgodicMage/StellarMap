@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StellarMap.Core.Types
 {
-    public class NestedDictionary<TOuter, TInner, TValue> : Dictionary<TOuter, Dictionary<TInner, TValue>>
+    public class NestedDictionary<TOuter, TInner, TValue> : Dictionary<TOuter, Dictionary<TInner, TValue>>, IEquatable<NestedDictionary<TOuter, TInner, TValue>>
     {
         #region Constructors
         #endregion
@@ -168,6 +168,80 @@ namespace StellarMap.Core.Types
 
             return sb.ToString();
         }
+        #endregion
+
+        #region IEquatable
+        public bool Equals(NestedDictionary<TOuter, TInner, TValue> other)
+        {
+            bool bRet = true;
+
+            if (other == null)
+                bRet = false;
+            else if (this.Count != other.Count)
+                bRet = false;
+            else if (!ReferenceEquals(this, other))
+            {
+                var thisEnumerator = GetEnumerator();
+                var otherEnumerator = other.GetEnumerator();
+
+                while (thisEnumerator.MoveNext() && otherEnumerator.MoveNext())
+                {
+                    if (thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
+                    {
+                        if (!InnerEquals(thisEnumerator.Current.Value, otherEnumerator.Current.Value))
+                        {
+                            bRet = false;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        bRet = false;
+                        break;
+                    }
+                }
+            }
+
+            return bRet;
+        }
+
+        private static bool InnerEquals(Dictionary<TInner, TValue> thisObject, Dictionary<TInner, TValue> otherObject)
+        {
+            bool bRet = true;
+
+            if ((thisObject == null) || (otherObject == null))
+                bRet = false;
+            else if (thisObject.Count != otherObject.Count)
+                bRet = false;
+            else if (!ReferenceEquals(thisObject, otherObject))
+            {
+                var thisEnumerator = thisObject.GetEnumerator();
+                var otherEnumerator = otherObject.GetEnumerator();
+
+                while (thisEnumerator.MoveNext() && otherEnumerator.MoveNext())
+                {
+                    if (thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
+                    {
+                        if (!thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value))
+                        {
+                            bRet = false;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        bRet = false;
+                        break;
+                    }
+                }
+            }
+
+            return bRet;
+        }
+
+        public override bool Equals(object o) => (o is NestedDictionary<TOuter, TInner, TValue>) && Equals(o as NestedDictionary<TOuter, TInner, TValue>);
+
+        public override int GetHashCode() => base.GetHashCode();
         #endregion
     }
 }

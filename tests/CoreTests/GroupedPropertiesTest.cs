@@ -16,7 +16,9 @@ namespace CoreTests
         private const string NameValue = "Ergodic Mage";
         private const string NotNameValue = "Not Ergodic Mage";
         private const string Email = "Email";
+        private const string NotEmail = "NotEmail";
         private const string EmailValue = "ErgodicMage@gmail.com";
+        private const string NotEmailValue = "NotErgodicMage@gmail.com";
 
         [TestMethod]
         //[TestCategory(TestCategories.UnitTest)]
@@ -440,6 +442,93 @@ namespace CoreTests
             //string expected = TestingUtilities.ReadResource("GroupedPropertiesToStringValue.txt");
 
             //Assert.AreEqual(expected, retValue);
+        }
+
+        [TestMethod]
+        //[TestCategory(TestCategories.UnitTest)]
+        public void EqualsTest()
+        {
+            GroupedProperties groupProperties = new GroupedProperties();
+            groupProperties.Add(Default);
+            groupProperties.Add(Default, Name, NameValue);
+            groupProperties.Add(Default, Email, EmailValue);
+
+            GroupedProperties othergroupProperties = new GroupedProperties();
+            othergroupProperties.Add(Default);
+            othergroupProperties.Add(Default, Name, NameValue);
+            othergroupProperties.Add(Default, Email, EmailValue);
+
+            bool bRet = groupProperties.Equals(othergroupProperties);
+
+            Assert.IsTrue(bRet);
+        }
+
+        [TestMethod]
+        //[TestCategory(TestCategories.UnitTest)]
+        public void EqualsReferenceTest()
+        {
+            GroupedProperties groupProperties = new GroupedProperties();
+            groupProperties.Add(Default);
+            groupProperties.Add(Default, Name, NameValue);
+            groupProperties.Add(Default, Email, EmailValue);
+
+            bool bRet = groupProperties.Equals(groupProperties);
+
+            Assert.IsTrue(bRet);
+
+        }
+
+        [TestMethod]
+        //[TestCategory(TestCategories.UnitTest)]
+        public void EqualsObjectTest()
+        {
+            GroupedProperties groupProperties = new GroupedProperties();
+            groupProperties.Add(Default);
+            groupProperties.Add(Default, Name, NameValue);
+            groupProperties.Add(Default, Email, EmailValue);
+
+            bool bRet = groupProperties.Equals((object)groupProperties);
+
+            Assert.IsTrue(bRet);
+
+        }
+
+        [TestMethod]
+        //[TestCategory(TestCategories.UnitTest)]
+        public void EqualsFalse1Test()
+        {
+            GroupedProperties groupProperties = new GroupedProperties();
+            groupProperties.Add(Default);
+            groupProperties.Add(Default, Name, NameValue);
+            groupProperties.Add(Default, Email, EmailValue);
+
+            GroupedProperties othergroupProperties = new GroupedProperties();
+            othergroupProperties.Add(NotDefault);
+            othergroupProperties.Add(NotDefault, NotName, NotNameValue);
+            othergroupProperties.Add(NotDefault, NotEmail, NotEmailValue);
+
+            bool bRet = groupProperties.Equals(othergroupProperties);
+
+            Assert.IsFalse(bRet);
+        }
+
+        [TestMethod]
+        //[TestCategory(TestCategories.UnitTest)]
+        public void EqualsFalse2Test()
+        {
+            GroupedProperties groupProperties = new GroupedProperties();
+            groupProperties.Add(Default);
+            groupProperties.Add(Default, Name, NameValue);
+            groupProperties.Add(Default, Email, EmailValue);
+
+            GroupedProperties othergroupProperties = new GroupedProperties();
+            othergroupProperties.Add(Default);
+            othergroupProperties.Add(Default, Name, NameValue);
+            othergroupProperties.Add(Default, Email, NotEmailValue);
+
+            bool bRet = groupProperties.Equals(othergroupProperties);
+
+            Assert.IsFalse(bRet);
         }
     }
 }

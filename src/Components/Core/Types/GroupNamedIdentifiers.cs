@@ -6,7 +6,7 @@ using System.Text;
 namespace StellarMap.Core.Types
 {
     [DataContract]
-    public class GroupNamedIdentifiers
+    public class GroupNamedIdentifiers : IEquatable<GroupNamedIdentifiers>
     {
         #region Constructors
         public GroupNamedIdentifiers(string name)
@@ -56,6 +56,14 @@ namespace StellarMap.Core.Types
 
         #region ToString
         public override string ToString() => GroupIdentifiers.ToString();
+        #endregion
+
+        #region IEquatable
+        public bool Equals(GroupNamedIdentifiers other) => GroupIdentifiers.Equals(other.GroupIdentifiers);
+
+        public override bool Equals(object o) => (o is GroupNamedIdentifiers) && Equals(o as GroupNamedIdentifiers);
+
+        public override int GetHashCode() => GroupIdentifiers.GetHashCode();
         #endregion
     }
 }
