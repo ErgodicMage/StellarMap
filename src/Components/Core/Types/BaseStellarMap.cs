@@ -9,7 +9,7 @@ using StellarMap.Core.Bodies;
 namespace StellarMap.Core.Types
 {
     [DataContract(Name = "BaseStellarMap")]
-    public class BaseStellarMap : IStellarMap
+    public class BaseStellarMap : IStellarMap, IEquatable<BaseStellarMap>
     {
         #region Constuctors
         public BaseStellarMap()
@@ -289,6 +289,60 @@ namespace StellarMap.Core.Types
 
             return dict;
         }
+        #endregion
+
+        #region IEquatable
+        public bool Equals(BaseStellarMap other)
+        {
+            bool bRet = true;
+
+            if (other == null)
+                bRet = false;
+            else if (!ReferenceEquals(this, other))
+            {
+                bRet = Name.Equals(other.Name) &&
+                       IsEqual<Planet>(this.Planets, other.Planets) &&
+                       IsEqual<Star>(this.Stars, other.Stars) &&
+                       IsEqual<Satellite>(this.Satellites, other.Satellites) &&
+                       IsEqual<Asteroid>(this.Asteroids, other.Asteroids) &&
+                       IsEqual<Comet>(this.Comets, other.Comets);
+            }
+
+            return bRet;
+        }
+
+        protected static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) where T : StellarBody
+        {
+            bool bRet = true;
+
+            if ((thisObject == null) || (otherObject == null))
+                bRet = false;
+            else if (!ReferenceEquals(thisObject, otherObject))
+            {
+                if (thisObject.Count == otherObject.Count)
+                {
+                    var thisEnumerator = thisObject.GetEnumerator();
+                    var otherEnumerator = otherObject.GetEnumerator();
+
+                    while (thisEnumerator.MoveNext() && otherEnumerator.MoveNext())
+                    {
+                        bRet = thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key) &&
+                               thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value);
+
+                        if (!bRet)
+                            break;
+                    }
+                }
+                else
+                    bRet = false;
+            }
+
+            return bRet;
+        }
+
+        public override bool Equals(object o) => Equals(o as BaseStellarMap);
+
+        public override int GetHashCode() => base.GetHashCode();
         #endregion
     }
 }

@@ -11,7 +11,7 @@ using StellarMap.Math.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.Star)]
-    public class Star : StellarParentBody
+    public class Star : StellarParentBody, IEquatable<Star>
     {
         #region Constructors
         public Star()
@@ -60,5 +60,12 @@ namespace StellarMap.Core.Bodies
         public void Add(Comet comet) => Add<Comet>(comet, StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
         #endregion
 
+        #region IEquatable
+        public bool Equals(Star other) => (other != null) && !ReferenceEquals(this, other) && base.Equals(other as StellarParentBody) && StarGroupIdentifiers.Equals(other.StarGroupIdentifiers);
+
+        public override bool Equals(object o) => Equals(o as Star);
+
+        public override int GetHashCode() => base.GetHashCode();
+        #endregion
     }
 }

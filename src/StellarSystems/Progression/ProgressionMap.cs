@@ -11,7 +11,7 @@ using StellarMap.Math.Types;
 namespace StellarMap.Progression
 {
     [DataContract (Name = "ProgressionMap")]
-    public class ProgressionMap : BaseStellarMap
+    public class ProgressionMap : BaseStellarMap, IEquatable<ProgressionMap>
     {
         #region Constructors
         public ProgressionMap()
@@ -306,6 +306,31 @@ namespace StellarMap.Progression
                     value.Map = this;
             }
         }
+        #endregion
+
+        #region IEquatable
+        public bool Equals(ProgressionMap other)
+        {
+            bool bRet = true;
+
+            if (other == null)
+                bRet = false;
+            else if (!ReferenceEquals(this, other))
+            {
+                bRet = base.Equals(other) &&
+                       IsEqual<Habitat>(this.Habitats, other.Habitats) &&
+                       IsEqual<ERBridge>(this.Bridges, other.Bridges) &&
+                       IsEqual<StarSystem>(this.StarSystems, other.StarSystems) &&
+                       IsEqual<Cluster>(this.Clusters, other.Clusters) &&
+                       IsEqual<Sector>(this.Sectors, other.Sectors);
+            }
+
+            return bRet;
+        }
+
+        public override bool Equals(object o) => Equals(o as BaseStellarMap);
+
+        public override int GetHashCode() => base.GetHashCode();
         #endregion
     }
 }

@@ -9,7 +9,7 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
-    public class ProgressionContainer : StellarParentBody
+    public class ProgressionContainer : StellarParentBody, IEquatable<ProgressionContainer>
     {
         #region Constructors
         public ProgressionContainer()
@@ -43,5 +43,13 @@ namespace StellarMap.Progression
         public void Add(ERBridge bridge) => Add<ERBridge>(bridge, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
         #endregion
 
+        #region IEquatable
+        public bool Equals(ProgressionContainer other) => (other != null) && !ReferenceEquals(this, other) && ContainerType.Equals(other.ContainerType) && 
+                                                            base.Equals(other as StellarParentBody) && ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
+
+        public override bool Equals(object o) => Equals(o as ProgressionContainer);
+
+        public override int GetHashCode() => base.GetHashCode();
+        #endregion
     }
 }

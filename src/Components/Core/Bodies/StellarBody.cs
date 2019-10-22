@@ -10,7 +10,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.StellarBody)]
-    public abstract class StellarBody : IStellarBody
+    public abstract class StellarBody : IStellarBody, IEquatable<StellarBody>
     {
         #region Cosntructors
         public StellarBody()
@@ -49,6 +49,21 @@ namespace StellarMap.Core.Bodies
         public IDictionary<string, string> BasicProperties { get { return Properties.Get("Basic"); } }
 
         public IStellarMap Map { get; set; }
+        #endregion
+
+        #region IEquatable
+        public bool Equals(StellarBody other)
+        {
+            bool bRet = (other != null) && !ReferenceEquals(this, other) && 
+                        Identifier.Equals(other.Identifier) && ParentIdentifier.Equals(other.ParentIdentifier) && Name.Equals(other.Name) && BodyType.Equals(other.BodyType) &&
+                        BasicProperties.Equals(other.BasicProperties);
+
+            return bRet;
+        }
+
+        public override bool Equals(object o) => Equals(o as StellarBody);
+
+        public override int GetHashCode() => base.GetHashCode();
         #endregion
     }
 

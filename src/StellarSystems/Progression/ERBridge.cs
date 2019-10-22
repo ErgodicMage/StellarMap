@@ -10,7 +10,7 @@ using StellarMap.Math.Types;
 namespace StellarMap.Progression
 {
     [DataContract (Name = ProgressionConstants.BodyType.ERBridge)]
-    public class ERBridge : StellarBody
+    public class ERBridge : StellarBody, IEquatable<ERBridge>
     {
         #region Constructors
         public ERBridge()
@@ -97,6 +97,15 @@ namespace StellarMap.Progression
             }
             Name = sb.ToString();
         }
+        #endregion
+
+        #region IEquatable
+        public bool Equals(ERBridge other) => (other != null) && !ReferenceEquals(this, other) && base.Equals(other as StellarBody) && BridgeType.Equals(other.BridgeType) &&
+                                                Portals != null && Portals[0].Equals(other.Portals[0]) && Portals[1].Equals(other.Portals[1]);
+
+        public override bool Equals(object o) => Equals(o as Planet);
+
+        public override int GetHashCode() => base.GetHashCode();
         #endregion
     }
 }

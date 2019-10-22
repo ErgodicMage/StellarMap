@@ -239,7 +239,7 @@ namespace StellarMap.Core.Types
             return bRet;
         }
 
-        public override bool Equals(object o) => (o is NestedDictionary<TOuter, TInner, TValue>) && Equals(o as NestedDictionary<TOuter, TInner, TValue>);
+        public override bool Equals(object o) => Equals(o as NestedDictionary<TOuter, TInner, TValue>);
 
         public override int GetHashCode() => base.GetHashCode();
         #endregion
