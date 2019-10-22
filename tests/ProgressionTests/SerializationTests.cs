@@ -127,6 +127,7 @@ namespace ProgressionTests
             }
 
             ProgressionMap map = JsonConvert.DeserializeObject<ProgressionMap>(json);
+            map.SetMap();
 
             return map;
         }

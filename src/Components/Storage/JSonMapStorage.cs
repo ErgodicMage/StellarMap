@@ -31,6 +31,7 @@ namespace StellarMap.Storage
             string json = reader.ReadToEnd();
 
             T map = JsonConvert.DeserializeObject<T>(json);
+            map.SetMap();
 
             return map;
         }

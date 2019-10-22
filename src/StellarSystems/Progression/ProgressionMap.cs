@@ -270,6 +270,42 @@ namespace StellarMap.Progression
 
             return bret;
         }
+
+        public override void SetMap()
+        {
+            // can't use casting with dictionaries the way I want to object as Dictionary<string, StellarBody> so have to do it the hard way
+            base.SetMap();
+
+            if (Habitats != null)
+            {
+                foreach (var value in Habitats.Values)
+                    value.Map = this;
+            }
+
+            if (Bridges != null)
+            {
+                foreach (var value in Bridges.Values)
+                    value.Map = this;
+            }
+
+            if (StarSystems != null)
+            {
+                foreach (var value in StarSystems.Values)
+                    value.Map = this;
+            }
+
+            if (Clusters != null)
+            {
+                foreach (var value in Clusters.Values)
+                    value.Map = this;
+            }
+
+            if (Sectors != null)
+            {
+                foreach (var value in Sectors.Values)
+                    value.Map = this;
+            }
+        }
         #endregion
     }
 }

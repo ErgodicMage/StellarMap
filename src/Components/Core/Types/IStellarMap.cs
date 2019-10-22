@@ -41,5 +41,7 @@ namespace StellarMap.Core.Types
 
         bool SetBody(string bodytype, object data);
 
+        void SetMap();
+
     }
 }

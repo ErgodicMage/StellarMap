@@ -105,6 +105,8 @@ namespace StellarMap.Storage
                 }
             }
 
+            map.SetMap();
+
             return map;
         }
     }
