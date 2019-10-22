@@ -56,7 +56,7 @@ namespace ProgressionTests
         {
             string filename = "SolSystem.json";
             if (!File.Exists(folder + filename))
-                SerializeEarth();
+                SerializeSolSystem();
 
             ProgressionMap map = DeSerializeMap("SolSystem.json");
         }
@@ -76,7 +76,7 @@ namespace ProgressionTests
         {
             string filename = "SolCluster.json";
             if (!File.Exists(folder + filename))
-                SerializeEarth();
+                SerializeSolCluster();
 
             ProgressionMap map = DeSerializeMap("SolCluster.json");
         }
@@ -96,7 +96,7 @@ namespace ProgressionTests
         {
             string filename = "LocalSector.json";
             if (!File.Exists(folder + filename))
-                SerializeEarth();
+                SerializeLocalSector();
 
             ProgressionMap map = DeSerializeMap("LocalSector.json");
         }

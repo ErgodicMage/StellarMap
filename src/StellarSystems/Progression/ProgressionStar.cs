@@ -25,7 +25,7 @@ namespace StellarMap.Progression
 
         #region Public Properties
         [IgnoreDataMember]
-        public IDictionary<string, string> Habitats { get { return StarGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.Habitats].Identifiers; } }
+        public IDictionary<string, string> Habitats { get { return StarGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Habitats); } }
         #endregion
 
         #region Get Methods

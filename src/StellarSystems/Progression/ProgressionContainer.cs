@@ -30,7 +30,7 @@ namespace StellarMap.Progression
         public GroupNamedIdentifiers ContainerGroupIdentifiers { get; set; }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> Bridges { get { return ContainerGroupIdentifiers.GroupIdentifiers[ProgressionConstants.NamedIdentifiers.ERBridges].Identifiers; } }
+        public IDictionary<string, string> Bridges { get { return ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.ERBridges); } }
         #endregion
 
         #region Get Methods

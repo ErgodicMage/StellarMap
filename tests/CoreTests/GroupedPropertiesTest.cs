@@ -78,7 +78,7 @@ namespace CoreTests
         public void AddGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
-            groupProperties.AddGroup(Default);
+            groupProperties.Add(Default);
 
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
@@ -89,8 +89,8 @@ namespace CoreTests
         public void AddExistingGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
-            groupProperties.AddGroup(Default);
-            groupProperties.AddGroup(Default);
+            groupProperties.Add(Default);
+            groupProperties.Add(Default);
 
             // no effect on PropertyGroups
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
@@ -120,7 +120,7 @@ namespace CoreTests
         public void AddPropertyTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
-            groupProperties.AddProperty(Default, Name, NameValue);
+            groupProperties.Add(Default, Name, NameValue);
 
             Assert.AreEqual(1, groupProperties[Default].Count);
             Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
@@ -132,7 +132,7 @@ namespace CoreTests
         public void AddPropertyAnotherGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
-            groupProperties.AddProperty(NotDefault, Name, NameValue);
+            groupProperties.Add(NotDefault, Name, NameValue);
 
             Assert.AreEqual(0, groupProperties[Default].Count);
             Assert.IsFalse(groupProperties.PropertyGroups.ContainsKey(NotDefault));
@@ -144,10 +144,10 @@ namespace CoreTests
         public void AddPropertyDuplicateTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
-            groupProperties.AddGroup(Default);
-            groupProperties.AddProperty(Default, Name, NameValue);
-            groupProperties.AddProperty(Default, Email, EmailValue);
-            groupProperties.AddProperty(Default, Name, NameValue);
+            groupProperties.Add(Default);
+            groupProperties.Add(Default, Name, NameValue);
+            groupProperties.Add(Default, Email, EmailValue);
+            groupProperties.Add(Default, Name, NameValue);
 
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
@@ -218,13 +218,13 @@ namespace CoreTests
         public void RemoveGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
-            groupProperties.AddGroup(NotDefault);
+            groupProperties.Add(NotDefault);
 
             Assert.AreEqual(2, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
             Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(NotDefault));
 
-            groupProperties.RemoveGroup(NotDefault);
+            groupProperties.Remove(NotDefault);
 
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
@@ -237,7 +237,7 @@ namespace CoreTests
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
 
-            groupProperties.RemoveGroup(NotDefault);
+            groupProperties.Remove(NotDefault);
 
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
@@ -256,7 +256,7 @@ namespace CoreTests
 
             groupProperties.AddProperties(Default, properties);
 
-            groupProperties.RemoveProperty(Default, Email);
+            groupProperties.Remove(Default, Email);
 
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
@@ -276,7 +276,7 @@ namespace CoreTests
 
             groupProperties.AddProperties(Default, properties);
 
-            groupProperties.RemoveProperty(Default, NotName);
+            groupProperties.Remove(Default, NotName);
 
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
@@ -298,7 +298,7 @@ namespace CoreTests
 
             groupProperties.AddProperties(Default, properties);
 
-            groupProperties.RemoveProperty(NotDefault, NotName);
+            groupProperties.Remove(NotDefault, NotName);
 
             Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
             Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
@@ -379,7 +379,7 @@ namespace CoreTests
 
             var returnproperties = groupProperties.Get(NotDefault);
 
-            Assert.AreEqual(0, returnproperties.Count);
+            Assert.IsNull(returnproperties);
         }
 
         [TestMethod]
@@ -387,7 +387,7 @@ namespace CoreTests
         public void SetTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
-            groupProperties.AddProperty(Default, Name, NameValue);
+            groupProperties.Add(Default, Name, NameValue);
 
             groupProperties.Set(Default, Name, NotNameValue);
 
@@ -399,7 +399,7 @@ namespace CoreTests
         public void SetPropertyNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
-            groupProperties.AddProperty(Default, Name, NameValue);
+            groupProperties.Add(Default, Name, NameValue);
 
             groupProperties.Set(Default, NotName, NotNameValue);
 
@@ -412,7 +412,7 @@ namespace CoreTests
         public void SetGroupNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
-            groupProperties.AddProperty(Default, Name, NameValue);
+            groupProperties.Add(Default, Name, NameValue);
 
             groupProperties.Set(NotDefault, Name, NameValue);
 

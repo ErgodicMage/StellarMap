@@ -29,13 +29,13 @@ namespace StellarMap.Core.Bodies
         public GroupNamedIdentifiers StarGroupIdentifiers { get; set; }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> Planets { get { return StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Planets].Identifiers; } }
+        public IDictionary<string, string> Planets { get { return StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Planets); } }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> Asteroids { get { return StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Asteroids].Identifiers; } }
+        public IDictionary<string, string> Asteroids { get { return StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Asteroids); } }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> Comets { get { return StarGroupIdentifiers.GroupIdentifiers[Constants.NamedIdentifiers.Comets].Identifiers; } }
+        public IDictionary<string, string> Comets { get { return StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Comets); } }
         #endregion
 
         #region Get Functions

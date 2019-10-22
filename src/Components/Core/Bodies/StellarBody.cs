@@ -71,10 +71,10 @@ namespace StellarMap.Core.Bodies
             T t = default(T);
 
             Type ty = typeof(T);
-            BodyNamedIdentifiers identifiers = null;
+            Dictionary<string, string> identifiers = null;
             string id = string.Empty;
 
-            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers) && identifiers.Identifiers.TryGetValue(name, out id))
+            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers) && identifiers.TryGetValue(name, out id))
                 t = Map.Get<T>(id);
 
             return t;
@@ -84,14 +84,14 @@ namespace StellarMap.Core.Bodies
         public virtual IDictionary<string, T> GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
         {
             Type ty = typeof(T);
-            BodyNamedIdentifiers identifiers = null;
+            Dictionary<string, string> identifiers = null;
             IDictionary<string, T> all = null;
 
             if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers))
             {
                 all = new Dictionary<string, T>();
 
-                foreach (var kvp in identifiers.Identifiers)
+                foreach (var kvp in identifiers)
                 {
                     T t = Map.Get<T>(kvp.Value);
                     if (t != null)
@@ -115,7 +115,7 @@ namespace StellarMap.Core.Bodies
                     Map.Add<T>(t);
 
                 Type ty = typeof(T);
-                BodyNamedIdentifiers identifiers = null;
+                Dictionary<string, string> identifiers = null;
 
                 if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers))
                     identifiers.Add(t.Name, t.Identifier);
