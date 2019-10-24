@@ -100,10 +100,10 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEquatable
-        public bool Equals(ERBridge other) => (other != null) && !ReferenceEquals(this, other) && base.Equals(other as StellarBody) && BridgeType.Equals(other.BridgeType) &&
+        public bool Equals(ERBridge other) => base.Equals(other as StellarBody) && BridgeType.Equals(other.BridgeType) &&
                                                 Portals != null && Portals[0].Equals(other.Portals[0]) && Portals[1].Equals(other.Portals[1]);
 
-        public override bool Equals(object o) => Equals(o as Planet);
+        public override bool Equals(object o) => Equals(o as ERBridge);
 
         public override int GetHashCode() => base.GetHashCode();
         #endregion

@@ -58,7 +58,7 @@ namespace StellarMap.Progression
 
             else if (!ReferenceEquals(this, other))
             {
-                if (this.Portals.Count != other.Portals.Count)
+                if (this.Portals.Count == other.Portals.Count)
                 {
                     var thisPortals = Portals.GetEnumerator();
                     var otherPortals = other.Portals.GetEnumerator();

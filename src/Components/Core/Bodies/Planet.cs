@@ -10,14 +10,14 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Core.Bodies
 {
-    [DataContract (Name = Constants.BodyTypes.Planet)]
+    [DataContract(Name = Constants.BodyTypes.Planet)]
     public class Planet : StellarParentBody, IEquatable<Planet>
     {
         #region Cosntructors
         public Planet()
-        {            
+        {
         }
-        
+
         public Planet(string name) : base(name, Constants.BodyTypes.Planet)
         {
             PlanetGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-Planet");
@@ -43,7 +43,7 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEquatable
-        public bool Equals(Planet other) => (other != null) && !ReferenceEquals(this, other) && base.Equals(other as StellarParentBody) && PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
+        public bool Equals(Planet other) => base.Equals(other as StellarParentBody) && PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
 
         public override bool Equals(object o) => Equals(o as Planet);
 

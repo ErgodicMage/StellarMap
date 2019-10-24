@@ -54,9 +54,19 @@ namespace StellarMap.Core.Bodies
         #region IEquatable
         public bool Equals(StellarBody other)
         {
-            bool bRet = (other != null) && !ReferenceEquals(this, other) && 
-                        Identifier.Equals(other.Identifier) && ParentIdentifier.Equals(other.ParentIdentifier) && Name.Equals(other.Name) && BodyType.Equals(other.BodyType) &&
-                        BasicProperties.Equals(other.BasicProperties);
+            bool bRet = true; 
+
+            if (other == null)
+                bRet = false;
+            else if (!ReferenceEquals(this, other))
+            {
+                bRet = Name.Equals(other.Name) &&
+                       Identifier.Equals(other.Identifier) &&
+                       (ParentIdentifier == null ? true : ParentIdentifier.Equals(other.ParentIdentifier)) && 
+                       BodyType.Equals(other.BodyType) &&
+                       Properties.Equals(other.Properties);
+
+            }
 
             return bRet;
         }

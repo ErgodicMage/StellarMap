@@ -44,8 +44,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEquatable
-        public bool Equals(ProgressionContainer other) => (other != null) && !ReferenceEquals(this, other) && ContainerType.Equals(other.ContainerType) && 
-                                                            base.Equals(other as StellarParentBody) && ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
+        public bool Equals(ProgressionContainer other) => ContainerType.Equals(other.ContainerType) && base.Equals(other as StellarParentBody) && ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
 
         public override bool Equals(object o) => Equals(o as ProgressionContainer);
 

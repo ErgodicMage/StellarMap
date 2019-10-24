@@ -179,6 +179,8 @@ namespace StellarMap.Core.Types
                 bRet = false;
             else if (this.Count != other.Count)
                 bRet = false;
+            else if (this.Count == 0)
+                bRet = true;
             else if (!ReferenceEquals(this, other))
             {
                 var thisEnumerator = GetEnumerator();
@@ -209,10 +211,14 @@ namespace StellarMap.Core.Types
         {
             bool bRet = true;
 
-            if ((thisObject == null) || (otherObject == null))
+            if (thisObject == null && thisObject == null)
+                bRet = true;
+            else if ((thisObject == null) || (otherObject == null))
                 bRet = false;
             else if (thisObject.Count != otherObject.Count)
                 bRet = false;
+            else if (thisObject.Count == 0)
+                bRet = true;
             else if (!ReferenceEquals(thisObject, otherObject))
             {
                 var thisEnumerator = thisObject.GetEnumerator();

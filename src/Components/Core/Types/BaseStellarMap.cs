@@ -311,11 +311,13 @@ namespace StellarMap.Core.Types
             return bRet;
         }
 
-        protected static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) where T : StellarBody
+        protected static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
         {
             bool bRet = true;
 
-            if ((thisObject == null) || (otherObject == null))
+            if (thisObject == null && thisObject == null)
+                bRet = true;
+            else if ((thisObject == null) || (otherObject == null))
                 bRet = false;
             else if (!ReferenceEquals(thisObject, otherObject))
             {
@@ -326,8 +328,18 @@ namespace StellarMap.Core.Types
 
                     while (thisEnumerator.MoveNext() && otherEnumerator.MoveNext())
                     {
-                        bRet = thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key) &&
-                               thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value);
+                        if (thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
+                        {
+                            if (!thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value))
+                                bRet = false;
+                            //T touter = thisEnumerator.Current.Value as T;
+                            //T tinner = otherEnumerator.Current.Value as T;
+
+                            //if (touter == null || tinner == null || !touter.Equals(tinner))
+                            //    bRet = false;
+                        }
+                        else
+                            bRet = false;
 
                         if (!bRet)
                             break;
