@@ -22,109 +22,149 @@ namespace ProgressionTests
         string folder = @"C:\Development\StellarMap\TestData\";
 
         [TestMethod]
-        public void SerializeEarth()
+        public void SerializeFileEarth()
         {
             ProgressionMap map = new ProgressionMap("Earth");
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateEarth();
 
-            SerializeMap(map, "Earth.json");
+            string filename = folder + "Earth.json";
+            if (File.Exists(filename))
+                File.Delete(filename);
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            {
+                SerializeMap(map, writer);
+            }
         }
 
         [TestMethod]
-        public void DeSerializeEarth()
+        public void DeSerializeFileEarth()
         {
-            string filename = "Earth.json";
-            if (!File.Exists(folder + filename))
-                SerializeEarth();
+            string filename = folder + "Earth.json";
 
-            ProgressionMap map = DeSerializeMap("Earth.json");
+            if (!File.Exists(folder + filename))
+                SerializeFileEarth();
+
+            ProgressionMap map;
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                map = DeSerializeMap(reader);
+            }
         }
 
         [TestMethod]
-        public void SerializeSolSystem()
+        public void SerializeFileSolSystem()
         {
             ProgressionMap map = new ProgressionMap("Sol System");
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateSolSystem();
 
-            SerializeMap(map, "SolSystem.json");
+            string filename = folder + "SolSystem.json";
+            if (File.Exists(filename))
+                File.Delete(filename);
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            {
+                SerializeMap(map, writer);
+            }
         }
 
         [TestMethod]
-        public void DeSerializeSolSystem()
+        public void DeSerializeFileSolSystem()
         {
-            string filename = "SolSystem.json";
-            if (!File.Exists(folder + filename))
-                SerializeSolSystem();
+            string filename = folder + "SolSystem.json";
 
-            ProgressionMap map = DeSerializeMap("SolSystem.json");
+            if (!File.Exists(folder + filename))
+                SerializeFileSolSystem();
+
+            ProgressionMap map;
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                map = DeSerializeMap(reader);
+            }
         }
 
         [TestMethod]
-        public void SerializeSolCluster()
+        public void SerializeFileSolCluster()
         {
             ProgressionMap map = new ProgressionMap("Sol Cluster");
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateSolCluster();
 
-            SerializeMap(map, "SolCluster.json");
+            string filename = folder + "SolCluster.json";
+            if (File.Exists(filename))
+                File.Delete(filename);
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            {
+                SerializeMap(map, writer);
+            }
         }
 
         [TestMethod]
-        public void DeSerializeSolCluster()
+        public void DeSerializeFileSolCluster()
         {
-            string filename = "SolCluster.json";
-            if (!File.Exists(folder + filename))
-                SerializeSolCluster();
+            string filename = folder + "SolCluster.json";
 
-            ProgressionMap map = DeSerializeMap("SolCluster.json");
+            if (!File.Exists(folder + filename))
+                SerializeFileSolCluster();
+
+            ProgressionMap map;
+
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                map = DeSerializeMap(reader);
+            }
         }
 
         [TestMethod]
-        public void SerializeLocalSector()
+        public void SerializeFileLocalSector()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateLocalSector();
 
-            SerializeMap(map, "LocalSector.json");
-        }
-
-        [TestMethod]
-        public void DeSerializeLocalSector()
-        {
-            string filename = "LocalSector.json";
-            if (!File.Exists(folder + filename))
-                SerializeLocalSector();
-
-            ProgressionMap map = DeSerializeMap("LocalSector.json");
-        }
-
-        public void SerializeMap(ProgressionMap map, string file)
-        {
-            string filename = folder + file;
-
+            string filename = folder + "LocalSector.json";
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            string json = JsonConvert.SerializeObject(map, Newtonsoft.Json.Formatting.Indented);
-
             using (StreamWriter writer = new StreamWriter(filename))
             {
-                writer.Write(json);
+                SerializeMap(map, writer);
             }
         }
 
-        public ProgressionMap DeSerializeMap(string file)
+        [TestMethod]
+        public void DeSerializeFileLocalSector()
         {
-            string filename = folder + file;
-            string json = string.Empty;
+            string filename = folder + "LocalSector.json";
+
+            if (!File.Exists(folder + filename))
+                SerializeFileLocalSector();
+
+            ProgressionMap map;
 
             using (StreamReader reader = new StreamReader(filename))
             {
-                json = reader.ReadToEnd();
+                map = DeSerializeMap(reader);
             }
+        }
+
+        public void SerializeMap(ProgressionMap map, StreamWriter writer)
+        {
+            string json = JsonConvert.SerializeObject(map, Newtonsoft.Json.Formatting.Indented);
+
+            writer.Write(json);
+        }
+
+        public ProgressionMap DeSerializeMap(StreamReader reader)
+        {
+            string json = string.Empty;
+
+            json = reader.ReadToEnd();
 
             ProgressionMap map = JsonConvert.DeserializeObject<ProgressionMap>(json);
             map.SetMap();

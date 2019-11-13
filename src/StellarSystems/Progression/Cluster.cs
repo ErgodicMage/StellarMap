@@ -14,9 +14,10 @@ namespace StellarMap.Progression
     {
         #region Constructors
         public Cluster()
-        {    
+        {
+            ContainerType = ProgressionConstants.ContainerTypes.Cluster;
         }
-        
+
         public Cluster(string name) : base(name, ProgressionConstants.ContainerTypes.Cluster)
         {
             ContainerType = ProgressionConstants.ContainerTypes.Cluster;

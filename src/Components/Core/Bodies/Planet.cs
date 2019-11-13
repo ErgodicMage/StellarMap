@@ -43,7 +43,7 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEquatable
-        public bool Equals(Planet other) => base.Equals(other as StellarParentBody) && PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
+        public bool Equals(Planet other) => other!=null && base.Equals(other as StellarParentBody) && PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
 
         public override bool Equals(object o) => Equals(o as Planet);
 

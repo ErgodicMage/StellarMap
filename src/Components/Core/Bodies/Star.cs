@@ -61,7 +61,7 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEquatable
-        public bool Equals(Star other) => base.Equals(other as StellarParentBody) && StarGroupIdentifiers.Equals(other.StarGroupIdentifiers);
+        public bool Equals(Star other) => other!=null && base.Equals(other as StellarParentBody) && StarGroupIdentifiers.Equals(other.StarGroupIdentifiers);
 
         public override bool Equals(object o) => Equals(o as Star);
 

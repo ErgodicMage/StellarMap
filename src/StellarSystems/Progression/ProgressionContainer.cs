@@ -13,7 +13,8 @@ namespace StellarMap.Progression
     {
         #region Constructors
         public ProgressionContainer()
-        {            
+        {
+            ContainerGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-ProgressionContainer");
         }
         
         public ProgressionContainer(string name, string bodytype) : base(name, bodytype)
@@ -24,7 +25,7 @@ namespace StellarMap.Progression
 
         #region Properties
         [DataMember (Order = 11)]
-        public string ContainerType { get; protected set; }
+        public string ContainerType { get; set; }
 
         [DataMember(Order = 12)]
         public GroupNamedIdentifiers ContainerGroupIdentifiers { get; set; }
@@ -44,7 +45,9 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEquatable
-        public bool Equals(ProgressionContainer other) => ContainerType.Equals(other.ContainerType) && base.Equals(other as StellarParentBody) && ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
+        public bool Equals(ProgressionContainer other) => other!=null && ContainerType.Equals(other.ContainerType) && 
+                                                            base.Equals(other as StellarParentBody) && 
+                                                            ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
 
         public override bool Equals(object o) => Equals(o as ProgressionContainer);
 
