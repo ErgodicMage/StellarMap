@@ -105,7 +105,19 @@ namespace StellarMap.Progression
 
         public override bool Equals(object o) => Equals(o as ERBridge);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (!string.IsNullOrEmpty(BridgeType))
+                hash = hash ^ BridgeType.GetHashCode();
+            if (Portals != null)
+            {
+                foreach (Portal p in Portals)
+                    hash = hash ^ p.GetHashCode();
+            }
+
+            return hash;
+        }
         #endregion
     }
 }

@@ -354,7 +354,22 @@ namespace StellarMap.Core.Types
 
         public override bool Equals(object o) => Equals(o as BaseStellarMap);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (Stars != null)
+                hash = hash ^ Stars.GetHashCode();
+            if (Planets != null)
+                hash = hash ^ Planets.GetHashCode();
+            if (Satellites != null)
+                hash = hash ^ Satellites.GetHashCode();
+            if (Asteroids != null)
+                hash = hash ^ Asteroids.GetHashCode();
+            if (Comets != null)
+                hash = hash ^ Comets.GetHashCode();
+
+            return hash;
+        }
         #endregion
     }
 }

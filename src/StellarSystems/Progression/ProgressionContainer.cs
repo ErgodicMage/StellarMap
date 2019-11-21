@@ -51,7 +51,16 @@ namespace StellarMap.Progression
 
         public override bool Equals(object o) => Equals(o as ProgressionContainer);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (!string.IsNullOrEmpty(ContainerType))
+                hash = hash ^ ContainerType.GetHashCode();
+            if (ContainerGroupIdentifiers != null)
+                hash = hash ^ ContainerGroupIdentifiers.GetHashCode();
+
+            return hash;
+        }
         #endregion
     }
 }

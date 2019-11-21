@@ -24,7 +24,18 @@ namespace StellarMap.Progression
 
         public override bool Equals(object o) => o != null && o is Portal p && Equals(p);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (StarIdentifier != null)
+                hash = hash ^ StarIdentifier.GetHashCode();
+            if (!string.IsNullOrEmpty(ERBridgeIdentifier))
+                hash = hash ^ ERBridgeIdentifier.GetHashCode();
+            if (Position != null)
+                hash = hash ^ Position.GetHashCode();
+
+            return hash;
+        }
         #endregion
     }
 }

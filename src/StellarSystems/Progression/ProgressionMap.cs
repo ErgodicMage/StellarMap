@@ -330,7 +330,22 @@ namespace StellarMap.Progression
 
         public override bool Equals(object o) => Equals(o as BaseStellarMap);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (Habitats != null)
+                hash = hash ^ Habitats.GetHashCode();
+            if (Bridges != null)
+                hash = hash ^ Bridges.GetHashCode();
+            if (StarSystems != null)
+                hash = hash ^ StarSystems.GetHashCode();
+            if (Clusters != null)
+                hash = hash ^ Clusters.GetHashCode();
+            if (Sectors != null)
+                hash = hash ^ Sectors.GetHashCode();
+
+            return hash;
+        }
         #endregion
     }
 }

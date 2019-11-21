@@ -65,7 +65,14 @@ namespace StellarMap.Core.Bodies
 
         public override bool Equals(object o) => Equals(o as Star);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (StarGroupIdentifiers != null)
+                hash = hash ^ StarGroupIdentifiers.GetHashCode();
+
+            return hash;
+        }
         #endregion
     }
 }

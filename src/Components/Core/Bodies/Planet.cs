@@ -47,7 +47,14 @@ namespace StellarMap.Core.Bodies
 
         public override bool Equals(object o) => Equals(o as Planet);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (PlanetGroupIdentifiers != null)
+                hash = hash ^ PlanetGroupIdentifiers.GetHashCode();
+
+            return hash;
+        }
         #endregion
     }
 }

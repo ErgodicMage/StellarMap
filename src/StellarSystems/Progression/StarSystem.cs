@@ -60,8 +60,8 @@ namespace StellarMap.Progression
             {
                 if (!base.Equals(other))
                     bRet = false;
-                else if (!this.ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers))
-                    bRet = false;
+                //else if (!this.ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers))
+                //    bRet = false;
                 else if (this.Portals == null && other.Portals == null)
                     bRet = true;
                 else if (this.Portals == null || this.Portals == null)
@@ -89,7 +89,17 @@ namespace StellarMap.Progression
 
         public override bool Equals(object o) => Equals(o as StarSystem);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (Portals != null)
+            {
+                foreach (Portal p in Portals)
+                    hash = hash ^ p.GetHashCode();
+            }
+
+            return hash;
+        }
         #endregion
     }
 }

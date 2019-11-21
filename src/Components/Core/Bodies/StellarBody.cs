@@ -73,7 +73,22 @@ namespace StellarMap.Core.Bodies
 
         public override bool Equals(object o) => Equals(o as StellarBody);
 
-        public override int GetHashCode() => base.GetHashCode();
+        public override int GetHashCode()
+        {
+            int hash = base.GetHashCode();
+            if (!string.IsNullOrEmpty(Name))
+                hash = hash ^ Name.GetHashCode();
+            if (!string.IsNullOrEmpty(Identifier))
+                hash = hash ^ Identifier.GetHashCode();
+            if (!string.IsNullOrEmpty(ParentIdentifier))
+                hash = hash ^ ParentIdentifier.GetHashCode();
+            if (!string.IsNullOrEmpty(BodyType))
+                hash = hash ^ BodyType.GetHashCode();
+            if (Properties != null)
+                hash = hash ^ Properties.GetHashCode();
+
+            return hash;
+        }
         #endregion
     }
 
