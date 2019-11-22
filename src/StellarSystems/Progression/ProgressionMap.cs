@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
@@ -328,7 +326,7 @@ namespace StellarMap.Progression
             return bRet;
         }
 
-        public override bool Equals(object o) => Equals(o as BaseStellarMap);
+        public override bool Equals(object obj) => Equals(obj as BaseStellarMap);
 
         public override int GetHashCode()
         {

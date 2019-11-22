@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 
 using StellarMap.Core.Bodies;
 
@@ -262,12 +260,6 @@ namespace StellarMap.Core.Types
                     Stars = new Dictionary<string, Star>();
                 dict = (IDictionary<string, T>)Stars;
             }
-            //else if (dt == typeof(StarSystem))
-            //{
-            //    if (create && StarSystems == null)
-            //        StarSystems = new Dictionary<string, StarSystem>();
-            //    dict = (IDictionary<string, T>)StarSystems;
-            //}
             else if (dt == typeof(Satellite))
             {
                 if (create && Satellites == null)
@@ -311,11 +303,30 @@ namespace StellarMap.Core.Types
             return bRet;
         }
 
+        public override bool Equals(object obj) => Equals(obj as BaseStellarMap);
+
+        public override int GetHashCode()
+        {
+            int hash = Name.GetHashCode();
+            if (Stars != null)
+                hash = hash ^ Stars.GetHashCode();
+            if (Planets != null)
+                hash = hash ^ Planets.GetHashCode();
+            if (Satellites != null)
+                hash = hash ^ Satellites.GetHashCode();
+            if (Asteroids != null)
+                hash = hash ^ Asteroids.GetHashCode();
+            if (Comets != null)
+                hash = hash ^ Comets.GetHashCode();
+
+            return hash;
+        }
+
         protected static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
         {
             bool bRet = true;
 
-            if (thisObject == null && thisObject == null)
+            if (thisObject == null && otherObject == null)
                 bRet = true;
             else if ((thisObject == null) || (otherObject == null))
                 bRet = false;
@@ -332,11 +343,6 @@ namespace StellarMap.Core.Types
                         {
                             if (!thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value))
                                 bRet = false;
-                            //T touter = thisEnumerator.Current.Value as T;
-                            //T tinner = otherEnumerator.Current.Value as T;
-
-                            //if (touter == null || tinner == null || !touter.Equals(tinner))
-                            //    bRet = false;
                         }
                         else
                             bRet = false;
@@ -350,25 +356,6 @@ namespace StellarMap.Core.Types
             }
 
             return bRet;
-        }
-
-        public override bool Equals(object o) => Equals(o as BaseStellarMap);
-
-        public override int GetHashCode()
-        {
-            int hash = base.GetHashCode();
-            if (Stars != null)
-                hash = hash ^ Stars.GetHashCode();
-            if (Planets != null)
-                hash = hash ^ Planets.GetHashCode();
-            if (Satellites != null)
-                hash = hash ^ Satellites.GetHashCode();
-            if (Asteroids != null)
-                hash = hash ^ Asteroids.GetHashCode();
-            if (Comets != null)
-                hash = hash ^ Comets.GetHashCode();
-
-            return hash;
         }
         #endregion
     }

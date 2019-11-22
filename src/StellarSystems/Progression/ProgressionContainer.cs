@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
@@ -49,7 +47,7 @@ namespace StellarMap.Progression
                                                             base.Equals(other as StellarParentBody) && 
                                                             ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
 
-        public override bool Equals(object o) => Equals(o as ProgressionContainer);
+        public override bool Equals(object obj) => Equals(obj as ProgressionContainer);
 
         public override int GetHashCode()
         {

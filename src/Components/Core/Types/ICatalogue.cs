@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-
-using StellarMap.Core.Bodies;
 
 namespace StellarMap.Core.Types
 {

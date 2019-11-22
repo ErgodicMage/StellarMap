@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 using StellarMap.Math.Types;
 
@@ -22,7 +20,7 @@ namespace StellarMap.Progression
         #region IEquatable
         public bool Equals(Portal other) => StarIdentifier.Equals(other.StarIdentifier) && ERBridgeIdentifier.Equals(other.ERBridgeIdentifier) && Position.Equals(other.Position);
 
-        public override bool Equals(object o) => o != null && o is Portal p && Equals(p);
+        public override bool Equals(object obj) => obj is Portal p && Equals(p);
 
         public override int GetHashCode()
         {
@@ -31,8 +29,8 @@ namespace StellarMap.Progression
                 hash = hash ^ StarIdentifier.GetHashCode();
             if (!string.IsNullOrEmpty(ERBridgeIdentifier))
                 hash = hash ^ ERBridgeIdentifier.GetHashCode();
-            if (Position != null)
-                hash = hash ^ Position.GetHashCode();
+
+            hash = hash ^ Position.GetHashCode();
 
             return hash;
         }

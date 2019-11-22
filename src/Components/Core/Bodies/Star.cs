@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 namespace StellarMap.Core.Bodies
 {
@@ -63,7 +59,7 @@ namespace StellarMap.Core.Bodies
         #region IEquatable
         public bool Equals(Star other) => other!=null && base.Equals(other as StellarParentBody) && StarGroupIdentifiers.Equals(other.StarGroupIdentifiers);
 
-        public override bool Equals(object o) => Equals(o as Star);
+        public override bool Equals(object obj) => Equals(obj as Star);
 
         public override int GetHashCode()
         {

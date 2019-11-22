@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
+﻿using System.Runtime.Serialization;
 
 using StellarMap.Core.Bodies;
-using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {

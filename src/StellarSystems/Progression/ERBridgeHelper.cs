@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using StellarMap.Core.Bodies;
-using StellarMap.Core.Types;
-using StellarMap.Math.Types;
-
+﻿
 namespace StellarMap.Progression
 {
     public static class ERBridgeHelper

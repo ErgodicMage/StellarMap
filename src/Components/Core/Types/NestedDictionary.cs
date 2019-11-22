@@ -207,11 +207,27 @@ namespace StellarMap.Core.Types
             return bRet;
         }
 
+        public override bool Equals(object obj) => Equals(obj as NestedDictionary<TOuter, TInner, TValue>);
+
+        public override int GetHashCode()
+        {
+            int hash = 15;
+
+            foreach (TOuter outer in Keys)
+            {
+                hash = hash ^ outer.GetHashCode();
+                foreach (var inner in this[outer])
+                    hash = hash ^ inner.Key.GetHashCode() ^ inner.Value.GetHashCode();
+            }
+
+            return hash;
+        }
+
         private static bool InnerEquals(Dictionary<TInner, TValue> thisObject, Dictionary<TInner, TValue> otherObject)
         {
             bool bRet = true;
 
-            if (thisObject == null && thisObject == null)
+            if (thisObject == null && otherObject == null)
                 bRet = true;
             else if ((thisObject == null) || (otherObject == null))
                 bRet = false;
@@ -244,10 +260,6 @@ namespace StellarMap.Core.Types
 
             return bRet;
         }
-
-        public override bool Equals(object o) => Equals(o as NestedDictionary<TOuter, TInner, TValue>);
-
-        public override int GetHashCode() => base.GetHashCode();
         #endregion
     }
 }

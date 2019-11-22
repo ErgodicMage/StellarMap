@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace StellarMap.Core.Types
 {
@@ -63,7 +62,7 @@ namespace StellarMap.Core.Types
         #region IEquatable
         public bool Equals(GroupedProperties other) => PropertyGroups.Equals(other.PropertyGroups);
 
-        public override bool Equals(object o) => (o is GroupedProperties) && Equals(o as GroupedProperties);
+        public override bool Equals(object obj) => (obj is GroupedProperties) && Equals(obj as GroupedProperties);
 
         public override int GetHashCode() => PropertyGroups.GetHashCode();
         #endregion

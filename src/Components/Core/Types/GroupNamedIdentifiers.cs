@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace StellarMap.Core.Types
 {
@@ -61,7 +60,7 @@ namespace StellarMap.Core.Types
         #region IEquatable
         public bool Equals(GroupNamedIdentifiers other) => GroupIdentifiers.Equals(other.GroupIdentifiers);
 
-        public override bool Equals(object o) => (o is GroupNamedIdentifiers) && Equals(o as GroupNamedIdentifiers);
+        public override bool Equals(object obj) => (obj is GroupNamedIdentifiers) && Equals(obj as GroupNamedIdentifiers);
 
         public override int GetHashCode() => GroupIdentifiers.GetHashCode();
         #endregion

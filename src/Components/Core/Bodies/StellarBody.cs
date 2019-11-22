@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 using StellarMap.Core.Types;
 
@@ -71,11 +68,11 @@ namespace StellarMap.Core.Bodies
             return bRet;
         }
 
-        public override bool Equals(object o) => Equals(o as StellarBody);
+        public override bool Equals(object obj) => Equals(obj as StellarBody);
 
         public override int GetHashCode()
         {
-            int hash = base.GetHashCode();
+            int hash = 1;
             if (!string.IsNullOrEmpty(Name))
                 hash = hash ^ Name.GetHashCode();
             if (!string.IsNullOrEmpty(Identifier))
@@ -110,7 +107,6 @@ namespace StellarMap.Core.Bodies
         {
             T t = default(T);
 
-            Type ty = typeof(T);
             Dictionary<string, string> identifiers = null;
             string id = string.Empty;
 
@@ -123,7 +119,6 @@ namespace StellarMap.Core.Bodies
 
         public virtual IDictionary<string, T> GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
         {
-            Type ty = typeof(T);
             Dictionary<string, string> identifiers = null;
             IDictionary<string, T> all = null;
 
@@ -154,7 +149,6 @@ namespace StellarMap.Core.Bodies
                 if (found == null)
                     Map.Add<T>(t);
 
-                Type ty = typeof(T);
                 Dictionary<string, string> identifiers = null;
 
                 if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers))

@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
-
-//using CsvHelper;
-//using CsvHelper.Configuration;
 
 
 namespace StellarMap.Catalogues

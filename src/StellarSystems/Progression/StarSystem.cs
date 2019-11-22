@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Text;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
@@ -49,7 +47,7 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEquatable
-        public bool Equals(StarSystem other)// (other != null) && !ReferenceEquals(this, other) && base.Equals(other as StellarBody) && PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
+        public bool Equals(StarSystem other)
         {
             bool bRet = true;
 
@@ -60,11 +58,9 @@ namespace StellarMap.Progression
             {
                 if (!base.Equals(other))
                     bRet = false;
-                //else if (!this.ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers))
-                //    bRet = false;
                 else if (this.Portals == null && other.Portals == null)
                     bRet = true;
-                else if (this.Portals == null || this.Portals == null)
+                else if (this.Portals == null || other.Portals == null)
                     bRet = false;
                 else if (this.Portals.Count == other.Portals.Count)
                 {

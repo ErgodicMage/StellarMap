@@ -4,8 +4,6 @@ using System.Runtime.Serialization;
 using System.Text;
 
 using StellarMap.Core.Bodies;
-using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 namespace StellarMap.Progression
 {
@@ -23,7 +21,7 @@ namespace StellarMap.Progression
             BridgeType = type;
             Map = system1.Map;
             (Map as ProgressionMap).Add(this);
-            //Initialize();
+
             Portals = new Portal[2];
             Portals[0].StarIdentifier = system1.Identifier;
             Portals[0].ERBridgeIdentifier = this.Identifier;
@@ -103,7 +101,7 @@ namespace StellarMap.Progression
         public bool Equals(ERBridge other) => other!=null && base.Equals(other as StellarBody) && BridgeType.Equals(other.BridgeType) &&
                                                 Portals != null && other.Portals != null && Portals[0].Equals(other.Portals[0]) && Portals[1].Equals(other.Portals[1]);
 
-        public override bool Equals(object o) => Equals(o as ERBridge);
+        public override bool Equals(object obj) => Equals(obj as ERBridge);
 
         public override int GetHashCode()
         {

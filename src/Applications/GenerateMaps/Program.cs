@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
 
 using StellarMap.Storage;
@@ -15,7 +14,7 @@ using StellarMap.Progression.DefaultSettingMaps;
 
 namespace StellarMap.GenerateMaps
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -59,9 +58,6 @@ namespace StellarMap.GenerateMaps
         {
             string filename = dir + "LocalSector.json";
 
-            //if (!File.Exists(filename))
-                //GenerateLocalSector();
-
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
@@ -69,6 +65,8 @@ namespace StellarMap.GenerateMaps
             {
                 map = store.Retreive<ProgressionMap>(reader);
             }
+
+            Console.WriteLine(map.ToString());
         }
 
         public static void ZipGenerateLocalSector()
@@ -95,9 +93,6 @@ namespace StellarMap.GenerateMaps
         {
             string filename = dir + "LocalSector.zip";
 
-            //if (!File.Exists(filename))
-                //GenerateLocalSector();
-
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
@@ -105,6 +100,8 @@ namespace StellarMap.GenerateMaps
             {
                 map = store.Retreive<ProgressionMap>(reader);
             }
+
+            Console.WriteLine(map.ToString());
         }
         public static void StoreSolarSystem()
         {
@@ -127,9 +124,6 @@ namespace StellarMap.GenerateMaps
         {
             string filename = dir + "SolarSystem.json";
 
-            if (!File.Exists(filename))
-                StoreSolarSystem();
-
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
@@ -137,6 +131,8 @@ namespace StellarMap.GenerateMaps
             {
                 map = store.Retreive<BaseStellarMap>(reader);
             }
+
+            Console.WriteLine(map.ToString());
         }
 
         public static void LocateStarsInCube(int ly)        

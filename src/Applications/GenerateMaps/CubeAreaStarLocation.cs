@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 using StellarMap.Catalogues;
 using StellarMap.Math.Types;
@@ -9,7 +8,7 @@ namespace StellarMap.GenerateMaps
 {
     public class CubeAreaStarLocation
     {
-        IDictionary<string, Func<double, Point3d, bool>> AreaMappings = new Dictionary<string, Func<double, Point3d, bool>>();
+        readonly IDictionary<string, Func<double, Point3d, bool>> AreaMappings = new Dictionary<string, Func<double, Point3d, bool>>();
 
         public CubeAreaStarLocation()
         {
