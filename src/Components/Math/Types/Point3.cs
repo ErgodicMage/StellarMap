@@ -253,6 +253,44 @@ namespace StellarMap.Math.Types
         #endregion
 
         #region Parse
+        public static bool TryParse(string text, out Point3d result)
+        {
+            return TryParse(text, null, out result);
+        }
+
+        public static bool TryParse(string text, IFormatProvider formatProvider, out Point3d result)
+        {
+            bool retValue = false;
+            result = Point3d.NaN; ;
+
+            if (TryParse(text, formatProvider, out var x, out var y, out var z))
+            {
+                result = new Point3d(x, y, z);
+                retValue = true;
+            }
+            return retValue;
+        }
+
+        public static bool TryParse(string text, IFormatProvider formatProvider, out double x, out double y, out double z)
+        {
+            bool retValue = false;
+            x = default(double);
+            y = default(double);
+            z = default(double);
+
+            // right now this is elcheapo - only handles (1.1, 2.4, 3.2) format
+            string temp = text.Replace("(", "").Replace(")", "");
+            string[] values = temp.Split(",");
+
+            if (values.Length == 3 && 
+                double.TryParse(values[0], out x) && 
+                double.TryParse(values[1], out y) && 
+                double.TryParse(values[2], out z))
+                    retValue = true;
+
+            return retValue;
+        }
+
         #endregion
 
     }

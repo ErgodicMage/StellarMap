@@ -20,5 +20,12 @@ namespace StellarMap.Math
 
             return retPoint;
         }
+
+        public static double Distance(Point3d p1, Point3d p2)
+        {
+            double d = System.Math.Pow((p1.x - p2.x), 2) + System.Math.Pow((p1.y - p2.y), 2) + System.Math.Pow((p1.z - p2.z), 2);
+            d = System.Math.Sqrt(d);
+            return d;
+        }
     }
 }

@@ -26,6 +26,8 @@ namespace StellarMap.Core.Types
         {
             public const string Designation = "Designation";
             public const string StellarClass = "StellarClass";
+            public const string Position = "Position";
+            public const string Distance = "Distance";
         }
     }
 }

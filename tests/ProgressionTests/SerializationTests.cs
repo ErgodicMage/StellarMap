@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-using StellarMap.Core.Bodies;
-using StellarMap.Core.Types;
-using StellarMap.Math.Types;
+﻿using System.IO;
 
 using StellarMap.Progression;
 using StellarMap.Progression.DefaultSettingMaps;

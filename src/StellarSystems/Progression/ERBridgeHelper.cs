@@ -1,4 +1,6 @@
-﻿
+﻿using StellarMap.Math;
+using StellarMap.Math.Types;
+
 namespace StellarMap.Progression
 {
     public static class ERBridgeHelper
@@ -22,6 +24,20 @@ namespace StellarMap.Progression
 
             system1.Add(bridge.Portals[0]);
             system2.Add(bridge.Portals[1]);
+
+            if (system1.BasicProperties.ContainsKey(StellarMap.Core.Types.Constants.PropertyNames.Position) && 
+                system2.BasicProperties.ContainsKey(StellarMap.Core.Types.Constants.PropertyNames.Position))
+            {
+                if (Point3d.TryParse(system1.BasicProperties[StellarMap.Core.Types.Constants.PropertyNames.Position], out var p1) &&
+                    Point3d.TryParse(system2.BasicProperties[StellarMap.Core.Types.Constants.PropertyNames.Position], out var p2))
+                {
+                    double distance = AstronomicalFunctions.Distance(p1, p2);
+                    bridge.BasicProperties.Add(StellarMap.Core.Types.Constants.PropertyNames.Distance, distance.ToString());
+
+                }
+
+
+            }
 
             return bridge;
         }

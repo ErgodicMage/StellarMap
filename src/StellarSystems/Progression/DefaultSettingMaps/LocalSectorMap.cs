@@ -69,6 +69,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             sol.Add(new Habitat("Ceres Station"));
 
             StarSystem solSystem = new StarSystem("Sol");
+            solSystem.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 0, 0).ToString());
             Map.Add(solSystem);
             solSystem.Add(sol);
 
@@ -90,6 +91,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Bernard's Star
             system = new StarSystem("Bernard");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 699");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.5,0.9,0.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Bernard's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 699");
@@ -105,6 +107,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Sirius
             system = new StarSystem("Sirius");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 244");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.8,-1.9,-0.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Sirius");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 244");
@@ -120,6 +123,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Luyten's Star
             system = new StarSystem("Luyten");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 273");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-3.2,-2,0.7).ToString());
             Map.Add(system);
             star = new ProgressionStar("Luyten's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 273");
@@ -135,6 +139,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Procyon
             system = new StarSystem("Procyon");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.8,-1.9,0.8).ToString());
             Map.Add(system);
             star = new ProgressionStar("Procyon");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
@@ -150,6 +155,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Lalande
             system = new StarSystem("Lalande");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 441");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.1,-0.1,2.3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Lalande");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 411");
@@ -165,6 +171,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Epsilon Eridani
             system = new StarSystem("Epsilon Eridani");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.1,-0.6,-2.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Epsilon Eridani");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
@@ -180,6 +187,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Ross
             system = new StarSystem("Ross");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0,-1.7,2.9).ToString());
             Map.Add(system);
             star = new ProgressionStar("Pocks");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447/Ross 128");
@@ -195,6 +203,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Aquarii 
             system = new StarSystem("Aquarii");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.3,1.4,-2.8).ToString());
             Map.Add(system);
             star = new ProgressionStar("Alvin");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 A");
@@ -226,6 +235,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Wolf
             system = new StarSystem("Wolf");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.6,-1.2,2).ToString());
             Map.Add(system);
             star = new ProgressionStar("Wolf");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
@@ -241,6 +251,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Ceti
             system = new StarSystem("Ceti");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.6,0.1,-2.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("BL");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 A");
@@ -302,6 +313,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Centauri
             system = new StarSystem("Centauri");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 559");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1,-0.9,0).ToString());
             Map.Add(system);
             star = new ProgressionStar("Alpha");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 559 A");
@@ -333,6 +345,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Tau Ceti
             system = new StarSystem("Tau Ceti");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 71");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1,0.1,-3.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("Tau Ceti");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 71");
@@ -348,6 +361,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Groombridge
             system = new StarSystem("Groombridge");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 380");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.9, 0.7, 3.8).ToString());
             Map.Add(system);
             star = new ProgressionStar("Groombridge");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 380");
@@ -363,6 +377,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Kruger
             system = new StarSystem("Kruger");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 860");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1, 3.9, 0).ToString());
             Map.Add(system);
             star = new ProgressionStar("Kruger");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 860 A");
@@ -385,6 +400,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Lacaille
             system = new StarSystem("Lacaille");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 825");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.3, 0.1, -3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Lacaille");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 825");
@@ -400,6 +416,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Gleine
             system = new StarSystem("Gleine");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 725");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 3.2, 1.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Gleine");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 725");
@@ -422,6 +439,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Kapteyn
             system = new StarSystem("Kapteyn");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 191");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.1, -3, -2.3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Kapteyn's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 191");
@@ -437,6 +455,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Vista
             system = new StarSystem("Vista");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 473");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0.4, -1.3, 4.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Vista");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 473 A");
@@ -460,6 +479,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Bihar
             system = new StarSystem("Bihar");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 1061");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.8, -2.5, -3.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Bihar");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1061");
@@ -475,6 +495,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Inne
             system = new StarSystem("Inne");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3618");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.4, -4.3, -0.2).ToString());
             Map.Add(system);
             star = new ProgressionStar("Inne's Star");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3618");
@@ -525,6 +546,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Wolf's Den
             system = new StarSystem("Wolf's Den");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3622");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.5, -3.4, 3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Wolf's Den");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "NN 3622");
@@ -540,6 +562,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Andromeda
             system = new StarSystem("Andromeda");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 15");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.5, 3, -1.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Andomeda A");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 15 A");
@@ -563,6 +586,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Sutter
             system = new StarSystem("Sutter");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 687");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.6, 3.8, 2.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Sutter");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 687");
@@ -578,6 +602,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Siera
             system = new StarSystem("Siera");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 234");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-3.4, -2.2, -0.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Bright");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 234 A");
@@ -600,6 +625,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region YZ Ceti
             system = new StarSystem("YZ Ceti");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 54.1");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(2.6, -4.6, -6.2).ToString());
             Map.Add(system);
             star = new ProgressionStar("YZ Ceti");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 54.1");
@@ -615,6 +641,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Kercur - Repeat Wolf's Den
             system = new StarSystem("Kercur");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 3622");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.5, -3.4, 3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Kercur");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 3622");
@@ -630,6 +657,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Nuone
             system = new StarSystem("Nuone");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 1");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1, -0.3, -4.2).ToString());
             Map.Add(system);
             star = new ProgressionStar("Nuone");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 1");
@@ -645,6 +673,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Leonis
             system = new StarSystem("Leonis");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 388");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.3, -1.7, 4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Leonis");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 388");
@@ -660,6 +689,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Ophir
             system = new StarSystem("Ophir");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "SCR 1845");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.6, -1.6, -3.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("Red");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "SCR 1845 A");
@@ -682,6 +712,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Cancri
             system = new StarSystem("Cancri");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1111");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.9, -0.9, 1.9).ToString());
             Map.Add(system);
             star = new ProgressionStar("Cancri");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1111");
@@ -697,6 +728,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Eureka
             system = new StarSystem("Eureka");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 440");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(2, -4.1, -0.2).ToString());
             Map.Add(system);
             star = new ProgressionStar("Eureka");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 440");
@@ -712,6 +744,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region TeeGarden
             system = new StarSystem("TeeGarden");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "SO025300.5+165258");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.1, 1.0, -3.6).ToString());
             Map.Add(system);
             star = new ProgressionStar("TeeGarden");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "SO025300.5+165258");
@@ -727,6 +760,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Van Maanen
             system = new StarSystem("Van Maanen");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 35");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.3, 2, -3.7).ToString());
             Map.Add(system);
             star = new ProgressionStar("Van Maanen");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 35");
@@ -742,6 +776,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Knob
             system = new StarSystem("Knob");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "UGPS 0722-05");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.7, -2.1, -2.3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Ross");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "UGPS 0722-05");
@@ -802,6 +837,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Cygni
             system = new StarSystem("Cygni");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 820");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0.5, 3.4, -0.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Bradley");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 820 A");
@@ -825,6 +861,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Epsilon Indi
             system = new StarSystem("Epsilon Indi");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(2.2, -1, -2.7).ToString());
             Map.Add(system);
             star = new ProgressionStar("Indus");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 845 A");
@@ -856,6 +893,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Arietis
             system = new StarSystem("Arietis");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 83");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.6, 1.6, -3.2).ToString());
             Map.Add(system);
             star = new ProgressionStar("Arietis");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 83.1");
@@ -871,6 +909,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Flare
             system = new StarSystem("Flare");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "DEN 1048-3956");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0.7, 2.4, -3.2).ToString());
             Map.Add(system);
             star = new ProgressionStar("Flare");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "DEN 1048-3956");
@@ -886,6 +925,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Demic
             system = new StarSystem("Demic");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 412");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.1, 0.4, 4.3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Demic");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 412 A");
@@ -908,6 +948,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Lapis
             system = new StarSystem("Lapis");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 628");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-3.5, 2.5, -0.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Lapis");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 628");
@@ -923,6 +964,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Banawali
             system = new StarSystem("Banawali");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 876");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.5, 1.9, -4.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Banawali");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 876");
@@ -938,6 +980,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Rudra
             system = new StarSystem("Rudra");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0.9, 4.6, 0.7).ToString());
             Map.Add(system);
             star = new ProgressionStar("Rudra");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1245 A");
@@ -1002,6 +1045,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Altair
             system = new StarSystem("Altair");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 768");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(3.4, 3.8, -0.8).ToString());
             Map.Add(system);
             star = new ProgressionStar("Altaira");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 768");
@@ -1017,6 +1061,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Krell
             system = new StarSystem("Krell");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 702");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(4.3, 2.5, 1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Krell");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 702 A");
@@ -1040,6 +1085,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Mobius
             system = new StarSystem("Mobius");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1116");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-3.7, -1.9, 3.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Mobius");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 1116 A");
@@ -1063,6 +1109,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Bellerophon
             system = new StarSystem("Bellerophon");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 205");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.8, -4.5, 2.9).ToString());
             Map.Add(system);
             star = new ProgressionStar("Bellerophon");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 205");
@@ -1078,6 +1125,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Id
             system = new StarSystem("Id");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 445");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.5, 3.4, 3.3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Id");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 445");
@@ -1093,6 +1141,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Adams
             system = new StarSystem("Adams");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 251");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-5.6, -0.3, 1.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("Adams");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 251");
@@ -1108,6 +1157,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Lacerta
             system = new StarSystem("Lacerta");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 873");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.9, 4.8, -1.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Lacerta");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 873");
@@ -1123,6 +1173,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Omicron
             system = new StarSystem("Omicron");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 693");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(5.1, -2.4, -1.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("Lacerta");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 693");
@@ -1138,6 +1189,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Gateway
             system = new StarSystem("Gateway");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-3.7, -1.4, -3.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Keid");
             star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166 A");
