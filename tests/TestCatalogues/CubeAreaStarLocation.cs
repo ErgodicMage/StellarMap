@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 using StellarMap.Catalogues;
 using StellarMap.Math.Types;
@@ -9,48 +8,48 @@ namespace TestCatalogues
 {
     public class CubeAreaStarLocation
     {
-        IDictionary<string, Func<double, Point3d, bool>> AreaMappings = new Dictionary<string, Func<double, Point3d, bool>>();
+        readonly IDictionary<string, Func<double, Point3d, bool>> AreaMappings = new Dictionary<string, Func<double, Point3d, bool>>();
 
         public CubeAreaStarLocation()
         {
             {
-                AreaMappings.Add("A(0,0,0)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < l / 2 && p.z > -l / 2)));
-                AreaMappings.Add("A(-1,0,0)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < l / 2 && p.z > -l / 2)));
-                AreaMappings.Add("A(1,0,0)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < l / 2 && p.z > -l / 2)));
+                AreaMappings.Add("A(0,0,0)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < l / 2 && p.z > -l / 2));
+                AreaMappings.Add("A(-1,0,0)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < l / 2 && p.z > -l / 2));
+                AreaMappings.Add("A(1,0,0)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < l / 2 && p.z > -l / 2));
 
-                AreaMappings.Add("A(0,1,0)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < l / 2 && p.z > -l / 2)));
-                AreaMappings.Add("A(-1,1,0)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < l / 2 && p.z > -l / 2)));
-                AreaMappings.Add("A(1,1,0)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < l / 2 && p.z > -l / 2)));
+                AreaMappings.Add("A(0,1,0)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < l / 2 && p.z > -l / 2));
+                AreaMappings.Add("A(-1,1,0)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < l / 2 && p.z > -l / 2));
+                AreaMappings.Add("A(1,1,0)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < l / 2 && p.z > -l / 2));
 
-                AreaMappings.Add("A(0,-1,0)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < l / 2 && p.z > -l / 2)));
-                AreaMappings.Add("A(-1,-1,0)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < l / 2 && p.z > -l / 2)));
-                AreaMappings.Add("A(1,-1,0)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < l / 2 && p.z > -l / 2)));
-
-
-                AreaMappings.Add("A(0,0,1)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-                AreaMappings.Add("A(-1,0,1)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-                AreaMappings.Add("A(1,0,1)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-
-                AreaMappings.Add("A(0,1,1)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-                AreaMappings.Add("A(-1,1,1)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-                AreaMappings.Add("A(1,1,1)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-
-                AreaMappings.Add("A(0,-1,1)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-                AreaMappings.Add("A(-1,-1,1)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
-                AreaMappings.Add("A(1,-1,1)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < 3 * l / 2 && p.z > l / 2)));
+                AreaMappings.Add("A(0,-1,0)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < l / 2 && p.z > -l / 2));
+                AreaMappings.Add("A(-1,-1,0)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < l / 2 && p.z > -l / 2));
+                AreaMappings.Add("A(1,-1,0)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < l / 2 && p.z > -l / 2));
 
 
-                AreaMappings.Add("A(0,0,-1)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
-                AreaMappings.Add("A(-1,0,-1)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
-                AreaMappings.Add("A(1,0,-1)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
+                AreaMappings.Add("A(0,0,1)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
+                AreaMappings.Add("A(-1,0,1)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
+                AreaMappings.Add("A(1,0,1)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
 
-                AreaMappings.Add("A(0,1,-1)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
-                AreaMappings.Add("A(-1,1,-1)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
-                AreaMappings.Add("A(1,1,-1)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
+                AreaMappings.Add("A(0,1,1)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
+                AreaMappings.Add("A(-1,1,1)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
+                AreaMappings.Add("A(1,1,1)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
 
-                AreaMappings.Add("A(0,-1,-1)", (l, p) => ((p.x < l / 2 && p.x > -l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
-                AreaMappings.Add("A(-1,-1,-1)", (l, p) => ((p.x < -l / 2 && p.x > -3 * l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
-                AreaMappings.Add("A(1,-1,-1)", (l, p) => ((p.x < 3 * l / 2 && p.x > l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < -l / 2 && p.z > -3 * l / 2)));
+                AreaMappings.Add("A(0,-1,1)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
+                AreaMappings.Add("A(-1,-1,1)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
+                AreaMappings.Add("A(1,-1,1)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < 3 * l / 2 && p.z > l / 2));
+
+
+                AreaMappings.Add("A(0,0,-1)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+                AreaMappings.Add("A(-1,0,-1)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+                AreaMappings.Add("A(1,0,-1)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < l / 2 && p.y > -l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+
+                AreaMappings.Add("A(0,1,-1)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+                AreaMappings.Add("A(-1,1,-1)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+                AreaMappings.Add("A(1,1,-1)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < 3 * l / 2 && p.y > l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+
+                AreaMappings.Add("A(0,-1,-1)", (l, p) => (p.x < l / 2 && p.x > -l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+                AreaMappings.Add("A(-1,-1,-1)", (l, p) => (p.x < -l / 2 && p.x > -3 * l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
+                AreaMappings.Add("A(1,-1,-1)", (l, p) => (p.x < 3 * l / 2 && p.x > l / 2 && p.y < -l / 2 && p.y > -3 * l / 2 && p.z < -l / 2 && p.z > -3 * l / 2));
             }
         }
 

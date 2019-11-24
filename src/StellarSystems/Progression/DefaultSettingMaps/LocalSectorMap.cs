@@ -612,7 +612,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             cluster.Add(system);
             #endregion
 
-            #region Kercur
+            #region Kercur - Repeat Wolf's Den
             system = new StarSystem("Kercur");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 3622");
             Map.Add(system);
@@ -1120,8 +1120,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
             cluster.Add(system);
             #endregion
 
-            #region Gateway
-            system = new StarSystem("Gateway");
+            #region Omicron
+            system = new StarSystem("Omicron");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 693");
             Map.Add(system);
             star = new ProgressionStar("Lacerta");
@@ -1135,8 +1135,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
             cluster.Add(system);
             #endregion
 
-            #region Omicron
-            system = new StarSystem("Omicron");
+            #region Gateway
+            system = new StarSystem("Gateway");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 166");
             Map.Add(system);
             star = new ProgressionStar("Keid");
