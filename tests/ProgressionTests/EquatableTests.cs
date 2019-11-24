@@ -36,6 +36,9 @@ namespace ProgressionTests
             bridge2.Portals[0].ERBridgeIdentifier = bridge1.Portals[0].ERBridgeIdentifier;
             bridge2.Portals[1].ERBridgeIdentifier = bridge1.Portals[1].ERBridgeIdentifier;
 
+            if (bridge1.BasicProperties.ContainsKey(Constants.PropertyNames.Distance))
+                bridge2.BasicProperties.Add(Constants.PropertyNames.Distance, bridge1.BasicProperties[Constants.PropertyNames.Distance]);
+
             Assert.IsTrue(bridge1.Equals(bridge2));
         }
 
