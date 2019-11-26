@@ -20,6 +20,7 @@ Quadrant Bridges connect one or more Quadrants into a Galaxy.
 
 
 Bridges are entered and exited through gravitational anomalies known as Portals. Activating a Designator requires a specific amount of energy depending on the Bridge type.
+Optional: The distances between stars that a bridge passes can be limited depending on the type. For Example System Bridges less that 15ly;
 
 Overall Rule:
 	Every System has at least one Bridge.

@@ -53,10 +53,10 @@ namespace ProgressionTests
             reader.Load(folder + "LocalSector Stars.csv");
             IList<LocalSectorStar> stars = reader.Stars;
 
-            string starName = "Sun";
+            string starName = "Ophiuchi";
             LocalSectorStar star = stars.Where(s => s.Name == starName).First();
 
-            double distance = 10 / 3.261633;
+            double distance = 20 / 3.261633;
             var nearest = stars.Where(s => AstronomicalFunctions.Distance(s.Position, star.Position) <= distance);
 
             if (nearest != null)

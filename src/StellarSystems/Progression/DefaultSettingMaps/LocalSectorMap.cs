@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
 using StellarMap.Math.Types;
 
-using StellarMap.Progression;
 
 namespace StellarMap.Progression.DefaultSettingMaps
 {
@@ -200,32 +197,48 @@ namespace StellarMap.Progression.DefaultSettingMaps
             solCluster.Add(system);
             #endregion
 
-            #region Aquarii 
-            system = new StarSystem("Aquarii");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866");
-            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.3,1.4,-2.8).ToString());
+            #region Ophiuchi 
+            system = new StarSystem("Ophiuchi");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 644");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(5.3, 1, 2.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Alvin");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 A");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M5VJ");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 644 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3Ve");
             catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "16");
-            catalogue.Add("Hip", "-1");
+            catalogue.Add("HabHyg", "86");
+            catalogue.Add("Hip", "82817");
             star.Properties.AddGroup("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Bruce");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 B");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 644 Ba");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4Ve");
             catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "16");
+            catalogue.Add("HabHyg", "82");
+            catalogue.Add("Hip", "-1");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            star = new ProgressionStar("Eddie");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 644 Bb");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4Ve");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "82");
+            catalogue.Add("Hip", "-1");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            star = new ProgressionStar("Dave");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 643");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5V");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "0");
             catalogue.Add("Hip", "-1");
             star.Properties.AddGroup("Catalogue", catalogue);
             system.Add(star);
             star = new ProgressionStar("Calvin");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 866 C");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 644 C");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M7");
             catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "16");
+            catalogue.Add("HabHyg", "83");
             catalogue.Add("Hip", "-1");
             star.Properties.AddGroup("Catalogue", catalogue);
             system.Add(star);
@@ -234,15 +247,15 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Wolf
             system = new StarSystem("Wolf");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
-            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.6,-1.2,2).ToString());
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 729");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(2.9, 0.6, -0.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("Wolf");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 406");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M6");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 729");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5Ve");
             catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "5");
-            catalogue.Add("Hip", "-1");
+            catalogue.Add("HabHyg", "11");
+            catalogue.Add("Hip", "92403");
             star.Properties.AddGroup("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
@@ -290,9 +303,9 @@ namespace StellarMap.Progression.DefaultSettingMaps
             solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Lalande", "Epsilon Eridani");
             solCluster.Add(bridge);
-            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ross", "Aquarii");
+            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ross", "Ophiuchi");
             solCluster.Add(bridge);
-            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Aquarii", "Wolf");
+            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ophiuchi", "Wolf");
             solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Sirius", "Luyten");
             solCluster.Add(bridge);
