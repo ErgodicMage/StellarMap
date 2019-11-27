@@ -53,7 +53,7 @@ namespace ProgressionTests
             reader.Load(folder + "LocalSector Stars.csv");
             IList<LocalSectorStar> stars = reader.Stars;
 
-            string starName = "Ophiuchi";
+            string starName = "Little Ophiuchi";
             LocalSectorStar star = stars.Where(s => s.Name == starName).First();
 
             double distance = 20 / 3.261633;
