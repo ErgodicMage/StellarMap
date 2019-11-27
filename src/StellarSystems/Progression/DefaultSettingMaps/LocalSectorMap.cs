@@ -245,6 +245,29 @@ namespace StellarMap.Progression.DefaultSettingMaps
             solCluster.Add(system);
             #endregion
 
+            #region Little Ophiuchi
+            system = new StarSystem("Little Ophiuchi");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 663");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(5.9, -0.2, 0.7).ToString());
+            Map.Add(system);
+            star = new ProgressionStar("LO 1");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 663");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K1Ve");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "99");
+            catalogue.Add("Hip", "-1");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            star = new ProgressionStar("LO 2");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 663");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K2:III");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "101");
+            catalogue.Add("Hip", "-1");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star); solCluster.Add(system);
+            #endregion
+
             #region Wolf
             system = new StarSystem("Wolf");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 729");
@@ -305,7 +328,11 @@ namespace StellarMap.Progression.DefaultSettingMaps
             solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ross", "Ophiuchi");
             solCluster.Add(bridge);
+            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ophiuchi", "Little Ophiuchi");
+            solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ophiuchi", "Wolf");
+            solCluster.Add(bridge);
+            bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Little Ophiuchi", "Wolf");
             solCluster.Add(bridge);
             bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Sirius", "Luyten");
             solCluster.Add(bridge);
@@ -1279,6 +1306,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
             bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Tau Ceti", "Cygni");
             local.Add(bridge);
             bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Rudra", "Altair");
+            local.Add(bridge);
+            bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Little Ophiuchi", "Altair");
             local.Add(bridge);
 
             return local;
