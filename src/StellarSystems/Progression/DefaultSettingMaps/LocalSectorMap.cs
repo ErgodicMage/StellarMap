@@ -101,6 +101,78 @@ namespace StellarMap.Progression.DefaultSettingMaps
             solCluster.Add(system);
             #endregion
 
+            #region Epsilon Eridani
+            system = new StarSystem("Epsilon Eridani");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.1, -0.6, -2.4).ToString());
+            Map.Add(system);
+            star = new ProgressionStar("Epsilon Eridani");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K2V");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "13");
+            catalogue.Add("Hip", "16537");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            solCluster.Add(system);
+            #endregion
+
+            #region Procyon
+            system = new StarSystem("Procyon");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.8, -1.9, 0.8).ToString());
+            Map.Add(system);
+            star = new ProgressionStar("Procyon");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "F5IV-V");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "18");
+            catalogue.Add("Hip", "37279");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            solCluster.Add(system);
+            #endregion
+
+            #region Ross
+            system = new StarSystem("Ross");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, -1.7, 2.9).ToString());
+            Map.Add(system);
+            star = new ProgressionStar("Pocks");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447/Ross 128");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5V");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "14");
+            catalogue.Add("Hip", "57548");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            solCluster.Add(system);
+            #endregion
+
+            #region Ceti
+            system = new StarSystem("Ceti");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65");
+            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.6, 0.1, -2.5).ToString());
+            Map.Add(system);
+            star = new ProgressionStar("BL");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 A");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "7");
+            catalogue.Add("Hip", "-1");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            star = new ProgressionStar("UV");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 B");
+            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
+            catalogue = new Dictionary<string, string>();
+            catalogue.Add("HabHyg", "7");
+            catalogue.Add("Hip", "-1");
+            star.Properties.AddGroup("Catalogue", catalogue);
+            system.Add(star);
+            solCluster.Add(system);
+            #endregion
+
             #region Sirius
             system = new StarSystem("Sirius");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 244");
@@ -133,22 +205,6 @@ namespace StellarMap.Progression.DefaultSettingMaps
             solCluster.Add(system);
             #endregion
 
-            #region Procyon
-            system = new StarSystem("Procyon");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
-            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.8,-1.9,0.8).ToString());
-            Map.Add(system);
-            star = new ProgressionStar("Procyon");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "F5IV-V");
-            catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "18");
-            catalogue.Add("Hip", "37279");
-            star.Properties.AddGroup("Catalogue", catalogue);
-            system.Add(star);
-            solCluster.Add(system);
-            #endregion
-
             #region Lalande
             system = new StarSystem("Lalande");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 441");
@@ -160,38 +216,6 @@ namespace StellarMap.Progression.DefaultSettingMaps
             catalogue = new Dictionary<string, string>();
             catalogue.Add("HabHyg", "6");
             catalogue.Add("Hip", "54035");
-            star.Properties.AddGroup("Catalogue", catalogue);
-            system.Add(star);
-            solCluster.Add(system);
-            #endregion
-
-            #region Epsilon Eridani
-            system = new StarSystem("Epsilon Eridani");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
-            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.1,-0.6,-2.4).ToString());
-            Map.Add(system);
-            star = new ProgressionStar("Epsilon Eridani");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "K2V");
-            catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "13");
-            catalogue.Add("Hip", "16537");
-            star.Properties.AddGroup("Catalogue", catalogue);
-            system.Add(star);
-            solCluster.Add(system);
-            #endregion
-
-            #region Ross
-            system = new StarSystem("Ross");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447");
-            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0,-1.7,2.9).ToString());
-            Map.Add(system);
-            star = new ProgressionStar("Pocks");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447/Ross 128");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5V");
-            catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "14");
-            catalogue.Add("Hip", "57548");
             star.Properties.AddGroup("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);
@@ -279,30 +303,6 @@ namespace StellarMap.Progression.DefaultSettingMaps
             catalogue = new Dictionary<string, string>();
             catalogue.Add("HabHyg", "11");
             catalogue.Add("Hip", "92403");
-            star.Properties.AddGroup("Catalogue", catalogue);
-            system.Add(star);
-            solCluster.Add(system);
-            #endregion
-
-            #region Ceti
-            system = new StarSystem("Ceti");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65");
-            system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.6,0.1,-2.5).ToString());
-            Map.Add(system);
-            star = new ProgressionStar("BL");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 A");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
-            catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "7");
-            catalogue.Add("Hip", "-1");
-            star.Properties.AddGroup("Catalogue", catalogue);
-            system.Add(star);
-            star = new ProgressionStar("UV");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65 B");
-            star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "dM5.5V");
-            catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "7");
-            catalogue.Add("Hip", "-1");
             star.Properties.AddGroup("Catalogue", catalogue);
             system.Add(star);
             solCluster.Add(system);

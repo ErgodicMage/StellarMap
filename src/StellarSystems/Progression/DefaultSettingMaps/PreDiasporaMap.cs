@@ -6,9 +6,9 @@ using StellarMap.Math.Types;
 
 namespace StellarMap.Progression.DefaultSettingMaps
 {
-    public class PY2500ADMap
+    public class PreDiasporaMap
     {
-        public PY2500ADMap(ProgressionMap map)
+        public PreDiasporaMap(ProgressionMap map)
         {
             Map = map;
         }
