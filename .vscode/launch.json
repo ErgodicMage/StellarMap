@@ -10,7 +10,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "~/Development/StellarMap/src/Applications/GenerateMaps/bin/Debug/netcoreapp2.0/StellarMap.GenerateMaps.dll",
+            "program": "~/Development/StellarMap/src/Applications/GenerateMaps/bin/Debug/netcoreapp3.0/StellarMap.GenerateMaps.dll",
             "args": [],
             "cwd": "~/Development/StellarMap/src/Applications/GenerateMaps",
             "stopAtEntry": false,

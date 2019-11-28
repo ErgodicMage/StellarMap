@@ -32,7 +32,7 @@ namespace StellarMap.Storage
                 stream.IsStreamOwner = false;
 
                 string json = JsonConvert.SerializeObject(map.Name, Formatting.Indented);
-                byte[] bytes = Encoding.UTF8.GetBytes(json);
+                byte[] bytes = Encoding.Default.GetBytes(json);
                 byte[] buffer = new byte[4096];
 
                 ZipEntry entry = new ZipEntry("MetaData.json");
@@ -50,7 +50,7 @@ namespace StellarMap.Storage
                     if (body != null)
                     {
                         json = JsonConvert.SerializeObject(body, Formatting.Indented);
-                        bytes = Encoding.Unicode.GetBytes(json);
+                        bytes = Encoding.Default.GetBytes(json);
 
                         entry = new ZipEntry(bodytype + "s.json");
                         stream.PutNextEntry(entry);
