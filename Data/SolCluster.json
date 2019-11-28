@@ -1,0 +1,1711 @@
+{
+  "Name": "Sol Cluster",
+  "Stars": {
+    "Star-00001": {
+      "Identifier": "Star-00001",
+      "ParentIdentifier": "StarSystem-00001",
+      "Name": "Sun",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Sol",
+            "StellarClass": "G2V"
+          },
+          "Catalogue": {
+            "HabHyg": "0",
+            "Hip": "0"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {
+          "Planets": {
+            "Mercury": "Planet-00001",
+            "Venus": "Planet-00002",
+            "Earth": "Planet-00003",
+            "Mars": "Planet-00004",
+            "Jupiter": "Planet-00005",
+            "Saturn": "Planet-00006",
+            "Uranus": "Planet-00007",
+            "Neptune": "Planet-00008",
+            "Pluto": "Planet-00009"
+          },
+          "Asteroids": {
+            "Ceres": "Asteroid-00001",
+            "Pallas": "Asteroid-00002",
+            "Juno": "Asteroid-00003"
+          },
+          "Comets": {
+            "Haley's": "Comet-00001",
+            "Caeser's": "Comet-00002"
+          },
+          "Habitats": {
+            "Ceres Station": "Habitat-00003"
+          }
+        }
+      }
+    },
+    "Star-00002": {
+      "Identifier": "Star-00002",
+      "ParentIdentifier": "StarSystem-00002",
+      "Name": "Bernard's Star",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 699",
+            "StellarClass": "sdM4"
+          },
+          "Catalogue": {
+            "HabHyg": "4",
+            "Hip": "87937"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00003": {
+      "Identifier": "Star-00003",
+      "ParentIdentifier": "StarSystem-00003",
+      "Name": "Sirius",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 244",
+            "StellarClass": "A0mA1Va"
+          },
+          "Catalogue": {
+            "HabHyg": "10",
+            "Hip": "32349"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00004": {
+      "Identifier": "Star-00004",
+      "ParentIdentifier": "StarSystem-00004",
+      "Name": "Luyten's Star",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 273",
+            "StellarClass": "M5"
+          },
+          "Catalogue": {
+            "HabHyg": "28",
+            "Hip": "36208"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00005": {
+      "Identifier": "Star-00005",
+      "ParentIdentifier": "StarSystem-00005",
+      "Name": "Procyon",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 280",
+            "StellarClass": "F5IV-V"
+          },
+          "Catalogue": {
+            "HabHyg": "18",
+            "Hip": "37279"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00006": {
+      "Identifier": "Star-00006",
+      "ParentIdentifier": "StarSystem-00006",
+      "Name": "Lalande",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 411",
+            "StellarClass": "M2V"
+          },
+          "Catalogue": {
+            "HabHyg": "6",
+            "Hip": "54035"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00007": {
+      "Identifier": "Star-00007",
+      "ParentIdentifier": "StarSystem-00007",
+      "Name": "Epsilon Eridani",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 144",
+            "StellarClass": "K2V"
+          },
+          "Catalogue": {
+            "HabHyg": "13",
+            "Hip": "16537"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00008": {
+      "Identifier": "Star-00008",
+      "ParentIdentifier": "StarSystem-00008",
+      "Name": "Pocks",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 447/Ross 128",
+            "StellarClass": "M4.5V"
+          },
+          "Catalogue": {
+            "HabHyg": "14",
+            "Hip": "57548"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00009": {
+      "Identifier": "Star-00009",
+      "ParentIdentifier": "StarSystem-00009",
+      "Name": "Alvin",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 644 A",
+            "StellarClass": "M3Ve"
+          },
+          "Catalogue": {
+            "HabHyg": "86",
+            "Hip": "82817"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00010": {
+      "Identifier": "Star-00010",
+      "ParentIdentifier": "StarSystem-00009",
+      "Name": "Bruce",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 644 Ba",
+            "StellarClass": "M4Ve"
+          },
+          "Catalogue": {
+            "HabHyg": "82",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00011": {
+      "Identifier": "Star-00011",
+      "ParentIdentifier": "StarSystem-00009",
+      "Name": "Eddie",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 644 Bb",
+            "StellarClass": "M4Ve"
+          },
+          "Catalogue": {
+            "HabHyg": "82",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00012": {
+      "Identifier": "Star-00012",
+      "ParentIdentifier": "StarSystem-00009",
+      "Name": "Dave",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 643",
+            "StellarClass": "M3.5V"
+          },
+          "Catalogue": {
+            "HabHyg": "0",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00013": {
+      "Identifier": "Star-00013",
+      "ParentIdentifier": "StarSystem-00009",
+      "Name": "Calvin",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 644 C",
+            "StellarClass": "M7"
+          },
+          "Catalogue": {
+            "HabHyg": "83",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00014": {
+      "Identifier": "Star-00014",
+      "ParentIdentifier": "StarSystem-00010",
+      "Name": "LO 1",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 663",
+            "StellarClass": "K1Ve"
+          },
+          "Catalogue": {
+            "HabHyg": "99",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00015": {
+      "Identifier": "Star-00015",
+      "ParentIdentifier": "StarSystem-00010",
+      "Name": "LO 2",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 663",
+            "StellarClass": "K2:III"
+          },
+          "Catalogue": {
+            "HabHyg": "101",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00016": {
+      "Identifier": "Star-00016",
+      "ParentIdentifier": "StarSystem-00011",
+      "Name": "Wolf",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 729",
+            "StellarClass": "M3.5Ve"
+          },
+          "Catalogue": {
+            "HabHyg": "11",
+            "Hip": "92403"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00017": {
+      "Identifier": "Star-00017",
+      "ParentIdentifier": "StarSystem-00012",
+      "Name": "BL",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 65 A",
+            "StellarClass": "dM5.5V"
+          },
+          "Catalogue": {
+            "HabHyg": "7",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00018": {
+      "Identifier": "Star-00018",
+      "ParentIdentifier": "StarSystem-00012",
+      "Name": "UV",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 65 B",
+            "StellarClass": "dM5.5V"
+          },
+          "Catalogue": {
+            "HabHyg": "7",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    }
+  },
+  "Planets": {
+    "Planet-00001": {
+      "Identifier": "Planet-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Mercury",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00002": {
+      "Identifier": "Planet-00002",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Venus",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00003": {
+      "Identifier": "Planet-00003",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Earth",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionPlanet",
+        "GroupIdentifiers": {
+          "Satellites": {
+            "Moon": "Satellite-00001"
+          },
+          "Habitats": {
+            "Space Station V": "Habitat-00001",
+            "Moon Base 1": "Habitat-00002"
+          }
+        }
+      }
+    },
+    "Planet-00004": {
+      "Identifier": "Planet-00004",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Mars",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00005": {
+      "Identifier": "Planet-00005",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Jupiter",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00006": {
+      "Identifier": "Planet-00006",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Saturn",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00007": {
+      "Identifier": "Planet-00007",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Uranus",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00008": {
+      "Identifier": "Planet-00008",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Neptune",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00009": {
+      "Identifier": "Planet-00009",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Pluto",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    }
+  },
+  "Satellites": {
+    "Satellite-00001": {
+      "Identifier": "Satellite-00001",
+      "ParentIdentifier": "Planet-00003",
+      "Name": "Moon",
+      "BodyType": "Satellite",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Asteroids": {
+    "Asteroid-00001": {
+      "Identifier": "Asteroid-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Ceres",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Asteroid-00002": {
+      "Identifier": "Asteroid-00002",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Pallas",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Asteroid-00003": {
+      "Identifier": "Asteroid-00003",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Juno",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Comets": {
+    "Comet-00001": {
+      "Identifier": "Comet-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Haley's",
+      "BodyType": "Comet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Comet-00002": {
+      "Identifier": "Comet-00002",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Caeser's",
+      "BodyType": "Comet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Habitats": {
+    "Habitat-00001": {
+      "Identifier": "Habitat-00001",
+      "ParentIdentifier": "Planet-00003",
+      "Name": "Space Station V",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Habitat-00002": {
+      "Identifier": "Habitat-00002",
+      "ParentIdentifier": "Planet-00003",
+      "Name": "Moon Base 1",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Habitat-00003": {
+      "Identifier": "Habitat-00003",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Ceres Station",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Bridges": {
+    "ERBridge-00001": {
+      "Identifier": "ERBridge-00001",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Sol-Bernard",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "1.794435844492636"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00001",
+          "ERBridgeIdentifier": "ERBridge-00001",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00002",
+          "ERBridgeIdentifier": "ERBridge-00001",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00002": {
+      "Identifier": "ERBridge-00002",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Sol-Epsilon Eridani",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "3.2449961479175906"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00001",
+          "ERBridgeIdentifier": "ERBridge-00002",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00007",
+          "ERBridgeIdentifier": "ERBridge-00002",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00003": {
+      "Identifier": "ERBridge-00003",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Sol-Procyon",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "3.477067730142742"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00001",
+          "ERBridgeIdentifier": "ERBridge-00003",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00003",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00004": {
+      "Identifier": "ERBridge-00004",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Bernard-Sirius",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "4.401136216933077"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00002",
+          "ERBridgeIdentifier": "ERBridge-00004",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00003",
+          "ERBridgeIdentifier": "ERBridge-00004",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00005": {
+      "Identifier": "ERBridge-00005",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Bernard-Ross",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "3.9064049969249224"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00002",
+          "ERBridgeIdentifier": "ERBridge-00005",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00008",
+          "ERBridgeIdentifier": "ERBridge-00005",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00006": {
+      "Identifier": "ERBridge-00006",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Procyon-Ceti",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "4.441846462902562"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00006",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00012",
+          "ERBridgeIdentifier": "ERBridge-00006",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00007": {
+      "Identifier": "ERBridge-00007",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Procyon-Lalande",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "2.8948229652260253"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00007",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00006",
+          "ERBridgeIdentifier": "ERBridge-00007",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00008": {
+      "Identifier": "ERBridge-00008",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Lalande-Epsilon Eridani",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "4.831148931672464"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00006",
+          "ERBridgeIdentifier": "ERBridge-00008",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00007",
+          "ERBridgeIdentifier": "ERBridge-00008",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00009": {
+      "Identifier": "ERBridge-00009",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Ross-Ophiuchi",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "6.001666435249463"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00008",
+          "ERBridgeIdentifier": "ERBridge-00009",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00009",
+          "ERBridgeIdentifier": "ERBridge-00009",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00010": {
+      "Identifier": "ERBridge-00010",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Ophiuchi-Little Ophiuchi",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "1.939071942966532"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00009",
+          "ERBridgeIdentifier": "ERBridge-00010",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00010",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00011": {
+      "Identifier": "ERBridge-00011",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Ophiuchi-Wolf",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "3.560898762952971"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00009",
+          "ERBridgeIdentifier": "ERBridge-00011",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00011",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00012": {
+      "Identifier": "ERBridge-00012",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Little Ophiuchi-Wolf",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "3.328663395418648"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00012",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00012",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00013": {
+      "Identifier": "ERBridge-00013",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Sirius-Luyten",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "1.783255450012701"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00003",
+          "ERBridgeIdentifier": "ERBridge-00013",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00004",
+          "ERBridgeIdentifier": "ERBridge-00013",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "StarSystems": {
+    "StarSystem-00001": {
+      "Identifier": "StarSystem-00001",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Sol",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Position": "(0, 0, 0)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Sun": "Star-00001"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00001",
+          "ERBridgeIdentifier": "ERBridge-00001",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00001",
+          "ERBridgeIdentifier": "ERBridge-00002",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00001",
+          "ERBridgeIdentifier": "ERBridge-00003",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00002": {
+      "Identifier": "StarSystem-00002",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bernard",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 699",
+            "Position": "(1.5, 0.9, 0.4)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Bernard's Star": "Star-00002"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00002",
+          "ERBridgeIdentifier": "ERBridge-00001",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00002",
+          "ERBridgeIdentifier": "ERBridge-00004",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00002",
+          "ERBridgeIdentifier": "ERBridge-00005",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00003": {
+      "Identifier": "StarSystem-00003",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Sirius",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 244",
+            "Position": "(-1.8, -1.9, -0.4)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Sirius": "Star-00003"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00003",
+          "ERBridgeIdentifier": "ERBridge-00004",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00003",
+          "ERBridgeIdentifier": "ERBridge-00013",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00004": {
+      "Identifier": "StarSystem-00004",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Luyten",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 273",
+            "Position": "(-3.2, -2, 0.7)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Luyten's Star": "Star-00004"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00004",
+          "ERBridgeIdentifier": "ERBridge-00013",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00005": {
+      "Identifier": "StarSystem-00005",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Procyon",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 280",
+            "Position": "(-2.8, -1.9, 0.8)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Procyon": "Star-00005"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00003",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00006",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00007",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00006": {
+      "Identifier": "StarSystem-00006",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Lalande",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 441",
+            "Position": "(-1.1, -0.1, 2.3)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Lalande": "Star-00006"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00006",
+          "ERBridgeIdentifier": "ERBridge-00007",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00006",
+          "ERBridgeIdentifier": "ERBridge-00008",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00007": {
+      "Identifier": "StarSystem-00007",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Epsilon Eridani",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 144",
+            "Position": "(-2.1, -0.6, -2.4)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Epsilon Eridani": "Star-00007"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00007",
+          "ERBridgeIdentifier": "ERBridge-00002",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00007",
+          "ERBridgeIdentifier": "ERBridge-00008",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00008": {
+      "Identifier": "StarSystem-00008",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Ross",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 447",
+            "Position": "(0, -1.7, 2.9)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Pocks": "Star-00008"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00008",
+          "ERBridgeIdentifier": "ERBridge-00005",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00008",
+          "ERBridgeIdentifier": "ERBridge-00009",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00009": {
+      "Identifier": "StarSystem-00009",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Ophiuchi",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 644",
+            "Position": "(5.3, 1, 2.1)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Alvin": "Star-00009",
+            "Bruce": "Star-00010",
+            "Eddie": "Star-00011",
+            "Dave": "Star-00012",
+            "Calvin": "Star-00013"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00009",
+          "ERBridgeIdentifier": "ERBridge-00009",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00009",
+          "ERBridgeIdentifier": "ERBridge-00010",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00009",
+          "ERBridgeIdentifier": "ERBridge-00011",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00010": {
+      "Identifier": "StarSystem-00010",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Little Ophiuchi",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "GJ 663",
+            "Position": "(5.9, -0.2, 0.7)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "LO 1": "Star-00014",
+            "LO 2": "Star-00015"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00010",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00012",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00011": {
+      "Identifier": "StarSystem-00011",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Wolf",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 729",
+            "Position": "(2.9, 0.6, -0.5)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Wolf": "Star-00016"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00011",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00012",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "StarSystem-00012": {
+      "Identifier": "StarSystem-00012",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Ceti",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 65",
+            "Position": "(-0.6, 0.1, -2.5)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "BL": "Star-00017",
+            "UV": "Star-00018"
+          }
+        }
+      },
+      "Portals": [
+        {
+          "StarIdentifier": "StarSystem-00012",
+          "ERBridgeIdentifier": "ERBridge-00006",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "Clusters": {
+    "Cluster-00001": {
+      "Identifier": "Cluster-00001",
+      "ParentIdentifier": null,
+      "Name": "Sol Cluster",
+      "BodyType": "Cluster",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "ContainerType": "Cluster",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "StarSystems": {
+            "Sol": "StarSystem-00001",
+            "Bernard": "StarSystem-00002",
+            "Sirius": "StarSystem-00003",
+            "Luyten": "StarSystem-00004",
+            "Procyon": "StarSystem-00005",
+            "Lalande": "StarSystem-00006",
+            "Epsilon Eridani": "StarSystem-00007",
+            "Ross": "StarSystem-00008",
+            "Ophiuchi": "StarSystem-00009",
+            "Little Ophiuchi": "StarSystem-00010",
+            "Wolf": "StarSystem-00011",
+            "Ceti": "StarSystem-00012"
+          },
+          "ERBridges": {
+            "Bridge: Sol-Bernard": "ERBridge-00001",
+            "Bridge: Sol-Epsilon Eridani": "ERBridge-00002",
+            "Bridge: Sol-Procyon": "ERBridge-00003",
+            "Bridge: Bernard-Sirius": "ERBridge-00004",
+            "Bridge: Bernard-Ross": "ERBridge-00005",
+            "Bridge: Procyon-Ceti": "ERBridge-00006",
+            "Bridge: Procyon-Lalande": "ERBridge-00007",
+            "Bridge: Lalande-Epsilon Eridani": "ERBridge-00008",
+            "Bridge: Ross-Ophiuchi": "ERBridge-00009",
+            "Bridge: Ophiuchi-Little Ophiuchi": "ERBridge-00010",
+            "Bridge: Ophiuchi-Wolf": "ERBridge-00011",
+            "Bridge: Little Ophiuchi-Wolf": "ERBridge-00012",
+            "Bridge: Sirius-Luyten": "ERBridge-00013"
+          }
+        }
+      }
+    }
+  },
+  "Sectors": null
+}

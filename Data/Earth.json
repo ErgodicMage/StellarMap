@@ -1,0 +1,72 @@
+{
+  "Name": "Earth",
+  "Stars": null,
+  "Planets": {
+    "Planet-00001": {
+      "Identifier": "Planet-00001",
+      "ParentIdentifier": null,
+      "Name": "Earth",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionPlanet",
+        "GroupIdentifiers": {
+          "Satellites": {
+            "Moon": "Satellite-00001"
+          },
+          "Habitats": {
+            "Space Station V": "Habitat-00001",
+            "Moon Base 1": "Habitat-00002"
+          }
+        }
+      }
+    }
+  },
+  "Satellites": {
+    "Satellite-00001": {
+      "Identifier": "Satellite-00001",
+      "ParentIdentifier": "Planet-00001",
+      "Name": "Moon",
+      "BodyType": "Satellite",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Asteroids": null,
+  "Comets": null,
+  "Habitats": {
+    "Habitat-00001": {
+      "Identifier": "Habitat-00001",
+      "ParentIdentifier": "Planet-00001",
+      "Name": "Space Station V",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Habitat-00002": {
+      "Identifier": "Habitat-00002",
+      "ParentIdentifier": "Planet-00001",
+      "Name": "Moon Base 1",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Bridges": null,
+  "StarSystems": null,
+  "Clusters": null,
+  "Sectors": null
+}

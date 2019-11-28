@@ -1,0 +1,40 @@
+{
+  "Name": "Sol",
+  "Stars": null,
+  "Planets": {
+    "1": {
+      "Identifier": "1",
+      "ParentIdentifier": null,
+      "Name": "Earth",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {
+          "Satellites": {
+            "Moon": "2"
+          }
+        }
+      }
+    }
+  },
+  "Satellites": {
+    "2": {
+      "Identifier": "2",
+      "ParentIdentifier": "1",
+      "Name": "Moon",
+      "BodyType": "Satellite",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Asteroids": null,
+  "Comets": null
+}

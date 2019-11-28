@@ -1,0 +1,331 @@
+{
+  "Name": "Sol System",
+  "Stars": {
+    "Star-00001": {
+      "Identifier": "Star-00001",
+      "ParentIdentifier": "StarSystem-00001",
+      "Name": "Sun",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Sol",
+            "StellarClass": "G2V"
+          },
+          "Catalogue": {
+            "HabHyg": "0",
+            "Hip": "0"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {
+          "Planets": {
+            "Mercury": "Planet-00001",
+            "Venus": "Planet-00002",
+            "Earth": "Planet-00003",
+            "Mars": "Planet-00004",
+            "Jupiter": "Planet-00005",
+            "Saturn": "Planet-00006",
+            "Uranus": "Planet-00007",
+            "Neptune": "Planet-00008",
+            "Pluto": "Planet-00009"
+          },
+          "Asteroids": {
+            "Ceres": "Asteroid-00001",
+            "Pallas": "Asteroid-00002",
+            "Juno": "Asteroid-00003"
+          },
+          "Comets": {
+            "Haley's": "Comet-00001",
+            "Caeser's": "Comet-00002"
+          },
+          "Habitats": {
+            "Ceres Station": "Habitat-00003"
+          }
+        }
+      }
+    }
+  },
+  "Planets": {
+    "Planet-00001": {
+      "Identifier": "Planet-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Mercury",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00002": {
+      "Identifier": "Planet-00002",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Venus",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00003": {
+      "Identifier": "Planet-00003",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Earth",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionPlanet",
+        "GroupIdentifiers": {
+          "Satellites": {
+            "Moon": "Satellite-00001"
+          },
+          "Habitats": {
+            "Space Station V": "Habitat-00001",
+            "Moon Base 1": "Habitat-00002"
+          }
+        }
+      }
+    },
+    "Planet-00004": {
+      "Identifier": "Planet-00004",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Mars",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00005": {
+      "Identifier": "Planet-00005",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Jupiter",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00006": {
+      "Identifier": "Planet-00006",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Saturn",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00007": {
+      "Identifier": "Planet-00007",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Uranus",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00008": {
+      "Identifier": "Planet-00008",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Neptune",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00009": {
+      "Identifier": "Planet-00009",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Pluto",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    }
+  },
+  "Satellites": {
+    "Satellite-00001": {
+      "Identifier": "Satellite-00001",
+      "ParentIdentifier": "Planet-00003",
+      "Name": "Moon",
+      "BodyType": "Satellite",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Asteroids": {
+    "Asteroid-00001": {
+      "Identifier": "Asteroid-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Ceres",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Asteroid-00002": {
+      "Identifier": "Asteroid-00002",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Pallas",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Asteroid-00003": {
+      "Identifier": "Asteroid-00003",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Juno",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Comets": {
+    "Comet-00001": {
+      "Identifier": "Comet-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Haley's",
+      "BodyType": "Comet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Comet-00002": {
+      "Identifier": "Comet-00002",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Caeser's",
+      "BodyType": "Comet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Habitats": {
+    "Habitat-00001": {
+      "Identifier": "Habitat-00001",
+      "ParentIdentifier": "Planet-00003",
+      "Name": "Space Station V",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Habitat-00002": {
+      "Identifier": "Habitat-00002",
+      "ParentIdentifier": "Planet-00003",
+      "Name": "Moon Base 1",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "Habitat-00003": {
+      "Identifier": "Habitat-00003",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Ceres Station",
+      "BodyType": "Habitat",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Bridges": null,
+  "StarSystems": {
+    "StarSystem-00001": {
+      "Identifier": "StarSystem-00001",
+      "ParentIdentifier": null,
+      "Name": "Sol",
+      "BodyType": "StarSystem",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Position": "(0, 0, 0)"
+          }
+        }
+      },
+      "ContainerType": "StarSystem",
+      "ContainerGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionContainer",
+        "GroupIdentifiers": {
+          "Stars": {
+            "Sun": "Star-00001"
+          }
+        }
+      },
+      "Portals": null
+    }
+  },
+  "Clusters": null,
+  "Sectors": null
+}
