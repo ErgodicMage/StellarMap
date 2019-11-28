@@ -25,13 +25,13 @@ namespace StellarMap.Storage
 
         public void Store(IStellarMap map, StreamWriter writer)
         {
-            ZipConstants.DefaultCodePage = Encoding.UTF8.CodePage;
+            ZipStrings.UseUnicode = true;
 
             using (ZipOutputStream stream = new ZipOutputStream(writer.BaseStream))
             {
                 stream.IsStreamOwner = false;
 
-                string json = JsonConvert.SerializeObject(map.Name);
+                string json = JsonConvert.SerializeObject(map.Name, Formatting.Indented);
                 byte[] bytes = Encoding.UTF8.GetBytes(json);
                 byte[] buffer = new byte[4096];
 
@@ -49,8 +49,8 @@ namespace StellarMap.Storage
 
                     if (body != null)
                     {
-                        json = JsonConvert.SerializeObject(body);
-                        bytes = Encoding.UTF8.GetBytes(json);
+                        json = JsonConvert.SerializeObject(body, Formatting.Indented);
+                        bytes = Encoding.Unicode.GetBytes(json);
 
                         entry = new ZipEntry(bodytype + "s.json");
                         stream.PutNextEntry(entry);
@@ -68,7 +68,8 @@ namespace StellarMap.Storage
         {
             T map = new T();
 
-            ZipConstants.DefaultCodePage = Encoding.UTF8.CodePage;
+            ZipStrings.UseUnicode = true;
+            
             byte[] buffer = new byte[4096];            
 
             using (ZipInputStream stream = new ZipInputStream(reader.BaseStream))
