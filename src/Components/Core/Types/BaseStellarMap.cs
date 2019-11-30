@@ -16,13 +16,18 @@ namespace StellarMap.Core.Types
 
         public BaseStellarMap(string name)
         {
-            this.Name = name;
+            MetaData = new GroupedProperties("Basic");
+            MetaData["Basic"].Add("Name", name);
         }
         #endregion
 
         #region Public Properties
+        [IgnoreDataMember]
+        public string Name { get => MetaData["Basic", "Name"];  
+                             set => MetaData.Set("Basic", "Name", value); }
+
         [DataMember(Order = 1)]
-        public string Name { get; set; }
+        public GroupedProperties MetaData { get; set; }
 
         [DataMember(Order = 2)]
         public IDictionary<string, Star> Stars { get; set; }
@@ -292,7 +297,8 @@ namespace StellarMap.Core.Types
                 bRet = false;
             else if (!ReferenceEquals(this, other))
             {
-                bRet = Name.Equals(other.Name) &&
+                bRet = MetaData != null &&
+                       MetaData.Equals(other.MetaData) &&
                        IsEqual<Planet>(this.Planets, other.Planets) &&
                        IsEqual<Star>(this.Stars, other.Stars) &&
                        IsEqual<Satellite>(this.Satellites, other.Satellites) &&
@@ -307,7 +313,9 @@ namespace StellarMap.Core.Types
 
         public override int GetHashCode()
         {
-            int hash = Name.GetHashCode();
+            int hash = 1345;
+            if (MetaData != null)
+                hash = hash ^ MetaData.GetHashCode();
             if (Stars != null)
                 hash = hash ^ Stars.GetHashCode();
             if (Planets != null)

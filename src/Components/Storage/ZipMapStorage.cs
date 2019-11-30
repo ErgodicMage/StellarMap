@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Text;
 
-using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
 
 using Newtonsoft.Json;
@@ -31,7 +28,7 @@ namespace StellarMap.Storage
             {
                 stream.IsStreamOwner = false;
 
-                string json = JsonConvert.SerializeObject(map.Name, Formatting.Indented);
+                string json = JsonConvert.SerializeObject(map.MetaData, Formatting.Indented);
                 byte[] bytes = Encoding.Default.GetBytes(json);
                 byte[] buffer = new byte[4096];
 
@@ -77,8 +74,6 @@ namespace StellarMap.Storage
                 ZipEntry entry = null;
                 while ((entry = stream.GetNextEntry()) != null)
                 {
-                    string bodytype = entry.Name.Replace("s.json", "");
-
                     string json = string.Empty;
 
                     using (MemoryStream memory = new MemoryStream())
@@ -92,10 +87,11 @@ namespace StellarMap.Storage
 
                     if (!string.IsNullOrEmpty(json))
                     {
-                        if (bodytype == "MetaData")
-                            map.Name = JsonConvert.DeserializeObject(json) as string;
+                        if (entry.Name == "MetaData.json")
+                            map.MetaData = JsonConvert.DeserializeObject<GroupedProperties>(json);
                         else
                         {
+                            string bodytype = entry.Name.Replace("s.json", "");
                             Type t = map.GetTypeOfBody(bodytype);
                             object data = JsonConvert.DeserializeObject(json, t);
 

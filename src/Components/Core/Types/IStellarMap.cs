@@ -10,6 +10,8 @@ namespace StellarMap.Core.Types
         // Properties
         string Name { get; set; }
 
+        GroupedProperties MetaData { get; set; }
+
         IDictionary<string, Star> Stars { get; set; }
 
         IDictionary<string, Planet> Planets { get; set; }

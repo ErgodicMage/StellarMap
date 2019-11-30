@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
@@ -11,6 +12,23 @@ namespace StellarMap.Progression.DefaultSettingMaps
         public PY100DEMap(ProgressionMap map)
         {
             Map = map;
+
+            map.MetaData.Add("Basic", "Author", "Ergodic Mage");
+            map.MetaData.Add("Basic", "Version", "0.1");
+            map.MetaData.Add("Basic", "Date", "11/29/2019");
+
+            using (StringWriter writer = new StringWriter())
+            {
+                writer.WriteLine("This is the map of the default Progression system at year 100DE.");
+                writer.WriteLine("At this point in time, humans have started spreading through the Sol Cluster.");
+                writer.WriteLine("The Diaspora Era is documented at https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/DefaultSettingMaps/Diaspora%20Era.md");
+                writer.Flush();
+
+                map.MetaData.Add("Basic", "Description", writer.ToString());
+            }
+            map.MetaData.Add("Basic", "Diagram", "https://drive.google.com/file/d/1oQhyRB6X-ckqjOw_A0sMtgq8gt3He8_U/view?usp=sharing");
+            map.MetaData.Add("Basic", "Rules", "https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/Rules.md");
+            map.MetaData.Add("Basic", "ProgressionDate", "100DE");
         }
 
         ProgressionMap Map { get; set; }

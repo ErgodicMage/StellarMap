@@ -81,7 +81,7 @@ namespace StorageTests
         }
 
         [TestMethod]
-        public void ZipRetrieveSolarSystem()
+        public void ZipRetrieveLocalSector()
         {
             string filename = dir + "LocalSector.zip";
 

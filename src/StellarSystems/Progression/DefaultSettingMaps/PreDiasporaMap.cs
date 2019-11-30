@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
@@ -11,23 +12,39 @@ namespace StellarMap.Progression.DefaultSettingMaps
         public PreDiasporaMap(ProgressionMap map)
         {
             Map = map;
+
+            map.MetaData.Add("Basic", "Author", "Ergodic Mage");
+            map.MetaData.Add("Basic", "Version", "0.1");
+            map.MetaData.Add("Basic", "Date", "11/29/2019");
+
+            using (StringWriter writer = new StringWriter())
+            {
+                writer.WriteLine("This is the map of the default Progression system at year 100DE.");
+                writer.WriteLine("At this point in time, humans have started spreading through the Sol Cluster.");
+                writer.WriteLine("The Pre-Diaspora Era is documented at https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/DefaultSettingMaps/PreDiaspora.md");
+                writer.Flush();
+
+                map.MetaData.Add("Basic", "Description", writer.ToString());
+            }
+            map.MetaData.Add("Basic", "Diagram", "https://drive.google.com/file/d/1oQhyRB6X-ckqjOw_A0sMtgq8gt3He8_U/view?usp=sharing");
+            map.MetaData.Add("Basic", "Rules", "https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/Rules.md");
+
         }
 
         ProgressionMap Map { get; set; }
+        ProgressionPlanet Earth { get; set; }
+        StarSystem Sol { get; set; }
 
         public Planet CreateEarth()
         {
-            ProgressionPlanet earth = new ProgressionPlanet("Earth");
+            Earth = new ProgressionPlanet("Earth");
 
-            Map.Add<Planet>(earth);
+            Map.Add<Planet>(Earth);
 
             Satellite moon = new Satellite("Moon");
-            earth.Add(moon);
+            Earth.Add(moon);
 
-            earth.Add(new Habitat("Space Station V"));
-            earth.Add(new Habitat("Moon Base 1"));
-
-            return earth;
+            return Earth;
         }
 
         public StarSystem CreateSolSystem()
@@ -64,12 +81,24 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             sol.Add(new Habitat("Ceres Station"));
 
-            StarSystem solSystem = new StarSystem("Sol");
-            solSystem.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 0, 0).ToString());
-            Map.Add(solSystem);
-            solSystem.Add(sol);
+            Sol = new StarSystem("Sol");
+            Sol.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 0, 0).ToString());
+            Map.Add(Sol);
+            Sol.Add(sol);
 
-            return solSystem;
+            return Sol;
+        }
+
+        public ProgressionMap Create2100AD()
+        {
+            Map.MetaData.Add("Basic", "ProgressionDate", "2100AD");
+
+            CreateSolSystem();
+
+            Earth.Add(new Habitat("SpaceX Station"));
+            Earth.Add(new Habitat("Moon Base Alpha"));
+
+            return Map;
         }
     }
 }
