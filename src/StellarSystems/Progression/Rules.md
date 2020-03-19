@@ -14,7 +14,7 @@
 ## Bridges
 A Bridge is a traversable space-time wormhole which connects different star systems. Bridges are entered and exited through gravitational anomalies known as Portals. Activating a Bridge requires a specific amount of energy depending on the Bridge type.
 
-There are four types of bridges:
+There are up to eight types of bridges:
 1. System Bridges connect one or more star systems together into a Cluster.
 2. Cluster Bridges connect one or more Clusters together into a Sector.
 3. Sector Bridges connect one or more Sectors together into a Region.
