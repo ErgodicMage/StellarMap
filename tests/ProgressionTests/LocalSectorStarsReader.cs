@@ -28,7 +28,7 @@ namespace ProgressionTests
         {
             Stars = new List<LocalSectorStar>();
 
-            CsvReader reader = new CsvReader(File.OpenText(starsFile));
+            CsvReader reader = new CsvReader(File.OpenText(starsFile), System.Globalization.CultureInfo.CurrentCulture);
             
             reader.Read();
             reader.ReadHeader();

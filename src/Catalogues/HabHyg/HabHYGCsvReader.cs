@@ -10,7 +10,7 @@ namespace StellarMap.Catalogues
     {
         public HabHYGRecordMap()
         {
-            AutoMap();
+            AutoMap(System.Globalization.CultureInfo.CurrentCulture);
             Map(m => m.Hab).Name("Hab?");
             Map(m => m.DisplayName).Name("Display Name");
             Map(m => m.ProperName).Name("Proper Name");
@@ -26,7 +26,7 @@ namespace StellarMap.Catalogues
         {
             Catalogue = new List<HabHygRecord>();
 
-            CsvReader reader = new CsvReader(File.OpenText(catalogueFile));
+            CsvReader reader = new CsvReader(File.OpenText(catalogueFile), System.Globalization.CultureInfo.CurrentCulture);
             reader.Configuration.RegisterClassMap<HabHYGRecordMap>();
             reader.Read();
             reader.ReadHeader();
