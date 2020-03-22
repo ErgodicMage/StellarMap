@@ -28,7 +28,11 @@ namespace StellarMap.Core.Types
         #region Indexer
         public Dictionary<string, string> this[string group] => PropertyGroups[group];
 
-        public string this[string group, string property] => PropertyGroups[group][property];
+        public string this[string group, string property]
+        {
+            get => PropertyGroups[group][property];
+            set => PropertyGroups.Set(group, property, value);
+        }
         #endregion
 
         #region Add Methods

@@ -18,6 +18,9 @@ namespace StellarMap.Progression
 
         public ProgressionMap(string name) : base(name)
         {
+            // reset Storage Metadata properties to 
+            MetaData["Storage", "Type"] = "Progresssion";
+            MetaData["Storage", "Version"] = "0.5";
         }
         #endregion
 

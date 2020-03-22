@@ -16,7 +16,11 @@ namespace StellarMap.Core.Types
 
         public BaseStellarMap(string name)
         {
-            MetaData = new GroupedProperties("Basic");
+            MetaData = new GroupedProperties("Storage");
+            MetaData["Storage"].Add("Type", "Base");
+            MetaData["Storage"].Add("Version", "0.5");
+
+            MetaData.Add("Basic");
             MetaData["Basic"].Add("Name", name);
         }
         #endregion
