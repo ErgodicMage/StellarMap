@@ -42,7 +42,7 @@ namespace StellarMap.Storage
 
                 foreach (string bodytype in bodytypes)
                 {
-                    dynamic body = map.GetBody(bodytype);
+                    object body = map.GetBody(bodytype);
 
                     if (body != null)
                     {
