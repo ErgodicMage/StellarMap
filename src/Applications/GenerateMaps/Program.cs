@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+using Microsoft.Extensions.Configuration;
+
 using StellarMap.Core.Types;
 
 using StellarMap.Storage;
@@ -18,6 +20,16 @@ namespace StellarMap.GenerateMaps
     {
         static void Main(string[] args)
         {
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                //.AddEnvironmentVariables()
+                .Build();
+
+            foreach (var kvp in config.AsEnumerable())
+                Console.WriteLine(kvp.Key + ":" + kvp.Value);
+
+            dataDir = config["DataPath"];
+
             //LocateStarsInCube(20);
 
             JsonGenerateLocalSector();
@@ -32,7 +44,7 @@ namespace StellarMap.GenerateMaps
             Console.WriteLine("Complete");
         }
 
-        static string dir = "/home/harry/Development/StellarMap/Data/";
+        static string dataDir;
 
         public static void JsonGenerateLocalSector()
         {
@@ -43,7 +55,7 @@ namespace StellarMap.GenerateMaps
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            string filename = dir + "LocalSector.json";
+            string filename = Path.Combine(dataDir, "LocalSector.json");
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -56,7 +68,7 @@ namespace StellarMap.GenerateMaps
 
         public static void JsonRetrieveLocalSector()
         {
-            string filename = dir + "LocalSector.json";
+            string filename = Path.Combine(dataDir, "LocalSector.json");
 
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
@@ -78,7 +90,7 @@ namespace StellarMap.GenerateMaps
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
-            string filename = dir + "LocalSector.zip";
+            string filename = Path.Combine(dataDir, "LocalSector.zip");
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -91,7 +103,7 @@ namespace StellarMap.GenerateMaps
 
         public static void ZipRetrieveLocalSector()
         {
-            string filename = dir + "LocalSector.zip";
+            string filename = Path.Combine(dataDir, "LocalSector.zip");
 
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
@@ -109,7 +121,7 @@ namespace StellarMap.GenerateMaps
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            string filename = dir + "SolarSystem.json";
+            string filename = Path.Combine(dataDir, "SolarSystem.json");
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -122,7 +134,7 @@ namespace StellarMap.GenerateMaps
 
         public static void RetrieveSolarSystem()
         {
-            string filename = dir + "SolarSystem.json";
+            string filename = Path.Combine(dataDir, "SolarSystem.json");
 
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
@@ -137,8 +149,8 @@ namespace StellarMap.GenerateMaps
 
         public static void LocateStarsInCube(int ly)        
         {
-            string outfile = dir + "AreasForStars_" + ly.ToString() + "LY.txt";
-            string catalogueFile = dir + "HabHYG.csv";
+            string outfile = Path.Combine(dataDir, "AreasForStars_" + ly.ToString() + "LY.txt");
+            string catalogueFile = Path.Combine(dataDir, "HabHYG.csv");
             
             HabHYGCsvReader reader = new HabHYGCsvReader();
             reader.Load(catalogueFile);
