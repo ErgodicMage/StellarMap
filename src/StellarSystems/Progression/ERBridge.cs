@@ -15,7 +15,8 @@ namespace StellarMap.Progression
         {            
         }
         
-        public ERBridge(string type, StarSystem system1, StarSystem system2) : base(string.Empty, ProgressionConstants.BodyType.ERBridge)
+        public ERBridge(string type, StarSystem system1, StarSystem system2) : 
+            base(string.Empty, ProgressionConstants.BodyType.ERBridge)
         {
             BodyType = ProgressionConstants.BodyType.ERBridge;
             BridgeType = type;
@@ -98,8 +99,10 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEquatable
-        public bool Equals(ERBridge other) => other!=null && base.Equals(other as StellarBody) && BridgeType.Equals(other.BridgeType) &&
-                                                Portals != null && other.Portals != null && Portals[0].Equals(other.Portals[0]) && Portals[1].Equals(other.Portals[1]);
+        public bool Equals(ERBridge other) => 
+            other!=null && base.Equals(other as StellarBody) && BridgeType.Equals(other.BridgeType) &&
+            Portals != null && other.Portals != null && Portals[0].Equals(other.Portals[0]) && 
+            Portals[1].Equals(other.Portals[1]);
 
         public override bool Equals(object obj) => Equals(obj as ERBridge);
 

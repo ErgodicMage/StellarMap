@@ -19,17 +19,21 @@ namespace StellarMap.Progression
 
         #region Public Properties
         [IgnoreDataMember]
-        public IDictionary<string, string> Clusters { get { return ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Clusters); } }
+        public IDictionary<string, string> Clusters 
+            { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Clusters); }
         #endregion
 
         #region Get Methods
-        public virtual Cluster GetCluster(string name) => Get<Cluster>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
+        public virtual Cluster GetCluster(string name) => 
+            Get<Cluster>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
 
-        public virtual IDictionary<string, Cluster> GetClusters() => GetAll<Cluster>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
+        public virtual IDictionary<string, Cluster> GetClusters() => 
+            GetAll<Cluster>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
         #endregion
 
         #region Add Methods
-        public void Add(Cluster cluster) => Add<Cluster>(cluster, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
+        public void Add(Cluster cluster) => 
+            Add<Cluster>(cluster, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
         #endregion
 
     }

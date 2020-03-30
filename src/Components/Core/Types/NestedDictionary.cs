@@ -4,7 +4,8 @@ using System.Text;
 
 namespace StellarMap.Core.Types
 {
-    public class NestedDictionary<TOuter, TInner, TValue> : Dictionary<TOuter, Dictionary<TInner, TValue>>, IEquatable<NestedDictionary<TOuter, TInner, TValue>>
+    public class NestedDictionary<TOuter, TInner, TValue> : 
+        Dictionary<TOuter, Dictionary<TInner, TValue>>, IEquatable<NestedDictionary<TOuter, TInner, TValue>>
     {
         #region Constructors
         #endregion

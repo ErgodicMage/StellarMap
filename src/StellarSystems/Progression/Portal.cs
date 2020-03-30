@@ -18,7 +18,9 @@ namespace StellarMap.Progression
         public Point3d Position { get; set; }
 
         #region IEquatable
-        public bool Equals(Portal other) => StarIdentifier.Equals(other.StarIdentifier) && ERBridgeIdentifier.Equals(other.ERBridgeIdentifier) && Position.Equals(other.Position);
+        public bool Equals(Portal other) => 
+            StarIdentifier.Equals(other.StarIdentifier) && ERBridgeIdentifier.Equals(other.ERBridgeIdentifier) && 
+            Position.Equals(other.Position);
 
         public override bool Equals(object obj) => obj is Portal p && Equals(p);
 

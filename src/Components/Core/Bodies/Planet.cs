@@ -25,21 +25,27 @@ namespace StellarMap.Core.Bodies
         public GroupNamedIdentifiers PlanetGroupIdentifiers { get; set; }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> Satellites { get { return PlanetGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Satellites); } }
+        public IDictionary<string, string> Satellites 
+            { get => PlanetGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Satellites); }
         #endregion
 
         #region Get Functions
-        public virtual Satellite GetSatellite(string name) => Get<Satellite>(name, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
+        public virtual Satellite GetSatellite(string name) => 
+            Get<Satellite>(name, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
 
-        public virtual IDictionary<string, Satellite> GetSatellites() => GetAll<Satellite>(PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
+        public virtual IDictionary<string, Satellite> GetSatellites() => 
+            GetAll<Satellite>(PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
         #endregion
 
         #region Public Add Functions
-        public void Add(Satellite satellite) => Add<Satellite>(satellite, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
+        public void Add(Satellite satellite) => 
+            Add<Satellite>(satellite, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
         #endregion
 
         #region IEquatable
-        public bool Equals(Planet other) => other!=null && base.Equals(other as StellarParentBody) && PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
+        public bool Equals(Planet other) => 
+            other!=null && base.Equals(other as StellarParentBody) && 
+            PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
 
         public override bool Equals(object obj) => Equals(obj as Planet);
 

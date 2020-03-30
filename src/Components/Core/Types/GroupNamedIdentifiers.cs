@@ -32,11 +32,14 @@ namespace StellarMap.Core.Types
         #region Add Methods
         public void Add(string group) => GroupIdentifiers.Add(group);
 
-        public void Add(string group, string name, string identifier) => GroupIdentifiers.Add(group, name, identifier);
+        public void Add(string group, string name, string identifier) => 
+            GroupIdentifiers.Add(group, name, identifier);
 
-        public void AddGroup(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => GroupIdentifiers.AddToOuter(group, namedidentifiers);
+        public void AddGroup(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => 
+            GroupIdentifiers.AddToOuter(group, namedidentifiers);
 
-        public void AddProperties(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => GroupIdentifiers.AddToInner(group, namedidentifiers);
+        public void AddProperties(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => 
+            GroupIdentifiers.AddToInner(group, namedidentifiers);
         #endregion
 
         #region Remove Methods
@@ -50,7 +53,8 @@ namespace StellarMap.Core.Types
 
         public string Get(string group, string name) => GroupIdentifiers.Get(group, name);
 
-        public void Set(string group, string name, string identifier) => GroupIdentifiers.Set(group, name, identifier);
+        public void Set(string group, string name, string identifier) => 
+            GroupIdentifiers.Set(group, name, identifier);
         #endregion
 
         #region ToString
@@ -60,7 +64,8 @@ namespace StellarMap.Core.Types
         #region IEquatable
         public bool Equals(GroupNamedIdentifiers other) => GroupIdentifiers.Equals(other.GroupIdentifiers);
 
-        public override bool Equals(object obj) => (obj is GroupNamedIdentifiers) && Equals(obj as GroupNamedIdentifiers);
+        public override bool Equals(object obj) => 
+            (obj is GroupNamedIdentifiers) && Equals(obj as GroupNamedIdentifiers);
 
         public override int GetHashCode() => GroupIdentifiers.GetHashCode();
         #endregion

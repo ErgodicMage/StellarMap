@@ -69,7 +69,8 @@ namespace StellarMap.Core.Types
             return t;
         }
 
-        public virtual void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) where T : IStellarBody
+        public virtual void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) 
+            where T : IStellarBody
         {
             foreach (string id in identifiers)
             {

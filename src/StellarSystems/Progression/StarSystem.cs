@@ -23,20 +23,24 @@ namespace StellarMap.Progression
 
         #region Public Properties
         [IgnoreDataMember]
-        public IDictionary<string, string> Stars { get { return ContainerGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Stars); } }
+        public IDictionary<string, string> Stars 
+            { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Stars); }
 
         [DataMember(Order = 21)]
         public IList<Portal> Portals { get; set; }
         #endregion
 
         #region Get Methods
-        public virtual ProgressionStar GetStar(string name) => (ProgressionStar)Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
+        public virtual ProgressionStar GetStar(string name) => 
+            (ProgressionStar)Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
 
-        public virtual IDictionary<string, Star> GetStars() => GetAll<Star>(ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
+        public virtual IDictionary<string, Star> GetStars() => 
+            GetAll<Star>(ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
         #endregion
 
         #region Add Methods
-        public void Add(ProgressionStar star) => Add<Star>(star, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
+        public void Add(ProgressionStar star) => 
+            Add<Star>(star, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
 
         public void Add(Portal portal)
         {

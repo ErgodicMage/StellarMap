@@ -29,23 +29,28 @@ namespace StellarMap.Progression
         public GroupNamedIdentifiers ContainerGroupIdentifiers { get; set; }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> Bridges { get { return ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.ERBridges); } }
+        public IDictionary<string, string> Bridges 
+            { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.ERBridges);}
         #endregion
 
         #region Get Methods
-        public virtual ERBridge GetBridge(string name) => Get<ERBridge>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
+        public virtual ERBridge GetBridge(string name) => 
+            Get<ERBridge>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
 
-        public virtual IDictionary<string, ERBridge> GetBridges() => GetAll<ERBridge>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
+        public virtual IDictionary<string, ERBridge> GetBridges() => 
+            GetAll<ERBridge>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
         #endregion
 
         #region Add Methods
-        public void Add(ERBridge bridge) => Add<ERBridge>(bridge, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
+        public void Add(ERBridge bridge) => 
+            Add<ERBridge>(bridge, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
         #endregion
 
         #region IEquatable
-        public bool Equals(ProgressionContainer other) => other!=null && ContainerType.Equals(other.ContainerType) && 
-                                                            base.Equals(other as StellarParentBody) && 
-                                                            ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
+        public bool Equals(ProgressionContainer other) => 
+            other!=null && ContainerType.Equals(other.ContainerType) && 
+            base.Equals(other as StellarParentBody) && 
+            ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
 
         public override bool Equals(object obj) => Equals(obj as ProgressionContainer);
 

@@ -43,7 +43,7 @@ namespace StellarMap.Core.Bodies
         public GroupedProperties Properties { get; set; }
 
         [IgnoreDataMember]
-        public IDictionary<string, string> BasicProperties { get { return Properties.Get("Basic"); } }
+        public IDictionary<string, string> BasicProperties { get => Properties.Get("Basic"); }
 
         public IStellarMap Map { get; set; }
         #endregion

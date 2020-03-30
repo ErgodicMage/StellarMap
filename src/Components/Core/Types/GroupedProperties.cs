@@ -38,11 +38,14 @@ namespace StellarMap.Core.Types
         #region Add Methods
         public void Add(string group) => PropertyGroups.Add(group);
 
-        public void Add(string group, string property, string value) => PropertyGroups.Add(group, property, value);
+        public void Add(string group, string property, string value) => 
+            PropertyGroups.Add(group, property, value);
 
-        public void AddGroup(string group, IEnumerable<KeyValuePair<string, string>> properties) => PropertyGroups.AddToOuter(group, properties);
+        public void AddGroup(string group, IEnumerable<KeyValuePair<string, string>> properties) => 
+            PropertyGroups.AddToOuter(group, properties);
 
-        public void AddProperties(string group, IEnumerable<KeyValuePair<string, string>> properties) => PropertyGroups.AddToInner(group, properties);
+        public void AddProperties(string group, IEnumerable<KeyValuePair<string, string>> properties) => 
+            PropertyGroups.AddToInner(group, properties);
         #endregion
 
         #region Remove Methods
