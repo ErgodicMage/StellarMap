@@ -18,6 +18,7 @@ namespace ProgressionTests
     public class CreateTests
     {
         [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
         public void CreateEarthTest()
         {
             ProgressionMap map = new ProgressionMap("Earth");
@@ -27,6 +28,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
         public void CreateSolTest()
         {
             ProgressionMap map = new ProgressionMap("Sol");
@@ -37,6 +39,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
         public void CreateSolClusterTest()
         {
             ProgressionMap map = new ProgressionMap("Sol Cluster");
@@ -47,6 +50,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
         public void CreateLocalSector()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
@@ -58,6 +62,7 @@ namespace ProgressionTests
         // wrote this test method because I started catching myself reusing real stars.
         // sometimes it's hard to work with the designations, so I can now search the text file.
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void ListStarSystemDesignations()
         {
             ProgressionMap map = new ProgressionMap("Local");
@@ -65,7 +70,7 @@ namespace ProgressionTests
             LocalSectorMap c = new LocalSectorMap(map);
             Sector sector = c.CreateLocalSector();
 
-            string outfile = @"C:\Development\StellarMap\TestData\Designations.txt";
+            string outfile = Path.Combine(TestingUtilities.Config["DataPath"], "Designations.txt");
             if (File.Exists(outfile))
                 File.Delete(outfile);
 

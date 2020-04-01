@@ -13,15 +13,14 @@ namespace CoreTests
     [TestClass]
     public class SerializationTests
     {
-        string folder = @"C:\Development\StellarMap\TestData\";
-
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void SerializeFileEarth()
         {
             TestStellarMap map = new TestStellarMap("Earth");
             CreateEarth(map);
 
-            string filename = folder + "BaseEarth.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "BaseEarth.json");
             if (File.Exists(filename))
                 File.Delete(filename);
 
@@ -32,11 +31,12 @@ namespace CoreTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void DeSerializeFileEarth()
         {
-            string filename = folder + "BaseEarth.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "BaseEarth.json");
 
-            if (!File.Exists(folder + filename))
+            if (!File.Exists(filename))
                 SerializeFileEarth();
 
             TestStellarMap map;
@@ -48,6 +48,7 @@ namespace CoreTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
         public void CompareEarthTest()
         {
             TestStellarMap originalMap = new TestStellarMap("Earth");
@@ -73,12 +74,13 @@ namespace CoreTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void SerializeFileSol()
         {
             TestStellarMap map = new TestStellarMap("Sol");
             CreateEarth(map);
 
-            string filename = folder + "BaseSol.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "BaseSol.json");
             if (File.Exists(filename))
                 File.Delete(filename);
 
@@ -89,11 +91,12 @@ namespace CoreTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void DeSerializeFileSol()
         {
-            string filename = folder + "BaseSol.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "BaseSol.json");
 
-            if (!File.Exists(folder + filename))
+            if (!File.Exists(filename))
                 SerializeFileEarth();
 
             TestStellarMap map;
@@ -105,6 +108,7 @@ namespace CoreTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
         public void CompareSolTest()
         {
             TestStellarMap originalMap = new TestStellarMap("Sol");

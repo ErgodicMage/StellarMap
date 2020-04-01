@@ -21,7 +21,7 @@ namespace CoreTests
         private const string NotEmailValue = "NotErgodicMage@gmail.com";
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void DefaultConstructorTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -29,7 +29,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void InitialGroupConstructorTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -39,7 +39,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void GroupIndexerTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -48,7 +48,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void GroupIndexerExceptionTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -57,7 +57,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PropertyIndexerTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -67,7 +67,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PropertyIndexerExceptionTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -76,7 +76,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -87,7 +87,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddExistingGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -100,7 +100,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddGroupandPropertiesTest()
         {
             var properties = new Dictionary<string, string>();
@@ -118,7 +118,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddPropertyTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -130,7 +130,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddPropertyAnotherGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -142,7 +142,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddPropertyDuplicateTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -159,7 +159,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddPropertiesTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -178,7 +178,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddPropertiesDuplicateTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -198,7 +198,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void AddPropertiesAnotherGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -216,7 +216,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void RemoveGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -234,7 +234,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void RemoveGroupNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -247,7 +247,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void RemovePropertyTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -267,7 +267,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void RemovePropertyNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -289,7 +289,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void RemovePropertyGroupNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -311,7 +311,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void GetTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -330,7 +330,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void GetGroupTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -351,7 +351,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void GetPropertyNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -368,7 +368,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void GetGroupNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -385,7 +385,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void SetTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -397,7 +397,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void SetPropertyNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -410,7 +410,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void SetGroupNotExistTest()
         {
             GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -423,7 +423,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void BasicToStringTest()
         {
             //GroupedProperties groupProperties = new GroupedProperties(Default);
@@ -445,7 +445,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void EqualsTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -464,7 +464,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void EqualsReferenceTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -479,7 +479,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void EqualsObjectTest()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -494,7 +494,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void EqualsFalse1Test()
         {
             GroupedProperties groupProperties = new GroupedProperties();
@@ -513,7 +513,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void EqualsFalse2Test()
         {
             GroupedProperties groupProperties = new GroupedProperties();

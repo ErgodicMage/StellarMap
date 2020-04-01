@@ -17,7 +17,7 @@ namespace ProgressionTests
     public class EquatableTests
     {
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void ERBridgeEqualTest()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
@@ -43,7 +43,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void ERBridgeNotEqualTest()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
@@ -67,7 +67,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void HabitatEqualTest()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
@@ -87,7 +87,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void HabitatNotEqualTest()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
@@ -107,7 +107,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StarSystemEqualTest()
         {
             StarSystem system1 = new StarSystem("System 1");
@@ -124,7 +124,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StarSystemNotEqualTest()
         {
             StarSystem system1 = new StarSystem("System 1");
@@ -143,7 +143,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StarSystemNotEqualUnequalStarsTest()
         {
             StarSystem system1 = new StarSystem("System 1");
@@ -163,7 +163,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PortalTestEquals()
         {
             Portal portal1 = new Portal();
@@ -180,7 +180,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PortalNotTestEquals()
         {
             Portal portal1 = new Portal();
@@ -197,7 +197,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void LocalSectorEqualTest()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
@@ -212,7 +212,7 @@ namespace ProgressionTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void LocalSectorNotEqualTest()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");

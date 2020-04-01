@@ -16,9 +16,8 @@ namespace ProgressionTests
     [TestClass]
     public class MiscTests
     {
-        string folder = @"C:\Development\StellarMap\TestData\";
-
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void GetBridgeDistances()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
@@ -27,7 +26,7 @@ namespace ProgressionTests
 
             var bridges = map.Bridges.Values.Where(b => b.BridgeType == ProgressionConstants.BridgeTypes.StarSystem);
 
-            string bridgeFile = Path.Combine(folder, "bridges.txt");
+            string bridgeFile = Path.Combine(TestingUtilities.Config["DataPath"], "bridges.txt");
             if (File.Exists(bridgeFile))
                 File.Delete(bridgeFile);
 
@@ -47,10 +46,11 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void NearestStars()
         {
             LocalSectorStarsReader reader = new LocalSectorStarsReader();
-            reader.Load(folder + "LocalSector Stars.csv");
+            reader.Load(Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector Stars.csv"));
             IList<LocalSectorStar> stars = reader.Stars;
 
             string starName = "Little Ophiuchi";
@@ -61,7 +61,7 @@ namespace ProgressionTests
 
             if (nearest != null)
             {
-                using (StreamWriter writer = new StreamWriter(folder + "Closest.txt"))
+                using (StreamWriter writer = new StreamWriter(Path.Combine(TestingUtilities.Config["DataPath"], "Closest.txt")))
                 {
                     foreach (LocalSectorStar s in nearest)
                     {

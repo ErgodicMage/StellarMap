@@ -1,5 +1,15 @@
 {
-  "Name": "Sol",
+  "MetaData": {
+    "PropertyGroups": {
+      "Storage": {
+        "Type": "Base",
+        "Version": "0.5"
+      },
+      "Basic": {
+        "Name": "Sol"
+      }
+    }
+  },
   "Stars": null,
   "Planets": {
     "1": {

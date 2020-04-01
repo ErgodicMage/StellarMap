@@ -11,7 +11,7 @@ namespace CoreTests
     public class EquatableTests
     {
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PlanetReferenceEqualTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -27,7 +27,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PlanetEqualTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -46,7 +46,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PlanetNotEqualNameTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -65,7 +65,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PlanetNotEqualMoonNameTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -84,7 +84,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PlanetNotEqualMoonMissingTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -101,7 +101,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PlanetNotEqualPropertyDescriptionTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -122,7 +122,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void PlanetNotEqualMissingPropertyTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -142,7 +142,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StarEqualTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -171,7 +171,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StarNotEqualCatalogueTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -198,7 +198,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StarEqualSolarSystemTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -245,7 +245,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StarNotEqualSolarSystemMissingPlutoTest()
         {
             TestStellarMap map = new TestStellarMap();
@@ -295,7 +295,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StellarMapEqualTest()
         {
             TestStellarMap map = new TestStellarMap("TestMap");
@@ -350,7 +350,7 @@ namespace CoreTests
         }
 
         [TestMethod]
-        //[TestCategory(TestCategories.UnitTest)]
+        [TestCategory(TestCategories.UnitTest)]
         public void StellarMapNotEqualProxCentCTest()
         {
             TestStellarMap map = new TestStellarMap("TestMap");

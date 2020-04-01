@@ -1,0 +1,53 @@
+StarSystem-00001 : Sol : None
+StarSystem-00002 : Bernard : Gl 699
+StarSystem-00003 : Epsilon Eridani : Gl 144
+StarSystem-00004 : Procyon : Gl 280
+StarSystem-00005 : Ross : Gl 447
+StarSystem-00006 : Ceti : Gl 65
+StarSystem-00007 : Sirius : Gl 244
+StarSystem-00008 : Luyten : Gl 273
+StarSystem-00009 : Lalande : Gl 441
+StarSystem-00010 : Ophiuchi : GJ 644
+StarSystem-00011 : Little Ophiuchi : GJ 663
+StarSystem-00012 : Wolf : Gl 729
+StarSystem-00013 : Centauri : Gl 559
+StarSystem-00014 : Tau Ceti : Gl 71
+StarSystem-00015 : Groombridge : Gl 380
+StarSystem-00016 : Kruger : Gl 860
+StarSystem-00017 : Lacaille : Gl 825
+StarSystem-00018 : Gleine : Gl 725
+StarSystem-00019 : Kapteyn : Gl 191
+StarSystem-00020 : Vista : Gl 473
+StarSystem-00021 : Bihar : Gl 1061
+StarSystem-00022 : Inne : NN 3618
+StarSystem-00023 : Wolf's Den : NN 3622
+StarSystem-00024 : Andromeda : Gl 15
+StarSystem-00025 : Sutter : Gl 687
+StarSystem-00026 : Siera : Gl 234
+StarSystem-00027 : YZ Ceti : Gl 54.1
+StarSystem-00028 : Kercur : GJ 3622
+StarSystem-00029 : Nuone : Gl 1
+StarSystem-00030 : Leonis : Gl 388
+StarSystem-00031 : Ophir : SCR 1845
+StarSystem-00032 : Cancri : GJ 1111
+StarSystem-00033 : Eureka : Gl 440
+StarSystem-00034 : TeeGarden : SO025300.5+165258
+StarSystem-00035 : Van Maanen : Gl 35
+StarSystem-00036 : Knob : UGPS 0722-05
+StarSystem-00037 : Cygni : Gl 820
+StarSystem-00038 : Epsilon Indi : Gl 845
+StarSystem-00039 : Arietis : Gl 83
+StarSystem-00040 : Flare : DEN 1048-3956
+StarSystem-00041 : Demic : Gl 412
+StarSystem-00042 : Lapis : Gl 628
+StarSystem-00043 : Banawali : Gl 876
+StarSystem-00044 : Rudra : GJ 1245
+StarSystem-00045 : Altair : Gl 768
+StarSystem-00046 : Krell : Gl 702
+StarSystem-00047 : Mobius : GJ 1116
+StarSystem-00048 : Bellerophon : Gl 205
+StarSystem-00049 : Id : Gl 445
+StarSystem-00050 : Adams : Gl 251
+StarSystem-00051 : Lacerta : Gl 873
+StarSystem-00052 : Omicron : Gl 693
+StarSystem-00053 : Gateway : Gl 166

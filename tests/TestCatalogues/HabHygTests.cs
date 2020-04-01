@@ -15,14 +15,12 @@ namespace TestCatalogues
     [TestClass]
     public class HabHygTests
     {
-        readonly string folder = @"C:\Development\StellarMap\Catalogues\";
-        readonly string testdata = @"C:\Development\StellarMap\TestData\";
-
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void LoadCatalogue()
         {
             HabHygCatalogue catalogue = new HabHygCatalogue();
-            catalogue.Location = folder + "HabHYG.csv";
+            catalogue.Location = Path.Combine(TestingUtilities.Config["DataPath"], "HabHYG.csv");
 
             BaseStellarMap map = new BaseStellarMap("HabHyg All");
             catalogue.Get(map);
@@ -62,10 +60,11 @@ namespace TestCatalogues
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void LocateStarsAreas()
         {
             HabHYGCsvReader reader = new HabHYGCsvReader();
-            reader.Load(@"C:\Development\StellarMap\Catalogues\HabHYG.csv");
+            reader.Load(Path.Combine(TestingUtilities.Config["DataPath"], "HabHYG.csv"));
 
             double length = 20;
             
@@ -75,7 +74,7 @@ namespace TestCatalogues
             CubeAreaStarLocation areaLocations = new CubeAreaStarLocation();
             IDictionary<string, IList<HabHygRecord>> areaMappings = areaLocations.GetAreaMappings(length, stars);
 
-            string outfile = testdata + "Areas" + length.ToString() + ".csv";
+            string outfile = Path.Combine(TestingUtilities.Config["DataPath"], $"Areas{length}.csv");
             if (File.Exists(outfile))
                 File.Delete(outfile);
 
@@ -103,6 +102,7 @@ namespace TestCatalogues
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
         public void ConvertCoordinates()
         {
             // TeeGarden 12.58ly RA 02h 53m 00.85s Dec +16d 52m 53.3s

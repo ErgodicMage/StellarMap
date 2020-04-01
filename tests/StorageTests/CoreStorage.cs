@@ -17,16 +17,15 @@ namespace StorageTests
     [TestClass]
     public class CoreStorage
     {
-        string dir = @"C:\Development\StellarMap\TestData\";
-
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void JsonStoreSolarSystem()
         {
             IStellarMap map = SolarSystem.CreateSolSystem();
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            string filename = dir + "SolarSystem.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -38,9 +37,10 @@ namespace StorageTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void JsonRetrieveSolarSystem()
         {
-            string filename = dir + "SolarSystem.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
 
             if (!File.Exists(filename))
                 JsonStoreSolarSystem();
@@ -55,13 +55,14 @@ namespace StorageTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void ZipStoreSolarSystem()
         {
             IStellarMap map = SolarSystem.CreateSolSystem();
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
-            string filename = dir + "SolarSystem.zip";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.zip");
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -73,9 +74,10 @@ namespace StorageTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void ZipRetrieveSolarSystem()
         {
-            string filename = dir + "SolarSystem.zip";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.zip");
 
             if (!File.Exists(filename))
                 JsonStoreSolarSystem();
@@ -89,7 +91,7 @@ namespace StorageTests
             }
 
             // now serialize it to json file to inspect
-            filename = dir + "SolarSystem.json";
+            filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
 
             if (File.Exists(filename))
                 File.Delete(filename);

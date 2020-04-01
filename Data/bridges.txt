@@ -1,0 +1,58 @@
+Bridge: Sol-Bernard:5.852791166780049
+Bridge: Sol-Epsilon Eridani:10.583986520920893
+Bridge: Sol-Procyon:11.340918851868661
+Bridge: Bernard-Sirius:14.354891122644082
+Bridge: Bernard-Ross:12.741259449335224
+Bridge: Procyon-Ceti:14.48767300433627
+Bridge: Procyon-Lalande:9.441850112539056
+Bridge: Lalande-Epsilon Eridani:15.757434783457654
+Bridge: Ross-Ophiuchi:19.57523330020201
+Bridge: Ophiuchi-Little Ophiuchi:6.324541038553758
+Bridge: Ophiuchi-Wolf:11.614344914906587
+Bridge: Little Ophiuchi-Wolf:10.856878376389512
+Bridge: Sirius-Luyten:5.816324823191275
+Bridge: Kruger-Centauri:16.9604916
+Bridge: Kruger-Lacaille:17.48247458230027
+Bridge: Centauri-Lacaille:10.360499058988037
+Bridge: Lacaille-Tau Ceti:7.676972322462615
+Bridge: Lacaille-Gleine:18.060142294187074
+Bridge: Gleine-Kapteyn:23.821088257163886
+Bridge: Kruger-Vista:22.07573836954549
+Bridge: Vista-Bihar:25.080664111066127
+Bridge: Gleine-Inne:25.42609765512377
+Bridge: Groombridge-Bihar:26.59581228269878
+Bridge: Wolf's Den-Siera:15.091882877540876
+Bridge: Siera-Leonis:14.882485054306791
+Bridge: Leonis-Ophir:27.57382300504344
+Bridge: Leonis-TeeGarden:26.59581228269878
+Bridge: TeeGarden-Van Maanen:3.34217927676291
+Bridge: TeeGarden-Cancri:19.866531367356554
+Bridge: Van Maanen-YZ Ceti:26.300171173042177
+Bridge: Van Maanen-Eureka:25.338081558016206
+Bridge: Cancri-Nuone:23.69571323789696
+Bridge: YZ Ceti-Andromeda:32.7107806016362
+Bridge: Andromeda-Kercur:25.004198493743257
+Bridge: Kercur-Nuone:26.031836546046637
+Bridge: Nuone-Sutter:25.87402291089537
+Bridge: Nuone-Eureka:18.288427339470775
+Bridge: Eureka-Knob:18.01295699528577
+Bridge: Cygni-Epsilon Indi:17.116582609475966
+Bridge: Cygni-Arietis:14.835949208399018
+Bridge: Epsilon Indi-Flare:12.230036490675214
+Bridge: Flare-Lapis:16.467209480731782
+Bridge: Arietis-Demic:24.827005356231762
+Bridge: Arietis-Lapis:10.031841474050411
+Bridge: Flare-Demic:26.913907756014435
+Bridge: Demic-Banawali:30.206666278077016
+Bridge: Demic-Rudra:20.52497729930253
+Bridge: Altair-Krell:7.814317244980193
+Bridge: Altair-Mobius:32.3066353942415
+Bridge: Altair-Bellerophon:34.14915732491284
+Bridge: Altair-Adams:33.118024656244756
+Bridge: Krell-Id:23.59673697630463
+Bridge: Krell-Omicron:18.130689993618283
+Bridge: Mobius-Bellerophon:10.523506102807776
+Bridge: Mobius-Id:17.736207243240976
+Bridge: Mobius-Adams:9.637007885593688
+Bridge: Bellerophon-Lacerta:33.15013132850266
+Bridge: Lacerta-Gateway:23.127715003560613

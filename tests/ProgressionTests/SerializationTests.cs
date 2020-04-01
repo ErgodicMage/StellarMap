@@ -10,10 +10,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ProgressionTests
 {
     [TestClass]
+    [TestCategory(TestCategories.FunctionalTest)]
     public class SerializationTests
     {
-        string folder = @"C:\Development\StellarMap\TestData\";
-
         [TestMethod]
         public void SerializeFileEarth()
         {
@@ -21,7 +20,7 @@ namespace ProgressionTests
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateEarth();
 
-            string filename = folder + "Earth.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "Earth.json");
             if (File.Exists(filename))
                 File.Delete(filename);
 
@@ -32,11 +31,12 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void DeSerializeFileEarth()
         {
-            string filename = folder + "Earth.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "Earth.json");
 
-            if (!File.Exists(folder + filename))
+            if (!File.Exists(filename))
                 SerializeFileEarth();
 
             ProgressionMap map;
@@ -48,13 +48,14 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void SerializeFileSolSystem()
         {
             ProgressionMap map = new ProgressionMap("Sol System");
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateSolSystem();
 
-            string filename = folder + "SolSystem.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolSystem.json");
             if (File.Exists(filename))
                 File.Delete(filename);
 
@@ -65,11 +66,12 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void DeSerializeFileSolSystem()
         {
-            string filename = folder + "SolSystem.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolSystem.json");
 
-            if (!File.Exists(folder + filename))
+            if (!File.Exists(filename))
                 SerializeFileSolSystem();
 
             ProgressionMap map;
@@ -81,13 +83,14 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void SerializeFileSolCluster()
         {
             ProgressionMap map = new ProgressionMap("Sol Cluster");
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateSolCluster();
 
-            string filename = folder + "SolCluster.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolCluster.json");
             if (File.Exists(filename))
                 File.Delete(filename);
 
@@ -98,11 +101,12 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void DeSerializeFileSolCluster()
         {
-            string filename = folder + "SolCluster.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolCluster.json");
 
-            if (!File.Exists(folder + filename))
+            if (!File.Exists(filename))
                 SerializeFileSolCluster();
 
             ProgressionMap map;
@@ -114,13 +118,14 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void SerializeFileLocalSector()
         {
             ProgressionMap map = new ProgressionMap("Local Sector");
             LocalSectorMap c = new LocalSectorMap(map);
             c.CreateLocalSector();
 
-            string filename = folder + "LocalSector.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.json");
             if (File.Exists(filename))
                 File.Delete(filename);
 
@@ -131,11 +136,12 @@ namespace ProgressionTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void DeSerializeFileLocalSector()
         {
-            string filename = folder + "LocalSector.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.json");
 
-            if (!File.Exists(folder + filename))
+            if (!File.Exists(filename))
                 SerializeFileLocalSector();
 
             ProgressionMap map;

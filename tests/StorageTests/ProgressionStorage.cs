@@ -19,9 +19,8 @@ namespace StorageTests
     [TestClass]
     public class ProgressionStorage
     {
-        string dir = @"C:\Development\StellarMap\TestData\";
-
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void JsonStoreLocalSector()
         {
             ProgressionMap localsector = new ProgressionMap("Local Sector");
@@ -31,7 +30,7 @@ namespace StorageTests
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            string filename = dir + "LocalSector.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.json");
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -43,9 +42,10 @@ namespace StorageTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void JsonRetrieveSolarSystem()
         {
-            string filename = dir + "LocalSector.json";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.json");
 
             if (!File.Exists(filename))
                 JsonStoreLocalSector();
@@ -60,6 +60,7 @@ namespace StorageTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void ZipStoreLocalSector()
         {
             ProgressionMap localsector = new ProgressionMap("Local Sector");
@@ -69,7 +70,7 @@ namespace StorageTests
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
-            string filename = dir + "LocalSector.zip";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.zip");
 
             if (File.Exists(filename))
                 File.Delete(filename);
@@ -81,9 +82,10 @@ namespace StorageTests
         }
 
         [TestMethod]
+        [TestCategory(TestCategories.FunctionalTest)]
         public void ZipRetrieveLocalSector()
         {
-            string filename = dir + "LocalSector.zip";
+            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.zip");
 
             if (!File.Exists(filename))
                 ZipStoreLocalSector();
@@ -97,7 +99,7 @@ namespace StorageTests
             }
 
             // now serialize it to json file to inspect
-            filename = dir + "LocalSectorCheck.json";
+            filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSectorCheck.json");
 
             if (File.Exists(filename))
                 File.Delete(filename);

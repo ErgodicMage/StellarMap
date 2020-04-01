@@ -10,7 +10,7 @@
         "Author": "Ergodic Mage",
         "Version": "0.5",
         "Date": "11/29/2019",
-        "Description": "This is the initial version of the Progression map.\nIt has since been replaced, but still useful for testing purposes.\n",
+        "Description": "This is the initial version of the Progression map.\r\nIt has since been replaced, but still useful for testing purposes.\r\n",
         "Diagram": "https://drive.google.com/file/d/16VlY7NgC7chq3u7T2UerNy3aWMn3hkOD/view?usp=sharing",
         "Rules": "https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/Rules.md"
       }
