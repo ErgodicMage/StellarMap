@@ -79,8 +79,6 @@ namespace StellarMap.Progression.DefaultSettingMaps
             sol.Add(new Comet("Haley's"));
             sol.Add(new Comet("Caeser's"));
 
-            sol.Add(new Habitat("Ceres Station"));
-
             Sol = new StarSystem("Sol");
             Sol.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 0, 0).ToString());
             Map.Add(Sol);

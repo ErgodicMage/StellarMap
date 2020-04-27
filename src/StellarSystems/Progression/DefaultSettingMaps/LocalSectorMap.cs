@@ -10,6 +10,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
 {
     public class LocalSectorMap
     {
+        public const string SimbadID = "SimbadID";
         public LocalSectorMap(ProgressionMap map)
         {
             Map = map;
@@ -104,6 +105,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Bernard's Star
             system = new StarSystem("Bernard");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 699");
+            system.BasicProperties.Add(SimbadID, "BD+043561a");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(1.5,0.9,0.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Bernard's Star");
@@ -120,6 +122,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Epsilon Eridani
             system = new StarSystem("Epsilon Eridani");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 144");
+            system.BasicProperties.Add(SimbadID, "HD 22049");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.1, -0.6, -2.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Epsilon Eridani");
@@ -136,6 +139,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Procyon
             system = new StarSystem("Procyon");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 280");
+            system.BasicProperties.Add(SimbadID, "HR 2943");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-2.8, -1.9, 0.8).ToString());
             Map.Add(system);
             star = new ProgressionStar("Procyon");
@@ -151,11 +155,12 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Ross
             system = new StarSystem("Ross");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Ross 128");
+            system.BasicProperties.Add(SimbadID, "Ross 128");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, -1.7, 2.9).ToString());
             Map.Add(system);
             star = new ProgressionStar("Pocks");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 447/Ross 128");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Ross 128");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M4.5V");
             catalogue = new Dictionary<string, string>();
             catalogue.Add("HabHyg", "14");
@@ -167,7 +172,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Ceti
             system = new StarSystem("Ceti");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 65");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Luyten 726/Gl 65");
+            system.BasicProperties.Add(SimbadID, "GJ 65");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-0.6, 0.1, -2.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("BL");
@@ -192,6 +198,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Sirius
             system = new StarSystem("Sirius");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 244");
+            system.BasicProperties.Add(SimbadID, "Gl 244 A");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.8,-1.9,-0.4).ToString());
             Map.Add(system);
             star = new ProgressionStar("Sirius");
@@ -208,6 +215,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Luyten's Star
             system = new StarSystem("Luyten");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 273");
+            system.BasicProperties.Add(SimbadID, "Gl 273");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-3.2,-2,0.7).ToString());
             Map.Add(system);
             star = new ProgressionStar("Luyten's Star");
@@ -223,7 +231,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Lalande
             system = new StarSystem("Lalande");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 441");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 411");
+            system.BasicProperties.Add(SimbadID, "Gl 411");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(-1.1,-0.1,2.3).ToString());
             Map.Add(system);
             star = new ProgressionStar("Lalande");
@@ -240,6 +249,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Ophiuchi 
             system = new StarSystem("Ophiuchi");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 644");
+            system.BasicProperties.Add(SimbadID, "GJ 644");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(5.3, 1, 2.1).ToString());
             Map.Add(system);
             star = new ProgressionStar("Alvin");
@@ -288,6 +298,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #region Little Ophiuchi
             system = new StarSystem("Little Ophiuchi");
             system.BasicProperties.Add(Constants.PropertyNames.Designation, "GJ 663");
+            system.BasicProperties.Add(SimbadID, "GJ 663 A");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(5.9, -0.2, 0.7).ToString());
             Map.Add(system);
             star = new ProgressionStar("LO 1");
@@ -310,11 +321,12 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             #region Wolf
             system = new StarSystem("Wolf");
-            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 729");
+            system.BasicProperties.Add(Constants.PropertyNames.Designation, "Ross 154");
+            system.BasicProperties.Add(SimbadID, "Ross 154");
             system.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(2.9, 0.6, -0.5).ToString());
             Map.Add(system);
             star = new ProgressionStar("Wolf");
-            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Gl 729");
+            star.BasicProperties.Add(Constants.PropertyNames.Designation, "Ross 154");
             star.BasicProperties.Add(Constants.PropertyNames.StellarClass, "M3.5Ve");
             catalogue = new Dictionary<string, string>();
             catalogue.Add("HabHyg", "11");
