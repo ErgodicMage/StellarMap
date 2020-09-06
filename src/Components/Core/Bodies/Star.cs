@@ -29,6 +29,10 @@ namespace StellarMap.Core.Bodies
             { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Planets); }
 
         [IgnoreDataMember]
+        public IDictionary<string, string> DwarfPlanets 
+            { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.DwarfPlanets); }
+
+        [IgnoreDataMember]
         public IDictionary<string, string> Asteroids 
             { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Asteroids); }
 
@@ -43,6 +47,12 @@ namespace StellarMap.Core.Bodies
 
         public virtual IDictionary<string, Planet> GetPlanets() => 
             GetAll<Planet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
+
+        public virtual Planet GetDwarfPlanet(string name) => 
+            Get<Planet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
+
+        public virtual IDictionary<string, Planet> GetDwarfPlanets() => 
+            GetAll<Planet>(StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
 
         public virtual Asteroid GetAsteroid(string name) => 
             Get<Asteroid>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
@@ -60,6 +70,9 @@ namespace StellarMap.Core.Bodies
         #region Public Add Functions
         public void Add(Planet planet) => 
             Add<Planet>(planet, StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
+
+        public void Add(DwarfPlanet dwarf) => 
+            Add<DwarfPlanet>(dwarf, StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);            
 
         public void Add(Asteroid asteroid) => 
             Add<Asteroid>(asteroid, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);

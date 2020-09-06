@@ -212,9 +212,10 @@ namespace CoreTests
             sol.Add(new Planet("Saturn"));
             sol.Add(new Planet("Uranus"));
             sol.Add(new Planet("Neptune"));
-            sol.Add(new Planet("Pluto"));
 
-            sol.Add(new Asteroid("Ceres"));
+            sol.Add(new DwarfPlanet("Ceres"));
+            sol.Add(new DwarfPlanet("Pluto"));
+
             sol.Add(new Asteroid("Pallas"));
             sol.Add(new Asteroid("Juno"));
 
@@ -232,9 +233,10 @@ namespace CoreTests
             sol2.Add(new Planet("Saturn"));
             sol2.Add(new Planet("Uranus"));
             sol2.Add(new Planet("Neptune"));
-            sol2.Add(new Planet("Pluto"));
 
-            sol2.Add(new Asteroid("Ceres"));
+            sol2.Add(new DwarfPlanet("Ceres"));
+            sol2.Add(new DwarfPlanet("Pluto"));
+
             sol2.Add(new Asteroid("Pallas"));
             sol2.Add(new Asteroid("Juno"));
 
@@ -259,9 +261,10 @@ namespace CoreTests
             sol.Add(new Planet("Saturn"));
             sol.Add(new Planet("Uranus"));
             sol.Add(new Planet("Neptune"));
-            sol.Add(new Planet("Pluto"));
 
-            sol.Add(new Asteroid("Ceres"));
+            sol.Add(new DwarfPlanet("Ceres"));
+            sol.Add(new DwarfPlanet("Pluto"));
+
             sol.Add(new Asteroid("Pallas"));
             sol.Add(new Asteroid("Juno"));
 
@@ -281,9 +284,10 @@ namespace CoreTests
             sol2.Add(new Planet("Uranus"));
             sol2.Add(new Planet("Neptune"));
 
-            // Pluto isn't a planet ... or is it
-            //sol2.Add(new Planet("Pluto"));
+            // Pluto is a planet once again
+            sol2.Add(new Planet("Pluto"));
 
+            // Ceres is back to an asteroid
             sol2.Add(new Asteroid("Ceres"));
             sol2.Add(new Asteroid("Pallas"));
             sol2.Add(new Asteroid("Juno"));
@@ -309,9 +313,10 @@ namespace CoreTests
             sol.Add(new Planet("Saturn"));
             sol.Add(new Planet("Uranus"));
             sol.Add(new Planet("Neptune"));
-            sol.Add(new Planet("Pluto"));
 
-            sol.Add(new Asteroid("Ceres"));
+            sol.Add(new DwarfPlanet("Ceres"));
+            sol.Add(new DwarfPlanet("Pluto"));
+
             sol.Add(new Asteroid("Pallas"));
             sol.Add(new Asteroid("Juno"));
 
@@ -333,9 +338,10 @@ namespace CoreTests
             sol2.Add(new Planet("Saturn"));
             sol2.Add(new Planet("Uranus"));
             sol2.Add(new Planet("Neptune"));
-            sol2.Add(new Planet("Pluto"));
 
-            sol2.Add(new Asteroid("Ceres"));
+            sol2.Add(new DwarfPlanet("Ceres"));
+            sol2.Add(new DwarfPlanet("Pluto"));
+
             sol2.Add(new Asteroid("Pallas"));
             sol2.Add(new Asteroid("Juno"));
 
@@ -364,10 +370,13 @@ namespace CoreTests
             sol.Add(new Planet("Saturn"));
             sol.Add(new Planet("Uranus"));
             sol.Add(new Planet("Neptune"));
-            sol.Add(new Planet("Pluto"));
-            sol.Add(new Asteroid("Ceres"));
+
+            sol.Add(new DwarfPlanet("Ceres"));
+            sol.Add(new DwarfPlanet("Pluto"));
+
             sol.Add(new Asteroid("Pallas"));
             sol.Add(new Asteroid("Juno"));
+
             sol.Add(new Comet("Haley's"));
             sol.Add(new Comet("Caeser's"));
 
@@ -386,9 +395,10 @@ namespace CoreTests
             sol2.Add(new Planet("Saturn"));
             sol2.Add(new Planet("Uranus"));
             sol2.Add(new Planet("Neptune"));
-            sol2.Add(new Planet("Pluto"));
 
-            sol2.Add(new Asteroid("Ceres"));
+            sol2.Add(new DwarfPlanet("Ceres"));
+            sol2.Add(new DwarfPlanet("Pluto"));
+
             sol2.Add(new Asteroid("Pallas"));
             sol2.Add(new Asteroid("Juno"));
 

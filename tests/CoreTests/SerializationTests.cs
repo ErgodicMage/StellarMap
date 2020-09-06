@@ -78,7 +78,7 @@ namespace CoreTests
         public void SerializeFileSol()
         {
             TestStellarMap map = new TestStellarMap("Sol");
-            CreateEarth(map);
+            CreateSol(map);
 
             string filename = Path.Combine(TestingUtilities.Config["DataPath"], "BaseSol.json");
             if (File.Exists(filename))
@@ -97,7 +97,7 @@ namespace CoreTests
             string filename = Path.Combine(TestingUtilities.Config["DataPath"], "BaseSol.json");
 
             if (!File.Exists(filename))
-                SerializeFileEarth();
+                SerializeFileSol();
 
             TestStellarMap map;
 
@@ -181,9 +181,10 @@ namespace CoreTests
             sol.Add(new Planet("Saturn"));
             sol.Add(new Planet("Uranus"));
             sol.Add(new Planet("Neptune"));
-            sol.Add(new Planet("Pluto"));
 
-            sol.Add(new Asteroid("Ceres"));
+            sol.Add(new DwarfPlanet("Ceres"));
+            sol.Add(new DwarfPlanet("Pluto"));
+
             sol.Add(new Asteroid("Pallas"));
             sol.Add(new Asteroid("Juno"));
 

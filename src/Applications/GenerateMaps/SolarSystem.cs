@@ -29,9 +29,10 @@ namespace StellarMap.GenerateMaps
             sol.Add(new Planet("Saturn"));
             sol.Add(new Planet("Uranus"));
             sol.Add(new Planet("Neptune"));
-            sol.Add(new Planet("Pluto"));
 
-            sol.Add(new Asteroid("Ceres"));
+            sol.Add(new DwarfPlanet("Ceres"));            
+            sol.Add(new DwarfPlanet("Pluto"));
+
             sol.Add(new Asteroid("Pallas"));
             sol.Add(new Asteroid("Juno"));
 

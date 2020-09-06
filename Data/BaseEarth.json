@@ -32,6 +32,7 @@
       }
     }
   },
+  "DwarfPlanets": null,
   "Satellites": {
     "2": {
       "Identifier": "2",

@@ -10,10 +10,78 @@
       }
     }
   },
-  "Stars": null,
-  "Planets": {
+  "Stars": {
     "1": {
       "Identifier": "1",
+      "ParentIdentifier": null,
+      "Name": "Sol",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Star",
+        "GroupIdentifiers": {
+          "Planets": {
+            "Mercury": "2",
+            "Venus": "3",
+            "Mars": "6",
+            "Jupiter": "7",
+            "Saturn": "8",
+            "Uranus": "9",
+            "Neptune": "10"
+          },
+          "DwarfPlanets": {
+            "Ceres": "11",
+            "Pluto": "12"
+          },
+          "Asteroids": {
+            "Pallas": "13",
+            "Juno": "14"
+          },
+          "Comets": {
+            "Haley's": "15",
+            "Caeser's": "16"
+          }
+        }
+      }
+    }
+  },
+  "Planets": {
+    "2": {
+      "Identifier": "2",
+      "ParentIdentifier": "1",
+      "Name": "Mercury",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "3": {
+      "Identifier": "3",
+      "ParentIdentifier": "1",
+      "Name": "Venus",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "4": {
+      "Identifier": "4",
       "ParentIdentifier": null,
       "Name": "Earth",
       "BodyType": "Planet",
@@ -26,16 +94,123 @@
         "Name": "GroupIdentifiers-Planet",
         "GroupIdentifiers": {
           "Satellites": {
-            "Moon": "2"
+            "Moon": "5"
           }
         }
+      }
+    },
+    "6": {
+      "Identifier": "6",
+      "ParentIdentifier": "1",
+      "Name": "Mars",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "7": {
+      "Identifier": "7",
+      "ParentIdentifier": "1",
+      "Name": "Jupiter",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "8": {
+      "Identifier": "8",
+      "ParentIdentifier": "1",
+      "Name": "Saturn",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "9": {
+      "Identifier": "9",
+      "ParentIdentifier": "1",
+      "Name": "Uranus",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "10": {
+      "Identifier": "10",
+      "ParentIdentifier": "1",
+      "Name": "Neptune",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    }
+  },
+  "DwarfPlanets": {
+    "11": {
+      "Identifier": "11",
+      "ParentIdentifier": "1",
+      "Name": "Ceres",
+      "BodyType": "DwarfPlanet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "DwarfPlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-DwarfPlanet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "12": {
+      "Identifier": "12",
+      "ParentIdentifier": "1",
+      "Name": "Pluto",
+      "BodyType": "DwarfPlanet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "DwarfPlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-DwarfPlanet",
+        "GroupIdentifiers": {}
       }
     }
   },
   "Satellites": {
-    "2": {
-      "Identifier": "2",
-      "ParentIdentifier": "1",
+    "5": {
+      "Identifier": "5",
+      "ParentIdentifier": "4",
       "Name": "Moon",
       "BodyType": "Satellite",
       "Properties": {
@@ -45,6 +220,52 @@
       }
     }
   },
-  "Asteroids": null,
-  "Comets": null
+  "Asteroids": {
+    "13": {
+      "Identifier": "13",
+      "ParentIdentifier": "1",
+      "Name": "Pallas",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "14": {
+      "Identifier": "14",
+      "ParentIdentifier": "1",
+      "Name": "Juno",
+      "BodyType": "Asteroid",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  },
+  "Comets": {
+    "15": {
+      "Identifier": "15",
+      "ParentIdentifier": "1",
+      "Name": "Haley's",
+      "BodyType": "Comet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    },
+    "16": {
+      "Identifier": "16",
+      "ParentIdentifier": "1",
+      "Name": "Caeser's",
+      "BodyType": "Comet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      }
+    }
+  }
 }

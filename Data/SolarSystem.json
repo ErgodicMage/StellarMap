@@ -11,8 +11,8 @@
     }
   },
   "Stars": {
-    "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc": {
-      "Identifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "a4d43c34-38f8-4977-a422-0503bd9ed18c": {
+      "Identifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "ParentIdentifier": null,
       "Name": "Sol",
       "BodyType": "Star",
@@ -27,33 +27,35 @@
         "Name": "GroupIdentifiers-Star",
         "GroupIdentifiers": {
           "Planets": {
-            "Mercury": "cacb998f-3592-49ca-a15a-040ad763da26",
-            "Venus": "4eb46601-2fdd-4b8a-a6ed-060017f55131",
-            "Earth": "525b1ef1-d5be-4222-a5a0-6a9f87d404da",
-            "Mars": "942079bc-98bc-4995-8114-280e9013f5c3",
-            "Jupiter": "71532ff6-f4b7-4edd-bac0-5d548b7947c8",
-            "Saturn": "e1b3d210-9888-41f8-9ff6-3f30c074ea42",
-            "Uranus": "af26623e-ab2d-4260-9a53-cfad681f8915",
-            "Neptune": "6da6ced1-d297-4651-a029-376441eb3892",
-            "Pluto": "3145ba1d-db70-44e9-b631-f0923d3f216b"
+            "Mercury": "d054a971-c51d-486f-bb2a-6762cd187033",
+            "Venus": "98ff9b44-a41e-4941-a8d5-0c600c55a154",
+            "Earth": "7d34e250-0988-44fa-abb3-b36aeeb2bfa0",
+            "Mars": "b401e42f-b5d2-456c-92d0-5f1e53bf1a68",
+            "Jupiter": "0e88feac-d0f8-42eb-be5a-a7ad1dbd42a1",
+            "Saturn": "ed2b5b1e-3046-4401-97e2-f67e8ea4093d",
+            "Uranus": "fb3aec9f-5843-4a9b-bb2f-125f9d8c9b74",
+            "Neptune": "b8c37fcb-a9ae-4346-b909-ab10785f3204"
+          },
+          "DwarfPlanets": {
+            "Ceres": "49d85675-c602-4535-9e86-0d87ea36aa59",
+            "Pluto": "424043dd-9cdd-44d1-86b9-2040661b8d77"
           },
           "Asteroids": {
-            "Ceres": "a6313516-c8e0-404f-b738-9cd3598f2a26",
-            "Pallas": "b6cbdee1-5e80-4ff1-8af1-afe3e5664241",
-            "Juno": "4d755dfb-be41-4738-a81c-305c29e24666"
+            "Pallas": "858e0fe3-4950-4700-a448-1e731b686117",
+            "Juno": "2274f72f-bbce-43be-a410-be13b364bbe3"
           },
           "Comets": {
-            "Haley's": "fa2a00a4-5ec3-42a1-aaf7-f92628a49292",
-            "Caeser's": "43374e42-438c-467c-8f1c-8da2133aa769"
+            "Haley's": "30193849-bc3f-4287-a820-4d26d4984fe3",
+            "Caeser's": "04339fdb-5c51-459e-b7af-a9cca97cdc28"
           }
         }
       }
     }
   },
   "Planets": {
-    "cacb998f-3592-49ca-a15a-040ad763da26": {
-      "Identifier": "cacb998f-3592-49ca-a15a-040ad763da26",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "d054a971-c51d-486f-bb2a-6762cd187033": {
+      "Identifier": "d054a971-c51d-486f-bb2a-6762cd187033",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Mercury",
       "BodyType": "Planet",
       "Properties": {
@@ -66,9 +68,9 @@
         "GroupIdentifiers": {}
       }
     },
-    "4eb46601-2fdd-4b8a-a6ed-060017f55131": {
-      "Identifier": "4eb46601-2fdd-4b8a-a6ed-060017f55131",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "98ff9b44-a41e-4941-a8d5-0c600c55a154": {
+      "Identifier": "98ff9b44-a41e-4941-a8d5-0c600c55a154",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Venus",
       "BodyType": "Planet",
       "Properties": {
@@ -81,9 +83,9 @@
         "GroupIdentifiers": {}
       }
     },
-    "525b1ef1-d5be-4222-a5a0-6a9f87d404da": {
-      "Identifier": "525b1ef1-d5be-4222-a5a0-6a9f87d404da",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "7d34e250-0988-44fa-abb3-b36aeeb2bfa0": {
+      "Identifier": "7d34e250-0988-44fa-abb3-b36aeeb2bfa0",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Earth",
       "BodyType": "Planet",
       "Properties": {
@@ -95,14 +97,14 @@
         "Name": "GroupIdentifiers-Planet",
         "GroupIdentifiers": {
           "Satellites": {
-            "Moon": "e95e3b57-b929-4d34-8033-ac72847f765e"
+            "Moon": "7cfaee4e-3914-448a-8cc1-8647053dd2fa"
           }
         }
       }
     },
-    "942079bc-98bc-4995-8114-280e9013f5c3": {
-      "Identifier": "942079bc-98bc-4995-8114-280e9013f5c3",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "b401e42f-b5d2-456c-92d0-5f1e53bf1a68": {
+      "Identifier": "b401e42f-b5d2-456c-92d0-5f1e53bf1a68",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Mars",
       "BodyType": "Planet",
       "Properties": {
@@ -115,9 +117,9 @@
         "GroupIdentifiers": {}
       }
     },
-    "71532ff6-f4b7-4edd-bac0-5d548b7947c8": {
-      "Identifier": "71532ff6-f4b7-4edd-bac0-5d548b7947c8",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "0e88feac-d0f8-42eb-be5a-a7ad1dbd42a1": {
+      "Identifier": "0e88feac-d0f8-42eb-be5a-a7ad1dbd42a1",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Jupiter",
       "BodyType": "Planet",
       "Properties": {
@@ -130,9 +132,9 @@
         "GroupIdentifiers": {}
       }
     },
-    "e1b3d210-9888-41f8-9ff6-3f30c074ea42": {
-      "Identifier": "e1b3d210-9888-41f8-9ff6-3f30c074ea42",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "ed2b5b1e-3046-4401-97e2-f67e8ea4093d": {
+      "Identifier": "ed2b5b1e-3046-4401-97e2-f67e8ea4093d",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Saturn",
       "BodyType": "Planet",
       "Properties": {
@@ -145,9 +147,9 @@
         "GroupIdentifiers": {}
       }
     },
-    "af26623e-ab2d-4260-9a53-cfad681f8915": {
-      "Identifier": "af26623e-ab2d-4260-9a53-cfad681f8915",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "fb3aec9f-5843-4a9b-bb2f-125f9d8c9b74": {
+      "Identifier": "fb3aec9f-5843-4a9b-bb2f-125f9d8c9b74",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Uranus",
       "BodyType": "Planet",
       "Properties": {
@@ -160,9 +162,9 @@
         "GroupIdentifiers": {}
       }
     },
-    "6da6ced1-d297-4651-a029-376441eb3892": {
-      "Identifier": "6da6ced1-d297-4651-a029-376441eb3892",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "b8c37fcb-a9ae-4346-b909-ab10785f3204": {
+      "Identifier": "b8c37fcb-a9ae-4346-b909-ab10785f3204",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Neptune",
       "BodyType": "Planet",
       "Properties": {
@@ -174,26 +176,43 @@
         "Name": "GroupIdentifiers-Planet",
         "GroupIdentifiers": {}
       }
-    },
-    "3145ba1d-db70-44e9-b631-f0923d3f216b": {
-      "Identifier": "3145ba1d-db70-44e9-b631-f0923d3f216b",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
-      "Name": "Pluto",
-      "BodyType": "Planet",
+    }
+  },
+  "DwarfPlanets": {
+    "49d85675-c602-4535-9e86-0d87ea36aa59": {
+      "Identifier": "49d85675-c602-4535-9e86-0d87ea36aa59",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
+      "Name": "Ceres",
+      "BodyType": "DwarfPlanet",
       "Properties": {
         "PropertyGroups": {
           "Basic": {}
         }
       },
-      "PlanetGroupIdentifiers": {
-        "Name": "GroupIdentifiers-Planet",
+      "DwarfPlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-DwarfPlanet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "424043dd-9cdd-44d1-86b9-2040661b8d77": {
+      "Identifier": "424043dd-9cdd-44d1-86b9-2040661b8d77",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
+      "Name": "Pluto",
+      "BodyType": "DwarfPlanet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "DwarfPlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-DwarfPlanet",
         "GroupIdentifiers": {}
       }
     }
   },
   "Satellites": {
-    "e95e3b57-b929-4d34-8033-ac72847f765e": {
-      "Identifier": "e95e3b57-b929-4d34-8033-ac72847f765e",
+    "7cfaee4e-3914-448a-8cc1-8647053dd2fa": {
+      "Identifier": "7cfaee4e-3914-448a-8cc1-8647053dd2fa",
       "ParentIdentifier": null,
       "Name": "Moon",
       "BodyType": "Satellite",
@@ -205,20 +224,9 @@
     }
   },
   "Asteroids": {
-    "a6313516-c8e0-404f-b738-9cd3598f2a26": {
-      "Identifier": "a6313516-c8e0-404f-b738-9cd3598f2a26",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
-      "Name": "Ceres",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "b6cbdee1-5e80-4ff1-8af1-afe3e5664241": {
-      "Identifier": "b6cbdee1-5e80-4ff1-8af1-afe3e5664241",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "858e0fe3-4950-4700-a448-1e731b686117": {
+      "Identifier": "858e0fe3-4950-4700-a448-1e731b686117",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Pallas",
       "BodyType": "Asteroid",
       "Properties": {
@@ -227,9 +235,9 @@
         }
       }
     },
-    "4d755dfb-be41-4738-a81c-305c29e24666": {
-      "Identifier": "4d755dfb-be41-4738-a81c-305c29e24666",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "2274f72f-bbce-43be-a410-be13b364bbe3": {
+      "Identifier": "2274f72f-bbce-43be-a410-be13b364bbe3",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Juno",
       "BodyType": "Asteroid",
       "Properties": {
@@ -240,9 +248,9 @@
     }
   },
   "Comets": {
-    "fa2a00a4-5ec3-42a1-aaf7-f92628a49292": {
-      "Identifier": "fa2a00a4-5ec3-42a1-aaf7-f92628a49292",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "30193849-bc3f-4287-a820-4d26d4984fe3": {
+      "Identifier": "30193849-bc3f-4287-a820-4d26d4984fe3",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Haley's",
       "BodyType": "Comet",
       "Properties": {
@@ -251,9 +259,9 @@
         }
       }
     },
-    "43374e42-438c-467c-8f1c-8da2133aa769": {
-      "Identifier": "43374e42-438c-467c-8f1c-8da2133aa769",
-      "ParentIdentifier": "7f38708d-c6a4-4ed3-b3f7-d6b0bd01d6cc",
+    "04339fdb-5c51-459e-b7af-a9cca97cdc28": {
+      "Identifier": "04339fdb-5c51-459e-b7af-a9cca97cdc28",
+      "ParentIdentifier": "a4d43c34-38f8-4977-a422-0503bd9ed18c",
       "Name": "Caeser's",
       "BodyType": "Comet",
       "Properties": {

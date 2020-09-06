@@ -40,12 +40,15 @@ namespace StellarMap.Core.Types
         public IDictionary<string, Planet> Planets { get; set; }
 
         [DataMember(Order = 4)]
-        public IDictionary<string, Satellite> Satellites { get; set; }
+        public IDictionary<string, DwarfPlanet> DwarfPlanets { get; set; }
 
         [DataMember(Order = 5)]
-        public IDictionary<string, Asteroid> Asteroids { get; set; }
+        public IDictionary<string, Satellite> Satellites { get; set; }
 
         [DataMember(Order = 6)]
+        public IDictionary<string, Asteroid> Asteroids { get; set; }
+
+        [DataMember(Order = 7)]
         public IDictionary<string, Comet> Comets { get; set; }
         #endregion
 
@@ -126,6 +129,7 @@ namespace StellarMap.Core.Types
             {
                 Constants.BodyTypes.Star,
                 Constants.BodyTypes.Planet,
+                Constants.BodyTypes.DwarfPlanet,                
                 Constants.BodyTypes.Satellite,
                 Constants.BodyTypes.Asteroid,
                 Constants.BodyTypes.Comet
@@ -146,6 +150,9 @@ namespace StellarMap.Core.Types
                 case Constants.BodyTypes.Planet:
                     body = Planets;
                     break;
+                case Constants.BodyTypes.DwarfPlanet:
+                    body = DwarfPlanets;
+                    break;                    
                 case Constants.BodyTypes.Satellite:
                     body = Satellites;
                     break;
@@ -172,6 +179,9 @@ namespace StellarMap.Core.Types
                 case Constants.BodyTypes.Planet:
                     t = typeof(Dictionary<string, Planet>);
                     break;
+                case Constants.BodyTypes.DwarfPlanet:
+                    t = typeof(Dictionary<string, DwarfPlanet>);
+                    break;                    
                 case Constants.BodyTypes.Satellite:
                     t = typeof(Dictionary<string, Satellite>);
                     break;
@@ -199,6 +209,10 @@ namespace StellarMap.Core.Types
                     Planets = (Dictionary<string, Planet>)data;
                     bret = true;
                     break;
+                case Constants.BodyTypes.DwarfPlanet:
+                    DwarfPlanets = (Dictionary<string, DwarfPlanet>)data;
+                    bret = true;
+                    break;                    
                 case Constants.BodyTypes.Satellite:
                     Satellites = (Dictionary<string, Satellite>)data;
                     bret = true;
@@ -229,6 +243,12 @@ namespace StellarMap.Core.Types
             if (Planets != null)
             {
                 foreach (var value in Planets.Values)
+                    value.Map = this;
+            }
+
+            if (DwarfPlanets != null)
+            {
+                foreach (var value in DwarfPlanets.Values)
                     value.Map = this;
             }
 
@@ -270,12 +290,18 @@ namespace StellarMap.Core.Types
                     Stars = new Dictionary<string, Star>();
                 dict = (IDictionary<string, T>)Stars;
             }
+            else if (dt == typeof(DwarfPlanet))
+            {
+                if (create && DwarfPlanets == null)
+                    DwarfPlanets = new Dictionary<string, DwarfPlanet>();
+                dict = (IDictionary<string, T>)DwarfPlanets;
+            } 
             else if (dt == typeof(Satellite))
             {
                 if (create && Satellites == null)
                     Satellites = new Dictionary<string, Satellite>();
                 dict = (IDictionary<string, T>)Satellites;
-            }
+            }           
             else if (dt == typeof(Asteroid))
             {
                 if (create && Asteroids == null)
@@ -306,6 +332,7 @@ namespace StellarMap.Core.Types
                        MetaData.Equals(other.MetaData) &&
                        IsEqual<Planet>(this.Planets, other.Planets) &&
                        IsEqual<Star>(this.Stars, other.Stars) &&
+                       IsEqual<DwarfPlanet>(this.DwarfPlanets, other.DwarfPlanets) &&
                        IsEqual<Satellite>(this.Satellites, other.Satellites) &&
                        IsEqual<Asteroid>(this.Asteroids, other.Asteroids) &&
                        IsEqual<Comet>(this.Comets, other.Comets);
@@ -325,6 +352,8 @@ namespace StellarMap.Core.Types
                 hash = hash ^ Stars.GetHashCode();
             if (Planets != null)
                 hash = hash ^ Planets.GetHashCode();
+            if (DwarfPlanets != null)
+                hash = hash ^ DwarfPlanets.GetHashCode();                
             if (Satellites != null)
                 hash = hash ^ Satellites.GetHashCode();
             if (Asteroids != null)

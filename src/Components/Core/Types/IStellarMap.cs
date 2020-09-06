@@ -18,6 +18,8 @@ namespace StellarMap.Core.Types
 
         IDictionary<string, Satellite> Satellites { get; set; }
 
+        IDictionary<string, DwarfPlanet> DwarfPlanets { get; set; }
+
         IDictionary<string, Asteroid> Asteroids { get; set; }
 
         IDictionary<string, Comet> Comets { get; set; }
