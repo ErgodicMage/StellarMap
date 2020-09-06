@@ -28,8 +28,18 @@ namespace StellarMap.Core.Types
         {
             public const string Designation = "Designation";
             public const string StellarClass = "StellarClass";
+            public const string Age = "Age";
             public const string Position = "Position";
             public const string Distance = "Distance";
+            public const string Radius = "Radius";
+            public const string Dimensions = "Dimensions";
+            public const string Flattening = "Flattening";
+            public const string Area = "Area";
+            public const string Volume = "Volume";
+            public const string Mass = "Mass";
+            public const string Density = "Density";
+            public const string Gravity = "Gravity";
+            public const string EscapeVelocity = "EscapeVelocity";
         }
     }
 }

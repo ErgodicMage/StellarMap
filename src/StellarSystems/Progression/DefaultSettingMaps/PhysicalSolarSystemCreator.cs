@@ -21,7 +21,18 @@ namespace StellarMap.Progression.DefaultSettingMaps
             sol.Add(CreateSaturn(map));
             sol.Add(CreateUranus(map));
             sol.Add(CreateNeptune(map));
-            
+
+            sol.Add(CreateCeres(map));
+            sol.Add(CreatePluto());
+
+            var asteroids = CreateAsteroids(map);
+            foreach (Asteroid a in asteroids)
+                sol.Add(a);
+
+            var comets = CreateComets();
+            foreach (Comet c in comets)
+                sol.Add(c);
+
             return sol;
 
         }
@@ -125,6 +136,96 @@ namespace StellarMap.Progression.DefaultSettingMaps
             map.Add(n);
 
             return n;
+        }
+
+        public static DwarfPlanet CreateCeres(IStellarMap map = null)
+        {
+            DwarfPlanet c = new DwarfPlanet("Ceres");
+
+            map ??= BaseStellarMap.DefaultMap;
+            map.Add(c);
+
+            return c;
+        }
+
+        public static DwarfPlanet CreatePluto(IStellarMap map = null)
+        {
+            DwarfPlanet p = new DwarfPlanet("Pluto");
+
+            map ??= BaseStellarMap.DefaultMap;
+            map.Add(p);
+
+            return p;
+        }
+
+        public static ICollection<Asteroid> CreateAsteroids(IStellarMap map = null)
+        {
+            map ??= BaseStellarMap.DefaultMap;
+
+            ICollection<Asteroid> asteroids = new List<Asteroid>();
+
+            Asteroid a = new Asteroid("Vesta");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Pallas");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Hygiea");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Euphrosyne");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Interamnia");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Davida");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Herculina");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Eunomia");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Juno");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Psyche");
+            asteroids.Add(a);
+            map.Add(a);
+
+            a = new Asteroid("Europa");
+            asteroids.Add(a);
+            map.Add(a);
+
+            return asteroids;
+        }
+
+        public static ICollection<Comet> CreateComets(IStellarMap map = null)
+        {
+            map ??= BaseStellarMap.DefaultMap;
+
+            string[] cometNames = { "Halley's", "Caeser's", "Encke's", "Biela's", "Faye's", "Brorsen's", "d'Arrest's" };
+
+            ICollection<Comet> comets = new List<Comet>();
+            foreach (string name in cometNames)
+            {
+                Comet c = new Comet(name);
+                comets.Add(c);
+                map.Add(c);
+            }
+
+            return comets;
         }
     }
 }
