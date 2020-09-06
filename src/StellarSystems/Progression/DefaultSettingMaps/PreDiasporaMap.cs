@@ -72,9 +72,12 @@ namespace StellarMap.Progression.DefaultSettingMaps
             sol.Add(new Planet("Neptune"));
             sol.Add(new Planet("Pluto"));
 
+            sol.Add(new Asteroid("Vesta"));
             sol.Add(new Asteroid("Ceres"));
             sol.Add(new Asteroid("Pallas"));
             sol.Add(new Asteroid("Juno"));
+            sol.Add(new Asteroid("Hygiea"));
+            sol.Add(new Asteroid("Euphrosyne"));
 
             sol.Add(new Comet("Haley's"));
             sol.Add(new Comet("Caeser's"));
@@ -95,6 +98,19 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             Earth.Add(new Habitat("SpaceX Station"));
             Earth.Add(new Habitat("Moon Base Alpha"));
+
+            return Map;
+        }
+
+        public ProgressionMap Create2200AD()
+        {
+            Map.MetaData.Add("Basic", "ProgressionDate", "2100AD");
+
+            CreateSolSystem();
+
+            Earth.Add(new Habitat("SpaceX Station"));
+            Earth.Add(new Habitat("Moon Base Gamma"));
+            Earth.Add(new Habitat(""));
 
             return Map;
         }
