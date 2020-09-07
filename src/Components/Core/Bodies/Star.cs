@@ -48,11 +48,11 @@ namespace StellarMap.Core.Bodies
         public virtual IDictionary<string, Planet> GetPlanets() => 
             GetAll<Planet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-        public virtual Planet GetDwarfPlanet(string name) => 
-            Get<Planet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
+        public virtual DwarfPlanet GetDwarfPlanet(string name) => 
+            Get<DwarfPlanet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
 
-        public virtual IDictionary<string, Planet> GetDwarfPlanets() => 
-            GetAll<Planet>(StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
+        public virtual IDictionary<string, DwarfPlanet> GetDwarfPlanets() => 
+            GetAll<DwarfPlanet>(StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
 
         public virtual Asteroid GetAsteroid(string name) => 
             Get<Asteroid>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
