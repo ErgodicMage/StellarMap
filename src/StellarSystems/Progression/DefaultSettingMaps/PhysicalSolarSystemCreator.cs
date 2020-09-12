@@ -177,8 +177,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
             #endregion
 
             #region Deimos
-            Satellite deimos = new Satellite("Phobos");
-            mars.Add(phobos);
+            Satellite deimos = new Satellite("Deimos");
+            mars.Add(deimos);
 
             deimos.BasicProperties.Add(Constants.PropertyNames.Description, "Second natural satellite of Mars.");
             deimos.BasicProperties.Add(Constants.PropertyNames.Dimensions, "15x12.2x11 km");
@@ -196,12 +196,142 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
         public static Planet CreateJupiter(IStellarMap map = null)
         {
-            Planet j = new Planet("Jupiter");
+            Planet jupiter = new Planet("Jupiter");
 
             map ??= BaseStellarMap.DefaultMap;
-            map.Add(j);  
+            map.Add(jupiter);
 
-            return j;
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Description, "The fifth and largets planet in the Solar System.");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Type, "Gas Giant Planet");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Radius, "69911 km");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Area, "6.1419E10 km2");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Volume, "1.4313E15 km3");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Flattening, "0.06487");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Mass, "1.9882E27 kg");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Density, "1.326 g/cm3");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.Gravity, "24.79 m/s2");
+            jupiter.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "59.5 km/s");
+
+            // Inner Moons
+            #region Metis
+            Satellite moon = new Satellite("Metis");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "First inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "60x40x34 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "21.5 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "5800 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "42700 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "unknown kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "unknown g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "unknown m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "unknown m/s");
+            #endregion
+
+            #region Adrastea
+            moon = new Satellite("Adrastea");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Second inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "20x16x14 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "18.2 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "2345 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "unknown kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "unknown g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "unknown m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "unknown m/s");
+            #endregion
+
+            #region Amalthea
+            moon = new Satellite("Amalthea");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Third inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "250x146x128 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "83.5 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "2.43E6 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "2.08E18 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "0.857 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.02 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.058 m/s");
+            #endregion
+
+            #region Thebe
+            moon = new Satellite("Thebe");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Fourth inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "116x98x84 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "49.3 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "5.0E5 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "unknown kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "unknown g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.04 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "20-30 m/s");
+            #endregion
+
+            //Galilean Moons
+            #region Io
+            moon = new Satellite("Io");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "First Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "3660x3637.4x3630.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "1821.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "4.191E7 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "2.53E10 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "8.932E22 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "3.528 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.796 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.558 m/s");
+            #endregion
+
+            #region Europa
+            moon = new Satellite("Europa");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Second Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "1560.8 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "3.09E7 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "1.593E10 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "4.798E22 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "3.013 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.314 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.025 m/s");
+            #endregion
+
+            #region Ganymede
+            moon = new Satellite("Ganymede");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Third Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "2634.1 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "8.72E7 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "7.66E10 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.4819E23 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.936 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.428 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.741 m/s");
+            #endregion
+
+            #region Callisto
+            moon = new Satellite("Callisto");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Fourth Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "2410.3 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "7.30E7 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "5.9E10 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.076E23 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.8344 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.235 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.440 m/s");
+            #endregion
+
+            return jupiter;
         }
 
         public static Planet CreateSaturn(IStellarMap map = null)
