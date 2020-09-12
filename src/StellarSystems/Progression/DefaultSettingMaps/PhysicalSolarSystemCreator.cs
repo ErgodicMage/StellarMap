@@ -46,6 +46,15 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
             sol.BasicProperties.Add(Constants.PropertyNames.Designation, "Sol");
             sol.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
+            sol.BasicProperties.Add(Constants.PropertyNames.Description, "The star at the center of the Solar System.");
+            sol.BasicProperties.Add(Constants.PropertyNames.Radius, "695700 km");
+            sol.BasicProperties.Add(Constants.PropertyNames.Area, "6.09E12 km2");
+            sol.BasicProperties.Add(Constants.PropertyNames.Volume, "1.41E18 km3");
+            sol.BasicProperties.Add(Constants.PropertyNames.Flattening, "9E-6");
+            sol.BasicProperties.Add(Constants.PropertyNames.Mass, "1.9891E30 kg");
+            sol.BasicProperties.Add(Constants.PropertyNames.Density, "1.408 g/cm3");
+            sol.BasicProperties.Add(Constants.PropertyNames.Gravity, "274 m/s2");
+            sol.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "617.7 km/s");
 
             var catalogue = new Dictionary<string, string>();
             catalogue.Add("HabHyg", "0");
@@ -57,22 +66,44 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
         public static Planet CreateMercury(IStellarMap map = null)
         {
-            Planet m = new Planet("Mercury");
+            Planet mercury = new Planet("Mercury");
+            
+            mercury.BasicProperties.Add(Constants.PropertyNames.Description, "The first planet in the Solar System.");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Type, "Rocky Planet");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Radius, "2439.7 km");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Area, "7.48E7 km2");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Volume, "6.083E10 km3");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Flattening, "0.0000");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Mass, "3.3011E23 kg");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Density, "5.427 g/cm3");
+            mercury.BasicProperties.Add(Constants.PropertyNames.Gravity, "3.7 m/s2");
+            mercury.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "4.25 km/s");
 
             map ??= BaseStellarMap.DefaultMap;
-            map.Add(m);
+            map.Add(mercury);
 
-            return m;
+            return mercury;
         }
 
         public static Planet CreateVenus(IStellarMap map = null)
         {
-            Planet v = new Planet("Venus");
+            Planet venus = new Planet("Venus");
+
+            venus.BasicProperties.Add(Constants.PropertyNames.Description, "The 2nd planet in the Solar System.");
+            venus.BasicProperties.Add(Constants.PropertyNames.Type, "Rocky Planet");
+            venus.BasicProperties.Add(Constants.PropertyNames.Radius, "6051.8 km");
+            venus.BasicProperties.Add(Constants.PropertyNames.Area, "4.6023E8 km2");
+            venus.BasicProperties.Add(Constants.PropertyNames.Volume, "9.2843E11 km3");
+            venus.BasicProperties.Add(Constants.PropertyNames.Flattening, "0");
+            venus.BasicProperties.Add(Constants.PropertyNames.Mass, "4.8675E24 kg");
+            venus.BasicProperties.Add(Constants.PropertyNames.Density, "5.243 g/cm3");
+            venus.BasicProperties.Add(Constants.PropertyNames.Gravity, "8.87 m/s2");
+            venus.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "10.36 km/s");
 
             map ??= BaseStellarMap.DefaultMap;
-            map.Add(v);            
+            map.Add(venus);            
 
-            return v;
+            return venus;
         }
 
         public static Planet CreateEarth(IStellarMap map = null)
@@ -82,20 +113,85 @@ namespace StellarMap.Progression.DefaultSettingMaps
             map ??= BaseStellarMap.DefaultMap;
             map.Add(earth);              
 
+            earth.BasicProperties.Add(Constants.PropertyNames.Description, "The 3nd planet in the Solar System" +
+                " and the only object known to harbor life");
+            earth.BasicProperties.Add(Constants.PropertyNames.Type, "Rocky Planet");
+            earth.BasicProperties.Add(Constants.PropertyNames.Radius, "6371.0 km");
+            earth.BasicProperties.Add(Constants.PropertyNames.Area, "5.10072E8 km2");
+            earth.BasicProperties.Add(Constants.PropertyNames.Volume, "1.08321E12 km3");
+            earth.BasicProperties.Add(Constants.PropertyNames.Flattening, ".0033528");
+            earth.BasicProperties.Add(Constants.PropertyNames.Mass, "5.97237E24 kg");
+            earth.BasicProperties.Add(Constants.PropertyNames.Density, "5.514 g/cm3");
+            earth.BasicProperties.Add(Constants.PropertyNames.Gravity, "9.80665 m/s2");
+            earth.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "11.186 km/s");
+
+            #region Moon
             Satellite moon = new Satellite("Moon");
             earth.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The only natural satellite of the planet Earth");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "1737.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "3.793E7 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "2.1958E10 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Flattening, "0.0012");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "7.342E22 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "3.344 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.62 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.38 km/s");
+            #endregion
 
             return earth;
         }
 
         public static Planet CreateMars(IStellarMap map = null)
         {
-            Planet m = new Planet("Mars");
+            Planet mars = new Planet("Mars");
 
             map ??= BaseStellarMap.DefaultMap;
-            map.Add(m);  
+            map.Add(mars);  
 
-            return m;
+            mars.BasicProperties.Add(Constants.PropertyNames.Description, "The 4th planet in the Solar System.");
+            mars.BasicProperties.Add(Constants.PropertyNames.Type, "Rocky Planet");
+            mars.BasicProperties.Add(Constants.PropertyNames.Radius, "3389.5 km");
+            mars.BasicProperties.Add(Constants.PropertyNames.Area, "1.448E8 km2");
+            mars.BasicProperties.Add(Constants.PropertyNames.Volume, "1.6318E11 km3");
+            mars.BasicProperties.Add(Constants.PropertyNames.Flattening, "0.00589");
+            mars.BasicProperties.Add(Constants.PropertyNames.Mass, "6.4171E23 kg");
+            mars.BasicProperties.Add(Constants.PropertyNames.Density, "3.9335 g/cm3");
+            mars.BasicProperties.Add(Constants.PropertyNames.Gravity, "3.721 m/s2");
+            mars.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "5.027 km/s");
+
+            #region Phobos
+            Satellite phobos = new Satellite("Phobos");
+            mars.Add(phobos);
+
+            phobos.BasicProperties.Add(Constants.PropertyNames.Description, "First and largest natural satellite of Mars.");
+            phobos.BasicProperties.Add(Constants.PropertyNames.Dimensions, "27x22X18 km");
+            phobos.BasicProperties.Add(Constants.PropertyNames.Radius, "11.2667 km");
+            phobos.BasicProperties.Add(Constants.PropertyNames.Area, "1548.3 km2");
+            phobos.BasicProperties.Add(Constants.PropertyNames.Volume, "5783.6 km3");
+            phobos.BasicProperties.Add(Constants.PropertyNames.Mass, "1.0659E16 kg");
+            phobos.BasicProperties.Add(Constants.PropertyNames.Density, "1.876 g/cm3");
+            phobos.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.0057 m/s2");
+            phobos.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "11.39 m/s");
+            #endregion
+
+            #region Deimos
+            Satellite deimos = new Satellite("Phobos");
+            mars.Add(phobos);
+
+            deimos.BasicProperties.Add(Constants.PropertyNames.Description, "Second natural satellite of Mars.");
+            deimos.BasicProperties.Add(Constants.PropertyNames.Dimensions, "15x12.2x11 km");
+            deimos.BasicProperties.Add(Constants.PropertyNames.Radius, "6.2 km");
+            deimos.BasicProperties.Add(Constants.PropertyNames.Area, "495.155 km2");
+            deimos.BasicProperties.Add(Constants.PropertyNames.Volume, "999.78 km3");
+            deimos.BasicProperties.Add(Constants.PropertyNames.Mass, "1.4762E15 kg");
+            deimos.BasicProperties.Add(Constants.PropertyNames.Density, "1.471 g/cm3");
+            deimos.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.003 m/s2");
+            deimos.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "5.556 m/s");
+            #endregion
+
+            return mars;
         }
 
         public static Planet CreateJupiter(IStellarMap map = null)

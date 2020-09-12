@@ -32,11 +32,11 @@ namespace StellarMap.GenerateMaps
 
             //LocateStarsInCube(20);
 
-            JsonGenerateLocalSector();
-            JsonRetrieveLocalSector();
+            //JsonGenerateLocalSector();
+            //JsonRetrieveLocalSector();
 
-            ZipGenerateLocalSector();
-            ZipRetrieveLocalSector();
+            //ZipGenerateLocalSector();
+            //ZipRetrieveLocalSector();
 
             StoreSolarSystem();
             RetrieveSolarSystem();
@@ -117,7 +117,8 @@ namespace StellarMap.GenerateMaps
         }
         public static void StoreSolarSystem()
         {
-            IStellarMap map = SolarSystem.CreateSolSystem();
+            IStellarMap map = new BaseStellarMap("SolarSystem");
+            PhysicalSolarSystemCreator.CreateSolarSystem(map);
 
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 

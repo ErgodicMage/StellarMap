@@ -26,8 +26,10 @@ namespace StellarMap.Core.Types
 
         public static class PropertyNames
         {
+            public const string Description = "Description";
             public const string Designation = "Designation";
             public const string StellarClass = "StellarClass";
+            public const string Type = "Type";
             public const string Age = "Age";
             public const string Position = "Position";
             public const string Distance = "Distance";
