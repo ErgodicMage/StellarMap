@@ -210,6 +210,8 @@ namespace StellarMap.Progression.DefaultSettingMaps
             jupiter.BasicProperties.Add(Constants.PropertyNames.Gravity, "24.79 m/s2");
             jupiter.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "59.5 km/s");
 
+            // There are currently 79 moons of Jupiter and of course I'm not going to enter them all in
+            // instead I'll do the inner moons, the Galilean moons and finish off with the top 10 largest (if not already added).
             // Inner Moons
             #region Metis
             Satellite moon = new Satellite("Metis");
@@ -245,7 +247,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             moon = new Satellite("Amalthea");
             jupiter.Add(moon);
 
-            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Third inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Third inner natural satellite and the 5th largest of Jupiter.");
             moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "250x146x128 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Radius, "83.5 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
@@ -260,7 +262,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             moon = new Satellite("Thebe");
             jupiter.Add(moon);
 
-            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Fourth inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Fourth inner natural satellite and the 7th largest of Jupiter.");
             moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "116x98x84 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Radius, "49.3 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
@@ -276,7 +278,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             moon = new Satellite("Io");
             jupiter.Add(moon);
 
-            moon.BasicProperties.Add(Constants.PropertyNames.Description, "First Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "First Galilean and the 3rd largest natural satellite of Jupiter.");
             moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "3660x3637.4x3630.6 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Radius, "1821.6 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Area, "4.191E7 km2");
@@ -284,49 +286,109 @@ namespace StellarMap.Progression.DefaultSettingMaps
             moon.BasicProperties.Add(Constants.PropertyNames.Mass, "8.932E22 kg");
             moon.BasicProperties.Add(Constants.PropertyNames.Density, "3.528 g/cm3");
             moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.796 m/s2");
-            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.558 m/s");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.558 km/s");
             #endregion
 
             #region Europa
             moon = new Satellite("Europa");
             jupiter.Add(moon);
 
-            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Second Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Second Galilean and 4th largest natural satellite of Jupiter.");
             moon.BasicProperties.Add(Constants.PropertyNames.Radius, "1560.8 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Area, "3.09E7 km2");
             moon.BasicProperties.Add(Constants.PropertyNames.Volume, "1.593E10 km3");
             moon.BasicProperties.Add(Constants.PropertyNames.Mass, "4.798E22 kg");
             moon.BasicProperties.Add(Constants.PropertyNames.Density, "3.013 g/cm3");
             moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.314 m/s2");
-            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.025 m/s");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.025 km/s");
             #endregion
 
             #region Ganymede
             moon = new Satellite("Ganymede");
             jupiter.Add(moon);
 
-            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Third Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Third Galilean and largest natural satellite of Jupiter.");
             moon.BasicProperties.Add(Constants.PropertyNames.Radius, "2634.1 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Area, "8.72E7 km2");
             moon.BasicProperties.Add(Constants.PropertyNames.Volume, "7.66E10 km3");
             moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.4819E23 kg");
             moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.936 g/cm3");
             moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.428 m/s2");
-            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.741 m/s");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.741 km/s");
             #endregion
 
             #region Callisto
             moon = new Satellite("Callisto");
             jupiter.Add(moon);
 
-            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Fourth Galilean natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Fourth Galilean and 2nd largest natural satellite of Jupiter.");
             moon.BasicProperties.Add(Constants.PropertyNames.Radius, "2410.3 km");
             moon.BasicProperties.Add(Constants.PropertyNames.Area, "7.30E7 km2");
             moon.BasicProperties.Add(Constants.PropertyNames.Volume, "5.9E10 km3");
             moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.076E23 kg");
             moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.8344 g/cm3");
             moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.235 m/s2");
-            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.440 m/s");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.440 km/s");
+            #endregion
+
+            #region Himalia
+            moon = new Satellite("Himalia");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "11th natural and 6th largest satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "205.6x141.4x? km"); // strange only 2 dimensions given
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "85 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "9.1E4 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "2.6E6 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "4.2E18 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "2.6 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.062 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.1 km/s");
+            #endregion
+
+            #region Elara
+            moon = new Satellite("Elara");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Fourth inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "unknown km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "40 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "8.7E17 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "2.6 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "unknown m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "unknown m/s");
+            #endregion
+
+            #region Pasiphae
+            moon = new Satellite("Pasiphae");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "60th and 9th largest inner natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "unknown km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "28.9 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "3E17 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "2.6 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.022 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.036 km/s");
+            #endregion
+
+            #region Carme
+            moon = new Satellite("Carme");
+            jupiter.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "74th and 10th largest natural satellite of Jupiter.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "unknown km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "23.35 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "unknown kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "2.6 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "unknown m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "unknown m/s");
             #endregion
 
             return jupiter;
