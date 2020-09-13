@@ -52,8 +52,8 @@ namespace StellarMap.Storage
                         entry = new ZipEntry(bodytype + "s.json");
                         stream.PutNextEntry(entry);
 
-                        using (MemoryStream memory = new MemoryStream(bytes))
-                            StreamUtils.Copy(memory, stream, buffer);
+                        using MemoryStream memory = new MemoryStream(bytes);
+                        StreamUtils.Copy(memory, stream, buffer);
                     }
                 }
             }
@@ -76,14 +76,12 @@ namespace StellarMap.Storage
                 {
                     string json = string.Empty;
 
-                    using (MemoryStream memory = new MemoryStream())
-                    {
-                        StreamUtils.Copy(stream, memory, buffer);
-                        memory.Position = 0;
+                    MemoryStream memory = new MemoryStream();
+                    StreamUtils.Copy(stream, memory, buffer);
+                    memory.Position = 0;
 
-                        using (StreamReader sr = new StreamReader(memory))
-                            json = sr.ReadToEnd();
-                    }
+                    using StreamReader sr = new StreamReader(memory);
+                    json = sr.ReadToEnd();
 
                     if (!string.IsNullOrEmpty(json))
                     {

@@ -28,11 +28,11 @@ namespace StellarMap.Progression
         {
             int hash = base.GetHashCode();
             if (StarIdentifier != null)
-                hash = hash ^ StarIdentifier.GetHashCode();
+                hash ^= StarIdentifier.GetHashCode();
             if (!string.IsNullOrEmpty(ERBridgeIdentifier))
-                hash = hash ^ ERBridgeIdentifier.GetHashCode();
+                hash ^= ERBridgeIdentifier.GetHashCode();
 
-            hash = hash ^ Position.GetHashCode();
+            hash ^= Position.GetHashCode();
 
             return hash;
         }

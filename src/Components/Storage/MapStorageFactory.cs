@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Text;
-
-using StellarMap.Core.Types;
-
-namespace StellarMap.Storage
+﻿namespace StellarMap.Storage
 {
     public static class MapStorageFactory
     {

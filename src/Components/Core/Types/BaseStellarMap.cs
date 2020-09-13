@@ -7,7 +7,7 @@ using StellarMap.Core.Bodies;
 namespace StellarMap.Core.Types
 {
     [DataContract(Name = "BaseStellarMap")]
-    public class BaseStellarMap : IStellarMap, IEquatable<BaseStellarMap>
+    public class BaseStellarMap : IStellarMap, IEquatable<BaseStellarMap>, IEqualityComparer<BaseStellarMap>
     {
         #region Constuctors
         public BaseStellarMap()
@@ -59,7 +59,7 @@ namespace StellarMap.Core.Types
         #region Public Get Functions
         public virtual T Get<T>(string id) where T : IStellarBody
         {
-            T t = default(T);
+            T t = default;
 
             if (!string.IsNullOrEmpty(id))
             {
@@ -343,26 +343,30 @@ namespace StellarMap.Core.Types
 
         public override bool Equals(object obj) => Equals(obj as BaseStellarMap);
 
+        public bool Equals(BaseStellarMap x, BaseStellarMap y) => x.Equals(y);
+
         public override int GetHashCode()
         {
             int hash = 1345;
             if (MetaData != null)
-                hash = hash ^ MetaData.GetHashCode();
+                hash ^= MetaData.GetHashCode();
             if (Stars != null)
-                hash = hash ^ Stars.GetHashCode();
+                hash ^= Stars.GetHashCode();
             if (Planets != null)
-                hash = hash ^ Planets.GetHashCode();
+                hash ^= Planets.GetHashCode();
             if (DwarfPlanets != null)
-                hash = hash ^ DwarfPlanets.GetHashCode();                
+                hash ^= DwarfPlanets.GetHashCode();                
             if (Satellites != null)
-                hash = hash ^ Satellites.GetHashCode();
+                hash ^= Satellites.GetHashCode();
             if (Asteroids != null)
-                hash = hash ^ Asteroids.GetHashCode();
+                hash ^= Asteroids.GetHashCode();
             if (Comets != null)
-                hash = hash ^ Comets.GetHashCode();
+                hash ^= Comets.GetHashCode();
 
             return hash;
         }
+
+        public int GetHashCode(BaseStellarMap obj) => obj.GetHashCode();
 
         protected static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
         {

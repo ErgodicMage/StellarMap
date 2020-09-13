@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace StellarMap.Core.Types
 {
     [DataContract]
-    public class GroupNamedIdentifiers : IEquatable<GroupNamedIdentifiers>
+    public sealed class GroupNamedIdentifiers : IEquatable<GroupNamedIdentifiers>, IEqualityComparer<GroupNamedIdentifiers>
     {
         #region Constructors
         public GroupNamedIdentifiers(string name)
@@ -67,7 +67,11 @@ namespace StellarMap.Core.Types
         public override bool Equals(object obj) => 
             (obj is GroupNamedIdentifiers) && Equals(obj as GroupNamedIdentifiers);
 
+        public bool Equals(GroupNamedIdentifiers x, GroupNamedIdentifiers y) => x.Equals(y);
+
         public override int GetHashCode() => GroupIdentifiers.GetHashCode();
+
+        public int GetHashCode(GroupNamedIdentifiers obj) => obj.GetHashCode();
         #endregion
     }
 }

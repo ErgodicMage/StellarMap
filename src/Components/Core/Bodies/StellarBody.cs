@@ -7,7 +7,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.StellarBody)]
-    public abstract class StellarBody : IStellarBody, IEquatable<StellarBody>
+    public abstract class StellarBody : IStellarBody, IEquatable<StellarBody>, IEqualityComparer<StellarBody>
     {
         #region Cosntructors
         public StellarBody()
@@ -59,7 +59,7 @@ namespace StellarMap.Core.Bodies
             {
                 bRet = Name.Equals(other.Name) &&
                        Identifier.Equals(other.Identifier) &&
-                       (ParentIdentifier == null ? true : ParentIdentifier.Equals(other.ParentIdentifier)) && 
+                       (ParentIdentifier == null || ParentIdentifier.Equals(other.ParentIdentifier)) && 
                        BodyType.Equals(other.BodyType) &&
                        Properties.Equals(other.Properties);
 
@@ -70,22 +70,26 @@ namespace StellarMap.Core.Bodies
 
         public override bool Equals(object obj) => Equals(obj as StellarBody);
 
+        public bool Equals(StellarBody x, StellarBody y) => x.Equals(y);
+
         public override int GetHashCode()
         {
             int hash = 1;
             if (!string.IsNullOrEmpty(Name))
-                hash = hash ^ Name.GetHashCode();
+                hash ^= Name.GetHashCode();
             if (!string.IsNullOrEmpty(Identifier))
-                hash = hash ^ Identifier.GetHashCode();
+                hash ^= Identifier.GetHashCode();
             if (!string.IsNullOrEmpty(ParentIdentifier))
-                hash = hash ^ ParentIdentifier.GetHashCode();
+                hash ^= ParentIdentifier.GetHashCode();
             if (!string.IsNullOrEmpty(BodyType))
-                hash = hash ^ BodyType.GetHashCode();
+                hash ^= BodyType.GetHashCode();
             if (Properties != null)
-                hash = hash ^ Properties.GetHashCode();
+                hash ^= Properties.GetHashCode();
 
             return hash;
         }
+
+        public int GetHashCode(StellarBody obj) => obj.GetHashCode();
         #endregion
     }
 
@@ -105,12 +109,10 @@ namespace StellarMap.Core.Bodies
         #region Get Methods
         public virtual T Get<T>(string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
         {
-            T t = default(T);
+            T t = default;
 
-            Dictionary<string, string> identifiers = null;
-            string id = string.Empty;
-
-            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers) && identifiers.TryGetValue(name, out id))
+            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers) && 
+                    identifiers.TryGetValue(name, out string id))
                 t = Map.Get<T>(id);
 
             return t;
@@ -119,10 +121,9 @@ namespace StellarMap.Core.Bodies
 
         public virtual IDictionary<string, T> GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
         {
-            Dictionary<string, string> identifiers = null;
             IDictionary<string, T> all = null;
 
-            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers))
+            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers))
             {
                 all = new Dictionary<string, T>();
 
@@ -149,9 +150,7 @@ namespace StellarMap.Core.Bodies
                 if (found == null)
                     Map.Add<T>(t);
 
-                Dictionary<string, string> identifiers = null;
-
-                if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out identifiers))
+                if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers))
                     identifiers.Add(t.Name, t.Identifier);
                 else
                 {

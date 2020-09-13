@@ -1,5 +1,3 @@
-using System;
-
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
 

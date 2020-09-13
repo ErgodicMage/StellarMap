@@ -35,8 +35,6 @@ namespace StellarMap.Progression
                     bridge.BasicProperties.Add(StellarMap.Core.Types.Constants.PropertyNames.Distance, distance.ToString());
 
                 }
-
-
             }
 
             return bridge;

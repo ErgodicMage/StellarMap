@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Runtime.Serialization;
 using System.Globalization;
-using System.Text;
 
 namespace StellarMap.Math.Types
 {
@@ -95,21 +93,11 @@ namespace StellarMap.Math.Types
         [Pure]
         public double Length => System.Math.Sqrt((this.X * this.X) + (this.Y * this.Y) + (this.Z * this.Z));
 
-        /// <inheritdoc />
-        [Pure]
-        public override string ToString()
-        {
-            return this.ToString(null, CultureInfo.InvariantCulture);
-        }
-
         /// <summary>
         /// Returns a point equivalent to the vector
         /// </summary>
         /// <returns>A point</returns>
-        public Point3d ToPoint3d()
-        {
-            return new Point3d(this.x, this.y, this.z);
-        }
+        public Point3d ToPoint3d() => new Point3d(this.x, this.y, this.z);
 
         /// <summary>
         /// Add this vector with another
@@ -117,10 +105,7 @@ namespace StellarMap.Math.Types
         /// <param name="addend">The vector to add</param>
         /// <returns>A new summed vector</returns>
         [Pure]
-        public Vector3d Add(Vector3d addend)
-        {
-            return new Vector3d(this.x + addend.x, this.y + addend.y, this.z + addend.z);
-        }
+        public Vector3d Add(Vector3d addend) => new Vector3d(this.x + addend.x, this.y + addend.y, this.z + addend.z);
 
         /// <summary>
         /// Subtract a vector with this.
@@ -128,20 +113,14 @@ namespace StellarMap.Math.Types
         /// <param name="subtrahend">The vector to subtract</param>
         /// <returns>A new difference vector</returns>
         [Pure]
-        public Vector3d Subtract(Vector3d subtrahend)
-        {
-            return new Vector3d(this.x - subtrahend.x, this.y - subtrahend.y, this.z - subtrahend.z);
-        }
+        public Vector3d Subtract(Vector3d subtrahend) => new Vector3d(this.x - subtrahend.x, this.y - subtrahend.y, this.z - subtrahend.z);
 
         /// <summary>
         /// Inverses the direction of the vector, equivalent to multiplying by -1
         /// </summary>
         /// <returns>A <see cref="Vector3d"/> pointing in the opposite direction.</returns>
         [Pure]
-        public Vector3d Negate()
-        {
-            return new Vector3d(-1 * this.X, -1 * this.Y, -1 * this.Z);
-        }
+        public Vector3d Negate() => new Vector3d(-1 * this.X, -1 * this.Y, -1 * this.Z);
 
         /// <summary>
         /// Scales a vector by a factor, in other words multiplies the vector by a scalar value
@@ -149,10 +128,7 @@ namespace StellarMap.Math.Types
         /// <param name="factor"></param>
         /// <returns>A new scaled vector</returns>
         [Pure]
-        public Vector3d Scale(double factor)
-        {
-            return new Vector3d(factor * this.x, factor * this.y, factor * this.z);
-        }
+        public Vector3d Scale(double factor) => new Vector3d(factor * this.x, factor * this.y, factor * this.z);
 
         /// <summary>
         /// Returns the dot product of two vectors.
@@ -160,10 +136,7 @@ namespace StellarMap.Math.Types
         /// <param name="v">The second vector.</param>
         /// <returns>The dot product.</returns>
         [Pure]
-        public double DotProduct(Vector3d v)
-        {
-            return (this.x * v.x) + (this.y * v.y) + (this.z * v.z);
-        }
+        public double DotProduct(Vector3d v) => (this.x * v.x) + (this.y * v.y) + (this.z * v.z);
 
         /// <summary>
         /// Returns the cross product of this vector and <paramref name="other"/>
@@ -173,10 +146,10 @@ namespace StellarMap.Math.Types
         [Pure]
         public Vector3d CrossProduct(Vector3d other)
         {
-            double x = (this.y * other.z) - (this.z * other.y);
-            double y = (this.z * other.x) - (this.x * other.z);
-            double z = (this.x * other.y) - (this.y * other.x);
-            return new Vector3d(x, y, z);
+            double xx = (this.y * other.z) - (this.z * other.y);
+            double yy = (this.z * other.x) - (this.x * other.z);
+            double zz = (this.x * other.y) - (this.y * other.x);
+            return new Vector3d(xx, yy, zz);
         }
 
         #endregion
@@ -203,10 +176,7 @@ namespace StellarMap.Math.Types
 
         /// <inheritdoc />
         [Pure]
-        public bool Equals(Vector3d other)
-        {
-            return this.x.Equals(other.x) && this.y.Equals(other.y) && this.z.Equals(other.z);
-        }
+        public bool Equals(Vector3d other) => this.x.Equals(other.x) && this.y.Equals(other.y) && this.z.Equals(other.z);
 
         /// <inheritdoc />
         [Pure]
@@ -214,23 +184,24 @@ namespace StellarMap.Math.Types
         #endregion
 
         #region IFormatable interface
+        /// <inheritdoc />
+        [Pure]
+        public override string ToString() => ToString(null, CultureInfo.InvariantCulture);
+
         /// <summary>
         /// Returns a string representation of this instance using the provided <see cref="IFormatProvider"/>
         /// </summary>
         /// <param name="provider">A <see cref="IFormatProvider"/></param>
         /// <returns>The string representation of this instance.</returns>
         [Pure]
-        public string ToString(IFormatProvider provider)
-        {
-            return this.ToString(null, provider);
-        }
+        public string ToString(IFormatProvider provider) => ToString(null, provider);
 
         /// <inheritdoc />
         [Pure]
         public string ToString(string format, IFormatProvider provider = null)
         {
-            var numberFormatInfo = provider != null ? NumberFormatInfo.GetInstance(provider) : CultureInfo.InvariantCulture.NumberFormat;
-            var separator = numberFormatInfo.NumberDecimalSeparator == "," ? ";" : ",";
+            NumberFormatInfo numberFormatInfo = provider != null ? NumberFormatInfo.GetInstance(provider) : CultureInfo.InvariantCulture.NumberFormat;
+            string separator = numberFormatInfo.NumberDecimalSeparator == "," ? ";" : ",";
             return string.Format("({0}{1} {2}{1} {3})", this.x.ToString(format, numberFormatInfo), separator, this.y.ToString(format, numberFormatInfo), this.z.ToString(format, numberFormatInfo));
         }
         #endregion
@@ -260,10 +231,7 @@ namespace StellarMap.Math.Types
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are the same; otherwise false.</returns>
         [Pure]
-        public static bool operator ==(Vector3d left, Vector3d right)
-        {
-            return left.Equals(right);
-        }
+        public static bool operator ==(Vector3d left, Vector3d right) => left.Equals(right);
 
         /// <summary>
         /// Returns a value that indicates whether any pair of elements in two specified vectors is not equal.
@@ -272,10 +240,7 @@ namespace StellarMap.Math.Types
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are different; otherwise false.</returns>
         [Pure]
-        public static bool operator !=(Vector3d left, Vector3d right)
-        {
-            return !left.Equals(right);
-        }
+        public static bool operator !=(Vector3d left, Vector3d right) => !left.Equals(right);
 
         /// <summary>
         /// Adds two vectors
@@ -284,10 +249,7 @@ namespace StellarMap.Math.Types
         /// <param name="right">The second vector</param>
         /// <returns>A new summed vector</returns>
         [Pure]
-        public static Vector3d operator +(Vector3d left, Vector3d right)
-        {
-            return new Vector3d(left.x + right.x, left.y + right.y, left.z + right.z);
-        }
+        public static Vector3d operator +(Vector3d left, Vector3d right) => new Vector3d(left.x + right.x, left.y + right.y, left.z + right.z);
 
         /// <summary>
         /// Subtracts two vectors
@@ -296,10 +258,7 @@ namespace StellarMap.Math.Types
         /// <param name="right">The second vector</param>
         /// <returns>A new difference vector</returns>
         [Pure]
-        public static Vector3d operator -(Vector3d left, Vector3d right)
-        {
-            return new Vector3d(left.x - right.x, left.y - right.y, left.z - right.z);
-        }
+        public static Vector3d operator -(Vector3d left, Vector3d right) => new Vector3d(left.x - right.x, left.y - right.y, left.z - right.z);
 
         #endregion
 

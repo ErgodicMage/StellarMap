@@ -8,7 +8,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Progression
 {
     [DataContract(Name = ProgressionConstants.BodyType.StarSystem)]
-    public class StarSystem : ProgressionContainer, IEquatable<StarSystem>
+    public class StarSystem : ProgressionContainer, IEquatable<StarSystem>, IEqualityComparer<StarSystem>
     {
         #region Constructors
         public StarSystem()
@@ -87,7 +87,9 @@ namespace StellarMap.Progression
             return bRet;
         }
 
-        public override bool Equals(object o) => Equals(o as StarSystem);
+        public bool Equals(StarSystem x, StarSystem y) => x.Equals(y);
+
+        public override bool Equals(object obj) => Equals(obj as StarSystem);
 
         public override int GetHashCode()
         {
@@ -95,11 +97,13 @@ namespace StellarMap.Progression
             if (Portals != null)
             {
                 foreach (Portal p in Portals)
-                    hash = hash ^ p.GetHashCode();
+                    hash ^= p.GetHashCode();
             }
 
             return hash;
         }
+
+        public int GetHashCode(StarSystem obj) => obj.GetHashCode();
         #endregion
     }
 }

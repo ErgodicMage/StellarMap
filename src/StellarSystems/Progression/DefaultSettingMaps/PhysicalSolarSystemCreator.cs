@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using System.IO;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 namespace StellarMap.Progression.DefaultSettingMaps
 {

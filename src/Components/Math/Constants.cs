@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StellarMap.Math
+﻿namespace StellarMap.Math
 {
     public static class Constants
     {

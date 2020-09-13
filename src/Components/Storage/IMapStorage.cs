@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
 
 namespace StellarMap.Storage

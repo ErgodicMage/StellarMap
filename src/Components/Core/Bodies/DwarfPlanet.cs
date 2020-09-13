@@ -7,7 +7,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.DwarfPlanet)]
-    public class DwarfPlanet : StellarParentBody, IEquatable<DwarfPlanet>
+    public class DwarfPlanet : StellarParentBody, IEquatable<DwarfPlanet>, IEqualityComparer<DwarfPlanet>
     {
         #region Constructors
         public DwarfPlanet()
@@ -49,14 +49,18 @@ namespace StellarMap.Core.Bodies
 
         public override bool Equals(object obj) => Equals(obj as DwarfPlanet);
 
+        public bool Equals(DwarfPlanet x, DwarfPlanet y) => x.Equals(y);
+
         public override int GetHashCode()
         {
             int hash = base.GetHashCode();
             if (DwarfPlanetGroupIdentifiers != null)
-                hash = hash ^ DwarfPlanetGroupIdentifiers.GetHashCode();
+                hash ^= DwarfPlanetGroupIdentifiers.GetHashCode();
 
             return hash;
         }
-        #endregion        
+
+        public int GetHashCode(DwarfPlanet obj) => obj.GetHashCode();
+        #endregion
     }
 }

@@ -9,7 +9,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Progression
 {
     [DataContract (Name = "ProgressionMap")]
-    public class ProgressionMap : BaseStellarMap, IEquatable<ProgressionMap>
+    public class ProgressionMap : BaseStellarMap, IEquatable<ProgressionMap>, IEqualityComparer<ProgressionMap>
     {
         #region Constructors
         public ProgressionMap()
@@ -44,7 +44,6 @@ namespace StellarMap.Progression
         #region Public Methods
         public override string GenerateIdentifier<T>()
         {
-            string id = string.Empty;
             Type dt = typeof(T);
             int count = 0;
             string prefix = string.Empty;
@@ -109,7 +108,7 @@ namespace StellarMap.Progression
             sb.Append(prefix);
             sb.Append("-");
             sb.Append(count.ToString("D5"));
-            id = sb.ToString();
+            string id = sb.ToString();
 
             if (string.IsNullOrEmpty(id))
                 id = base.GenerateIdentifier<T>();
@@ -240,7 +239,7 @@ namespace StellarMap.Progression
 
         public override bool SetBody(string bodytype, object data)
         {
-            bool bret = base.SetBody(bodytype, data as object);
+            bool bret = base.SetBody(bodytype, data);
 
             if (!bret)
             {
@@ -331,22 +330,26 @@ namespace StellarMap.Progression
 
         public override bool Equals(object obj) => Equals(obj as BaseStellarMap);
 
+        public bool Equals(ProgressionMap x, ProgressionMap y) => x.Equals(y);
+
         public override int GetHashCode()
         {
             int hash = base.GetHashCode();
             if (Habitats != null)
-                hash = hash ^ Habitats.GetHashCode();
+                hash ^= Habitats.GetHashCode();
             if (Bridges != null)
-                hash = hash ^ Bridges.GetHashCode();
+                hash ^= Bridges.GetHashCode();
             if (StarSystems != null)
-                hash = hash ^ StarSystems.GetHashCode();
+                hash ^= StarSystems.GetHashCode();
             if (Clusters != null)
-                hash = hash ^ Clusters.GetHashCode();
+                hash ^= Clusters.GetHashCode();
             if (Sectors != null)
-                hash = hash ^ Sectors.GetHashCode();
+                hash ^= Sectors.GetHashCode();
 
             return hash;
         }
+
+        public int GetHashCode(ProgressionMap obj) => obj.GetHashCode();
         #endregion
     }
 }

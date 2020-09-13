@@ -8,7 +8,7 @@ using StellarMap.Core.Bodies;
 namespace StellarMap.Progression
 {
     [DataContract (Name = ProgressionConstants.BodyType.ERBridge)]
-    public class ERBridge : StellarBody, IEquatable<ERBridge>
+    public class ERBridge : StellarBody, IEquatable<ERBridge>, IEqualityComparer<ERBridge>
     {
         #region Constructors
         public ERBridge()
@@ -106,19 +106,23 @@ namespace StellarMap.Progression
 
         public override bool Equals(object obj) => Equals(obj as ERBridge);
 
+        public bool Equals(ERBridge x, ERBridge y) => x.Equals(y);
+
         public override int GetHashCode()
         {
             int hash = base.GetHashCode();
             if (!string.IsNullOrEmpty(BridgeType))
-                hash = hash ^ BridgeType.GetHashCode();
+                hash ^= BridgeType.GetHashCode();
             if (Portals != null)
             {
                 foreach (Portal p in Portals)
-                    hash = hash ^ p.GetHashCode();
+                    hash ^= p.GetHashCode();
             }
 
             return hash;
         }
+
+        public int GetHashCode(ERBridge obj) => obj.GetHashCode();
         #endregion
     }
 }

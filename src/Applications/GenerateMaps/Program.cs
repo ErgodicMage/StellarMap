@@ -18,7 +18,7 @@ namespace StellarMap.GenerateMaps
 {
     static class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
@@ -60,10 +60,8 @@ namespace StellarMap.GenerateMaps
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                store.Store(localsector, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            store.Store(localsector, writer);
         }
 
         public static void JsonRetrieveLocalSector()
@@ -73,10 +71,8 @@ namespace StellarMap.GenerateMaps
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                map = store.Retreive<ProgressionMap>(reader);
-            }
+            using StreamReader reader = new StreamReader(filename);
+            map = store.Retreive<ProgressionMap>(reader);
 
             Console.WriteLine(map.ToString());
         }
@@ -95,10 +91,8 @@ namespace StellarMap.GenerateMaps
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                store.Store(localsector, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            store.Store(localsector, writer);
         }
 
         public static void ZipRetrieveLocalSector()
@@ -108,10 +102,9 @@ namespace StellarMap.GenerateMaps
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
+            using StreamReader reader = new StreamReader(filename);
                 map = store.Retreive<ProgressionMap>(reader);
-            }
+
 
             Console.WriteLine(map.ToString());
         }
@@ -127,10 +120,8 @@ namespace StellarMap.GenerateMaps
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                store.Store(map, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            store.Store(map, writer);
         }
 
         public static void RetrieveSolarSystem()
@@ -140,10 +131,8 @@ namespace StellarMap.GenerateMaps
             IStellarMap map;
             IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                map = store.Retreive<BaseStellarMap>(reader);
-            }
+            using StreamReader reader = new StreamReader(filename);
+            map = store.Retreive<BaseStellarMap>(reader);
 
             Console.WriteLine(map.ToString());
         }
@@ -165,27 +154,25 @@ namespace StellarMap.GenerateMaps
             if (File.Exists(outfile))
                 File.Delete(outfile);
 
-            using (StreamWriter sw = new StreamWriter(outfile))
+            using StreamWriter sw = new StreamWriter(outfile);
+            foreach (var area in areaMappings)
             {
-                foreach (var area in areaMappings)
-                {
-                    sw.Write("Area ");
-                    sw.Write(area.Key);
-                    sw.WriteLine(":");
+                sw.Write("Area ");
+                sw.Write(area.Key);
+                sw.WriteLine(":");
 
-                    foreach(HabHygRecord rec in area.Value)
-                    {
-                        sw.Write(rec.DisplayName);
-                        sw.Write(" -- (");
-                        sw.Write(rec.Xg);
-                        sw.Write(",");
-                        sw.Write(rec.Yg);
-                        sw.Write(",");
-                        sw.Write(rec.Zg);
-                        sw.WriteLine(")");
-                    }
-                    sw.WriteLine("-------");
+                foreach (HabHygRecord rec in area.Value)
+                {
+                    sw.Write(rec.DisplayName);
+                    sw.Write(" -- (");
+                    sw.Write(rec.Xg);
+                    sw.Write(",");
+                    sw.Write(rec.Yg);
+                    sw.Write(",");
+                    sw.Write(rec.Zg);
+                    sw.WriteLine(")");
                 }
+                sw.WriteLine("-------");
             }
         }
     }

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Text;
+﻿using System.IO;
 
-using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
 
 using Newtonsoft.Json;

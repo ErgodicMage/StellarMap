@@ -7,7 +7,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract(Name = Constants.BodyTypes.Planet)]
-    public class Planet : StellarParentBody, IEquatable<Planet>
+    public class Planet : StellarParentBody, IEquatable<Planet>, IEqualityComparer<Planet>
     {
         #region Cosntructors
         public Planet()
@@ -49,14 +49,18 @@ namespace StellarMap.Core.Bodies
 
         public override bool Equals(object obj) => Equals(obj as Planet);
 
+        public bool Equals(Planet x, Planet y) => x.Equals(y);
+
         public override int GetHashCode()
         {
             int hash = base.GetHashCode();
             if (PlanetGroupIdentifiers != null)
-                hash = hash ^ PlanetGroupIdentifiers.GetHashCode();
+                hash ^= PlanetGroupIdentifiers.GetHashCode();
 
             return hash;
         }
+
+        public int GetHashCode(Planet obj) => obj.GetHashCode();
         #endregion
     }
 }

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Runtime.Serialization;
 using System.Globalization;
-using System.Text;
 
 namespace StellarMap.Math.Types
 {
@@ -93,13 +91,6 @@ namespace StellarMap.Math.Types
         #endregion
 
         #region Functions
-        /// <inheritdoc />
-        [Pure]
-        public override string ToString()
-        {
-            return this.ToString(null, CultureInfo.InvariantCulture);
-        }
-
         /// <summary>
         /// Creates a new vector from the point, assuming zero origin
         /// </summary>
@@ -163,23 +154,24 @@ namespace StellarMap.Math.Types
         #endregion
 
         #region IFormatable interface
+        /// <inheritdoc />
+        [Pure]
+        public override string ToString() => ToString(null, CultureInfo.InvariantCulture);
+
         /// <summary>
         /// Returns a string representation of this instance using the provided <see cref="IFormatProvider"/>
         /// </summary>
         /// <param name="provider">A <see cref="IFormatProvider"/></param>
         /// <returns>The string representation of this instance.</returns>
         [Pure]
-        public string ToString(IFormatProvider provider)
-        {
-            return this.ToString(null, provider);
-        }
+        public string ToString(IFormatProvider provider) => ToString(null, provider);
 
         /// <inheritdoc />
         [Pure]
         public string ToString(string format, IFormatProvider provider = null)
         {
-            var numberFormatInfo = provider != null ? NumberFormatInfo.GetInstance(provider) : CultureInfo.InvariantCulture.NumberFormat;
-            var separator = numberFormatInfo.NumberDecimalSeparator == "," ? ";" : ",";
+            NumberFormatInfo numberFormatInfo = provider != null ? NumberFormatInfo.GetInstance(provider) : CultureInfo.InvariantCulture.NumberFormat;
+            string separator = numberFormatInfo.NumberDecimalSeparator == "," ? ";" : ",";
             return string.Format("({0}{1} {2}{1} {3})", this.x.ToString(format, numberFormatInfo), separator, this.y.ToString(format, numberFormatInfo), this.z.ToString(format, numberFormatInfo));
         }
         #endregion
@@ -209,10 +201,7 @@ namespace StellarMap.Math.Types
         /// <param name="vector">A vector</param>
         /// <returns>A new point at the summed location</returns>
         [Pure]
-        public static Point3d operator +(Point3d point, Vector3d vector)
-        {
-            return new Point3d(point.x + vector.x, point.y + vector.y, point.z + vector.z);
-        }
+        public static Point3d operator +(Point3d point, Vector3d vector) => new Point3d(point.x + vector.x, point.y + vector.y, point.z + vector.z);
 
         /// <summary>
         /// Subtracts a vector from a point
@@ -221,10 +210,7 @@ namespace StellarMap.Math.Types
         /// <param name="vector">A vector</param>
         /// <returns>A new point at the difference</returns>
         [Pure]
-        public static Point3d operator -(Point3d point, Vector3d vector)
-        {
-            return new Point3d(point.x - vector.x, point.y - vector.y, point.z - vector.z);
-        }
+        public static Point3d operator -(Point3d point, Vector3d vector) => new Point3d(point.x - vector.x, point.y - vector.y, point.z - vector.z);
 
         /// <summary>
         /// Returns a value that indicates whether each pair of elements in two specified points is equal.
@@ -233,10 +219,7 @@ namespace StellarMap.Math.Types
         /// <param name="right">The second point to compare</param>
         /// <returns>True if the points are the same; otherwise false.</returns>
         [Pure]
-        public static bool operator ==(Point3d left, Point3d right)
-        {
-            return left.Equals(right);
-        }
+        public static bool operator ==(Point3d left, Point3d right) => left.Equals(right);
 
         /// <summary>
         /// Returns a value that indicates whether any pair of elements in two specified points is not equal.
@@ -245,23 +228,17 @@ namespace StellarMap.Math.Types
         /// <param name="right">The second point to compare</param>
         /// <returns>True if the points are different; otherwise false.</returns>
         [Pure]
-        public static bool operator !=(Point3d left, Point3d right)
-        {
-            return !left.Equals(right);
-        }
+        public static bool operator !=(Point3d left, Point3d right) => !left.Equals(right);
 
         #endregion
 
         #region Parse
-        public static bool TryParse(string text, out Point3d result)
-        {
-            return TryParse(text, null, out result);
-        }
+        public static bool TryParse(string text, out Point3d result) => TryParse(text, null, out result);
 
         public static bool TryParse(string text, IFormatProvider formatProvider, out Point3d result)
         {
             bool retValue = false;
-            result = Point3d.NaN; ;
+            result = Point3d.NaN;
 
             if (TryParse(text, formatProvider, out var x, out var y, out var z))
             {
@@ -274,9 +251,9 @@ namespace StellarMap.Math.Types
         public static bool TryParse(string text, IFormatProvider formatProvider, out double x, out double y, out double z)
         {
             bool retValue = false;
-            x = default(double);
-            y = default(double);
-            z = default(double);
+            x = default;
+            y = default;
+            z = default;
 
             // right now this is elcheapo - only handles (1.1, 2.4, 3.2) format
             string temp = text.Replace("(", "").Replace(")", "");

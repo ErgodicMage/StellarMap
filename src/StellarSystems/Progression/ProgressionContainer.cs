@@ -7,7 +7,7 @@ using StellarMap.Core.Types;
 
 namespace StellarMap.Progression
 {
-    public class ProgressionContainer : StellarParentBody, IEquatable<ProgressionContainer>
+    public class ProgressionContainer : StellarParentBody, IEquatable<ProgressionContainer>, IEqualityComparer<ProgressionContainer>
     {
         #region Constructors
         public ProgressionContainer()
@@ -54,16 +54,20 @@ namespace StellarMap.Progression
 
         public override bool Equals(object obj) => Equals(obj as ProgressionContainer);
 
+        public bool Equals(ProgressionContainer x, ProgressionContainer y) => x.Equals(y);
+
         public override int GetHashCode()
         {
             int hash = base.GetHashCode();
             if (!string.IsNullOrEmpty(ContainerType))
-                hash = hash ^ ContainerType.GetHashCode();
+                hash ^= ContainerType.GetHashCode();
             if (ContainerGroupIdentifiers != null)
-                hash = hash ^ ContainerGroupIdentifiers.GetHashCode();
+                hash ^= ContainerGroupIdentifiers.GetHashCode();
 
             return hash;
         }
+
+        public int GetHashCode(ProgressionContainer obj) => obj.GetHashCode();
         #endregion
     }
 }

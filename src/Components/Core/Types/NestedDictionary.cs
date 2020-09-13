@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StellarMap.Core.Types
 {
-    public class NestedDictionary<TOuter, TInner, TValue> : 
+    public sealed class NestedDictionary<TOuter, TInner, TValue> : 
         Dictionary<TOuter, Dictionary<TInner, TValue>>, IEquatable<NestedDictionary<TOuter, TInner, TValue>>
     {
         #region Constructors
@@ -216,9 +216,9 @@ namespace StellarMap.Core.Types
 
             foreach (TOuter outer in Keys)
             {
-                hash = hash ^ outer.GetHashCode();
+                hash ^= outer.GetHashCode();
                 foreach (var inner in this[outer])
-                    hash = hash ^ inner.Key.GetHashCode() ^ inner.Value.GetHashCode();
+                    hash ^= inner.Key.GetHashCode() ^ inner.Value.GetHashCode();
             }
 
             return hash;
