@@ -42,22 +42,31 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEqualityComparer
-        public bool Equals(Planet x, Planet y) =>
-            x!=null && y!=null && base.Equals(x, y) &&
-            x.PlanetGroupIdentifiers.Equals(y.PlanetGroupIdentifiers);
+        public bool Equals(Planet x, Planet y) => PlanetEqualityComparer.Comparer.Equals(x, y);
 
-        public override bool Equals(object obj) => Equals(this, obj as Planet);
+        public override bool Equals(object obj) => PlanetEqualityComparer.Comparer.Equals(this, obj as Planet);
+
+        public int GetHashCode(Planet obj) => PlanetEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => PlanetEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class PlanetEqualityComparer : IEqualityComparer<Planet>
+    {
+        public bool Equals (Planet x, Planet y) =>
+                    StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
+                    x.PlanetGroupIdentifiers.Equals(y.PlanetGroupIdentifiers);
 
         public int GetHashCode(Planet obj)
         {
-            int hash = base.GetHashCode(obj);
+            int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
             if (obj.PlanetGroupIdentifiers != null)
                 hash ^= obj.PlanetGroupIdentifiers.GetHashCode();
 
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static IEqualityComparer<Planet> Comparer { get; } = new PlanetEqualityComparer();
     }
 }

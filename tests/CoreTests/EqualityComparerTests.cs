@@ -23,7 +23,7 @@ namespace CoreTests
             Satellite moon = new Satellite("Moon");
             earth.Add(moon);
 
-            Assert.IsTrue(earth.Equals(earth, earth));
+            Assert.IsTrue(PlanetEqualityComparer.Comparer.Equals(earth, earth));
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace CoreTests
             Satellite moon2 = new Satellite("Moon");
             earth2.Add(moon2);
 
-            Assert.IsTrue(earth.Equals(earth, earth2));
+            Assert.IsTrue(PlanetEqualityComparer.Comparer.Equals(earth, earth2));
         }
 
         [TestMethod]
@@ -61,7 +61,7 @@ namespace CoreTests
             Satellite moon2 = new Satellite("Moon");
             earth2.Add(moon2);
 
-            Assert.IsFalse(earth.Equals(earth, earth2));
+            Assert.IsFalse(PlanetEqualityComparer.Comparer.Equals(earth, earth2));
         }
 
         [TestMethod]
@@ -80,7 +80,7 @@ namespace CoreTests
             Satellite moon2 = new Satellite("NotMoon");
             earth2.Add(moon2);
 
-            Assert.IsFalse(earth.Equals(earth, earth2));
+            Assert.IsFalse(PlanetEqualityComparer.Comparer.Equals(earth, earth2));
         }
 
         [TestMethod]
@@ -97,7 +97,7 @@ namespace CoreTests
             Satellite moon2 = new Satellite("Moon");
             earth2.Add(moon2);
 
-            Assert.IsFalse(earth.Equals(earth, earth2));
+            Assert.IsFalse(PlanetEqualityComparer.Comparer.Equals(earth, earth2));
         }
 
         [TestMethod]
@@ -118,7 +118,7 @@ namespace CoreTests
             Satellite moon2 = new Satellite("Moon");
             earth2.Add(moon2);
 
-            Assert.IsFalse(earth.Equals(earth, earth2));
+            Assert.IsFalse(PlanetEqualityComparer.Comparer.Equals(earth, earth2));
         }
 
         [TestMethod]
@@ -138,7 +138,7 @@ namespace CoreTests
             Satellite moon2 = new Satellite("Moon");
             earth2.Add(moon2);
 
-            Assert.IsFalse(earth.Equals(earth, earth2));
+            Assert.IsFalse(PlanetEqualityComparer.Comparer.Equals(earth, earth2));
         }
 
         [TestMethod]
@@ -167,7 +167,7 @@ namespace CoreTests
             sol2.Properties.AddGroup("Catalogue", catalogue);
             sol2.Add(new Planet("Earth"));
 
-            Assert.IsTrue(sol.Equals(sol, sol2));
+            Assert.IsTrue(StarEqualityComparer.Comparer.Equals(sol, sol2));
         }
 
         [TestMethod]
@@ -194,7 +194,7 @@ namespace CoreTests
             catalogue.Add("Hip", "1");
             sol2.Properties.AddGroup("Catalogue", catalogue);
 
-            Assert.IsFalse(sol.Equals(sol, sol2));
+            Assert.IsFalse(StarEqualityComparer.Comparer.Equals(sol, sol2));
         }
 
         [TestMethod]
@@ -243,7 +243,7 @@ namespace CoreTests
             sol2.Add(new Comet("Haley's"));
             sol2.Add(new Comet("Caeser's"));
 
-            Assert.IsTrue(sol.Equals(sol, sol2));
+            Assert.IsTrue(StarEqualityComparer.Comparer.Equals(sol, sol2));
         }
 
         [TestMethod]
@@ -295,7 +295,7 @@ namespace CoreTests
             sol2.Add(new Comet("Haley's"));
             sol2.Add(new Comet("Caeser's"));
 
-            Assert.IsFalse(sol.Equals(sol, sol2));
+            Assert.IsFalse(StarEqualityComparer.Comparer.Equals(sol, sol2));
         }
 
         [TestMethod]
@@ -352,7 +352,7 @@ namespace CoreTests
             map2.Add<Star>(proximaCent);
             proximaCent.Add(new Planet("b"));
 
-            Assert.IsTrue(map.Equals(map, map2));
+            Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map, map2));
         }
 
         [TestMethod]
@@ -410,7 +410,7 @@ namespace CoreTests
             proximaCent.Add(new Planet("b"));
             proximaCent.Add(new Planet("c"));
 
-            Assert.IsFalse(map.Equals(map, map2));
+            Assert.IsFalse(BaseStellarMapEqualityComparer.Comparer.Equals(map, map2));
         }
     }
 }

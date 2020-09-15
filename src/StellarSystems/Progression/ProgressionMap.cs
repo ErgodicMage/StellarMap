@@ -309,6 +309,18 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEqualityComparer
+        public bool Equals(ProgressionMap x, ProgressionMap y) => ProgressionMapEqualityComparer.Comparer.Equals(x, y);
+
+        public override bool Equals(object obj) => ProgressionMapEqualityComparer.Comparer.Equals(this, obj as ProgressionMap);
+
+        public int GetHashCode(ProgressionMap obj) => ProgressionMapEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => ProgressionMapEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class ProgressionMapEqualityComparer : IEqualityComparer<ProgressionMap>
+    {
         public bool Equals(ProgressionMap x, ProgressionMap y)
         {
             bool bRet = true;
@@ -317,22 +329,20 @@ namespace StellarMap.Progression
                 bRet = false;
             else if (!ReferenceEquals(x, y))
             {
-                bRet = base.Equals(x, y) &&
-                       IsEqual<Habitat>(x.Habitats, y.Habitats) &&
-                       IsEqual<ERBridge>(y.Bridges, y.Bridges) &&
-                       IsEqual<StarSystem>(x.StarSystems, y.StarSystems) &&
-                       IsEqual<Cluster>(x.Clusters, y.Clusters) &&
-                       IsEqual<Sector>(x.Sectors, y.Sectors);
+                bRet = BaseStellarMapEqualityComparer.Comparer.Equals(x, y) &&
+                       BaseStellarMapEqualityComparer.IsEqual<Habitat>(x.Habitats, y.Habitats) &&
+                       BaseStellarMapEqualityComparer.IsEqual<ERBridge>(y.Bridges, y.Bridges) &&
+                       BaseStellarMapEqualityComparer.IsEqual<StarSystem>(x.StarSystems, y.StarSystems) &&
+                       BaseStellarMapEqualityComparer.IsEqual<Cluster>(x.Clusters, y.Clusters) &&
+                       BaseStellarMapEqualityComparer.IsEqual<Sector>(x.Sectors, y.Sectors);
             }
 
             return bRet;
         }
 
-        public override bool Equals(object obj) => Equals(this, obj as ProgressionMap);
-
         public int GetHashCode(ProgressionMap obj)
         {
-            int hash = base.GetHashCode();
+            int hash = BaseStellarMapEqualityComparer.Comparer.GetHashCode(obj);
             if (obj.Habitats != null)
                 hash ^= obj.Habitats.GetHashCode();
             if (obj.Bridges != null)
@@ -347,7 +357,6 @@ namespace StellarMap.Progression
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static IEqualityComparer<ProgressionMap> Comparer { get; } = new ProgressionMapEqualityComparer();
     }
 }

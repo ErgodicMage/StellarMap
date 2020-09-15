@@ -49,6 +49,18 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEqualityComparer
+        public bool Equals(StellarBody x, StellarBody y) => StellarBodyEqualityComparer.Comparer.Equals(x, y);
+
+        public override bool Equals(object obj) => StellarBodyEqualityComparer.Comparer.Equals(this, obj as StellarBody);
+
+        public int GetHashCode(StellarBody obj) => StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => StellarBodyEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class StellarBodyEqualityComparer : IEqualityComparer<StellarBody>
+    {
         public bool Equals(StellarBody x, StellarBody y)
         {
             bool bRet = true;
@@ -58,15 +70,13 @@ namespace StellarMap.Core.Bodies
             else if (!ReferenceEquals(x, y))
             {
                 bRet = x.Name == y.Name && x.Identifier == y.Identifier &&
-                       (x.ParentIdentifier == null || x.ParentIdentifier == y.ParentIdentifier) &&
+                       (x.ParentIdentifier == null || x.ParentIdentifier.Equals(y.ParentIdentifier)) &&
                        x.BodyType == y.BodyType &&
                        x.Properties.Equals(y.Properties);
             }
 
             return bRet;
         }
-
-        public override bool Equals(object obj) => Equals(this, obj as StellarBody);
 
         public int GetHashCode(StellarBody obj)
         {
@@ -85,8 +95,7 @@ namespace StellarMap.Core.Bodies
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static IEqualityComparer<StellarBody> Comparer { get; } = new StellarBodyEqualityComparer();
     }
 
     public abstract class StellarParentBody : StellarBody, IStellarParentBody

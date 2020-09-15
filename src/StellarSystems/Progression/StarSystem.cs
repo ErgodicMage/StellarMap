@@ -51,17 +51,25 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEqualityComparer
+        public bool Equals(StarSystem x, StarSystem y) => StarSystemEqualityComparer.Comparer.Equals(x, y);
+
+        public override bool Equals(object obj) => StarSystemEqualityComparer.Comparer.Equals(this, obj as StarSystem);
+
+        public int GetHashCode(StarSystem obj) => StarSystemEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => StarSystemEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class StarSystemEqualityComparer : IEqualityComparer<StarSystem>
+    {
         public bool Equals(StarSystem x, StarSystem y)
         {
-            bool bRet = true;
+            bool bRet = ProgressionContainerEqualityComparer.Comparer.Equals(x, y);
 
-            if (x is null || y is null)
-                bRet = false;
-            else if (!ReferenceEquals(x, y))
+            if (bRet)
             {
-                if (!base.Equals(x, y))
-                    bRet = false;
-                else if (x.Portals == null && y.Portals == null)
+                if (x.Portals == null && y.Portals == null)
                     bRet = true;
                 else if (x.Portals == null || y.Portals == null)
                     bRet = false;
@@ -86,11 +94,9 @@ namespace StellarMap.Progression
             return bRet;
         }
 
-        public override bool Equals(object obj) => Equals(this, obj as StarSystem);
-
         public int GetHashCode(StarSystem obj)
         {
-            int hash = base.GetHashCode();
+            int hash = ProgressionContainerEqualityComparer.Comparer.GetHashCode();
             if (obj.Portals != null)
             {
                 foreach (Portal p in obj.Portals)
@@ -100,7 +106,6 @@ namespace StellarMap.Progression
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static StarSystemEqualityComparer Comparer { get; } = new StarSystemEqualityComparer();
     }
 }

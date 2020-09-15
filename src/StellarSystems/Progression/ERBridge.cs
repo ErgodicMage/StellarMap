@@ -99,6 +99,18 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEqualityComparer
+        public bool Equals(ERBridge x, ERBridge y) => ERBridgeEqualityComparer.Comparer.Equals(x, y);
+
+        public override bool Equals(object obj) => ERBridgeEqualityComparer.Comparer.Equals(this, obj as ERBridge);
+
+        public int GetHashCode(ERBridge obj) => ERBridgeEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => ERBridgeEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class ERBridgeEqualityComparer : IEqualityComparer<ERBridge>
+    {
         public bool Equals(ERBridge x, ERBridge y)
         {
             bool bRet = true;
@@ -107,18 +119,17 @@ namespace StellarMap.Progression
                 bRet = false;
             else if (!ReferenceEquals(x, y))
             {
-                bRet = base.Equals(x, y) && x.BridgeType == y.BridgeType && x.Portals != null && y.Portals != null &&
+                bRet = StellarBodyEqualityComparer.Comparer.Equals(x, y) && 
+                       x.BridgeType == y.BridgeType && x.Portals != null && y.Portals != null &&
                        x.Portals[0].Equals(y.Portals[0]) && x.Portals[1].Equals(y.Portals[1]);
             }
 
             return bRet;
         }
 
-        public override bool Equals(object obj) => Equals(this, obj as ERBridge);
-
         public int GetHashCode(ERBridge obj)
         {
-            int hash = base.GetHashCode(obj);
+            int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
             if (!string.IsNullOrEmpty(obj.BridgeType))
                 hash ^= obj.BridgeType.GetHashCode();
             if (obj.Portals != null)
@@ -130,7 +141,6 @@ namespace StellarMap.Progression
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static IEqualityComparer<ERBridge> Comparer { get; } = new ERBridgeEqualityComparer();
     }
 }

@@ -81,22 +81,31 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEquatable
-        public bool Equals(Star x, Star y) =>
-            x != null && y != null && base.Equals(x, y) &&
-            x.StarGroupIdentifiers.Equals(y.StarGroupIdentifiers);
+        public bool Equals(Star x, Star y) => StarEqualityComparer.Comparer.Equals(x, y);
 
-        public override bool Equals(object obj) => Equals(this, obj as Star);
+        public override bool Equals(object obj) => StarEqualityComparer.Comparer.Equals(this, obj as Star);
+
+        public int GetHashCode(Star obj) => StarEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => StarEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class StarEqualityComparer : IEqualityComparer<Star>
+    {
+        public bool Equals(Star x, Star y) =>
+                    StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
+                    x.StarGroupIdentifiers.Equals(y.StarGroupIdentifiers);
 
         public int GetHashCode(Star obj)
         {
-            int hash = base.GetHashCode(obj);
+            int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
             if (obj.StarGroupIdentifiers != null)
                 hash ^= obj.StarGroupIdentifiers.GetHashCode();
 
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static IEqualityComparer<Star> Comparer { get; } = new StarEqualityComparer();
     }
 }

@@ -47,15 +47,25 @@ namespace StellarMap.Progression
         #endregion
 
         #region IEquatityComparer
-        public bool Equals(ProgressionContainer x, ProgressionContainer y) =>
-            x != null && y != null && x.ContainerType == y.ContainerType && base.Equals(x, y) &&
-            x.ContainerGroupIdentifiers.Equals(y.ContainerGroupIdentifiers);
+        public bool Equals(ProgressionContainer x, ProgressionContainer y) => ProgressionContainerEqualityComparer.Comparer.Equals(x, y);
 
-        public override bool Equals(object obj) => Equals(this, obj as ProgressionContainer);
+        public override bool Equals(object obj) => ProgressionContainerEqualityComparer.Comparer.Equals(this, obj as ProgressionContainer);
+
+        public int GetHashCode(ProgressionContainer obj) => ProgressionContainerEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => ProgressionContainerEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class ProgressionContainerEqualityComparer : IEqualityComparer<ProgressionContainer>
+    {
+        public bool Equals(ProgressionContainer x, ProgressionContainer y) =>
+                    StellarBodyEqualityComparer.Comparer.Equals(x, y) && x.ContainerType == y.ContainerType &&
+                    x.ContainerGroupIdentifiers.Equals(y.ContainerGroupIdentifiers);
 
         public int GetHashCode(ProgressionContainer obj)
         {
-            int hash = base.GetHashCode(obj);
+            int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
             if (!string.IsNullOrEmpty(obj.ContainerType))
                 hash ^= obj.ContainerType.GetHashCode();
             if (obj.ContainerGroupIdentifiers != null)
@@ -64,7 +74,6 @@ namespace StellarMap.Progression
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static IEqualityComparer<ProgressionContainer> Comparer { get; } = new ProgressionContainerEqualityComparer();
     }
 }

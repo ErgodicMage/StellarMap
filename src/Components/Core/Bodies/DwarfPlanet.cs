@@ -43,22 +43,32 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEqualityComparer
-        public bool Equals(DwarfPlanet x, DwarfPlanet y) =>
-            x!=null && y!=null && base.Equals(x, y) &&
-            x.DwarfPlanetGroupIdentifiers.Equals(y.DwarfPlanetGroupIdentifiers);
+        public bool Equals(DwarfPlanet x, DwarfPlanet y) => DwarfPlanetEqualityComparer.Comparer.Equals(x, y);
 
-        public override bool Equals(object obj) => Equals(this, obj as DwarfPlanet);
+        public override bool Equals(object obj) => DwarfPlanetEqualityComparer.Comparer.Equals(this, obj as DwarfPlanet);
+
+        public int GetHashCode(DwarfPlanet obj) => DwarfPlanetEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => DwarfPlanetEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class DwarfPlanetEqualityComparer : IEqualityComparer<DwarfPlanet>
+    {
+        public bool Equals(DwarfPlanet x, DwarfPlanet y) => 
+                    StellarBodyEqualityComparer.Comparer.Equals(x, y) && 
+                    x.DwarfPlanetGroupIdentifiers.Equals(y.DwarfPlanetGroupIdentifiers);
+
 
         public int GetHashCode(DwarfPlanet obj)
         {
-            int hash = base.GetHashCode(obj);
+            int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
             if (obj.DwarfPlanetGroupIdentifiers != null)
                 hash ^= obj.DwarfPlanetGroupIdentifiers.GetHashCode();
 
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
-        #endregion
+        public static IEqualityComparer<DwarfPlanet> Comparer { get; } = new DwarfPlanetEqualityComparer();
     }
 }

@@ -320,6 +320,18 @@ namespace StellarMap.Core.Types
         #endregion
 
         #region IEqualityComparer
+        public bool Equals(BaseStellarMap x, BaseStellarMap y) => BaseStellarMapEqualityComparer.Comparer.Equals(x, y);
+
+        public override bool Equals(object obj) => BaseStellarMapEqualityComparer.Comparer.Equals(obj as BaseStellarMap);
+
+        public int GetHashCode(BaseStellarMap obj) => BaseStellarMapEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => BaseStellarMapEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class BaseStellarMapEqualityComparer : IEqualityComparer<BaseStellarMap>
+    {
         public bool Equals(BaseStellarMap x, BaseStellarMap y)
         {
             bool bRet = true;
@@ -340,8 +352,6 @@ namespace StellarMap.Core.Types
 
             return bRet;
         }
-
-        public override bool Equals(object obj) => Equals(this, obj as BaseStellarMap);
 
         public int GetHashCode(BaseStellarMap obj)
         {
@@ -364,9 +374,9 @@ namespace StellarMap.Core.Types
             return hash;
         }
 
-        public override int GetHashCode() => GetHashCode(this);
+        public static IEqualityComparer<BaseStellarMap> Comparer { get; } = new BaseStellarMapEqualityComparer();
 
-        protected static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
+        public static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
         {
             bool bRet = true;
 
@@ -401,6 +411,5 @@ namespace StellarMap.Core.Types
 
             return bRet;
         }
-        #endregion
     }
 }

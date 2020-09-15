@@ -39,7 +39,7 @@ namespace ProgressionTests
             if (bridge1.BasicProperties.ContainsKey(Constants.PropertyNames.Distance))
                 bridge2.BasicProperties.Add(Constants.PropertyNames.Distance, bridge1.BasicProperties[Constants.PropertyNames.Distance]);
 
-            Assert.IsTrue(bridge1.Equals(bridge2));
+            Assert.IsTrue(ERBridgeEqualityComparer.Comparer.Equals(bridge1, bridge2));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace ProgressionTests
             // except Portal 2 bridge identifier
             //bridge2.Portals[1].ERBridgeIdentifier = bridge1.Portals[1].ERBridgeIdentifier;
 
-            Assert.IsFalse(bridge1.Equals(bridge2));
+            Assert.IsFalse(ERBridgeEqualityComparer.Comparer.Equals(bridge1, bridge2));
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace ProgressionTests
             habitat2.ParentIdentifier = habitat1.ParentIdentifier;
             habitat2.Properties = habitat1.Properties;
 
-            Assert.IsTrue(habitat1.Equals(habitat2));
+            Assert.IsTrue(StellarBodyEqualityComparer.Comparer.Equals(habitat1, habitat2));
         }
 
         [TestMethod]
@@ -103,7 +103,7 @@ namespace ProgressionTests
             habitat2.ParentIdentifier = habitat1.ParentIdentifier;
             //habitat2.Properties = habitat1.Properties;
 
-            Assert.IsFalse(habitat1.Equals(habitat2));
+            Assert.IsFalse(StellarBodyEqualityComparer.Comparer.Equals(habitat1, habitat2));
         }
 
         [TestMethod]
@@ -120,7 +120,7 @@ namespace ProgressionTests
             system2.Identifier = "System 1";
             system2.Add(star);
 
-            Assert.IsTrue(system1.Equals(system2));
+            Assert.IsTrue(StarSystemEqualityComparer.Comparer.Equals(system1, system2));
         }
 
         [TestMethod]
@@ -139,7 +139,7 @@ namespace ProgressionTests
             star.Identifier = "Star 2";
             system2.Add(star);
 
-            Assert.IsFalse(system1.Equals(system2));
+            Assert.IsFalse(StarSystemEqualityComparer.Comparer.Equals(system1, system2));
         }
 
         [TestMethod]
@@ -159,7 +159,7 @@ namespace ProgressionTests
             system2.Identifier = "System 1";
             system2.Add(star1);
 
-            Assert.IsFalse(system1.Equals(system2));
+            Assert.IsFalse(StarSystemEqualityComparer.Comparer.Equals(system1, system2));
         }
 
         [TestMethod]
@@ -208,7 +208,7 @@ namespace ProgressionTests
             LocalSectorMap c2 = new LocalSectorMap(map2);
             c2.CreateLocalSector();
 
-            Assert.IsTrue(map.Equals(map2));
+            Assert.IsTrue(ProgressionMapEqualityComparer.Comparer.Equals(map, map2));
         }
 
         [TestMethod]
@@ -226,7 +226,7 @@ namespace ProgressionTests
             Assert.IsNotNull(solCluster);
             solCluster.Name = "New Sol";
             
-            Assert.IsFalse(map.Equals(map2));
+            Assert.IsFalse(ProgressionMapEqualityComparer.Comparer.Equals(map, map2));
         }
     }
 }
