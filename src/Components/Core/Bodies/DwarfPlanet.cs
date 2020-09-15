@@ -55,6 +55,7 @@ namespace StellarMap.Core.Bodies
 
     public sealed class DwarfPlanetEqualityComparer : IEqualityComparer<DwarfPlanet>
     {
+        #region IEqualityComparer
         public bool Equals(DwarfPlanet x, DwarfPlanet y) => 
                     StellarBodyEqualityComparer.Comparer.Equals(x, y) && 
                     x.DwarfPlanetGroupIdentifiers.Equals(y.DwarfPlanetGroupIdentifiers);
@@ -68,6 +69,7 @@ namespace StellarMap.Core.Bodies
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<DwarfPlanet> Comparer { get; } = new DwarfPlanetEqualityComparer();
     }

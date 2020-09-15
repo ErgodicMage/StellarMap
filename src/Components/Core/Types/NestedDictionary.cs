@@ -23,9 +23,8 @@ namespace StellarMap.Core.Types
 
         public void Add(TOuter outer, TInner inner, TValue value)
         {
-            Dictionary<TInner, TValue> innerDictionary;
 
-            if (TryGetValue(outer, out innerDictionary) && !innerDictionary.ContainsKey(inner))
+            if (TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary) && !innerDictionary.ContainsKey(inner))
             {
                 innerDictionary.Add(inner, value);
             }
@@ -33,15 +32,14 @@ namespace StellarMap.Core.Types
 
         public void AddToOuter(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
         {
-            Dictionary<TInner, TValue> currentDictionary;
 
-            if (!TryGetValue(outer, out currentDictionary))
+            if (!TryGetValue(outer, out Dictionary<TInner, TValue> currentDictionary))
             {
                 currentDictionary = new Dictionary<TInner, TValue>();
                 Add(outer, currentDictionary);
             }
 
-            foreach(var kvp in innerDictionary)
+            foreach (var kvp in innerDictionary)
             {
                 if (!currentDictionary.ContainsKey(kvp.Key))
                     currentDictionary.Add(kvp.Key, kvp.Value);
@@ -50,9 +48,8 @@ namespace StellarMap.Core.Types
 
         public void AddToInner(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
         {
-            Dictionary<TInner, TValue> currentDictionary;
 
-            if (TryGetValue(outer, out currentDictionary))
+            if (TryGetValue(outer, out Dictionary<TInner, TValue> currentDictionary))
             {
                 foreach (var kvp in innerDictionary)
                 {
@@ -80,14 +77,13 @@ namespace StellarMap.Core.Types
         #region Get Set Methods
         public Dictionary<TInner, TValue> Get(TOuter outer)
         {
-            Dictionary<TInner, TValue> innerDictionary;
-            TryGetValue(outer, out innerDictionary);
+            TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary);
             return innerDictionary;
         }
 
         public TValue Get(TOuter outer, TInner inner)
         {
-            TValue value = default(TValue);
+            TValue value = default;
 
             Dictionary<TInner, TValue> innerDictionary = Get(outer);
             if (innerDictionary != null)
@@ -102,8 +98,7 @@ namespace StellarMap.Core.Types
                 Add(outer, innervalues);
             else
             {
-                Dictionary<TInner, TValue> innerDictionary;
-                if (TryGetValue(outer, out innerDictionary))
+                if (TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary))
                 {
                     foreach (var kvp in innervalues)
                     {

@@ -54,6 +54,7 @@ namespace StellarMap.Core.Bodies
 
     public sealed class PlanetEqualityComparer : IEqualityComparer<Planet>
     {
+        #region IEqualityComparer
         public bool Equals (Planet x, Planet y) =>
                     StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
                     x.PlanetGroupIdentifiers.Equals(y.PlanetGroupIdentifiers);
@@ -66,6 +67,7 @@ namespace StellarMap.Core.Bodies
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<Planet> Comparer { get; } = new PlanetEqualityComparer();
     }

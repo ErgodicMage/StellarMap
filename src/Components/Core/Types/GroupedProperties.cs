@@ -15,8 +15,10 @@ namespace StellarMap.Core.Types
 
         public GroupedProperties(string initialGroup)
         {
-            PropertyGroups = new NestedDictionary<string, string, string>();
-            PropertyGroups.Add(initialGroup, new Dictionary<string, string>());
+            PropertyGroups = new NestedDictionary<string, string, string>
+            {
+                { initialGroup, new Dictionary<string, string>() }
+            };
         }
         #endregion
 

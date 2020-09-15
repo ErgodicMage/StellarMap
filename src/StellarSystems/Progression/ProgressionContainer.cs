@@ -59,6 +59,7 @@ namespace StellarMap.Progression
 
     public sealed class ProgressionContainerEqualityComparer : IEqualityComparer<ProgressionContainer>
     {
+        #region IEqualityComparer
         public bool Equals(ProgressionContainer x, ProgressionContainer y) =>
                     StellarBodyEqualityComparer.Comparer.Equals(x, y) && x.ContainerType == y.ContainerType &&
                     x.ContainerGroupIdentifiers.Equals(y.ContainerGroupIdentifiers);
@@ -73,6 +74,7 @@ namespace StellarMap.Progression
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<ProgressionContainer> Comparer { get; } = new ProgressionContainerEqualityComparer();
     }

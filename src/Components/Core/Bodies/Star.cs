@@ -80,7 +80,7 @@ namespace StellarMap.Core.Bodies
             Add<Comet>(comet, StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
         #endregion
 
-        #region IEquatable
+        #region IEqualityComparer
         public bool Equals(Star x, Star y) => StarEqualityComparer.Comparer.Equals(x, y);
 
         public override bool Equals(object obj) => StarEqualityComparer.Comparer.Equals(this, obj as Star);
@@ -93,6 +93,7 @@ namespace StellarMap.Core.Bodies
 
     public sealed class StarEqualityComparer : IEqualityComparer<Star>
     {
+        #region IEqualityComparer
         public bool Equals(Star x, Star y) =>
                     StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
                     x.StarGroupIdentifiers.Equals(y.StarGroupIdentifiers);
@@ -105,6 +106,7 @@ namespace StellarMap.Core.Bodies
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<Star> Comparer { get; } = new StarEqualityComparer();
     }

@@ -332,6 +332,7 @@ namespace StellarMap.Core.Types
 
     public sealed class BaseStellarMapEqualityComparer : IEqualityComparer<BaseStellarMap>
     {
+        #region IEqualityComparer
         public bool Equals(BaseStellarMap x, BaseStellarMap y)
         {
             bool bRet = true;
@@ -373,9 +374,11 @@ namespace StellarMap.Core.Types
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<BaseStellarMap> Comparer { get; } = new BaseStellarMapEqualityComparer();
 
+        #region IsEqual
         public static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
         {
             bool bRet = true;
@@ -411,5 +414,6 @@ namespace StellarMap.Core.Types
 
             return bRet;
         }
+        #endregion
     }
 }

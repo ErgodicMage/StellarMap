@@ -63,6 +63,7 @@ namespace StellarMap.Progression
 
     public sealed class StarSystemEqualityComparer : IEqualityComparer<StarSystem>
     {
+        #region IEqualityComparer
         public bool Equals(StarSystem x, StarSystem y)
         {
             bool bRet = ProgressionContainerEqualityComparer.Comparer.Equals(x, y);
@@ -105,6 +106,7 @@ namespace StellarMap.Progression
 
             return hash;
         }
+        #endregion
 
         public static StarSystemEqualityComparer Comparer { get; } = new StarSystemEqualityComparer();
     }

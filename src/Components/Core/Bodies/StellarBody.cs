@@ -10,11 +10,11 @@ namespace StellarMap.Core.Bodies
     public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
     {
         #region Cosntructors
-        public StellarBody()
+        protected StellarBody()
         {            
         }
         
-        public StellarBody(string name, string bodytype)
+        protected StellarBody(string name, string bodytype)
         {
             Properties = new GroupedProperties("Basic");
 
@@ -61,6 +61,7 @@ namespace StellarMap.Core.Bodies
 
     public sealed class StellarBodyEqualityComparer : IEqualityComparer<StellarBody>
     {
+        #region IEqualityComparer
         public bool Equals(StellarBody x, StellarBody y)
         {
             bool bRet = true;
@@ -94,6 +95,7 @@ namespace StellarMap.Core.Bodies
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<StellarBody> Comparer { get; } = new StellarBodyEqualityComparer();
     }
@@ -101,12 +103,12 @@ namespace StellarMap.Core.Bodies
     public abstract class StellarParentBody : StellarBody, IStellarParentBody
     {
         #region Constructors
-        public StellarParentBody()
+        protected StellarParentBody()
         {
 
         }
 
-        public StellarParentBody(string name, string bodytype) : base(name, bodytype)
+        protected StellarParentBody(string name, string bodytype) : base(name, bodytype)
         {
         }
         #endregion

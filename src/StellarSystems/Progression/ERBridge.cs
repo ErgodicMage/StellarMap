@@ -111,6 +111,7 @@ namespace StellarMap.Progression
 
     public sealed class ERBridgeEqualityComparer : IEqualityComparer<ERBridge>
     {
+        #region IEqualityComparer
         public bool Equals(ERBridge x, ERBridge y)
         {
             bool bRet = true;
@@ -140,6 +141,7 @@ namespace StellarMap.Progression
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<ERBridge> Comparer { get; } = new ERBridgeEqualityComparer();
     }

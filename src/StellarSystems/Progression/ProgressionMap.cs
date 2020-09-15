@@ -321,6 +321,7 @@ namespace StellarMap.Progression
 
     public sealed class ProgressionMapEqualityComparer : IEqualityComparer<ProgressionMap>
     {
+        #region IEqualityComparer
         public bool Equals(ProgressionMap x, ProgressionMap y)
         {
             bool bRet = true;
@@ -356,6 +357,7 @@ namespace StellarMap.Progression
 
             return hash;
         }
+        #endregion
 
         public static IEqualityComparer<ProgressionMap> Comparer { get; } = new ProgressionMapEqualityComparer();
     }
