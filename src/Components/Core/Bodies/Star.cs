@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 using StellarMap.Core.Types;
@@ -7,7 +6,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.Star)]
-    public class Star : StellarParentBody, IEquatable<Star>, IEqualityComparer<Star>
+    public class Star : StellarParentBody,  IEqualityComparer<Star>
     {
         #region Constructors
         public Star()
@@ -82,24 +81,22 @@ namespace StellarMap.Core.Bodies
         #endregion
 
         #region IEquatable
-        public bool Equals(Star other) => 
-            other!=null && base.Equals(other as StellarParentBody) && 
-            StarGroupIdentifiers.Equals(other.StarGroupIdentifiers);
+        public bool Equals(Star x, Star y) =>
+            x != null && y != null && base.Equals(x, y) &&
+            x.StarGroupIdentifiers.Equals(y.StarGroupIdentifiers);
 
-        public override bool Equals(object obj) => Equals(obj as Star);
+        public override bool Equals(object obj) => Equals(this, obj as Star);
 
-        public bool Equals(Star x, Star y) => x.Equals(y);
-
-        public override int GetHashCode()
+        public int GetHashCode(Star obj)
         {
-            int hash = base.GetHashCode();
-            if (StarGroupIdentifiers != null)
-                hash ^= StarGroupIdentifiers.GetHashCode();
+            int hash = base.GetHashCode(obj);
+            if (obj.StarGroupIdentifiers != null)
+                hash ^= obj.StarGroupIdentifiers.GetHashCode();
 
             return hash;
         }
 
-        public int GetHashCode(Star obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 }

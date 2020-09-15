@@ -7,7 +7,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.StellarBody)]
-    public abstract class StellarBody : IStellarBody, IEquatable<StellarBody>, IEqualityComparer<StellarBody>
+    public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
     {
         #region Cosntructors
         public StellarBody()
@@ -48,48 +48,44 @@ namespace StellarMap.Core.Bodies
         public IStellarMap Map { get; set; }
         #endregion
 
-        #region IEquatable
-        public bool Equals(StellarBody other)
+        #region IEqualityComparer
+        public bool Equals(StellarBody x, StellarBody y)
         {
-            bool bRet = true; 
+            bool bRet = true;
 
-            if (other == null)
+            if (x is null || y is null)
                 bRet = false;
-            else if (!ReferenceEquals(this, other))
+            else if (!ReferenceEquals(x, y))
             {
-                bRet = Name.Equals(other.Name) &&
-                       Identifier.Equals(other.Identifier) &&
-                       (ParentIdentifier == null || ParentIdentifier.Equals(other.ParentIdentifier)) && 
-                       BodyType.Equals(other.BodyType) &&
-                       Properties.Equals(other.Properties);
-
+                bRet = x.Name == y.Name && x.Identifier == y.Identifier &&
+                       (x.ParentIdentifier == null || x.ParentIdentifier == y.ParentIdentifier) &&
+                       x.BodyType == y.BodyType &&
+                       x.Properties.Equals(y.Properties);
             }
 
             return bRet;
         }
 
-        public override bool Equals(object obj) => Equals(obj as StellarBody);
+        public override bool Equals(object obj) => Equals(this, obj as StellarBody);
 
-        public bool Equals(StellarBody x, StellarBody y) => x.Equals(y);
-
-        public override int GetHashCode()
+        public int GetHashCode(StellarBody obj)
         {
             int hash = 1;
-            if (!string.IsNullOrEmpty(Name))
-                hash ^= Name.GetHashCode();
-            if (!string.IsNullOrEmpty(Identifier))
-                hash ^= Identifier.GetHashCode();
-            if (!string.IsNullOrEmpty(ParentIdentifier))
-                hash ^= ParentIdentifier.GetHashCode();
-            if (!string.IsNullOrEmpty(BodyType))
-                hash ^= BodyType.GetHashCode();
-            if (Properties != null)
-                hash ^= Properties.GetHashCode();
+            if (!string.IsNullOrEmpty(obj.Name))
+                hash ^= obj.Name.GetHashCode();
+            if (!string.IsNullOrEmpty(obj.Identifier))
+                hash ^= obj.Identifier.GetHashCode();
+            if (!string.IsNullOrEmpty(obj.ParentIdentifier))
+                hash ^= obj.ParentIdentifier.GetHashCode();
+            if (!string.IsNullOrEmpty(obj.BodyType))
+                hash ^= obj.BodyType.GetHashCode();
+            if (obj.Properties != null)
+                hash ^= obj.Properties.GetHashCode();
 
             return hash;
         }
 
-        public int GetHashCode(StellarBody obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 

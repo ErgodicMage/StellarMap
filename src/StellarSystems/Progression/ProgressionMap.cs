@@ -9,7 +9,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Progression
 {
     [DataContract (Name = "ProgressionMap")]
-    public class ProgressionMap : BaseStellarMap, IEquatable<ProgressionMap>, IEqualityComparer<ProgressionMap>
+    public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
     {
         #region Constructors
         public ProgressionMap()
@@ -308,48 +308,46 @@ namespace StellarMap.Progression
         }
         #endregion
 
-        #region IEquatable
-        public bool Equals(ProgressionMap other)
+        #region IEqualityComparer
+        public bool Equals(ProgressionMap x, ProgressionMap y)
         {
             bool bRet = true;
 
-            if (other == null)
+            if (x is null || y is null)
                 bRet = false;
-            else if (!ReferenceEquals(this, other))
+            else if (!ReferenceEquals(x, y))
             {
-                bRet = base.Equals(other) &&
-                       IsEqual<Habitat>(this.Habitats, other.Habitats) &&
-                       IsEqual<ERBridge>(this.Bridges, other.Bridges) &&
-                       IsEqual<StarSystem>(this.StarSystems, other.StarSystems) &&
-                       IsEqual<Cluster>(this.Clusters, other.Clusters) &&
-                       IsEqual<Sector>(this.Sectors, other.Sectors);
+                bRet = base.Equals(x, y) &&
+                       IsEqual<Habitat>(x.Habitats, y.Habitats) &&
+                       IsEqual<ERBridge>(y.Bridges, y.Bridges) &&
+                       IsEqual<StarSystem>(x.StarSystems, y.StarSystems) &&
+                       IsEqual<Cluster>(x.Clusters, y.Clusters) &&
+                       IsEqual<Sector>(x.Sectors, y.Sectors);
             }
 
             return bRet;
         }
 
-        public override bool Equals(object obj) => Equals(obj as BaseStellarMap);
+        public override bool Equals(object obj) => Equals(this, obj as ProgressionMap);
 
-        public bool Equals(ProgressionMap x, ProgressionMap y) => x.Equals(y);
-
-        public override int GetHashCode()
+        public int GetHashCode(ProgressionMap obj)
         {
             int hash = base.GetHashCode();
-            if (Habitats != null)
-                hash ^= Habitats.GetHashCode();
-            if (Bridges != null)
-                hash ^= Bridges.GetHashCode();
-            if (StarSystems != null)
-                hash ^= StarSystems.GetHashCode();
-            if (Clusters != null)
-                hash ^= Clusters.GetHashCode();
-            if (Sectors != null)
-                hash ^= Sectors.GetHashCode();
+            if (obj.Habitats != null)
+                hash ^= obj.Habitats.GetHashCode();
+            if (obj.Bridges != null)
+                hash ^= obj.Bridges.GetHashCode();
+            if (obj.StarSystems != null)
+                hash ^= obj.StarSystems.GetHashCode();
+            if (obj.Clusters != null)
+                hash ^= obj.Clusters.GetHashCode();
+            if (obj.Sectors != null)
+                hash ^= obj.Sectors.GetHashCode();
 
             return hash;
         }
 
-        public int GetHashCode(ProgressionMap obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 }

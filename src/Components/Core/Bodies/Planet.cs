@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 using StellarMap.Core.Types;
@@ -7,7 +6,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract(Name = Constants.BodyTypes.Planet)]
-    public class Planet : StellarParentBody, IEquatable<Planet>, IEqualityComparer<Planet>
+    public class Planet : StellarParentBody, IEqualityComparer<Planet>
     {
         #region Cosntructors
         public Planet()
@@ -42,25 +41,23 @@ namespace StellarMap.Core.Bodies
             Add<Satellite>(satellite, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
         #endregion
 
-        #region IEquatable
-        public bool Equals(Planet other) => 
-            other!=null && base.Equals(other as StellarParentBody) && 
-            PlanetGroupIdentifiers.Equals(other.PlanetGroupIdentifiers);
+        #region IEqualityComparer
+        public bool Equals(Planet x, Planet y) =>
+            x!=null && y!=null && base.Equals(x, y) &&
+            x.PlanetGroupIdentifiers.Equals(y.PlanetGroupIdentifiers);
 
-        public override bool Equals(object obj) => Equals(obj as Planet);
+        public override bool Equals(object obj) => Equals(this, obj as Planet);
 
-        public bool Equals(Planet x, Planet y) => x.Equals(y);
-
-        public override int GetHashCode()
+        public int GetHashCode(Planet obj)
         {
-            int hash = base.GetHashCode();
-            if (PlanetGroupIdentifiers != null)
-                hash ^= PlanetGroupIdentifiers.GetHashCode();
+            int hash = base.GetHashCode(obj);
+            if (obj.PlanetGroupIdentifiers != null)
+                hash ^= obj.PlanetGroupIdentifiers.GetHashCode();
 
             return hash;
         }
 
-        public int GetHashCode(Planet obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 }

@@ -8,7 +8,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Progression
 {
     [DataContract(Name = ProgressionConstants.BodyType.StarSystem)]
-    public class StarSystem : ProgressionContainer, IEquatable<StarSystem>, IEqualityComparer<StarSystem>
+    public class StarSystem : ProgressionContainer, IEqualityComparer<StarSystem>
     {
         #region Constructors
         public StarSystem()
@@ -50,26 +50,25 @@ namespace StellarMap.Progression
         }
         #endregion
 
-        #region IEquatable
-        public bool Equals(StarSystem other)
+        #region IEqualityComparer
+        public bool Equals(StarSystem x, StarSystem y)
         {
             bool bRet = true;
 
-            if (other == null)
+            if (x is null || y is null)
                 bRet = false;
-
-            else if (!ReferenceEquals(this, other))
+            else if (!ReferenceEquals(x, y))
             {
-                if (!base.Equals(other))
+                if (!base.Equals(x, y))
                     bRet = false;
-                else if (this.Portals == null && other.Portals == null)
+                else if (x.Portals == null && y.Portals == null)
                     bRet = true;
-                else if (this.Portals == null || other.Portals == null)
+                else if (x.Portals == null || y.Portals == null)
                     bRet = false;
-                else if (this.Portals.Count == other.Portals.Count)
+                else if (x.Portals.Count == y.Portals.Count)
                 {
-                    var thisPortals = Portals.GetEnumerator();
-                    var otherPortals = other.Portals.GetEnumerator();
+                    var thisPortals = x.Portals.GetEnumerator();
+                    var otherPortals = y.Portals.GetEnumerator();
 
                     while (thisPortals.MoveNext() && otherPortals.MoveNext())
                     {
@@ -87,23 +86,21 @@ namespace StellarMap.Progression
             return bRet;
         }
 
-        public bool Equals(StarSystem x, StarSystem y) => x.Equals(y);
+        public override bool Equals(object obj) => Equals(this, obj as StarSystem);
 
-        public override bool Equals(object obj) => Equals(obj as StarSystem);
-
-        public override int GetHashCode()
+        public int GetHashCode(StarSystem obj)
         {
             int hash = base.GetHashCode();
-            if (Portals != null)
+            if (obj.Portals != null)
             {
-                foreach (Portal p in Portals)
+                foreach (Portal p in obj.Portals)
                     hash ^= p.GetHashCode();
             }
 
             return hash;
         }
 
-        public int GetHashCode(StarSystem obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 }

@@ -7,7 +7,7 @@ using StellarMap.Core.Types;
 
 namespace StellarMap.Progression
 {
-    public class ProgressionContainer : StellarParentBody, IEquatable<ProgressionContainer>, IEqualityComparer<ProgressionContainer>
+    public class ProgressionContainer : StellarParentBody, IEqualityComparer<ProgressionContainer>
     {
         #region Constructors
         public ProgressionContainer()
@@ -46,28 +46,25 @@ namespace StellarMap.Progression
             Add<ERBridge>(bridge, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
         #endregion
 
-        #region IEquatable
-        public bool Equals(ProgressionContainer other) => 
-            other!=null && ContainerType.Equals(other.ContainerType) && 
-            base.Equals(other as StellarParentBody) && 
-            ContainerGroupIdentifiers.Equals(other.ContainerGroupIdentifiers);
+        #region IEquatityComparer
+        public bool Equals(ProgressionContainer x, ProgressionContainer y) =>
+            x != null && y != null && x.ContainerType == y.ContainerType && base.Equals(x, y) &&
+            x.ContainerGroupIdentifiers.Equals(y.ContainerGroupIdentifiers);
 
-        public override bool Equals(object obj) => Equals(obj as ProgressionContainer);
+        public override bool Equals(object obj) => Equals(this, obj as ProgressionContainer);
 
-        public bool Equals(ProgressionContainer x, ProgressionContainer y) => x.Equals(y);
-
-        public override int GetHashCode()
+        public int GetHashCode(ProgressionContainer obj)
         {
-            int hash = base.GetHashCode();
-            if (!string.IsNullOrEmpty(ContainerType))
-                hash ^= ContainerType.GetHashCode();
-            if (ContainerGroupIdentifiers != null)
-                hash ^= ContainerGroupIdentifiers.GetHashCode();
+            int hash = base.GetHashCode(obj);
+            if (!string.IsNullOrEmpty(obj.ContainerType))
+                hash ^= obj.ContainerType.GetHashCode();
+            if (obj.ContainerGroupIdentifiers != null)
+                hash ^= obj.ContainerGroupIdentifiers.GetHashCode();
 
             return hash;
         }
 
-        public int GetHashCode(ProgressionContainer obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 }

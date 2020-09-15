@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -7,7 +7,7 @@ using StellarMap.Core.Types;
 namespace StellarMap.Core.Bodies
 {
     [DataContract (Name = Constants.BodyTypes.DwarfPlanet)]
-    public class DwarfPlanet : StellarParentBody, IEquatable<DwarfPlanet>, IEqualityComparer<DwarfPlanet>
+    public class DwarfPlanet : StellarParentBody, IEqualityComparer<DwarfPlanet>
     {
         #region Constructors
         public DwarfPlanet()
@@ -42,25 +42,23 @@ namespace StellarMap.Core.Bodies
             Add<Satellite>(satellite, DwarfPlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
         #endregion
 
-        #region IEquatable
-        public bool Equals(DwarfPlanet other) => 
-            other!=null && base.Equals(other as StellarParentBody) && 
-            DwarfPlanetGroupIdentifiers.Equals(other.DwarfPlanetGroupIdentifiers);
+        #region IEqualityComparer
+        public bool Equals(DwarfPlanet x, DwarfPlanet y) =>
+            x!=null && y!=null && base.Equals(x, y) &&
+            x.DwarfPlanetGroupIdentifiers.Equals(y.DwarfPlanetGroupIdentifiers);
 
-        public override bool Equals(object obj) => Equals(obj as DwarfPlanet);
+        public override bool Equals(object obj) => Equals(this, obj as DwarfPlanet);
 
-        public bool Equals(DwarfPlanet x, DwarfPlanet y) => x.Equals(y);
-
-        public override int GetHashCode()
+        public int GetHashCode(DwarfPlanet obj)
         {
-            int hash = base.GetHashCode();
-            if (DwarfPlanetGroupIdentifiers != null)
-                hash ^= DwarfPlanetGroupIdentifiers.GetHashCode();
+            int hash = base.GetHashCode(obj);
+            if (obj.DwarfPlanetGroupIdentifiers != null)
+                hash ^= obj.DwarfPlanetGroupIdentifiers.GetHashCode();
 
             return hash;
         }
 
-        public int GetHashCode(DwarfPlanet obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 }

@@ -8,7 +8,7 @@ using StellarMap.Core.Bodies;
 namespace StellarMap.Progression
 {
     [DataContract (Name = ProgressionConstants.BodyType.ERBridge)]
-    public class ERBridge : StellarBody, IEquatable<ERBridge>, IEqualityComparer<ERBridge>
+    public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
     {
         #region Constructors
         public ERBridge()
@@ -98,31 +98,39 @@ namespace StellarMap.Progression
         }
         #endregion
 
-        #region IEquatable
-        public bool Equals(ERBridge other) => 
-            other!=null && base.Equals(other as StellarBody) && BridgeType.Equals(other.BridgeType) &&
-            Portals != null && other.Portals != null && Portals[0].Equals(other.Portals[0]) && 
-            Portals[1].Equals(other.Portals[1]);
-
-        public override bool Equals(object obj) => Equals(obj as ERBridge);
-
-        public bool Equals(ERBridge x, ERBridge y) => x.Equals(y);
-
-        public override int GetHashCode()
+        #region IEqualityComparer
+        public bool Equals(ERBridge x, ERBridge y)
         {
-            int hash = base.GetHashCode();
-            if (!string.IsNullOrEmpty(BridgeType))
-                hash ^= BridgeType.GetHashCode();
-            if (Portals != null)
+            bool bRet = true;
+
+            if (x is null || y is null)
+                bRet = false;
+            else if (!ReferenceEquals(x, y))
             {
-                foreach (Portal p in Portals)
+                bRet = base.Equals(x, y) && x.BridgeType == y.BridgeType && x.Portals != null && y.Portals != null &&
+                       x.Portals[0].Equals(y.Portals[0]) && x.Portals[1].Equals(y.Portals[1]);
+            }
+
+            return bRet;
+        }
+
+        public override bool Equals(object obj) => Equals(this, obj as ERBridge);
+
+        public int GetHashCode(ERBridge obj)
+        {
+            int hash = base.GetHashCode(obj);
+            if (!string.IsNullOrEmpty(obj.BridgeType))
+                hash ^= obj.BridgeType.GetHashCode();
+            if (obj.Portals != null)
+            {
+                foreach (Portal p in obj.Portals)
                     hash ^= p.GetHashCode();
             }
 
             return hash;
         }
 
-        public int GetHashCode(ERBridge obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
         #endregion
     }
 }

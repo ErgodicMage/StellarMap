@@ -14,7 +14,7 @@ using StellarMap.Progression.DefaultSettingMaps;
 namespace ProgressionTests
 {
     [TestClass]
-    public class EquatableTests
+    public class EqualityComparerTests
     {
         [TestMethod]
         [TestCategory(TestCategories.UnitTest)]

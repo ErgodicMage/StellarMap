@@ -7,7 +7,7 @@ using StellarMap.Core.Bodies;
 namespace StellarMap.Core.Types
 {
     [DataContract(Name = "BaseStellarMap")]
-    public class BaseStellarMap : IStellarMap, IEquatable<BaseStellarMap>, IEqualityComparer<BaseStellarMap>
+    public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     {
         #region Constuctors
         public BaseStellarMap()
@@ -319,54 +319,52 @@ namespace StellarMap.Core.Types
         }
         #endregion
 
-        #region IEquatable
-        public bool Equals(BaseStellarMap other)
+        #region IEqualityComparer
+        public bool Equals(BaseStellarMap x, BaseStellarMap y)
         {
             bool bRet = true;
 
-            if (other == null)
+            if (x is null || y is null)
                 bRet = false;
-            else if (!ReferenceEquals(this, other))
+            else if (!ReferenceEquals(x, y))
             {
-                bRet = MetaData != null &&
-                       MetaData.Equals(other.MetaData) &&
-                       IsEqual<Planet>(this.Planets, other.Planets) &&
-                       IsEqual<Star>(this.Stars, other.Stars) &&
-                       IsEqual<DwarfPlanet>(this.DwarfPlanets, other.DwarfPlanets) &&
-                       IsEqual<Satellite>(this.Satellites, other.Satellites) &&
-                       IsEqual<Asteroid>(this.Asteroids, other.Asteroids) &&
-                       IsEqual<Comet>(this.Comets, other.Comets);
+                bRet = x.MetaData != null &&
+                       x.MetaData.Equals(y.MetaData) &&
+                       IsEqual<Planet>(x.Planets, y.Planets) &&
+                       IsEqual<Star>(x.Stars, y.Stars) &&
+                       IsEqual<DwarfPlanet>(x.DwarfPlanets, y.DwarfPlanets) &&
+                       IsEqual<Satellite>(x.Satellites, y.Satellites) &&
+                       IsEqual<Asteroid>(x.Asteroids, y.Asteroids) &&
+                       IsEqual<Comet>(x.Comets, y.Comets);
             }
 
             return bRet;
         }
 
-        public override bool Equals(object obj) => Equals(obj as BaseStellarMap);
+        public override bool Equals(object obj) => Equals(this, obj as BaseStellarMap);
 
-        public bool Equals(BaseStellarMap x, BaseStellarMap y) => x.Equals(y);
-
-        public override int GetHashCode()
+        public int GetHashCode(BaseStellarMap obj)
         {
             int hash = 1345;
-            if (MetaData != null)
-                hash ^= MetaData.GetHashCode();
-            if (Stars != null)
-                hash ^= Stars.GetHashCode();
-            if (Planets != null)
-                hash ^= Planets.GetHashCode();
-            if (DwarfPlanets != null)
-                hash ^= DwarfPlanets.GetHashCode();                
-            if (Satellites != null)
-                hash ^= Satellites.GetHashCode();
-            if (Asteroids != null)
-                hash ^= Asteroids.GetHashCode();
-            if (Comets != null)
-                hash ^= Comets.GetHashCode();
+            if (obj.MetaData != null)
+                hash ^= obj.MetaData.GetHashCode();
+            if (obj.Stars != null)
+                hash ^= obj.Stars.GetHashCode();
+            if (obj.Planets != null)
+                hash ^= obj.Planets.GetHashCode();
+            if (obj.DwarfPlanets != null)
+                hash ^= obj.DwarfPlanets.GetHashCode();
+            if (obj.Satellites != null)
+                hash ^= obj.Satellites.GetHashCode();
+            if (obj.Asteroids != null)
+                hash ^= obj.Asteroids.GetHashCode();
+            if (obj.Comets != null)
+                hash ^= obj.Comets.GetHashCode();
 
             return hash;
         }
 
-        public int GetHashCode(BaseStellarMap obj) => obj.GetHashCode();
+        public override int GetHashCode() => GetHashCode(this);
 
         protected static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
         {
