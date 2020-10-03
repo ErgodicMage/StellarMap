@@ -25,6 +25,13 @@ namespace StellarMap.Traveller
             public const string World = "World";
         }
 
+        public static class NamedIdentifiers
+        {
+            public static string World = "World";
+            public static string Subsector = "Subsector";
+            public static string Sector = "Sector";
+        }
+
         public static class PropertyNames
         {
             public const string UWP = "UWP";

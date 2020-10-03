@@ -33,10 +33,17 @@ namespace StellarMap.Traveller
 
         [DataMember(Order = 32)]
         public GroupNamedIdentifiers WorldGroupIdentifiers { get; set; }
+        #endregion
+
+        #region IEqualityComparer
 
         public bool Equals(World x, World y) => WorldEqualityComparer.Comparer.Equals(x, y);
 
+        public override bool Equals(object obj) => WorldEqualityComparer.Comparer.Equals(this, obj as World);
+
         public int GetHashCode(World obj) => WorldEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => WorldEqualityComparer.Comparer.GetHashCode(this);
         #endregion
     }
 
