@@ -39,7 +39,9 @@ namespace StellarMap.Traveller
         #region Add Functions
         public void Add(World world) =>
             Add<World>(world, SubsectorGroupIdentifiers, TravellerConstants.NamedIdentifiers.World);
+        #endregion
 
+        #region IEqualityComparer
         public bool Equals(Subsector x, Subsector y) => SubsectorEqualityComparer.Comparer.Equals(x, y);
 
         public override bool Equals(object obj) => SubsectorEqualityComparer.Comparer.Equals(this, obj as Subsector);
