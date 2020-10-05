@@ -17,26 +17,88 @@ namespace StellarMap.Traveller
 
         public World(string name, Hex hex, string uwp = null) : base(name, TravellerConstants.BodyType.World)
         {
-            HexValue = hex;
+            HexNumber = hex;
 
             WorldGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-World");
-            if (uwp is null)
-                BasicProperties.Add(TravellerConstants.PropertyNames.UWP, string.Empty);
-            else
-                BasicProperties.Add(TravellerConstants.PropertyNames.UWP, uwp);
+            SetWorldProperty(TravellerConstants.PropertyNames.UWP, uwp);
         }
         #endregion
 
         #region Public Properties
         [DataMember(Order = 31)]
-        public Hex HexValue { get; set; }
+        public Hex HexNumber { get; set; }
+
+        [IgnoreDataMember]
+        public string UWP 
+            { 
+            get => GetWorldValue(TravellerConstants.PropertyNames.UWP); 
+            set => SetWorldProperty(TravellerConstants.PropertyNames.UWP, value); 
+        }
+
+        [IgnoreDataMember]
+        public string Bases
+        { 
+            get => GetWorldValue(TravellerConstants.PropertyNames.Bases); 
+            set => SetWorldProperty(TravellerConstants.PropertyNames.Bases, value); 
+        }
+
+        [IgnoreDataMember]
+        public string Codes
+        { 
+            get => GetWorldValue(TravellerConstants.PropertyNames.Codes); 
+            set => SetWorldProperty(TravellerConstants.PropertyNames.Codes, value); 
+        }
+
+        [IgnoreDataMember]
+        public string Zone
+        { 
+            get => GetWorldValue(TravellerConstants.PropertyNames.Zone); 
+            set => SetWorldProperty(TravellerConstants.PropertyNames.Zone, value); 
+        }
+
+        [IgnoreDataMember]
+        public string PBG
+        { 
+            get => GetWorldValue(TravellerConstants.PropertyNames.PBG); 
+            set => SetWorldProperty(TravellerConstants.PropertyNames.PBG, value); 
+        }
+
+        [IgnoreDataMember]
+        public string Allegiance
+        { 
+            get => GetWorldValue(TravellerConstants.PropertyNames.Allegiance); 
+            set => SetWorldProperty(TravellerConstants.PropertyNames.Allegiance, value); 
+        }
+
+        [IgnoreDataMember]
+        public string StellarData
+        {
+            get => GetWorldValue(TravellerConstants.PropertyNames.StellarData);
+            set => SetWorldProperty(TravellerConstants.PropertyNames.StellarData, value);
+        }
 
         [DataMember(Order = 32)]
         public GroupNamedIdentifiers WorldGroupIdentifiers { get; set; }
         #endregion
 
-        #region IEqualityComparer
+        #region Set/Get World Properties
+        public void SetWorldProperty(string propertyName, string propertyValue)
+        {
+            if (BasicProperties.ContainsKey(propertyName))
+                BasicProperties[propertyName] = propertyValue;
+            else
+                BasicProperties.Add(propertyName, propertyValue);
+        }
 
+        public string GetWorldValue(string propertyName)
+        {
+            if (!BasicProperties.ContainsKey(propertyName))
+                return string.Empty;
+            return BasicProperties[propertyName];
+        }
+        #endregion
+
+        #region IEqualityComparer
         public bool Equals(World x, World y) => WorldEqualityComparer.Comparer.Equals(x, y);
 
         public override bool Equals(object obj) => WorldEqualityComparer.Comparer.Equals(this, obj as World);
@@ -51,13 +113,13 @@ namespace StellarMap.Traveller
     {
         #region IEqualityComparer
         public bool Equals(World x, World y) =>
-                    StellarBodyEqualityComparer.Comparer.Equals(x, y) && x.HexValue == y.HexValue &&
+                    StellarBodyEqualityComparer.Comparer.Equals(x, y) && x.HexNumber == y.HexNumber &&
                     x.WorldGroupIdentifiers.Equals(y.WorldGroupIdentifiers);
 
         public int GetHashCode(World obj)
         {
             int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
-            hash ^= obj.HexValue.GetHashCode();
+            hash ^= obj.HexNumber.GetHashCode();
             if (obj.WorldGroupIdentifiers != null)
                 hash ^= obj.WorldGroupIdentifiers.GetHashCode();
 
