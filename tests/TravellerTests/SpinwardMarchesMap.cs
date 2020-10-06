@@ -7,6 +7,7 @@ using StellarMap.Core.Bodies;
 using StellarMap.Core.Bodies;
 
 using StellarMap.Traveller;
+using StellarMap.Traveller.Parsers;
 
 namespace TravellerTests
 {
@@ -26,29 +27,31 @@ namespace TravellerTests
 
         public World CreateAramisWorld()
         {
-            Hex hex = new Hex(25, 40);
-            World aramis = new World("Aramis", hex, "B659772-6");
-            aramis.Bases = "A";
-            aramis.Codes = "He Ni Cp";
-            aramis.Zone = string.Empty;
-            aramis.PBG = "710";
-            aramis.Allegiance = "Im";
-            aramis.StellarData = "M2 V";
+            WorldSECParser parser = new WorldSECParser();
+            World aramis = parser.ParseWorld(Map, "Aramis        3110 A5A0556-B  A He Ni Cp           710 Im M2 V           ");
 
-            Map.Add<World>(aramis);
+            //Map.Add<World>(aramis);
 
             return aramis;
         }
 
         public Subsector CreateAramisSubsector()
         {
-            Subsector aramissubsector = new Subsector("Aramis");
-            Map.Add<Subsector>(aramissubsector);
+            //Subsector aramissubsector = new Subsector("Aramis");
+            //Map.Add<Subsector>(aramissubsector);
 
-            World aramisworld = CreateAramisWorld();
-            aramissubsector.Add(aramisworld);
+            //World aramisworld = CreateAramisWorld();
+            //aramissubsector.Add(aramisworld);
 
-            return aramissubsector;
+            //return aramissubsector;
+
+            string text = TestingUtilities.ReadResource("Files", "AramisSubsector.sec");
+            StringReader reader = new StringReader(text);
+
+            SubsectorSECFileParser parser = new SubsectorSECFileParser();
+            Subsector aramis = parser.ParseSubsector(Map, "Aramis", reader);
+
+            return aramis;
         }
     }
 }

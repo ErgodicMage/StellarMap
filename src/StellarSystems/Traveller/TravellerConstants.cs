@@ -36,7 +36,7 @@ namespace StellarMap.Traveller
         public static class PropertyNames
         {
             public const string UWP = "UWP";
-            public const string Bases = "Bases";
+            public const string Base = "Base";
             public const string Codes = "Codes";
             public const string Zone = "Zone";
             public const string PBG = "PBG";

@@ -36,10 +36,10 @@ namespace StellarMap.Traveller
         }
 
         [IgnoreDataMember]
-        public string Bases
+        public string Base
         { 
-            get => GetWorldValue(TravellerConstants.PropertyNames.Bases); 
-            set => SetWorldProperty(TravellerConstants.PropertyNames.Bases, value); 
+            get => GetWorldValue(TravellerConstants.PropertyNames.Base); 
+            set => SetWorldProperty(TravellerConstants.PropertyNames.Base, value); 
         }
 
         [IgnoreDataMember]
