@@ -1,0 +1,44 @@
+﻿ 1-14: Name
+15-18: HexNbr
+20-28: UWP
+   31: Bases
+33-47: Codes & Comments
+   49: Zone
+52-54: PBG
+56-57: Allegiance
+59-74: Stellar Data
+
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+
+Kinorb        2512 C549433-9    Ni                 502 Im F0 V K9 V      
+Gileden       2514 C583103-6    Lo                 203 Im M1 V           
+Pannet        2519 E9C5677-9    Fl Ni              224 Im K5 V           
+Garrincski    2520 B632520-7  S Ni Po              410 Im M0 V M7 V      
+Macene        2612 B000453-E  N As Ni Va           901 Im G8 V M8 V      
+Fulacin       2613 A674210-D    Lo An              810 Im G3 V           
+Natoko        2620 C8879AB-9    Hi Ga An Pr Pz  A  204 Im F4 V           
+Risek         2712 A425579-A  N Ni                 401 Im M2 V M3 V      
+Porozlo       2715 A867A74-B    Hi Ga              201 Im M1 V M9 V      
+Rhylanor      2716 A434934-F  A Hi Cp Llel4        810 Im M2 V           
+Loneseda      2720 C86A215-7    Lo Wa              705 Im K9 V           
+Valhalla      2811 E565432-5    Ni Pa              622 Im G4 V           
+Zivije        2812 C6B199C-B    Fl He Hi In Pz  A  421 Im G6 V           
+Jae Tellona   2814 A560565-8  N De Ni Pr Mr        913 Im F9 V           
+Gerome        2818 X573000-0    Ba Fo           R  001 Im K2 V           
+Henoz         2912 A545543-B    Ag Ni              824 Im F3 V           
+Celepina      2913 B434456-9  A Ni                 201 Im M2 V           
+Gitosy        2918 B000676-9    As Na Ni Va        610 Im G6 V M3 V      
+Belizo        3015 B895646-5    Ag Ni Asla3        923 Im K1 V           
+Kegena        3016 E869569-3    Ni Pr Da O:2716 A  224 Im F6 V           
+Heroni        3017 E7A0614-8    He Ni              820 Im G5 V           
+457-973       3019 X572776-5    He Pi Fo (minor R  334 Im G9 V           
+Somem         3020 C301340-B    Ic Lo Va           201 Im M2 V M7 V      
+Vinorian      3111 B879610-9    Ni                 610 Im M3 V M4 V      
+Nutema        3112 B864310-8  N Lo                 822 Im M3 V           
+Huderu        3114 X575000-0    Ba Fo           R  020 Im M0 V           
+Cipatwe       3118 B55879A-6    Ag                 623 Im M1 V           
+Vanejen       3119 C686854-5    Ga Ri Pa Ph Chi    520 Im G1 V M0 V      
+Margesi       3212 A576257-C  A Lo                 920 Im F0 V           
+Bevey         3216 D4209CC-A  S De He Hi In Na  A  224 Im F4 V           
+Tacaxeb       3218 C430411-B    De Ni Po           801 Im A5 V M2 V      
+Powaza        3220 C787566-5    Ag Ni Ga Pr O:3    332 Im K4 V M2 V      

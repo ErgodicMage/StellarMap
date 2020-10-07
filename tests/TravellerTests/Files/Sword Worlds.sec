@@ -1,0 +1,40 @@
+﻿ 1-14: Name
+15-18: HexNbr
+20-28: UWP
+   31: Bases
+33-47: Codes & Comments
+   49: Zone
+52-54: PBG
+56-57: Allegiance
+59-74: Stellar Data
+
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+
+Hrunting      0921 B563747-9  F Ri                 313 Sw M2 V           
+Tizon         0922 B586887-A  F Ri Pa Ph           323 Sw K2 IV M3 V     
+Narsil        0927 B574A55-A  F Hi In              224 Sw G6 IV M0 V     
+Flammarion    0930 A623514-B  B Ni Po              710 Im F8 V           
+Colada        1022 B564685-B  F Ag Ni Ri           211 Sw K2 V M8 V      
+Anduril       1026 B985855-B  F Ri Pa Ph           222 Sw F2 V           
+Mjolnir       1121 B530544-A  F De Ni Po           522 Sw A5 V G0 V      
+Joyeuse       1123 B564778-A  F Ag Ri Pz        A  401 Sw M3 V M9 V      
+Orcrist       1126 B8A6733-A  F Fl Lk              401 Sw K7 V M7 V      
+Enos          1130 E35059B-4  M De Ni Po Da     A  710 Sw M1 V           
+Gungnir       1221 B544779-8  M Ag Pi              432 Sw G3 IV M4 V     
+Gram          1223 A895957-C  F Hi In Cx           603 Sw F2 V M2 V      
+Excalibur     1225 B424755-A  F Pi                 402 Sw K5 V           
+Tyrfing       1324 B637735-A  F                    701 Sw M2 V           
+Sacnoth       1325 A775956-C  F Hi In              801 Sw F9 V M3 V      
+Caladbolg     1329 B565776-A  S Ag Ri              710 Im F7 V M0 V M4 V 
+Beater        1424 B685686-A  F Ag Ni Ga Ri        610 Sw K4 V           
+Gunn          1429 E544110-8    Lo Da           A  602 Im M3 V           
+Caliburn      1430 E000514-A    As Ni Va           914 Im M2 V           
+Dyrnwyn       1522 B958812-A  F Pa Ph              201 Sw K4 V M8 V      
+Durendal      1523 B687734-B  F Ag Ga Ri           714 Sw M1 V           
+Hofud         1524 B666853-A  F Ga Ri Pa Ph        601 Sw G6 V M9 V      
+Sting         1525 B645796-A  F Ag Pi              702 Sw M0 V           
+Biter         1526 B354623-A  F Ag Ni              301 Sw G7 V M1 V      
+Steel         1529 E655000-0    Ba Ga Re           024 Sw K8 V           
+Iron          1626 E529000-0    Ba Re              014 Sw F0 V           
+Bronze        1627 E201000-0    Ba Ic Va Re        010 Sw M3 V           
+Mithril       1628 E568000-0    Ba Re              001 Sw F4 V           

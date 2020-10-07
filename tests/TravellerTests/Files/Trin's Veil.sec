@@ -1,0 +1,44 @@
+﻿ 1-14: Name
+15-18: HexNbr
+20-28: UWP
+   31: Bases
+33-47: Codes & Comments
+   49: Zone
+52-54: PBG
+56-57: Allegiance
+59-74: Stellar Data
+
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+
+Burtson       2534 C562667-8    Ni Ri O:2733       402 Im G4 V           
+Squanine      2536 A300550-B    Ni Va              303 Im F4 V M2 V      
+Dobham        2537 A550457-A  S De Ni Po           523 Im G0 V           
+Pyramus       2538 E566335-2    Lo                 214 Im K6 V           
+Thisbe        2539 E4305AD-6    De Ni Po Da     A  322 Im F8 V           
+Aramis        2540 B659772-6                       924 Im K5 V           
+Robin         2637 C00059C-C    As Ni Va Da     A  202 Im M2 V           
+D'Mara        2638 E75A798-5    Wa                 910 Im F4 V           
+Keltchner     2639 C525567-9    Ni O:Troj-2402     602 Im K6 V           
+Tussinian     2731 B678324-7    Lo                 520 Im K0 V           
+Edenelt       2733 A5638BD-B    Ri Ph Pz        A  934 Im G7 V           
+Conway        2735 D894586-7  S Ag Ni              311 Im F0 V M0 V      
+Dodds         2739 C5439DF-7  S Hi In Po Pz     A  423 Im G7 V           
+Leander       2832 E695244-5    Lo                 801 Im K5 V M1 V      
+Pepernium     2833 D567530-3    Ag Ni Pr           503 Im M1 V           
+Traltha       2834 B590630-6    De He Ni An        410 Im F5 V           
+Farquahar     2839 C625543-7  S Ni                 201 Im M3 V           
+Raydrad       2933 E99467A-6    Ag Ni              303 Im M7 III M2 V    
+Zyra          2934 B555448-7    Ni Pa              601 Im K8 V           
+Murchison     2935 B544433-6  N Ni Pa              305 Im M5 III M3 V    
+Hammermium    2936 A5525AB-B    Ni Po Da        A  535 Im M3 V           
+Thornnastor   2940 D534443-8  S Ni                 804 Im M1 V           
+Katarulu      3032 B552665-B  B Ni Po Mr           201 Im M0 V M9 V      
+Prilissa      3035 B985588-6    Ag Ni Pr           510 Im K4 V           
+Tee-Tee-Tee   3038 C310530-9    Ni                 902 Im M2 V           
+Youghal       3039 AA95345-B    Lo                 201 Im K3 V           
+Tenelphi      3040 D76A579-9  S Ni Wa Pr           901 Im F4 V M0 V      
+Zephyr        3138 C89556A-5    Ag Ni Da O:3235 A  404 Im K5 V           
+Chamois       3139 B544642-5  S Ag Ni              723 Im F9 V           
+Ramiva        3233 B3107A7-8    Na Pi              913 Im M3 V           
+Trin          3235 A894A96-F  A Hi In Cp           101 Im G0 V           
+Hazel         3236 C645747-5    Ag Pi Pz        A  110 Im F1 V M3 V      

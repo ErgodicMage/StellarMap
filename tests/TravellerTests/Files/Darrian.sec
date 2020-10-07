@@ -1,0 +1,41 @@
+﻿ 1-14: Name
+15-18: HexNbr
+20-28: UWP
+   31: Bases
+33-47: Codes & Comments
+   49: Zone
+52-54: PBG
+56-57: Allegiance
+59-74: Stellar Data
+
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+
+Junction      0122 D550441-4    De Ni Po           210 Na M2 V M3 V      
+Uniqua        0129 E62556B-7    Ni O:0130          210 Na K9 V M9 V      
+Garoo         0130 A2008CB-A    Na Va Ph Pi Pz  A  210 Na M1 V M5 V      
+Stern-Stern   0223 B421558-B    He Ni Po DaryW     701 Da M0 V M3 V      
+886-945       0230 E833000-0    Ba Po              004 Na F8 V           
+Nonym         0321 C433898-A  M Na Po Ph           623 Na G0 V           
+Laberv        0325 B554443-7  M Ni Pa DaryW        834 Da G0 V           
+Ektron        0326 C432652-9    Na Ni Po Asla1     423 Da M1 V           
+Zamine        0421 C897977-A    Hi In Dary9        223 Da M3 V           
+Engrange      0425 C554769-8    Ag Asla1 Dary8     701 Da M1 V M3 V      
+Ilium         0426 B544831-9  F Pa Ph Pi DaryW     401 Da G3 V M8 V      
+Roget         0427 B566777-9    Ag Ri Asla6 Dar    420 Da F8 V M3 V      
+Kardin        0429 E553123-6    Lo Po An           410 Na F7 V           
+Bularia       0430 C774622-5    Ag Ni              310 Cs K5 V M3 V      
+Rorre         0526 D765657-3    Ag Ni Ga Ri Dar    103 Da F4 V M2 V      
+Mire          0527 A665A95-C  F Hi Ga Cx Dary8     110 Da K6 V           
+Condaria      0528 E54779B-5    Ag Pi Pz        A  901 Na K3 V M0 V      
+Dorannia      0530 E42158A-8    He Ni Po           510 Na K4 V           
+Terant 340    0622 D5405A7-9    De He Ni Po Dar    523 Da G0 V M5 V      
+Jacent        0624 A433744-D    Na Po DaryW        710 Da M0 V           
+494-908       0625 X893000-0    Ba Fo Re        R  010 Da M1 V           
+Darrian       0627 A463955-G    Hi An Pr (Darye    225 Da G1 V D         
+Torment       0721 X433268-6    Lo Po Fo DaryW  R  820 Da M0 V           
+Trifuge       0723 C546556-9    Ag Ni (Dphone)1    210 Da F0 V           
+Nosea         0724 B4326BB-C    Na Ni Po Da Dar A  620 Da M2 V           
+Spume         0727 C540200-A  M De He Lo Po Dar    434 Da M2 V           
+Ator          0729 D426258-7    Lo An              821 Na F7 V M2 V      
+Cunnonic      0822 E65767A-3    Ag Ni Ga Asla0     502 Da K0 V           
+Debarre       0830 B854123-9    Lo                 822 Cs M2 V           

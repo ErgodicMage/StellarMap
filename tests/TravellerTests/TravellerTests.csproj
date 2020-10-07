@@ -7,11 +7,41 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Files\AramisSubsector.sec" />
+    <None Remove="Files\Aramis.sec" />
+    <None Remove="Files\Cronor.sec" />
+    <None Remove="Files\Darrian.sec" />
+    <None Remove="Files\District 268.sec" />
+    <None Remove="Files\Five Sisters.sec" />
+    <None Remove="Files\Glisten.sec" />
+    <None Remove="Files\Jewell.sec" />
+    <None Remove="Files\Lanth.sec" />
+    <None Remove="Files\Lunion.sec" />
+    <None Remove="Files\Mora.sec" />
+    <None Remove="Files\Querion.sec" />
+    <None Remove="Files\Regina.sec" />
+    <None Remove="Files\Rhylanor.sec" />
+    <None Remove="Files\Sword Worlds.sec" />
+    <None Remove="Files\Trin%27s Veil.sec" />
+    <None Remove="Files\Vilis.sec" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Files\AramisSubsector.sec" />
+    <EmbeddedResource Include="Files\Aramis.sec" />
+    <EmbeddedResource Include="Files\Cronor.sec" />
+    <EmbeddedResource Include="Files\Darrian.sec" />
+    <EmbeddedResource Include="Files\District 268.sec" />
+    <EmbeddedResource Include="Files\Five Sisters.sec" />
+    <EmbeddedResource Include="Files\Glisten.sec" />
+    <EmbeddedResource Include="Files\Jewell.sec" />
+    <EmbeddedResource Include="Files\Lanth.sec" />
+    <EmbeddedResource Include="Files\Lunion.sec" />
+    <EmbeddedResource Include="Files\Mora.sec" />
+    <EmbeddedResource Include="Files\Querion.sec" />
+    <EmbeddedResource Include="Files\Regina.sec" />
+    <EmbeddedResource Include="Files\Rhylanor.sec" />
+    <EmbeddedResource Include="Files\Sword Worlds.sec" />
+    <EmbeddedResource Include="Files\Trin's Veil.sec" />
+    <EmbeddedResource Include="Files\Vilis.sec" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,38 @@
+﻿ 1-14: Name
+15-18: HexNbr
+20-28: UWP
+   31: Bases
+33-47: Codes & Comments
+   49: Zone
+52-54: PBG
+56-57: Allegiance
+59-74: Stellar Data
+
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+
+Caloran       0911 C796746-5    Ag Pi              510 Na G2 V M4 V      
+899-076       0912 E201300-8    Ic Lo Va           520 Na F7 V           
+Quare         0915 B200545-9    Ni Va              204 Cs M3 V           
+Zeta 2        0919 X6B0000-0    Ba He Fo (Viji) R  020 Na M0 V           
+Arden         1011 B5549CB-9    Hi Pz           A  110 Na G4 V M5 V      
+Choleosti     1018 C200100-9    Lo Va              101 Im K9 V M4 V      
+Margesi       1020 C575677-6    Ag Ni Da        A  910 Im K4 V M7 V      
+Frenzie       1116 A200436-A  N Ni Va Cp           110 Im M3 III M2 V    
+Garda-Vilis   1118 B978868-A  S Pa Ph Pi O:1119    512 Im M3 V           
+Vilis         1119 A593943-A    Hi In              820 Im G5 V M8 V      
+Digitis       1212 E53668A-6    Ni                 920 Na M3 V           
+Edinina       1213 E400220-7    Lo Va Da        A  401 Cs K6 V M0 V      
+728-907       1214 E955000-0    Ba                 010 Im F1 V M2 V      
+Stellatio     1216 D5A4420-8    Fl Ni              210 Im M3 V           
+Arkadia       1217 E546845-6    Pa Ph Pi           402 Im G8 V           
+Tremous Dex   1311 B511411-C    Ic Ni              201 Na K8 V M5 V      
+Mirriam       1315 E572300-8  N He Lo              110 Im F5 V           
+Saurus        1320 D888588-7    Ag Ni Pr (Sauri    820 Im G8 V M1 V      
+Rangent       1411 E67A612-7    Ni Wa              503 Na K8 V           
+Denotam       1413 B739573-A  N Ni                 324 Im M2 V           
+Ficant        1417 E567353-5    Lo                 910 Im M0 V M1 V      
+Tionale       1511 C674321-8    Lo Da (minor)   A  910 Cs M2 V M5 V      
+Calit         1515 C434887-7    Ph                 501 Im K9 V M1 V      
+Asgard        1519 X5437C7-5    Po Pi Fo        R  520 Im F5 V M1 V      
+Tavonni       1520 E567000-0    Ba                 034 Im G6 V           
+Phlume        1611 C887624-8    Ag Ni Ga Ri        710 Im G5 V M8 V      

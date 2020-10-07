@@ -35,5 +35,15 @@ namespace TravellerTests
             SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
             Subsector aramis = spinwardmarches.CreateAramisSubsector();
         }
+
+        [TestMethod]
+        [TestCategory(TestCategories.UnitTest)]
+        public void CreateSpinwardMarchesTest()
+        {
+            TravellerMap map = new TravellerMap("Spinward Marches");
+
+            SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
+            Sector sector = spinwardmarches.CreateSector();
+        }
     }
 }
