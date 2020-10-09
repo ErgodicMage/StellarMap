@@ -1,13 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using StellarMap.Core.Bodies;
-using StellarMap.Core.Types;
-using StellarMap.Math.Types;
 
 using StellarMap.Traveller;
 

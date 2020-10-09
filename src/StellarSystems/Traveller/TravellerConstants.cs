@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StellarMap.Traveller
+﻿namespace StellarMap.Traveller
 {
     public static class TravellerConstants
     {

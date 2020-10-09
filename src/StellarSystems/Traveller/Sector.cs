@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 using StellarMap.Core.Bodies;
@@ -18,23 +17,37 @@ namespace StellarMap.Traveller
         public Sector(string name) : base(name, TravellerConstants.BodyType.Sector)
         {
             SectorGroupIdentifiers = new GroupNamedIdentifiers("GroupIdentifiers-TravellerSector");
-
+            string[] letters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P" };
+            foreach (string letter in letters)
+                BasicProperties.Add(letter, string.Empty);
         }
         #endregion
 
         #region Public Properties
-        [DataMember(Order = 12)]
+        [DataMember(Order = 11)]
         public GroupNamedIdentifiers SectorGroupIdentifiers { get; set; }
         #endregion
 
         #region Get Functions
         public virtual Subsector GetSubsector(string name) =>
             Get<Subsector>(name, SectorGroupIdentifiers, TravellerConstants.NamedIdentifiers.Subsector);
+
+        public Subsector GetSubsectorByLetter(string letter)
+        {
+            string name = Properties["Basic", letter];
+            return string.IsNullOrEmpty(name) ? null : GetSubsector(name);
+        }
         #endregion
 
         #region Add Functions
         public void Add(Subsector subsector) =>
             Add<Subsector>(subsector, SectorGroupIdentifiers, TravellerConstants.NamedIdentifiers.Subsector);
+
+        public void Add(string letter, Subsector subsector)
+        {
+            Add(subsector);
+            Properties["Basic", letter] = subsector.Name;
+        }
         #endregion
 
         #region IEqualityComparer

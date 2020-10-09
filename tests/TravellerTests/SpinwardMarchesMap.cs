@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-using StellarMap.Core.Bodies;
-using StellarMap.Core.Bodies;
+﻿using System.IO;
 
 using StellarMap.Traveller;
 using StellarMap.Traveller.Parsers;
@@ -31,52 +25,52 @@ namespace TravellerTests
             Map.Add<Sector>(sector);
 
             Subsector sub = CreateSubsector("Cronor");
-            sector.Add(sub);
+            sector.Add("A", sub);
 
             sub = CreateSubsector("Jewell");
-            sector.Add(sub);
+            sector.Add("B", sub);
 
             sub = CreateSubsector("Regina");
-            sector.Add(sub);
+            sector.Add("C", sub);
 
             sub = CreateSubsector("Aramis");
-            sector.Add(sub);
+            sector.Add("D", sub);
 
             sub = CreateSubsector("Querion");
-            sector.Add(sub);
+            sector.Add("E", sub);
 
             sub = CreateSubsector("Vilis");
-            sector.Add(sub);
+            sector.Add("F", sub);
 
             sub = CreateSubsector("Lanth");
-            sector.Add(sub);
+            sector.Add("G", sub);
 
             sub = CreateSubsector("Rhylanor");
-            sector.Add(sub);
+            sector.Add("H", sub);
 
             sub = CreateSubsector("Darrian");
-            sector.Add(sub);
+            sector.Add("I", sub);
 
             sub = CreateSubsector("Sword Worlds");
-            sector.Add(sub);
+            sector.Add("J", sub);
 
             sub = CreateSubsector("Lunion");
-            sector.Add(sub);
+            sector.Add("K", sub);
 
             sub = CreateSubsector("Mora");
-            sector.Add(sub);
+            sector.Add("L", sub);
 
             sub = CreateSubsector("Five Sisters");
-            sector.Add(sub);
+            sector.Add("M", sub);
 
             sub = CreateSubsector("District 268");
-            sector.Add(sub);
+            sector.Add("N", sub);
 
             sub = CreateSubsector("Glisten");
-            sector.Add(sub);
+            sector.Add("O", sub);
 
             sub = CreateSubsector("Trin's Veil");
-            sector.Add(sub);
+            sector.Add("P", sub);
 
             return sector;
         }
