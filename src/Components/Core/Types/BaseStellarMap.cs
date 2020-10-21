@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 using StellarMap.Core.Bodies;
 
@@ -120,7 +121,48 @@ namespace StellarMap.Core.Types
         #region Public Methods
         public virtual string GenerateIdentifier<T>() where T : IStellarBody
         {
-            return Guid.NewGuid().ToString();
+            Type dt = typeof(T);
+            int count = 0;
+            string prefix = string.Empty;
+
+            switch (dt.Name)
+            {
+                case Constants.BodyTypes.Planet:
+                    prefix = Constants.BodyTypes.Planet;
+                    if (Planets != null)
+                        count = Planets.Count;
+                    break;
+                case Constants.BodyTypes.Star:
+                    prefix = Constants.BodyTypes.Star;
+                    if (Stars != null)
+                        count = Stars.Count;
+                    break;
+                case Constants.BodyTypes.Satellite:
+                    prefix = Constants.BodyTypes.Satellite;
+                    if (Satellites != null)
+                        count = Satellites.Count;
+                    break;
+                case Constants.BodyTypes.Asteroid:
+                    prefix = Constants.BodyTypes.Asteroid;
+                    if (Asteroids != null)
+                        count = Asteroids.Count;
+                    break;
+                case Constants.BodyTypes.Comet:
+                    prefix = Constants.BodyTypes.Comet;
+                    if (Comets != null)
+                        count = Comets.Count;
+                    break;
+            }
+
+            count++;
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append(prefix);
+            sb.Append("-");
+            sb.Append(count.ToString("D5"));
+            string id = sb.ToString();
+
+            return id;
         }
 
         public virtual IList<string> GetBodyTypes()
@@ -140,64 +182,54 @@ namespace StellarMap.Core.Types
 
         public virtual object GetBody(string bodytype)
         {
-            object body = null;
-
-            switch (bodytype)
+            var body = bodytype switch
             {
-                case Constants.BodyTypes.Star:
-                    body = Stars;
-                    break;
-                case Constants.BodyTypes.Planet:
-                    body = Planets;
-                    break;
-                case Constants.BodyTypes.DwarfPlanet:
-                    body = DwarfPlanets;
-                    break;                    
-                case Constants.BodyTypes.Satellite:
-                    body = Satellites;
-                    break;
-                case Constants.BodyTypes.Asteroid:
-                    body = Asteroids;
-                    break;
-                case Constants.BodyTypes.Comet:
-                    body = Comets;
-                    break;
-            }
+                Constants.BodyTypes.Star => Stars as object,
+                Constants.BodyTypes.Planet => Planets as object,
+                Constants.BodyTypes.DwarfPlanet => DwarfPlanets as object,
+                Constants.BodyTypes.Satellite => Satellites as object,
+                Constants.BodyTypes.Asteroid => Asteroids as object,
+                Constants.BodyTypes.Comet => Comets as object,
+                _ => null
+            };
 
             return body;
         }
 
         public virtual Type GetTypeOfBody(string bodytype)
         {
-            Type t = null;
-
-            switch (bodytype)
+            var t = bodytype switch
             {
-                case Constants.BodyTypes.Star:
-                    t = typeof(Dictionary<string, Star>);
-                    break;
-                case Constants.BodyTypes.Planet:
-                    t = typeof(Dictionary<string, Planet>);
-                    break;
-                case Constants.BodyTypes.DwarfPlanet:
-                    t = typeof(Dictionary<string, DwarfPlanet>);
-                    break;                    
-                case Constants.BodyTypes.Satellite:
-                    t = typeof(Dictionary<string, Satellite>);
-                    break;
-                case Constants.BodyTypes.Asteroid:
-                    t = typeof(Dictionary<string, Asteroid>);
-                    break;
-                case Constants.BodyTypes.Comet:
-                    t = typeof(Dictionary<string, Comet>);
-                    break;
-            }
+                Constants.BodyTypes.Star => typeof(Dictionary<string, Star>),
+                Constants.BodyTypes.Planet => typeof(Dictionary<string, Planet>),
+                Constants.BodyTypes.DwarfPlanet => typeof(Dictionary<string, DwarfPlanet>),
+                Constants.BodyTypes.Satellite => typeof(Dictionary<string, Satellite>),
+                Constants.BodyTypes.Asteroid => typeof(Dictionary<string, Asteroid>),
+                Constants.BodyTypes.Comet => typeof(Dictionary<string, Comet>),
+                _ => null
+            };
 
             return t;
         }
 
         public virtual bool SetBody(string bodytype, object data)
         {
+#pragma warning disable S125
+            // Note this is some whacky syntax, not sure about realing using it since it's so obstuse
+            // decided not to use it.
+            //var bret = bodytype switch
+            //{
+            //    Constants.BodyTypes.Star => ((Func<bool>)(() => { Stars = (Dictionary<string, Star>)data; return true;}))(),
+            //    Constants.BodyTypes.Planet => ((Func<bool>)(() => { Planets = (Dictionary<string, Planet>)data; return true; }))(),
+            //    Constants.BodyTypes.DwarfPlanet => ((Func<bool>)(() => { DwarfPlanets = (Dictionary<string, DwarfPlanet>)data; return true; }))(),
+            //    Constants.BodyTypes.Satellite => ((Func<bool>)(() => { Satellites = (Dictionary<string, Satellite>)data; return true; }))(),
+            //    Constants.BodyTypes.Asteroid => ((Func<bool>)(() => { Asteroids = (Dictionary<string, Asteroid>)data; return true; }))(),
+            //    Constants.BodyTypes.Comet => ((Func<bool>)(() => { Comets = (Dictionary<string, Comet>)data; return true; }))(),
+            //    _ => false
+            //};
+#pragma warning restore S125
+
+            // Note this was the original switch statement, though longer it's not as obtuse
             bool bret = false;
             switch (bodytype)
             {
@@ -212,7 +244,7 @@ namespace StellarMap.Core.Types
                 case Constants.BodyTypes.DwarfPlanet:
                     DwarfPlanets = (Dictionary<string, DwarfPlanet>)data;
                     bret = true;
-                    break;                    
+                    break;
                 case Constants.BodyTypes.Satellite:
                     Satellites = (Dictionary<string, Satellite>)data;
                     bret = true;

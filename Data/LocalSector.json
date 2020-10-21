@@ -137,7 +137,7 @@
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Gl 447/Ross 128",
+            "Designation": "Ross 128",
             "StellarClass": "M4.5V"
           },
           "Catalogue": {
@@ -198,12 +198,12 @@
     "Star-00008": {
       "Identifier": "Star-00008",
       "ParentIdentifier": "StarSystem-00007",
-      "Name": "Sirius",
+      "Name": "Sirius A",
       "BodyType": "Star",
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Gl 244",
+            "Designation": "Gl 244 A",
             "StellarClass": "A0mA1Va"
           },
           "Catalogue": {
@@ -219,6 +219,28 @@
     },
     "Star-00009": {
       "Identifier": "Star-00009",
+      "ParentIdentifier": "StarSystem-00007",
+      "Name": "Sirius B",
+      "BodyType": "Star",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Designation": "Gl 244 B",
+            "StellarClass": "DA 1.9"
+          },
+          "Catalogue": {
+            "HabHyg": "-1",
+            "Hip": "-1"
+          }
+        }
+      },
+      "StarGroupIdentifiers": {
+        "Name": "GroupIdentifiers-ProgressionStar",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Star-00010": {
+      "Identifier": "Star-00010",
       "ParentIdentifier": "StarSystem-00008",
       "Name": "Luyten's Star",
       "BodyType": "Star",
@@ -239,8 +261,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00010": {
-      "Identifier": "Star-00010",
+    "Star-00011": {
+      "Identifier": "Star-00011",
       "ParentIdentifier": "StarSystem-00009",
       "Name": "Lalande",
       "BodyType": "Star",
@@ -261,8 +283,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00011": {
-      "Identifier": "Star-00011",
+    "Star-00012": {
+      "Identifier": "Star-00012",
       "ParentIdentifier": "StarSystem-00010",
       "Name": "Alvin",
       "BodyType": "Star",
@@ -283,8 +305,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00012": {
-      "Identifier": "Star-00012",
+    "Star-00013": {
+      "Identifier": "Star-00013",
       "ParentIdentifier": "StarSystem-00010",
       "Name": "Bruce",
       "BodyType": "Star",
@@ -305,8 +327,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00013": {
-      "Identifier": "Star-00013",
+    "Star-00014": {
+      "Identifier": "Star-00014",
       "ParentIdentifier": "StarSystem-00010",
       "Name": "Eddie",
       "BodyType": "Star",
@@ -327,8 +349,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00014": {
-      "Identifier": "Star-00014",
+    "Star-00015": {
+      "Identifier": "Star-00015",
       "ParentIdentifier": "StarSystem-00010",
       "Name": "Dave",
       "BodyType": "Star",
@@ -349,8 +371,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00015": {
-      "Identifier": "Star-00015",
+    "Star-00016": {
+      "Identifier": "Star-00016",
       "ParentIdentifier": "StarSystem-00010",
       "Name": "Calvin",
       "BodyType": "Star",
@@ -371,8 +393,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00016": {
-      "Identifier": "Star-00016",
+    "Star-00017": {
+      "Identifier": "Star-00017",
       "ParentIdentifier": "StarSystem-00011",
       "Name": "LO 1",
       "BodyType": "Star",
@@ -393,8 +415,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00017": {
-      "Identifier": "Star-00017",
+    "Star-00018": {
+      "Identifier": "Star-00018",
       "ParentIdentifier": "StarSystem-00011",
       "Name": "LO 2",
       "BodyType": "Star",
@@ -415,15 +437,15 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00018": {
-      "Identifier": "Star-00018",
+    "Star-00019": {
+      "Identifier": "Star-00019",
       "ParentIdentifier": "StarSystem-00012",
       "Name": "Wolf",
       "BodyType": "Star",
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Gl 729",
+            "Designation": "Ross 154",
             "StellarClass": "M3.5Ve"
           },
           "Catalogue": {
@@ -437,8 +459,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00019": {
-      "Identifier": "Star-00019",
+    "Star-00020": {
+      "Identifier": "Star-00020",
       "ParentIdentifier": "StarSystem-00013",
       "Name": "Alpha",
       "BodyType": "Star",
@@ -459,8 +481,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00020": {
-      "Identifier": "Star-00020",
+    "Star-00021": {
+      "Identifier": "Star-00021",
       "ParentIdentifier": "StarSystem-00013",
       "Name": "Beta",
       "BodyType": "Star",
@@ -481,8 +503,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00021": {
-      "Identifier": "Star-00021",
+    "Star-00022": {
+      "Identifier": "Star-00022",
       "ParentIdentifier": "StarSystem-00013",
       "Name": "Proxima",
       "BodyType": "Star",
@@ -503,8 +525,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00022": {
-      "Identifier": "Star-00022",
+    "Star-00023": {
+      "Identifier": "Star-00023",
       "ParentIdentifier": "StarSystem-00014",
       "Name": "Tau Ceti",
       "BodyType": "Star",
@@ -525,8 +547,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00023": {
-      "Identifier": "Star-00023",
+    "Star-00024": {
+      "Identifier": "Star-00024",
       "ParentIdentifier": "StarSystem-00015",
       "Name": "Groombridge",
       "BodyType": "Star",
@@ -547,8 +569,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00024": {
-      "Identifier": "Star-00024",
+    "Star-00025": {
+      "Identifier": "Star-00025",
       "ParentIdentifier": "StarSystem-00016",
       "Name": "Kruger",
       "BodyType": "Star",
@@ -569,8 +591,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00025": {
-      "Identifier": "Star-00025",
+    "Star-00026": {
+      "Identifier": "Star-00026",
       "ParentIdentifier": "StarSystem-00017",
       "Name": "Lacaille",
       "BodyType": "Star",
@@ -591,8 +613,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00026": {
-      "Identifier": "Star-00026",
+    "Star-00027": {
+      "Identifier": "Star-00027",
       "ParentIdentifier": "StarSystem-00018",
       "Name": "Gleine",
       "BodyType": "Star",
@@ -613,8 +635,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00027": {
-      "Identifier": "Star-00027",
+    "Star-00028": {
+      "Identifier": "Star-00028",
       "ParentIdentifier": "StarSystem-00018",
       "Name": "Struve",
       "BodyType": "Star",
@@ -635,8 +657,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00028": {
-      "Identifier": "Star-00028",
+    "Star-00029": {
+      "Identifier": "Star-00029",
       "ParentIdentifier": "StarSystem-00019",
       "Name": "Kapteyn's Star",
       "BodyType": "Star",
@@ -657,8 +679,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00029": {
-      "Identifier": "Star-00029",
+    "Star-00030": {
+      "Identifier": "Star-00030",
       "ParentIdentifier": "StarSystem-00020",
       "Name": "Vista",
       "BodyType": "Star",
@@ -679,8 +701,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00030": {
-      "Identifier": "Star-00030",
+    "Star-00031": {
+      "Identifier": "Star-00031",
       "ParentIdentifier": "StarSystem-00020",
       "Name": "Point",
       "BodyType": "Star",
@@ -701,8 +723,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00031": {
-      "Identifier": "Star-00031",
+    "Star-00032": {
+      "Identifier": "Star-00032",
       "ParentIdentifier": "StarSystem-00021",
       "Name": "Bihar",
       "BodyType": "Star",
@@ -723,8 +745,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00032": {
-      "Identifier": "Star-00032",
+    "Star-00033": {
+      "Identifier": "Star-00033",
       "ParentIdentifier": "StarSystem-00022",
       "Name": "Inne's Star",
       "BodyType": "Star",
@@ -745,8 +767,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00033": {
-      "Identifier": "Star-00033",
+    "Star-00034": {
+      "Identifier": "Star-00034",
       "ParentIdentifier": "StarSystem-00023",
       "Name": "Wolf's Den",
       "BodyType": "Star",
@@ -767,8 +789,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00034": {
-      "Identifier": "Star-00034",
+    "Star-00035": {
+      "Identifier": "Star-00035",
       "ParentIdentifier": "StarSystem-00024",
       "Name": "Andomeda A",
       "BodyType": "Star",
@@ -789,8 +811,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00035": {
-      "Identifier": "Star-00035",
+    "Star-00036": {
+      "Identifier": "Star-00036",
       "ParentIdentifier": "StarSystem-00024",
       "Name": "Andromeda B",
       "BodyType": "Star",
@@ -811,8 +833,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00036": {
-      "Identifier": "Star-00036",
+    "Star-00037": {
+      "Identifier": "Star-00037",
       "ParentIdentifier": "StarSystem-00025",
       "Name": "Sutter",
       "BodyType": "Star",
@@ -833,8 +855,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00037": {
-      "Identifier": "Star-00037",
+    "Star-00038": {
+      "Identifier": "Star-00038",
       "ParentIdentifier": "StarSystem-00026",
       "Name": "Bright",
       "BodyType": "Star",
@@ -855,8 +877,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00038": {
-      "Identifier": "Star-00038",
+    "Star-00039": {
+      "Identifier": "Star-00039",
       "ParentIdentifier": "StarSystem-00027",
       "Name": "YZ Ceti",
       "BodyType": "Star",
@@ -877,8 +899,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00039": {
-      "Identifier": "Star-00039",
+    "Star-00040": {
+      "Identifier": "Star-00040",
       "ParentIdentifier": "StarSystem-00028",
       "Name": "Kercur",
       "BodyType": "Star",
@@ -899,8 +921,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00040": {
-      "Identifier": "Star-00040",
+    "Star-00041": {
+      "Identifier": "Star-00041",
       "ParentIdentifier": "StarSystem-00029",
       "Name": "Nuone",
       "BodyType": "Star",
@@ -921,8 +943,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00041": {
-      "Identifier": "Star-00041",
+    "Star-00042": {
+      "Identifier": "Star-00042",
       "ParentIdentifier": "StarSystem-00030",
       "Name": "Leonis",
       "BodyType": "Star",
@@ -943,8 +965,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00042": {
-      "Identifier": "Star-00042",
+    "Star-00043": {
+      "Identifier": "Star-00043",
       "ParentIdentifier": "StarSystem-00031",
       "Name": "Red",
       "BodyType": "Star",
@@ -965,8 +987,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00043": {
-      "Identifier": "Star-00043",
+    "Star-00044": {
+      "Identifier": "Star-00044",
       "ParentIdentifier": "StarSystem-00032",
       "Name": "Cancri",
       "BodyType": "Star",
@@ -987,8 +1009,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00044": {
-      "Identifier": "Star-00044",
+    "Star-00045": {
+      "Identifier": "Star-00045",
       "ParentIdentifier": "StarSystem-00033",
       "Name": "Eureka",
       "BodyType": "Star",
@@ -1009,8 +1031,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00045": {
-      "Identifier": "Star-00045",
+    "Star-00046": {
+      "Identifier": "Star-00046",
       "ParentIdentifier": "StarSystem-00034",
       "Name": "TeeGarden",
       "BodyType": "Star",
@@ -1031,8 +1053,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00046": {
-      "Identifier": "Star-00046",
+    "Star-00047": {
+      "Identifier": "Star-00047",
       "ParentIdentifier": "StarSystem-00035",
       "Name": "Van Maanen",
       "BodyType": "Star",
@@ -1053,8 +1075,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00047": {
-      "Identifier": "Star-00047",
+    "Star-00048": {
+      "Identifier": "Star-00048",
       "ParentIdentifier": "StarSystem-00036",
       "Name": "Ross",
       "BodyType": "Star",
@@ -1075,8 +1097,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00048": {
-      "Identifier": "Star-00048",
+    "Star-00049": {
+      "Identifier": "Star-00049",
       "ParentIdentifier": "StarSystem-00037",
       "Name": "Bradley",
       "BodyType": "Star",
@@ -1097,8 +1119,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00049": {
-      "Identifier": "Star-00049",
+    "Star-00050": {
+      "Identifier": "Star-00050",
       "ParentIdentifier": "StarSystem-00037",
       "Name": "Paizzi",
       "BodyType": "Star",
@@ -1119,8 +1141,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00050": {
-      "Identifier": "Star-00050",
+    "Star-00051": {
+      "Identifier": "Star-00051",
       "ParentIdentifier": "StarSystem-00038",
       "Name": "Indus",
       "BodyType": "Star",
@@ -1141,8 +1163,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00051": {
-      "Identifier": "Star-00051",
+    "Star-00052": {
+      "Identifier": "Star-00052",
       "ParentIdentifier": "StarSystem-00038",
       "Name": "Ghaggar",
       "BodyType": "Star",
@@ -1163,8 +1185,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00052": {
-      "Identifier": "Star-00052",
+    "Star-00053": {
+      "Identifier": "Star-00053",
       "ParentIdentifier": "StarSystem-00038",
       "Name": "Hakra",
       "BodyType": "Star",
@@ -1185,8 +1207,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00053": {
-      "Identifier": "Star-00053",
+    "Star-00054": {
+      "Identifier": "Star-00054",
       "ParentIdentifier": "StarSystem-00039",
       "Name": "Arietis",
       "BodyType": "Star",
@@ -1207,8 +1229,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00054": {
-      "Identifier": "Star-00054",
+    "Star-00055": {
+      "Identifier": "Star-00055",
       "ParentIdentifier": "StarSystem-00040",
       "Name": "Flare",
       "BodyType": "Star",
@@ -1229,8 +1251,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00055": {
-      "Identifier": "Star-00055",
+    "Star-00056": {
+      "Identifier": "Star-00056",
       "ParentIdentifier": "StarSystem-00041",
       "Name": "Demic",
       "BodyType": "Star",
@@ -1251,8 +1273,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00056": {
-      "Identifier": "Star-00056",
+    "Star-00057": {
+      "Identifier": "Star-00057",
       "ParentIdentifier": "StarSystem-00042",
       "Name": "Lapis",
       "BodyType": "Star",
@@ -1273,8 +1295,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00057": {
-      "Identifier": "Star-00057",
+    "Star-00058": {
+      "Identifier": "Star-00058",
       "ParentIdentifier": "StarSystem-00043",
       "Name": "Banawali",
       "BodyType": "Star",
@@ -1295,8 +1317,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00058": {
-      "Identifier": "Star-00058",
+    "Star-00059": {
+      "Identifier": "Star-00059",
       "ParentIdentifier": "StarSystem-00044",
       "Name": "Rudra",
       "BodyType": "Star",
@@ -1317,8 +1339,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00059": {
-      "Identifier": "Star-00059",
+    "Star-00060": {
+      "Identifier": "Star-00060",
       "ParentIdentifier": "StarSystem-00044",
       "Name": "Pashupati",
       "BodyType": "Star",
@@ -1339,8 +1361,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00060": {
-      "Identifier": "Star-00060",
+    "Star-00061": {
+      "Identifier": "Star-00061",
       "ParentIdentifier": "StarSystem-00045",
       "Name": "Altaira",
       "BodyType": "Star",
@@ -1361,8 +1383,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00061": {
-      "Identifier": "Star-00061",
+    "Star-00062": {
+      "Identifier": "Star-00062",
       "ParentIdentifier": "StarSystem-00046",
       "Name": "Krell",
       "BodyType": "Star",
@@ -1383,8 +1405,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00062": {
-      "Identifier": "Star-00062",
+    "Star-00063": {
+      "Identifier": "Star-00063",
       "ParentIdentifier": "StarSystem-00046",
       "Name": "Robby",
       "BodyType": "Star",
@@ -1405,8 +1427,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00063": {
-      "Identifier": "Star-00063",
+    "Star-00064": {
+      "Identifier": "Star-00064",
       "ParentIdentifier": "StarSystem-00047",
       "Name": "Mobius",
       "BodyType": "Star",
@@ -1427,8 +1449,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00064": {
-      "Identifier": "Star-00064",
+    "Star-00065": {
+      "Identifier": "Star-00065",
       "ParentIdentifier": "StarSystem-00047",
       "Name": "Pidgeon",
       "BodyType": "Star",
@@ -1449,8 +1471,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00065": {
-      "Identifier": "Star-00065",
+    "Star-00066": {
+      "Identifier": "Star-00066",
       "ParentIdentifier": "StarSystem-00048",
       "Name": "Bellerophon",
       "BodyType": "Star",
@@ -1471,8 +1493,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00066": {
-      "Identifier": "Star-00066",
+    "Star-00067": {
+      "Identifier": "Star-00067",
       "ParentIdentifier": "StarSystem-00049",
       "Name": "Id",
       "BodyType": "Star",
@@ -1493,8 +1515,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00067": {
-      "Identifier": "Star-00067",
+    "Star-00068": {
+      "Identifier": "Star-00068",
       "ParentIdentifier": "StarSystem-00050",
       "Name": "Adams",
       "BodyType": "Star",
@@ -1515,8 +1537,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00068": {
-      "Identifier": "Star-00068",
+    "Star-00069": {
+      "Identifier": "Star-00069",
       "ParentIdentifier": "StarSystem-00051",
       "Name": "Lacerta",
       "BodyType": "Star",
@@ -1537,8 +1559,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00069": {
-      "Identifier": "Star-00069",
+    "Star-00070": {
+      "Identifier": "Star-00070",
       "ParentIdentifier": "StarSystem-00052",
       "Name": "Lacerta",
       "BodyType": "Star",
@@ -1559,8 +1581,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00070": {
-      "Identifier": "Star-00070",
+    "Star-00071": {
+      "Identifier": "Star-00071",
       "ParentIdentifier": "StarSystem-00053",
       "Name": "Keid",
       "BodyType": "Star",
@@ -1581,8 +1603,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00071": {
-      "Identifier": "Star-00071",
+    "Star-00072": {
+      "Identifier": "Star-00072",
       "ParentIdentifier": "StarSystem-00053",
       "Name": "Little White",
       "BodyType": "Star",
@@ -1603,8 +1625,8 @@
         "GroupIdentifiers": {}
       }
     },
-    "Star-00072": {
-      "Identifier": "Star-00072",
+    "Star-00073": {
+      "Identifier": "Star-00073",
       "ParentIdentifier": "StarSystem-00053",
       "Name": "Little Red",
       "BodyType": "Star",
@@ -1771,6 +1793,7 @@
       }
     }
   },
+  "DwarfPlanets": null,
   "Satellites": {
     "Satellite-00001": {
       "Identifier": "Satellite-00001",
@@ -4105,6 +4128,7 @@
         "PropertyGroups": {
           "Basic": {
             "Designation": "Gl 699",
+            "SimbadID": "BD+043561a",
             "Position": "(1.5, 0.9, 0.4)"
           }
         }
@@ -4157,6 +4181,7 @@
         "PropertyGroups": {
           "Basic": {
             "Designation": "Gl 144",
+            "SimbadID": "HD 22049",
             "Position": "(-2.1, -0.6, -2.4)"
           }
         }
@@ -4200,6 +4225,7 @@
         "PropertyGroups": {
           "Basic": {
             "Designation": "Gl 280",
+            "SimbadID": "HR 2943",
             "Position": "(-2.8, -1.9, 0.8)"
           }
         }
@@ -4251,7 +4277,8 @@
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Gl 447",
+            "Designation": "Ross 128",
+            "SimbadID": "Ross 128",
             "Position": "(0, -1.7, 2.9)"
           }
         }
@@ -4294,7 +4321,8 @@
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Gl 65",
+            "Designation": "Luyten 726/Gl 65",
+            "SimbadID": "GJ 65",
             "Position": "(-0.6, 0.1, -2.5)"
           }
         }
@@ -4330,6 +4358,7 @@
         "PropertyGroups": {
           "Basic": {
             "Designation": "Gl 244",
+            "SimbadID": "Gl 244 A",
             "Position": "(-1.8, -1.9, -0.4)"
           }
         }
@@ -4339,7 +4368,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Sirius": "Star-00008"
+            "Sirius A": "Star-00008",
+            "Sirius B": "Star-00009"
           }
         }
       },
@@ -4382,6 +4412,7 @@
         "PropertyGroups": {
           "Basic": {
             "Designation": "Gl 273",
+            "SimbadID": "Gl 273",
             "Position": "(-3.2, -2, 0.7)"
           }
         }
@@ -4391,7 +4422,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Luyten's Star": "Star-00009"
+            "Luyten's Star": "Star-00010"
           }
         }
       },
@@ -4415,7 +4446,8 @@
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Gl 441",
+            "Designation": "Gl 411",
+            "SimbadID": "Gl 411",
             "Position": "(-1.1, -0.1, 2.3)"
           }
         }
@@ -4425,7 +4457,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Lalande": "Star-00010"
+            "Lalande": "Star-00011"
           }
         }
       },
@@ -4468,6 +4500,7 @@
         "PropertyGroups": {
           "Basic": {
             "Designation": "GJ 644",
+            "SimbadID": "GJ 644",
             "Position": "(5.3, 1, 2.1)"
           }
         }
@@ -4477,11 +4510,11 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Alvin": "Star-00011",
-            "Bruce": "Star-00012",
-            "Eddie": "Star-00013",
-            "Dave": "Star-00014",
-            "Calvin": "Star-00015"
+            "Alvin": "Star-00012",
+            "Bruce": "Star-00013",
+            "Eddie": "Star-00014",
+            "Dave": "Star-00015",
+            "Calvin": "Star-00016"
           }
         }
       },
@@ -4524,6 +4557,7 @@
         "PropertyGroups": {
           "Basic": {
             "Designation": "GJ 663",
+            "SimbadID": "GJ 663 A",
             "Position": "(5.9, -0.2, 0.7)"
           }
         }
@@ -4533,8 +4567,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "LO 1": "Star-00016",
-            "LO 2": "Star-00017"
+            "LO 1": "Star-00017",
+            "LO 2": "Star-00018"
           }
         }
       },
@@ -4576,7 +4610,8 @@
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Gl 729",
+            "Designation": "Ross 154",
+            "SimbadID": "Ross 154",
             "Position": "(2.9, 0.6, -0.5)"
           }
         }
@@ -4586,7 +4621,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Wolf": "Star-00018"
+            "Wolf": "Star-00019"
           }
         }
       },
@@ -4629,9 +4664,9 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Alpha": "Star-00019",
-            "Beta": "Star-00020",
-            "Proxima": "Star-00021"
+            "Alpha": "Star-00020",
+            "Beta": "Star-00021",
+            "Proxima": "Star-00022"
           }
         }
       },
@@ -4674,7 +4709,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Tau Ceti": "Star-00022"
+            "Tau Ceti": "Star-00023"
           }
         }
       },
@@ -4717,7 +4752,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Groombridge": "Star-00023"
+            "Groombridge": "Star-00024"
           }
         }
       },
@@ -4751,7 +4786,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Kruger": "Star-00024"
+            "Kruger": "Star-00025"
           }
         }
       },
@@ -4812,7 +4847,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Lacaille": "Star-00025"
+            "Lacaille": "Star-00026"
           }
         }
       },
@@ -4882,8 +4917,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Gleine": "Star-00026",
-            "Struve": "Star-00027"
+            "Gleine": "Star-00027",
+            "Struve": "Star-00028"
           }
         }
       },
@@ -4935,7 +4970,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Kapteyn's Star": "Star-00028"
+            "Kapteyn's Star": "Star-00029"
           }
         }
       },
@@ -4969,8 +5004,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Vista": "Star-00029",
-            "Point": "Star-00030"
+            "Vista": "Star-00030",
+            "Point": "Star-00031"
           }
         }
       },
@@ -5013,7 +5048,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Bihar": "Star-00031"
+            "Bihar": "Star-00032"
           }
         }
       },
@@ -5056,7 +5091,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Inne's Star": "Star-00032"
+            "Inne's Star": "Star-00033"
           }
         }
       },
@@ -5090,7 +5125,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Wolf's Den": "Star-00033"
+            "Wolf's Den": "Star-00034"
           }
         }
       },
@@ -5133,8 +5168,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Andomeda A": "Star-00034",
-            "Andromeda B": "Star-00035"
+            "Andomeda A": "Star-00035",
+            "Andromeda B": "Star-00036"
           }
         }
       },
@@ -5177,7 +5212,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Sutter": "Star-00036"
+            "Sutter": "Star-00037"
           }
         }
       },
@@ -5211,7 +5246,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Bright": "Star-00037"
+            "Bright": "Star-00038"
           }
         }
       },
@@ -5254,7 +5289,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "YZ Ceti": "Star-00038"
+            "YZ Ceti": "Star-00039"
           }
         }
       },
@@ -5297,7 +5332,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Kercur": "Star-00039"
+            "Kercur": "Star-00040"
           }
         }
       },
@@ -5340,7 +5375,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Nuone": "Star-00040"
+            "Nuone": "Star-00041"
           }
         }
       },
@@ -5401,7 +5436,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Leonis": "Star-00041"
+            "Leonis": "Star-00042"
           }
         }
       },
@@ -5453,7 +5488,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Red": "Star-00042"
+            "Red": "Star-00043"
           }
         }
       },
@@ -5487,7 +5522,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Cancri": "Star-00043"
+            "Cancri": "Star-00044"
           }
         }
       },
@@ -5530,7 +5565,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Eureka": "Star-00044"
+            "Eureka": "Star-00045"
           }
         }
       },
@@ -5582,7 +5617,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "TeeGarden": "Star-00045"
+            "TeeGarden": "Star-00046"
           }
         }
       },
@@ -5634,7 +5669,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Van Maanen": "Star-00046"
+            "Van Maanen": "Star-00047"
           }
         }
       },
@@ -5695,7 +5730,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Ross": "Star-00047"
+            "Ross": "Star-00048"
           }
         }
       },
@@ -5729,8 +5764,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Bradley": "Star-00048",
-            "Paizzi": "Star-00049"
+            "Bradley": "Star-00049",
+            "Paizzi": "Star-00050"
           }
         }
       },
@@ -5782,9 +5817,9 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Indus": "Star-00050",
-            "Ghaggar": "Star-00051",
-            "Hakra": "Star-00052"
+            "Indus": "Star-00051",
+            "Ghaggar": "Star-00052",
+            "Hakra": "Star-00053"
           }
         }
       },
@@ -5827,7 +5862,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Arietis": "Star-00053"
+            "Arietis": "Star-00054"
           }
         }
       },
@@ -5879,7 +5914,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Flare": "Star-00054"
+            "Flare": "Star-00055"
           }
         }
       },
@@ -5931,7 +5966,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Demic": "Star-00055"
+            "Demic": "Star-00056"
           }
         }
       },
@@ -5992,7 +6027,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Lapis": "Star-00056"
+            "Lapis": "Star-00057"
           }
         }
       },
@@ -6035,7 +6070,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Banawali": "Star-00057"
+            "Banawali": "Star-00058"
           }
         }
       },
@@ -6069,8 +6104,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Rudra": "Star-00058",
-            "Pashupati": "Star-00059"
+            "Rudra": "Star-00059",
+            "Pashupati": "Star-00060"
           }
         }
       },
@@ -6113,7 +6148,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Altaira": "Star-00060"
+            "Altaira": "Star-00061"
           }
         }
       },
@@ -6192,8 +6227,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Krell": "Star-00061",
-            "Robby": "Star-00062"
+            "Krell": "Star-00062",
+            "Robby": "Star-00063"
           }
         }
       },
@@ -6245,8 +6280,8 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Mobius": "Star-00063",
-            "Pidgeon": "Star-00064"
+            "Mobius": "Star-00064",
+            "Pidgeon": "Star-00065"
           }
         }
       },
@@ -6307,7 +6342,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Bellerophon": "Star-00065"
+            "Bellerophon": "Star-00066"
           }
         }
       },
@@ -6359,7 +6394,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Id": "Star-00066"
+            "Id": "Star-00067"
           }
         }
       },
@@ -6402,7 +6437,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Adams": "Star-00067"
+            "Adams": "Star-00068"
           }
         }
       },
@@ -6445,7 +6480,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Lacerta": "Star-00068"
+            "Lacerta": "Star-00069"
           }
         }
       },
@@ -6488,7 +6523,7 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Lacerta": "Star-00069"
+            "Lacerta": "Star-00070"
           }
         }
       },
@@ -6522,9 +6557,9 @@
         "Name": "GroupIdentifiers-ProgressionContainer",
         "GroupIdentifiers": {
           "Stars": {
-            "Keid": "Star-00070",
-            "Little White": "Star-00071",
-            "Little Red": "Star-00072"
+            "Keid": "Star-00071",
+            "Little White": "Star-00072",
+            "Little Red": "Star-00073"
           }
         }
       },

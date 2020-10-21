@@ -209,6 +209,7 @@
       }
     }
   },
+  "DwarfPlanets": null,
   "Satellites": {
     "Satellite-00001": {
       "Identifier": "Satellite-00001",

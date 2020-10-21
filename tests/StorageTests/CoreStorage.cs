@@ -41,6 +41,10 @@ namespace StorageTests
 
             using StreamReader reader = new StreamReader(filename);
             map = store.Retreive<BaseStellarMap>(reader);
+
+            IStellarMap generatedMap = SolarSystem.CreateSolSystem();
+
+            Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
         }
 
         [TestMethod]
@@ -75,16 +79,22 @@ namespace StorageTests
             using StreamReader reader = new StreamReader(filename);
             map = store.Retreive<BaseStellarMap>(reader);
 
-            // now serialize it to json file to inspect
-            filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
+#pragma warning disable S125
+            //// now serialize it to json file to inspect
+            //filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem from zip.json");
 
-            if (File.Exists(filename))
-                File.Delete(filename);
+            //if (File.Exists(filename))
+            //    File.Delete(filename);
 
-            store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+            //store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            using StreamWriter writer = new StreamWriter(filename);
-            store.Store(map, writer);
+            //using StreamWriter writer = new StreamWriter(filename);
+            //store.Store(map, writer);
+#pragma warning restore S125
+
+            IStellarMap generatedMap = SolarSystem.CreateSolSystem();
+
+            Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
         }
     }
 }

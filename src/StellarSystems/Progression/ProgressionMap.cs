@@ -110,9 +110,6 @@ namespace StellarMap.Progression
             sb.Append(count.ToString("D5"));
             string id = sb.ToString();
 
-            if (string.IsNullOrEmpty(id))
-                id = base.GenerateIdentifier<T>();
-
             return id;
         }
         #endregion
@@ -181,28 +178,19 @@ namespace StellarMap.Progression
 
         public override object GetBody(string bodytype)
         {
-            object body = base.GetBody(bodytype);
+            var body = base.GetBody(bodytype);
 
-            if (body == null)
+            if (body is null)
             {
-                switch (bodytype)
+                body = bodytype switch
                 {
-                    case ProgressionConstants.BodyType.Habitat:
-                        body = Habitats;
-                        break;
-                    case ProgressionConstants.BodyType.ERBridge:
-                        body = Bridges;
-                        break;
-                    case ProgressionConstants.BodyType.StarSystem:
-                        body = StarSystems;
-                        break;
-                    case ProgressionConstants.BodyType.Cluster:
-                        body = Clusters;
-                        break;
-                    case ProgressionConstants.BodyType.Sector:
-                        body = Sectors;
-                        break;
-                }
+                    ProgressionConstants.BodyType.Habitat => Habitats as object,
+                    ProgressionConstants.BodyType.ERBridge => Bridges as object,
+                    ProgressionConstants.BodyType.StarSystem => StarSystems as object,
+                    ProgressionConstants.BodyType.Cluster => Clusters as object,
+                    ProgressionConstants.BodyType.Sector => Sectors as object,
+                    _ => null
+                };
             }
 
             return body;
@@ -212,26 +200,17 @@ namespace StellarMap.Progression
         {
             Type t = base.GetTypeOfBody(bodytype);
 
-            if (t == null)
+            if (t is null)
             {
-                switch (bodytype)
+                t = bodytype switch
                 {
-                    case ProgressionConstants.BodyType.Habitat:
-                        t = typeof(Dictionary<string, Habitat>);
-                        break;
-                    case ProgressionConstants.BodyType.ERBridge:
-                        t = typeof(Dictionary<string, ERBridge>);
-                        break;
-                    case ProgressionConstants.BodyType.StarSystem:
-                        t = typeof(Dictionary<string, StarSystem>);
-                        break;
-                    case ProgressionConstants.BodyType.Cluster:
-                        t = typeof(Dictionary<string, Cluster>);
-                        break;
-                    case ProgressionConstants.BodyType.Sector:
-                        t = typeof(Dictionary<string, Sector>);
-                        break;
-                }
+                    ProgressionConstants.BodyType.Habitat => typeof(Dictionary<string, Habitat>),
+                    ProgressionConstants.BodyType.ERBridge => typeof(Dictionary<string, ERBridge>),
+                    ProgressionConstants.BodyType.StarSystem => typeof(Dictionary<string, StarSystem>),
+                    ProgressionConstants.BodyType.Cluster => typeof(Dictionary<string, Cluster>),
+                    ProgressionConstants.BodyType.Sector => typeof(Dictionary<string, Sector>),
+                    _ => null
+                };
             }
 
             return t;

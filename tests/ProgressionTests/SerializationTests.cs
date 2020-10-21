@@ -24,10 +24,8 @@ namespace ProgressionTests
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                SerializeMap(map, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            SerializeMap(map, writer);
         }
 
         [TestMethod]
@@ -41,10 +39,8 @@ namespace ProgressionTests
 
             ProgressionMap map;
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                map = DeSerializeMap(reader);
-            }
+            using StreamReader reader = new StreamReader(filename);
+            map = DeSerializeMap(reader);
         }
 
         [TestMethod]
@@ -59,10 +55,8 @@ namespace ProgressionTests
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                SerializeMap(map, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            SerializeMap(map, writer);
         }
 
         [TestMethod]
@@ -77,9 +71,7 @@ namespace ProgressionTests
             ProgressionMap map;
 
             using (StreamReader reader = new StreamReader(filename))
-            {
-                map = DeSerializeMap(reader);
-            }
+            map = DeSerializeMap(reader);
         }
 
         [TestMethod]
@@ -94,10 +86,8 @@ namespace ProgressionTests
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                SerializeMap(map, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            SerializeMap(map, writer);
         }
 
         [TestMethod]
@@ -111,10 +101,8 @@ namespace ProgressionTests
 
             ProgressionMap map;
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                map = DeSerializeMap(reader);
-            }
+            using StreamReader reader = new StreamReader(filename);
+            map = DeSerializeMap(reader);
         }
 
         [TestMethod]
@@ -129,10 +117,8 @@ namespace ProgressionTests
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                SerializeMap(map, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            SerializeMap(map, writer);
         }
 
         [TestMethod]
@@ -146,10 +132,8 @@ namespace ProgressionTests
 
             ProgressionMap map;
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                map = DeSerializeMap(reader);
-            }
+            using StreamReader reader = new StreamReader(filename);
+            map = DeSerializeMap(reader);
         }
 
         public void SerializeMap(ProgressionMap map, StreamWriter writer)

@@ -11,29 +11,15 @@
     }
   },
   "Stars": {
-    "640a8859-9e9b-4699-9c3e-e27c73af6698": {
-      "Identifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Star-00001": {
+      "Identifier": "Star-00001",
       "ParentIdentifier": null,
       "Name": "Sol",
       "BodyType": "Star",
       "Properties": {
         "PropertyGroups": {
           "Basic": {
-            "Designation": "Sol",
-            "StellarClass": "G2V",
-            "Description": "The star at the center of the Solar System.",
-            "Radius": "695700 km",
-            "Area": "6.09E12 km2",
-            "Volume": "1.41E18 km3",
-            "Flattening": "9E-6",
-            "Mass": "1.9891E30 kg",
-            "Density": "1.408 g/cm3",
-            "Gravity": "274 m/s2",
-            "EscapeVelocity": "617.7 km/s"
-          },
-          "Catalogue": {
-            "HabHyg": "0",
-            "Hip": "0"
+            "StellarClass": "G2V"
           }
         }
       },
@@ -41,65 +27,38 @@
         "Name": "GroupIdentifiers-Star",
         "GroupIdentifiers": {
           "Planets": {
-            "Mercury": "e20cc2b5-dfda-48f5-a039-59082f01673e",
-            "Venus": "ebef00a1-0c0b-4476-8246-c4a3ece69ebc",
-            "Earth": "9afe0933-0421-4566-9ffa-7ce809bf8f05",
-            "Mars": "aacb60c3-1887-4bee-bef0-1825afdb114d",
-            "Jupiter": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-            "Saturn": "aac0320a-d6ce-47ca-b379-a5c078ce6b66",
-            "Uranus": "85f3fad8-c5a9-421f-8b44-37f9b530b098",
-            "Neptune": "5b5ff370-30e2-4104-bc05-31d45813ae1d"
-          },
-          "DwarfPlanets": {
-            "Ceres": "5fc1c5f2-2ca5-49f9-bc9b-4ca2900bd82a",
-            "Pluto": "30b5fe82-fe8a-4f71-a995-1a372f6de2e1"
+            "Mercury": "Planet-00001",
+            "Venus": "Planet-00002",
+            "Earth": "Planet-00003",
+            "Mars": "Planet-00004",
+            "Jupiter": "Planet-00005",
+            "Saturn": "Planet-00006",
+            "Uranus": "Planet-00007",
+            "Neptune": "Planet-00008",
+            "Pluto": "Planet-00009"
           },
           "Asteroids": {
-            "Vesta": "709a1b24-f8de-4aa6-a582-3533afd9d489",
-            "Pallas": "d7fc3fe0-11ca-48ea-aa46-3687b2286b7f",
-            "Hygiea": "56d6cca2-ced3-497e-9c70-7d1276838df1",
-            "Euphrosyne": "a8c60980-2325-43e7-b7c4-ba6375b3695f",
-            "Interamnia": "92a888a9-caa1-424b-85be-af57b424aa64",
-            "Davida": "dccc656d-3b0a-4ed0-a79f-33fda148a528",
-            "Herculina": "a8601532-2355-415e-af4d-31de6794546a",
-            "Eunomia": "d140c671-84b0-40c7-bfbf-ccb3d5cd5c43",
-            "Juno": "2b659805-8c18-4ad6-a591-eed36554a448",
-            "Psyche": "10ef92eb-f748-43d2-bfbd-e43aca513ae5",
-            "Europa": "db376530-4260-4204-a534-de3e9896e273"
+            "Ceres": "Asteroid-00001",
+            "Pallas": "Asteroid-00002",
+            "Juno": "Asteroid-00003"
           },
           "Comets": {
-            "Halley's": "d2b4623a-01ce-4d03-819a-7aa7b95a9402",
-            "Caeser's": "6bfbef63-a65e-4b7c-9d2b-3becc4f18afb",
-            "Encke's": "36eb3857-ac7c-442e-9d94-72b84b3d2371",
-            "Biela's": "5b28b621-7cc4-42e1-9653-5510c3c69bc8",
-            "Faye's": "743a0772-36e8-4316-9481-697fd35d3395",
-            "Brorsen's": "a2a5dc85-7a23-43ef-b1d5-09772611f44e",
-            "d'Arrest's": "b6628a21-2674-445e-8a2c-79d0c5f1ca4d"
+            "Haley's": "Comet-00001",
+            "Caeser's": "Comet-00002"
           }
         }
       }
     }
   },
   "Planets": {
-    "e20cc2b5-dfda-48f5-a039-59082f01673e": {
-      "Identifier": "e20cc2b5-dfda-48f5-a039-59082f01673e",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00001": {
+      "Identifier": "Planet-00001",
+      "ParentIdentifier": "Star-00001",
       "Name": "Mercury",
       "BodyType": "Planet",
       "Properties": {
         "PropertyGroups": {
-          "Basic": {
-            "Description": "The first planet in the Solar System.",
-            "Type": "Rocky Planet",
-            "Radius": "2439.7 km",
-            "Area": "7.48E7 km2",
-            "Volume": "6.083E10 km3",
-            "Flattening": "0.0000",
-            "Mass": "3.3011E23 kg",
-            "Density": "5.427 g/cm3",
-            "Gravity": "3.7 m/s2",
-            "EscapeVelocity": "4.25 km/s"
-          }
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -107,25 +66,14 @@
         "GroupIdentifiers": {}
       }
     },
-    "ebef00a1-0c0b-4476-8246-c4a3ece69ebc": {
-      "Identifier": "ebef00a1-0c0b-4476-8246-c4a3ece69ebc",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00002": {
+      "Identifier": "Planet-00002",
+      "ParentIdentifier": "Star-00001",
       "Name": "Venus",
       "BodyType": "Planet",
       "Properties": {
         "PropertyGroups": {
-          "Basic": {
-            "Description": "The 2nd planet in the Solar System.",
-            "Type": "Rocky Planet",
-            "Radius": "6051.8 km",
-            "Area": "4.6023E8 km2",
-            "Volume": "9.2843E11 km3",
-            "Flattening": "0",
-            "Mass": "4.8675E24 kg",
-            "Density": "5.243 g/cm3",
-            "Gravity": "8.87 m/s2",
-            "EscapeVelocity": "10.36 km/s"
-          }
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
@@ -133,107 +81,58 @@
         "GroupIdentifiers": {}
       }
     },
-    "9afe0933-0421-4566-9ffa-7ce809bf8f05": {
-      "Identifier": "9afe0933-0421-4566-9ffa-7ce809bf8f05",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00003": {
+      "Identifier": "Planet-00003",
+      "ParentIdentifier": "Star-00001",
       "Name": "Earth",
       "BodyType": "Planet",
       "Properties": {
         "PropertyGroups": {
-          "Basic": {
-            "Description": "The 3nd planet in the Solar System and the only object known to harbor life",
-            "Type": "Rocky Planet",
-            "Radius": "6371.0 km",
-            "Area": "5.10072E8 km2",
-            "Volume": "1.08321E12 km3",
-            "Flattening": ".0033528",
-            "Mass": "5.97237E24 kg",
-            "Density": "5.514 g/cm3",
-            "Gravity": "9.80665 m/s2",
-            "EscapeVelocity": "11.186 km/s"
-          }
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
         "Name": "GroupIdentifiers-Planet",
         "GroupIdentifiers": {
           "Satellites": {
-            "Moon": "68399296-0427-4484-b114-ddfad0cda1d9"
+            "Moon": "Satellite-00001"
           }
         }
       }
     },
-    "aacb60c3-1887-4bee-bef0-1825afdb114d": {
-      "Identifier": "aacb60c3-1887-4bee-bef0-1825afdb114d",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00004": {
+      "Identifier": "Planet-00004",
+      "ParentIdentifier": "Star-00001",
       "Name": "Mars",
       "BodyType": "Planet",
       "Properties": {
         "PropertyGroups": {
-          "Basic": {
-            "Description": "The 4th planet in the Solar System.",
-            "Type": "Rocky Planet",
-            "Radius": "3389.5 km",
-            "Area": "1.448E8 km2",
-            "Volume": "1.6318E11 km3",
-            "Flattening": "0.00589",
-            "Mass": "6.4171E23 kg",
-            "Density": "3.9335 g/cm3",
-            "Gravity": "3.721 m/s2",
-            "EscapeVelocity": "5.027 km/s"
-          }
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
         "Name": "GroupIdentifiers-Planet",
-        "GroupIdentifiers": {
-          "Satellites": {
-            "Phobos": "1820ac78-751a-488f-ac49-95935d173b54",
-            "Deimos": "7c5b778c-7b22-4431-a314-1a06dd38dca4"
-          }
-        }
+        "GroupIdentifiers": {}
       }
     },
-    "554bc461-23cb-497f-9ed3-7b287b48e7ab": {
-      "Identifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00005": {
+      "Identifier": "Planet-00005",
+      "ParentIdentifier": "Star-00001",
       "Name": "Jupiter",
       "BodyType": "Planet",
       "Properties": {
         "PropertyGroups": {
-          "Basic": {
-            "Description": "The fifth and largets planet in the Solar System.",
-            "Type": "Gas Giant Planet",
-            "Radius": "69911 km",
-            "Area": "6.1419E10 km2",
-            "Volume": "1.4313E15 km3",
-            "Flattening": "0.06487",
-            "Mass": "1.9882E27 kg",
-            "Density": "1.326 g/cm3",
-            "Gravity": "24.79 m/s2",
-            "EscapeVelocity": "59.5 km/s"
-          }
+          "Basic": {}
         }
       },
       "PlanetGroupIdentifiers": {
         "Name": "GroupIdentifiers-Planet",
-        "GroupIdentifiers": {
-          "Satellites": {
-            "Metis": "6fc16be2-de1c-437d-89f7-a094584bb762",
-            "Adrastea": "458d70d3-882e-4bec-bd25-4eef15cf2a9c",
-            "Amalthea": "3ac2a947-f52f-4433-a4ca-8e377e6b6416",
-            "Thebe": "ea35f532-508d-4597-8404-33cf971bb833",
-            "Io": "75ab76e3-9ccd-494e-9cd4-618c36c5c39f",
-            "Europa": "bad67ec8-1194-4661-95fa-a567dcc1fdac",
-            "Ganymede": "d7a28457-e6bc-43bd-a368-231bba89f664",
-            "Callisto": "09c6243b-6636-4318-aa88-a447ce66aecb"
-          }
-        }
+        "GroupIdentifiers": {}
       }
     },
-    "aac0320a-d6ce-47ca-b379-a5c078ce6b66": {
-      "Identifier": "aac0320a-d6ce-47ca-b379-a5c078ce6b66",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00006": {
+      "Identifier": "Planet-00006",
+      "ParentIdentifier": "Star-00001",
       "Name": "Saturn",
       "BodyType": "Planet",
       "Properties": {
@@ -246,9 +145,9 @@
         "GroupIdentifiers": {}
       }
     },
-    "85f3fad8-c5a9-421f-8b44-37f9b530b098": {
-      "Identifier": "85f3fad8-c5a9-421f-8b44-37f9b530b098",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00007": {
+      "Identifier": "Planet-00007",
+      "ParentIdentifier": "Star-00001",
       "Name": "Uranus",
       "BodyType": "Planet",
       "Properties": {
@@ -261,10 +160,25 @@
         "GroupIdentifiers": {}
       }
     },
-    "5b5ff370-30e2-4104-bc05-31d45813ae1d": {
-      "Identifier": "5b5ff370-30e2-4104-bc05-31d45813ae1d",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Planet-00008": {
+      "Identifier": "Planet-00008",
+      "ParentIdentifier": "Star-00001",
       "Name": "Neptune",
+      "BodyType": "Planet",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "PlanetGroupIdentifiers": {
+        "Name": "GroupIdentifiers-Planet",
+        "GroupIdentifiers": {}
+      }
+    },
+    "Planet-00009": {
+      "Identifier": "Planet-00009",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Pluto",
       "BodyType": "Planet",
       "Properties": {
         "PropertyGroups": {
@@ -277,273 +191,25 @@
       }
     }
   },
-  "DwarfPlanets": {
-    "5fc1c5f2-2ca5-49f9-bc9b-4ca2900bd82a": {
-      "Identifier": "5fc1c5f2-2ca5-49f9-bc9b-4ca2900bd82a",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Ceres",
-      "BodyType": "DwarfPlanet",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      },
-      "DwarfPlanetGroupIdentifiers": {
-        "Name": "GroupIdentifiers-DwarfPlanet",
-        "GroupIdentifiers": {}
-      }
-    },
-    "30b5fe82-fe8a-4f71-a995-1a372f6de2e1": {
-      "Identifier": "30b5fe82-fe8a-4f71-a995-1a372f6de2e1",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Pluto",
-      "BodyType": "DwarfPlanet",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      },
-      "DwarfPlanetGroupIdentifiers": {
-        "Name": "GroupIdentifiers-DwarfPlanet",
-        "GroupIdentifiers": {}
-      }
-    }
-  },
+  "DwarfPlanets": null,
   "Satellites": {
-    "68399296-0427-4484-b114-ddfad0cda1d9": {
-      "Identifier": "68399296-0427-4484-b114-ddfad0cda1d9",
-      "ParentIdentifier": "9afe0933-0421-4566-9ffa-7ce809bf8f05",
+    "Satellite-00001": {
+      "Identifier": "Satellite-00001",
+      "ParentIdentifier": null,
       "Name": "Moon",
       "BodyType": "Satellite",
       "Properties": {
         "PropertyGroups": {
-          "Basic": {
-            "Description": "The only natural satellite of the planet Earth",
-            "Radius": "1737.4 km",
-            "Area": "3.793E7 km2",
-            "Volume": "2.1958E10 km3",
-            "Flattening": "0.0012",
-            "Mass": "7.342E22 kg",
-            "Density": "3.344 g/cm3",
-            "Gravity": "1.62 m/s2",
-            "EscapeVelocity": "2.38 km/s"
-          }
-        }
-      }
-    },
-    "1820ac78-751a-488f-ac49-95935d173b54": {
-      "Identifier": "1820ac78-751a-488f-ac49-95935d173b54",
-      "ParentIdentifier": "aacb60c3-1887-4bee-bef0-1825afdb114d",
-      "Name": "Phobos",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "First and largest natural satellite of Mars.",
-            "Dimensions": "27x22X18 km",
-            "Radius": "11.2667 km",
-            "Area": "1548.3 km2",
-            "Volume": "5783.6 km3",
-            "Mass": "1.0659E16 kg",
-            "Density": "1.876 g/cm3",
-            "Gravity": "0.0057 m/s2",
-            "EscapeVelocity": "11.39 m/s"
-          }
-        }
-      }
-    },
-    "7c5b778c-7b22-4431-a314-1a06dd38dca4": {
-      "Identifier": "7c5b778c-7b22-4431-a314-1a06dd38dca4",
-      "ParentIdentifier": "aacb60c3-1887-4bee-bef0-1825afdb114d",
-      "Name": "Deimos",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "Second natural satellite of Mars.",
-            "Dimensions": "15x12.2x11 km",
-            "Radius": "6.2 km",
-            "Area": "495.155 km2",
-            "Volume": "999.78 km3",
-            "Mass": "1.4762E15 kg",
-            "Density": "1.471 g/cm3",
-            "Gravity": "0.003 m/s2",
-            "EscapeVelocity": "5.556 m/s"
-          }
-        }
-      }
-    },
-    "6fc16be2-de1c-437d-89f7-a094584bb762": {
-      "Identifier": "6fc16be2-de1c-437d-89f7-a094584bb762",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Metis",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "First inner natural satellite of Jupiter.",
-            "Dimensions": "60x40x34 km",
-            "Radius": "21.5 km",
-            "Area": "5800 km2",
-            "Volume": "42700 km3",
-            "Mass": "unknown kg",
-            "Density": "unknown g/cm3",
-            "Gravity": "unknown m/s2",
-            "EscapeVelocity": "unknown m/s"
-          }
-        }
-      }
-    },
-    "458d70d3-882e-4bec-bd25-4eef15cf2a9c": {
-      "Identifier": "458d70d3-882e-4bec-bd25-4eef15cf2a9c",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Adrastea",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "Second inner natural satellite of Jupiter.",
-            "Dimensions": "20x16x14 km",
-            "Radius": "18.2 km",
-            "Area": "unknown km2",
-            "Volume": "2345 km3",
-            "Mass": "unknown kg",
-            "Density": "unknown g/cm3",
-            "Gravity": "unknown m/s2",
-            "EscapeVelocity": "unknown m/s"
-          }
-        }
-      }
-    },
-    "3ac2a947-f52f-4433-a4ca-8e377e6b6416": {
-      "Identifier": "3ac2a947-f52f-4433-a4ca-8e377e6b6416",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Amalthea",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "Third inner natural satellite of Jupiter.",
-            "Dimensions": "250x146x128 km",
-            "Radius": "83.5 km",
-            "Area": "unknown km2",
-            "Volume": "2.43E6 km3",
-            "Mass": "2.08E18 kg",
-            "Density": "0.857 g/cm3",
-            "Gravity": "0.02 m/s2",
-            "EscapeVelocity": "0.058 m/s"
-          }
-        }
-      }
-    },
-    "ea35f532-508d-4597-8404-33cf971bb833": {
-      "Identifier": "ea35f532-508d-4597-8404-33cf971bb833",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Thebe",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "Fourth inner natural satellite of Jupiter.",
-            "Dimensions": "116x98x84 km",
-            "Radius": "49.3 km",
-            "Area": "unknown km2",
-            "Volume": "5.0E5 km3",
-            "Mass": "unknown kg",
-            "Density": "unknown g/cm3",
-            "Gravity": "0.04 m/s2",
-            "EscapeVelocity": "20-30 m/s"
-          }
-        }
-      }
-    },
-    "75ab76e3-9ccd-494e-9cd4-618c36c5c39f": {
-      "Identifier": "75ab76e3-9ccd-494e-9cd4-618c36c5c39f",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Io",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "First Galilean natural satellite of Jupiter.",
-            "Dimensions": "3660x3637.4x3630.6 km",
-            "Radius": "1821.6 km",
-            "Area": "4.191E7 km2",
-            "Volume": "2.53E10 km3",
-            "Mass": "8.932E22 kg",
-            "Density": "3.528 g/cm3",
-            "Gravity": "1.796 m/s2",
-            "EscapeVelocity": "2.558 m/s"
-          }
-        }
-      }
-    },
-    "bad67ec8-1194-4661-95fa-a567dcc1fdac": {
-      "Identifier": "bad67ec8-1194-4661-95fa-a567dcc1fdac",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Europa",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "Second Galilean natural satellite of Jupiter.",
-            "Radius": "1560.8 km",
-            "Area": "3.09E7 km2",
-            "Volume": "1.593E10 km3",
-            "Mass": "4.798E22 kg",
-            "Density": "3.013 g/cm3",
-            "Gravity": "1.314 m/s2",
-            "EscapeVelocity": "2.025 m/s"
-          }
-        }
-      }
-    },
-    "d7a28457-e6bc-43bd-a368-231bba89f664": {
-      "Identifier": "d7a28457-e6bc-43bd-a368-231bba89f664",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Ganymede",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "Third Galilean natural satellite of Jupiter.",
-            "Radius": "2634.1 km",
-            "Area": "8.72E7 km2",
-            "Volume": "7.66E10 km3",
-            "Mass": "1.4819E23 kg",
-            "Density": "1.936 g/cm3",
-            "Gravity": "1.428 m/s2",
-            "EscapeVelocity": "2.741 m/s"
-          }
-        }
-      }
-    },
-    "09c6243b-6636-4318-aa88-a447ce66aecb": {
-      "Identifier": "09c6243b-6636-4318-aa88-a447ce66aecb",
-      "ParentIdentifier": "554bc461-23cb-497f-9ed3-7b287b48e7ab",
-      "Name": "Callisto",
-      "BodyType": "Satellite",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {
-            "Description": "Fourth Galilean natural satellite of Jupiter.",
-            "Radius": "2410.3 km",
-            "Area": "7.30E7 km2",
-            "Volume": "5.9E10 km3",
-            "Mass": "1.076E23 kg",
-            "Density": "1.8344 g/cm3",
-            "Gravity": "1.235 m/s2",
-            "EscapeVelocity": "2.440 m/s"
-          }
+          "Basic": {}
         }
       }
     }
   },
   "Asteroids": {
-    "709a1b24-f8de-4aa6-a582-3533afd9d489": {
-      "Identifier": "709a1b24-f8de-4aa6-a582-3533afd9d489",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Vesta",
+    "Asteroid-00001": {
+      "Identifier": "Asteroid-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Ceres",
       "BodyType": "Asteroid",
       "Properties": {
         "PropertyGroups": {
@@ -551,9 +217,9 @@
         }
       }
     },
-    "d7fc3fe0-11ca-48ea-aa46-3687b2286b7f": {
-      "Identifier": "d7fc3fe0-11ca-48ea-aa46-3687b2286b7f",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Asteroid-00002": {
+      "Identifier": "Asteroid-00002",
+      "ParentIdentifier": "Star-00001",
       "Name": "Pallas",
       "BodyType": "Asteroid",
       "Properties": {
@@ -562,98 +228,10 @@
         }
       }
     },
-    "56d6cca2-ced3-497e-9c70-7d1276838df1": {
-      "Identifier": "56d6cca2-ced3-497e-9c70-7d1276838df1",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Hygiea",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "a8c60980-2325-43e7-b7c4-ba6375b3695f": {
-      "Identifier": "a8c60980-2325-43e7-b7c4-ba6375b3695f",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Euphrosyne",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "92a888a9-caa1-424b-85be-af57b424aa64": {
-      "Identifier": "92a888a9-caa1-424b-85be-af57b424aa64",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Interamnia",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "dccc656d-3b0a-4ed0-a79f-33fda148a528": {
-      "Identifier": "dccc656d-3b0a-4ed0-a79f-33fda148a528",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Davida",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "a8601532-2355-415e-af4d-31de6794546a": {
-      "Identifier": "a8601532-2355-415e-af4d-31de6794546a",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Herculina",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "d140c671-84b0-40c7-bfbf-ccb3d5cd5c43": {
-      "Identifier": "d140c671-84b0-40c7-bfbf-ccb3d5cd5c43",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Eunomia",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "2b659805-8c18-4ad6-a591-eed36554a448": {
-      "Identifier": "2b659805-8c18-4ad6-a591-eed36554a448",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Asteroid-00003": {
+      "Identifier": "Asteroid-00003",
+      "ParentIdentifier": "Star-00001",
       "Name": "Juno",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "10ef92eb-f748-43d2-bfbd-e43aca513ae5": {
-      "Identifier": "10ef92eb-f748-43d2-bfbd-e43aca513ae5",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Psyche",
-      "BodyType": "Asteroid",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "db376530-4260-4204-a534-de3e9896e273": {
-      "Identifier": "db376530-4260-4204-a534-de3e9896e273",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Europa",
       "BodyType": "Asteroid",
       "Properties": {
         "PropertyGroups": {
@@ -663,10 +241,10 @@
     }
   },
   "Comets": {
-    "d2b4623a-01ce-4d03-819a-7aa7b95a9402": {
-      "Identifier": "d2b4623a-01ce-4d03-819a-7aa7b95a9402",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Halley's",
+    "Comet-00001": {
+      "Identifier": "Comet-00001",
+      "ParentIdentifier": "Star-00001",
+      "Name": "Haley's",
       "BodyType": "Comet",
       "Properties": {
         "PropertyGroups": {
@@ -674,65 +252,10 @@
         }
       }
     },
-    "6bfbef63-a65e-4b7c-9d2b-3becc4f18afb": {
-      "Identifier": "6bfbef63-a65e-4b7c-9d2b-3becc4f18afb",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
+    "Comet-00002": {
+      "Identifier": "Comet-00002",
+      "ParentIdentifier": "Star-00001",
       "Name": "Caeser's",
-      "BodyType": "Comet",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "36eb3857-ac7c-442e-9d94-72b84b3d2371": {
-      "Identifier": "36eb3857-ac7c-442e-9d94-72b84b3d2371",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Encke's",
-      "BodyType": "Comet",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "5b28b621-7cc4-42e1-9653-5510c3c69bc8": {
-      "Identifier": "5b28b621-7cc4-42e1-9653-5510c3c69bc8",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Biela's",
-      "BodyType": "Comet",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "743a0772-36e8-4316-9481-697fd35d3395": {
-      "Identifier": "743a0772-36e8-4316-9481-697fd35d3395",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Faye's",
-      "BodyType": "Comet",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "a2a5dc85-7a23-43ef-b1d5-09772611f44e": {
-      "Identifier": "a2a5dc85-7a23-43ef-b1d5-09772611f44e",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "Brorsen's",
-      "BodyType": "Comet",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      }
-    },
-    "b6628a21-2674-445e-8a2c-79d0c5f1ca4d": {
-      "Identifier": "b6628a21-2674-445e-8a2c-79d0c5f1ca4d",
-      "ParentIdentifier": "640a8859-9e9b-4699-9c3e-e27c73af6698",
-      "Name": "d'Arrest's",
       "BodyType": "Comet",
       "Properties": {
         "PropertyGroups": {

@@ -24,10 +24,8 @@ namespace CoreTests
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                SerializeMap(map, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            SerializeMap(map, writer);
         }
 
         [TestMethod]
@@ -41,10 +39,8 @@ namespace CoreTests
 
             TestStellarMap map;
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                map = DeSerializeMap(reader);
-            }
+            using StreamReader reader = new StreamReader(filename);
+            map = DeSerializeMap(reader);
         }
 
         [TestMethod]
@@ -52,25 +48,20 @@ namespace CoreTests
         public void CompareEarthTest()
         {
             TestStellarMap originalMap = new TestStellarMap("Earth");
+            CreateEarth(originalMap);
             TestStellarMap finalMap;
 
-            using (MemoryStream memory = new MemoryStream())
-            {
-                using (StreamWriter writer = new StreamWriter(memory, Encoding.Unicode, 1024, true))
-                {
-                    SerializeMap(originalMap, writer);
-                    writer.Flush();
-                }
+            using MemoryStream memory = new MemoryStream();
+            using StreamWriter writer = new StreamWriter(memory, Encoding.Unicode, 1024, true);
+            SerializeMap(originalMap, writer);
+            writer.Flush();
 
-                memory.Position = 0;
+            memory.Position = 0;
 
-                using (StreamReader reader = new StreamReader(memory))
-                {
-                    finalMap = DeSerializeMap(reader);
-                }
+            using StreamReader reader = new StreamReader(memory);
+            finalMap = DeSerializeMap(reader);
 
-                Assert.IsTrue(originalMap.Equals(finalMap));
-            }
+            Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(originalMap, finalMap));
         }
 
         [TestMethod]
@@ -84,10 +75,8 @@ namespace CoreTests
             if (File.Exists(filename))
                 File.Delete(filename);
 
-            using (StreamWriter writer = new StreamWriter(filename))
-            {
-                SerializeMap(map, writer);
-            }
+            using StreamWriter writer = new StreamWriter(filename);
+            SerializeMap(map, writer);
         }
 
         [TestMethod]
@@ -101,10 +90,8 @@ namespace CoreTests
 
             TestStellarMap map;
 
-            using (StreamReader reader = new StreamReader(filename))
-            {
-                map = DeSerializeMap(reader);
-            }
+            using StreamReader reader = new StreamReader(filename);
+            map = DeSerializeMap(reader);
         }
 
         [TestMethod]
@@ -112,25 +99,20 @@ namespace CoreTests
         public void CompareSolTest()
         {
             TestStellarMap originalMap = new TestStellarMap("Sol");
+            CreateSol(originalMap);
             TestStellarMap finalMap;
 
-            using (MemoryStream memory = new MemoryStream())
-            {
-                using (StreamWriter writer = new StreamWriter(memory, Encoding.Unicode, 1024, true))
-                {
-                    SerializeMap(originalMap, writer);
-                    writer.Flush();
-                }
+            using MemoryStream memory = new MemoryStream();
+            using StreamWriter writer = new StreamWriter(memory, Encoding.Unicode, 1024, true);
+            SerializeMap(originalMap, writer);
+            writer.Flush();
 
-                memory.Position = 0;
+            memory.Position = 0;
 
-                using (StreamReader reader = new StreamReader(memory))
-                {
-                    finalMap = DeSerializeMap(reader);
-                }
+            using StreamReader reader = new StreamReader(memory);
+            finalMap = DeSerializeMap(reader);
 
-                Assert.IsTrue(originalMap.Equals(finalMap));
-            }
+            Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(originalMap, finalMap));
         }
 
         public void SerializeMap(TestStellarMap map, StreamWriter writer)

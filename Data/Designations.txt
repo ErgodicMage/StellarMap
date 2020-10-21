@@ -2,14 +2,14 @@ StarSystem-00001 : Sol : None
 StarSystem-00002 : Bernard : Gl 699
 StarSystem-00003 : Epsilon Eridani : Gl 144
 StarSystem-00004 : Procyon : Gl 280
-StarSystem-00005 : Ross : Gl 447
-StarSystem-00006 : Ceti : Gl 65
+StarSystem-00005 : Ross : Ross 128
+StarSystem-00006 : Ceti : Luyten 726/Gl 65
 StarSystem-00007 : Sirius : Gl 244
 StarSystem-00008 : Luyten : Gl 273
-StarSystem-00009 : Lalande : Gl 441
+StarSystem-00009 : Lalande : Gl 411
 StarSystem-00010 : Ophiuchi : GJ 644
 StarSystem-00011 : Little Ophiuchi : GJ 663
-StarSystem-00012 : Wolf : Gl 729
+StarSystem-00012 : Wolf : Ross 154
 StarSystem-00013 : Centauri : Gl 559
 StarSystem-00014 : Tau Ceti : Gl 71
 StarSystem-00015 : Groombridge : Gl 380
