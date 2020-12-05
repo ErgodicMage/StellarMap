@@ -396,12 +396,70 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
         public static Planet CreateSaturn(IStellarMap map = null)
         {
-            Planet s = new Planet("Saturn");
+            Planet saturn = new Planet("Saturn");
 
             map ??= BaseStellarMap.DefaultMap;
-            map.Add(s);
+            map.Add(saturn);
 
-            return s;
+            saturn.BasicProperties.Add(Constants.PropertyNames.Description, "The fifth planet in the Solar System.");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Type, "Gas Giant Planet");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Radius, "58232 km");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Area, "4.27E10 km2");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Volume, "8.2713E14 km3");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Flattening, "0.09796");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Mass, "5.6834E26 kg");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Density, "0.867 g/cm3");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Gravity, "10.44 m/s2");
+            saturn.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "35.5 km/s");
+
+            // For Saturn I'll just be adding top 10-20 moons by size
+            #region Titan
+            Satellite moon = new Satellite("Titan");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "Largest natural satellite of Saturn and second largest in the Solarsystem.");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "unknown km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "2574.73 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "8.3E7 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "7.16E10 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.3452E23 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.8798 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "1.352 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "2.639 m/s");
+            #endregion
+
+            #region Rhea
+            moon = new Satellite("Rhea");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "2nd largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "1532.4x1525.6x1524.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "763.8 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "7.337E6 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "2.3E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.236 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.264 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.635 m/s");
+            #endregion
+
+            #region Iapetus
+            moon = new Satellite("Iapetus");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "3rd largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "1492.0x1492.0x1424.0 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "734.5 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "6.7E6 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.806E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.088 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.223 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.573 m/s");
+            #endregion
+
+
+            return saturn;
         }
 
         public static Planet CreateUranus(IStellarMap map = null)

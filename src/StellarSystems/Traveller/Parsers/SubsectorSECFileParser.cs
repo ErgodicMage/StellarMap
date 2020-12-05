@@ -12,12 +12,20 @@ namespace StellarMap.Traveller.Parsers
             WorldSECParser worldParser = new WorldSECParser();
 
             string line = null;
-            int linecount = 0;
+            //int linecount = 0;
+            bool startWorlds = false;
             while ((line = reader.ReadLine()) != null)
             {
-                linecount++;
-                if (linecount < 13)
+                //linecount++;
+                //if (linecount < 13)
+                    //continue;
+                if (string.IsNullOrEmpty(line))
                     continue;
+                else if (!startWorlds && line.StartsWith("....+"))
+                {
+                    startWorlds = true;
+                    continue;
+                }
 
                 World world = worldParser.ParseWorld(map, line);
 
