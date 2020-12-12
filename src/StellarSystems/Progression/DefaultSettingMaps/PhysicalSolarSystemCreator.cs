@@ -458,6 +458,111 @@ namespace StellarMap.Progression.DefaultSettingMaps
             moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.573 m/s");
             #endregion
 
+            #region Dione
+            moon = new Satellite("Dione");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "4th largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "1128.8x1122.6x1119.2 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "561.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "3.96E6 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.095E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.478 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.232 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.51 m/s");
+            #endregion
+
+
+            #region Tethys
+            moon = new Satellite("Tethys");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "5th largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "1076.8x1057.4x1052.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "531.1 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "6.174E20 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "0.984 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.146 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.394 m/s");
+            #endregion
+
+            #region Enceladus
+            moon = new Satellite("Enceladus");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "6th largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "513.2x502.8x496.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "252.1 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.08E20 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.609 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.113 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.239 m/s");
+            #endregion
+
+            #region Mimas
+            moon = new Satellite("Mimas");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "7th largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "415.6x393.4x381.2 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "198.2 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "4.9E5 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "3.2E7 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "3.749E19 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.148 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.064 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.159 m/s");
+            #endregion
+
+            #region Hyperion
+            moon = new Satellite("Hyperion");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "8th largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "360.2x266.0x205.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "270 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "5.62E18 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "0.544 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.021 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.099 m/s");
+            #endregion
+
+            #region Phoebe
+            moon = new Satellite("Phoebe");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "9th largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "218.8x217.0x203.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "106.5 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "unknown km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "8.292E18 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.638 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.039 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.10 m/s");
+            #endregion
+
+            #region Janus
+            moon = new Satellite("Janus");
+            saturn.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "10th largest natural satellite of Saturn.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "203x185x152.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "89.5 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "unknown km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "3xE6 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.8975E18 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "0.63 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.017 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "unknown m/s");
+            #endregion
 
             return saturn;
         }
