@@ -401,7 +401,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             map ??= BaseStellarMap.DefaultMap;
             map.Add(saturn);
 
-            saturn.BasicProperties.Add(Constants.PropertyNames.Description, "The fifth planet in the Solar System.");
+            saturn.BasicProperties.Add(Constants.PropertyNames.Description, "The 6th planet in the Solar System.");
             saturn.BasicProperties.Add(Constants.PropertyNames.Type, "Gas Giant Planet");
             saturn.BasicProperties.Add(Constants.PropertyNames.Radius, "58232 km");
             saturn.BasicProperties.Add(Constants.PropertyNames.Area, "4.27E10 km2");
@@ -569,22 +569,179 @@ namespace StellarMap.Progression.DefaultSettingMaps
 
         public static Planet CreateUranus(IStellarMap map = null)
         {
-            Planet u = new Planet("Uranus");
+            Planet uranus = new Planet("Uranus");
 
             map ??= BaseStellarMap.DefaultMap;
-            map.Add(u);
+            map.Add(uranus);
+            
+            uranus.BasicProperties.Add(Constants.PropertyNames.Description, "The 7th planet in the Solar System.");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Type, "Gas Giant Planet");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Radius, "58232 km");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Area, "4.27E10 km2");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Volume, "8.2713E14 km3");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Flattening, "0.09796");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Mass, "5.6834E26 kg");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Density, "0.867 g/cm3");
+            uranus.BasicProperties.Add(Constants.PropertyNames.Gravity, "10.44 m/s2");
+            uranus.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "35.5 km/s");            
 
-            return u;
+            #region Titania
+            Satellite moon = new Satellite("Titania");
+            uranus.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The largest natural satellite of Uranus.");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "203x185x152.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "788.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "7.82E6 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "2.065xE9 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "3.4E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.711 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.379 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.773 m/s");
+            #endregion            
+
+            #region Oberon
+            moon = new Satellite("Oberon");
+            uranus.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The 2nd largest natural satellite of Uranus.");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "203x185x152.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "761.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "7.285E6 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "1.849xE9 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "3.076E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.63 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.346 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.727 m/s");
+            #endregion 
+
+            #region Umbriel
+            moon = new Satellite("Umbriel");
+            uranus.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The 3rd largest natural satellite of Uranus.");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "203x185x152.6 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "584.7 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "4.296E6 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "8.373xE8 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.275E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.39 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.2 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.52 m/s");
+            #endregion
+
+            #region Ariel
+            moon = new Satellite("Ariel");
+            uranus.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The 4th largest natural satellite of Uranus.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "1162.2x1155.8x11155.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "578.9 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "4.211E6 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "8.126xE8 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "1.251E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.592 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.269 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.559 m/s");
+            #endregion
+
+            #region Miranda
+            moon = new Satellite("Miranda");
+            uranus.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The 5th largest natural satellite of Uranus.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "480x468.4x465.8 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "235.8 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "7.0E5 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "5.485xE7 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "6.4E19 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.2 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.079 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.193 m/s");
+            #endregion
+
+            return uranus;
         }
 
         public static Planet CreateNeptune(IStellarMap map = null)
         {
-            Planet n = new Planet("Neptune");
+            Planet neptune = new Planet("Neptune");
 
             map ??= BaseStellarMap.DefaultMap;
-            map.Add(n);
+            map.Add(neptune);
 
-            return n;
+            neptune.BasicProperties.Add(Constants.PropertyNames.Description, "The 8th planet in the Solar System.");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Type, "Gas Giant Planet");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Radius, "24622 km");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Area, "4.27E9 km2");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Volume, "6.254E13 km3");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Flattening, "0.09796");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Mass, "1.024E26 kg");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Density, "1.638 g/cm3");
+            neptune.BasicProperties.Add(Constants.PropertyNames.Gravity, "11.15 m/s2");
+            neptune.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "23.5 km/s");            
+
+            #region Triton
+            Satellite moon = new Satellite("Triton");
+            neptune.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The largest natural satellite of Neptune.");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "480x468.4x465.8 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "1353.4 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "2.302E7 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "1.038xE10 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "2.139E21 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "2.061 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.779 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "1.445 m/s");
+            #endregion
+
+            #region Proteus
+            moon = new Satellite("Proteus");
+            neptune.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The 2nd largest natural satellite of Neptune.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "424x390x396 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "210 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "5.54E5 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "3.4xE7 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "4.4E19 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.3 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.07 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.17 m/s");
+            #endregion
+
+            #region Nereid
+            moon = new Satellite("Nereid");
+            neptune.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The 3rd largest natural satellite of Neptune.");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "424x390x396 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "178.5 km");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Area, "5.54E5 km2");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Volume, "3.4xE7 km3");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Mass, "4.4E19 kg");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.3 g/cm3");
+            //moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.07 m/s2");
+            //moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.17 m/s");
+            #endregion
+
+            #region Larissa
+            moon = new Satellite("Larissa");
+            neptune.Add(moon);
+
+            moon.BasicProperties.Add(Constants.PropertyNames.Description, "The 4th largest natural satellite of Neptune.");
+            moon.BasicProperties.Add(Constants.PropertyNames.Dimensions, "216x204x168 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Radius, "97 km");
+            moon.BasicProperties.Add(Constants.PropertyNames.Area, "1.182E5 km2");
+            moon.BasicProperties.Add(Constants.PropertyNames.Volume, "3.5xE6 km3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Mass, "4.2E18 kg");
+            moon.BasicProperties.Add(Constants.PropertyNames.Density, "1.2 g/cm3");
+            moon.BasicProperties.Add(Constants.PropertyNames.Gravity, "0.03 m/s2");
+            moon.BasicProperties.Add(Constants.PropertyNames.EscapeVelocity, "0.076 m/s");
+            #endregion
+
+            return neptune;
         }
 
         public static DwarfPlanet CreateCeres(IStellarMap map = null)
