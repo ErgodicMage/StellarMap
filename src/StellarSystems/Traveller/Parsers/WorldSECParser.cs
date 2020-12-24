@@ -25,22 +25,22 @@ namespace StellarMap.Traveller.Parsers
 
             if (!worldMatch.Success)
                 return null;
-            string name = worldMatch.Groups["name"].Value;
+            string name = worldMatch.Groups["name"].Value.Trim();
 
-            string h = worldMatch.Groups["hex"].Value;
+            string h = worldMatch.Groups["hex"].Value.Trim();
             Hex hex = new Hex(h);
 
-            string uwp = worldMatch.Groups["uwp"].Value;
+            string uwp = worldMatch.Groups["uwp"].Value.Trim();
 
             World world = new World(name, hex, uwp);
             map.Add<World>(world);
 
-            world.Base = worldMatch.Groups["base"].Value;
-            world.Codes = worldMatch.Groups["codes"].Value;
-            world.Zone = worldMatch.Groups["zone"].Value;
-            world.PBG = worldMatch.Groups["pbg"].Value;
-            world.Allegiance = worldMatch.Groups["allegiance"].Value;
-            world.StellarData = worldMatch.Groups["stellar"].Value;
+            world.Base = worldMatch.Groups["base"].Value.Trim();
+            world.Codes = worldMatch.Groups["codes"].Value.Trim();
+            world.Zone = worldMatch.Groups["zone"].Value.Trim();
+            world.PBG = worldMatch.Groups["pbg"].Value.Trim();
+            world.Allegiance = worldMatch.Groups["allegiance"].Value.Trim();
+            world.StellarData = worldMatch.Groups["stellar"].Value.Trim();
 
             return world;
         }
