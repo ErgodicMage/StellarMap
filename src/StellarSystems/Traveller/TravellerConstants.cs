@@ -20,6 +20,14 @@
             public const string Sector = "Sector";
             public const string Subsector = "Subsector";
             public const string World = "World";
+
+            public const string Route = "Route";
+
+            public const string Border = "Border";
+
+            public const string Allegiance = "Allegiance";
+
+            public const string Label = "Label";
         }
 
         public static class NamedIdentifiers
