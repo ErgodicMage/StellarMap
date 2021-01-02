@@ -1,16 +1,14 @@
-﻿using System;
-using System.Diagnostics.Contracts;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace StellarMap.Traveller
 {
     [DataContract(Name = "Hex")]
-    public sealed class Hex : IEquatable<Hex>
+    public sealed class Hex : IEqualityComparer<Hex>
     {
         #region Constructors
         public Hex()
         {
-
         }
 
         public Hex(byte x, byte y)
@@ -42,11 +40,13 @@ namespace StellarMap.Traveller
         }
         #endregion
 
+        #region Properties
         [DataMember(Order = 1)]
         public byte X { get; private set; }
 
         [DataMember(Order = 2)]
         public byte Y { get; private set; }
+        #endregion
 
         #region Public Functions
         public bool IsValid() => X >= 1 && X <= TravellerConstants.Sector.Width && Y >= 1 && Y <= TravellerConstants.Sector.Height;
@@ -70,28 +70,34 @@ namespace StellarMap.Traveller
         #endregion
 
         #region String Functions
-        #endregion
         public override string ToString()
         {
             if (!IsValid())
                 return "0000";
             return (X*100+Y).ToString("0000");
         }
+        #endregion
+
         #region IEquatable Interface
-        [Pure]
-        public bool Equals(Hex other) => this.IsValid() && other.IsValid() && this.X == other.X && this.Y == other.Y;
+        public bool Equals(Hex x, Hex y) =>HexEqualityComparer.Comparer.Equals(x, y);
 
-        [Pure]
-        public override bool Equals(object obj) => obj is Hex h && this.Equals(h);
+        public override bool Equals(object obj) => HexEqualityComparer.Comparer.Equals(this, obj as Hex);
 
-        [Pure]
-        public static bool operator == (Hex a, Hex b) => a.Equals(b);
-        public static bool operator != (Hex a, Hex b) => !a.Equals(b);
+        public int GetHashCode(Hex obj) => HexEqualityComparer.Comparer.GetHashCode(obj);
+
+        public override int GetHashCode() => HexEqualityComparer.Comparer.GetHashCode(this);
+        #endregion
+    }
+
+    public sealed class HexEqualityComparer : IEqualityComparer<Hex>
+    {
+        #region IEqualityComparer
+        public bool Equals (Hex x, Hex y) => x != null && y != null && x.IsValid() && y.IsValid() && 
+                                             x.X == y.X && x.Y == y.Y;                    
+
+        public int GetHashCode(Hex obj) => 1565 ^ obj.X.GetHashCode() ^ obj.Y.GetHashCode();
         #endregion
 
-        #region HashCode
-        [Pure]
-        public override int GetHashCode() => 1565 ^ X.GetHashCode() ^ Y.GetHashCode();
-        #endregion
+        public static IEqualityComparer<Hex> Comparer { get; } = new HexEqualityComparer();
     }
 }
