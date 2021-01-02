@@ -28,13 +28,16 @@ namespace StellarMap.Traveller
         public GroupNamedIdentifiers SectorGroupIdentifiers { get; set; }
 
         [DataMember(Order = 12)]
-        public IList<Route> Routes {get; set;}
+        public IList<Route> Routes {get; set;} = new List<Route>();
 
         [DataMember(Order = 13)]
-        public IList<Border> Borders {get; set;}
+        public IList<Border> Borders {get; set;} = new List<Border>();
 
         [DataMember(Order = 14)]
-        public IList<Allegiance> Allegiances {get; set;}
+        public IList<Allegiance> Allegiances {get; set;} = new List<Allegiance>();
+
+        [DataMember(Order = 15)]
+        public IList<Label> Labels {get; set;} = new List<Label>();
         #endregion
 
         #region Get Functions
