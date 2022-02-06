@@ -21,7 +21,7 @@ namespace StellarMap.Progression.DefaultSettingMaps
             sol.Add(CreateNeptune(map));
 
             sol.Add(CreateCeres(map));
-            sol.Add(CreatePluto());
+            sol.Add(CreatePluto(map));
 
             var asteroids = CreateAsteroids(map);
             foreach (Asteroid a in asteroids)

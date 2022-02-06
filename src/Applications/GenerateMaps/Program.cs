@@ -30,13 +30,13 @@ namespace StellarMap.GenerateMaps
 
             dataDir = config["DataPath"];
 
-            //LocateStarsInCube(20);
+            LocateStarsInCube(20);
 
-            //JsonGenerateLocalSector();
-            //JsonRetrieveLocalSector();
+            JsonGenerateLocalSector();
+            JsonRetrieveLocalSector();
 
-            //ZipGenerateLocalSector();
-            //ZipRetrieveLocalSector();
+            ZipGenerateLocalSector();
+            ZipRetrieveLocalSector();
 
             StoreSolarSystem();
             RetrieveSolarSystem();

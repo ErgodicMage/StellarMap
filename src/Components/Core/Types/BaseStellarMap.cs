@@ -132,6 +132,11 @@ namespace StellarMap.Core.Types
                     if (Planets != null)
                         count = Planets.Count;
                     break;
+                case Constants.BodyTypes.DwarfPlanet:
+                    prefix = Constants.BodyTypes.DwarfPlanet;
+                    if (DwarfPlanets != null)
+                        count = DwarfPlanets.Count;
+                    break;
                 case Constants.BodyTypes.Star:
                     prefix = Constants.BodyTypes.Star;
                     if (Stars != null)

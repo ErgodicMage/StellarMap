@@ -27,7 +27,7 @@ namespace StellarMap.Catalogues
             Catalogue = new List<HabHygRecord>();
 
             CsvReader reader = new CsvReader(File.OpenText(catalogueFile), System.Globalization.CultureInfo.CurrentCulture);
-            reader.Configuration.RegisterClassMap<HabHYGRecordMap>();
+            reader.Context.RegisterClassMap<HabHYGRecordMap>();
             reader.Read();
             reader.ReadHeader();
             while (reader.Read())

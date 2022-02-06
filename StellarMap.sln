@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29519.87
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C9CC0A84-38E1-48EA-8CB5-53419A78FB68}"
 EndProject
@@ -12,11 +12,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\Components\Core\Core.csproj", "{F29F2E3E-B3D5-4E6C-BFA2-C4F924508783}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B833C15F-7913-4F34-BA0A-D0742AD8A8B6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Playlists", "Playlists", "{93DA64BA-1668-44B7-B7BD-8096FF037161}"
-	ProjectSection(SolutionItems) = preProject
-		tests\Playlists\Serialization.playlist = tests\Playlists\Serialization.playlist
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Physics", "src\Components\Physics\Physics.csproj", "{45178EC0-4684-436E-B5DA-5257ECD573C0}"
 EndProject
@@ -42,6 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Traveller", "src\StellarSys
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FB05A161-D02A-4E07-B3D0-3B6927069559}"
 	ProjectSection(SolutionItems) = preProject
+		clean.ps1 = clean.ps1
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -53,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreTests", "tests\CoreTest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorageTests", "tests\StorageTests\StorageTests.csproj", "{15CD1F82-FAC1-4D49-8666-3775C27A3C2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravellerTests", "tests\TravellerTests\TravellerTests.csproj", "{A5A65948-56F4-426F-906E-F5AAF9C8371F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravellerTests", "tests\TravellerTests\TravellerTests.csproj", "{A5A65948-56F4-426F-906E-F5AAF9C8371F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,7 +121,6 @@ Global
 		{58100EF9-1580-437B-99E1-66B33F3DAD5D} = {C9CC0A84-38E1-48EA-8CB5-53419A78FB68}
 		{91B18A3D-34CE-4FAA-B903-3A68FE37F34B} = {58100EF9-1580-437B-99E1-66B33F3DAD5D}
 		{F29F2E3E-B3D5-4E6C-BFA2-C4F924508783} = {58100EF9-1580-437B-99E1-66B33F3DAD5D}
-		{93DA64BA-1668-44B7-B7BD-8096FF037161} = {B833C15F-7913-4F34-BA0A-D0742AD8A8B6}
 		{45178EC0-4684-436E-B5DA-5257ECD573C0} = {58100EF9-1580-437B-99E1-66B33F3DAD5D}
 		{6FBF26C1-EA25-467F-ADCA-A9A99456D201} = {C9CC0A84-38E1-48EA-8CB5-53419A78FB68}
 		{0092CAAB-2697-4562-9B4A-A63A78994D92} = {6FBF26C1-EA25-467F-ADCA-A9A99456D201}
