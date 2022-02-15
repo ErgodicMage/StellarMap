@@ -1,27 +1,26 @@
-﻿namespace StellarMap.Storage
+﻿namespace StellarMap.Storage;
+
+public static class MapStorageFactory
 {
-    public static class MapStorageFactory
+    #region Storage Types
+    public const string JsonStorage = "JsonStorage";
+    public const string ZipStorage = "ZipStorage";
+    #endregion
+
+    public static IMapStorage GetStorage(string type)
     {
-        #region Storage Types
-        public const string JsonStorage = "JsonStorage";
-        public const string ZipStorage = "ZipStorage";
-        #endregion
+        IMapStorage storage = null;
 
-        public static IMapStorage GetStorage(string type)
+        switch (type)
         {
-            IMapStorage storage = null;
-
-            switch (type)
-            {
-                case JsonStorage:
-                    storage = new JSonMapStorage();
-                    break;
-                case ZipStorage:
-                    storage = new ZipMapStorage();
-                    break;
-            }
-
-            return storage;
+            case JsonStorage:
+                storage = new JSonMapStorage();
+                break;
+            case ZipStorage:
+                storage = new ZipMapStorage();
+                break;
         }
+
+        return storage;
     }
 }

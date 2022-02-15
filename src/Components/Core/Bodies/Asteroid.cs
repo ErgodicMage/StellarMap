@@ -1,20 +1,16 @@
-﻿using System.Runtime.Serialization;
+﻿namespace StellarMap.Core.Bodies;
 
-using StellarMap.Core.Types;
-
-namespace StellarMap.Core.Bodies
+[DataContract (Name = Constants.BodyTypes.Asteroid)]
+public class Asteroid : StellarBody
 {
-    [DataContract (Name = Constants.BodyTypes.Asteroid)]
-    public class Asteroid : StellarBody
-    {
-        #region Constructors
-        public Asteroid()
-        {            
-        }
-
-        public Asteroid(string name) : base(name, Constants.BodyTypes.Asteroid)
-        {
-        }
-        #endregion
+    #region Constructors
+    public Asteroid()
+    {            
     }
+
+    public Asteroid(string name) : base(name, Constants.BodyTypes.Asteroid)
+    {
+    }
+    #endregion
 }
+

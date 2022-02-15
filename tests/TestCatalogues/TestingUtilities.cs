@@ -1,54 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
+﻿using Microsoft.Extensions.Configuration;
 
-using Microsoft.Extensions.Configuration;
+namespace TestCatalogues;
 
-
-namespace TestCatalogues
+public class TestCategories
 {
-    public class TestCategories
+    public const string UnitTest = "UnitTest";
+    public const string FunctionalTest = "FunctionalTest";
+}
+
+public static class TestingUtilities
+{
+    const string testnamespace = "TestCatalogues";
+
+    public static IConfiguration Config { get; } = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+    public static void LoadAppSettings()
     {
-        public const string UnitTest = "UnitTest";
-        public const string FunctionalTest = "FunctionalTest";
+        IConfiguration config = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .Build();
+    }
+    public static string ReadResource(string folder, string resourcefile)
+    {
+        string filename = folder.Replace(" ", "_").Replace("\\", ".").Replace("/", ".") + "." +  resourcefile;
+        return ReadResource(filename);
     }
 
-    public static class TestingUtilities
+    public static string ReadResource(string resourcefile)
     {
-        const string testnamespace = "TestCatalogues";
+        string filename = testnamespace + "." + resourcefile;
 
-        public static IConfiguration Config { get; } = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-
-        public static void LoadAppSettings()
+        string retString = string.Empty;
+        using (StreamReader reader = LoadResourceFile(filename))
         {
-            IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
-                .Build();
-        }
-        public static string ReadResource(string folder, string resourcefile)
-        {
-            string filename = folder.Replace(" ", "_").Replace("\\", ".").Replace("/", ".") + "." +  resourcefile;
-            return ReadResource(filename);
+            retString = reader.ReadToEnd();
         }
 
-        public static string ReadResource(string resourcefile)
-        {
-            string filename = testnamespace + "." + resourcefile;
-
-            string retString = string.Empty;
-            using (StreamReader reader = LoadResourceFile(filename))
-            {
-                retString = reader.ReadToEnd();
-            }
-
-            return retString;
-        }
-        public static StreamReader LoadResourceFile(string resourcefile)
-        {
-            StreamReader reader = new StreamReader(System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcefile));
-            return reader;
-        }
+        return retString;
+    }
+    public static StreamReader LoadResourceFile(string resourcefile)
+    {
+        StreamReader reader = new StreamReader(System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourcefile));
+        return reader;
     }
 }

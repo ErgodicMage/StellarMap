@@ -1,13 +1,9 @@
-﻿using System.IO;
+﻿namespace StellarMap.Storage;
 
-using StellarMap.Core.Types;
-
-namespace StellarMap.Storage
+public interface IMapStorage
 {
-    public interface IMapStorage
-    {
-        void Store(IStellarMap map, StreamWriter writer);
+    void Store(IStellarMap map, StreamWriter writer);
 
-        T Retreive<T>(StreamReader reader) where T : IStellarMap, new();
-    }
+    T Retreive<T>(StreamReader reader) where T : IStellarMap, new();
 }
+

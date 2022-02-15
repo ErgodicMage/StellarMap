@@ -1,40 +1,35 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+namespace TravellerTests;
 
-using StellarMap.Traveller;
-
-namespace TravellerTests
+[TestClass]
+public class CreateTests
 {
-    [TestClass]
-    public class CreateTests
+    [TestMethod]
+    [TestCategory(TestCategories.UnitTest)]
+    public void CreateWorldAramisTest()
     {
-        [TestMethod]
-        [TestCategory(TestCategories.UnitTest)]
-        public void CreateWorldAramisTest()
-        {
-            TravellerMap map = new TravellerMap("Aramis World");
+        TravellerMap map = new TravellerMap("Aramis World");
 
-            SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
-            World aramis = spinwardmarches.CreateAramisWorld();
-        }
+        SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
+        World aramis = spinwardmarches.CreateAramisWorld();
+    }
 
-        [TestMethod]
-        [TestCategory(TestCategories.UnitTest)]
-        public void CreateSubsectorAramis()
-        {
-            TravellerMap map = new TravellerMap("Aramis Subsector");
+    [TestMethod]
+    [TestCategory(TestCategories.UnitTest)]
+    public void CreateSubsectorAramis()
+    {
+        TravellerMap map = new TravellerMap("Aramis Subsector");
 
-            SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
-            Subsector aramis = spinwardmarches.CreateAramisSubsector();
-        }
+        SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
+        Subsector aramis = spinwardmarches.CreateAramisSubsector();
+    }
 
-        [TestMethod]
-        [TestCategory(TestCategories.UnitTest)]
-        public void CreateSpinwardMarchesTest()
-        {
-            TravellerMap map = new TravellerMap("Spinward Marches");
+    [TestMethod]
+    [TestCategory(TestCategories.UnitTest)]
+    public void CreateSpinwardMarchesTest()
+    {
+        TravellerMap map = new TravellerMap("Spinward Marches");
 
-            SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
-            Sector sector = spinwardmarches.CreateSector();
-        }
+        SpinwardMarchesMap spinwardmarches = new SpinwardMarchesMap(map);
+        Sector sector = spinwardmarches.CreateSector();
     }
 }

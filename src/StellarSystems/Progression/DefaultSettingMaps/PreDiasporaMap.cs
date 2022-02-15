@@ -1,118 +1,110 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿namespace StellarMap.Progression.DefaultSettingMaps;
 
-using StellarMap.Core.Bodies;
-using StellarMap.Core.Types;
-using StellarMap.Math.Types;
-
-namespace StellarMap.Progression.DefaultSettingMaps
+public class PreDiasporaMap
 {
-    public class PreDiasporaMap
+    public PreDiasporaMap(ProgressionMap map)
     {
-        public PreDiasporaMap(ProgressionMap map)
+        Map = map;
+
+        map.MetaData.Add("Basic", "Author", "Ergodic Mage");
+        map.MetaData.Add("Basic", "Version", "0.1");
+        map.MetaData.Add("Basic", "Date", "11/29/2019");
+
+        using (StringWriter writer = new StringWriter())
         {
-            Map = map;
+            writer.WriteLine("This is the map of the default Progression system at year 100DE.");
+            writer.WriteLine("At this point in time, humans have started spreading through the Sol Cluster.");
+            writer.WriteLine("The Pre-Diaspora Era is documented at https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/DefaultSettingMaps/PreDiaspora.md");
+            writer.Flush();
 
-            map.MetaData.Add("Basic", "Author", "Ergodic Mage");
-            map.MetaData.Add("Basic", "Version", "0.1");
-            map.MetaData.Add("Basic", "Date", "11/29/2019");
-
-            using (StringWriter writer = new StringWriter())
-            {
-                writer.WriteLine("This is the map of the default Progression system at year 100DE.");
-                writer.WriteLine("At this point in time, humans have started spreading through the Sol Cluster.");
-                writer.WriteLine("The Pre-Diaspora Era is documented at https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/DefaultSettingMaps/PreDiaspora.md");
-                writer.Flush();
-
-                map.MetaData.Add("Basic", "Description", writer.ToString());
-            }
-            map.MetaData.Add("Basic", "Diagram", "https://drive.google.com/file/d/1oQhyRB6X-ckqjOw_A0sMtgq8gt3He8_U/view?usp=sharing");
-            map.MetaData.Add("Basic", "Rules", "https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/Rules.md");
-
+            map.MetaData.Add("Basic", "Description", writer.ToString());
         }
+        map.MetaData.Add("Basic", "Diagram", "https://drive.google.com/file/d/1oQhyRB6X-ckqjOw_A0sMtgq8gt3He8_U/view?usp=sharing");
+        map.MetaData.Add("Basic", "Rules", "https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/Rules.md");
 
-        ProgressionMap Map { get; set; }
-        ProgressionPlanet Earth { get; set; }
-        StarSystem Sol { get; set; }
+    }
 
-        public Planet CreateEarth()
-        {
-            Earth = new ProgressionPlanet("Earth");
+    ProgressionMap Map { get; set; }
+    ProgressionPlanet Earth { get; set; }
+    StarSystem Sol { get; set; }
 
-            Map.Add<Planet>(Earth);
+    public Planet CreateEarth()
+    {
+        Earth = new ProgressionPlanet("Earth");
 
-            Satellite moon = new Satellite("Moon");
-            Earth.Add(moon);
+        Map.Add<Planet>(Earth);
 
-            return Earth;
-        }
+        Satellite moon = new Satellite("Moon");
+        Earth.Add(moon);
 
-        public StarSystem CreateSolSystem()
-        {
-            ProgressionStar sol = new ProgressionStar("Sun");
+        return Earth;
+    }
 
-            Map.Add<Star>(sol);
-            sol.BasicProperties.Add(Constants.PropertyNames.Designation, "Sol");
-            sol.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
-            var catalogue = new Dictionary<string, string>();
-            catalogue.Add("HabHyg", "0");
-            catalogue.Add("Hip", "0");
-            sol.Properties.AddGroup("Catalogue", catalogue);
+    public StarSystem CreateSolSystem()
+    {
+        ProgressionStar sol = new ProgressionStar("Sun");
 
-            sol.Add(new Planet("Mercury"));
-            sol.Add(new Planet("Venus"));
+        Map.Add<Star>(sol);
+        sol.BasicProperties.Add(Constants.PropertyNames.Designation, "Sol");
+        sol.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
+        var catalogue = new Dictionary<string, string>();
+        catalogue.Add("HabHyg", "0");
+        catalogue.Add("Hip", "0");
+        sol.Properties.AddGroup("Catalogue", catalogue);
 
-            Planet earth = CreateEarth();
-            sol.Add(earth);
+        sol.Add(new Planet("Mercury"));
+        sol.Add(new Planet("Venus"));
 
-            sol.Add(new Planet("Mars"));
-            sol.Add(new Planet("Jupiter"));
-            sol.Add(new Planet("Saturn"));
-            sol.Add(new Planet("Uranus"));
-            sol.Add(new Planet("Neptune"));
-            sol.Add(new Planet("Pluto"));
+        Planet earth = CreateEarth();
+        sol.Add(earth);
 
-            sol.Add(new Asteroid("Vesta"));
-            sol.Add(new Asteroid("Ceres"));
-            sol.Add(new Asteroid("Pallas"));
-            sol.Add(new Asteroid("Juno"));
-            sol.Add(new Asteroid("Hygiea"));
-            sol.Add(new Asteroid("Euphrosyne"));
+        sol.Add(new Planet("Mars"));
+        sol.Add(new Planet("Jupiter"));
+        sol.Add(new Planet("Saturn"));
+        sol.Add(new Planet("Uranus"));
+        sol.Add(new Planet("Neptune"));
+        sol.Add(new Planet("Pluto"));
 
-            sol.Add(new Comet("Haley's"));
-            sol.Add(new Comet("Caeser's"));
+        sol.Add(new Asteroid("Vesta"));
+        sol.Add(new Asteroid("Ceres"));
+        sol.Add(new Asteroid("Pallas"));
+        sol.Add(new Asteroid("Juno"));
+        sol.Add(new Asteroid("Hygiea"));
+        sol.Add(new Asteroid("Euphrosyne"));
 
-            Sol = new StarSystem("Sol");
-            Sol.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 0, 0).ToString());
-            Map.Add(Sol);
-            Sol.Add(sol);
+        sol.Add(new Comet("Haley's"));
+        sol.Add(new Comet("Caeser's"));
 
-            return Sol;
-        }
+        Sol = new StarSystem("Sol");
+        Sol.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 0, 0).ToString());
+        Map.Add(Sol);
+        Sol.Add(sol);
 
-        public ProgressionMap Create2100AD()
-        {
-            Map.MetaData.Add("Basic", "ProgressionDate", "2100AD");
+        return Sol;
+    }
 
-            CreateSolSystem();
+    public ProgressionMap Create2100AD()
+    {
+        Map.MetaData.Add("Basic", "ProgressionDate", "2100AD");
 
-            Earth.Add(new Habitat("SpaceX Station"));
-            Earth.Add(new Habitat("Moon Base Alpha"));
+        CreateSolSystem();
 
-            return Map;
-        }
+        Earth.Add(new Habitat("SpaceX Station"));
+        Earth.Add(new Habitat("Moon Base Alpha"));
 
-        public ProgressionMap Create2200AD()
-        {
-            Map.MetaData.Add("Basic", "ProgressionDate", "2100AD");
+        return Map;
+    }
 
-            CreateSolSystem();
+    public ProgressionMap Create2200AD()
+    {
+        Map.MetaData.Add("Basic", "ProgressionDate", "2100AD");
 
-            Earth.Add(new Habitat("SpaceX Station"));
-            Earth.Add(new Habitat("Moon Base Gamma"));
-            Earth.Add(new Habitat(""));
+        CreateSolSystem();
 
-            return Map;
-        }
+        Earth.Add(new Habitat("SpaceX Station"));
+        Earth.Add(new Habitat("Moon Base Gamma"));
+        Earth.Add(new Habitat(""));
+
+        return Map;
     }
 }

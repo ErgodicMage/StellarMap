@@ -1,100 +1,92 @@
-using System.IO;
+namespace StorageTests;
 
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using StellarMap.Core.Types;
-using StellarMap.Storage;
-
-namespace StorageTests
+[TestClass]
+public class CoreStorage
 {
-    [TestClass]
-    public class CoreStorage
+    [TestMethod]
+    [TestCategory(TestCategories.FunctionalTest)]
+    public void JsonStoreSolarSystem()
     {
-        [TestMethod]
-        [TestCategory(TestCategories.FunctionalTest)]
-        public void JsonStoreSolarSystem()
-        {
-            IStellarMap map = SolarSystem.CreateSolSystem();
+        IStellarMap map = SolarSystem.CreateSolSystem();
 
-            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
+        string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
 
-            if (File.Exists(filename))
-                File.Delete(filename);
+        if (File.Exists(filename))
+            File.Delete(filename);
 
-            using StreamWriter writer = new StreamWriter(filename);
-            store.Store(map, writer);
-        }
+        using StreamWriter writer = new StreamWriter(filename);
+        store.Store(map, writer);
+    }
 
-        [TestMethod]
-        [TestCategory(TestCategories.FunctionalTest)]
-        public void JsonRetrieveSolarSystem()
-        {
-            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
+    [TestMethod]
+    [TestCategory(TestCategories.FunctionalTest)]
+    public void JsonRetrieveSolarSystem()
+    {
+        string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
 
-            if (!File.Exists(filename))
-                JsonStoreSolarSystem();
+        if (!File.Exists(filename))
+            JsonStoreSolarSystem();
 
-            IStellarMap map;
-            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        IStellarMap map;
+        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            using StreamReader reader = new StreamReader(filename);
-            map = store.Retreive<BaseStellarMap>(reader);
+        using StreamReader reader = new StreamReader(filename);
+        map = store.Retreive<BaseStellarMap>(reader);
 
-            IStellarMap generatedMap = SolarSystem.CreateSolSystem();
+        IStellarMap generatedMap = SolarSystem.CreateSolSystem();
 
-            Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
-        }
+        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
+    }
 
-        [TestMethod]
-        [TestCategory(TestCategories.FunctionalTest)]
-        public void ZipStoreSolarSystem()
-        {
-            IStellarMap map = SolarSystem.CreateSolSystem();
+    [TestMethod]
+    [TestCategory(TestCategories.FunctionalTest)]
+    public void ZipStoreSolarSystem()
+    {
+        IStellarMap map = SolarSystem.CreateSolSystem();
 
-            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
-            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.zip");
+        string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.zip");
 
-            if (File.Exists(filename))
-                File.Delete(filename);
+        if (File.Exists(filename))
+            File.Delete(filename);
 
-            using StreamWriter writer = new StreamWriter(filename);
-            store.Store(map, writer);
-        }
+        using StreamWriter writer = new StreamWriter(filename);
+        store.Store(map, writer);
+    }
 
-        [TestMethod]
-        [TestCategory(TestCategories.FunctionalTest)]
-        public void ZipRetrieveSolarSystem()
-        {
-            string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.zip");
+    [TestMethod]
+    [TestCategory(TestCategories.FunctionalTest)]
+    public void ZipRetrieveSolarSystem()
+    {
+        string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.zip");
 
-            if (!File.Exists(filename))
-                ZipStoreSolarSystem();
+        if (!File.Exists(filename))
+            ZipStoreSolarSystem();
 
-            IStellarMap map;
-            IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        IStellarMap map;
+        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
 
-            using StreamReader reader = new StreamReader(filename);
-            map = store.Retreive<BaseStellarMap>(reader);
+        using StreamReader reader = new StreamReader(filename);
+        map = store.Retreive<BaseStellarMap>(reader);
 
 #pragma warning disable S125
-            //// now serialize it to json file to inspect
-            //filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem from zip.json");
+        //// now serialize it to json file to inspect
+        //filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem from zip.json");
 
-            //if (File.Exists(filename))
-            //    File.Delete(filename);
+        //if (File.Exists(filename))
+        //    File.Delete(filename);
 
-            //store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        //store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
 
-            //using StreamWriter writer = new StreamWriter(filename);
-            //store.Store(map, writer);
+        //using StreamWriter writer = new StreamWriter(filename);
+        //store.Store(map, writer);
 #pragma warning restore S125
 
-            IStellarMap generatedMap = SolarSystem.CreateSolSystem();
+        IStellarMap generatedMap = SolarSystem.CreateSolSystem();
 
-            Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
-        }
+        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
     }
 }

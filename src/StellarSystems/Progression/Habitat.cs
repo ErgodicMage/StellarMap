@@ -1,23 +1,18 @@
-﻿using System.Runtime.Serialization;
+﻿namespace StellarMap.Progression;
 
-using StellarMap.Core.Bodies;
-
-namespace StellarMap.Progression
+[DataContract (Name = ProgressionConstants.BodyType.Habitat)]
+public class Habitat : StellarBody
 {
-    [DataContract (Name = ProgressionConstants.BodyType.Habitat)]
-    public class Habitat : StellarBody
-    {
-        #region Constructors
-        public Habitat()
-        {            
-        }
-        
-        public Habitat(string name) : base (name, ProgressionConstants.BodyType.Habitat)
-        {
-        }
-        #endregion
-
-        #region Protected Methods
-        #endregion
+    #region Constructors
+    public Habitat()
+    {            
     }
+        
+    public Habitat(string name) : base (name, ProgressionConstants.BodyType.Habitat)
+    {
+    }
+    #endregion
+
+    #region Protected Methods
+    #endregion
 }
