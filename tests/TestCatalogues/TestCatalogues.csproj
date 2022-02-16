@@ -22,7 +22,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Catalogues\HabHyg\HabHyg.csproj" />
     <ProjectReference Include="..\..\src\Components\Core\Core.csproj" />
-    <ProjectReference Include="..\..\src\Components\Math\Math.csproj" />
   </ItemGroup>
 
   <ItemGroup>

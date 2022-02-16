@@ -1,6 +1,4 @@
-﻿using StellarMap.Math;
-
-namespace ProgressionTests;
+﻿namespace ProgressionTests;
 
 [TestClass]
 public class MiscTests
@@ -46,7 +44,7 @@ public class MiscTests
         LocalSectorStar star = stars.Where(s => s.Name == starName).First();
 
         double distance = 20 / 3.261633;
-        var nearest = stars.Where(s => AstronomicalFunctions.Distance(s.Position, star.Position) <= distance);
+        var nearest = stars.Where(s => MathFunctions.Distance(s.Position, star.Position) <= distance);
 
         if (nearest != null)
         {
@@ -60,7 +58,7 @@ public class MiscTests
                     writer.Write(" - ");
                     writer.Write(s.Cluster);
                     writer.Write(" - ");
-                    writer.WriteLine(AstronomicalFunctions.Distance(s.Position, star.Position) * 3.261633);
+                    writer.WriteLine(MathFunctions.Distance(s.Position, star.Position) * 3.261633);
                 }
             }
         }

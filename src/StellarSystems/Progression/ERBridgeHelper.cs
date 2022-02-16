@@ -1,4 +1,4 @@
-﻿using StellarMap.Math;
+﻿using StellarMap.Core.Math;
 
 namespace StellarMap.Progression;
 
@@ -30,7 +30,7 @@ public static class ERBridgeHelper
             if (Point3d.TryParse(system1.BasicProperties[StellarMap.Core.Types.Constants.PropertyNames.Position], out var p1) &&
                 Point3d.TryParse(system2.BasicProperties[StellarMap.Core.Types.Constants.PropertyNames.Position], out var p2))
             {
-                double distance = AstronomicalFunctions.Distance(p1, p2);
+                double distance = MathFunctions.Distance(p1, p2);
                 bridge.BasicProperties.Add(StellarMap.Core.Types.Constants.PropertyNames.Distance, distance.ToString());
 
             }

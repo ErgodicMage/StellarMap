@@ -94,22 +94,22 @@ public class HabHygTests
     public void ConvertCoordinates()
     {
         // TeeGarden 12.58ly RA 02h 53m 00.85s Dec +16d 52m 53.3s
-        Point3d p = AstronomicalFunctions.ConvertToCartesian(12.58, 2, 53, 0.85, 16, 52, 53.3);
+        Point3d p = MathFunctions.ConvertToCartesian(12.58, 2, 53, 0.85, 16, 52, 53.3);
 
         // SCR 1845 (Ophir) 12.57ly RA 18h 45m 05.26s Dec ?63d 57m 47.8s
-        p = AstronomicalFunctions.ConvertToCartesian(12.57, 18, 45, 5.26, -63, 57, 47.8);
+        p = MathFunctions.ConvertToCartesian(12.57, 18, 45, 5.26, -63, 57, 47.8);
 
         // UGPS 0722-05 (Knob) 13.4ly RA 07h 22m 27.29s Dec ?05d 40m 30.0s
-        p = AstronomicalFunctions.ConvertToCartesian(13.4, 7, 22, 27.29, -5, 40, 30.0);
+        p = MathFunctions.ConvertToCartesian(13.4, 7, 22, 27.29, -5, 40, 30.0);
 
         // DEN 1048-3956 (Flare) 13.15ly RA 10h 48m 14.640s Dec ?39d 56m 06.24s 
-        p = AstronomicalFunctions.ConvertToCartesian(13.15, 10, 48, 14.64, -39, 56, 6.24);
+        p = MathFunctions.ConvertToCartesian(13.15, 10, 48, 14.64, -39, 56, 6.24);
 
         // GL 628 (Lapis) 14.04ly RA 16h 30m 18.0584s Dec –12d 39m 45.325s
-        p = AstronomicalFunctions.ConvertToCartesian(14.04, 16, 30, 18.06, -12, 39, 45.32);
+        p = MathFunctions.ConvertToCartesian(14.04, 16, 30, 18.06, -12, 39, 45.32);
 
         // GJ 205 (Bellerophon) 18.5ly RA 05h 31m 27.39595s Dec ?03° 40? 38.0311?
-        p = AstronomicalFunctions.ConvertToCartesian(18.5, 5, 31, 27.4, -3, 40, 38.03);
+        p = MathFunctions.ConvertToCartesian(18.5, 5, 31, 27.4, -3, 40, 38.03);
 
 
         Point3d p2 = new Point3d(p.x / 3.261633, p.y / 3.261633, p.z / 3.261633);

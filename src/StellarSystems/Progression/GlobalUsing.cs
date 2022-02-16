@@ -6,4 +6,4 @@ global using System.Text;
 
 global using StellarMap.Core.Types;
 global using StellarMap.Core.Bodies;
-global using StellarMap.Math.Types;
+global using StellarMap.Core.Math;

@@ -58,7 +58,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Components\Core\Core.csproj" />
-    <ProjectReference Include="..\..\src\Components\Math\Math.csproj" />
     <ProjectReference Include="..\..\src\StellarSystems\Traveller\Traveller.csproj" />
   </ItemGroup>
 
