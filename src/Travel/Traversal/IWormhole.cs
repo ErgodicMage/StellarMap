@@ -4,7 +4,7 @@ using System.Text;
 
 using StellarMap.Core.Bodies;
 using StellarMap.Core.Types;
-using StellarMap.Math.Types;
+using StellarMap.Core.Math;
 
 namespace StellarMap.Traversal
 {

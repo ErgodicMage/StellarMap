@@ -165,7 +165,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
 
     public virtual IList<string> GetBodyTypes()
     {
-        IList<string> bodytypes = new List<string>()
+        return new List<string>()
         {
             Constants.BodyTypes.Star,
             Constants.BodyTypes.Planet,
@@ -174,8 +174,6 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
             Constants.BodyTypes.Asteroid,
             Constants.BodyTypes.Comet
         };
-
-        return bodytypes;
     }
 
     public virtual object GetBody(string bodytype)
@@ -368,13 +366,13 @@ public sealed class BaseStellarMapEqualityComparer : IEqualityComparer<BaseStell
         else if (!ReferenceEquals(x, y))
         {
             bRet = x.MetaData != null &&
-                    x.MetaData.Equals(y.MetaData) &&
-                    IsEqual<Planet>(x.Planets, y.Planets) &&
-                    IsEqual<Star>(x.Stars, y.Stars) &&
-                    IsEqual<DwarfPlanet>(x.DwarfPlanets, y.DwarfPlanets) &&
-                    IsEqual<Satellite>(x.Satellites, y.Satellites) &&
-                    IsEqual<Asteroid>(x.Asteroids, y.Asteroids) &&
-                    IsEqual<Comet>(x.Comets, y.Comets);
+                   x.MetaData.Equals(y.MetaData) &&
+                   IsEqual<Planet>(x.Planets, y.Planets) &&
+                   IsEqual<Star>(x.Stars, y.Stars) &&
+                   IsEqual<DwarfPlanet>(x.DwarfPlanets, y.DwarfPlanets) &&
+                   IsEqual<Satellite>(x.Satellites, y.Satellites) &&
+                   IsEqual<Asteroid>(x.Asteroids, y.Asteroids) &&
+                   IsEqual<Comet>(x.Comets, y.Comets);
         }
 
         return bRet;

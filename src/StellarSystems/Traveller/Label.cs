@@ -29,8 +29,8 @@ public sealed class LabelEqualityComparer : IEqualityComparer<Label>
 {
     #region IEqualityComparer
     public bool Equals (Label x, Label y) => x != null && y != null && 
-                    x.Position.IsValid() && y.Position.IsValid() && 
-                    x.Text == y.Text;                 
+                    x.Position != null && y.Position != null && x.Position.IsValid() && y.Position.IsValid() && 
+                    x.Text != null && y.Text != null && x.Text == y.Text;                 
 
     public int GetHashCode(Label obj) => 9871 ^ obj.Position.GetHashCode() ^ obj.Text.GetHashCode();
 

@@ -35,9 +35,9 @@ public sealed class BorderEqualityComparer : IEqualityComparer<Border>
             retValue = false;
         else if (!ReferenceEquals(x, y))
         {
-            if (x.Positions.Count != y.Positions.Count)
+            if (x.Positions == null || y.Positions == null || x.Positions.Count != y.Positions.Count)
                 retValue = false;
-            else if (x.Color != y.Color)
+            else if (x.Color == null || y.Color == null || x.Color != y.Color)
                 retValue = false;
             else
             {

@@ -11,10 +11,7 @@ public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
     protected StellarBody(string name, string bodytype)
     {
         Properties = new GroupedProperties("Basic");
-
-        if (Map == null)
-            Map = BaseStellarMap.DefaultMap;
-
+        Map ??= BaseStellarMap.DefaultMap;
         Name = name;
         BodyType = bodytype;
     }
@@ -62,6 +59,8 @@ public sealed class StellarBodyEqualityComparer : IEqualityComparer<StellarBody>
 
         if (x is null || y is null)
             bRet = false;
+        else if (x.Name is null || y.Name is null || x.Identifier is null || y.Identifier is null)
+            bRet = false;
         else if (!ReferenceEquals(x, y))
         {
             bRet = x.Name == y.Name && x.Identifier == y.Identifier &&
@@ -99,7 +98,6 @@ public abstract class StellarParentBody : StellarBody, IStellarParentBody
     #region Constructors
     protected StellarParentBody()
     {
-
     }
 
     protected StellarParentBody(string name, string bodytype) : base(name, bodytype)

@@ -32,16 +32,16 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
 
     [DataMember (Order = 12)]
     public Portal[] Portals { get; set; }
+    #endregion
 
+    #region Get Methods
     public StarSystem GetStarSystem(int end)
     {
         string identifier = Portals[end].StarIdentifier;
         StarSystem system = (Map as ProgressionMap).Get<StarSystem>(identifier);
         return system;
     }
-    #endregion
 
-    #region Get Methods
     public StarSystem GetStarSystem(string name)
     {
         StarSystem system = null;

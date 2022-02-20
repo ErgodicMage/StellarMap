@@ -47,7 +47,8 @@ public class Route : IEqualityComparer<Route>
     public bool Equals (Route x, Route y) => x.Start != null && y.Start != null && x.End != null && y.End != null &&
         HexEqualityComparer.Comparer.Equals(x.Start, y.Start) && HexEqualityComparer.Comparer.Equals(x.End, y.End) &&
         x.StartOffsetX == y.StartOffsetX && x.StartOffsetY == y.StartOffsetY &&
-        x.EndOffsetX == y.EndOffsetX && x.EndOffsetY == y.EndOffsetY && x.Color == y.Color;
+        x.EndOffsetX == y.EndOffsetX && x.EndOffsetY == y.EndOffsetY && 
+        x.Color != null && y.Color != null && x.Color == y.Color;
 
     public int GetHashCode(Route obj)
     {

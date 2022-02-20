@@ -1,4 +1,6 @@
-﻿namespace StellarMap.Core.Types;
+﻿using System.Linq;
+
+namespace StellarMap.Core.Types;
 
 public sealed class NestedDictionary<TOuter, TInner, TValue> : 
     Dictionary<TOuter, Dictionary<TInner, TValue>>, IEquatable<NestedDictionary<TOuter, TInner, TValue>>
@@ -19,16 +21,12 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
 
     public void Add(TOuter outer, TInner inner, TValue value)
     {
-
         if (TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary) && !innerDictionary.ContainsKey(inner))
-        {
             innerDictionary.Add(inner, value);
-        }
     }
 
     public void AddToOuter(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
     {
-
         if (!TryGetValue(outer, out Dictionary<TInner, TValue> currentDictionary))
         {
             currentDictionary = new Dictionary<TInner, TValue>();
@@ -44,7 +42,6 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
 
     public void AddToInner(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
     {
-
         if (TryGetValue(outer, out Dictionary<TInner, TValue> currentDictionary))
         {
             foreach (var kvp in innerDictionary)
@@ -59,14 +56,9 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
     #region Remove Methods
     public bool Remove(TOuter outer, TInner inner)
     {
-        bool retValue = false;
-
         Dictionary<TInner, TValue> innerDictionary = Get(outer);
 
-        if (innerDictionary != null)
-            retValue = innerDictionary.Remove(inner);
-
-        return retValue;
+        return innerDictionary?.Remove(inner) ?? false;
     }
     #endregion
 
@@ -82,8 +74,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
         TValue value = default;
 
         Dictionary<TInner, TValue> innerDictionary = Get(outer);
-        if (innerDictionary != null)
-            innerDictionary.TryGetValue(inner, out value);
+        innerDictionary?.TryGetValue(inner, out value);
 
         return value;
     }
@@ -93,16 +84,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
         if (!ContainsKey(outer))
             Add(outer, innervalues);
         else
-        {
-            if (TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary))
-            {
-                foreach (var kvp in innervalues)
-                {
-                    if (innerDictionary.ContainsKey(kvp.Key))
-                        innerDictionary[kvp.Key] = kvp.Value;
-                }
-            }
-        }
+            this[outer] = innervalues;
     }
 
     public void Set(TOuter outer, TInner inner, TValue value)
@@ -115,21 +97,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
     #region Misc Methods
     public bool ContainsKey(TOuter outer, TInner inner) => ContainsKey(outer) && this[outer].ContainsKey(inner);
 
-    public bool ContainsValue(TValue value)
-    {
-        bool retValue = false;
-
-        foreach(var outer in this)
-        {
-            if (outer.Value.ContainsValue(value))
-            {
-                retValue = true;
-                break;
-            }
-        }
-
-        return retValue;
-    }
+    public bool ContainsValue(TValue value) => Values.Any(kvp => kvp.ContainsValue(value));
 
     public override string ToString()
     {
