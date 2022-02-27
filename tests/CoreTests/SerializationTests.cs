@@ -121,7 +121,7 @@ public class SerializationTests
         json = reader.ReadToEnd();
 
         TestStellarMap map = JsonConvert.DeserializeObject<TestStellarMap>(json);
-        map.SetMap();
+        (map as IStellarMap).SetMap();
 
         return map;
     }

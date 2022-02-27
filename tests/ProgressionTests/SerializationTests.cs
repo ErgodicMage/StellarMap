@@ -143,7 +143,7 @@ public class SerializationTests
         json = reader.ReadToEnd();
 
         ProgressionMap map = JsonConvert.DeserializeObject<ProgressionMap>(json);
-        map.SetMap();
+        (map as IStellarMap).SetMap();
 
         return map;
     }
