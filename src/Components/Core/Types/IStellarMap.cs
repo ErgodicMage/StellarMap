@@ -39,6 +39,6 @@ public interface IStellarMap
 
     bool SetBody(string bodytype, object data);
 
-    void SetMap();
+    void SetMap() => MapSetter.SetMap(this, this);
 
 }

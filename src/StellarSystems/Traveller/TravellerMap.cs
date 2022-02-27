@@ -205,30 +205,6 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
 
         return bret;
     }
-
-    public override void SetMap()
-    {
-        // can't use casting with dictionaries the way I want to object as Dictionary<string, StellarBody> so have to do it the hard way
-        base.SetMap();
-
-        if (Worlds != null)
-        {
-            foreach (var value in Worlds.Values)
-                value.Map = this;
-        }
-
-        if (Subsectors != null)
-        {
-            foreach (var value in Subsectors.Values)
-                value.Map = this;
-        }
-
-        if (Sectors != null)
-        {
-            foreach (var value in Sectors.Values)
-                value.Map = this;
-        }
-    }
     #endregion
 
     #region IEqualityComparer

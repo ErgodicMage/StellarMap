@@ -1,4 +1,7 @@
-﻿namespace StellarMap.Core.Types;
+﻿using System.Linq;
+using System.Reflection;
+
+namespace StellarMap.Core.Types;
 
 [DataContract(Name = "BaseStellarMap")]
 public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
@@ -254,46 +257,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         return bret;
     }
 
-    public virtual void SetMap()
-    {
-        // can't use casting with dictionaries the way I want to object as Dictionary<string, StellarBody> so have to do it the hard way
-
-        if (Stars != null)
-        {
-            foreach (var value in Stars.Values)
-                value.Map = this;
-        }
-
-        if (Planets != null)
-        {
-            foreach (var value in Planets.Values)
-                value.Map = this;
-        }
-
-        if (DwarfPlanets != null)
-        {
-            foreach (var value in DwarfPlanets.Values)
-                value.Map = this;
-        }
-
-        if (Satellites != null)
-        {
-            foreach (var value in Satellites.Values)
-                value.Map = this;
-        }
-
-        if (Asteroids != null)
-        {
-            foreach (var value in Asteroids.Values)
-                value.Map = this;
-        }
-
-        if (Comets != null)
-        {
-            foreach (var value in Comets.Values)
-                value.Map = this;
-        }
-    }
+    //public virtual void SetMap() => MapSetter.SetMap(this, this);
     #endregion
 
     #region Protected Functions

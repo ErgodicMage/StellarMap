@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Collections;
+using System.Runtime.Serialization;
+using System.IO;
+
+using Microsoft.Extensions.Configuration;
 
 namespace StellarMap.GenerateMaps;
 
@@ -10,22 +14,25 @@ static class Program
             .AddJsonFile("appsettings.json")
             //.AddEnvironmentVariables()
             .Build();
-
-        foreach (var kvp in config.AsEnumerable())
-            Console.WriteLine(kvp.Key + ":" + kvp.Value);
-
         dataDir = config["DataPath"];
 
-        LocateStarsInCube(20);
+        //foreach (var kvp in config.AsEnumerable())
+        //    Console.WriteLine(kvp.Key + ":" + kvp.Value);
 
-        JsonGenerateLocalSector();
-        JsonRetrieveLocalSector();
+        //dataDir = config["DataPath"];
 
-        ZipGenerateLocalSector();
-        ZipRetrieveLocalSector();
+        //LocateStarsInCube(20);
 
-        StoreSolarSystem();
-        RetrieveSolarSystem();
+        //JsonGenerateLocalSector();
+        //JsonRetrieveLocalSector();
+
+        //ZipGenerateLocalSector();
+        //ZipRetrieveLocalSector();
+
+        //StoreSolarSystem();
+        //RetrieveSolarSystem();
+
+        MapReflection();
 
         Console.WriteLine("Complete");
     }
@@ -94,6 +101,7 @@ static class Program
 
         Console.WriteLine(map.ToString());
     }
+
     public static void StoreSolarSystem()
     {
         IStellarMap map = new BaseStellarMap("SolarSystem");
@@ -159,6 +167,121 @@ static class Program
                 sw.WriteLine(")");
             }
             sw.WriteLine("-------");
+        }
+    }
+
+    public static void MapReflection()
+    {
+        ProgressionMap map = new("Progression");
+        PY100DEMap py100demap = new(map);
+        py100demap.CreateSolCluster();
+
+        string filename = Path.Combine(dataDir, "Reflection.txt");
+
+        if (File.Exists(filename))
+            File.Delete(filename);
+
+        using StreamWriter writer = new StreamWriter(filename);
+
+        foreach (var propInfo in map.GetType().GetProperties())
+        {
+            //if (propInfo.Name == "Name" || propInfo.Name == "MetaData")
+            //    continue;
+
+            writer.WriteLine($"Name: {propInfo.Name}");
+            writer.WriteLine($"Type: {propInfo.PropertyType.Name}");
+            writer.WriteLine($"Declaring Type: {propInfo.DeclaringType}");
+            writer.WriteLine($"Is Generic: {propInfo.PropertyType.IsGenericType}");
+
+            if (propInfo.CustomAttributes.Any(pt => pt.AttributeType == typeof(IgnoreDataMemberAttribute)))
+            {
+                writer.WriteLine("Has IgnoreDataMemberAttribute");
+                continue;
+            }
+
+            object obj = propInfo.GetValue(map);
+
+            if (obj == null)
+                continue;
+
+            if (obj is StellarBody body)
+            {
+                DisplayStellarBody(body, writer);
+                continue;
+            }
+
+            Type type = obj.GetType();
+            if (type.IsGenericType)
+            {
+                switch (type.Name)
+                {
+                    case "Dictionary`2":
+                    case "IDictionary`2":
+                        HandleDictionary(obj, type, writer);
+                        break;
+                }
+            }
+        }
+    }
+
+    public static void DisplayStellarBody(StellarBody body, StreamWriter writer)
+    {
+        if (body is null)
+        {
+            writer.WriteLine("Not a StellarBody");
+            return;
+        }
+        writer.WriteLine($"Identifier: {body.Identifier}");
+        writer.WriteLine($"StellarBody Name: {body.Name}");
+        writer.WriteLine($"StellarBody Type: {body.GetType().Name}");
+        writer.WriteLine($"Map Name: {body.Map.Name}");
+    }
+
+    public static void HandleDictionary(object obj, Type type, StreamWriter writer)
+    {
+        Type[] genericTypes = type.GetGenericArguments();
+        for (int i = 0; i < genericTypes.Count(); i++)
+        {
+            bool isStellarBody = IsStellarBody(genericTypes[i]);
+            writer.WriteLine($"Generic Type Name: {genericTypes[i].Name} Is StelarBody: {isStellarBody}");
+            HandleDictionaryStellarBody(obj, i, writer);
+        }
+    }
+
+    public static bool IsStellarBody(Type type)
+    {
+        Type baseType = type.BaseType;
+
+        while (baseType != null)
+        { 
+            if (baseType.Name == "StellarBody" || baseType.Name == "StellarParentBody")
+                return true;
+            baseType = baseType.BaseType; 
+        }
+
+        return false;
+    }
+
+    public static void HandleDictionaryStellarBody(object obj, int position, StreamWriter writer)
+    {
+        string property = position == 0 ? "Keys" : "Values";
+
+        Type iDictType = obj.GetType().GetInterface("IDictionary`2");
+
+        IEnumerable enumerator = (IEnumerable)iDictType.GetProperty(property).GetValue(obj, null);
+
+        foreach (object o in enumerator)
+        {
+            if (o is StellarBody body)
+                body.Map = BaseStellarMap.DefaultMap;
+        }
+
+        enumerator = (IEnumerable)iDictType.GetProperty(property).GetValue(obj, null);
+
+        foreach (object o in enumerator)
+        {
+            if (o is StellarBody body)
+                DisplayStellarBody(body, writer);
         }
     }
 }
