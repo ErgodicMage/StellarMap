@@ -195,6 +195,8 @@ public class PY100DEMap
         solCluster.Add(bridge);
         bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Procyon", "Ceti");
         solCluster.Add(bridge);
+        bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ross", "Ceti");
+        solCluster.Add(bridge);
         #endregion
 
         return solCluster;

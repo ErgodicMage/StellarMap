@@ -356,6 +356,8 @@ public class LocalSectorMap
         solCluster.Add(bridge);
         bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ross", "Ophiuchi");
         solCluster.Add(bridge);
+        bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ross", "Ceti");
+        solCluster.Add(bridge);
         bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ophiuchi", "Little Ophiuchi");
         solCluster.Add(bridge);
         bridge = ERBridgeHelper.CreateStarSystemBridge(Map, solCluster, "Ophiuchi", "Wolf");
