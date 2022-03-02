@@ -31,7 +31,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
     public string BridgeType { get; set; }
 
     [DataMember (Order = 12)]
-    public Portal[] Portals { get; set; }
+    public Portal[] Portals { get; init; }
     #endregion
 
     #region Get Methods

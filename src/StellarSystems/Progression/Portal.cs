@@ -9,8 +9,8 @@ public struct Portal : IEquatable<Portal>
     [DataMember (Order = 2)]
     public string ERBridgeIdentifier { get; set; }
 
-    [DataMember (Order = 3)]
-    public Point3d Position { get; set; }
+    [DataMember(Order = 3)]
+    public Point3d Position;
 
     #region IEquatable
     public bool Equals(Portal other) => 
