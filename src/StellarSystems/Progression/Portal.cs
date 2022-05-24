@@ -4,7 +4,7 @@
 public struct Portal : IEquatable<Portal>
 {
     [DataMember (Order = 1)]
-    public string StarIdentifier { get; set; }
+    public string StarSystemIdentifier { get; set; }
 
     [DataMember (Order = 2)]
     public string ERBridgeIdentifier { get; set; }
@@ -14,7 +14,7 @@ public struct Portal : IEquatable<Portal>
 
     #region IEquatable
     public bool Equals(Portal other) => 
-        StarIdentifier.Equals(other.StarIdentifier) && ERBridgeIdentifier.Equals(other.ERBridgeIdentifier) && 
+        StarSystemIdentifier.Equals(other.StarSystemIdentifier) && ERBridgeIdentifier.Equals(other.ERBridgeIdentifier) && 
         Position.Equals(other.Position);
 
     public override bool Equals(object obj) => obj is Portal p && Equals(p);
@@ -22,8 +22,8 @@ public struct Portal : IEquatable<Portal>
     public override int GetHashCode()
     {
         int hash = base.GetHashCode();
-        if (StarIdentifier != null)
-            hash ^= StarIdentifier.GetHashCode();
+        if (StarSystemIdentifier != null)
+            hash ^= StarSystemIdentifier.GetHashCode();
         if (!string.IsNullOrEmpty(ERBridgeIdentifier))
             hash ^= ERBridgeIdentifier.GetHashCode();
 

@@ -19,7 +19,7 @@ namespace StellarMap.Progression
         public ProgressionMap Map { get; set; }
         #endregion
 
-        public IList<ERBridgesPath> GetPaths(string systemname1, string systemname2)
+        public IList<ERBridgeRoute> GetPaths(string systemname1, string systemname2)
         {
             string system1 = GetStarSystemIdentifier(systemname1);
             string system2 = GetStarSystemIdentifier(systemname2);
@@ -29,7 +29,7 @@ namespace StellarMap.Progression
             return GetPathsFromIdentifiers(system1, system2); ;
         }
 
-        public IList<ERBridgesPath> GetPathsFromIdentifiers(string systemid1, string systemid2)
+        public IList<ERBridgeRoute> GetPathsFromIdentifiers(string systemid1, string systemid2)
         {
             StarSystem system1 = Map.Get<StarSystem>(systemid1);
             StarSystem system2 = Map.Get<StarSystem>(systemid2);
@@ -37,7 +37,7 @@ namespace StellarMap.Progression
             if (system1 == null || system2 == null)
                 return null;
 
-            IList<ERBridgesPath> paths = new List<ERBridgesPath>();
+            IList<ERBridgeRoute> paths = new List<ERBridgeRoute>();
 
             if (system1.ParentIdentifier == system2.ParentIdentifier)
                 return GetPathsWithinCluster(system1.ParentIdentifier, systemid1, systemid2);
@@ -53,31 +53,43 @@ namespace StellarMap.Progression
             return string.Empty;
         }
 
-        public IList<ERBridgesPath> GetPathsWithinCluster(string clusterid, string system1, string system2)
+        public IList<ERBridgeRoute> GetPathsWithinCluster(string clusterid, string systemid1, string systemid2)
         {
-            IList<ERBridgesPath> bridges = new List<ERBridgesPath>();
+            IList<ERBridgeRoute> bridges = new List<ERBridgeRoute>();
 
             // GetCluster
             Cluster cluster = Map.Get<Cluster>(clusterid);
-            
+            string directbridgeid = string.Empty;
             // first check for directly connected
             foreach (var id in cluster.Bridges.Values)
             {
                 ERBridge bridge = Map.Get<ERBridge>(id);
-                if (CheckBridgeHasSystems(bridge, system1, system2))
+                if (CheckBridgeHasSystems(bridge, systemid1, systemid2))
                 {
-                    ERBridgesPath path = new ERBridgesPath();
+                    ERBridgeRoute path = new ERBridgeRoute();
                     path.Bridges.Add(bridge);
                     bridges.Add(path);
+                    directbridgeid = bridge.Identifier;
                     break;
                 }
+            }
+
+            // now drill down each portal starting at system1
+            StarSystem system1 = Map.Get<StarSystem>(systemid1);
+            foreach(Portal p in system1.Portals)
+            {
+                ERBridge bridge = Map.Get<ERBridge>(p.ERBridgeIdentifier);
+                if (bridge.Identifier == directbridgeid) // we've already found this one
+                    continue;
+
+
             }
 
             return bridges;
         }
 
         protected bool CheckBridgeHasSystems(ERBridge bridge, string system1, string system2) =>
-            (bridge.Portals[0].StarIdentifier == system1 || bridge.Portals[0].StarIdentifier == system2) &&
-            (bridge.Portals[1].StarIdentifier == system1 || bridge.Portals[1].StarIdentifier == system2);
+            (bridge.Portals[0].StarSystemIdentifier == system1 || bridge.Portals[0].StarSystemIdentifier == system2) &&
+            (bridge.Portals[1].StarSystemIdentifier == system1 || bridge.Portals[1].StarSystemIdentifier == system2);
     }
 }

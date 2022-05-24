@@ -17,9 +17,9 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
         (Map as ProgressionMap).Add(this);
 
         Portals = new Portal[2];
-        Portals[0].StarIdentifier = system1.Identifier;
+        Portals[0].StarSystemIdentifier = system1.Identifier;
         Portals[0].ERBridgeIdentifier = this.Identifier;
-        Portals[1].StarIdentifier = system2.Identifier;
+        Portals[1].StarSystemIdentifier = system2.Identifier;
         Portals[1].ERBridgeIdentifier = this.Identifier;
         SetName();
     }
@@ -37,7 +37,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
     #region Get Methods
     public StarSystem GetStarSystem(int end)
     {
-        string identifier = Portals[end].StarIdentifier;
+        string identifier = Portals[end].StarSystemIdentifier;
         StarSystem system = (Map as ProgressionMap).Get<StarSystem>(identifier);
         return system;
     }
@@ -48,7 +48,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
 
         foreach (Portal p in Portals)
         {
-            system = (Map as ProgressionMap).Get<StarSystem>(p.StarIdentifier);
+            system = (Map as ProgressionMap).Get<StarSystem>(p.StarSystemIdentifier);
             if (system != null && system.Name == name)
                 break;
         }
@@ -62,7 +62,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
 
         foreach (Portal p in Portals)
         {
-            StarSystem s = (Map as ProgressionMap).Get<StarSystem>(p.StarIdentifier);
+            StarSystem s = (Map as ProgressionMap).Get<StarSystem>(p.StarSystemIdentifier);
             systems.Add(s.Name, s);
         }
 
@@ -78,7 +78,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
         bool bFirst = true;
         foreach (Portal p in Portals)
         {
-            StarSystem system = (Map as ProgressionMap).Get<StarSystem>(p.StarIdentifier);
+            StarSystem system = (Map as ProgressionMap).Get<StarSystem>(p.StarSystemIdentifier);
             if (system != null)
             {
                 if (!bFirst)

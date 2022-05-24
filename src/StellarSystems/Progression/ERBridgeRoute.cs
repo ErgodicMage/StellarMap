@@ -2,11 +2,11 @@
 
 namespace StellarMap.Progression
 {
-    public class ERBridgesPath
+    public class ERBridgeRoute
     {
-        public ERBridgesPath() => Bridges = new List<ERBridge>();
+        public ERBridgeRoute() => Bridges = new List<ERBridge>();
 
-        public ERBridgesPath(ERBridgesPath path) => Bridges = new List<ERBridge>(path.Bridges);
+        public ERBridgeRoute(ERBridgeRoute path) => Bridges = new List<ERBridge>(path.Bridges);
 
 
         public IList<ERBridge> Bridges { get; init; }
