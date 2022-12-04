@@ -77,14 +77,20 @@ public class ZipMapStorage : IMapStorage
                 if (!string.IsNullOrEmpty(json))
                 {
                     if (entry.Name == "MetaData.json")
-                        map.MetaData = JsonConvert.DeserializeObject<GroupedProperties>(json);
+                    {
+                        GroupedProperties? metaData = JsonConvert.DeserializeObject<GroupedProperties>(json);
+                        map.MetaData = metaData is not null ? metaData : new GroupedProperties();
+                    }
                     else
                     {
                         string bodytype = entry.Name.Replace("s.json", "");
-                        Type t = map.GetTypeOfBody(bodytype);
-                        object data = JsonConvert.DeserializeObject(json, t);
-
-                        map.SetBody(bodytype, data);
+                        Type? t = map.GetTypeOfBody(bodytype);
+                        if (t is not null)
+                        {
+                            object? data = JsonConvert.DeserializeObject(json, t);
+                            if (data is not null)
+                                map.SetBody(bodytype, data);
+                        }
                     }
                 }
 
