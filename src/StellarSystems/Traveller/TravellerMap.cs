@@ -37,42 +37,42 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
         {
             case Constants.BodyTypes.Planet:
                 prefix = Constants.BodyTypes.Planet;
-                if (Planets != null)
+                if (Planets is not null)
                     count = Planets.Count;
                 break;
             case Constants.BodyTypes.Star:
                 prefix = Constants.BodyTypes.Star;
-                if (Stars != null)
+                if (Stars is not null)
                     count = Stars.Count;
                 break;
             case Constants.BodyTypes.Satellite:
                 prefix = Constants.BodyTypes.Satellite;
-                if (Satellites != null)
+                if (Satellites is not null)
                     count = Satellites.Count;
                 break;
             case Constants.BodyTypes.Asteroid:
                 prefix = Constants.BodyTypes.Asteroid;
-                if (Asteroids != null)
+                if (Asteroids is not null)
                     count = Asteroids.Count;
                 break;
             case Constants.BodyTypes.Comet:
                 prefix = Constants.BodyTypes.Comet;
-                if (Comets != null)
+                if (Comets is not null)
                     count = Comets.Count;
                 break;
             case TravellerConstants.BodyType.World:
                 prefix = TravellerConstants.BodyType.World;
-                if (Worlds != null)
+                if (Worlds is not null)
                     count = Worlds.Count;
                 break;
             case TravellerConstants.BodyType.Subsector:
                 prefix = TravellerConstants.BodyType.Subsector;
-                if (Subsectors != null)
+                if (Subsectors is not null)
                     count = Subsectors.Count;
                 break;
             case TravellerConstants.BodyType.Sector:
                 prefix = TravellerConstants.BodyType.Sector;
-                if (Sectors != null)
+                if (Sectors is not null)
                     count = Sectors.Count;
                 break;
         }
@@ -93,9 +93,9 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
     #endregion
 
     #region Protected Methods
-    protected override IDictionary<string, T> GetDictionary<T>(bool create)
+    protected override IDictionary<string, T>? GetDictionary<T>(bool create)
     {
-        IDictionary<string, T> dict = null;
+        IDictionary<string, T>? dict = default;
         Type dt = typeof(T);
 
         if (dt == typeof(World))
@@ -134,9 +134,9 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
         return bodytypes;
     }
 
-    public override object GetBody(string bodytype)
+    public override object? GetBody(string bodytype)
     {
-        object body = base.GetBody(bodytype);
+        object? body = base.GetBody(bodytype);
 
         if (body == null)
         {
@@ -157,11 +157,11 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
         return body;
     }
 
-    public override Type GetTypeOfBody(string bodytype)
+    public override Type? GetTypeOfBody(string bodytype)
     {
-        Type t = base.GetTypeOfBody(bodytype);
+        Type? t = base.GetTypeOfBody(bodytype);
 
-        if (t == null)
+        if (t is null)
         {
             switch (bodytype)
             {

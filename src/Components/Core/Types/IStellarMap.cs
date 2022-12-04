@@ -20,7 +20,7 @@ public interface IStellarMap
     IDictionary<string, Comet>? Comets { get; set; }
 
     // Get Methods
-    T Get<T>(string id) where T : IStellarBody;
+    T? Get<T>(string id) where T : IStellarBody;
 
     void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) where T : IStellarBody;
 
@@ -33,9 +33,9 @@ public interface IStellarMap
 
     IList<string> GetBodyTypes();
 
-    object GetBody(string bodytype);
+    object? GetBody(string bodytype);
 
-    Type GetTypeOfBody(string bodytype);
+    Type? GetTypeOfBody(string bodytype);
 
     bool SetBody(string bodytype, object data);
 

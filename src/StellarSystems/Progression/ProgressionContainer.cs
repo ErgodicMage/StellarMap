@@ -27,10 +27,10 @@ public class ProgressionContainer : StellarParentBody, IEqualityComparer<Progres
     #endregion
 
     #region Get Methods
-    public virtual ERBridge GetBridge(string name) => 
+    public virtual ERBridge? GetBridge(string name) => 
         Get<ERBridge>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
 
-    public virtual IDictionary<string, ERBridge> GetBridges() => 
+    public virtual IDictionary<string, ERBridge>? GetBridges() => 
         GetAll<ERBridge>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
     #endregion
 

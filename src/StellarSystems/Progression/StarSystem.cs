@@ -16,18 +16,18 @@ public class StarSystem : ProgressionContainer, IEqualityComparer<StarSystem>
 
     #region Public Properties
     [IgnoreDataMember]
-    public IDictionary<string, string> Stars 
+    public IDictionary<string, string>? Stars 
         { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Stars); }
 
     [DataMember(Order = 21)]
-    public IList<Portal> Portals { get; set; }
+    public IList<Portal>? Portals { get; set; }
     #endregion
 
     #region Get Methods
-    public virtual ProgressionStar GetStar(string name) => 
+    public virtual ProgressionStar? GetStar(string name) => 
         (ProgressionStar)Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
 
-    public virtual IDictionary<string, Star> GetStars() => 
+    public virtual IDictionary<string, Star>? GetStars() => 
         GetAll<Star>(ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
     #endregion
 

@@ -21,10 +21,10 @@ public class ProgressionStar : Star
     #endregion
 
     #region Get Methods
-    public virtual Habitat GeHabitat(string name) => 
+    public virtual Habitat? GeHabitat(string name) => 
         Get<Habitat>(name, StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
-    public virtual IDictionary<string, Habitat> GetHabitats() => 
+    public virtual IDictionary<string, Habitat>? GetHabitats() => 
         GetAll<Habitat>(StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
     #endregion

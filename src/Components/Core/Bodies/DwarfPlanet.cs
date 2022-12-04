@@ -24,10 +24,10 @@ public class DwarfPlanet : StellarParentBody, IEqualityComparer<DwarfPlanet>
     #endregion
 
     #region Get Functions
-    public virtual Satellite GetSatellite(string name) => 
+    public virtual Satellite? GetSatellite(string name) => 
         Get<Satellite>(name, DwarfPlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
 
-    public virtual IDictionary<string, Satellite> GetSatellites() => 
+    public virtual IDictionary<string, Satellite>? GetSatellites() => 
         GetAll<Satellite>(DwarfPlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
     #endregion
 

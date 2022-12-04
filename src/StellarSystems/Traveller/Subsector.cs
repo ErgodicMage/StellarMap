@@ -25,7 +25,7 @@ public class Subsector : StellarParentBody, IEqualityComparer<Subsector>
     #endregion
 
     #region Get Functions
-    public virtual World GetWorld(string name) =>
+    public virtual World? GetWorld(string name) =>
         Get<World>(name, SubsectorGroupIdentifiers, TravellerConstants.NamedIdentifiers.World);
     #endregion
 

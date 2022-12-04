@@ -24,10 +24,10 @@ public class Planet : StellarParentBody, IEqualityComparer<Planet>
     #endregion
 
     #region Get Functions
-    public virtual Satellite GetSatellite(string name) => 
+    public virtual Satellite? GetSatellite(string name) => 
         Get<Satellite>(name, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
 
-    public virtual IDictionary<string, Satellite> GetSatellites() => 
+    public virtual IDictionary<string, Satellite>? GetSatellites() => 
         GetAll<Satellite>(PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
     #endregion
 

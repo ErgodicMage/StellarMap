@@ -54,15 +54,15 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     #endregion
 
     #region Public Get Functions
-    public virtual T Get<T>(string id) where T : IStellarBody
+    public virtual T? Get<T>(string id) where T : IStellarBody
     {
-        T t = default;
+        T? t = default;
 
         if (!string.IsNullOrEmpty(id))
         {
-            IDictionary<string, T> dict = GetDictionary<T>(false);
+            IDictionary<string, T>? dict = GetDictionary<T>(false);
 
-            if (dict != null && dict.ContainsKey(id))
+            if (dict is not null && dict.ContainsKey(id))
                 t = dict[id];
         }
 
@@ -74,8 +74,8 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     {
         foreach (string id in identifiers)
         {
-            T t = Get<T>(id);
-            if (t != null)
+            T? t = Get<T>(id);
+            if (t is not null)
                 output.Add(id, t);
         }
     }
@@ -84,12 +84,12 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     #region Public Add Functions
     public virtual void Add<T>(T t) where T : IStellarBody
     {
-        IDictionary<string, T> dict = GetDictionary<T>(true);
+        IDictionary<string, T>? dict = GetDictionary<T>(true);
 
         if (string.IsNullOrEmpty(t.Identifier))
             t.Identifier = GenerateIdentifier<T>();
 
-        if (!dict.ContainsKey(t.Identifier))
+        if (dict is not null && !dict.ContainsKey(t.Identifier))
         {
             t.Map = this;
             dict.Add(t.Identifier, t);
@@ -98,14 +98,14 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
 
     public virtual void Add<T>(ICollection<T> ts) where T : IStellarBody
     {
-        IDictionary<string, T> dict = GetDictionary<T>(false);
+        IDictionary<string, T>? dict = GetDictionary<T>(false);
 
         foreach (T t in ts)
         {
             if (string.IsNullOrEmpty(t.Identifier))
                 t.Identifier = GenerateIdentifier<T>();
 
-            if (!dict.ContainsKey(t.Identifier))
+            if (dict is not null && !dict.ContainsKey(t.Identifier))
             {
                 t.Map = this;
                 dict.Add(t.Identifier, t);
@@ -125,32 +125,32 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         {
             case Constants.BodyTypes.Planet:
                 prefix = Constants.BodyTypes.Planet;
-                if (Planets != null)
+                if (Planets is not null)
                     count = Planets.Count;
                 break;
             case Constants.BodyTypes.DwarfPlanet:
                 prefix = Constants.BodyTypes.DwarfPlanet;
-                if (DwarfPlanets != null)
+                if (DwarfPlanets is not null)
                     count = DwarfPlanets.Count;
                 break;
             case Constants.BodyTypes.Star:
                 prefix = Constants.BodyTypes.Star;
-                if (Stars != null)
+                if (Stars is not null)
                     count = Stars.Count;
                 break;
             case Constants.BodyTypes.Satellite:
                 prefix = Constants.BodyTypes.Satellite;
-                if (Satellites != null)
+                if (Satellites is not null)
                     count = Satellites.Count;
                 break;
             case Constants.BodyTypes.Asteroid:
                 prefix = Constants.BodyTypes.Asteroid;
-                if (Asteroids != null)
+                if (Asteroids is not null)
                     count = Asteroids.Count;
                 break;
             case Constants.BodyTypes.Comet:
                 prefix = Constants.BodyTypes.Comet;
-                if (Comets != null)
+                if (Comets is not null)
                     count = Comets.Count;
                 break;
         }
@@ -179,7 +179,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         };
     }
 
-    public virtual object GetBody(string bodytype)
+    public virtual object? GetBody(string bodytype)
     {
         return bodytype switch
         {
@@ -193,7 +193,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         };
     }
 
-    public virtual Type GetTypeOfBody(string bodytype)
+    public virtual Type? GetTypeOfBody(string bodytype)
     {
         return bodytype switch
         {
@@ -261,44 +261,44 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     #endregion
 
     #region Protected Functions
-    protected virtual IDictionary<string, T> GetDictionary<T>(bool create) where T : IStellarBody
+    protected virtual IDictionary<string, T>? GetDictionary<T>(bool create) where T : IStellarBody
     {
-        IDictionary<string, T> dict = null;
+        IDictionary<string, T>? dict = default;
         Type dt = typeof(T);
 
         if (dt == typeof(Planet))
         {
-            if (create && Planets == null)
+            if (create && Planets is null)
                 Planets = new Dictionary<string, Planet>();
             dict = (IDictionary<string, T>)Planets;
         }
         else if (dt == typeof(Star))
         {
-            if (create && Stars == null)
+            if (create && Stars is null)
                 Stars = new Dictionary<string, Star>();
             dict = (IDictionary<string, T>)Stars;
         }
         else if (dt == typeof(DwarfPlanet))
         {
-            if (create && DwarfPlanets == null)
+            if (create && DwarfPlanets is null)
                 DwarfPlanets = new Dictionary<string, DwarfPlanet>();
             dict = (IDictionary<string, T>)DwarfPlanets;
         } 
         else if (dt == typeof(Satellite))
         {
-            if (create && Satellites == null)
+            if (create && Satellites is null)
                 Satellites = new Dictionary<string, Satellite>();
             dict = (IDictionary<string, T>)Satellites;
         }           
         else if (dt == typeof(Asteroid))
         {
-            if (create && Asteroids == null)
+            if (create && Asteroids is null)
                 Asteroids = new Dictionary<string, Asteroid>();
             dict = (IDictionary<string, T>)Asteroids;
         }
         else if (dt == typeof(Comet))
         {
-            if (create && Comets == null)
+            if (create && Comets is null)
                 Comets = new Dictionary<string, Comet>();
             dict = (IDictionary<string, T>)Comets;
         }

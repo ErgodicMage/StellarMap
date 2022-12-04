@@ -9,10 +9,10 @@ public static class ERBridgeHelper
         // force mapping
         cluster.Map = map;
 
-        StarSystem system1 = cluster.GetStarSystem(starname1);
-        StarSystem system2 = cluster.GetStarSystem(starname2);
+        StarSystem? system1 = cluster.GetStarSystem(starname1);
+        StarSystem? system2 = cluster.GetStarSystem(starname2);
 
-        if (system1 == null || system2 == null)
+        if (system1 is null || system2 is null)
             return null;
 
         // force mapping
@@ -39,27 +39,27 @@ public static class ERBridgeHelper
         return bridge;
     }
 
-    public static ERBridge CreateClusterBridge(ProgressionMap map, Sector sector, string starname1, string starname2)
+    public static ERBridge? CreateClusterBridge(ProgressionMap map, Sector sector, string starname1, string starname2)
     {
         sector.Map = map;
 
-        StarSystem system1 = null;
-        Cluster cluster1 = null;
-        StarSystem system2 = null;
-        Cluster cluster2 = null;
+        StarSystem? system1 = default;
+        Cluster? cluster1 = default;
+        StarSystem? system2 = default;
+        Cluster? cluster2 = default;
 
         foreach(var kvp in map.Clusters)
         {
             if (system1 == null)
             {
                 system1 = kvp.Value.GetStarSystem(starname1);
-                if (system1 != null)
+                if (system1 is not null)
                     cluster1 = kvp.Value;
             }
             if (system2 == null)
             {
                 system2 = kvp.Value.GetStarSystem(starname2);
-                if (system2 != null)
+                if (system2 is not null)
                     cluster2 = kvp.Value;
             }
 
@@ -68,8 +68,8 @@ public static class ERBridgeHelper
         }
 
 
-        if (system1 == null || system2 == null || cluster1 == null || cluster2 == null || cluster1.Identifier == cluster2.Identifier)
-            return null;
+        if (system1 is null || system2 is null || cluster1 is null || cluster2 is null || cluster1.Identifier != cluster2.Identifier)
+            return default;
 
         ERBridge bridge = new ERBridge(ProgressionConstants.BridgeTypes.Cluster, system1, system2);
 

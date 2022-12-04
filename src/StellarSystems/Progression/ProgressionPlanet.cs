@@ -21,10 +21,10 @@ public class ProgressionPlanet : Planet
     #endregion
 
     #region Get Methods
-    public virtual Habitat GeHabitat(string name) => 
+    public virtual Habitat? GeHabitat(string name) => 
         Get<Habitat>(name, PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
-    public virtual IDictionary<string, Habitat> GetHabitats() => 
+    public virtual IDictionary<string, Habitat>? GetHabitats() => 
         GetAll<Habitat>(PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
     #endregion
 

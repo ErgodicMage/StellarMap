@@ -19,23 +19,23 @@ namespace StellarMap.Progression
         public ProgressionMap Map { get; set; }
         #endregion
 
-        public IList<ERBridgeRoute> GetPaths(string systemname1, string systemname2)
+        public IList<ERBridgeRoute>? GetPaths(string systemname1, string systemname2)
         {
             string system1 = GetStarSystemIdentifier(systemname1);
             string system2 = GetStarSystemIdentifier(systemname2);
             if (string.IsNullOrEmpty(system1) || string.IsNullOrEmpty(system2))
-                return null;
+                return default;
 
             return GetPathsFromIdentifiers(system1, system2); ;
         }
 
-        public IList<ERBridgeRoute> GetPathsFromIdentifiers(string systemid1, string systemid2)
+        public IList<ERBridgeRoute>? GetPathsFromIdentifiers(string systemid1, string systemid2)
         {
-            StarSystem system1 = Map.Get<StarSystem>(systemid1);
-            StarSystem system2 = Map.Get<StarSystem>(systemid2);
+            StarSystem? system1 = Map.Get<StarSystem>(systemid1);
+            StarSystem? system2 = Map.Get<StarSystem>(systemid2);
 
-            if (system1 == null || system2 == null)
-                return null;
+            if (system1 is null || system2 is null)
+                return default;
 
             IList<ERBridgeRoute> paths = new List<ERBridgeRoute>();
 
@@ -58,12 +58,12 @@ namespace StellarMap.Progression
             IList<ERBridgeRoute> bridges = new List<ERBridgeRoute>();
 
             // GetCluster
-            Cluster cluster = Map.Get<Cluster>(clusterid);
+            Cluster? cluster = Map.Get<Cluster>(clusterid);
             string directbridgeid = string.Empty;
             // first check for directly connected
-            foreach (var id in cluster.Bridges.Values)
+            foreach (var id in cluster?.Bridges?.Values)
             {
-                ERBridge bridge = Map.Get<ERBridge>(id);
+                ERBridge? bridge = Map.Get<ERBridge>(id);
                 if (CheckBridgeHasSystems(bridge, systemid1, systemid2))
                 {
                     ERBridgeRoute path = new ERBridgeRoute();
@@ -88,8 +88,8 @@ namespace StellarMap.Progression
             return bridges;
         }
 
-        protected bool CheckBridgeHasSystems(ERBridge bridge, string system1, string system2) =>
-            (bridge.Portals[0].StarSystemIdentifier == system1 || bridge.Portals[0].StarSystemIdentifier == system2) &&
-            (bridge.Portals[1].StarSystemIdentifier == system1 || bridge.Portals[1].StarSystemIdentifier == system2);
+        protected bool CheckBridgeHasSystems(ERBridge? bridge, string system1, string system2) =>
+            (bridge?.Portals[0].StarSystemIdentifier == system1 || bridge?.Portals[0].StarSystemIdentifier == system2) &&
+            (bridge?.Portals[1].StarSystemIdentifier == system1 || bridge?.Portals[1].StarSystemIdentifier == system2);
     }
 }

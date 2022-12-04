@@ -14,7 +14,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
         BodyType = ProgressionConstants.BodyType.ERBridge;
         BridgeType = type;
         Map = system1.Map;
-        (Map as ProgressionMap).Add(this);
+        (Map as ProgressionMap)?.Add(this);
 
         Portals = new Portal[2];
         Portals[0].StarSystemIdentifier = system1.Identifier;
@@ -31,25 +31,24 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
     public string BridgeType { get; set; }
 
     [DataMember (Order = 12)]
-    public Portal[]? Portals { get; init; }
+    public Portal[] Portals { get; init; }
     #endregion
 
     #region Get Methods
-    public StarSystem GetStarSystem(int end)
+    public StarSystem? GetStarSystem(int end)
     {
-        string identifier = Portals[end].StarSystemIdentifier;
-        StarSystem system = (Map as ProgressionMap).Get<StarSystem>(identifier);
-        return system;
+        string identifier = Portals?[end].StarSystemIdentifier;
+        return (Map as ProgressionMap)?.Get<StarSystem>(identifier);
     }
 
-    public StarSystem GetStarSystem(string name)
+    public StarSystem? GetStarSystem(string name)
     {
-        StarSystem system = null;
+        StarSystem? system = default;
 
         foreach (Portal p in Portals)
         {
-            system = (Map as ProgressionMap).Get<StarSystem>(p.StarSystemIdentifier);
-            if (system != null && system.Name == name)
+            system = (Map as ProgressionMap)?.Get<StarSystem>(p.StarSystemIdentifier);
+            if (system is not null && system.Name == name)
                 break;
         }
 
@@ -62,7 +61,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
 
         foreach (Portal p in Portals)
         {
-            StarSystem s = (Map as ProgressionMap).Get<StarSystem>(p.StarSystemIdentifier);
+            StarSystem s = (Map as ProgressionMap)?.Get<StarSystem>(p.StarSystemIdentifier);
             systems.Add(s.Name, s);
         }
 
@@ -78,8 +77,8 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
         bool bFirst = true;
         foreach (Portal p in Portals)
         {
-            StarSystem system = (Map as ProgressionMap).Get<StarSystem>(p.StarSystemIdentifier);
-            if (system != null)
+            StarSystem? system = (Map as ProgressionMap)?.Get<StarSystem>(p.StarSystemIdentifier);
+            if (system is not null)
             {
                 if (!bFirst)
                     sb.Append("-");

@@ -36,28 +36,28 @@ public class Star : StellarParentBody,  IEqualityComparer<Star>
     #endregion
 
     #region Get Functions
-    public virtual Planet GetPlanet(string name) => 
+    public virtual Planet? GetPlanet(string name) => 
         Get<Planet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-    public virtual IDictionary<string, Planet> GetPlanets() => 
+    public virtual IDictionary<string, Planet>? GetPlanets() => 
         GetAll<Planet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-    public virtual DwarfPlanet GetDwarfPlanet(string name) => 
+    public virtual DwarfPlanet? GetDwarfPlanet(string name) => 
         Get<DwarfPlanet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
 
-    public virtual IDictionary<string, DwarfPlanet> GetDwarfPlanets() => 
+    public virtual IDictionary<string, DwarfPlanet>? GetDwarfPlanets() => 
         GetAll<DwarfPlanet>(StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
 
-    public virtual Asteroid GetAsteroid(string name) => 
+    public virtual Asteroid? GetAsteroid(string name) => 
         Get<Asteroid>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-    public virtual IDictionary<string, Asteroid> GetAsteroids() => 
+    public virtual IDictionary<string, Asteroid>? GetAsteroids() => 
         GetAll<Asteroid>(StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-    public virtual Comet GetComet(string name) => 
+    public virtual Comet? GetComet(string name) => 
         Get<Comet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
 
-    public virtual IDictionary<string, Comet> GetComets() => 
+    public virtual IDictionary<string, Comet>? GetComets() => 
         GetAll<Comet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
     #endregion
 

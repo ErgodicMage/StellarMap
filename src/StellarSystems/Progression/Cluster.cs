@@ -22,10 +22,10 @@ public class Cluster : ProgressionContainer
     #endregion
 
     #region Get Methods
-    public virtual StarSystem GetStarSystem(string name) => 
+    public virtual StarSystem? GetStarSystem(string name) => 
         Get<StarSystem>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
 
-    public virtual IDictionary<string, StarSystem> GetStarSystems() => 
+    public virtual IDictionary<string, StarSystem>? GetStarSystems() => 
         GetAll<StarSystem>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
     #endregion
 

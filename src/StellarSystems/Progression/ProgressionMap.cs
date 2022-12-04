@@ -44,52 +44,52 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
         {
             case Constants.BodyTypes.Planet:
                 prefix = Constants.BodyTypes.Planet;
-                if (Planets != null)
+                if (Planets is not null)
                     count = Planets.Count;
                 break;
             case Constants.BodyTypes.Star:
                 prefix = Constants.BodyTypes.Star;
-                if (Stars != null)
+                if (Stars is not null)
                     count = Stars.Count;
                 break;
             case ProgressionConstants.BodyType.StarSystem:
                 prefix = ProgressionConstants.BodyType.StarSystem;
-                if (StarSystems != null)
+                if (StarSystems is not null)
                     count = StarSystems.Count;
                 break;
             case ProgressionConstants.BodyType.Cluster:
                 prefix = ProgressionConstants.BodyType.Cluster;
-                if (Clusters != null)
+                if (Clusters is not null)
                     count = Clusters.Count;
                 break;
             case ProgressionConstants.BodyType.Sector:
                 prefix = ProgressionConstants.BodyType.Sector;
-                if (Sectors != null)
+                if (Sectors is not null)
                     count = Sectors.Count;
                 break;
             case Constants.BodyTypes.Satellite:
                 prefix = Constants.BodyTypes.Satellite;
-                if (Satellites != null)
+                if (Satellites is not null)
                     count = Satellites.Count;
                 break;
             case Constants.BodyTypes.Asteroid:
                 prefix = Constants.BodyTypes.Asteroid;
-                if (Asteroids != null)
+                if (Asteroids is not null)
                     count = Asteroids.Count;
                 break;
             case Constants.BodyTypes.Comet:
                 prefix = Constants.BodyTypes.Comet;
-                if (Comets != null)
+                if (Comets is not null)
                     count = Comets.Count;
                 break;
             case ProgressionConstants.BodyType.Habitat:
                 prefix = ProgressionConstants.BodyType.Habitat;
-                if (Habitats != null)
+                if (Habitats is not null)
                     count = Habitats.Count;
                 break;
             case ProgressionConstants.BodyType.ERBridge:
                 prefix = ProgressionConstants.BodyType.ERBridge;
-                if (Bridges != null)
+                if (Bridges is not null)
                     count = Bridges.Count;
                 break;
         }
@@ -107,9 +107,9 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
     #endregion
 
     #region Protected Methods
-    protected override IDictionary<string, T> GetDictionary<T>(bool create)
+    protected override IDictionary<string, T>? GetDictionary<T>(bool create)
     {
-        IDictionary<string, T> dict = null;
+        IDictionary<string, T>? dict = default;
         Type dt = typeof(T);
 
         if (dt == typeof(ProgressionStar))
@@ -149,7 +149,7 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
             dict = (IDictionary<string, T>)Sectors;
         }
 
-        if (dict == null)
+        if (dict is null)
             dict = base.GetDictionary<T>(create);
 
         return dict;
@@ -168,7 +168,7 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
         return bodytypes;
     }
 
-    public override object GetBody(string bodytype)
+    public override object? GetBody(string bodytype)
     {
         var body = base.GetBody(bodytype);
 
@@ -188,9 +188,9 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
         return body;
     }
 
-    public override Type GetTypeOfBody(string bodytype)
+    public override Type? GetTypeOfBody(string bodytype)
     {
-        Type t = base.GetTypeOfBody(bodytype);
+        Type? t = base.GetTypeOfBody(bodytype);
 
         if (t is null)
         {

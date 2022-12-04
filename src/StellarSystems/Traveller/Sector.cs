@@ -35,10 +35,10 @@ public class Sector : StellarParentBody, IEqualityComparer<Sector>
     #endregion
 
     #region Get Functions
-    public virtual Subsector GetSubsector(string name) =>
+    public virtual Subsector? GetSubsector(string name) =>
         Get<Subsector>(name, SectorGroupIdentifiers, TravellerConstants.NamedIdentifiers.Subsector);
 
-    public Subsector GetSubsectorByLetter(string letter)
+    public Subsector? GetSubsectorByLetter(string letter)
     {
         string name = Properties["Basic", letter];
         return string.IsNullOrEmpty(name) ? null : GetSubsector(name);

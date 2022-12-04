@@ -16,15 +16,15 @@ public class Sector : ProgressionContainer
 
     #region Public Properties
     [IgnoreDataMember]
-    public IDictionary<string, string> Clusters 
+    public IDictionary<string, string>? Clusters 
         { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Clusters); }
     #endregion
 
     #region Get Methods
-    public virtual Cluster GetCluster(string name) => 
+    public virtual Cluster? GetCluster(string name) => 
         Get<Cluster>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
 
-    public virtual IDictionary<string, Cluster> GetClusters() => 
+    public virtual IDictionary<string, Cluster>? GetClusters() => 
         GetAll<Cluster>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Clusters);
     #endregion
 

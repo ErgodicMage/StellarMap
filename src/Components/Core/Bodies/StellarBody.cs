@@ -106,9 +106,9 @@ public abstract class StellarParentBody : StellarBody, IStellarParentBody
     #endregion
 
     #region Get Methods
-    public virtual T Get<T>(string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
+    public virtual T? Get<T>(string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
     {
-        T t = default;
+        T? t = default;
 
         if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers) && 
                 identifiers.TryGetValue(name, out string id))
@@ -118,9 +118,9 @@ public abstract class StellarParentBody : StellarBody, IStellarParentBody
 
     }
 
-    public virtual IDictionary<string, T> GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
+    public virtual IDictionary<string, T>? GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
     {
-        IDictionary<string, T> all = null;
+        IDictionary<string, T>? all = default;
 
         if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers))
         {
@@ -128,8 +128,8 @@ public abstract class StellarParentBody : StellarBody, IStellarParentBody
 
             foreach (var kvp in identifiers)
             {
-                T t = Map.Get<T>(kvp.Value);
-                if (t != null)
+                T? t = Map.Get<T>(kvp.Value);
+                if (t is not null)
                     all.Add(kvp.Key, t);
             }
         }
