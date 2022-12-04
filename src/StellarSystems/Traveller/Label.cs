@@ -8,7 +8,7 @@ public class Label : IEqualityComparer<Label>
 
     #region Properties
     [DataMember(Order = 11)]
-    public Hex Position {get; set;}
+    public Hex? Position {get; set;}
 
     [DataMember(Order = 12)]
     public string Text {get; set;} = string.Empty;

@@ -31,22 +31,22 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     public GroupedProperties MetaData { get; set; }
 
     [DataMember(Order = 2)]
-    public IDictionary<string, Star> Stars { get; set; }
+    public IDictionary<string, Star>? Stars { get; set; }
 
     [DataMember(Order = 3)]
-    public IDictionary<string, Planet> Planets { get; set; }
+    public IDictionary<string, Planet>? Planets { get; set; }
 
     [DataMember(Order = 4)]
-    public IDictionary<string, DwarfPlanet> DwarfPlanets { get; set; }
+    public IDictionary<string, DwarfPlanet>? DwarfPlanets { get; set; }
 
     [DataMember(Order = 5)]
-    public IDictionary<string, Satellite> Satellites { get; set; }
+    public IDictionary<string, Satellite>? Satellites { get; set; }
 
     [DataMember(Order = 6)]
-    public IDictionary<string, Asteroid> Asteroids { get; set; }
+    public IDictionary<string, Asteroid>? Asteroids { get; set; }
 
     [DataMember(Order = 7)]
-    public IDictionary<string, Comet> Comets { get; set; }
+    public IDictionary<string, Comet>? Comets { get; set; }
     #endregion
 
     #region Static

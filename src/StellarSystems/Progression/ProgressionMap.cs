@@ -18,19 +18,19 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
 
     #region Properties
     [DataMember (Order = 11)]
-    public IDictionary<string, Habitat> Habitats { get; set; }
+    public IDictionary<string, Habitat>? Habitats { get; set; }
 
     [DataMember (Order = 12)]
-    public IDictionary<string, ERBridge> Bridges { get; set; }
+    public IDictionary<string, ERBridge>? Bridges { get; set; }
 
     [DataMember (Order = 13)]
-    public IDictionary<string, StarSystem> StarSystems { get; set; }
+    public IDictionary<string, StarSystem>? StarSystems { get; set; }
 
     [DataMember (Order = 14)]
-    public IDictionary<string, Cluster> Clusters { get; set; }
+    public IDictionary<string, Cluster>? Clusters { get; set; }
 
     [DataMember (Order = 15)]
-    public IDictionary<string, Sector> Sectors { get; set; }
+    public IDictionary<string, Sector>? Sectors { get; set; }
     #endregion
 
     #region Public Methods

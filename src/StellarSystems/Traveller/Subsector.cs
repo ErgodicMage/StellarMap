@@ -20,7 +20,7 @@ public class Subsector : StellarParentBody, IEqualityComparer<Subsector>
     public GroupNamedIdentifiers SubsectorGroupIdentifiers { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> Worlds
+    public IDictionary<string, string>? Worlds
     { get => SubsectorGroupIdentifiers.GroupIdentifiers.Get(TravellerConstants.NamedIdentifiers.World); }
     #endregion
 

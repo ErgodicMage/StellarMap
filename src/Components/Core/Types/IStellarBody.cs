@@ -2,8 +2,8 @@
 
 public interface IStellarBody
 {
-    string Identifier { get; set; }
-    string ParentIdentifier { get; set; }
+    string? Identifier { get; set; }
+    string? ParentIdentifier { get; set; }
     string Name { get; set; }
     string BodyType { get; set; }
     GroupedProperties Properties { get; set; }

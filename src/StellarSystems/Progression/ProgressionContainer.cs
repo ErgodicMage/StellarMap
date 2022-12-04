@@ -22,7 +22,7 @@ public class ProgressionContainer : StellarParentBody, IEqualityComparer<Progres
     public GroupNamedIdentifiers ContainerGroupIdentifiers { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> Bridges 
+    public IDictionary<string, string>? Bridges 
         { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.ERBridges);}
     #endregion
 

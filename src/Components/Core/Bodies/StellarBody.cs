@@ -19,10 +19,10 @@ public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
 
     #region Public Properties
     [DataMember (Order = 1)]
-    public string Identifier { get; set; }
+    public string? Identifier { get; set; }
 
     [DataMember (Order = 2)]
-    public string ParentIdentifier { get; set; }
+    public string? ParentIdentifier { get; set; }
 
     [DataMember (Order = 3)]
     public string Name { get; set; }

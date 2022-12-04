@@ -16,7 +16,7 @@ public class ProgressionPlanet : Planet
 
     #region Public Properties
     [IgnoreDataMember]
-    public IDictionary<string, string> Habitats 
+    public IDictionary<string, string>? Habitats 
         { get => PlanetGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Habitats); }
     #endregion
 

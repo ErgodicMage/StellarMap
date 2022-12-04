@@ -17,7 +17,7 @@ public class Cluster : ProgressionContainer
 
     #region Public Properties
     [IgnoreDataMember]
-    public IDictionary<string, string> StarSystems 
+    public IDictionary<string, string>? StarSystems 
         { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.StarSystems); }
     #endregion
 

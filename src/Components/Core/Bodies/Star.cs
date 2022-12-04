@@ -19,19 +19,19 @@ public class Star : StellarParentBody,  IEqualityComparer<Star>
     public GroupNamedIdentifiers StarGroupIdentifiers { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> Planets 
+    public IDictionary<string, string>? Planets 
         { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Planets); }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> DwarfPlanets 
+    public IDictionary<string, string>? DwarfPlanets 
         { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.DwarfPlanets); }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> Asteroids 
+    public IDictionary<string, string>? Asteroids 
         { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Asteroids); }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> Comets 
+    public IDictionary<string, string>? Comets 
         { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Comets); }
     #endregion
 

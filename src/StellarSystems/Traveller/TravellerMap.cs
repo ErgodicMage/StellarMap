@@ -17,13 +17,13 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
 
     #region Properties
     [DataMember(Order = 11)]
-    public IDictionary<string, World> Worlds { get; set; }
+    public IDictionary<string, World>? Worlds { get; set; }
 
     [DataMember(Order = 12)]
-    public IDictionary<string, Subsector> Subsectors { get; set; }
+    public IDictionary<string, Subsector>? Subsectors { get; set; }
 
     [DataMember(Order = 13)]
-    public IDictionary<string, Sector> Sectors { get; set; }
+    public IDictionary<string, Sector>? Sectors { get; set; }
     #endregion
 
     #region Public methods

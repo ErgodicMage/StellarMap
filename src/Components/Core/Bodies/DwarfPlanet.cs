@@ -19,7 +19,7 @@ public class DwarfPlanet : StellarParentBody, IEqualityComparer<DwarfPlanet>
     public GroupNamedIdentifiers DwarfPlanetGroupIdentifiers { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> Satellites 
+    public IDictionary<string, string>? Satellites 
         { get => DwarfPlanetGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Satellites); }
     #endregion
 

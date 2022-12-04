@@ -7,17 +7,17 @@ public interface IStellarMap
 
     GroupedProperties MetaData { get; set; }
 
-    IDictionary<string, Star> Stars { get; set; }
+    IDictionary<string, Star>? Stars { get; set; }
 
-    IDictionary<string, Planet> Planets { get; set; }
+    IDictionary<string, Planet>? Planets { get; set; }
 
-    IDictionary<string, Satellite> Satellites { get; set; }
+    IDictionary<string, Satellite>? Satellites { get; set; }
 
-    IDictionary<string, DwarfPlanet> DwarfPlanets { get; set; }
+    IDictionary<string, DwarfPlanet>? DwarfPlanets { get; set; }
 
-    IDictionary<string, Asteroid> Asteroids { get; set; }
+    IDictionary<string, Asteroid>? Asteroids { get; set; }
 
-    IDictionary<string, Comet> Comets { get; set; }
+    IDictionary<string, Comet>? Comets { get; set; }
 
     // Get Methods
     T Get<T>(string id) where T : IStellarBody;

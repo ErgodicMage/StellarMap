@@ -19,7 +19,7 @@ public class Planet : StellarParentBody, IEqualityComparer<Planet>
     public GroupNamedIdentifiers PlanetGroupIdentifiers { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> Satellites 
+    public IDictionary<string, string>? Satellites 
         { get => PlanetGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Satellites); }
     #endregion
 

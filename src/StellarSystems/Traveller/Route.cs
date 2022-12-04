@@ -8,10 +8,10 @@ public class Route : IEqualityComparer<Route>
 
     #region Properties
     [DataMember(Order = 11)]
-    public Hex Start {get; set;}
+    public Hex? Start {get; set;}
 
     [DataMember(Order = 12)]
-    public Hex End {get; set;}
+    public Hex? End {get; set;}
 
     [DataMember(Order = 13)]
     public short StartOffsetX {get; set;}

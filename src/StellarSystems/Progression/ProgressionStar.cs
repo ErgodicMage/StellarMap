@@ -16,7 +16,7 @@ public class ProgressionStar : Star
 
     #region Public Properties
     [IgnoreDataMember]
-    public IDictionary<string, string> Habitats 
+    public IDictionary<string, string>? Habitats 
         { get => StarGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Habitats); }
     #endregion
 
