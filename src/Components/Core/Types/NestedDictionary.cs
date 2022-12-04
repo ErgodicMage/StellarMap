@@ -9,7 +9,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
     #endregion
 
     #region Properties
-    public TValue this[TOuter outer, TInner inner] => this[outer][inner];
+    public TValue? this[TOuter outer, TInner inner] => this[outer][inner];
     #endregion
 
     #region Add Methods
@@ -63,17 +63,17 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
     #endregion
 
     #region Get Set Methods
-    public Dictionary<TInner, TValue> Get(TOuter outer)
+    public Dictionary<TInner, TValue>? Get(TOuter outer)
     {
         TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary);
         return innerDictionary;
     }
 
-    public TValue Get(TOuter outer, TInner inner)
+    public TValue? Get(TOuter outer, TInner inner)
     {
-        TValue value = default;
+        TValue? value = default;
 
-        Dictionary<TInner, TValue> innerDictionary = Get(outer);
+        Dictionary<TInner, TValue>? innerDictionary = Get(outer);
         innerDictionary?.TryGetValue(inner, out value);
 
         return value;
@@ -112,7 +112,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
             else
                 sb.AppendLine();
 
-            sb.Append(outer.ToString());
+            sb.Append(outer?.ToString());
             sb.Append(":");
 
             var inners = this[outer];
@@ -120,9 +120,9 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
             {
                 sb.AppendLine();
                 sb.Append('\t');
-                sb.Append(inner.Key.ToString());
+                sb.Append(inner.Key?.ToString());
                 sb.Append(" : ");
-                sb.Append(inner.Value.ToString());
+                sb.Append(inner.Value?.ToString());
             }
         }
 
@@ -131,11 +131,11 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
     #endregion
 
     #region IEquatable
-    public bool Equals(NestedDictionary<TOuter, TInner, TValue> other)
+    public bool Equals(NestedDictionary<TOuter, TInner, TValue>? other)
     {
         bool bRet = true;
 
-        if (other == null)
+        if (other is null)
             bRet = false;
         else if (this.Count != other.Count)
             bRet = false;
@@ -148,7 +148,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
 
             while (thisEnumerator.MoveNext() && otherEnumerator.MoveNext())
             {
-                if (thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
+                if (thisEnumerator.Current.Key is not null && thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
                 {
                     if (!InnerEquals(thisEnumerator.Current.Value, otherEnumerator.Current.Value))
                     {
@@ -177,19 +177,21 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
         {
             hash ^= outer.GetHashCode();
             foreach (var inner in this[outer])
-                hash ^= inner.Key.GetHashCode() ^ inner.Value.GetHashCode();
+            {
+                hash ^= (inner.Key is null ? 1 : inner.Key.GetHashCode()) ^ (inner.Value is null ? 1 : inner.Value.GetHashCode());
+            }
         }
 
         return hash;
     }
 
-    private static bool InnerEquals(Dictionary<TInner, TValue> thisObject, Dictionary<TInner, TValue> otherObject)
+    private static bool InnerEquals(Dictionary<TInner, TValue>? thisObject, Dictionary<TInner, TValue>? otherObject)
     {
         bool bRet = true;
 
-        if (thisObject == null && otherObject == null)
+        if (thisObject is null && otherObject is null)
             bRet = true;
-        else if ((thisObject == null) || (otherObject == null))
+        else if ((thisObject is null) || (otherObject is null))
             bRet = false;
         else if (thisObject.Count != otherObject.Count)
             bRet = false;
@@ -202,9 +204,9 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
 
             while (thisEnumerator.MoveNext() && otherEnumerator.MoveNext())
             {
-                if (thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
+                if (thisEnumerator.Current.Key is not null && thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
                 {
-                    if (!thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value))
+                    if (thisEnumerator.Current.Value is not null && !thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value))
                     {
                         bRet = false;
                         break;

@@ -20,9 +20,9 @@ public sealed class GroupNamedIdentifiers : IEquatable<GroupNamedIdentifiers>, I
     #endregion
 
     #region Indexer
-    public Dictionary<string, string> this[string group] => GroupIdentifiers[group];
+    public Dictionary<string, string>? this[string group] => GroupIdentifiers[group];
 
-    public string this[string group, string property] => GroupIdentifiers[group][property];
+    public string? this[string group, string property] => GroupIdentifiers[group]?[property];
     #endregion
 
     #region Add Methods
@@ -45,9 +45,9 @@ public sealed class GroupNamedIdentifiers : IEquatable<GroupNamedIdentifiers>, I
     #endregion
 
     #region Get and Set Methods
-    public IDictionary<string, string> Get(string group) => GroupIdentifiers.Get(group);
+    public IDictionary<string, string>? Get(string group) => GroupIdentifiers.Get(group);
 
-    public string Get(string group, string name) => GroupIdentifiers.Get(group, name);
+    public string? Get(string group, string name) => GroupIdentifiers.Get(group, name);
 
     public void Set(string group, string name, string identifier) => 
         GroupIdentifiers.Set(group, name, identifier);
@@ -58,15 +58,15 @@ public sealed class GroupNamedIdentifiers : IEquatable<GroupNamedIdentifiers>, I
     #endregion
 
     #region IEquatable
-    public bool Equals(GroupNamedIdentifiers other) => GroupIdentifiers.Equals(other.GroupIdentifiers);
+    public bool Equals(GroupNamedIdentifiers? other) => GroupIdentifiers.Equals(other?.GroupIdentifiers);
 
-    public override bool Equals(object obj) => 
+    public override bool Equals(object? obj) => 
         (obj is GroupNamedIdentifiers) && Equals(obj as GroupNamedIdentifiers);
 
-    public bool Equals(GroupNamedIdentifiers x, GroupNamedIdentifiers y) => x.Equals(y);
+    public bool Equals(GroupNamedIdentifiers? x, GroupNamedIdentifiers? y) => x is not null && x.Equals(y);
 
     public override int GetHashCode() => GroupIdentifiers.GetHashCode();
 
-    public int GetHashCode(GroupNamedIdentifiers obj) => obj.GetHashCode();
+    public int GetHashCode(GroupNamedIdentifiers? obj) => obj is null ? 0 : obj.GetHashCode();
     #endregion
 }

@@ -24,12 +24,12 @@ public sealed class GroupedProperties : IEquatable<GroupedProperties>
     #endregion
 
     #region Indexer
-    public Dictionary<string, string> this[string group] => PropertyGroups[group];
+    public Dictionary<string, string>? this[string group] => PropertyGroups[group];
 
-    public string this[string group, string property]
+    public string? this[string group, string property]
     {
         get => PropertyGroups[group][property];
-        set => PropertyGroups.Set(group, property, value);
+        set => PropertyGroups.Set(group, property, value!);
     }
     #endregion
 
@@ -53,9 +53,9 @@ public sealed class GroupedProperties : IEquatable<GroupedProperties>
     #endregion
 
     #region Get and Set Methods
-    public IDictionary<string, string> Get(string group) => PropertyGroups.Get(group);
+    public IDictionary<string, string>? Get(string group) => PropertyGroups.Get(group);
 
-    public string Get(string group, string property) => PropertyGroups.Get(group, property);
+    public string? Get(string group, string property) => PropertyGroups.Get(group, property);
 
     public void Set(string group, string property, string value) => PropertyGroups.Set(group, property, value);
     #endregion
@@ -65,9 +65,9 @@ public sealed class GroupedProperties : IEquatable<GroupedProperties>
     #endregion
 
     #region IEquatable
-    public bool Equals(GroupedProperties other) => PropertyGroups.Equals(other.PropertyGroups);
+    public bool Equals(GroupedProperties? other) => other is not null && PropertyGroups.Equals(other.PropertyGroups);
 
-    public override bool Equals(object obj) => (obj is GroupedProperties) && Equals(obj as GroupedProperties);
+    public override bool Equals(object? obj) => (obj is GroupedProperties) && Equals(obj as GroupedProperties);
 
     public override int GetHashCode() => PropertyGroups.GetHashCode();
     #endregion
