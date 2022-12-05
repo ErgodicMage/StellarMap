@@ -19,84 +19,86 @@ public class World : StellarParentBody, IEqualityComparer<World>
 
     #region Public Properties
     [DataMember(Order = 31)]
-    public Hex HexNumber { get; set; }
+    public Hex? HexNumber { get; set; }
 
     [IgnoreDataMember]
-    public string UWP 
+    public string? UWP 
         { 
         get => GetWorldValue(TravellerConstants.PropertyNames.UWP); 
-        set => SetWorldProperty(TravellerConstants.PropertyNames.UWP, value); 
+        set => SetWorldProperty(TravellerConstants.PropertyNames.UWP, value!); 
     }
 
     [IgnoreDataMember]
-    public string Base
+    public string? Base
     { 
         get => GetWorldValue(TravellerConstants.PropertyNames.Base); 
-        set => SetWorldProperty(TravellerConstants.PropertyNames.Base, value); 
+        set => SetWorldProperty(TravellerConstants.PropertyNames.Base, value!); 
     }
 
     [IgnoreDataMember]
-    public string Codes
+    public string? Codes
     { 
         get => GetWorldValue(TravellerConstants.PropertyNames.Codes); 
-        set => SetWorldProperty(TravellerConstants.PropertyNames.Codes, value); 
+        set => SetWorldProperty(TravellerConstants.PropertyNames.Codes, value!); 
     }
 
     [IgnoreDataMember]
-    public string Zone
+    public string? Zone
     { 
         get => GetWorldValue(TravellerConstants.PropertyNames.Zone); 
-        set => SetWorldProperty(TravellerConstants.PropertyNames.Zone, value); 
+        set => SetWorldProperty(TravellerConstants.PropertyNames.Zone, value!); 
     }
 
     [IgnoreDataMember]
-    public string PBG
+    public string? PBG
     { 
         get => GetWorldValue(TravellerConstants.PropertyNames.PBG); 
-        set => SetWorldProperty(TravellerConstants.PropertyNames.PBG, value); 
+        set => SetWorldProperty(TravellerConstants.PropertyNames.PBG, value!); 
     }
 
     [IgnoreDataMember]
-    public string Allegiance
+    public string? Allegiance
     { 
         get => GetWorldValue(TravellerConstants.PropertyNames.Allegiance); 
-        set => SetWorldProperty(TravellerConstants.PropertyNames.Allegiance, value); 
+        set => SetWorldProperty(TravellerConstants.PropertyNames.Allegiance, value!); 
     }
 
     [IgnoreDataMember]
-    public string StellarData
+    public string? StellarData
     {
         get => GetWorldValue(TravellerConstants.PropertyNames.StellarData);
-        set => SetWorldProperty(TravellerConstants.PropertyNames.StellarData, value);
+        set => SetWorldProperty(TravellerConstants.PropertyNames.StellarData, value!);
     }
 
     [DataMember(Order = 32)]
-    public GroupNamedIdentifiers WorldGroupIdentifiers { get; set; }
+    public GroupNamedIdentifiers? WorldGroupIdentifiers { get; set; }
     #endregion
 
     #region Set/Get World Properties
     public void SetWorldProperty(string propertyName, string propertyValue)
     {
+        if (BasicProperties is null)
+            return;
         if (BasicProperties.ContainsKey(propertyName))
             BasicProperties[propertyName] = propertyValue;
         else
             BasicProperties.Add(propertyName, propertyValue);
     }
 
-    public string GetWorldValue(string propertyName)
+    public string? GetWorldValue(string propertyName)
     {
-        if (!BasicProperties.ContainsKey(propertyName))
+        if (BasicProperties is null || !BasicProperties.ContainsKey(propertyName))
             return string.Empty;
         return BasicProperties[propertyName];
     }
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(World x, World y) => WorldEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(World? x, World? y) => WorldEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => WorldEqualityComparer.Comparer.Equals(this, obj as World);
+    public override bool Equals(object? obj) => WorldEqualityComparer.Comparer.Equals(this, obj as World);
 
-    public int GetHashCode(World obj) => WorldEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(World? obj) => WorldEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => WorldEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -105,20 +107,26 @@ public class World : StellarParentBody, IEqualityComparer<World>
 public sealed class WorldEqualityComparer : IEqualityComparer<World>
 {
     #region IEqualityComparer
-    public bool Equals(World x, World y) =>
-                StellarBodyEqualityComparer.Comparer.Equals(x, y) && x.HexNumber == y.HexNumber &&
+    public bool Equals(World? x, World? y) =>
+                x is not null && y is not null &&
+                x.HexNumber is not null && y.HexNumber is not null &&
+                StellarBodyEqualityComparer.Comparer.Equals(x, y) && 
+                x.HexNumber == y.HexNumber &&
+                x.WorldGroupIdentifiers is not null && y.WorldGroupIdentifiers is not null &&
                 x.WorldGroupIdentifiers.Equals(y.WorldGroupIdentifiers);
 
-    public int GetHashCode(World obj)
+    public int GetHashCode(World? obj)
     {
+        if (obj is null) return 0;
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
-        hash ^= obj.HexNumber.GetHashCode();
-        if (obj.WorldGroupIdentifiers != null)
+        if (obj.HexNumber is not null)
+            hash ^= obj.HexNumber.GetHashCode();
+        if (obj.WorldGroupIdentifiers is not null)
             hash ^= obj.WorldGroupIdentifiers.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<World> Comparer { get; } = new WorldEqualityComparer();
+    public static WorldEqualityComparer Comparer { get; } = new WorldEqualityComparer();
 }

@@ -76,11 +76,11 @@ public sealed class Hex : IEqualityComparer<Hex>
     #endregion
 
     #region IEquatable Interface
-    public bool Equals(Hex x, Hex y) =>HexEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(Hex? x, Hex? y) =>HexEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => HexEqualityComparer.Comparer.Equals(this, obj as Hex);
+    public override bool Equals(object? obj) => HexEqualityComparer.Comparer.Equals(this, obj as Hex);
 
-    public int GetHashCode(Hex obj) => HexEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(Hex? obj) => HexEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => HexEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -89,11 +89,11 @@ public sealed class Hex : IEqualityComparer<Hex>
 public sealed class HexEqualityComparer : IEqualityComparer<Hex>
 {
     #region IEqualityComparer
-    public bool Equals (Hex x, Hex y) => x != null && y != null && x.IsValid() && y.IsValid() && 
+    public bool Equals (Hex? x, Hex? y) => x is not null && y is not null && x.IsValid() && y.IsValid() && 
                                             x.X == y.X && x.Y == y.Y;                    
 
-    public int GetHashCode(Hex obj) => 1565 ^ obj.X.GetHashCode() ^ obj.Y.GetHashCode();
+    public int GetHashCode(Hex? obj) => obj is null ? 0 : 1565 ^ obj.X.GetHashCode() ^ obj.Y.GetHashCode();
     #endregion
 
-    public static IEqualityComparer<Hex> Comparer { get; } = new HexEqualityComparer();
+    public static HexEqualityComparer Comparer { get; } = new HexEqualityComparer();
 }

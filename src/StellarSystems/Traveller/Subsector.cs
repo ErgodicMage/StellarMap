@@ -35,11 +35,11 @@ public class Subsector : StellarParentBody, IEqualityComparer<Subsector>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(Subsector x, Subsector y) => SubsectorEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(Subsector? x, Subsector? y) => SubsectorEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => SubsectorEqualityComparer.Comparer.Equals(this, obj as Subsector);
+    public override bool Equals(object? obj) => SubsectorEqualityComparer.Comparer.Equals(this, obj as Subsector);
 
-    public int GetHashCode(Subsector obj) => SubsectorEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(Subsector? obj) => SubsectorEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => SubsectorEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -48,19 +48,22 @@ public class Subsector : StellarParentBody, IEqualityComparer<Subsector>
 public sealed class SubsectorEqualityComparer : IEqualityComparer<Subsector>
 {
     #region IEqualityComparer
-    public bool Equals(Subsector x, Subsector y) =>
+    public bool Equals(Subsector? x, Subsector? y) =>
+                x is not null && y is not null &&
                 StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
+                x.SubsectorGroupIdentifiers is not null && y.SubsectorGroupIdentifiers is not null &&
                 x.SubsectorGroupIdentifiers.Equals(y.SubsectorGroupIdentifiers);
 
-    public int GetHashCode(Subsector obj)
+    public int GetHashCode(Subsector? obj)
     {
+        if (obj is null) return 0;
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
-        if (obj.SubsectorGroupIdentifiers != null)
+        if (obj.SubsectorGroupIdentifiers is not null)
             hash ^= obj.SubsectorGroupIdentifiers.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<Subsector> Comparer { get; } = new SubsectorEqualityComparer();
+    public static SubsectorEqualityComparer Comparer { get; } = new SubsectorEqualityComparer();
 }

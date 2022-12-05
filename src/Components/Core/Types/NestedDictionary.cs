@@ -167,7 +167,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
         return bRet;
     }
 
-    public override bool Equals(object obj) => Equals(obj as NestedDictionary<TOuter, TInner, TValue>);
+    public override bool Equals(object? obj) => Equals(obj as NestedDictionary<TOuter, TInner, TValue>);
 
     public override int GetHashCode()
     {
@@ -175,7 +175,7 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
 
         foreach (TOuter outer in Keys)
         {
-            hash ^= outer.GetHashCode();
+            hash ^= outer is null ? 1 : outer.GetHashCode();
             foreach (var inner in this[outer])
             {
                 hash ^= (inner.Key is null ? 1 : inner.Key.GetHashCode()) ^ (inner.Value is null ? 1 : inner.Value.GetHashCode());

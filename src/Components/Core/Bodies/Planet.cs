@@ -37,11 +37,11 @@ public class Planet : StellarParentBody, IEqualityComparer<Planet>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(Planet x, Planet y) => PlanetEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(Planet? x, Planet? y) => PlanetEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => PlanetEqualityComparer.Comparer.Equals(this, obj as Planet);
+    public override bool Equals(object? obj) => PlanetEqualityComparer.Comparer.Equals(this, obj as Planet);
 
-    public int GetHashCode(Planet obj) => PlanetEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(Planet? obj) => PlanetEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => PlanetEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -50,19 +50,21 @@ public class Planet : StellarParentBody, IEqualityComparer<Planet>
 public sealed class PlanetEqualityComparer : IEqualityComparer<Planet>
 {
     #region IEqualityComparer
-    public bool Equals (Planet x, Planet y) =>
+    public bool Equals (Planet? x, Planet? y) =>
                 StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
-                x.PlanetGroupIdentifiers.Equals(y.PlanetGroupIdentifiers);
+                x!.PlanetGroupIdentifiers.Equals(y!.PlanetGroupIdentifiers);
 
-    public int GetHashCode(Planet obj)
+    public int GetHashCode(Planet? obj)
     {
+        if (obj is null) return 0;
+
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
-        if (obj.PlanetGroupIdentifiers != null)
+        if (obj.PlanetGroupIdentifiers is not null)
             hash ^= obj.PlanetGroupIdentifiers.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<Planet> Comparer { get; } = new PlanetEqualityComparer();
+    public static PlanetEqualityComparer Comparer { get; } = new PlanetEqualityComparer();
 }

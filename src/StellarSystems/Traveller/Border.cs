@@ -11,15 +11,15 @@ public class Border : IEqualityComparer<Border>
     public IList<Hex> Positions {get; set;} = new List<Hex>();
 
     [DataMember(Order = 12)]
-    public string Color {get; set;}
+    public string? Color {get; set;}
     #endregion
 
     #region IEquatable Interface
-    public bool Equals(Border x, Border y) => BorderEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(Border? x, Border? y) => BorderEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => BorderEqualityComparer.Comparer.Equals(this, obj as Border);
+    public override bool Equals(object? obj) => BorderEqualityComparer.Comparer.Equals(this, obj as Border);
 
-    public int GetHashCode(Border obj) => BorderEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(Border? obj) => BorderEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => BorderEqualityComparer.Comparer.GetHashCode(this);
     #endregion   
@@ -28,7 +28,7 @@ public class Border : IEqualityComparer<Border>
 public sealed class BorderEqualityComparer : IEqualityComparer<Border>
 {
     #region IEqualityComparer
-    public bool Equals (Border x, Border y)
+    public bool Equals (Border? x, Border? y)
     {
         bool retValue = true;
         if (x is null || y is null)
@@ -53,16 +53,18 @@ public sealed class BorderEqualityComparer : IEqualityComparer<Border>
         return retValue;
     }                   
 
-    public int GetHashCode(Border obj)
+    public int GetHashCode(Border? obj)
     {
+        if (obj is null) return 0;
         int hash = 9860;
         foreach (Hex h in obj.Positions)
             hash ^= h.GetHashCode();
-        hash ^= obj.Color.GetHashCode();
+        if (!string.IsNullOrWhiteSpace(obj.Color))
+            hash ^= obj.Color.GetHashCode();
 
         return hash;
     } 
     #endregion
 
-    public static IEqualityComparer<Border> Comparer { get; } = new BorderEqualityComparer();
+    public static BorderEqualityComparer Comparer { get; } = new BorderEqualityComparer();
 }

@@ -1,4 +1,6 @@
-﻿namespace StellarMap.Core.Bodies;
+﻿using Newtonsoft.Json.Linq;
+
+namespace StellarMap.Core.Bodies;
 
 [DataContract (Name = Constants.BodyTypes.Star)]
 public class Star : StellarParentBody,  IEqualityComparer<Star>
@@ -76,11 +78,11 @@ public class Star : StellarParentBody,  IEqualityComparer<Star>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(Star x, Star y) => StarEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(Star? x, Star? y) => StarEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => StarEqualityComparer.Comparer.Equals(this, obj as Star);
+    public override bool Equals(object? obj) => StarEqualityComparer.Comparer.Equals(this, obj as Star);
 
-    public int GetHashCode(Star obj) => StarEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(Star? obj) => StarEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => StarEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -89,19 +91,21 @@ public class Star : StellarParentBody,  IEqualityComparer<Star>
 public sealed class StarEqualityComparer : IEqualityComparer<Star>
 {
     #region IEqualityComparer
-    public bool Equals(Star x, Star y) =>
+    public bool Equals(Star? x, Star? y) =>
                 StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
-                x.StarGroupIdentifiers.Equals(y.StarGroupIdentifiers);
+                x!.StarGroupIdentifiers.Equals(y!.StarGroupIdentifiers);
 
-    public int GetHashCode(Star obj)
+    public int GetHashCode(Star? obj)
     {
+        if (obj is null) return 0;
+
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
-        if (obj.StarGroupIdentifiers != null)
+        if (obj.StarGroupIdentifiers is not null)
             hash ^= obj.StarGroupIdentifiers.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<Star> Comparer { get; } = new StarEqualityComparer();
+    public static StarEqualityComparer Comparer { get; } = new StarEqualityComparer();
 }

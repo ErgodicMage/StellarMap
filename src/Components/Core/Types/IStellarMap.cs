@@ -20,9 +20,9 @@ public interface IStellarMap
     IDictionary<string, Comet>? Comets { get; set; }
 
     // Get Methods
-    T? Get<T>(string id) where T : IStellarBody;
+    T? Get<T>(string? id) where T : IStellarBody;
 
-    void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) where T : IStellarBody;
+    void Get<T>(ICollection<string>? identifiers, IDictionary<string, T> output) where T : IStellarBody;
 
     // Add Methods
     void Add<T>(T t) where T : IStellarBody;

@@ -91,11 +91,11 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(ERBridge x, ERBridge y) => ERBridgeEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(ERBridge? x, ERBridge? y) => ERBridgeEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => ERBridgeEqualityComparer.Comparer.Equals(this, obj as ERBridge);
+    public override bool Equals(object? obj) => ERBridgeEqualityComparer.Comparer.Equals(this, obj as ERBridge);
 
-    public int GetHashCode(ERBridge obj) => ERBridgeEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(ERBridge? obj) => ERBridgeEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => ERBridgeEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -104,7 +104,7 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
 public sealed class ERBridgeEqualityComparer : IEqualityComparer<ERBridge>
 {
     #region IEqualityComparer
-    public bool Equals(ERBridge x, ERBridge y)
+    public bool Equals(ERBridge? x, ERBridge? y)
     {
         bool bRet = true;
 
@@ -120,12 +120,14 @@ public sealed class ERBridgeEqualityComparer : IEqualityComparer<ERBridge>
         return bRet;
     }
 
-    public int GetHashCode(ERBridge obj)
+    public int GetHashCode(ERBridge? obj)
     {
+        if (obj is null) return 0;
+
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
         if (!string.IsNullOrEmpty(obj.BridgeType))
             hash ^= obj.BridgeType.GetHashCode();
-        if (obj.Portals != null)
+        if (obj.Portals is not null)
         {
             foreach (Portal p in obj.Portals)
                 hash ^= p.GetHashCode();
@@ -135,5 +137,5 @@ public sealed class ERBridgeEqualityComparer : IEqualityComparer<ERBridge>
     }
     #endregion
 
-    public static IEqualityComparer<ERBridge> Comparer { get; } = new ERBridgeEqualityComparer();
+    public static ERBridgeEqualityComparer Comparer { get; } = new ERBridgeEqualityComparer();
 }

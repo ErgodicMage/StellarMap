@@ -116,37 +116,37 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
         {
             if (create && Stars == null)
                 Stars = new Dictionary<string, Star>();
-            dict = (IDictionary<string, T>)Stars;
+            dict = Stars as IDictionary<string, T>;
         }
         else if (dt == typeof(ERBridge))
         {
             if (create && Bridges == null)
                 Bridges = new Dictionary<string, ERBridge>();
-            dict = (IDictionary<string, T>)Bridges;
+            dict = Bridges as IDictionary<string, T>;
         }
         else if (dt == typeof(Habitat))
         {
             if (create && Habitats == null)
                 Habitats = new Dictionary<string, Habitat>();
-            dict = (IDictionary<string, T>)Habitats;
+            dict = Habitats as IDictionary<string, T>;
         }
         else if (dt == typeof(StarSystem))
         {
             if (create && StarSystems == null)
                 StarSystems = new Dictionary<string, StarSystem>();
-            dict = (IDictionary<string, T>)StarSystems;
+            dict = StarSystems as IDictionary<string, T>;
         }
         else if (dt == typeof(Cluster))
         {
             if (create && Clusters == null)
                 Clusters = new Dictionary<string, Cluster>();
-            dict = (IDictionary<string, T>)Clusters;
+            dict = Clusters as IDictionary<string, T>;
         }
         else if (dt == typeof(Sector))
         {
             if (create && Sectors == null)
                 Sectors = new Dictionary<string, Sector>();
-            dict = (IDictionary<string, T>)Sectors;
+            dict = Sectors as IDictionary<string, T>;
         }
 
         if (dict is null)
@@ -244,11 +244,11 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(ProgressionMap x, ProgressionMap y) => ProgressionMapEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(ProgressionMap? x, ProgressionMap? y) => ProgressionMapEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => ProgressionMapEqualityComparer.Comparer.Equals(this, obj as ProgressionMap);
+    public override bool Equals(object? obj) => ProgressionMapEqualityComparer.Comparer.Equals(this, obj as ProgressionMap);
 
-    public int GetHashCode(ProgressionMap obj) => ProgressionMapEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(ProgressionMap? obj) => ProgressionMapEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => ProgressionMapEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -257,7 +257,7 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
 public sealed class ProgressionMapEqualityComparer : IEqualityComparer<ProgressionMap>
 {
     #region IEqualityComparer
-    public bool Equals(ProgressionMap x, ProgressionMap y)
+    public bool Equals(ProgressionMap? x, ProgressionMap? y)
     {
         bool bRet = true;
 
@@ -276,8 +276,10 @@ public sealed class ProgressionMapEqualityComparer : IEqualityComparer<Progressi
         return bRet;
     }
 
-    public int GetHashCode(ProgressionMap obj)
+    public int GetHashCode(ProgressionMap? obj)
     {
+        if (obj is null) return 0;
+
         int hash = BaseStellarMapEqualityComparer.Comparer.GetHashCode(obj);
         if (obj.Habitats != null)
             hash ^= obj.Habitats.GetHashCode();
@@ -294,5 +296,5 @@ public sealed class ProgressionMapEqualityComparer : IEqualityComparer<Progressi
     }
     #endregion
 
-    public static IEqualityComparer<ProgressionMap> Comparer { get; } = new ProgressionMapEqualityComparer();
+    public static ProgressionMapEqualityComparer Comparer { get; } = new ProgressionMapEqualityComparer();
 }

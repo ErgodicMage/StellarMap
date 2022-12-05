@@ -102,19 +102,19 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
         {
             if (create && Worlds == null)
                 Worlds = new Dictionary<string, World>();
-            dict = (IDictionary<string, T>)Worlds;
+            dict = Worlds as IDictionary<string, T>;
         }
         else if (dt == typeof(Subsector))
         {
             if (create && Subsectors == null)
                 Subsectors = new Dictionary<string, Subsector>();
-            dict = (IDictionary<string, T>)Subsectors;
+            dict = Subsectors as IDictionary<string, T>;
         }
         else if (dt == typeof(Sector))
         {
             if (create && Sectors == null)
                 Sectors = new Dictionary<string, Sector>();
-            dict = (IDictionary<string, T>)Sectors;
+            dict = Sectors as IDictionary<string, T>;
         }
 
         if (dict == null)
@@ -208,11 +208,11 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(TravellerMap x, TravellerMap y) => TravellerMapEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(TravellerMap? x, TravellerMap? y) => TravellerMapEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => TravellerMapEqualityComparer.Comparer.Equals(this, obj as TravellerMap);
+    public override bool Equals(object? obj) => TravellerMapEqualityComparer.Comparer.Equals(this, obj as TravellerMap);
 
-    public int GetHashCode(TravellerMap obj) => TravellerMapEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(TravellerMap? obj) => TravellerMapEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => TravellerMapEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -221,7 +221,7 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
 public sealed class TravellerMapEqualityComparer : IEqualityComparer<TravellerMap>
 {
     #region IEqualityComparer
-    public bool Equals(TravellerMap x, TravellerMap y)
+    public bool Equals(TravellerMap? x, TravellerMap? y)
     {
         bool bRet = true;
 
@@ -229,7 +229,7 @@ public sealed class TravellerMapEqualityComparer : IEqualityComparer<TravellerMa
             bRet = false;
         else if (!ReferenceEquals(x, y))
         {
-            bRet = BaseStellarMapEqualityComparer.Comparer.Equals(x, y) &&
+            bRet =  BaseStellarMapEqualityComparer.Comparer.Equals(x, y) &&
                     BaseStellarMapEqualityComparer.IsEqual<World>(x.Worlds, y.Worlds) &&
                     BaseStellarMapEqualityComparer.IsEqual<Subsector>(y.Subsectors, y.Subsectors) &&
                     BaseStellarMapEqualityComparer.IsEqual<Sector>(y.Sectors, y.Sectors);
@@ -238,19 +238,20 @@ public sealed class TravellerMapEqualityComparer : IEqualityComparer<TravellerMa
         return bRet;
     }
 
-    public int GetHashCode(TravellerMap obj)
+    public int GetHashCode(TravellerMap? obj)
     {
+        if (obj is null) return 0;
         int hash = BaseStellarMapEqualityComparer.Comparer.GetHashCode(obj);
-        if (obj.Worlds != null)
+        if (obj.Worlds is not null)
             hash ^= obj.Worlds.GetHashCode();
-        if (obj.Subsectors != null)
+        if (obj.Subsectors is not null)
             hash ^= obj.Subsectors.GetHashCode();
-        if (obj.Sectors != null)
+        if (obj.Sectors is not null)
             hash ^= obj.Sectors.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<TravellerMap> Comparer { get; } = new TravellerMapEqualityComparer();
+    public static TravellerMapEqualityComparer Comparer { get; } = new TravellerMapEqualityComparer();
 }

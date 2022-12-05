@@ -26,16 +26,16 @@ public class Route : IEqualityComparer<Route>
     public short EndOffsetY {get; set;}
 
     [DataMember(Order = 17)]
-    public string Color {get; set;} = string.Empty;
+    public string? Color {get; set;}
 
     #endregion
 
     #region IEquatable Interface
-    public bool Equals(Route x, Route y) =>RouteEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(Route? x, Route? y) =>RouteEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => RouteEqualityComparer.Comparer.Equals(this, obj as Route);
+    public override bool Equals(object? obj) => RouteEqualityComparer.Comparer.Equals(this, obj as Route);
 
-    public int GetHashCode(Route obj) => RouteEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(Route? obj) => RouteEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => RouteEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -44,14 +44,16 @@ public class Route : IEqualityComparer<Route>
     public sealed class RouteEqualityComparer : IEqualityComparer<Route>
 {
     #region IEqualityComparer
-    public bool Equals (Route x, Route y) => x.Start != null && y.Start != null && x.End != null && y.End != null &&
+    public bool Equals (Route? x, Route? y) => x is not null && y is not null &&
+        x.Start is not null && y.Start is not null && x.End is not null && y.End is not null &&
         HexEqualityComparer.Comparer.Equals(x.Start, y.Start) && HexEqualityComparer.Comparer.Equals(x.End, y.End) &&
         x.StartOffsetX == y.StartOffsetX && x.StartOffsetY == y.StartOffsetY &&
         x.EndOffsetX == y.EndOffsetX && x.EndOffsetY == y.EndOffsetY && 
-        x.Color != null && y.Color != null && x.Color == y.Color;
+        x.Color is not null && y.Color is not null && x.Color == y.Color;
 
-    public int GetHashCode(Route obj)
+    public int GetHashCode(Route? obj)
     {
+        if (obj is null) return 0;
         int hash = 1676;
         if (obj.Start != null)
             hash ^= obj.Start.GetHashCode();
@@ -65,5 +67,5 @@ public class Route : IEqualityComparer<Route>
     }
     #endregion
 
-    public static IEqualityComparer<Route> Comparer { get; } = new RouteEqualityComparer();
+    public static RouteEqualityComparer Comparer { get; } = new RouteEqualityComparer();
 }

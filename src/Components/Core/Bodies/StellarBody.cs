@@ -34,17 +34,17 @@ public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
     public GroupedProperties Properties { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> BasicProperties { get => Properties.Get("Basic"); }
+    public IDictionary<string, string>? BasicProperties { get => Properties?.Get("Basic"); }
 
     public IStellarMap Map { get; set; }
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(StellarBody x, StellarBody y) => StellarBodyEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(StellarBody? x, StellarBody? y) => StellarBodyEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => StellarBodyEqualityComparer.Comparer.Equals(this, obj as StellarBody);
+    public override bool Equals(object? obj) => StellarBodyEqualityComparer.Comparer.Equals(this, obj as StellarBody);
 
-    public int GetHashCode(StellarBody obj) => StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(StellarBody? obj) => StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => StellarBodyEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -53,7 +53,7 @@ public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
 public sealed class StellarBodyEqualityComparer : IEqualityComparer<StellarBody>
 {
     #region IEqualityComparer
-    public bool Equals(StellarBody x, StellarBody y)
+    public bool Equals(StellarBody? x, StellarBody? y)
     {
         bool bRet = true;
 
@@ -72,25 +72,27 @@ public sealed class StellarBodyEqualityComparer : IEqualityComparer<StellarBody>
         return bRet;
     }
 
-    public int GetHashCode(StellarBody obj)
+    public int GetHashCode(StellarBody? obj)
     {
+        if (obj is null) return 0;
+
         int hash = 1;
-        if (!string.IsNullOrEmpty(obj.Name))
+        if (obj.Name is not null)
             hash ^= obj.Name.GetHashCode();
-        if (!string.IsNullOrEmpty(obj.Identifier))
+        if (obj.Identifier is not null)
             hash ^= obj.Identifier.GetHashCode();
-        if (!string.IsNullOrEmpty(obj.ParentIdentifier))
+        if (obj.ParentIdentifier is not null)
             hash ^= obj.ParentIdentifier.GetHashCode();
-        if (!string.IsNullOrEmpty(obj.BodyType))
+        if (obj.BodyType is not null)
             hash ^= obj.BodyType.GetHashCode();
-        if (obj.Properties != null)
+        if (obj.Properties is not null)
             hash ^= obj.Properties.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<StellarBody> Comparer { get; } = new StellarBodyEqualityComparer();
+    public static StellarBodyEqualityComparer Comparer { get; } = new StellarBodyEqualityComparer();
 }
 
 public abstract class StellarParentBody : StellarBody, IStellarParentBody
@@ -106,23 +108,27 @@ public abstract class StellarParentBody : StellarBody, IStellarParentBody
     #endregion
 
     #region Get Methods
-    public virtual T? Get<T>(string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
+    public virtual T? Get<T>(string? name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
     {
+        if (string.IsNullOrWhiteSpace(name)) return default;
+
         T? t = default;
 
-        if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers) && 
-                identifiers.TryGetValue(name, out string id))
+        if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers) && 
+                identifiers.TryGetValue(name, out string? id))
             t = Map.Get<T>(id);
 
         return t;
 
     }
 
-    public virtual IDictionary<string, T>? GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
+    public virtual IDictionary<string, T>? GetAll<T>(GroupNamedIdentifiers? groupIdentifiers, string groupName) where T : IStellarBody
     {
+        if (groupIdentifiers is null) return default;
+
         IDictionary<string, T>? all = default;
 
-        if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers))
+        if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers))
         {
             all = new Dictionary<string, T>();
 
@@ -141,20 +147,20 @@ public abstract class StellarParentBody : StellarBody, IStellarParentBody
     #region Add Methods
     public virtual void Add<T>(T t, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
     {
-        if (t != null)
+        if (t is not null)
         {
             t.ParentIdentifier = this.Identifier;
 
-            T found = Map.Get<T>(t.Identifier);
-            if (found == null)
+            T? found = Map.Get<T>(t.Identifier);
+            if (found is null)
                 Map.Add<T>(t);
 
-            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string> identifiers))
-                identifiers.Add(t.Name, t.Identifier);
+            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers))
+                identifiers.Add(t.Name, t.Identifier!);
             else
             {
                 groupIdentifiers.Add(groupName);
-                groupIdentifiers.GroupIdentifiers[groupName].Add(t.Name, t.Identifier);
+                groupIdentifiers.GroupIdentifiers[groupName].Add(t.Name, t.Identifier!);
             }
         }
     }

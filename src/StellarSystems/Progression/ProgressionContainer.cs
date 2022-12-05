@@ -40,11 +40,11 @@ public class ProgressionContainer : StellarParentBody, IEqualityComparer<Progres
     #endregion
 
     #region IEquatityComparer
-    public bool Equals(ProgressionContainer x, ProgressionContainer y) => ProgressionContainerEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(ProgressionContainer? x, ProgressionContainer? y) => ProgressionContainerEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => ProgressionContainerEqualityComparer.Comparer.Equals(this, obj as ProgressionContainer);
+    public override bool Equals(object? obj) => ProgressionContainerEqualityComparer.Comparer.Equals(this, obj as ProgressionContainer);
 
-    public int GetHashCode(ProgressionContainer obj) => ProgressionContainerEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(ProgressionContainer? obj) => ProgressionContainerEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => ProgressionContainerEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -53,12 +53,14 @@ public class ProgressionContainer : StellarParentBody, IEqualityComparer<Progres
 public sealed class ProgressionContainerEqualityComparer : IEqualityComparer<ProgressionContainer>
 {
     #region IEqualityComparer
-    public bool Equals(ProgressionContainer x, ProgressionContainer y) =>
-                StellarBodyEqualityComparer.Comparer.Equals(x, y) && x.ContainerType == y.ContainerType &&
+    public bool Equals(ProgressionContainer? x, ProgressionContainer? y) =>
+                StellarBodyEqualityComparer.Comparer.Equals(x, y) && x!.ContainerType == y!.ContainerType &&
                 x.ContainerGroupIdentifiers.Equals(y.ContainerGroupIdentifiers);
 
-    public int GetHashCode(ProgressionContainer obj)
+    public int GetHashCode(ProgressionContainer? obj)
     {
+        if (obj is null) return 0;
+
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
         if (!string.IsNullOrEmpty(obj.ContainerType))
             hash ^= obj.ContainerType.GetHashCode();
@@ -69,5 +71,5 @@ public sealed class ProgressionContainerEqualityComparer : IEqualityComparer<Pro
     }
     #endregion
 
-    public static IEqualityComparer<ProgressionContainer> Comparer { get; } = new ProgressionContainerEqualityComparer();
+    public static ProgressionContainerEqualityComparer Comparer { get; } = new ProgressionContainerEqualityComparer();
 }

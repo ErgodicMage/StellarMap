@@ -37,11 +37,11 @@ public class DwarfPlanet : StellarParentBody, IEqualityComparer<DwarfPlanet>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(DwarfPlanet x, DwarfPlanet y) => DwarfPlanetEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(DwarfPlanet? x, DwarfPlanet? y) => DwarfPlanetEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => DwarfPlanetEqualityComparer.Comparer.Equals(this, obj as DwarfPlanet);
+    public override bool Equals(object? obj) => DwarfPlanetEqualityComparer.Comparer.Equals(this, obj as DwarfPlanet);
 
-    public int GetHashCode(DwarfPlanet obj) => DwarfPlanetEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(DwarfPlanet? obj) => DwarfPlanetEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => DwarfPlanetEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -50,13 +50,15 @@ public class DwarfPlanet : StellarParentBody, IEqualityComparer<DwarfPlanet>
 public sealed class DwarfPlanetEqualityComparer : IEqualityComparer<DwarfPlanet>
 {
     #region IEqualityComparer
-    public bool Equals(DwarfPlanet x, DwarfPlanet y) => 
+    public bool Equals(DwarfPlanet? x, DwarfPlanet? y) => 
                 StellarBodyEqualityComparer.Comparer.Equals(x, y) && 
-                x.DwarfPlanetGroupIdentifiers.Equals(y.DwarfPlanetGroupIdentifiers);
+                x!.DwarfPlanetGroupIdentifiers.Equals(y!.DwarfPlanetGroupIdentifiers);
 
 
-    public int GetHashCode(DwarfPlanet obj)
+    public int GetHashCode(DwarfPlanet? obj)
     {
+        if (obj is null) return 0;
+
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
         if (obj.DwarfPlanetGroupIdentifiers != null)
             hash ^= obj.DwarfPlanetGroupIdentifiers.GetHashCode();
@@ -65,5 +67,5 @@ public sealed class DwarfPlanetEqualityComparer : IEqualityComparer<DwarfPlanet>
     }
     #endregion
 
-    public static IEqualityComparer<DwarfPlanet> Comparer { get; } = new DwarfPlanetEqualityComparer();
+    public static DwarfPlanetEqualityComparer Comparer { get; } = new DwarfPlanetEqualityComparer();
 }

@@ -13,8 +13,8 @@ public class EqualityComparerTests
 
         ERBridge bridge1 = map.Bridges.Values.First();
 
-        StarSystem system1 = map.Get<StarSystem>(bridge1.Portals[0].StarIdentifier);
-        StarSystem system2 = map.Get<StarSystem>(bridge1.Portals[1].StarIdentifier);
+        StarSystem system1 = map.Get<StarSystem>(bridge1.Portals[0].StarSystemIdentifier);
+        StarSystem system2 = map.Get<StarSystem>(bridge1.Portals[1].StarSystemIdentifier);
         ERBridge bridge2 = new ERBridge(bridge1.BridgeType, system1, system2);
             
         // ok force them equal because of identifiers lol
@@ -39,8 +39,8 @@ public class EqualityComparerTests
 
         ERBridge bridge1 = map.Bridges.Values.First();
 
-        StarSystem system1 = map.Get<StarSystem>(bridge1.Portals[0].StarIdentifier);
-        StarSystem system2 = map.Get<StarSystem>(bridge1.Portals[1].StarIdentifier);
+        StarSystem system1 = map.Get<StarSystem>(bridge1.Portals[0].StarSystemIdentifier);
+        StarSystem system2 = map.Get<StarSystem>(bridge1.Portals[1].StarSystemIdentifier);
         ERBridge bridge2 = new ERBridge(bridge1.BridgeType, system1, system2);
 
         // ok force them equal because of identifiers lol
@@ -154,12 +154,12 @@ public class EqualityComparerTests
     public void PortalTestEquals()
     {
         Portal portal1 = new Portal();
-        portal1.StarIdentifier = "Star 1";
+        portal1.StarSystemIdentifier = "Star 1";
         portal1.ERBridgeIdentifier = "Bridge 1";
         portal1.Position = new Point3d(0.0, 0.0, 0.0);
 
         Portal portal2 = new Portal();
-        portal2.StarIdentifier = "Star 1";
+        portal2.StarSystemIdentifier = "Star 1";
         portal2.ERBridgeIdentifier = "Bridge 1";
         portal2.Position = new Point3d(0.0, 0.0, 0.0);
 
@@ -171,12 +171,12 @@ public class EqualityComparerTests
     public void PortalNotTestEquals()
     {
         Portal portal1 = new Portal();
-        portal1.StarIdentifier = "Star 1";
+        portal1.StarSystemIdentifier = "Star 1";
         portal1.ERBridgeIdentifier = "Bridge 1";
         portal1.Position = new Point3d(0.0, 0.0, 0.0);
 
         Portal portal2 = new Portal();
-        portal2.StarIdentifier = "Star 1";
+        portal2.StarSystemIdentifier = "Star 1";
         portal2.ERBridgeIdentifier = "Bridge 1";
         portal2.Position = new Point3d(1.0, 1.0, 1.0);
 

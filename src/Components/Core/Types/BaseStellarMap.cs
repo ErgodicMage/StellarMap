@@ -14,18 +14,18 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     public BaseStellarMap(string name)
     {
         MetaData = new GroupedProperties("Storage");
-        MetaData["Storage"].Add("Type", "Base");
-        MetaData["Storage"].Add("Version", "0.5");
+        MetaData["Storage"]?.Add("Type", "Base");
+        MetaData["Storage"]?.Add("Version", "0.5");
 
         MetaData.Add("Basic");
-        MetaData["Basic"].Add("Name", name);
+        MetaData["Basic"]?.Add("Name", name);
     }
     #endregion
 
     #region Public Properties
     [IgnoreDataMember]
-    public string Name { get => MetaData["Basic", "Name"];  
-                            set => MetaData.Set("Basic", "Name", value); }
+    public string Name { get => MetaData["Basic", "Name"]!;  
+                            set => MetaData?.Set("Basic", "Name", value); }
 
     [DataMember(Order = 1)]
     public GroupedProperties MetaData { get; set; }
@@ -54,7 +54,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     #endregion
 
     #region Public Get Functions
-    public virtual T? Get<T>(string id) where T : IStellarBody
+    public virtual T? Get<T>(string? id) where T : IStellarBody
     {
         T? t = default;
 
@@ -69,9 +69,11 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         return t;
     }
 
-    public virtual void Get<T>(ICollection<string> identifiers, IDictionary<string, T> output) 
+    public virtual void Get<T>(ICollection<string>? identifiers, IDictionary<string, T> output) 
         where T : IStellarBody
     {
+        if (identifiers is null) return;
+
         foreach (string id in identifiers)
         {
             T? t = Get<T>(id);
@@ -256,8 +258,6 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
 
         return bret;
     }
-
-    //public virtual void SetMap() => MapSetter.SetMap(this, this);
     #endregion
 
     #region Protected Functions
@@ -270,37 +270,37 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         {
             if (create && Planets is null)
                 Planets = new Dictionary<string, Planet>();
-            dict = (IDictionary<string, T>)Planets;
+            dict = Planets as IDictionary<string, T>;
         }
         else if (dt == typeof(Star))
         {
             if (create && Stars is null)
                 Stars = new Dictionary<string, Star>();
-            dict = (IDictionary<string, T>)Stars;
+            dict = Stars as IDictionary<string, T>;
         }
         else if (dt == typeof(DwarfPlanet))
         {
             if (create && DwarfPlanets is null)
                 DwarfPlanets = new Dictionary<string, DwarfPlanet>();
-            dict = (IDictionary<string, T>)DwarfPlanets;
+            dict = DwarfPlanets as IDictionary<string, T>;
         } 
         else if (dt == typeof(Satellite))
         {
             if (create && Satellites is null)
                 Satellites = new Dictionary<string, Satellite>();
-            dict = (IDictionary<string, T>)Satellites;
+            dict = Satellites as IDictionary<string, T>;
         }           
         else if (dt == typeof(Asteroid))
         {
             if (create && Asteroids is null)
                 Asteroids = new Dictionary<string, Asteroid>();
-            dict = (IDictionary<string, T>)Asteroids;
+            dict = Asteroids as IDictionary<string, T>;
         }
         else if (dt == typeof(Comet))
         {
             if (create && Comets is null)
                 Comets = new Dictionary<string, Comet>();
-            dict = (IDictionary<string, T>)Comets;
+            dict = Comets as IDictionary<string, T>;
         }
 
         return dict;
@@ -308,11 +308,11 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(BaseStellarMap x, BaseStellarMap y) => BaseStellarMapEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(BaseStellarMap? x, BaseStellarMap? y) => BaseStellarMapEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => BaseStellarMapEqualityComparer.Comparer.Equals(obj as BaseStellarMap);
+    public override bool Equals(object? obj) => BaseStellarMapEqualityComparer.Comparer.Equals(obj as BaseStellarMap);
 
-    public int GetHashCode(BaseStellarMap obj) => BaseStellarMapEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(BaseStellarMap? obj) => BaseStellarMapEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => BaseStellarMapEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -321,7 +321,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
 public sealed class BaseStellarMapEqualityComparer : IEqualityComparer<BaseStellarMap>
 {
     #region IEqualityComparer
-    public bool Equals(BaseStellarMap x, BaseStellarMap y)
+    public bool Equals(BaseStellarMap? x, BaseStellarMap? y)
     {
         bool bRet = true;
 
@@ -342,38 +342,40 @@ public sealed class BaseStellarMapEqualityComparer : IEqualityComparer<BaseStell
         return bRet;
     }
 
-    public int GetHashCode(BaseStellarMap obj)
+    public int GetHashCode(BaseStellarMap? obj)
     {
+        if (obj is null) return 0;
+
         int hash = 1345;
-        if (obj.MetaData != null)
+        if (obj.MetaData is not null)
             hash ^= obj.MetaData.GetHashCode();
-        if (obj.Stars != null)
+        if (obj.Stars is not null)
             hash ^= obj.Stars.GetHashCode();
-        if (obj.Planets != null)
+        if (obj.Planets is not null)
             hash ^= obj.Planets.GetHashCode();
-        if (obj.DwarfPlanets != null)
+        if (obj.DwarfPlanets is not null)
             hash ^= obj.DwarfPlanets.GetHashCode();
-        if (obj.Satellites != null)
+        if (obj.Satellites is not null)
             hash ^= obj.Satellites.GetHashCode();
-        if (obj.Asteroids != null)
+        if (obj.Asteroids is not null)
             hash ^= obj.Asteroids.GetHashCode();
-        if (obj.Comets != null)
+        if (obj.Comets is not null)
             hash ^= obj.Comets.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<BaseStellarMap> Comparer { get; } = new BaseStellarMapEqualityComparer();
+    public static BaseStellarMapEqualityComparer Comparer { get; } = new BaseStellarMapEqualityComparer();
 
     #region IsEqual
-    public static bool IsEqual<T>(IDictionary<string, T> thisObject, IDictionary<string, T> otherObject) //where T : StellarBody
+    public static bool IsEqual<T>(IDictionary<string, T>? thisObject, IDictionary<string, T>? otherObject) //where T : StellarBody
     {
         bool bRet = true;
 
-        if (thisObject == null && otherObject == null)
+        if (thisObject is null && otherObject is null)
             bRet = true;
-        else if ((thisObject == null) || (otherObject == null))
+        else if ((thisObject is null) || (otherObject is null))
             bRet = false;
         else if (!ReferenceEquals(thisObject, otherObject))
         {
@@ -386,7 +388,7 @@ public sealed class BaseStellarMapEqualityComparer : IEqualityComparer<BaseStell
                 {
                     if (thisEnumerator.Current.Key.Equals(otherEnumerator.Current.Key))
                     {
-                        if (!thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value))
+                        if (thisEnumerator.Current.Value is not null && !thisEnumerator.Current.Value.Equals(otherEnumerator.Current.Value))
                             bRet = false;
                     }
                     else

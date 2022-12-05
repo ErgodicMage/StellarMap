@@ -40,7 +40,7 @@ public class Sector : StellarParentBody, IEqualityComparer<Sector>
 
     public Subsector? GetSubsectorByLetter(string letter)
     {
-        string name = Properties["Basic", letter];
+        string? name = Properties?["Basic", letter];
         return string.IsNullOrEmpty(name) ? null : GetSubsector(name);
     }
     #endregion
@@ -57,11 +57,11 @@ public class Sector : StellarParentBody, IEqualityComparer<Sector>
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(Sector x, Sector y) => SectorEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(Sector? x, Sector? y) => SectorEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => SectorEqualityComparer.Comparer.Equals(this, obj as Sector);
+    public override bool Equals(object? obj) => SectorEqualityComparer.Comparer.Equals(this, obj as Sector);
 
-    public int GetHashCode(Sector obj) => SectorEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(Sector? obj) => SectorEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => SectorEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -70,19 +70,22 @@ public class Sector : StellarParentBody, IEqualityComparer<Sector>
 public sealed class SectorEqualityComparer : IEqualityComparer<Sector>
 {
     #region IEqualityComparer
-    public bool Equals(Sector x, Sector y) =>
+    public bool Equals(Sector? x, Sector? y) =>
+                x is not null && y is not null &&
                 StellarBodyEqualityComparer.Comparer.Equals(x, y) &&
+                x.SectorGroupIdentifiers is not null && y.SectorGroupIdentifiers is not null &&
                 x.SectorGroupIdentifiers.Equals(y.SectorGroupIdentifiers);
 
-    public int GetHashCode(Sector obj)
+    public int GetHashCode(Sector? obj)
     {
+        if (obj is null) return 0;
         int hash = StellarBodyEqualityComparer.Comparer.GetHashCode(obj);
-        if (obj.SectorGroupIdentifiers != null)
+        if (obj.SectorGroupIdentifiers is not null)
             hash ^= obj.SectorGroupIdentifiers.GetHashCode();
 
         return hash;
     }
     #endregion
 
-    public static IEqualityComparer<Sector> Comparer { get; } = new SectorEqualityComparer();
+    public static SectorEqualityComparer Comparer { get; } = new SectorEqualityComparer();
 }

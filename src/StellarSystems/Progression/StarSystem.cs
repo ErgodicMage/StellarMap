@@ -25,7 +25,7 @@ public class StarSystem : ProgressionContainer, IEqualityComparer<StarSystem>
 
     #region Get Methods
     public virtual ProgressionStar? GetStar(string name) => 
-        (ProgressionStar)Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
+        Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars) as ProgressionStar;
 
     public virtual IDictionary<string, Star>? GetStars() => 
         GetAll<Star>(ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
@@ -37,18 +37,18 @@ public class StarSystem : ProgressionContainer, IEqualityComparer<StarSystem>
 
     public void Add(Portal portal)
     {
-        if (Portals == null)
+        if (Portals is null)
             Portals = new List<Portal>();
         Portals.Add(portal);
     }
     #endregion
 
     #region IEqualityComparer
-    public bool Equals(StarSystem x, StarSystem y) => StarSystemEqualityComparer.Comparer.Equals(x, y);
+    public bool Equals(StarSystem? x, StarSystem? y) => StarSystemEqualityComparer.Comparer.Equals(x, y);
 
-    public override bool Equals(object obj) => StarSystemEqualityComparer.Comparer.Equals(this, obj as StarSystem);
+    public override bool Equals(object? obj) => StarSystemEqualityComparer.Comparer.Equals(this, obj as StarSystem);
 
-    public int GetHashCode(StarSystem obj) => StarSystemEqualityComparer.Comparer.GetHashCode(obj);
+    public int GetHashCode(StarSystem? obj) => StarSystemEqualityComparer.Comparer.GetHashCode(obj);
 
     public override int GetHashCode() => StarSystemEqualityComparer.Comparer.GetHashCode(this);
     #endregion
@@ -57,8 +57,10 @@ public class StarSystem : ProgressionContainer, IEqualityComparer<StarSystem>
 public sealed class StarSystemEqualityComparer : IEqualityComparer<StarSystem>
 {
     #region IEqualityComparer
-    public bool Equals(StarSystem x, StarSystem y)
+    public bool Equals(StarSystem? x, StarSystem? y)
     {
+        if (x is null || y is null) return false;
+
         bool bRet = ProgressionContainerEqualityComparer.Comparer.Equals(x, y);
 
         if (bRet)
@@ -88,10 +90,12 @@ public sealed class StarSystemEqualityComparer : IEqualityComparer<StarSystem>
         return bRet;
     }
 
-    public int GetHashCode(StarSystem obj)
+    public int GetHashCode(StarSystem? obj)
     {
+        if (obj is null) return 0;
+
         int hash = ProgressionContainerEqualityComparer.Comparer.GetHashCode();
-        if (obj.Portals != null)
+        if (obj.Portals is not null)
         {
             foreach (Portal p in obj.Portals)
                 hash ^= p.GetHashCode();
