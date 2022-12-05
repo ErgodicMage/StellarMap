@@ -88,9 +88,9 @@ public class PY100DEMap
         Cluster solCluster = new Cluster("Sol Cluster");
         Map.Add(solCluster);
 
-        StarSystem system = null;
-        ProgressionStar star = null;
-        IDictionary<string, string> catalogue = null;
+        StarSystem? system = default;
+        ProgressionStar? star = default;
+        IDictionary<string, string>? catalogue = default;
 
         system = CreateSolSystem();
         solCluster.Add(system);

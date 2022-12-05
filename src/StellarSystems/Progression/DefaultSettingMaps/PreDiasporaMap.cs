@@ -25,13 +25,11 @@ public class PreDiasporaMap
     }
 
     ProgressionMap Map { get; set; }
-    ProgressionPlanet Earth { get; set; }
-    StarSystem Sol { get; set; }
+    ProgressionPlanet Earth { get; set; } = new ProgressionPlanet("Earth");
+    StarSystem Sol { get; set; } = new StarSystem("Sol");
 
     public Planet CreateEarth()
     {
-        Earth = new ProgressionPlanet("Earth");
-
         Map.Add<Planet>(Earth);
 
         Satellite moon = new Satellite("Moon");
@@ -75,7 +73,6 @@ public class PreDiasporaMap
         sol.Add(new Comet("Haley's"));
         sol.Add(new Comet("Caeser's"));
 
-        Sol = new StarSystem("Sol");
         Sol.BasicProperties.Add(Constants.PropertyNames.Position, new Point3d(0, 0, 0).ToString());
         Map.Add(Sol);
         Sol.Add(sol);

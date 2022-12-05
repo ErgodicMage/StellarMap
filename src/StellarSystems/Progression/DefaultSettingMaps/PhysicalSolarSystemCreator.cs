@@ -2,7 +2,7 @@ namespace StellarMap.Progression.DefaultSettingMaps;
 
 public static class PhysicalSolarSystemCreator
 {
-    public static Star CreateSolarSystem(IStellarMap map = null)
+    public static Star CreateSolarSystem(IStellarMap? map = null)
     {
         Star sol = CreateSol(map);
 
@@ -30,7 +30,7 @@ public static class PhysicalSolarSystemCreator
 
     }
 
-    public static Star CreateSol(IStellarMap map = null)
+    public static Star CreateSol(IStellarMap? map = null)
     {
         Star sol = new Star("Sol");
 
@@ -57,7 +57,7 @@ public static class PhysicalSolarSystemCreator
         return sol;
     }
 
-    public static Planet CreateMercury(IStellarMap map = null)
+    public static Planet CreateMercury(IStellarMap? map = null)
     {
         Planet mercury = new Planet("Mercury");
             
@@ -78,7 +78,7 @@ public static class PhysicalSolarSystemCreator
         return mercury;
     }
 
-    public static Planet CreateVenus(IStellarMap map = null)
+    public static Planet CreateVenus(IStellarMap? map = null)
     {
         Planet venus = new Planet("Venus");
 
@@ -99,7 +99,7 @@ public static class PhysicalSolarSystemCreator
         return venus;
     }
 
-    public static Planet CreateEarth(IStellarMap map = null)
+    public static Planet CreateEarth(IStellarMap? map = null)
     {
         Planet earth = new Planet("Earth");
 
@@ -136,7 +136,7 @@ public static class PhysicalSolarSystemCreator
         return earth;
     }
 
-    public static Planet CreateMars(IStellarMap map = null)
+    public static Planet CreateMars(IStellarMap? map = null)
     {
         Planet mars = new Planet("Mars");
 
@@ -187,7 +187,7 @@ public static class PhysicalSolarSystemCreator
         return mars;
     }
 
-    public static Planet CreateJupiter(IStellarMap map = null)
+    public static Planet CreateJupiter(IStellarMap? map = null)
     {
         Planet jupiter = new Planet("Jupiter");
 
@@ -389,7 +389,7 @@ public static class PhysicalSolarSystemCreator
         return jupiter;
     }
 
-    public static Planet CreateSaturn(IStellarMap map = null)
+    public static Planet CreateSaturn(IStellarMap? map = null)
     {
         Planet saturn = new Planet("Saturn");
 
@@ -562,7 +562,7 @@ public static class PhysicalSolarSystemCreator
         return saturn;
     }
 
-    public static Planet CreateUranus(IStellarMap map = null)
+    public static Planet CreateUranus(IStellarMap? map = null)
     {
         Planet uranus = new Planet("Uranus");
 
@@ -658,7 +658,7 @@ public static class PhysicalSolarSystemCreator
         return uranus;
     }
 
-    public static Planet CreateNeptune(IStellarMap map = null)
+    public static Planet CreateNeptune(IStellarMap? map = null)
     {
         Planet neptune = new Planet("Neptune");
 
@@ -739,7 +739,7 @@ public static class PhysicalSolarSystemCreator
         return neptune;
     }
 
-    public static DwarfPlanet CreateCeres(IStellarMap map = null)
+    public static DwarfPlanet CreateCeres(IStellarMap? map = null)
     {
         DwarfPlanet c = new DwarfPlanet("Ceres");
 
@@ -749,7 +749,7 @@ public static class PhysicalSolarSystemCreator
         return c;
     }
 
-    public static DwarfPlanet CreatePluto(IStellarMap map = null)
+    public static DwarfPlanet CreatePluto(IStellarMap? map = null)
     {
         DwarfPlanet p = new DwarfPlanet("Pluto");
 
@@ -759,7 +759,7 @@ public static class PhysicalSolarSystemCreator
         return p;
     }
 
-    public static ICollection<Asteroid> CreateAsteroids(IStellarMap map = null)
+    public static ICollection<Asteroid> CreateAsteroids(IStellarMap? map = null)
     {
         map ??= BaseStellarMap.DefaultMap;
 
@@ -812,7 +812,7 @@ public static class PhysicalSolarSystemCreator
         return asteroids;
     }
 
-    public static ICollection<Comet> CreateComets(IStellarMap map = null)
+    public static ICollection<Comet> CreateComets(IStellarMap? map = null)
     {
         map ??= BaseStellarMap.DefaultMap;
 

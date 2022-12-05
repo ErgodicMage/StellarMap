@@ -87,9 +87,9 @@ public class LocalSectorMap
         Cluster solCluster = new Cluster("Sol Cluster");
         Map.Add(solCluster);
 
-        StarSystem system = null;
-        ProgressionStar star = null;
-        IDictionary<string, string> catalogue = null;
+        StarSystem? system = default;
+        ProgressionStar? star = default;
+        IDictionary<string, string>? catalogue = default;
 
         system = CreateSolSystem();
         solCluster.Add(system);
@@ -376,9 +376,9 @@ public class LocalSectorMap
         Cluster cluster = new Cluster("Centauri Cluster");
         Map.Add(cluster);
 
-        StarSystem system = null;
-        ProgressionStar star = null;
-        IDictionary<string, string> catalogue = null;
+        StarSystem? system = default;
+        ProgressionStar? star = default;
+        IDictionary<string, string>? catalogue = default;
 
         #region Centauri
         system = new StarSystem("Centauri");
@@ -609,9 +609,9 @@ public class LocalSectorMap
         Cluster cluster = new Cluster("Dwarf Cluster");
         Map.Add(cluster);
 
-        StarSystem system = null;
-        ProgressionStar star = null;
-        IDictionary<string, string> catalogue = null;
+        StarSystem? system = default;
+        ProgressionStar? star = default;
+        IDictionary<string, string>? catalogue = default;
 
         #region Wolf's Den
         system = new StarSystem("Wolf's Den");
@@ -900,9 +900,9 @@ public class LocalSectorMap
         Cluster cluster = new Cluster("Cygni Cluster");
         Map.Add(cluster);
 
-        StarSystem system = null;
-        ProgressionStar star = null;
-        IDictionary<string, string> catalogue = null;
+        StarSystem ?system = default;
+        ProgressionStar? star = default;
+        IDictionary<string, string>? catalogue = default;
 
         #region Cygni
         system = new StarSystem("Cygni");
@@ -1327,7 +1327,7 @@ public class LocalSectorMap
         local.Add(CreateCygniCluster());
         local.Add(CreateAltairCluster());
 
-        ERBridge bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Sirius", "Wolf's Den");
+        ERBridge? bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Sirius", "Wolf's Den");
         local.Add(bridge);
         bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Lalande", "Kruger");
         local.Add(bridge);
