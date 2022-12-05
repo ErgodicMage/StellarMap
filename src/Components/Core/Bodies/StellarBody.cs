@@ -34,7 +34,7 @@ public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
     public GroupedProperties Properties { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string>? BasicProperties { get => Properties?.Get("Basic"); }
+    public IDictionary<string, string> BasicProperties { get => Properties.Get("Basic")!; }
 
     public IStellarMap Map { get; set; }
     #endregion

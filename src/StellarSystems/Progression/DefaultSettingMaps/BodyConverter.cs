@@ -14,8 +14,8 @@ public static class BodyConverter
     {
         ProgressionStar newStar = ConvertStarOnly(map, oldStar);
 
-        IDictionary<string, Planet> oldPlanets = oldStar.GetPlanets();
-        if (oldPlanets != null)
+        IDictionary<string, Planet>? oldPlanets = oldStar.GetPlanets();
+        if (oldPlanets is not null)
         {
             foreach (Planet oldPlanet in oldPlanets.Values)
             {
@@ -24,8 +24,8 @@ public static class BodyConverter
             }
         }
 
-        IDictionary<string, DwarfPlanet> oldDwarfs = oldStar.GetDwarfPlanets();
-        if (oldDwarfs != null)
+        IDictionary<string, DwarfPlanet>? oldDwarfs = oldStar.GetDwarfPlanets();
+        if (oldDwarfs is not null)
         {
             foreach (DwarfPlanet oldDwarf in oldDwarfs.Values)
             {
@@ -44,8 +44,8 @@ public static class BodyConverter
             }
         }
 
-        IDictionary<string, Asteroid> oldAsteroids = oldStar.GetAsteroids();
-        if (oldAsteroids != null)
+        IDictionary<string, Asteroid>? oldAsteroids = oldStar.GetAsteroids();
+        if (oldAsteroids is not null)
         {
             foreach (Asteroid oldAsteroid in oldAsteroids.Values)
             {
@@ -54,8 +54,8 @@ public static class BodyConverter
             }
         }
 
-        IDictionary<string, Comet> oldComets = oldStar.GetComets();
-        if (oldComets != null)
+        IDictionary<string, Comet>? oldComets = oldStar.GetComets();
+        if (oldComets is not null)
         {
             foreach (Comet oldComet in oldComets.Values)
             {
@@ -74,12 +74,13 @@ public static class BodyConverter
         map.Add(newPlanet);
         return newPlanet;
     }
+
     public static ProgressionPlanet ConvertPlanet(ProgressionMap map, Planet oldPlanet)
     {
         ProgressionPlanet newPlanet = ConvertPlanetOnly(map, oldPlanet);
 
-        IDictionary<string, Satellite> oldSatellites = oldPlanet.GetSatellites();
-        if (oldSatellites != null)
+        IDictionary<string, Satellite>? oldSatellites = oldPlanet.GetSatellites();
+        if (oldSatellites is not null)
         {
             foreach(Satellite oldSatellite in oldSatellites.Values)
             {
@@ -103,8 +104,8 @@ public static class BodyConverter
     {
         ProgressionPlanet newPlanet = ConvertDwarfPlanetasPlanetOnly(map, oldDwarfPlanet);
 
-        IDictionary<string, Satellite> oldSatellites = oldDwarfPlanet.GetSatellites();
-        if (oldSatellites != null)
+        IDictionary<string, Satellite>? oldSatellites = oldDwarfPlanet.GetSatellites();
+        if (oldSatellites is not null)
         {
             foreach(Satellite oldSatellite in oldSatellites.Values)
             {
