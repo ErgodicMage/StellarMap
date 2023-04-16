@@ -215,7 +215,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
             Constants.BodyTypes.Satellite => Satellites as object,
             Constants.BodyTypes.Asteroid => Asteroids as object,
             Constants.BodyTypes.Comet => Comets as object,
-            _ => Result.Error($"BaseStellarBody:GetBody can not get {bodytype}")
+            _ => Result.Error($"BaseStellarMap:GetBody can not get {bodytype}")
         };
 #pragma warning restore CS8604 // Possible null reference argument.
     }
@@ -225,7 +225,6 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
         if (!guardResult.Success) return guardResult;
 
-#pragma warning disable CS8604 // Possible null reference argument.
         return bodytype switch
         {
             Constants.BodyTypes.Star => typeof(Dictionary<string, Star>),
@@ -234,13 +233,15 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
             Constants.BodyTypes.Satellite => typeof(Dictionary<string, Satellite>),
             Constants.BodyTypes.Asteroid => typeof(Dictionary<string, Asteroid>),
             Constants.BodyTypes.Comet => typeof(Dictionary<string, Comet>),
-            _ => Result.Error($"BaseStellarBody:GetTypeOfBody can not get Type {bodytype}")
+            _ => Result.Error($"BaseStellarMap:GetTypeOfBody can not get Type {bodytype}")
         };
-#pragma warning restore CS8604 // Possible null reference argument.
     }
 
     public virtual Result SetBody(string bodytype, object data)
     {
+        Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
+
 #pragma warning disable S125
         // Note this is some whacky syntax, not sure about realing using it since it's so obstuse
         // decided not to use it.
