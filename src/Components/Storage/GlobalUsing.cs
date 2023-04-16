@@ -5,4 +5,6 @@ global using System.Text;
 
 global using Newtonsoft.Json;
 
+global using ErgodicMage.Result;
+
 global using StellarMap.Core.Types;

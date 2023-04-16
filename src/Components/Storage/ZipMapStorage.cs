@@ -11,94 +11,100 @@ public class ZipMapStorage : IMapStorage
     }
     #endregion
 
-    public void Store(IStellarMap map, StreamWriter writer)
+    public Result Store(IStellarMap map, StreamWriter writer)
     {
-        ZipStrings.UseUnicode = true;
+        Result guardResult = GuardClause.Null(map).Null(writer);
+        if (!guardResult.Success) return guardResult;
 
-        using (ZipOutputStream stream = new ZipOutputStream(writer.BaseStream))
+        return Result.Try<IStellarMap, StreamWriter>((map, writer) =>
         {
+            ZipStrings.UseUnicode = true;
+
+            using var stream = new ZipOutputStream(writer.BaseStream);
             stream.IsStreamOwner = false;
 
             string json = JsonConvert.SerializeObject(map.MetaData, Formatting.Indented);
             byte[] bytes = Encoding.Default.GetBytes(json);
             byte[] buffer = new byte[4096];
 
-            ZipEntry entry = new ZipEntry("MetaData.json");
+            var entry = new ZipEntry("MetaData.json");
             stream.PutNextEntry(entry);
 
-            using (MemoryStream memory = new MemoryStream(bytes))
+            using (var memory = new MemoryStream(bytes))
                 StreamUtils.Copy(memory, stream, buffer);
 
-            IList<string> bodytypes = map.GetBodyTypes();
+            var bodytypes = map.GetBodyTypes();
 
             foreach (string bodytype in bodytypes)
             {
-                object body = map.GetBody(bodytype);
+                var body = map.GetBody(bodytype);
 
-                if (body != null)
-                {
-                    json = JsonConvert.SerializeObject(body, Formatting.Indented);
-                    bytes = Encoding.Default.GetBytes(json);
+                if (!body.Success)
+                    continue;
 
-                    entry = new ZipEntry(bodytype + "s.json");
-                    stream.PutNextEntry(entry);
+                json = JsonConvert.SerializeObject(body, Formatting.Indented);
+                bytes = Encoding.Default.GetBytes(json);
 
-                    using MemoryStream memory = new MemoryStream(bytes);
-                    StreamUtils.Copy(memory, stream, buffer);
-                }
+                entry = new ZipEntry(bodytype + "s.json");
+                stream.PutNextEntry(entry);
+
+                using var memory = new MemoryStream(bytes);
+                StreamUtils.Copy(memory, stream, buffer);
             }
-        }
-
-        //stream.Finish(); // this writes the entries at the end of the zip stream but does not close the stream.
+        },
+        map, writer);
     }
 
-    public T Retreive<T>(StreamReader reader)  where T : IStellarMap, new()
+    public Result<T> Retreive<T>(StreamReader reader)  where T : IStellarMap, new()
     {
-        T map = new T();
+        Result guardResult = GuardClause.Null(reader);
+        if (!guardResult.Success) return guardResult;
 
-        ZipStrings.UseUnicode = true;
-            
-        byte[] buffer = new byte[4096];            
-
-        using (ZipInputStream stream = new ZipInputStream(reader.BaseStream))
-        {
-            ZipEntry entry = null;
-            while ((entry = stream.GetNextEntry()) != null)
+        return Result<T>.Try<StreamReader>((reader) =>
             {
-                string json = string.Empty;
+                T map = new();
 
-                MemoryStream memory = new MemoryStream();
-                StreamUtils.Copy(stream, memory, buffer);
-                memory.Position = 0;
+                ZipStrings.UseUnicode = true;
+            
+                byte[] buffer = new byte[4096];
 
-                using StreamReader sr = new StreamReader(memory);
-                json = sr.ReadToEnd();
-
-                if (!string.IsNullOrEmpty(json))
+                using var stream = new ZipInputStream(reader.BaseStream);
+                ZipEntry entry;
+                while ((entry = stream.GetNextEntry()) != null)
                 {
-                    if (entry.Name == "MetaData.json")
+                    string json = string.Empty;
+
+                    var memory = new MemoryStream();
+                    StreamUtils.Copy(stream, memory, buffer);
+                    memory.Position = 0;
+
+                    using StreamReader sr = new StreamReader(memory);
+                    json = sr.ReadToEnd();
+
+                    if (!string.IsNullOrEmpty(json))
                     {
-                        GroupedProperties? metaData = JsonConvert.DeserializeObject<GroupedProperties>(json);
-                        map.MetaData = metaData is not null ? metaData : new GroupedProperties();
-                    }
-                    else
-                    {
-                        string bodytype = entry.Name.Replace("s.json", "");
-                        Type? t = map.GetTypeOfBody(bodytype);
-                        if (t is not null)
+                        if (entry.Name == "MetaData.json")
                         {
-                            object? data = JsonConvert.DeserializeObject(json, t);
-                            if (data is not null)
-                                map.SetBody(bodytype, data);
+                            var metaData = JsonConvert.DeserializeObject<GroupedProperties>(json);
+                            map.MetaData = metaData is not null ? metaData : new GroupedProperties();
+                        }
+                        else
+                        {
+                            string bodytype = entry.Name.Replace("s.json", "");
+                            Type? t = map.GetTypeOfBody(bodytype);
+                            if (t is not null)
+                            {
+                                object? data = JsonConvert.DeserializeObject(json, t);
+                                if (data is not null)
+                                    map.SetBody(bodytype, data);
+                            }
                         }
                     }
                 }
 
-            }
-        }
-
-        map.SetMap();
-
-        return map;
+                map.SetMap();
+                return map;
+            },
+            reader);
     }
 }

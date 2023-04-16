@@ -8,21 +8,32 @@ public class JSonMapStorage : IMapStorage
     }
     #endregion
 
-    public void Store(IStellarMap map, StreamWriter writer)
+    public Result Store(IStellarMap map, StreamWriter writer)
     {
-        string json = JsonConvert.SerializeObject(map, Formatting.Indented);
+        Result guardResult = GuardClause.Null(map).Null(writer);
+        if (!guardResult.Success) return guardResult;
 
-        writer.Write(json);
+        return Result.Try<IStellarMap, StreamWriter>((map, writer) =>
+            {
+                string json = JsonConvert.SerializeObject(map, Formatting.Indented);
+                writer.Write(json);
+            },
+            map, writer);
     }
 
-    public T Retreive<T>(StreamReader reader) where T : IStellarMap, new()
+    public Result<T> Retreive<T>(StreamReader reader) where T : IStellarMap, new()
     {
-        string json = reader.ReadToEnd();
+        Result guardResult = GuardClause.Null(reader);
+        if (!guardResult.Success) return guardResult;
 
-        T map = JsonConvert.DeserializeObject<T>(json);
-        map.SetMap();
-
-        return map;
+        return Result<T>.Try<StreamReader>((reader) =>
+            {
+                string json = reader.ReadToEnd();
+                T map = JsonConvert.DeserializeObject<T>(json);
+                map?.SetMap();
+                return map!;
+            },
+            reader);
     }
 }
 

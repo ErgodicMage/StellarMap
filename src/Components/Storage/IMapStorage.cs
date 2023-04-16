@@ -2,8 +2,8 @@
 
 public interface IMapStorage
 {
-    void Store(IStellarMap map, StreamWriter writer);
+    Result Store(IStellarMap map, StreamWriter writer);
 
-    T Retreive<T>(StreamReader reader) where T : IStellarMap, new();
+    Result<T> Retreive<T>(StreamReader reader) where T : IStellarMap, new();
 }
 

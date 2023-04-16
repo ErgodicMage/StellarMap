@@ -7,20 +7,16 @@ public static class MapStorageFactory
     public const string ZipStorage = "ZipStorage";
     #endregion
 
-    public static IMapStorage GetStorage(string type)
+    public static Result<IMapStorage> GetStorage(string type)
     {
-        IMapStorage storage = null;
+        Result guardResult = GuardClause.NullOrWhiteSpace(type);
+        if (!guardResult.Success) return guardResult;
 
-        switch (type)
+        return type switch
         {
-            case JsonStorage:
-                storage = new JSonMapStorage();
-                break;
-            case ZipStorage:
-                storage = new ZipMapStorage();
-                break;
-        }
-
-        return storage;
+            JsonStorage => new JSonMapStorage(),
+            ZipStorage => new ZipMapStorage(),
+            _ => Result.Error($"MapStorageFactory:GetStorage invalid storage type {type}")
+        };
     }
 }
