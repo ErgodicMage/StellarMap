@@ -74,8 +74,9 @@ public class GroupedPropertiesTests
     public void AddGroupTest()
     {
         GroupedProperties groupProperties = new GroupedProperties();
-        groupProperties.Add(Default);
+        Result result = groupProperties.Add(Default);
 
+        Assert.IsTrue(result.Success);
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
     }
@@ -85,8 +86,11 @@ public class GroupedPropertiesTests
     public void AddExistingGroupTest()
     {
         GroupedProperties groupProperties = new GroupedProperties();
-        groupProperties.Add(Default);
-        groupProperties.Add(Default);
+        Result result = groupProperties.Add(Default);
+        Assert.IsTrue(result.Success);
+
+        result = groupProperties.Add(Default);
+        Assert.IsFalse(result.Success);
 
         // no effect on PropertyGroups
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
@@ -102,8 +106,9 @@ public class GroupedPropertiesTests
         properties.Add(Email, EmailValue);
 
         GroupedProperties groupProperties = new GroupedProperties();
-        groupProperties.AddGroup(Default, properties);
+        Result result = groupProperties.AddGroup(Default, properties);
 
+        Assert.IsTrue(result.Success);
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
         Assert.AreEqual(2, groupProperties.PropertyGroups[Default].Count);
@@ -116,8 +121,9 @@ public class GroupedPropertiesTests
     public void AddPropertyTest()
     {
         GroupedProperties groupProperties = new GroupedProperties(Default);
-        groupProperties.Add(Default, Name, NameValue);
+        Result result = groupProperties.Add(Default, Name, NameValue);
 
+        Assert.IsTrue(result.Success);
         Assert.AreEqual(1, groupProperties[Default].Count);
         Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
         Assert.AreEqual(NameValue, groupProperties[Default, Name]);
@@ -128,8 +134,9 @@ public class GroupedPropertiesTests
     public void AddPropertyAnotherGroupTest()
     {
         GroupedProperties groupProperties = new GroupedProperties(Default);
-        groupProperties.Add(NotDefault, Name, NameValue);
+        Result result = groupProperties.Add(NotDefault, Name, NameValue);
 
+        Assert.IsFalse(result.Success);
         Assert.AreEqual(0, groupProperties[Default].Count);
         Assert.IsFalse(groupProperties.PropertyGroups.ContainsKey(NotDefault));
         Assert.IsFalse(groupProperties[Default].ContainsKey(Name));
@@ -140,10 +147,14 @@ public class GroupedPropertiesTests
     public void AddPropertyDuplicateTest()
     {
         GroupedProperties groupProperties = new GroupedProperties();
-        groupProperties.Add(Default);
-        groupProperties.Add(Default, Name, NameValue);
-        groupProperties.Add(Default, Email, EmailValue);
-        groupProperties.Add(Default, Name, NameValue);
+        Result result = groupProperties.Add(Default);
+        Assert.IsTrue(result.Success);
+        result = groupProperties.Add(Default, Name, NameValue);
+        Assert.IsTrue(result.Success);
+        result = groupProperties.Add(Default, Email, EmailValue);
+        Assert.IsTrue(result.Success);
+        result = groupProperties.Add(Default, Name, NameValue);
+        Assert.IsFalse(result.Success);
 
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
@@ -162,8 +173,9 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
-
+        Result result = groupProperties.AddProperties(Default, properties);
+        
+        Assert.IsTrue(result.Success);
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
         Assert.AreEqual(2, groupProperties.PropertyGroups[Default].Count);
@@ -181,8 +193,10 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
+        result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
@@ -201,8 +215,9 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(NotDefault, properties);
+        Result result = groupProperties.AddProperties(NotDefault, properties);
 
+        Assert.IsFalse(result.Success);
         Assert.AreEqual(0, groupProperties[Default].Count);
         Assert.IsFalse(groupProperties.PropertyGroups.ContainsKey(NotDefault));
         Assert.IsFalse(groupProperties[Default].ContainsKey(Name));
@@ -214,14 +229,16 @@ public class GroupedPropertiesTests
     public void RemoveGroupTest()
     {
         GroupedProperties groupProperties = new GroupedProperties(Default);
-        groupProperties.Add(NotDefault);
+        Result result = groupProperties.Add(NotDefault);
 
+        Assert.IsTrue(result.Success);
         Assert.AreEqual(2, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(NotDefault));
 
-        groupProperties.Remove(NotDefault);
+        result = groupProperties.Remove(NotDefault);
 
+        Assert.IsTrue(result.Success);
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
         Assert.IsFalse(groupProperties.PropertyGroups.ContainsKey(NotDefault));
@@ -233,8 +250,9 @@ public class GroupedPropertiesTests
     {
         GroupedProperties groupProperties = new GroupedProperties(Default);
 
-        groupProperties.Remove(NotDefault);
+        Result result = groupProperties.Remove(NotDefault);
 
+        Assert.IsFalse(result.Success);
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties.PropertyGroups.ContainsKey(Default));
         Assert.IsFalse(groupProperties.PropertyGroups.ContainsKey(NotDefault));
@@ -250,9 +268,11 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
-        groupProperties.Remove(Default, Email);
+        result = groupProperties.Remove(Default, Email);
+        Assert.IsTrue(result.Success);
 
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
@@ -270,9 +290,11 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
-        groupProperties.Remove(Default, NotName);
+        result = groupProperties.Remove(Default, NotName);
+        Assert.IsFalse(result.Success);
 
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
@@ -292,9 +314,11 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
-        groupProperties.Remove(NotDefault, NotName);
+        result = groupProperties.Remove(NotDefault, NotName);
+        Assert.IsFalse(result.Success);
 
         Assert.AreEqual(1, groupProperties.PropertyGroups.Count);
         Assert.IsTrue(groupProperties[Default].ContainsKey(Name));
@@ -314,13 +338,16 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
-        string retName = groupProperties.Get(Default, Name);
-        string retEmail = groupProperties.Get(Default, Email);
+        var retName = groupProperties.Get(Default, Name);
+        var retEmail = groupProperties.Get(Default, Email);
 
-        Assert.AreEqual(NameValue, retName);
-        Assert.AreEqual(EmailValue, retEmail);
+        Assert.IsTrue(retName.Success);
+        Assert.IsTrue(retEmail.Success);
+        Assert.AreEqual(NameValue, retName.Value);
+        Assert.AreEqual(EmailValue, retEmail.Value);
     }
 
     [TestMethod]
@@ -333,9 +360,13 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
-        var returnproperties = groupProperties.Get(Default);
+        var returnpropertiesResult = groupProperties.Get(Default);
+        Assert.IsTrue(returnpropertiesResult.Success);
+
+        var returnproperties = returnpropertiesResult.Value;
 
         Assert.AreEqual(2, returnproperties.Count);
         Assert.IsTrue(returnproperties.ContainsKey(Name));
@@ -354,10 +385,12 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
-        string retName = groupProperties.Get(Default, NotName);
+        var retName = groupProperties.Get(Default, NotName);
 
+        Assert.IsFalse(retName.Success);
         Assert.IsTrue(string.IsNullOrEmpty(retName));
     }
 
@@ -371,11 +404,13 @@ public class GroupedPropertiesTests
         properties.Add(Name, NameValue);
         properties.Add(Email, EmailValue);
 
-        groupProperties.AddProperties(Default, properties);
+        Result result = groupProperties.AddProperties(Default, properties);
+        Assert.IsTrue(result.Success);
 
         var returnproperties = groupProperties.Get(NotDefault);
 
-        Assert.IsNull(returnproperties);
+        Assert.IsFalse(returnproperties.Success);
+        Assert.IsNull(returnproperties.Value);
     }
 
     [TestMethod]
@@ -383,11 +418,16 @@ public class GroupedPropertiesTests
     public void SetTest()
     {
         GroupedProperties groupProperties = new GroupedProperties(Default);
-        groupProperties.Add(Default, Name, NameValue);
+        Result result = groupProperties.Add(Default, Name, NameValue);
+        Assert.IsTrue(result.Success);
 
-        groupProperties.Set(Default, Name, NotNameValue);
+        result = groupProperties.Set(Default, Name, NotNameValue);
+        Assert.IsTrue(result.Success);
 
-        Assert.AreEqual(NotNameValue, groupProperties.Get(Default, Name));
+        var getName = groupProperties.Get(Default, Name);
+
+        Assert.IsTrue(getName.Success);
+        Assert.AreEqual(NotNameValue, getName.Value);
     }
 
     [TestMethod]
@@ -395,12 +435,19 @@ public class GroupedPropertiesTests
     public void SetPropertyNotExistTest()
     {
         GroupedProperties groupProperties = new GroupedProperties(Default);
-        groupProperties.Add(Default, Name, NameValue);
+        Result result = groupProperties.Add(Default, Name, NameValue);
+        Assert.IsTrue(result.Success);
 
-        groupProperties.Set(Default, NotName, NotNameValue);
+        result = groupProperties.Set(Default, NotName, NotNameValue);
+        Assert.IsFalse(result.Success);
 
-        Assert.AreEqual(NameValue, groupProperties.Get(Default, Name));
-        Assert.IsTrue(string.IsNullOrEmpty(groupProperties.Get(Default, NotName)));
+        var name = groupProperties.Get(Default, Name);
+        var notname = groupProperties.Get(Default, NotName);
+
+        Assert.IsTrue(name.Success);
+        Assert.IsFalse(notname.Success);
+        Assert.AreEqual(NameValue, name.Value);
+        Assert.IsTrue(string.IsNullOrEmpty(notname));
     }
 
     [TestMethod]
@@ -408,12 +455,19 @@ public class GroupedPropertiesTests
     public void SetGroupNotExistTest()
     {
         GroupedProperties groupProperties = new GroupedProperties(Default);
-        groupProperties.Add(Default, Name, NameValue);
+        Result result = groupProperties.Add(Default, Name, NameValue);
+        Assert.IsTrue(result.Success);
 
-        groupProperties.Set(NotDefault, Name, NameValue);
+        result = groupProperties.Set(NotDefault, Name, NameValue);
+        Assert.IsFalse(result.Success);
 
-        Assert.AreEqual(NameValue, groupProperties.Get(Default, Name));
-        Assert.IsTrue(string.IsNullOrEmpty(groupProperties.Get(NotDefault, Name)));
+        var name = groupProperties.Get(Default, Name);
+        var notname = groupProperties.Get(NotDefault, Name);
+
+        Assert.IsTrue(name.Success);
+        Assert.IsFalse(notname.Success);
+        Assert.AreEqual(NameValue, name.Value);
+        Assert.IsTrue(string.IsNullOrEmpty(notname));
     }
 
     [TestMethod]
