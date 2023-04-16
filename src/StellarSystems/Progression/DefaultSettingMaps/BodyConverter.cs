@@ -2,64 +2,78 @@
 
 public static class BodyConverter
 {
-    public static ProgressionStar ConvertStarOnly(ProgressionMap map, Star oldStar)
+    public static Result<ProgressionStar> ConvertStarOnly(ProgressionMap map, Star oldStar)
     {
-        ProgressionStar newStar = new ProgressionStar(oldStar.Name);
+        Result guardResult = GuardClause.Null(map).Null(oldStar);
+        if (!guardResult.Success) return guardResult;
+
+        var newStar = new ProgressionStar(oldStar.Name);
         newStar.Properties = oldStar.Properties;
         map.Add(newStar);
         return newStar;
     }
 
-    public static ProgressionStar ConvertStar(ProgressionMap map, Star oldStar)
+    public static Result<ProgressionStar> ConvertStar(ProgressionMap map, Star oldStar)
     {
-        ProgressionStar newStar = ConvertStarOnly(map, oldStar);
+        Result guardResult = GuardClause.Null(map).Null(oldStar);
+        if (!guardResult.Success) return guardResult;
 
-        IDictionary<string, Planet>? oldPlanets = oldStar.GetPlanets();
-        if (oldPlanets is not null)
+        var newStarResult = ConvertStarOnly(map, oldStar);
+        if (!newStarResult.Success) return newStarResult;
+
+        var newStar = newStarResult.Value;
+
+        var oldPlanets = oldStar.GetPlanets();
+        if (oldPlanets.Success && oldPlanets.Value is not null)
         {
-            foreach (Planet oldPlanet in oldPlanets.Values)
+            foreach (var oldPlanet in oldPlanets.Value.Values)
             {
-                ProgressionPlanet newPlanet = ConvertPlanet(map, oldPlanet);
+                var newPlanet = ConvertPlanet(map, oldPlanet);
+                if (!newPlanet.Success) continue;
                 newStar.Add(newPlanet);
             }
         }
 
-        IDictionary<string, DwarfPlanet>? oldDwarfs = oldStar.GetDwarfPlanets();
-        if (oldDwarfs is not null)
+        var oldDwarfs = oldStar.GetDwarfPlanets();
+        if (oldDwarfs.Success)
         {
-            foreach (DwarfPlanet oldDwarf in oldDwarfs.Values)
+            foreach (var oldDwarf in oldDwarfs.Value.Values)
             {
                 // Default handling is that if the DwarfPlanet has satellites convert
                 // it to an Planet otherwise convert to an Asteroid
-                if (oldDwarf.Satellites != null)
+                if (oldDwarf.Satellites is not null)
                 {
-                    ProgressionPlanet newPlanet = ConvertDwarfPlanetasPlanet(map, oldDwarf);
+                    var newPlanet = ConvertDwarfPlanetasPlanet(map, oldDwarf);
+                    if (!newPlanet.Success) continue;
                     newStar.Add(newPlanet);
                 }
                 else
                 {
-                    Asteroid newAsteroid = ConvertDwarfPlanetasAsteroid(map, oldDwarf);
+                    var newAsteroid = ConvertDwarfPlanetasAsteroid(map, oldDwarf);
+                    if (!newAsteroid.Success) continue;
                     newStar.Add(newAsteroid);
                 }
             }
         }
 
-        IDictionary<string, Asteroid>? oldAsteroids = oldStar.GetAsteroids();
-        if (oldAsteroids is not null)
+        var oldAsteroids = oldStar.GetAsteroids();
+        if (oldAsteroids.Success)
         {
-            foreach (Asteroid oldAsteroid in oldAsteroids.Values)
+            foreach (var oldAsteroid in oldAsteroids.Value.Values)
             {
-                Asteroid newAsteroid = ConvertAsteroid(map, oldAsteroid);
+                var newAsteroid = ConvertAsteroid(map, oldAsteroid);
+                if (!newAsteroid.Success) continue;
                 newStar.Add(newAsteroid);
             }
         }
 
-        IDictionary<string, Comet>? oldComets = oldStar.GetComets();
-        if (oldComets is not null)
+        var oldComets = oldStar.GetComets();
+        if (oldComets.Success)
         {
-            foreach (Comet oldComet in oldComets.Values)
+            foreach (var oldComet in oldComets.Value.Values)
             {
-                Comet newComet = ConvertComet(map, oldComet);
+                var newComet = ConvertComet(map, oldComet);
+                if (!newComet.Success) continue;
                 newStar.Add(newComet);
             }
         }
@@ -67,24 +81,34 @@ public static class BodyConverter
         return newStar;
     }
 
-    public static ProgressionPlanet ConvertPlanetOnly(ProgressionMap map, Planet oldPlanet)
+    public static Result<ProgressionPlanet> ConvertPlanetOnly(ProgressionMap map, Planet oldPlanet)
     {
-        ProgressionPlanet newPlanet = new ProgressionPlanet(oldPlanet.Name);
+        Result guardResult = GuardClause.Null(map).Null(oldPlanet);
+        if (!guardResult.Success) return guardResult;
+
+        var newPlanet = new ProgressionPlanet(oldPlanet.Name);
         newPlanet.Properties = oldPlanet.Properties;
         map.Add(newPlanet);
         return newPlanet;
     }
 
-    public static ProgressionPlanet ConvertPlanet(ProgressionMap map, Planet oldPlanet)
+    public static Result<ProgressionPlanet> ConvertPlanet(ProgressionMap map, Planet oldPlanet)
     {
-        ProgressionPlanet newPlanet = ConvertPlanetOnly(map, oldPlanet);
+        Result guardResult = GuardClause.Null(map).Null(oldPlanet);
+        if (!guardResult.Success) return guardResult;
 
-        IDictionary<string, Satellite>? oldSatellites = oldPlanet.GetSatellites();
-        if (oldSatellites is not null)
+        var newPlanetResult = ConvertPlanetOnly(map, oldPlanet);
+        if (!newPlanetResult.Success) return newPlanetResult;
+
+        var newPlanet = newPlanetResult.Value;
+
+        var oldSatellites = oldPlanet.GetSatellites();
+        if (oldSatellites.Success)
         {
-            foreach(Satellite oldSatellite in oldSatellites.Values)
+            foreach(Satellite oldSatellite in oldSatellites.Value.Values)
             {
-                Satellite newSatellite = ConvertSatellite(map, oldSatellite);
+                var newSatellite = ConvertSatellite(map, oldSatellite);
+                if (!newSatellite.Success) continue;
                 newPlanet.Add(newSatellite);
             }
         }
@@ -92,58 +116,75 @@ public static class BodyConverter
         return newPlanet;
     }
 
-    public static ProgressionPlanet ConvertDwarfPlanetasPlanetOnly(ProgressionMap map, DwarfPlanet oldDwarfPlanet)
+    public static Result<ProgressionPlanet> ConvertDwarfPlanetasPlanetOnly(ProgressionMap map, DwarfPlanet oldDwarfPlanet)
     {
-        ProgressionPlanet newPlanet = new ProgressionPlanet(oldDwarfPlanet.Name);
+        Result guardResult = GuardClause.Null(map).Null(oldDwarfPlanet);
+        if (!guardResult.Success) return guardResult;
+
+        var newPlanet = new ProgressionPlanet(oldDwarfPlanet.Name);
         newPlanet.Properties = oldDwarfPlanet.Properties;
         map.Add(newPlanet);
         return newPlanet;
     }
 
-    public static ProgressionPlanet ConvertDwarfPlanetasPlanet(ProgressionMap map, DwarfPlanet oldDwarfPlanet)
+    public static Result<ProgressionPlanet> ConvertDwarfPlanetasPlanet(ProgressionMap map, DwarfPlanet oldDwarfPlanet)
     {
-        ProgressionPlanet newPlanet = ConvertDwarfPlanetasPlanetOnly(map, oldDwarfPlanet);
+        var newPlanet = ConvertDwarfPlanetasPlanetOnly(map, oldDwarfPlanet);
+        if (!newPlanet.Success) return newPlanet;
 
-        IDictionary<string, Satellite>? oldSatellites = oldDwarfPlanet.GetSatellites();
-        if (oldSatellites is not null)
+        var oldSatellites = oldDwarfPlanet.GetSatellites();
+        if (oldSatellites.Success)
         {
-            foreach(Satellite oldSatellite in oldSatellites.Values)
+            foreach(Satellite oldSatellite in oldSatellites.Value.Values)
             {
-                Satellite newSatellite = ConvertSatellite(map, oldSatellite);
-                newPlanet.Add(newSatellite);
+                var newSatellite = ConvertSatellite(map, oldSatellite);
+                if (!newSatellite.Success) continue;
+                newPlanet.Value.Add(newSatellite);
             }
         }
 
         return newPlanet;
     }
 
-    public static Asteroid ConvertDwarfPlanetasAsteroid(ProgressionMap map, DwarfPlanet oldDwarfPlanet)
+    public static Result<Asteroid> ConvertDwarfPlanetasAsteroid(ProgressionMap map, DwarfPlanet oldDwarfPlanet)
     {
-        Asteroid newAsteroid = new Asteroid(oldDwarfPlanet.Name);
+        Result guardResult = GuardClause.Null(map).Null(oldDwarfPlanet);
+        if (!guardResult.Success) return guardResult;
+
+        var newAsteroid = new Asteroid(oldDwarfPlanet.Name);
         newAsteroid.Properties = oldDwarfPlanet.Properties;
         map.Add(newAsteroid);
         return newAsteroid;
     }
 
-    public static Satellite ConvertSatellite(ProgressionMap map, Satellite oldSatellite)
+    public static Result<Satellite> ConvertSatellite(ProgressionMap map, Satellite oldSatellite)
     {
-        Satellite newSatellite = new Satellite(oldSatellite.Name);
+        Result guardResult = GuardClause.Null(map).Null(oldSatellite);
+        if (!guardResult.Success) return guardResult;
+
+        var newSatellite = new Satellite(oldSatellite.Name);
         newSatellite.Properties = oldSatellite.Properties;
         map.Add(newSatellite);
         return newSatellite;
     }
 
-    public static Asteroid ConvertAsteroid(ProgressionMap map, Asteroid oldAsteroid)
+    public static Result<Asteroid> ConvertAsteroid(ProgressionMap map, Asteroid oldAsteroid)
     {
-        Asteroid newAsteroid = new Asteroid(oldAsteroid.Name);
+        Result guardResult = GuardClause.Null(map).Null(oldAsteroid);
+        if (!guardResult.Success) return guardResult;
+
+        var newAsteroid = new Asteroid(oldAsteroid.Name);
         newAsteroid.Properties = oldAsteroid.Properties;
         map.Add(newAsteroid);
         return newAsteroid;
     }
 
-    public static Comet ConvertComet(ProgressionMap map, Comet oldComet)
+    public static Result<Comet> ConvertComet(ProgressionMap map, Comet oldComet)
     {
-        Comet newComet = new Comet(oldComet.Name);
+        Result guardResult = GuardClause.Null(map).Null(oldComet);
+        if (!guardResult.Success) return guardResult;
+
+        var newComet = new Comet(oldComet.Name);
         newComet.Properties = oldComet.Properties;
         map.Add(newComet);
         return newComet;

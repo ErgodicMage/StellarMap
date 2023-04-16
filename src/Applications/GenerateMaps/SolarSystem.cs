@@ -4,17 +4,17 @@ public static class SolarSystem
 {
     public static IStellarMap CreateSolSystem()
     {
-        BaseStellarMap sm = new BaseStellarMap("SolarSystem");
+        var map = new BaseStellarMap("SolarSystem");
 
         Star sol = new Star("Sol");
         sol.BasicProperties.Add(Constants.PropertyNames.StellarClass, "G2V");
-        sm.Add(sol);
+        map.Add(sol);
 
         sol.Add(new Planet("Mercury"));
         sol.Add(new Planet("Venus"));
 
         Planet earth = new Planet("Earth");
-        earth.Map = sm;
+        earth.Map = map;
         Satellite moon = new Satellite("Moon");
         earth.Add(moon);
         sol.Add(earth);
@@ -36,7 +36,7 @@ public static class SolarSystem
 
         sol.GetPlanets();
 
-        return sm;
+        return map;
     }
 
 }

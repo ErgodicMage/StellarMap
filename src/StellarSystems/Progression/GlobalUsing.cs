@@ -4,6 +4,8 @@ global using System.IO;
 global using System.Runtime.Serialization;
 global using System.Text;
 
+global using ErgodicMage.Result;
+
 global using StellarMap.Core.Types;
 global using StellarMap.Core.Bodies;
 global using StellarMap.Core.Math;

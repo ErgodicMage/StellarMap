@@ -23,19 +23,19 @@ public class ProgressionContainer : StellarParentBody, IEqualityComparer<Progres
 
     [IgnoreDataMember]
     public IDictionary<string, string>? Bridges 
-        { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.ERBridges);}
+        { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.ERBridges).Value;}
     #endregion
 
     #region Get Methods
-    public virtual ERBridge? GetBridge(string name) => 
+    public virtual Result<ERBridge> GetBridge(string name) => 
         Get<ERBridge>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
 
-    public virtual IDictionary<string, ERBridge>? GetBridges() => 
+    public virtual Result<IDictionary<string, ERBridge>> GetBridges() => 
         GetAll<ERBridge>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
     #endregion
 
     #region Add Methods
-    public void Add(ERBridge bridge) => 
+    public Result Add(ERBridge bridge) => 
         Add<ERBridge>(bridge, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.ERBridges);
     #endregion
 

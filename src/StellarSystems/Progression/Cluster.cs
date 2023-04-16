@@ -18,20 +18,19 @@ public class Cluster : ProgressionContainer
     #region Public Properties
     [IgnoreDataMember]
     public IDictionary<string, string>? StarSystems 
-        { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.StarSystems); }
+        { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.StarSystems).Value; }
     #endregion
 
     #region Get Methods
-    public virtual StarSystem? GetStarSystem(string name) => 
+    public virtual Result<StarSystem> GetStarSystem(string name) => 
         Get<StarSystem>(name, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
 
-    public virtual IDictionary<string, StarSystem>? GetStarSystems() => 
+    public virtual Result<IDictionary<string, StarSystem>> GetStarSystems() => 
         GetAll<StarSystem>(ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
     #endregion
 
     #region Add Methods
-    public void Add(StarSystem system) => 
+    public Result Add(StarSystem system) => 
         Add<StarSystem>(system, ContainerGroupIdentifiers, ProgressionConstants.NamedIdentifiers.StarSystems);
     #endregion
-
 }

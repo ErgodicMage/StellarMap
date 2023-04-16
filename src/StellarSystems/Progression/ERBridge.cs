@@ -35,33 +35,46 @@ public class ERBridge : StellarBody, IEqualityComparer<ERBridge>
     #endregion
 
     #region Get Methods
-    public StarSystem? GetStarSystem(int end)
+    public Result<StarSystem> GetStarSystem(int end)
     {
-        string identifier = Portals?[end].StarSystemIdentifier;
-        return (Map as ProgressionMap)?.Get<StarSystem>(identifier);
+        Result guardResult = GuardClause.OutOfRange(end, 0, 1);
+        if (!guardResult.Success) return guardResult;
+
+        string? identifier = Portals?[end].StarSystemIdentifier;
+        var map = Map as ProgressionMap;
+        if (map is null) return Result.Error("ERBridge:GetStarSystem Map is not a ProgressionMap");
+
+        return map.Get<StarSystem>(identifier);
     }
 
-    public StarSystem? GetStarSystem(string name)
+    public Result<StarSystem> GetStarSystem(string name)
     {
-        StarSystem? system = default;
+        Result guardResult = GuardClause.NullOrWhiteSpace(name);
+        if (!guardResult.Success) return guardResult;
+
+        var map = Map as ProgressionMap;
+        if (map is null) return Result.Error("ERBridge:GetStarSystem Map is not a ProgressionMap");
 
         foreach (Portal p in Portals)
         {
-            system = (Map as ProgressionMap)?.Get<StarSystem>(p.StarSystemIdentifier);
-            if (system is not null && system.Name == name)
-                break;
+            var system = map.Get<StarSystem>(p.StarSystemIdentifier);
+            if (system.Success && system.Value.Name == name)
+                return system;
         }
 
-        return system;
+        return Result.Error($"ERBridge:GaetStarSystem can not find star system {name}");
     }
 
-    public IDictionary<string, StarSystem> GetStarSystem()
+    public Result<IDictionary<string, StarSystem>> GetStarSystem()
     {
-        IDictionary<string, StarSystem> systems = new Dictionary<string, StarSystem>();
+        var map = Map as ProgressionMap;
+        if (map is null) return Result.Error("ERBridge:GetStarSystem Map is not a ProgressionMap");
+
+        var systems = new Dictionary<string, StarSystem>();
 
         foreach (Portal p in Portals)
         {
-            StarSystem s = (Map as ProgressionMap)?.Get<StarSystem>(p.StarSystemIdentifier);
+            StarSystem s = map.Get<StarSystem>(p.StarSystemIdentifier);
             systems.Add(s.Name, s);
         }
 

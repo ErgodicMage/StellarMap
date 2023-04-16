@@ -11,14 +11,13 @@ public class LocalSectorMap
         map.MetaData.Add("Basic", "Version", "0.5");
         map.MetaData.Add("Basic", "Date", "11/29/2019");
 
-        using (StringWriter writer = new StringWriter())
-        {
-            writer.WriteLine("This is the initial version of the Progression map.");
-            writer.WriteLine("It has since been replaced, but still useful for testing purposes.");
-            writer.Flush();
+        using var writer = new StringWriter();
+        writer.WriteLine("This is the initial version of the Progression map.");
+        writer.WriteLine("It has since been replaced, but still useful for testing purposes.");
+        writer.Flush();
 
-            map.MetaData.Add("Basic", "Description", writer.ToString());
-        }
+        map.MetaData.Add("Basic", "Description", writer.ToString());
+
         map.MetaData.Add("Basic", "Diagram", "https://drive.google.com/file/d/16VlY7NgC7chq3u7T2UerNy3aWMn3hkOD/view?usp=sharing");
         map.MetaData.Add("Basic", "Rules", "https://github.com/ErgodicMage/StellarMap/blob/master/src/StellarSystems/Progression/Rules.md");
     }
@@ -27,11 +26,11 @@ public class LocalSectorMap
 
     public Planet CreateEarth()
     {
-        ProgressionPlanet earth = new ProgressionPlanet("Earth");
+        var earth = new ProgressionPlanet("Earth");
 
         Map.Add<Planet>(earth);
 
-        Satellite moon = new Satellite("Moon");
+        var moon = new Satellite("Moon");
         earth.Add(moon);
 
         earth.Add(new Habitat("Space Station V"));

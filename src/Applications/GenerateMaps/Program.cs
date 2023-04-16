@@ -41,19 +41,19 @@ static class Program
 
     public static void JsonGenerateLocalSector()
     {
-        ProgressionMap localsector = new ProgressionMap("Local Sector");
+        var localsector = new ProgressionMap("Local Sector");
 
         LocalSectorMap create = new LocalSectorMap(localsector);
         create.CreateLocalSector();
 
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        var store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage).Value;
 
         string filename = Path.Combine(dataDir, "LocalSector.json");
 
         if (File.Exists(filename))
             File.Delete(filename);
 
-        using StreamWriter writer = new StreamWriter(filename);
+        using var writer = new StreamWriter(filename);
         store.Store(localsector, writer);
     }
 
@@ -61,30 +61,28 @@ static class Program
     {
         string filename = Path.Combine(dataDir, "LocalSector.json");
 
-        IStellarMap map;
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        var store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage).Value;
 
-        using StreamReader reader = new StreamReader(filename);
-        map = store.Retreive<ProgressionMap>(reader);
-
-        Console.WriteLine(map.ToString());
+        using var reader = new StreamReader(filename);
+        var mapResults = store.Retreive<ProgressionMap>(reader);
+        Console.WriteLine(mapResults.Success ? mapResults.Value.ToString() : "Could not get map");
     }
 
     public static void ZipGenerateLocalSector()
     {
-        ProgressionMap localsector = new ProgressionMap("Local Sector");
+        var localsector = new ProgressionMap("Local Sector");
 
-        LocalSectorMap create = new LocalSectorMap(localsector);
+        var create = new LocalSectorMap(localsector);
         create.CreateLocalSector();
 
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        var store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage).Value;
 
         string filename = Path.Combine(dataDir, "LocalSector.zip");
 
         if (File.Exists(filename))
             File.Delete(filename);
 
-        using StreamWriter writer = new StreamWriter(filename);
+        using var writer = new StreamWriter(filename);
         store.Store(localsector, writer);
     }
 
@@ -92,29 +90,26 @@ static class Program
     {
         string filename = Path.Combine(dataDir, "LocalSector.zip");
 
-        IStellarMap map;
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        var store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage).Value;
 
-        using StreamReader reader = new StreamReader(filename);
-            map = store.Retreive<ProgressionMap>(reader);
-
-
-        Console.WriteLine(map.ToString());
+        using var reader = new StreamReader(filename);
+        var mapResults = store.Retreive<ProgressionMap>(reader);
+        Console.WriteLine(mapResults.Success ? mapResults.Value.ToString() : "Could not get map");
     }
 
     public static void StoreSolarSystem()
     {
-        IStellarMap map = new BaseStellarMap("SolarSystem");
+        var map = new BaseStellarMap("SolarSystem");
         PhysicalSolarSystemCreator.CreateSolarSystem(map);
 
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        var store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage).Value;
 
         string filename = Path.Combine(dataDir, "SolarSystem.json");
 
         if (File.Exists(filename))
             File.Delete(filename);
 
-        using StreamWriter writer = new StreamWriter(filename);
+        using var writer = new StreamWriter(filename);
         store.Store(map, writer);
     }
 
@@ -122,13 +117,11 @@ static class Program
     {
         string filename = Path.Combine(dataDir, "SolarSystem.json");
 
-        IStellarMap map;
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        var store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage).Value;
 
-        using StreamReader reader = new StreamReader(filename);
-        map = store.Retreive<BaseStellarMap>(reader);
-
-        Console.WriteLine(map.ToString());
+        using var reader = new StreamReader(filename);
+        var mapResults = store.Retreive<ProgressionMap>(reader);
+        Console.WriteLine(mapResults.Success ? mapResults.Value.ToString() : "Could not get map");
     }
 
     public static void LocateStarsInCube(int ly)        

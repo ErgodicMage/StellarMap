@@ -17,29 +17,34 @@ public class StarSystem : ProgressionContainer, IEqualityComparer<StarSystem>
     #region Public Properties
     [IgnoreDataMember]
     public IDictionary<string, string>? Stars 
-        { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Stars); }
+        { get => ContainerGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Stars).Value; }
 
     [DataMember(Order = 21)]
     public IList<Portal>? Portals { get; set; }
     #endregion
 
     #region Get Methods
-    public virtual ProgressionStar? GetStar(string name) => 
-        Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars) as ProgressionStar;
+    public virtual Result<ProgressionStar> GetStar(string name)
+    {        
+        Result<Star> result = Get<Star>(name, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
+        if (!result.Success) return Result<ProgressionStar>.Error(result.ErrorMessage, result.Exception);
+        var star = result.Value as ProgressionStar;
+        return star is not null ? Result<ProgressionStar>.Ok(star) : Result<ProgressionStar>.Error($"StarSystem.GetStar {name} is not a ProgressionStar");
+    }
 
-    public virtual IDictionary<string, Star>? GetStars() => 
+    public virtual Result<IDictionary<string, Star>> GetStars() => 
         GetAll<Star>(ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
     #endregion
 
     #region Add Methods
-    public void Add(ProgressionStar star) => 
+    public Result Add(ProgressionStar star) => 
         Add<Star>(star, ContainerGroupIdentifiers, Constants.NamedIdentifiers.Stars);
 
-    public void Add(Portal portal)
+    public Result Add(Portal portal)
     {
-        if (Portals is null)
-            Portals = new List<Portal>();
+        Portals ??= new List<Portal>();
         Portals.Add(portal);
+        return Result.Ok();
     }
     #endregion
 

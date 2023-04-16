@@ -17,19 +17,19 @@ public class ProgressionPlanet : Planet
     #region Public Properties
     [IgnoreDataMember]
     public IDictionary<string, string>? Habitats 
-        { get => PlanetGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Habitats); }
+        { get => PlanetGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Habitats).Value; }
     #endregion
 
     #region Get Methods
-    public virtual Habitat? GeHabitat(string name) => 
+    public virtual Result<Habitat> GeHabitat(string name) => 
         Get<Habitat>(name, PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
-    public virtual IDictionary<string, Habitat>? GetHabitats() => 
+    public virtual Result<IDictionary<string, Habitat>> GetHabitats() => 
         GetAll<Habitat>(PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
     #endregion
 
     #region Add Methods
-    public void Add(Habitat habitat) => 
+    public Result Add(Habitat habitat) => 
         Add<Habitat>(habitat, PlanetGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
     #endregion
 

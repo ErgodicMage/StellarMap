@@ -107,7 +107,7 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
     #endregion
 
     #region Protected Methods
-    protected override IDictionary<string, T>? GetDictionary<T>(bool create)
+    protected override Result<IDictionary<string, T>> GetDictionary<T>(bool create)
     {
         IDictionary<string, T>? dict = default;
         Type dt = typeof(T);
@@ -149,10 +149,7 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
             dict = Sectors as IDictionary<string, T>;
         }
 
-        if (dict is null)
-            dict = base.GetDictionary<T>(create);
-
-        return dict;
+        return dict is not null ? Result<IDictionary<string, T>>.Ok(dict) : base.GetDictionary<T>(create);
     }
 
     public override IList<string> GetBodyTypes()
@@ -168,75 +165,74 @@ public class ProgressionMap : BaseStellarMap, IEqualityComparer<ProgressionMap>
         return bodytypes;
     }
 
-    public override object? GetBody(string bodytype)
+    public override Result<object> GetBody(string bodytype)
     {
+        Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
+
         var body = base.GetBody(bodytype);
+        if (body.Success) return body;
 
-        if (body is null)
+#pragma warning disable CS8604 // Possible null reference argument.
+        return bodytype switch
         {
-            body = bodytype switch
-            {
-                ProgressionConstants.BodyType.Habitat => Habitats as object,
-                ProgressionConstants.BodyType.ERBridge => Bridges as object,
-                ProgressionConstants.BodyType.StarSystem => StarSystems as object,
-                ProgressionConstants.BodyType.Cluster => Clusters as object,
-                ProgressionConstants.BodyType.Sector => Sectors as object,
-                _ => null
-            };
-        }
-
-        return body;
+            ProgressionConstants.BodyType.Habitat => Habitats as object,
+            ProgressionConstants.BodyType.ERBridge => Bridges as object,
+            ProgressionConstants.BodyType.StarSystem => StarSystems as object,
+            ProgressionConstants.BodyType.Cluster => Clusters as object,
+            ProgressionConstants.BodyType.Sector => Sectors as object,
+            _ => Result.Error($"ProgressionBody:GetBody can not get {bodytype}"),
+        };
+#pragma warning restore CS8604 // Possible null reference argument.
     }
 
-    public override Type? GetTypeOfBody(string bodytype)
+    public override Result<Type> GetTypeOfBody(string bodytype)
     {
-        Type? t = base.GetTypeOfBody(bodytype);
+        Result<Type> t = base.GetTypeOfBody(bodytype);
+        if (t.Success) return t;
 
-        if (t is null)
+        return bodytype switch
         {
-            t = bodytype switch
-            {
-                ProgressionConstants.BodyType.Habitat => typeof(Dictionary<string, Habitat>),
-                ProgressionConstants.BodyType.ERBridge => typeof(Dictionary<string, ERBridge>),
-                ProgressionConstants.BodyType.StarSystem => typeof(Dictionary<string, StarSystem>),
-                ProgressionConstants.BodyType.Cluster => typeof(Dictionary<string, Cluster>),
-                ProgressionConstants.BodyType.Sector => typeof(Dictionary<string, Sector>),
-                _ => null
-            };
-        }
-
-        return t;
+            ProgressionConstants.BodyType.Habitat => typeof(Dictionary<string, Habitat>),
+            ProgressionConstants.BodyType.ERBridge => typeof(Dictionary<string, ERBridge>),
+            ProgressionConstants.BodyType.StarSystem => typeof(Dictionary<string, StarSystem>),
+            ProgressionConstants.BodyType.Cluster => typeof(Dictionary<string, Cluster>),
+            ProgressionConstants.BodyType.Sector => typeof(Dictionary<string, Sector>),
+            _ => Result.Error($"ProgressionMap:GetTypeOfBody can not get Type {bodytype}")
+        };
     }
 
-    public override bool SetBody(string bodytype, object data)
+    public override Result SetBody(string bodytype, object data)
     {
-        bool bret = base.SetBody(bodytype, data);
+        Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
 
-        if (!bret)
+        Result result = base.SetBody(bodytype, data);
+        if (result.Success) return result;
+
+        bool bret = false;
+        switch (bodytype)
         {
-            switch (bodytype)
-            {
-                case ProgressionConstants.BodyType.Habitat:
-                    Habitats = (Dictionary<string, Habitat>)data;
-                    bret = true;
-                    break;
-                case ProgressionConstants.BodyType.ERBridge:
-                    Bridges = (Dictionary<string, ERBridge>)data;
-                    bret = true;
-                    break;
-                case ProgressionConstants.BodyType.StarSystem:
-                    StarSystems = (Dictionary<string, StarSystem>)data;
-                    bret = true;
-                    break;
-                case ProgressionConstants.BodyType.Cluster:
-                    Clusters = (Dictionary<string, Cluster>)data;
-                    bret = true;
-                    break;
-                case ProgressionConstants.BodyType.Sector:
-                    Sectors = (Dictionary<string, Sector>)data;
-                    bret = true;
-                    break;
-            }
+            case ProgressionConstants.BodyType.Habitat:
+                Habitats = (Dictionary<string, Habitat>)data;
+                bret = true;
+                break;
+            case ProgressionConstants.BodyType.ERBridge:
+                Bridges = (Dictionary<string, ERBridge>)data;
+                bret = true;
+                break;
+            case ProgressionConstants.BodyType.StarSystem:
+                StarSystems = (Dictionary<string, StarSystem>)data;
+                bret = true;
+                break;
+            case ProgressionConstants.BodyType.Cluster:
+                Clusters = (Dictionary<string, Cluster>)data;
+                bret = true;
+                break;
+            case ProgressionConstants.BodyType.Sector:
+                Sectors = (Dictionary<string, Sector>)data;
+                bret = true;
+                break;
         }
 
         return bret;

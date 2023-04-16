@@ -1,19 +1,26 @@
 ﻿using StellarMap.Core.Math;
+using System.Diagnostics.Metrics;
 
 namespace StellarMap.Progression;
 
 public static class ERBridgeHelper
 {
-    public static ERBridge CreateStarSystemBridge(ProgressionMap map, Cluster cluster, string starname1, string starname2)
+    public static Result<ERBridge> CreateStarSystemBridge(ProgressionMap map, Cluster cluster, string starname1, string starname2)
     {
+        Result guardResult = GuardClause.Null(map).Null(cluster).NullOrWhiteSpace(starname1).NullOrWhiteSpace(starname2);
+        if (!guardResult.Success) return guardResult;
+
         // force mapping
         cluster.Map = map;
 
-        StarSystem? system1 = cluster.GetStarSystem(starname1);
-        StarSystem? system2 = cluster.GetStarSystem(starname2);
+        var sysResult1 = cluster.GetStarSystem(starname1);
+        var sysResult2 = cluster.GetStarSystem(starname2);
 
-        if (system1 is null || system2 is null)
-            return null;
+        if (!sysResult1.Success) return (Result)sysResult1;
+        if (!sysResult2.Success) return (Result)sysResult2;
+
+        var system1 = sysResult1.Value;
+        var system2 = sysResult2.Value;
 
         // force mapping
         system1.Map = map;
@@ -39,8 +46,11 @@ public static class ERBridgeHelper
         return bridge;
     }
 
-    public static ERBridge? CreateClusterBridge(ProgressionMap map, Sector sector, string starname1, string starname2)
+    public static Result<ERBridge> CreateClusterBridge(ProgressionMap map, Sector sector, string starname1, string starname2)
     {
+        Result guardResult = GuardClause.Null(map).Null(sector).NullOrWhiteSpace(starname1).NullOrWhiteSpace(starname2);
+        if (!guardResult.Success) return guardResult;
+
         sector.Map = map;
 
         StarSystem? system1 = default;

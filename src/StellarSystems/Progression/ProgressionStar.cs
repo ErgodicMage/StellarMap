@@ -17,24 +17,20 @@ public class ProgressionStar : Star
     #region Public Properties
     [IgnoreDataMember]
     public IDictionary<string, string>? Habitats 
-        { get => StarGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Habitats); }
+        { get => StarGroupIdentifiers.GroupIdentifiers.Get(ProgressionConstants.NamedIdentifiers.Habitats).Value; }
     #endregion
 
     #region Get Methods
-    public virtual Habitat? GeHabitat(string name) => 
+    public virtual Result<Habitat> GeHabitat(string name) => 
         Get<Habitat>(name, StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
-    public virtual IDictionary<string, Habitat>? GetHabitats() => 
+    public virtual Result<IDictionary<string, Habitat>> GetHabitats() => 
         GetAll<Habitat>(StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
 
     #endregion
 
     #region Add Methods
-    public void Add(Habitat habitat) => 
+    public Result Add(Habitat habitat) => 
         Add<Habitat>(habitat, StarGroupIdentifiers, ProgressionConstants.NamedIdentifiers.Habitats);
     #endregion
-
-    #region Public Methods
-    #endregion
-
 }
