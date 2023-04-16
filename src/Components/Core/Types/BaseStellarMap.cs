@@ -334,7 +334,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
             dict = Comets as IDictionary<string, T>;
         }
 
-        return dict is not null ? Result.Ok() : Result.Error($"BaseStellarMap:GetDictionary can not get dictionary for {nameof(T)}");
+        return dict is not null ? Result<IDictionary<string, T>>.Ok(dict) : Result.Error($"BaseStellarMap:GetDictionary can not get dictionary for {nameof(T)}");
     }
     #endregion
 

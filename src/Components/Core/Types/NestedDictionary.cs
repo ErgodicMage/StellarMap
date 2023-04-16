@@ -75,9 +75,10 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
                 if (!currentDictionary.ContainsKey(kvp.Key))
                     currentDictionary.Add(kvp.Key, kvp.Value);
             }
+            return Result.Ok();
         }
 
-        return Result.Ok();
+        return Result.Error("NestedDictionary:AddToInner can not get currentDictionary");
     }
     #endregion
 
