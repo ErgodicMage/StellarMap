@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Net.Http.Headers;
 
 namespace StellarMap.Core.Types;
 
@@ -9,24 +10,44 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
     #endregion
 
     #region Properties
-    public TValue? this[TOuter outer, TInner inner] => this[outer][inner];
+    public TValue? this[TOuter outer, TInner inner] => Get(outer, inner).Value;
     #endregion
 
     #region Add Methods
-    public void Add(TOuter outer)
+    public Result Add(TOuter outer)
     {
-        if (!ContainsKey(outer))
-            Add(outer, new Dictionary<TInner, TValue>());
+        Result resultGuard = GuardClause.Null(outer);
+        if (!resultGuard.Success) return resultGuard;
+
+        if (ContainsKey(outer))
+            return Result.Error("NestedDictionary:Add outer key already exists");
+
+        Add(outer, new Dictionary<TInner, TValue>());
+
+        return Result.Ok();
     }
 
-    public void Add(TOuter outer, TInner inner, TValue value)
+    public Result Add(TOuter outer, TInner inner, TValue value)
     {
-        if (TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary) && !innerDictionary.ContainsKey(inner))
-            innerDictionary.Add(inner, value);
+        Result resultGuard = GuardClause.Null(outer).Null(inner);
+        if (!resultGuard.Success) return resultGuard;
+
+        if (!TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary))
+            return Result.Error("NestedDictionary:Add can not get inner dictionary");
+
+        if (innerDictionary.ContainsKey(inner))
+            return Result.Error("NestedDictionary:Add inner key already exists");
+
+        innerDictionary.Add(inner, value);
+
+        return Result.Ok();
     }
 
-    public void AddToOuter(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
+    public Result AddToOuter(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
     {
+        Result resultGuard = GuardClause.Null(outer).Null(innerDictionary);
+        if (!resultGuard.Success) return resultGuard;
+
         if (!TryGetValue(outer, out Dictionary<TInner, TValue> currentDictionary))
         {
             currentDictionary = new Dictionary<TInner, TValue>();
@@ -38,10 +59,15 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
             if (!currentDictionary.ContainsKey(kvp.Key))
                 currentDictionary.Add(kvp.Key, kvp.Value);
         }
+
+        return Result.Ok();
     }
 
-    public void AddToInner(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
+    public Result AddToInner(TOuter outer, IEnumerable<KeyValuePair<TInner, TValue>> innerDictionary)
     {
+        Result resultGuard = GuardClause.Null(outer).Null(innerDictionary);
+        if (!resultGuard.Success) return resultGuard;
+
         if (TryGetValue(outer, out Dictionary<TInner, TValue> currentDictionary))
         {
             foreach (var kvp in innerDictionary)
@@ -50,47 +76,75 @@ public sealed class NestedDictionary<TOuter, TInner, TValue> :
                     currentDictionary.Add(kvp.Key, kvp.Value);
             }
         }
+
+        return Result.Ok();
     }
     #endregion
 
     #region Remove Methods
-    public bool Remove(TOuter outer, TInner inner)
+    public Result Remove(TOuter outer, TInner inner)
     {
-        Dictionary<TInner, TValue> innerDictionary = Get(outer);
+        Result resultGuard = GuardClause.Null(outer).Null(inner);
+        if (!resultGuard.Success) return resultGuard;
 
-        return innerDictionary?.Remove(inner) ?? false;
+        var result = Get(outer);
+        if (!result.Success) return result;
+
+        return result.Value?.Remove(inner) ?? Result.Error("NestedDictionary:Remove can not remove value from inner dictionary");
     }
     #endregion
 
     #region Get Set Methods
-    public Dictionary<TInner, TValue>? Get(TOuter outer)
+    public Result<IDictionary<TInner, TValue>> Get(TOuter outer)
     {
-        TryGetValue(outer, out Dictionary<TInner, TValue> innerDictionary);
+        Result resultGuard = GuardClause.Null(outer);
+        if (!resultGuard.Success) return resultGuard;
+
+        if (!TryGetValue(outer, out var innerDictionary))
+            return Result.Error("NestedDictionary:Get can not get inner dictionary");
+
         return innerDictionary;
     }
 
-    public TValue? Get(TOuter outer, TInner inner)
+    public Result<TValue> Get(TOuter outer, TInner inner)
     {
-        TValue? value = default;
+        Result resultGuard = GuardClause.Null(outer).Null(inner);
+        if (!resultGuard.Success) return resultGuard;
 
-        Dictionary<TInner, TValue>? innerDictionary = Get(outer);
-        innerDictionary?.TryGetValue(inner, out value);
+        var resultInnerDictionary = Get(outer);
+        if (!resultInnerDictionary.Success)
+            return Result.Error("NestedDictionary:Get can not get inner dictionary");
+
+        if (!resultInnerDictionary.Value.TryGetValue(inner, out var value))
+            return Result.Error("NestedDictionary:Get can not get value from inner dectionary");
 
         return value;
     }
 
-    public void Set(TOuter outer, Dictionary<TInner, TValue> innervalues)
+    public Result Set(TOuter outer, Dictionary<TInner, TValue> innervalues)
     {
+        Result resultGuard = GuardClause.Null(outer).Null(innervalues);
+        if (!resultGuard.Success) return resultGuard;
+
         if (!ContainsKey(outer))
             Add(outer, innervalues);
         else
             this[outer] = innervalues;
+
+        return Result.Ok();
     }
 
-    public void Set(TOuter outer, TInner inner, TValue value)
+    public Result Set(TOuter outer, TInner inner, TValue value)
     {
-        if (ContainsKey(outer) && this[outer].ContainsKey(inner))
-            this[outer][inner] = value;
+        Result resultGuard = GuardClause.Null(outer).Null(inner);
+        if (!resultGuard.Success) return resultGuard;
+
+        if (!ContainsKey(outer, inner))
+            return Result.Error("NestedDictionary:Set can not get key for outer and inner");
+ 
+        this[outer][inner] = value;
+
+        return Result.Ok();
     }
     #endregion
 

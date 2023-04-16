@@ -22,58 +22,58 @@ public class Star : StellarParentBody,  IEqualityComparer<Star>
 
     [IgnoreDataMember]
     public IDictionary<string, string>? Planets 
-        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Planets); }
+        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Planets).Value; }
 
     [IgnoreDataMember]
     public IDictionary<string, string>? DwarfPlanets 
-        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.DwarfPlanets); }
+        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.DwarfPlanets).Value; }
 
     [IgnoreDataMember]
     public IDictionary<string, string>? Asteroids 
-        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Asteroids); }
+        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Asteroids).Value; }
 
     [IgnoreDataMember]
     public IDictionary<string, string>? Comets 
-        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Comets); }
+        { get => StarGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Comets).Value; }
     #endregion
 
     #region Get Functions
-    public virtual Planet? GetPlanet(string name) => 
+    public virtual Result<Planet> GetPlanet(string name) => 
         Get<Planet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-    public virtual IDictionary<string, Planet>? GetPlanets() => 
+    public virtual Result<IDictionary<string, Planet>> GetPlanets() => 
         GetAll<Planet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-    public virtual DwarfPlanet? GetDwarfPlanet(string name) => 
+    public virtual Result<DwarfPlanet> GetDwarfPlanet(string name) => 
         Get<DwarfPlanet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
 
-    public virtual IDictionary<string, DwarfPlanet>? GetDwarfPlanets() => 
+    public virtual Result<IDictionary<string, DwarfPlanet>> GetDwarfPlanets() => 
         GetAll<DwarfPlanet>(StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);
 
-    public virtual Asteroid? GetAsteroid(string name) => 
+    public virtual Result<Asteroid> GetAsteroid(string name) => 
         Get<Asteroid>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-    public virtual IDictionary<string, Asteroid>? GetAsteroids() => 
+    public virtual Result<IDictionary<string, Asteroid>> GetAsteroids() => 
         GetAll<Asteroid>(StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-    public virtual Comet? GetComet(string name) => 
+    public virtual Result<Comet> GetComet(string name) => 
         Get<Comet>(name, StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
 
-    public virtual IDictionary<string, Comet>? GetComets() => 
+    public virtual Result<IDictionary<string, Comet>> GetComets() => 
         GetAll<Comet>(StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
     #endregion
 
     #region Public Add Functions
-    public void Add(Planet planet) => 
+    public Result Add(Planet planet) => 
         Add<Planet>(planet, StarGroupIdentifiers, Constants.NamedIdentifiers.Planets);
 
-    public void Add(DwarfPlanet dwarf) => 
+    public Result Add(DwarfPlanet dwarf) => 
         Add<DwarfPlanet>(dwarf, StarGroupIdentifiers, Constants.NamedIdentifiers.DwarfPlanets);            
 
-    public void Add(Asteroid asteroid) => 
+    public Result Add(Asteroid asteroid) => 
         Add<Asteroid>(asteroid, StarGroupIdentifiers, Constants.NamedIdentifiers.Asteroids);
 
-    public void Add(Comet comet) => 
+    public Result Add(Comet comet) => 
         Add<Comet>(comet, StarGroupIdentifiers, Constants.NamedIdentifiers.Comets);
     #endregion
 

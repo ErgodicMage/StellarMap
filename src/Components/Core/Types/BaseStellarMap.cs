@@ -54,65 +54,85 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     #endregion
 
     #region Public Get Functions
-    public virtual T? Get<T>(string? id) where T : IStellarBody
+    public virtual Result<T> Get<T>(string? id) where T : IStellarBody
     {
-        T? t = default;
+        Result guardResult = GuardClause.NullOrWhiteSpace(id);
+        if (!guardResult.Success) return guardResult;
 
-        if (!string.IsNullOrEmpty(id))
-        {
-            IDictionary<string, T>? dict = GetDictionary<T>(false);
+        var dictResult = GetDictionary<T>(false);
 
-            if (dict is not null && dict.ContainsKey(id))
-                t = dict[id];
-        }
+        if (dictResult.Success && dictResult.Value.ContainsKey(id))
+                return Result<T>.Ok(dictResult.Value[id]);
 
-        return t;
+        return Result.Error($"BaseStellarBody:Get {id} was not found");
     }
 
-    public virtual void Get<T>(ICollection<string>? identifiers, IDictionary<string, T> output) 
+    public virtual Result Get<T>(ICollection<string>? identifiers, IDictionary<string, T> output) 
         where T : IStellarBody
     {
-        if (identifiers is null) return;
+        Result guardResult = GuardClause.Null(identifiers).Null(output);
+        if (!guardResult.Success) return guardResult;
 
-        foreach (string id in identifiers)
+        foreach (string id in identifiers!)
         {
-            T? t = Get<T>(id);
-            if (t is not null)
-                output.Add(id, t);
+            Result<T> result = Get<T>(id);
+            if (result.Success)
+                output.Add(id, result.Value);
         }
+
+        return Result.Ok();
     }
     #endregion
 
     #region Public Add Functions
-    public virtual void Add<T>(T t) where T : IStellarBody
+    public virtual Result Add<T>(T t) where T : IStellarBody
     {
-        IDictionary<string, T>? dict = GetDictionary<T>(true);
+        Result guardResult = GuardClause.Null(t);
+        if (!guardResult.Success) return guardResult;
+
+        var dictResult = GetDictionary<T>(true);
+
+        if (!dictResult.Success) return dictResult;
 
         if (string.IsNullOrEmpty(t.Identifier))
             t.Identifier = GenerateIdentifier<T>();
 
-        if (dict is not null && !dict.ContainsKey(t.Identifier))
-        {
-            t.Map = this;
-            dict.Add(t.Identifier, t);
-        }
+        if (!dictResult.Success)
+            return dictResult;
+
+        if (dictResult.Value.ContainsKey(t.Identifier))
+            return Result.Error($"BaseStellarMap:Add {t.Identifier} already exists in {nameof(T)}");
+
+        t.Map = this;
+        dictResult.Value.Add(t.Identifier, t);
+        return Result.Ok();
     }
 
-    public virtual void Add<T>(ICollection<T> ts) where T : IStellarBody
+    public virtual Result Add<T>(ICollection<T> ts) where T : IStellarBody
     {
-        IDictionary<string, T>? dict = GetDictionary<T>(false);
+        Result guardResult = GuardClause.Null(ts);
+        if (!guardResult.Success) return guardResult;
+
+        var dictResult = GetDictionary<T>(false);
+        if (!dictResult.Success) return dictResult;
+        var dict = dictResult.Value;
 
         foreach (T t in ts)
         {
-            if (string.IsNullOrEmpty(t.Identifier))
+            if (t is null)
+                continue;
+
+            if (string.IsNullOrWhiteSpace(t.Identifier))
                 t.Identifier = GenerateIdentifier<T>();
 
-            if (dict is not null && !dict.ContainsKey(t.Identifier))
-            {
-                t.Map = this;
-                dict.Add(t.Identifier, t);
-            }
+            if (dict!.ContainsKey(t.Identifier))
+                continue;
+
+            t.Map = this;
+            dict.Add(t.Identifier, t);
         }
+
+        return Result.Ok();
     }
     #endregion
 
@@ -181,8 +201,12 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
         };
     }
 
-    public virtual object? GetBody(string bodytype)
+    public virtual Result<object> GetBody(string bodytype)
     {
+        Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
+
+#pragma warning disable CS8604 // Possible null reference argument.
         return bodytype switch
         {
             Constants.BodyTypes.Star => Stars as object,
@@ -191,12 +215,17 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
             Constants.BodyTypes.Satellite => Satellites as object,
             Constants.BodyTypes.Asteroid => Asteroids as object,
             Constants.BodyTypes.Comet => Comets as object,
-            _ => null
+            _ => Result.Error($"BaseStellarBody:GetBody can not get {bodytype}")
         };
+#pragma warning restore CS8604 // Possible null reference argument.
     }
 
-    public virtual Type? GetTypeOfBody(string bodytype)
+    public virtual Result<Type> GetTypeOfBody(string bodytype)
     {
+        Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
+
+#pragma warning disable CS8604 // Possible null reference argument.
         return bodytype switch
         {
             Constants.BodyTypes.Star => typeof(Dictionary<string, Star>),
@@ -205,11 +234,12 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
             Constants.BodyTypes.Satellite => typeof(Dictionary<string, Satellite>),
             Constants.BodyTypes.Asteroid => typeof(Dictionary<string, Asteroid>),
             Constants.BodyTypes.Comet => typeof(Dictionary<string, Comet>),
-            _ => null
+            _ => Result.Error($"BaseStellarBody:GetTypeOfBody can not get Type {bodytype}")
         };
+#pragma warning restore CS8604 // Possible null reference argument.
     }
 
-    public virtual bool SetBody(string bodytype, object data)
+    public virtual Result SetBody(string bodytype, object data)
     {
 #pragma warning disable S125
         // Note this is some whacky syntax, not sure about realing using it since it's so obstuse
@@ -261,7 +291,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
     #endregion
 
     #region Protected Functions
-    protected virtual IDictionary<string, T>? GetDictionary<T>(bool create) where T : IStellarBody
+    protected virtual Result<IDictionary<string, T>> GetDictionary<T>(bool create) where T : IStellarBody
     {
         IDictionary<string, T>? dict = default;
         Type dt = typeof(T);
@@ -303,7 +333,7 @@ public class BaseStellarMap : IStellarMap, IEqualityComparer<BaseStellarMap>
             dict = Comets as IDictionary<string, T>;
         }
 
-        return dict;
+        return dict is not null ? Result.Ok() : Result.Error($"BaseStellarMap:GetDictionary can not get dictionary for {nameof(T)}");
     }
     #endregion
 

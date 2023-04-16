@@ -34,30 +34,31 @@ public sealed class GroupedProperties : IEquatable<GroupedProperties>
     #endregion
 
     #region Add Methods
-    public void Add(string group) => PropertyGroups.Add(group);
+    public Result Add(string group) => PropertyGroups.Add(group);
 
-    public void Add(string group, string property, string value) => 
+    public Result Add(string group, string property, string value) => 
         PropertyGroups.Add(group, property, value);
 
-    public void AddGroup(string group, IEnumerable<KeyValuePair<string, string>> properties) => 
+    public Result AddGroup(string group, IEnumerable<KeyValuePair<string, string>> properties) => 
         PropertyGroups.AddToOuter(group, properties);
 
-    public void AddProperties(string group, IEnumerable<KeyValuePair<string, string>> properties) => 
+    public Result AddProperties(string group, IEnumerable<KeyValuePair<string, string>> properties) => 
         PropertyGroups.AddToInner(group, properties);
     #endregion
 
     #region Remove Methods
-    public void Remove(string group) => PropertyGroups.Remove(group);
+    public Result Remove(string group) => PropertyGroups.Remove(group) ? 
+        Result.Ok() : Result.Error("GroupedProperties:Remove can not remove group from properties group");
 
-    public void Remove(string group, string property) => PropertyGroups.Remove(group, property);
+    public Result Remove(string group, string property) => PropertyGroups.Remove(group, property);
     #endregion
 
     #region Get and Set Methods
-    public IDictionary<string, string>? Get(string group) => PropertyGroups.Get(group);
+    public Result<IDictionary<string, string>> Get(string group) => PropertyGroups.Get(group);
 
-    public string? Get(string group, string property) => PropertyGroups.Get(group, property);
+    public Result<string> Get(string group, string property) => PropertyGroups.Get(group, property);
 
-    public void Set(string group, string property, string value) => PropertyGroups.Set(group, property, value);
+    public Result Set(string group, string property, string value) => PropertyGroups.Set(group, property, value);
     #endregion
 
     #region ToString

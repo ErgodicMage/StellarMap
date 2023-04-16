@@ -1,4 +1,6 @@
-﻿namespace StellarMap.Core.Bodies;
+﻿using System.Xml.Linq;
+
+namespace StellarMap.Core.Bodies;
 
 [DataContract (Name = Constants.BodyTypes.StellarBody)]
 public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
@@ -34,7 +36,7 @@ public abstract class StellarBody : IStellarBody, IEqualityComparer<StellarBody>
     public GroupedProperties Properties { get; set; }
 
     [IgnoreDataMember]
-    public IDictionary<string, string> BasicProperties { get => Properties.Get("Basic")!; }
+    public IDictionary<string, string> BasicProperties { get => Properties.Get("Basic").Value; }
 
     public IStellarMap Map { get; set; }
     #endregion
@@ -108,61 +110,66 @@ public abstract class StellarParentBody : StellarBody, IStellarParentBody
     #endregion
 
     #region Get Methods
-    public virtual T? Get<T>(string? name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
+    public virtual Result<T> Get<T>(string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
     {
-        if (string.IsNullOrWhiteSpace(name)) return default;
-
-        T? t = default;
+        Result guardResult = GuardClause.NullOrWhiteSpace(name).Null(groupIdentifiers).NullOrWhiteSpace(groupName);
+        if (!guardResult.Success) return guardResult;
 
         if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers) && 
                 identifiers.TryGetValue(name, out string? id))
-            t = Map.Get<T>(id);
+            return Map.Get<T>(id);
 
-        return t;
-
+        return Result<T>.Error($"StellarParentBody:Get could not get {name} from {groupName}");
     }
 
-    public virtual IDictionary<string, T>? GetAll<T>(GroupNamedIdentifiers? groupIdentifiers, string groupName) where T : IStellarBody
+    public virtual Result<IDictionary<string, T>> GetAll<T>(GroupNamedIdentifiers? groupIdentifiers, string groupName) where T : IStellarBody
     {
-        if (groupIdentifiers is null) return default;
+        Result guardResult = GuardClause.Null(groupIdentifiers).NullOrWhiteSpace(groupName);
+        if (!guardResult.Success) return guardResult;
 
-        IDictionary<string, T>? all = default;
+        if (!groupIdentifiers!.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers))
+            return Result.Error($"StellarParentBody:GetAll could not get identifiers for {groupName}");
 
-        if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers))
+        IDictionary<string, T> all = new Dictionary<string, T>();
+
+        foreach (var kvp in identifiers)
         {
-            all = new Dictionary<string, T>();
-
-            foreach (var kvp in identifiers)
-            {
-                T? t = Map.Get<T>(kvp.Value);
-                if (t is not null)
-                    all.Add(kvp.Key, t);
-            }
+            T? t = Map.Get<T>(kvp.Value);
+            if (t is not null)
+                all.Add(kvp.Key, t);
         }
 
-        return all;
+        return Result<IDictionary<string, T>>.Ok(all);
     }
     #endregion
 
     #region Add Methods
-    public virtual void Add<T>(T t, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
+    public virtual Result Add<T>(T t, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody
     {
-        if (t is not null)
+        Result guardResult = GuardClause.Null(t).NullOrEmpty(t.Name).Null(groupIdentifiers).NullOrWhiteSpace(groupName);
+        if (!guardResult.Success) return guardResult;
+
+        t.ParentIdentifier = this.Identifier;
+
+        T? found = Map.Get<T>(t.Identifier);
+        if (found is null)
+            Map.Add<T>(t);
+
+        if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers) && !identifiers.ContainsKey(t.Name))
         {
-            t.ParentIdentifier = this.Identifier;
-
-            T? found = Map.Get<T>(t.Identifier);
-            if (found is null)
-                Map.Add<T>(t);
-
-            if (groupIdentifiers.GroupIdentifiers.TryGetValue(groupName, out Dictionary<string, string>? identifiers))
-                identifiers.Add(t.Name, t.Identifier!);
-            else
-            {
-                groupIdentifiers.Add(groupName);
-                groupIdentifiers.GroupIdentifiers[groupName].Add(t.Name, t.Identifier!);
-            }
+            identifiers.Add(t.Name, t.Identifier!);
+            return Result.Ok();
         }
+
+        Result result = groupIdentifiers.Add(groupName);
+        if (result.Success)
+        {
+            if (groupIdentifiers.GroupIdentifiers.ContainsKey(t.Name))
+                result = Result.Error($"StellarBody:Add duplicate name {t.Name} in {groupName}");
+            else
+                groupIdentifiers.GroupIdentifiers[groupName].Add(t.Name, t.Identifier!);
+        }
+        return result;
     }
     #endregion
 }

@@ -26,31 +26,30 @@ public sealed class GroupNamedIdentifiers : IEquatable<GroupNamedIdentifiers>, I
     #endregion
 
     #region Add Methods
-    public void Add(string group) => GroupIdentifiers.Add(group);
+    public Result Add(string group) => GroupIdentifiers.Add(group);
 
-    public void Add(string group, string name, string identifier) => 
-        GroupIdentifiers.Add(group, name, identifier);
+    public Result Add(string group, string name, string identifier) => GroupIdentifiers.Add(group, name, identifier);
 
-    public void AddGroup(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => 
+    public Result AddGroup(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => 
         GroupIdentifiers.AddToOuter(group, namedidentifiers);
 
-    public void AddProperties(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => 
+    public Result AddProperties(string group, IEnumerable<KeyValuePair<string, string>> namedidentifiers) => 
         GroupIdentifiers.AddToInner(group, namedidentifiers);
     #endregion
 
     #region Remove Methods
-    public void Remove(string group) => GroupIdentifiers.Remove(group);
+    public Result Remove(string group) => GroupIdentifiers.Remove(group) ?
+        Result.Ok() : Result.Error("GroupIdentifiers:Remove can not remove group from properties group");
 
-    public void Remove(string group, string name) => GroupIdentifiers.Remove(group, name);
+    public Result Remove(string group, string name) => GroupIdentifiers.Remove(group, name);
     #endregion
 
     #region Get and Set Methods
-    public IDictionary<string, string>? Get(string group) => GroupIdentifiers.Get(group);
+    public Result<IDictionary<string, string>> Get(string group) => GroupIdentifiers.Get(group);
 
-    public string? Get(string group, string name) => GroupIdentifiers.Get(group, name);
+    public Result<string> Get(string group, string name) => GroupIdentifiers.Get(group, name);
 
-    public void Set(string group, string name, string identifier) => 
-        GroupIdentifiers.Set(group, name, identifier);
+    public Result Set(string group, string name, string identifier) => GroupIdentifiers.Set(group, name, identifier);
     #endregion
 
     #region ToString

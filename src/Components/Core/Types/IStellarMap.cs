@@ -20,25 +20,25 @@ public interface IStellarMap
     IDictionary<string, Comet>? Comets { get; set; }
 
     // Get Methods
-    T? Get<T>(string? id) where T : IStellarBody;
+    Result<T> Get<T>(string? id) where T : IStellarBody;
 
-    void Get<T>(ICollection<string>? identifiers, IDictionary<string, T> output) where T : IStellarBody;
+    Result Get<T>(ICollection<string>? identifiers, IDictionary<string, T> output) where T : IStellarBody;
 
     // Add Methods
-    void Add<T>(T t) where T : IStellarBody;
+    Result Add<T>(T t) where T : IStellarBody;
 
-    void Add<T>(ICollection<T> ts) where T : IStellarBody;
+    Result Add<T>(ICollection<T> ts) where T : IStellarBody;
 
     string GenerateIdentifier<T>() where T : IStellarBody;
 
     IList<string> GetBodyTypes();
 
-    object? GetBody(string bodytype);
+    Result<object> GetBody(string bodytype);
 
-    Type? GetTypeOfBody(string bodytype);
+    Result<Type> GetTypeOfBody(string bodytype);
 
-    bool SetBody(string bodytype, object data);
+    Result SetBody(string bodytype, object data);
 
-    void SetMap() => MapSetter.SetMap(this, this);
+    Result SetMap() => MapSetter.SetMap(this, this);
 
 }

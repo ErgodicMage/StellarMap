@@ -20,19 +20,19 @@ public class Planet : StellarParentBody, IEqualityComparer<Planet>
 
     [IgnoreDataMember]
     public IDictionary<string, string>? Satellites 
-        { get => PlanetGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Satellites); }
+        { get => PlanetGroupIdentifiers.GroupIdentifiers.Get(Constants.NamedIdentifiers.Satellites).Value; }
     #endregion
 
     #region Get Functions
-    public virtual Satellite? GetSatellite(string name) => 
+    public virtual Result<Satellite> GetSatellite(string name) => 
         Get<Satellite>(name, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
 
-    public virtual IDictionary<string, Satellite>? GetSatellites() => 
+    public virtual Result<IDictionary<string, Satellite>> GetSatellites() => 
         GetAll<Satellite>(PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
     #endregion
 
     #region Public Add Functions
-    public void Add(Satellite satellite) => 
+    public Result Add(Satellite satellite) => 
         Add<Satellite>(satellite, PlanetGroupIdentifiers, Constants.NamedIdentifiers.Satellites);
     #endregion
 

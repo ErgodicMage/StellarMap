@@ -11,10 +11,10 @@ namespace StellarMap.Core.Bodies
 {
     public static class MapSetter
     {
-        public static void SetMap(IStellarMap thisMap, IStellarMap otherMap)
+        public static Result SetMap(IStellarMap thisMap, IStellarMap otherMap)
         {
-            if (thisMap == null || otherMap == null)
-                return;
+            Result guardResult = GuardClause.Null(thisMap).Null(otherMap);
+            if (!guardResult.Success) return guardResult;
 
             foreach (var propInfo in thisMap.GetType().GetProperties())
             {
@@ -44,8 +44,9 @@ namespace StellarMap.Core.Bodies
                             break;
                     }
                 }
-
             }
+
+            return Result.Ok();
         }
 
         public static void HandleDictionary(object obj, Type type, IStellarMap otherMap)
@@ -75,17 +76,17 @@ namespace StellarMap.Core.Bodies
         {
             string property = position == 0 ? "Keys" : "Values";
 
-            Type iDictType = obj.GetType().GetInterface("IDictionary`2");
+            Type iDictType = obj.GetType().GetInterface("IDictionary`2")!;
 
             IEnumerable enumerator = (IEnumerable)iDictType.GetProperty(property).GetValue(obj, null);
-            foreach (object o in enumerator)
+            foreach (object o in enumerator!)
             {
                 if (o is StellarBody body)
                     body.Map = otherMap;
             }
 
             enumerator = (IEnumerable)iDictType.GetProperty(property).GetValue(obj, null);
-            foreach (object o in enumerator)
+            foreach (object o in enumerator!)
             {
                 if (o is StellarBody body)
                     body.Map = otherMap;

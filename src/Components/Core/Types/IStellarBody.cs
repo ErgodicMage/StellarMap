@@ -13,9 +13,9 @@ public interface IStellarBody
 
 public interface IStellarParentBody : IStellarBody
 {
-    T? Get<T> (string? name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody;
+    Result<T> Get<T> (string name, GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody;
 
-    IDictionary<string, T>? GetAll<T>(GroupNamedIdentifiers? groupIdentifiers, string groupName) where T : IStellarBody;
+    Result<IDictionary<string, T>> GetAll<T>(GroupNamedIdentifiers groupIdentifiers, string groupName) where T : IStellarBody;
 
-    void Add<T>(T t, GroupNamedIdentifiers groupIdentifiers, string groupName)  where T : IStellarBody;
+    Result Add<T>(T t, GroupNamedIdentifiers groupIdentifiers, string groupName)  where T : IStellarBody;
 }
