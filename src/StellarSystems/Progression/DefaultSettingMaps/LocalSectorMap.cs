@@ -1326,18 +1326,18 @@ public class LocalSectorMap
         local.Add(CreateCygniCluster());
         local.Add(CreateAltairCluster());
 
-        ERBridge? bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Sirius", "Wolf's Den");
-        local.Add(bridge);
+        var bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Sirius", "Wolf's Den");
+        if (bridge.Success) local.Add(bridge);
         bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Lalande", "Kruger");
-        local.Add(bridge);
+        if (bridge.Success) local.Add(bridge);
         bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Van Maanen", "Lacaille");
-        local.Add(bridge);
+        if (bridge.Success) local.Add(bridge);
         bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Tau Ceti", "Cygni");
-        local.Add(bridge);
+        if (bridge.Success) local.Add(bridge);
         bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Rudra", "Altair");
-        local.Add(bridge);
+        if (bridge.Success) local.Add(bridge);
         bridge = ERBridgeHelper.CreateClusterBridge(Map, local, "Little Ophiuchi", "Altair");
-        local.Add(bridge);
+        if (bridge.Success) local.Add(bridge);
 
         return local;
     }

@@ -7,6 +7,7 @@ Bridge: Procyon-Ceti:14.48767300433627
 Bridge: Procyon-Lalande:9.441850112539056
 Bridge: Lalande-Epsilon Eridani:15.757434783457654
 Bridge: Ross-Ophiuchi:19.57523330020201
+Bridge: Ross-Ceti:18.66839747601094
 Bridge: Ophiuchi-Little Ophiuchi:6.324541038553758
 Bridge: Ophiuchi-Wolf:11.614344914906587
 Bridge: Little Ophiuchi-Wolf:10.856878376389512

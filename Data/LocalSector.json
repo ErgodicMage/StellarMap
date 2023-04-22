@@ -1917,7 +1917,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00001",
+          "StarSystemIdentifier": "StarSystem-00001",
           "ERBridgeIdentifier": "ERBridge-00001",
           "Position": {
             "x": 0.0,
@@ -1926,7 +1926,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00002",
+          "StarSystemIdentifier": "StarSystem-00002",
           "ERBridgeIdentifier": "ERBridge-00001",
           "Position": {
             "x": 0.0,
@@ -1951,7 +1951,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00001",
+          "StarSystemIdentifier": "StarSystem-00001",
           "ERBridgeIdentifier": "ERBridge-00002",
           "Position": {
             "x": 0.0,
@@ -1960,7 +1960,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00003",
+          "StarSystemIdentifier": "StarSystem-00003",
           "ERBridgeIdentifier": "ERBridge-00002",
           "Position": {
             "x": 0.0,
@@ -1985,7 +1985,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00001",
+          "StarSystemIdentifier": "StarSystem-00001",
           "ERBridgeIdentifier": "ERBridge-00003",
           "Position": {
             "x": 0.0,
@@ -1994,7 +1994,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00004",
+          "StarSystemIdentifier": "StarSystem-00004",
           "ERBridgeIdentifier": "ERBridge-00003",
           "Position": {
             "x": 0.0,
@@ -2019,7 +2019,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00002",
+          "StarSystemIdentifier": "StarSystem-00002",
           "ERBridgeIdentifier": "ERBridge-00004",
           "Position": {
             "x": 0.0,
@@ -2028,7 +2028,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00007",
+          "StarSystemIdentifier": "StarSystem-00007",
           "ERBridgeIdentifier": "ERBridge-00004",
           "Position": {
             "x": 0.0,
@@ -2053,7 +2053,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00002",
+          "StarSystemIdentifier": "StarSystem-00002",
           "ERBridgeIdentifier": "ERBridge-00005",
           "Position": {
             "x": 0.0,
@@ -2062,7 +2062,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00005",
+          "StarSystemIdentifier": "StarSystem-00005",
           "ERBridgeIdentifier": "ERBridge-00005",
           "Position": {
             "x": 0.0,
@@ -2087,7 +2087,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00004",
+          "StarSystemIdentifier": "StarSystem-00004",
           "ERBridgeIdentifier": "ERBridge-00006",
           "Position": {
             "x": 0.0,
@@ -2096,7 +2096,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00006",
+          "StarSystemIdentifier": "StarSystem-00006",
           "ERBridgeIdentifier": "ERBridge-00006",
           "Position": {
             "x": 0.0,
@@ -2121,7 +2121,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00004",
+          "StarSystemIdentifier": "StarSystem-00004",
           "ERBridgeIdentifier": "ERBridge-00007",
           "Position": {
             "x": 0.0,
@@ -2130,7 +2130,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00009",
+          "StarSystemIdentifier": "StarSystem-00009",
           "ERBridgeIdentifier": "ERBridge-00007",
           "Position": {
             "x": 0.0,
@@ -2155,7 +2155,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00009",
+          "StarSystemIdentifier": "StarSystem-00009",
           "ERBridgeIdentifier": "ERBridge-00008",
           "Position": {
             "x": 0.0,
@@ -2164,7 +2164,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00003",
+          "StarSystemIdentifier": "StarSystem-00003",
           "ERBridgeIdentifier": "ERBridge-00008",
           "Position": {
             "x": 0.0,
@@ -2189,7 +2189,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00005",
+          "StarSystemIdentifier": "StarSystem-00005",
           "ERBridgeIdentifier": "ERBridge-00009",
           "Position": {
             "x": 0.0,
@@ -2198,7 +2198,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00010",
+          "StarSystemIdentifier": "StarSystem-00010",
           "ERBridgeIdentifier": "ERBridge-00009",
           "Position": {
             "x": 0.0,
@@ -2210,6 +2210,40 @@
     },
     "ERBridge-00010": {
       "Identifier": "ERBridge-00010",
+      "ParentIdentifier": "Cluster-00001",
+      "Name": "Bridge: Ross-Ceti",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {
+            "Distance": "5.723635208501674"
+          }
+        }
+      },
+      "BridgeType": "StarSystem",
+      "Portals": [
+        {
+          "StarSystemIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00010",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00006",
+          "ERBridgeIdentifier": "ERBridge-00010",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00011": {
+      "Identifier": "ERBridge-00011",
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Ophiuchi-Little Ophiuchi",
       "BodyType": "ERBridge",
@@ -2223,8 +2257,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00010",
-          "ERBridgeIdentifier": "ERBridge-00010",
+          "StarSystemIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00011",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2232,8 +2266,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00011",
-          "ERBridgeIdentifier": "ERBridge-00010",
+          "StarSystemIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00011",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2242,8 +2276,8 @@
         }
       ]
     },
-    "ERBridge-00011": {
-      "Identifier": "ERBridge-00011",
+    "ERBridge-00012": {
+      "Identifier": "ERBridge-00012",
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Ophiuchi-Wolf",
       "BodyType": "ERBridge",
@@ -2257,8 +2291,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00010",
-          "ERBridgeIdentifier": "ERBridge-00011",
+          "StarSystemIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00012",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2266,8 +2300,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00012",
-          "ERBridgeIdentifier": "ERBridge-00011",
+          "StarSystemIdentifier": "StarSystem-00012",
+          "ERBridgeIdentifier": "ERBridge-00012",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2276,8 +2310,8 @@
         }
       ]
     },
-    "ERBridge-00012": {
-      "Identifier": "ERBridge-00012",
+    "ERBridge-00013": {
+      "Identifier": "ERBridge-00013",
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Little Ophiuchi-Wolf",
       "BodyType": "ERBridge",
@@ -2291,8 +2325,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00011",
-          "ERBridgeIdentifier": "ERBridge-00012",
+          "StarSystemIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00013",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2300,8 +2334,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00012",
-          "ERBridgeIdentifier": "ERBridge-00012",
+          "StarSystemIdentifier": "StarSystem-00012",
+          "ERBridgeIdentifier": "ERBridge-00013",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2310,8 +2344,8 @@
         }
       ]
     },
-    "ERBridge-00013": {
-      "Identifier": "ERBridge-00013",
+    "ERBridge-00014": {
+      "Identifier": "ERBridge-00014",
       "ParentIdentifier": "Cluster-00001",
       "Name": "Bridge: Sirius-Luyten",
       "BodyType": "ERBridge",
@@ -2325,8 +2359,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00007",
-          "ERBridgeIdentifier": "ERBridge-00013",
+          "StarSystemIdentifier": "StarSystem-00007",
+          "ERBridgeIdentifier": "ERBridge-00014",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2334,8 +2368,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00008",
-          "ERBridgeIdentifier": "ERBridge-00013",
+          "StarSystemIdentifier": "StarSystem-00008",
+          "ERBridgeIdentifier": "ERBridge-00014",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2344,8 +2378,8 @@
         }
       ]
     },
-    "ERBridge-00014": {
-      "Identifier": "ERBridge-00014",
+    "ERBridge-00015": {
+      "Identifier": "ERBridge-00015",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Kruger-Centauri",
       "BodyType": "ERBridge",
@@ -2359,8 +2393,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00016",
-          "ERBridgeIdentifier": "ERBridge-00014",
+          "StarSystemIdentifier": "StarSystem-00016",
+          "ERBridgeIdentifier": "ERBridge-00015",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2368,8 +2402,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00013",
-          "ERBridgeIdentifier": "ERBridge-00014",
+          "StarSystemIdentifier": "StarSystem-00013",
+          "ERBridgeIdentifier": "ERBridge-00015",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2378,8 +2412,8 @@
         }
       ]
     },
-    "ERBridge-00015": {
-      "Identifier": "ERBridge-00015",
+    "ERBridge-00016": {
+      "Identifier": "ERBridge-00016",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Kruger-Lacaille",
       "BodyType": "ERBridge",
@@ -2393,8 +2427,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00016",
-          "ERBridgeIdentifier": "ERBridge-00015",
+          "StarSystemIdentifier": "StarSystem-00016",
+          "ERBridgeIdentifier": "ERBridge-00016",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2402,8 +2436,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00017",
-          "ERBridgeIdentifier": "ERBridge-00015",
+          "StarSystemIdentifier": "StarSystem-00017",
+          "ERBridgeIdentifier": "ERBridge-00016",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2412,8 +2446,8 @@
         }
       ]
     },
-    "ERBridge-00016": {
-      "Identifier": "ERBridge-00016",
+    "ERBridge-00017": {
+      "Identifier": "ERBridge-00017",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Centauri-Lacaille",
       "BodyType": "ERBridge",
@@ -2427,8 +2461,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00013",
-          "ERBridgeIdentifier": "ERBridge-00016",
+          "StarSystemIdentifier": "StarSystem-00013",
+          "ERBridgeIdentifier": "ERBridge-00017",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2436,8 +2470,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00017",
-          "ERBridgeIdentifier": "ERBridge-00016",
+          "StarSystemIdentifier": "StarSystem-00017",
+          "ERBridgeIdentifier": "ERBridge-00017",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2446,8 +2480,8 @@
         }
       ]
     },
-    "ERBridge-00017": {
-      "Identifier": "ERBridge-00017",
+    "ERBridge-00018": {
+      "Identifier": "ERBridge-00018",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Lacaille-Tau Ceti",
       "BodyType": "ERBridge",
@@ -2461,8 +2495,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00017",
-          "ERBridgeIdentifier": "ERBridge-00017",
+          "StarSystemIdentifier": "StarSystem-00017",
+          "ERBridgeIdentifier": "ERBridge-00018",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2470,8 +2504,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00014",
-          "ERBridgeIdentifier": "ERBridge-00017",
+          "StarSystemIdentifier": "StarSystem-00014",
+          "ERBridgeIdentifier": "ERBridge-00018",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2480,8 +2514,8 @@
         }
       ]
     },
-    "ERBridge-00018": {
-      "Identifier": "ERBridge-00018",
+    "ERBridge-00019": {
+      "Identifier": "ERBridge-00019",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Lacaille-Gleine",
       "BodyType": "ERBridge",
@@ -2495,8 +2529,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00017",
-          "ERBridgeIdentifier": "ERBridge-00018",
+          "StarSystemIdentifier": "StarSystem-00017",
+          "ERBridgeIdentifier": "ERBridge-00019",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2504,8 +2538,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00018",
-          "ERBridgeIdentifier": "ERBridge-00018",
+          "StarSystemIdentifier": "StarSystem-00018",
+          "ERBridgeIdentifier": "ERBridge-00019",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2514,8 +2548,8 @@
         }
       ]
     },
-    "ERBridge-00019": {
-      "Identifier": "ERBridge-00019",
+    "ERBridge-00020": {
+      "Identifier": "ERBridge-00020",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Gleine-Kapteyn",
       "BodyType": "ERBridge",
@@ -2529,8 +2563,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00018",
-          "ERBridgeIdentifier": "ERBridge-00019",
+          "StarSystemIdentifier": "StarSystem-00018",
+          "ERBridgeIdentifier": "ERBridge-00020",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2538,8 +2572,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00019",
-          "ERBridgeIdentifier": "ERBridge-00019",
+          "StarSystemIdentifier": "StarSystem-00019",
+          "ERBridgeIdentifier": "ERBridge-00020",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2548,8 +2582,8 @@
         }
       ]
     },
-    "ERBridge-00020": {
-      "Identifier": "ERBridge-00020",
+    "ERBridge-00021": {
+      "Identifier": "ERBridge-00021",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Kruger-Vista",
       "BodyType": "ERBridge",
@@ -2563,8 +2597,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00016",
-          "ERBridgeIdentifier": "ERBridge-00020",
+          "StarSystemIdentifier": "StarSystem-00016",
+          "ERBridgeIdentifier": "ERBridge-00021",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2572,8 +2606,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00020",
-          "ERBridgeIdentifier": "ERBridge-00020",
+          "StarSystemIdentifier": "StarSystem-00020",
+          "ERBridgeIdentifier": "ERBridge-00021",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2582,8 +2616,8 @@
         }
       ]
     },
-    "ERBridge-00021": {
-      "Identifier": "ERBridge-00021",
+    "ERBridge-00022": {
+      "Identifier": "ERBridge-00022",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Vista-Bihar",
       "BodyType": "ERBridge",
@@ -2597,8 +2631,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00020",
-          "ERBridgeIdentifier": "ERBridge-00021",
+          "StarSystemIdentifier": "StarSystem-00020",
+          "ERBridgeIdentifier": "ERBridge-00022",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2606,8 +2640,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00021",
-          "ERBridgeIdentifier": "ERBridge-00021",
+          "StarSystemIdentifier": "StarSystem-00021",
+          "ERBridgeIdentifier": "ERBridge-00022",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2616,8 +2650,8 @@
         }
       ]
     },
-    "ERBridge-00022": {
-      "Identifier": "ERBridge-00022",
+    "ERBridge-00023": {
+      "Identifier": "ERBridge-00023",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Gleine-Inne",
       "BodyType": "ERBridge",
@@ -2631,8 +2665,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00018",
-          "ERBridgeIdentifier": "ERBridge-00022",
+          "StarSystemIdentifier": "StarSystem-00018",
+          "ERBridgeIdentifier": "ERBridge-00023",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2640,8 +2674,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00022",
-          "ERBridgeIdentifier": "ERBridge-00022",
+          "StarSystemIdentifier": "StarSystem-00022",
+          "ERBridgeIdentifier": "ERBridge-00023",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2650,8 +2684,8 @@
         }
       ]
     },
-    "ERBridge-00023": {
-      "Identifier": "ERBridge-00023",
+    "ERBridge-00024": {
+      "Identifier": "ERBridge-00024",
       "ParentIdentifier": "Cluster-00002",
       "Name": "Bridge: Groombridge-Bihar",
       "BodyType": "ERBridge",
@@ -2665,8 +2699,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00015",
-          "ERBridgeIdentifier": "ERBridge-00023",
+          "StarSystemIdentifier": "StarSystem-00015",
+          "ERBridgeIdentifier": "ERBridge-00024",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2674,8 +2708,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00021",
-          "ERBridgeIdentifier": "ERBridge-00023",
+          "StarSystemIdentifier": "StarSystem-00021",
+          "ERBridgeIdentifier": "ERBridge-00024",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2684,8 +2718,8 @@
         }
       ]
     },
-    "ERBridge-00024": {
-      "Identifier": "ERBridge-00024",
+    "ERBridge-00025": {
+      "Identifier": "ERBridge-00025",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Wolf's Den-Siera",
       "BodyType": "ERBridge",
@@ -2699,8 +2733,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00023",
-          "ERBridgeIdentifier": "ERBridge-00024",
+          "StarSystemIdentifier": "StarSystem-00023",
+          "ERBridgeIdentifier": "ERBridge-00025",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2708,8 +2742,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00026",
-          "ERBridgeIdentifier": "ERBridge-00024",
+          "StarSystemIdentifier": "StarSystem-00026",
+          "ERBridgeIdentifier": "ERBridge-00025",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2718,8 +2752,8 @@
         }
       ]
     },
-    "ERBridge-00025": {
-      "Identifier": "ERBridge-00025",
+    "ERBridge-00026": {
+      "Identifier": "ERBridge-00026",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Siera-Leonis",
       "BodyType": "ERBridge",
@@ -2733,8 +2767,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00026",
-          "ERBridgeIdentifier": "ERBridge-00025",
+          "StarSystemIdentifier": "StarSystem-00026",
+          "ERBridgeIdentifier": "ERBridge-00026",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2742,8 +2776,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00030",
-          "ERBridgeIdentifier": "ERBridge-00025",
+          "StarSystemIdentifier": "StarSystem-00030",
+          "ERBridgeIdentifier": "ERBridge-00026",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2752,8 +2786,8 @@
         }
       ]
     },
-    "ERBridge-00026": {
-      "Identifier": "ERBridge-00026",
+    "ERBridge-00027": {
+      "Identifier": "ERBridge-00027",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Leonis-Ophir",
       "BodyType": "ERBridge",
@@ -2767,8 +2801,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00030",
-          "ERBridgeIdentifier": "ERBridge-00026",
+          "StarSystemIdentifier": "StarSystem-00030",
+          "ERBridgeIdentifier": "ERBridge-00027",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2776,8 +2810,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00031",
-          "ERBridgeIdentifier": "ERBridge-00026",
+          "StarSystemIdentifier": "StarSystem-00031",
+          "ERBridgeIdentifier": "ERBridge-00027",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2786,8 +2820,8 @@
         }
       ]
     },
-    "ERBridge-00027": {
-      "Identifier": "ERBridge-00027",
+    "ERBridge-00028": {
+      "Identifier": "ERBridge-00028",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Leonis-TeeGarden",
       "BodyType": "ERBridge",
@@ -2801,8 +2835,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00030",
-          "ERBridgeIdentifier": "ERBridge-00027",
+          "StarSystemIdentifier": "StarSystem-00030",
+          "ERBridgeIdentifier": "ERBridge-00028",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2810,8 +2844,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00034",
-          "ERBridgeIdentifier": "ERBridge-00027",
+          "StarSystemIdentifier": "StarSystem-00034",
+          "ERBridgeIdentifier": "ERBridge-00028",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2820,8 +2854,8 @@
         }
       ]
     },
-    "ERBridge-00028": {
-      "Identifier": "ERBridge-00028",
+    "ERBridge-00029": {
+      "Identifier": "ERBridge-00029",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: TeeGarden-Van Maanen",
       "BodyType": "ERBridge",
@@ -2835,8 +2869,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00034",
-          "ERBridgeIdentifier": "ERBridge-00028",
+          "StarSystemIdentifier": "StarSystem-00034",
+          "ERBridgeIdentifier": "ERBridge-00029",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2844,8 +2878,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00035",
-          "ERBridgeIdentifier": "ERBridge-00028",
+          "StarSystemIdentifier": "StarSystem-00035",
+          "ERBridgeIdentifier": "ERBridge-00029",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2854,8 +2888,8 @@
         }
       ]
     },
-    "ERBridge-00029": {
-      "Identifier": "ERBridge-00029",
+    "ERBridge-00030": {
+      "Identifier": "ERBridge-00030",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: TeeGarden-Cancri",
       "BodyType": "ERBridge",
@@ -2869,8 +2903,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00034",
-          "ERBridgeIdentifier": "ERBridge-00029",
+          "StarSystemIdentifier": "StarSystem-00034",
+          "ERBridgeIdentifier": "ERBridge-00030",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2878,8 +2912,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00032",
-          "ERBridgeIdentifier": "ERBridge-00029",
+          "StarSystemIdentifier": "StarSystem-00032",
+          "ERBridgeIdentifier": "ERBridge-00030",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2888,8 +2922,8 @@
         }
       ]
     },
-    "ERBridge-00030": {
-      "Identifier": "ERBridge-00030",
+    "ERBridge-00031": {
+      "Identifier": "ERBridge-00031",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Van Maanen-YZ Ceti",
       "BodyType": "ERBridge",
@@ -2903,8 +2937,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00035",
-          "ERBridgeIdentifier": "ERBridge-00030",
+          "StarSystemIdentifier": "StarSystem-00035",
+          "ERBridgeIdentifier": "ERBridge-00031",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2912,8 +2946,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00027",
-          "ERBridgeIdentifier": "ERBridge-00030",
+          "StarSystemIdentifier": "StarSystem-00027",
+          "ERBridgeIdentifier": "ERBridge-00031",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2922,8 +2956,8 @@
         }
       ]
     },
-    "ERBridge-00031": {
-      "Identifier": "ERBridge-00031",
+    "ERBridge-00032": {
+      "Identifier": "ERBridge-00032",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Van Maanen-Eureka",
       "BodyType": "ERBridge",
@@ -2937,8 +2971,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00035",
-          "ERBridgeIdentifier": "ERBridge-00031",
+          "StarSystemIdentifier": "StarSystem-00035",
+          "ERBridgeIdentifier": "ERBridge-00032",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2946,8 +2980,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00033",
-          "ERBridgeIdentifier": "ERBridge-00031",
+          "StarSystemIdentifier": "StarSystem-00033",
+          "ERBridgeIdentifier": "ERBridge-00032",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2956,8 +2990,8 @@
         }
       ]
     },
-    "ERBridge-00032": {
-      "Identifier": "ERBridge-00032",
+    "ERBridge-00033": {
+      "Identifier": "ERBridge-00033",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Cancri-Nuone",
       "BodyType": "ERBridge",
@@ -2971,8 +3005,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00032",
-          "ERBridgeIdentifier": "ERBridge-00032",
+          "StarSystemIdentifier": "StarSystem-00032",
+          "ERBridgeIdentifier": "ERBridge-00033",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2980,8 +3014,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00029",
-          "ERBridgeIdentifier": "ERBridge-00032",
+          "StarSystemIdentifier": "StarSystem-00029",
+          "ERBridgeIdentifier": "ERBridge-00033",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -2990,8 +3024,8 @@
         }
       ]
     },
-    "ERBridge-00033": {
-      "Identifier": "ERBridge-00033",
+    "ERBridge-00034": {
+      "Identifier": "ERBridge-00034",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: YZ Ceti-Andromeda",
       "BodyType": "ERBridge",
@@ -3005,8 +3039,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00027",
-          "ERBridgeIdentifier": "ERBridge-00033",
+          "StarSystemIdentifier": "StarSystem-00027",
+          "ERBridgeIdentifier": "ERBridge-00034",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3014,8 +3048,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00024",
-          "ERBridgeIdentifier": "ERBridge-00033",
+          "StarSystemIdentifier": "StarSystem-00024",
+          "ERBridgeIdentifier": "ERBridge-00034",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3024,8 +3058,8 @@
         }
       ]
     },
-    "ERBridge-00034": {
-      "Identifier": "ERBridge-00034",
+    "ERBridge-00035": {
+      "Identifier": "ERBridge-00035",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Andromeda-Kercur",
       "BodyType": "ERBridge",
@@ -3039,8 +3073,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00024",
-          "ERBridgeIdentifier": "ERBridge-00034",
+          "StarSystemIdentifier": "StarSystem-00024",
+          "ERBridgeIdentifier": "ERBridge-00035",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3048,8 +3082,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00028",
-          "ERBridgeIdentifier": "ERBridge-00034",
+          "StarSystemIdentifier": "StarSystem-00028",
+          "ERBridgeIdentifier": "ERBridge-00035",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3058,8 +3092,8 @@
         }
       ]
     },
-    "ERBridge-00035": {
-      "Identifier": "ERBridge-00035",
+    "ERBridge-00036": {
+      "Identifier": "ERBridge-00036",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Kercur-Nuone",
       "BodyType": "ERBridge",
@@ -3073,8 +3107,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00028",
-          "ERBridgeIdentifier": "ERBridge-00035",
+          "StarSystemIdentifier": "StarSystem-00028",
+          "ERBridgeIdentifier": "ERBridge-00036",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3082,8 +3116,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00029",
-          "ERBridgeIdentifier": "ERBridge-00035",
+          "StarSystemIdentifier": "StarSystem-00029",
+          "ERBridgeIdentifier": "ERBridge-00036",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3092,8 +3126,8 @@
         }
       ]
     },
-    "ERBridge-00036": {
-      "Identifier": "ERBridge-00036",
+    "ERBridge-00037": {
+      "Identifier": "ERBridge-00037",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Nuone-Sutter",
       "BodyType": "ERBridge",
@@ -3107,8 +3141,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00029",
-          "ERBridgeIdentifier": "ERBridge-00036",
+          "StarSystemIdentifier": "StarSystem-00029",
+          "ERBridgeIdentifier": "ERBridge-00037",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3116,8 +3150,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00025",
-          "ERBridgeIdentifier": "ERBridge-00036",
+          "StarSystemIdentifier": "StarSystem-00025",
+          "ERBridgeIdentifier": "ERBridge-00037",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3126,8 +3160,8 @@
         }
       ]
     },
-    "ERBridge-00037": {
-      "Identifier": "ERBridge-00037",
+    "ERBridge-00038": {
+      "Identifier": "ERBridge-00038",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Nuone-Eureka",
       "BodyType": "ERBridge",
@@ -3141,8 +3175,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00029",
-          "ERBridgeIdentifier": "ERBridge-00037",
+          "StarSystemIdentifier": "StarSystem-00029",
+          "ERBridgeIdentifier": "ERBridge-00038",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3150,8 +3184,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00033",
-          "ERBridgeIdentifier": "ERBridge-00037",
+          "StarSystemIdentifier": "StarSystem-00033",
+          "ERBridgeIdentifier": "ERBridge-00038",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3160,8 +3194,8 @@
         }
       ]
     },
-    "ERBridge-00038": {
-      "Identifier": "ERBridge-00038",
+    "ERBridge-00039": {
+      "Identifier": "ERBridge-00039",
       "ParentIdentifier": "Cluster-00003",
       "Name": "Bridge: Eureka-Knob",
       "BodyType": "ERBridge",
@@ -3175,8 +3209,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00033",
-          "ERBridgeIdentifier": "ERBridge-00038",
+          "StarSystemIdentifier": "StarSystem-00033",
+          "ERBridgeIdentifier": "ERBridge-00039",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3184,8 +3218,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00036",
-          "ERBridgeIdentifier": "ERBridge-00038",
+          "StarSystemIdentifier": "StarSystem-00036",
+          "ERBridgeIdentifier": "ERBridge-00039",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3194,8 +3228,8 @@
         }
       ]
     },
-    "ERBridge-00039": {
-      "Identifier": "ERBridge-00039",
+    "ERBridge-00040": {
+      "Identifier": "ERBridge-00040",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Cygni-Epsilon Indi",
       "BodyType": "ERBridge",
@@ -3209,8 +3243,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00037",
-          "ERBridgeIdentifier": "ERBridge-00039",
+          "StarSystemIdentifier": "StarSystem-00037",
+          "ERBridgeIdentifier": "ERBridge-00040",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3218,8 +3252,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00038",
-          "ERBridgeIdentifier": "ERBridge-00039",
+          "StarSystemIdentifier": "StarSystem-00038",
+          "ERBridgeIdentifier": "ERBridge-00040",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3228,8 +3262,8 @@
         }
       ]
     },
-    "ERBridge-00040": {
-      "Identifier": "ERBridge-00040",
+    "ERBridge-00041": {
+      "Identifier": "ERBridge-00041",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Cygni-Arietis",
       "BodyType": "ERBridge",
@@ -3243,8 +3277,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00037",
-          "ERBridgeIdentifier": "ERBridge-00040",
+          "StarSystemIdentifier": "StarSystem-00037",
+          "ERBridgeIdentifier": "ERBridge-00041",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3252,8 +3286,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00039",
-          "ERBridgeIdentifier": "ERBridge-00040",
+          "StarSystemIdentifier": "StarSystem-00039",
+          "ERBridgeIdentifier": "ERBridge-00041",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3262,8 +3296,8 @@
         }
       ]
     },
-    "ERBridge-00041": {
-      "Identifier": "ERBridge-00041",
+    "ERBridge-00042": {
+      "Identifier": "ERBridge-00042",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Epsilon Indi-Flare",
       "BodyType": "ERBridge",
@@ -3277,8 +3311,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00038",
-          "ERBridgeIdentifier": "ERBridge-00041",
+          "StarSystemIdentifier": "StarSystem-00038",
+          "ERBridgeIdentifier": "ERBridge-00042",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3286,8 +3320,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00040",
-          "ERBridgeIdentifier": "ERBridge-00041",
+          "StarSystemIdentifier": "StarSystem-00040",
+          "ERBridgeIdentifier": "ERBridge-00042",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3296,8 +3330,8 @@
         }
       ]
     },
-    "ERBridge-00042": {
-      "Identifier": "ERBridge-00042",
+    "ERBridge-00043": {
+      "Identifier": "ERBridge-00043",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Flare-Lapis",
       "BodyType": "ERBridge",
@@ -3311,8 +3345,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00040",
-          "ERBridgeIdentifier": "ERBridge-00042",
+          "StarSystemIdentifier": "StarSystem-00040",
+          "ERBridgeIdentifier": "ERBridge-00043",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3320,8 +3354,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00042",
-          "ERBridgeIdentifier": "ERBridge-00042",
+          "StarSystemIdentifier": "StarSystem-00042",
+          "ERBridgeIdentifier": "ERBridge-00043",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3330,8 +3364,8 @@
         }
       ]
     },
-    "ERBridge-00043": {
-      "Identifier": "ERBridge-00043",
+    "ERBridge-00044": {
+      "Identifier": "ERBridge-00044",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Arietis-Demic",
       "BodyType": "ERBridge",
@@ -3345,8 +3379,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00039",
-          "ERBridgeIdentifier": "ERBridge-00043",
+          "StarSystemIdentifier": "StarSystem-00039",
+          "ERBridgeIdentifier": "ERBridge-00044",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3354,8 +3388,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00041",
-          "ERBridgeIdentifier": "ERBridge-00043",
+          "StarSystemIdentifier": "StarSystem-00041",
+          "ERBridgeIdentifier": "ERBridge-00044",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3364,8 +3398,8 @@
         }
       ]
     },
-    "ERBridge-00044": {
-      "Identifier": "ERBridge-00044",
+    "ERBridge-00045": {
+      "Identifier": "ERBridge-00045",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Arietis-Lapis",
       "BodyType": "ERBridge",
@@ -3379,8 +3413,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00039",
-          "ERBridgeIdentifier": "ERBridge-00044",
+          "StarSystemIdentifier": "StarSystem-00039",
+          "ERBridgeIdentifier": "ERBridge-00045",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3388,8 +3422,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00042",
-          "ERBridgeIdentifier": "ERBridge-00044",
+          "StarSystemIdentifier": "StarSystem-00042",
+          "ERBridgeIdentifier": "ERBridge-00045",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3398,8 +3432,8 @@
         }
       ]
     },
-    "ERBridge-00045": {
-      "Identifier": "ERBridge-00045",
+    "ERBridge-00046": {
+      "Identifier": "ERBridge-00046",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Flare-Demic",
       "BodyType": "ERBridge",
@@ -3413,8 +3447,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00040",
-          "ERBridgeIdentifier": "ERBridge-00045",
+          "StarSystemIdentifier": "StarSystem-00040",
+          "ERBridgeIdentifier": "ERBridge-00046",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3422,8 +3456,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00041",
-          "ERBridgeIdentifier": "ERBridge-00045",
+          "StarSystemIdentifier": "StarSystem-00041",
+          "ERBridgeIdentifier": "ERBridge-00046",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3432,8 +3466,8 @@
         }
       ]
     },
-    "ERBridge-00046": {
-      "Identifier": "ERBridge-00046",
+    "ERBridge-00047": {
+      "Identifier": "ERBridge-00047",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Demic-Banawali",
       "BodyType": "ERBridge",
@@ -3447,8 +3481,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00041",
-          "ERBridgeIdentifier": "ERBridge-00046",
+          "StarSystemIdentifier": "StarSystem-00041",
+          "ERBridgeIdentifier": "ERBridge-00047",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3456,8 +3490,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00043",
-          "ERBridgeIdentifier": "ERBridge-00046",
+          "StarSystemIdentifier": "StarSystem-00043",
+          "ERBridgeIdentifier": "ERBridge-00047",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3466,8 +3500,8 @@
         }
       ]
     },
-    "ERBridge-00047": {
-      "Identifier": "ERBridge-00047",
+    "ERBridge-00048": {
+      "Identifier": "ERBridge-00048",
       "ParentIdentifier": "Cluster-00004",
       "Name": "Bridge: Demic-Rudra",
       "BodyType": "ERBridge",
@@ -3481,8 +3515,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00041",
-          "ERBridgeIdentifier": "ERBridge-00047",
+          "StarSystemIdentifier": "StarSystem-00041",
+          "ERBridgeIdentifier": "ERBridge-00048",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3490,8 +3524,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00044",
-          "ERBridgeIdentifier": "ERBridge-00047",
+          "StarSystemIdentifier": "StarSystem-00044",
+          "ERBridgeIdentifier": "ERBridge-00048",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3500,8 +3534,8 @@
         }
       ]
     },
-    "ERBridge-00048": {
-      "Identifier": "ERBridge-00048",
+    "ERBridge-00049": {
+      "Identifier": "ERBridge-00049",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Krell",
       "BodyType": "ERBridge",
@@ -3515,8 +3549,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00045",
-          "ERBridgeIdentifier": "ERBridge-00048",
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00049",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3524,8 +3558,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00046",
-          "ERBridgeIdentifier": "ERBridge-00048",
+          "StarSystemIdentifier": "StarSystem-00046",
+          "ERBridgeIdentifier": "ERBridge-00049",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3534,8 +3568,8 @@
         }
       ]
     },
-    "ERBridge-00049": {
-      "Identifier": "ERBridge-00049",
+    "ERBridge-00050": {
+      "Identifier": "ERBridge-00050",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Mobius",
       "BodyType": "ERBridge",
@@ -3549,8 +3583,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00045",
-          "ERBridgeIdentifier": "ERBridge-00049",
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00050",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3558,8 +3592,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00047",
-          "ERBridgeIdentifier": "ERBridge-00049",
+          "StarSystemIdentifier": "StarSystem-00047",
+          "ERBridgeIdentifier": "ERBridge-00050",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3568,8 +3602,8 @@
         }
       ]
     },
-    "ERBridge-00050": {
-      "Identifier": "ERBridge-00050",
+    "ERBridge-00051": {
+      "Identifier": "ERBridge-00051",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Bellerophon",
       "BodyType": "ERBridge",
@@ -3583,8 +3617,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00045",
-          "ERBridgeIdentifier": "ERBridge-00050",
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00051",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3592,8 +3626,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00048",
-          "ERBridgeIdentifier": "ERBridge-00050",
+          "StarSystemIdentifier": "StarSystem-00048",
+          "ERBridgeIdentifier": "ERBridge-00051",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3602,8 +3636,8 @@
         }
       ]
     },
-    "ERBridge-00051": {
-      "Identifier": "ERBridge-00051",
+    "ERBridge-00052": {
+      "Identifier": "ERBridge-00052",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Altair-Adams",
       "BodyType": "ERBridge",
@@ -3617,8 +3651,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00045",
-          "ERBridgeIdentifier": "ERBridge-00051",
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00052",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3626,8 +3660,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00050",
-          "ERBridgeIdentifier": "ERBridge-00051",
+          "StarSystemIdentifier": "StarSystem-00050",
+          "ERBridgeIdentifier": "ERBridge-00052",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3636,8 +3670,8 @@
         }
       ]
     },
-    "ERBridge-00052": {
-      "Identifier": "ERBridge-00052",
+    "ERBridge-00053": {
+      "Identifier": "ERBridge-00053",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Krell-Id",
       "BodyType": "ERBridge",
@@ -3651,8 +3685,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00046",
-          "ERBridgeIdentifier": "ERBridge-00052",
+          "StarSystemIdentifier": "StarSystem-00046",
+          "ERBridgeIdentifier": "ERBridge-00053",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3660,8 +3694,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00049",
-          "ERBridgeIdentifier": "ERBridge-00052",
+          "StarSystemIdentifier": "StarSystem-00049",
+          "ERBridgeIdentifier": "ERBridge-00053",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3670,8 +3704,8 @@
         }
       ]
     },
-    "ERBridge-00053": {
-      "Identifier": "ERBridge-00053",
+    "ERBridge-00054": {
+      "Identifier": "ERBridge-00054",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Krell-Omicron",
       "BodyType": "ERBridge",
@@ -3685,8 +3719,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00046",
-          "ERBridgeIdentifier": "ERBridge-00053",
+          "StarSystemIdentifier": "StarSystem-00046",
+          "ERBridgeIdentifier": "ERBridge-00054",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3694,8 +3728,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00052",
-          "ERBridgeIdentifier": "ERBridge-00053",
+          "StarSystemIdentifier": "StarSystem-00052",
+          "ERBridgeIdentifier": "ERBridge-00054",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3704,8 +3738,8 @@
         }
       ]
     },
-    "ERBridge-00054": {
-      "Identifier": "ERBridge-00054",
+    "ERBridge-00055": {
+      "Identifier": "ERBridge-00055",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Mobius-Bellerophon",
       "BodyType": "ERBridge",
@@ -3719,8 +3753,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00047",
-          "ERBridgeIdentifier": "ERBridge-00054",
+          "StarSystemIdentifier": "StarSystem-00047",
+          "ERBridgeIdentifier": "ERBridge-00055",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3728,8 +3762,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00048",
-          "ERBridgeIdentifier": "ERBridge-00054",
+          "StarSystemIdentifier": "StarSystem-00048",
+          "ERBridgeIdentifier": "ERBridge-00055",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3738,8 +3772,8 @@
         }
       ]
     },
-    "ERBridge-00055": {
-      "Identifier": "ERBridge-00055",
+    "ERBridge-00056": {
+      "Identifier": "ERBridge-00056",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Mobius-Id",
       "BodyType": "ERBridge",
@@ -3753,8 +3787,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00047",
-          "ERBridgeIdentifier": "ERBridge-00055",
+          "StarSystemIdentifier": "StarSystem-00047",
+          "ERBridgeIdentifier": "ERBridge-00056",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3762,8 +3796,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00049",
-          "ERBridgeIdentifier": "ERBridge-00055",
+          "StarSystemIdentifier": "StarSystem-00049",
+          "ERBridgeIdentifier": "ERBridge-00056",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3772,8 +3806,8 @@
         }
       ]
     },
-    "ERBridge-00056": {
-      "Identifier": "ERBridge-00056",
+    "ERBridge-00057": {
+      "Identifier": "ERBridge-00057",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Mobius-Adams",
       "BodyType": "ERBridge",
@@ -3787,8 +3821,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00047",
-          "ERBridgeIdentifier": "ERBridge-00056",
+          "StarSystemIdentifier": "StarSystem-00047",
+          "ERBridgeIdentifier": "ERBridge-00057",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3796,8 +3830,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00050",
-          "ERBridgeIdentifier": "ERBridge-00056",
+          "StarSystemIdentifier": "StarSystem-00050",
+          "ERBridgeIdentifier": "ERBridge-00057",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3806,8 +3840,8 @@
         }
       ]
     },
-    "ERBridge-00057": {
-      "Identifier": "ERBridge-00057",
+    "ERBridge-00058": {
+      "Identifier": "ERBridge-00058",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Bellerophon-Lacerta",
       "BodyType": "ERBridge",
@@ -3821,8 +3855,8 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00048",
-          "ERBridgeIdentifier": "ERBridge-00057",
+          "StarSystemIdentifier": "StarSystem-00048",
+          "ERBridgeIdentifier": "ERBridge-00058",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3830,8 +3864,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00051",
-          "ERBridgeIdentifier": "ERBridge-00057",
+          "StarSystemIdentifier": "StarSystem-00051",
+          "ERBridgeIdentifier": "ERBridge-00058",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -3840,8 +3874,8 @@
         }
       ]
     },
-    "ERBridge-00058": {
-      "Identifier": "ERBridge-00058",
+    "ERBridge-00059": {
+      "Identifier": "ERBridge-00059",
       "ParentIdentifier": "Cluster-00005",
       "Name": "Bridge: Lacerta-Gateway",
       "BodyType": "ERBridge",
@@ -3855,39 +3889,7 @@
       "BridgeType": "StarSystem",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00051",
-          "ERBridgeIdentifier": "ERBridge-00058",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00053",
-          "ERBridgeIdentifier": "ERBridge-00058",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        }
-      ]
-    },
-    "ERBridge-00059": {
-      "Identifier": "ERBridge-00059",
-      "ParentIdentifier": "Sector-00001",
-      "Name": "Bridge: Sirius-Wolf's Den",
-      "BodyType": "ERBridge",
-      "Properties": {
-        "PropertyGroups": {
-          "Basic": {}
-        }
-      },
-      "BridgeType": "Cluster",
-      "Portals": [
-        {
-          "StarIdentifier": "StarSystem-00007",
+          "StarSystemIdentifier": "StarSystem-00051",
           "ERBridgeIdentifier": "ERBridge-00059",
           "Position": {
             "x": 0.0,
@@ -3896,7 +3898,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00023",
+          "StarSystemIdentifier": "StarSystem-00053",
           "ERBridgeIdentifier": "ERBridge-00059",
           "Position": {
             "x": 0.0,
@@ -3909,7 +3911,7 @@
     "ERBridge-00060": {
       "Identifier": "ERBridge-00060",
       "ParentIdentifier": "Sector-00001",
-      "Name": "Bridge: Lalande-Kruger",
+      "Name": "Bridge: Sirius-Wolf's Den",
       "BodyType": "ERBridge",
       "Properties": {
         "PropertyGroups": {
@@ -3919,7 +3921,7 @@
       "BridgeType": "Cluster",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00009",
+          "StarSystemIdentifier": "StarSystem-00007",
           "ERBridgeIdentifier": "ERBridge-00060",
           "Position": {
             "x": 0.0,
@@ -3928,7 +3930,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00016",
+          "StarSystemIdentifier": "StarSystem-00023",
           "ERBridgeIdentifier": "ERBridge-00060",
           "Position": {
             "x": 0.0,
@@ -3941,7 +3943,7 @@
     "ERBridge-00061": {
       "Identifier": "ERBridge-00061",
       "ParentIdentifier": "Sector-00001",
-      "Name": "Bridge: Van Maanen-Lacaille",
+      "Name": "Bridge: Lalande-Kruger",
       "BodyType": "ERBridge",
       "Properties": {
         "PropertyGroups": {
@@ -3951,7 +3953,7 @@
       "BridgeType": "Cluster",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00035",
+          "StarSystemIdentifier": "StarSystem-00009",
           "ERBridgeIdentifier": "ERBridge-00061",
           "Position": {
             "x": 0.0,
@@ -3960,7 +3962,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00017",
+          "StarSystemIdentifier": "StarSystem-00016",
           "ERBridgeIdentifier": "ERBridge-00061",
           "Position": {
             "x": 0.0,
@@ -3973,7 +3975,7 @@
     "ERBridge-00062": {
       "Identifier": "ERBridge-00062",
       "ParentIdentifier": "Sector-00001",
-      "Name": "Bridge: Tau Ceti-Cygni",
+      "Name": "Bridge: Van Maanen-Lacaille",
       "BodyType": "ERBridge",
       "Properties": {
         "PropertyGroups": {
@@ -3983,7 +3985,7 @@
       "BridgeType": "Cluster",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00014",
+          "StarSystemIdentifier": "StarSystem-00035",
           "ERBridgeIdentifier": "ERBridge-00062",
           "Position": {
             "x": 0.0,
@@ -3992,7 +3994,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00037",
+          "StarSystemIdentifier": "StarSystem-00017",
           "ERBridgeIdentifier": "ERBridge-00062",
           "Position": {
             "x": 0.0,
@@ -4005,7 +4007,7 @@
     "ERBridge-00063": {
       "Identifier": "ERBridge-00063",
       "ParentIdentifier": "Sector-00001",
-      "Name": "Bridge: Rudra-Altair",
+      "Name": "Bridge: Tau Ceti-Cygni",
       "BodyType": "ERBridge",
       "Properties": {
         "PropertyGroups": {
@@ -4015,7 +4017,7 @@
       "BridgeType": "Cluster",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00044",
+          "StarSystemIdentifier": "StarSystem-00014",
           "ERBridgeIdentifier": "ERBridge-00063",
           "Position": {
             "x": 0.0,
@@ -4024,7 +4026,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00045",
+          "StarSystemIdentifier": "StarSystem-00037",
           "ERBridgeIdentifier": "ERBridge-00063",
           "Position": {
             "x": 0.0,
@@ -4037,6 +4039,38 @@
     "ERBridge-00064": {
       "Identifier": "ERBridge-00064",
       "ParentIdentifier": "Sector-00001",
+      "Name": "Bridge: Rudra-Altair",
+      "BodyType": "ERBridge",
+      "Properties": {
+        "PropertyGroups": {
+          "Basic": {}
+        }
+      },
+      "BridgeType": "Cluster",
+      "Portals": [
+        {
+          "StarSystemIdentifier": "StarSystem-00044",
+          "ERBridgeIdentifier": "ERBridge-00064",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00064",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ]
+    },
+    "ERBridge-00065": {
+      "Identifier": "ERBridge-00065",
+      "ParentIdentifier": "Sector-00001",
       "Name": "Bridge: Little Ophiuchi-Altair",
       "BodyType": "ERBridge",
       "Properties": {
@@ -4047,8 +4081,8 @@
       "BridgeType": "Cluster",
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00011",
-          "ERBridgeIdentifier": "ERBridge-00064",
+          "StarSystemIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00065",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4056,8 +4090,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00045",
-          "ERBridgeIdentifier": "ERBridge-00064",
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00065",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4091,7 +4125,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00001",
+          "StarSystemIdentifier": "StarSystem-00001",
           "ERBridgeIdentifier": "ERBridge-00001",
           "Position": {
             "x": 0.0,
@@ -4100,7 +4134,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00001",
+          "StarSystemIdentifier": "StarSystem-00001",
           "ERBridgeIdentifier": "ERBridge-00002",
           "Position": {
             "x": 0.0,
@@ -4109,7 +4143,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00001",
+          "StarSystemIdentifier": "StarSystem-00001",
           "ERBridgeIdentifier": "ERBridge-00003",
           "Position": {
             "x": 0.0,
@@ -4144,7 +4178,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00002",
+          "StarSystemIdentifier": "StarSystem-00002",
           "ERBridgeIdentifier": "ERBridge-00001",
           "Position": {
             "x": 0.0,
@@ -4153,7 +4187,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00002",
+          "StarSystemIdentifier": "StarSystem-00002",
           "ERBridgeIdentifier": "ERBridge-00004",
           "Position": {
             "x": 0.0,
@@ -4162,7 +4196,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00002",
+          "StarSystemIdentifier": "StarSystem-00002",
           "ERBridgeIdentifier": "ERBridge-00005",
           "Position": {
             "x": 0.0,
@@ -4197,7 +4231,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00003",
+          "StarSystemIdentifier": "StarSystem-00003",
           "ERBridgeIdentifier": "ERBridge-00002",
           "Position": {
             "x": 0.0,
@@ -4206,7 +4240,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00003",
+          "StarSystemIdentifier": "StarSystem-00003",
           "ERBridgeIdentifier": "ERBridge-00008",
           "Position": {
             "x": 0.0,
@@ -4241,7 +4275,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00004",
+          "StarSystemIdentifier": "StarSystem-00004",
           "ERBridgeIdentifier": "ERBridge-00003",
           "Position": {
             "x": 0.0,
@@ -4250,7 +4284,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00004",
+          "StarSystemIdentifier": "StarSystem-00004",
           "ERBridgeIdentifier": "ERBridge-00006",
           "Position": {
             "x": 0.0,
@@ -4259,7 +4293,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00004",
+          "StarSystemIdentifier": "StarSystem-00004",
           "ERBridgeIdentifier": "ERBridge-00007",
           "Position": {
             "x": 0.0,
@@ -4294,7 +4328,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00005",
+          "StarSystemIdentifier": "StarSystem-00005",
           "ERBridgeIdentifier": "ERBridge-00005",
           "Position": {
             "x": 0.0,
@@ -4303,8 +4337,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00005",
+          "StarSystemIdentifier": "StarSystem-00005",
           "ERBridgeIdentifier": "ERBridge-00009",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00005",
+          "ERBridgeIdentifier": "ERBridge-00010",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4339,8 +4382,17 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00006",
+          "StarSystemIdentifier": "StarSystem-00006",
           "ERBridgeIdentifier": "ERBridge-00006",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00006",
+          "ERBridgeIdentifier": "ERBridge-00010",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4375,7 +4427,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00007",
+          "StarSystemIdentifier": "StarSystem-00007",
           "ERBridgeIdentifier": "ERBridge-00004",
           "Position": {
             "x": 0.0,
@@ -4384,8 +4436,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00007",
-          "ERBridgeIdentifier": "ERBridge-00013",
+          "StarSystemIdentifier": "StarSystem-00007",
+          "ERBridgeIdentifier": "ERBridge-00014",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4393,8 +4445,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00007",
-          "ERBridgeIdentifier": "ERBridge-00059",
+          "StarSystemIdentifier": "StarSystem-00007",
+          "ERBridgeIdentifier": "ERBridge-00060",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4428,8 +4480,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00008",
-          "ERBridgeIdentifier": "ERBridge-00013",
+          "StarSystemIdentifier": "StarSystem-00008",
+          "ERBridgeIdentifier": "ERBridge-00014",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4463,7 +4515,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00009",
+          "StarSystemIdentifier": "StarSystem-00009",
           "ERBridgeIdentifier": "ERBridge-00007",
           "Position": {
             "x": 0.0,
@@ -4472,7 +4524,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00009",
+          "StarSystemIdentifier": "StarSystem-00009",
           "ERBridgeIdentifier": "ERBridge-00008",
           "Position": {
             "x": 0.0,
@@ -4481,8 +4533,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00009",
-          "ERBridgeIdentifier": "ERBridge-00060",
+          "StarSystemIdentifier": "StarSystem-00009",
+          "ERBridgeIdentifier": "ERBridge-00061",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4520,7 +4572,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00010",
+          "StarSystemIdentifier": "StarSystem-00010",
           "ERBridgeIdentifier": "ERBridge-00009",
           "Position": {
             "x": 0.0,
@@ -4529,8 +4581,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00010",
-          "ERBridgeIdentifier": "ERBridge-00010",
+          "StarSystemIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00011",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4538,8 +4590,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00010",
-          "ERBridgeIdentifier": "ERBridge-00011",
+          "StarSystemIdentifier": "StarSystem-00010",
+          "ERBridgeIdentifier": "ERBridge-00012",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4574,8 +4626,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00011",
-          "ERBridgeIdentifier": "ERBridge-00010",
+          "StarSystemIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00011",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4583,8 +4635,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00011",
-          "ERBridgeIdentifier": "ERBridge-00012",
+          "StarSystemIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00013",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4592,8 +4644,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00011",
-          "ERBridgeIdentifier": "ERBridge-00064",
+          "StarSystemIdentifier": "StarSystem-00011",
+          "ERBridgeIdentifier": "ERBridge-00065",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4627,8 +4679,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00012",
-          "ERBridgeIdentifier": "ERBridge-00011",
+          "StarSystemIdentifier": "StarSystem-00012",
+          "ERBridgeIdentifier": "ERBridge-00012",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4636,8 +4688,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00012",
-          "ERBridgeIdentifier": "ERBridge-00012",
+          "StarSystemIdentifier": "StarSystem-00012",
+          "ERBridgeIdentifier": "ERBridge-00013",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4672,8 +4724,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00013",
-          "ERBridgeIdentifier": "ERBridge-00014",
+          "StarSystemIdentifier": "StarSystem-00013",
+          "ERBridgeIdentifier": "ERBridge-00015",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4681,8 +4733,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00013",
-          "ERBridgeIdentifier": "ERBridge-00016",
+          "StarSystemIdentifier": "StarSystem-00013",
+          "ERBridgeIdentifier": "ERBridge-00017",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4715,8 +4767,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00014",
-          "ERBridgeIdentifier": "ERBridge-00017",
+          "StarSystemIdentifier": "StarSystem-00014",
+          "ERBridgeIdentifier": "ERBridge-00018",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4724,8 +4776,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00014",
-          "ERBridgeIdentifier": "ERBridge-00062",
+          "StarSystemIdentifier": "StarSystem-00014",
+          "ERBridgeIdentifier": "ERBridge-00063",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4758,8 +4810,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00015",
-          "ERBridgeIdentifier": "ERBridge-00023",
+          "StarSystemIdentifier": "StarSystem-00015",
+          "ERBridgeIdentifier": "ERBridge-00024",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4792,16 +4844,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00016",
-          "ERBridgeIdentifier": "ERBridge-00014",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00016",
+          "StarSystemIdentifier": "StarSystem-00016",
           "ERBridgeIdentifier": "ERBridge-00015",
           "Position": {
             "x": 0.0,
@@ -4810,8 +4853,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00016",
-          "ERBridgeIdentifier": "ERBridge-00020",
+          "StarSystemIdentifier": "StarSystem-00016",
+          "ERBridgeIdentifier": "ERBridge-00016",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4819,8 +4862,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00016",
-          "ERBridgeIdentifier": "ERBridge-00060",
+          "StarSystemIdentifier": "StarSystem-00016",
+          "ERBridgeIdentifier": "ERBridge-00021",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00016",
+          "ERBridgeIdentifier": "ERBridge-00061",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4853,16 +4905,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00017",
-          "ERBridgeIdentifier": "ERBridge-00015",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00017",
+          "StarSystemIdentifier": "StarSystem-00017",
           "ERBridgeIdentifier": "ERBridge-00016",
           "Position": {
             "x": 0.0,
@@ -4871,7 +4914,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00017",
+          "StarSystemIdentifier": "StarSystem-00017",
           "ERBridgeIdentifier": "ERBridge-00017",
           "Position": {
             "x": 0.0,
@@ -4880,7 +4923,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00017",
+          "StarSystemIdentifier": "StarSystem-00017",
           "ERBridgeIdentifier": "ERBridge-00018",
           "Position": {
             "x": 0.0,
@@ -4889,8 +4932,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00017",
-          "ERBridgeIdentifier": "ERBridge-00061",
+          "StarSystemIdentifier": "StarSystem-00017",
+          "ERBridgeIdentifier": "ERBridge-00019",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00017",
+          "ERBridgeIdentifier": "ERBridge-00062",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4924,16 +4976,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00018",
-          "ERBridgeIdentifier": "ERBridge-00018",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00018",
+          "StarSystemIdentifier": "StarSystem-00018",
           "ERBridgeIdentifier": "ERBridge-00019",
           "Position": {
             "x": 0.0,
@@ -4942,8 +4985,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00018",
-          "ERBridgeIdentifier": "ERBridge-00022",
+          "StarSystemIdentifier": "StarSystem-00018",
+          "ERBridgeIdentifier": "ERBridge-00020",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00018",
+          "ERBridgeIdentifier": "ERBridge-00023",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -4976,8 +5028,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00019",
-          "ERBridgeIdentifier": "ERBridge-00019",
+          "StarSystemIdentifier": "StarSystem-00019",
+          "ERBridgeIdentifier": "ERBridge-00020",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5011,8 +5063,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00020",
-          "ERBridgeIdentifier": "ERBridge-00020",
+          "StarSystemIdentifier": "StarSystem-00020",
+          "ERBridgeIdentifier": "ERBridge-00021",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5020,8 +5072,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00020",
-          "ERBridgeIdentifier": "ERBridge-00021",
+          "StarSystemIdentifier": "StarSystem-00020",
+          "ERBridgeIdentifier": "ERBridge-00022",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5054,8 +5106,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00021",
-          "ERBridgeIdentifier": "ERBridge-00021",
+          "StarSystemIdentifier": "StarSystem-00021",
+          "ERBridgeIdentifier": "ERBridge-00022",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5063,8 +5115,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00021",
-          "ERBridgeIdentifier": "ERBridge-00023",
+          "StarSystemIdentifier": "StarSystem-00021",
+          "ERBridgeIdentifier": "ERBridge-00024",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5097,8 +5149,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00022",
-          "ERBridgeIdentifier": "ERBridge-00022",
+          "StarSystemIdentifier": "StarSystem-00022",
+          "ERBridgeIdentifier": "ERBridge-00023",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5131,8 +5183,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00023",
-          "ERBridgeIdentifier": "ERBridge-00024",
+          "StarSystemIdentifier": "StarSystem-00023",
+          "ERBridgeIdentifier": "ERBridge-00025",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5140,8 +5192,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00023",
-          "ERBridgeIdentifier": "ERBridge-00059",
+          "StarSystemIdentifier": "StarSystem-00023",
+          "ERBridgeIdentifier": "ERBridge-00060",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5175,8 +5227,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00024",
-          "ERBridgeIdentifier": "ERBridge-00033",
+          "StarSystemIdentifier": "StarSystem-00024",
+          "ERBridgeIdentifier": "ERBridge-00034",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5184,8 +5236,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00024",
-          "ERBridgeIdentifier": "ERBridge-00034",
+          "StarSystemIdentifier": "StarSystem-00024",
+          "ERBridgeIdentifier": "ERBridge-00035",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5218,8 +5270,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00025",
-          "ERBridgeIdentifier": "ERBridge-00036",
+          "StarSystemIdentifier": "StarSystem-00025",
+          "ERBridgeIdentifier": "ERBridge-00037",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5252,8 +5304,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00026",
-          "ERBridgeIdentifier": "ERBridge-00024",
+          "StarSystemIdentifier": "StarSystem-00026",
+          "ERBridgeIdentifier": "ERBridge-00025",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5261,8 +5313,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00026",
-          "ERBridgeIdentifier": "ERBridge-00025",
+          "StarSystemIdentifier": "StarSystem-00026",
+          "ERBridgeIdentifier": "ERBridge-00026",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5295,8 +5347,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00027",
-          "ERBridgeIdentifier": "ERBridge-00030",
+          "StarSystemIdentifier": "StarSystem-00027",
+          "ERBridgeIdentifier": "ERBridge-00031",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5304,8 +5356,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00027",
-          "ERBridgeIdentifier": "ERBridge-00033",
+          "StarSystemIdentifier": "StarSystem-00027",
+          "ERBridgeIdentifier": "ERBridge-00034",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5338,8 +5390,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00028",
-          "ERBridgeIdentifier": "ERBridge-00034",
+          "StarSystemIdentifier": "StarSystem-00028",
+          "ERBridgeIdentifier": "ERBridge-00035",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5347,8 +5399,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00028",
-          "ERBridgeIdentifier": "ERBridge-00035",
+          "StarSystemIdentifier": "StarSystem-00028",
+          "ERBridgeIdentifier": "ERBridge-00036",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5381,8 +5433,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00029",
-          "ERBridgeIdentifier": "ERBridge-00032",
+          "StarSystemIdentifier": "StarSystem-00029",
+          "ERBridgeIdentifier": "ERBridge-00033",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5390,16 +5442,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00029",
-          "ERBridgeIdentifier": "ERBridge-00035",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00029",
+          "StarSystemIdentifier": "StarSystem-00029",
           "ERBridgeIdentifier": "ERBridge-00036",
           "Position": {
             "x": 0.0,
@@ -5408,8 +5451,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00029",
+          "StarSystemIdentifier": "StarSystem-00029",
           "ERBridgeIdentifier": "ERBridge-00037",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00029",
+          "ERBridgeIdentifier": "ERBridge-00038",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5442,16 +5494,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00030",
-          "ERBridgeIdentifier": "ERBridge-00025",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00030",
+          "StarSystemIdentifier": "StarSystem-00030",
           "ERBridgeIdentifier": "ERBridge-00026",
           "Position": {
             "x": 0.0,
@@ -5460,8 +5503,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00030",
+          "StarSystemIdentifier": "StarSystem-00030",
           "ERBridgeIdentifier": "ERBridge-00027",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00030",
+          "ERBridgeIdentifier": "ERBridge-00028",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5494,8 +5546,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00031",
-          "ERBridgeIdentifier": "ERBridge-00026",
+          "StarSystemIdentifier": "StarSystem-00031",
+          "ERBridgeIdentifier": "ERBridge-00027",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5528,8 +5580,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00032",
-          "ERBridgeIdentifier": "ERBridge-00029",
+          "StarSystemIdentifier": "StarSystem-00032",
+          "ERBridgeIdentifier": "ERBridge-00030",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5537,8 +5589,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00032",
-          "ERBridgeIdentifier": "ERBridge-00032",
+          "StarSystemIdentifier": "StarSystem-00032",
+          "ERBridgeIdentifier": "ERBridge-00033",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5571,8 +5623,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00033",
-          "ERBridgeIdentifier": "ERBridge-00031",
+          "StarSystemIdentifier": "StarSystem-00033",
+          "ERBridgeIdentifier": "ERBridge-00032",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5580,17 +5632,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00033",
-          "ERBridgeIdentifier": "ERBridge-00037",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00033",
+          "StarSystemIdentifier": "StarSystem-00033",
           "ERBridgeIdentifier": "ERBridge-00038",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00033",
+          "ERBridgeIdentifier": "ERBridge-00039",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5623,16 +5675,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00034",
-          "ERBridgeIdentifier": "ERBridge-00027",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00034",
+          "StarSystemIdentifier": "StarSystem-00034",
           "ERBridgeIdentifier": "ERBridge-00028",
           "Position": {
             "x": 0.0,
@@ -5641,8 +5684,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00034",
+          "StarSystemIdentifier": "StarSystem-00034",
           "ERBridgeIdentifier": "ERBridge-00029",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00034",
+          "ERBridgeIdentifier": "ERBridge-00030",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5675,8 +5727,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00035",
-          "ERBridgeIdentifier": "ERBridge-00028",
+          "StarSystemIdentifier": "StarSystem-00035",
+          "ERBridgeIdentifier": "ERBridge-00029",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5684,16 +5736,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00035",
-          "ERBridgeIdentifier": "ERBridge-00030",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00035",
+          "StarSystemIdentifier": "StarSystem-00035",
           "ERBridgeIdentifier": "ERBridge-00031",
           "Position": {
             "x": 0.0,
@@ -5702,8 +5745,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00035",
-          "ERBridgeIdentifier": "ERBridge-00061",
+          "StarSystemIdentifier": "StarSystem-00035",
+          "ERBridgeIdentifier": "ERBridge-00032",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00035",
+          "ERBridgeIdentifier": "ERBridge-00062",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5736,8 +5788,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00036",
-          "ERBridgeIdentifier": "ERBridge-00038",
+          "StarSystemIdentifier": "StarSystem-00036",
+          "ERBridgeIdentifier": "ERBridge-00039",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5771,16 +5823,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00037",
-          "ERBridgeIdentifier": "ERBridge-00039",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00037",
+          "StarSystemIdentifier": "StarSystem-00037",
           "ERBridgeIdentifier": "ERBridge-00040",
           "Position": {
             "x": 0.0,
@@ -5789,8 +5832,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00037",
-          "ERBridgeIdentifier": "ERBridge-00062",
+          "StarSystemIdentifier": "StarSystem-00037",
+          "ERBridgeIdentifier": "ERBridge-00041",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00037",
+          "ERBridgeIdentifier": "ERBridge-00063",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5825,8 +5877,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00038",
-          "ERBridgeIdentifier": "ERBridge-00039",
+          "StarSystemIdentifier": "StarSystem-00038",
+          "ERBridgeIdentifier": "ERBridge-00040",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5834,8 +5886,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00038",
-          "ERBridgeIdentifier": "ERBridge-00041",
+          "StarSystemIdentifier": "StarSystem-00038",
+          "ERBridgeIdentifier": "ERBridge-00042",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5868,8 +5920,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00039",
-          "ERBridgeIdentifier": "ERBridge-00040",
+          "StarSystemIdentifier": "StarSystem-00039",
+          "ERBridgeIdentifier": "ERBridge-00041",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5877,17 +5929,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00039",
-          "ERBridgeIdentifier": "ERBridge-00043",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00039",
+          "StarSystemIdentifier": "StarSystem-00039",
           "ERBridgeIdentifier": "ERBridge-00044",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00039",
+          "ERBridgeIdentifier": "ERBridge-00045",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5920,16 +5972,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00040",
-          "ERBridgeIdentifier": "ERBridge-00041",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00040",
+          "StarSystemIdentifier": "StarSystem-00040",
           "ERBridgeIdentifier": "ERBridge-00042",
           "Position": {
             "x": 0.0,
@@ -5938,8 +5981,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00040",
-          "ERBridgeIdentifier": "ERBridge-00045",
+          "StarSystemIdentifier": "StarSystem-00040",
+          "ERBridgeIdentifier": "ERBridge-00043",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00040",
+          "ERBridgeIdentifier": "ERBridge-00046",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5972,8 +6024,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00041",
-          "ERBridgeIdentifier": "ERBridge-00043",
+          "StarSystemIdentifier": "StarSystem-00041",
+          "ERBridgeIdentifier": "ERBridge-00044",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -5981,16 +6033,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00041",
-          "ERBridgeIdentifier": "ERBridge-00045",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00041",
+          "StarSystemIdentifier": "StarSystem-00041",
           "ERBridgeIdentifier": "ERBridge-00046",
           "Position": {
             "x": 0.0,
@@ -5999,8 +6042,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00041",
+          "StarSystemIdentifier": "StarSystem-00041",
           "ERBridgeIdentifier": "ERBridge-00047",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00041",
+          "ERBridgeIdentifier": "ERBridge-00048",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6033,8 +6085,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00042",
-          "ERBridgeIdentifier": "ERBridge-00042",
+          "StarSystemIdentifier": "StarSystem-00042",
+          "ERBridgeIdentifier": "ERBridge-00043",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6042,8 +6094,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00042",
-          "ERBridgeIdentifier": "ERBridge-00044",
+          "StarSystemIdentifier": "StarSystem-00042",
+          "ERBridgeIdentifier": "ERBridge-00045",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6076,8 +6128,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00043",
-          "ERBridgeIdentifier": "ERBridge-00046",
+          "StarSystemIdentifier": "StarSystem-00043",
+          "ERBridgeIdentifier": "ERBridge-00047",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6111,8 +6163,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00044",
-          "ERBridgeIdentifier": "ERBridge-00047",
+          "StarSystemIdentifier": "StarSystem-00044",
+          "ERBridgeIdentifier": "ERBridge-00048",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6120,8 +6172,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00044",
-          "ERBridgeIdentifier": "ERBridge-00063",
+          "StarSystemIdentifier": "StarSystem-00044",
+          "ERBridgeIdentifier": "ERBridge-00064",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6154,16 +6206,7 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00045",
-          "ERBridgeIdentifier": "ERBridge-00048",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00045",
+          "StarSystemIdentifier": "StarSystem-00045",
           "ERBridgeIdentifier": "ERBridge-00049",
           "Position": {
             "x": 0.0,
@@ -6172,7 +6215,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00045",
+          "StarSystemIdentifier": "StarSystem-00045",
           "ERBridgeIdentifier": "ERBridge-00050",
           "Position": {
             "x": 0.0,
@@ -6181,7 +6224,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00045",
+          "StarSystemIdentifier": "StarSystem-00045",
           "ERBridgeIdentifier": "ERBridge-00051",
           "Position": {
             "x": 0.0,
@@ -6190,8 +6233,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00045",
-          "ERBridgeIdentifier": "ERBridge-00063",
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00052",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6199,8 +6242,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00045",
+          "StarSystemIdentifier": "StarSystem-00045",
           "ERBridgeIdentifier": "ERBridge-00064",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00045",
+          "ERBridgeIdentifier": "ERBridge-00065",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6234,8 +6286,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00046",
-          "ERBridgeIdentifier": "ERBridge-00048",
+          "StarSystemIdentifier": "StarSystem-00046",
+          "ERBridgeIdentifier": "ERBridge-00049",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6243,17 +6295,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00046",
-          "ERBridgeIdentifier": "ERBridge-00052",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00046",
+          "StarSystemIdentifier": "StarSystem-00046",
           "ERBridgeIdentifier": "ERBridge-00053",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00046",
+          "ERBridgeIdentifier": "ERBridge-00054",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6287,8 +6339,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00047",
-          "ERBridgeIdentifier": "ERBridge-00049",
+          "StarSystemIdentifier": "StarSystem-00047",
+          "ERBridgeIdentifier": "ERBridge-00050",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6296,16 +6348,7 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00047",
-          "ERBridgeIdentifier": "ERBridge-00054",
-          "Position": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          }
-        },
-        {
-          "StarIdentifier": "StarSystem-00047",
+          "StarSystemIdentifier": "StarSystem-00047",
           "ERBridgeIdentifier": "ERBridge-00055",
           "Position": {
             "x": 0.0,
@@ -6314,8 +6357,17 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00047",
+          "StarSystemIdentifier": "StarSystem-00047",
           "ERBridgeIdentifier": "ERBridge-00056",
+          "Position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "StarSystemIdentifier": "StarSystem-00047",
+          "ERBridgeIdentifier": "ERBridge-00057",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6348,8 +6400,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00048",
-          "ERBridgeIdentifier": "ERBridge-00050",
+          "StarSystemIdentifier": "StarSystem-00048",
+          "ERBridgeIdentifier": "ERBridge-00051",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6357,8 +6409,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00048",
-          "ERBridgeIdentifier": "ERBridge-00054",
+          "StarSystemIdentifier": "StarSystem-00048",
+          "ERBridgeIdentifier": "ERBridge-00055",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6366,8 +6418,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00048",
-          "ERBridgeIdentifier": "ERBridge-00057",
+          "StarSystemIdentifier": "StarSystem-00048",
+          "ERBridgeIdentifier": "ERBridge-00058",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6400,8 +6452,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00049",
-          "ERBridgeIdentifier": "ERBridge-00052",
+          "StarSystemIdentifier": "StarSystem-00049",
+          "ERBridgeIdentifier": "ERBridge-00053",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6409,8 +6461,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00049",
-          "ERBridgeIdentifier": "ERBridge-00055",
+          "StarSystemIdentifier": "StarSystem-00049",
+          "ERBridgeIdentifier": "ERBridge-00056",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6443,8 +6495,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00050",
-          "ERBridgeIdentifier": "ERBridge-00051",
+          "StarSystemIdentifier": "StarSystem-00050",
+          "ERBridgeIdentifier": "ERBridge-00052",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6452,8 +6504,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00050",
-          "ERBridgeIdentifier": "ERBridge-00056",
+          "StarSystemIdentifier": "StarSystem-00050",
+          "ERBridgeIdentifier": "ERBridge-00057",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6486,8 +6538,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00051",
-          "ERBridgeIdentifier": "ERBridge-00057",
+          "StarSystemIdentifier": "StarSystem-00051",
+          "ERBridgeIdentifier": "ERBridge-00058",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6495,8 +6547,8 @@
           }
         },
         {
-          "StarIdentifier": "StarSystem-00051",
-          "ERBridgeIdentifier": "ERBridge-00058",
+          "StarSystemIdentifier": "StarSystem-00051",
+          "ERBridgeIdentifier": "ERBridge-00059",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6529,8 +6581,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00052",
-          "ERBridgeIdentifier": "ERBridge-00053",
+          "StarSystemIdentifier": "StarSystem-00052",
+          "ERBridgeIdentifier": "ERBridge-00054",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6565,8 +6617,8 @@
       },
       "Portals": [
         {
-          "StarIdentifier": "StarSystem-00053",
-          "ERBridgeIdentifier": "ERBridge-00058",
+          "StarSystemIdentifier": "StarSystem-00053",
+          "ERBridgeIdentifier": "ERBridge-00059",
           "Position": {
             "x": 0.0,
             "y": 0.0,
@@ -6615,10 +6667,11 @@
             "Bridge: Procyon-Lalande": "ERBridge-00007",
             "Bridge: Lalande-Epsilon Eridani": "ERBridge-00008",
             "Bridge: Ross-Ophiuchi": "ERBridge-00009",
-            "Bridge: Ophiuchi-Little Ophiuchi": "ERBridge-00010",
-            "Bridge: Ophiuchi-Wolf": "ERBridge-00011",
-            "Bridge: Little Ophiuchi-Wolf": "ERBridge-00012",
-            "Bridge: Sirius-Luyten": "ERBridge-00013"
+            "Bridge: Ross-Ceti": "ERBridge-00010",
+            "Bridge: Ophiuchi-Little Ophiuchi": "ERBridge-00011",
+            "Bridge: Ophiuchi-Wolf": "ERBridge-00012",
+            "Bridge: Little Ophiuchi-Wolf": "ERBridge-00013",
+            "Bridge: Sirius-Luyten": "ERBridge-00014"
           }
         }
       }
@@ -6650,16 +6703,16 @@
             "Inne": "StarSystem-00022"
           },
           "ERBridges": {
-            "Bridge: Kruger-Centauri": "ERBridge-00014",
-            "Bridge: Kruger-Lacaille": "ERBridge-00015",
-            "Bridge: Centauri-Lacaille": "ERBridge-00016",
-            "Bridge: Lacaille-Tau Ceti": "ERBridge-00017",
-            "Bridge: Lacaille-Gleine": "ERBridge-00018",
-            "Bridge: Gleine-Kapteyn": "ERBridge-00019",
-            "Bridge: Kruger-Vista": "ERBridge-00020",
-            "Bridge: Vista-Bihar": "ERBridge-00021",
-            "Bridge: Gleine-Inne": "ERBridge-00022",
-            "Bridge: Groombridge-Bihar": "ERBridge-00023"
+            "Bridge: Kruger-Centauri": "ERBridge-00015",
+            "Bridge: Kruger-Lacaille": "ERBridge-00016",
+            "Bridge: Centauri-Lacaille": "ERBridge-00017",
+            "Bridge: Lacaille-Tau Ceti": "ERBridge-00018",
+            "Bridge: Lacaille-Gleine": "ERBridge-00019",
+            "Bridge: Gleine-Kapteyn": "ERBridge-00020",
+            "Bridge: Kruger-Vista": "ERBridge-00021",
+            "Bridge: Vista-Bihar": "ERBridge-00022",
+            "Bridge: Gleine-Inne": "ERBridge-00023",
+            "Bridge: Groombridge-Bihar": "ERBridge-00024"
           }
         }
       }
@@ -6695,21 +6748,21 @@
             "Knob": "StarSystem-00036"
           },
           "ERBridges": {
-            "Bridge: Wolf's Den-Siera": "ERBridge-00024",
-            "Bridge: Siera-Leonis": "ERBridge-00025",
-            "Bridge: Leonis-Ophir": "ERBridge-00026",
-            "Bridge: Leonis-TeeGarden": "ERBridge-00027",
-            "Bridge: TeeGarden-Van Maanen": "ERBridge-00028",
-            "Bridge: TeeGarden-Cancri": "ERBridge-00029",
-            "Bridge: Van Maanen-YZ Ceti": "ERBridge-00030",
-            "Bridge: Van Maanen-Eureka": "ERBridge-00031",
-            "Bridge: Cancri-Nuone": "ERBridge-00032",
-            "Bridge: YZ Ceti-Andromeda": "ERBridge-00033",
-            "Bridge: Andromeda-Kercur": "ERBridge-00034",
-            "Bridge: Kercur-Nuone": "ERBridge-00035",
-            "Bridge: Nuone-Sutter": "ERBridge-00036",
-            "Bridge: Nuone-Eureka": "ERBridge-00037",
-            "Bridge: Eureka-Knob": "ERBridge-00038"
+            "Bridge: Wolf's Den-Siera": "ERBridge-00025",
+            "Bridge: Siera-Leonis": "ERBridge-00026",
+            "Bridge: Leonis-Ophir": "ERBridge-00027",
+            "Bridge: Leonis-TeeGarden": "ERBridge-00028",
+            "Bridge: TeeGarden-Van Maanen": "ERBridge-00029",
+            "Bridge: TeeGarden-Cancri": "ERBridge-00030",
+            "Bridge: Van Maanen-YZ Ceti": "ERBridge-00031",
+            "Bridge: Van Maanen-Eureka": "ERBridge-00032",
+            "Bridge: Cancri-Nuone": "ERBridge-00033",
+            "Bridge: YZ Ceti-Andromeda": "ERBridge-00034",
+            "Bridge: Andromeda-Kercur": "ERBridge-00035",
+            "Bridge: Kercur-Nuone": "ERBridge-00036",
+            "Bridge: Nuone-Sutter": "ERBridge-00037",
+            "Bridge: Nuone-Eureka": "ERBridge-00038",
+            "Bridge: Eureka-Knob": "ERBridge-00039"
           }
         }
       }
@@ -6739,15 +6792,15 @@
             "Rudra": "StarSystem-00044"
           },
           "ERBridges": {
-            "Bridge: Cygni-Epsilon Indi": "ERBridge-00039",
-            "Bridge: Cygni-Arietis": "ERBridge-00040",
-            "Bridge: Epsilon Indi-Flare": "ERBridge-00041",
-            "Bridge: Flare-Lapis": "ERBridge-00042",
-            "Bridge: Arietis-Demic": "ERBridge-00043",
-            "Bridge: Arietis-Lapis": "ERBridge-00044",
-            "Bridge: Flare-Demic": "ERBridge-00045",
-            "Bridge: Demic-Banawali": "ERBridge-00046",
-            "Bridge: Demic-Rudra": "ERBridge-00047"
+            "Bridge: Cygni-Epsilon Indi": "ERBridge-00040",
+            "Bridge: Cygni-Arietis": "ERBridge-00041",
+            "Bridge: Epsilon Indi-Flare": "ERBridge-00042",
+            "Bridge: Flare-Lapis": "ERBridge-00043",
+            "Bridge: Arietis-Demic": "ERBridge-00044",
+            "Bridge: Arietis-Lapis": "ERBridge-00045",
+            "Bridge: Flare-Demic": "ERBridge-00046",
+            "Bridge: Demic-Banawali": "ERBridge-00047",
+            "Bridge: Demic-Rudra": "ERBridge-00048"
           }
         }
       }
@@ -6778,17 +6831,17 @@
             "Gateway": "StarSystem-00053"
           },
           "ERBridges": {
-            "Bridge: Altair-Krell": "ERBridge-00048",
-            "Bridge: Altair-Mobius": "ERBridge-00049",
-            "Bridge: Altair-Bellerophon": "ERBridge-00050",
-            "Bridge: Altair-Adams": "ERBridge-00051",
-            "Bridge: Krell-Id": "ERBridge-00052",
-            "Bridge: Krell-Omicron": "ERBridge-00053",
-            "Bridge: Mobius-Bellerophon": "ERBridge-00054",
-            "Bridge: Mobius-Id": "ERBridge-00055",
-            "Bridge: Mobius-Adams": "ERBridge-00056",
-            "Bridge: Bellerophon-Lacerta": "ERBridge-00057",
-            "Bridge: Lacerta-Gateway": "ERBridge-00058"
+            "Bridge: Altair-Krell": "ERBridge-00049",
+            "Bridge: Altair-Mobius": "ERBridge-00050",
+            "Bridge: Altair-Bellerophon": "ERBridge-00051",
+            "Bridge: Altair-Adams": "ERBridge-00052",
+            "Bridge: Krell-Id": "ERBridge-00053",
+            "Bridge: Krell-Omicron": "ERBridge-00054",
+            "Bridge: Mobius-Bellerophon": "ERBridge-00055",
+            "Bridge: Mobius-Id": "ERBridge-00056",
+            "Bridge: Mobius-Adams": "ERBridge-00057",
+            "Bridge: Bellerophon-Lacerta": "ERBridge-00058",
+            "Bridge: Lacerta-Gateway": "ERBridge-00059"
           }
         }
       }
@@ -6817,12 +6870,12 @@
             "Altair": "Cluster-00005"
           },
           "ERBridges": {
-            "Bridge: Sirius-Wolf's Den": "ERBridge-00059",
-            "Bridge: Lalande-Kruger": "ERBridge-00060",
-            "Bridge: Van Maanen-Lacaille": "ERBridge-00061",
-            "Bridge: Tau Ceti-Cygni": "ERBridge-00062",
-            "Bridge: Rudra-Altair": "ERBridge-00063",
-            "Bridge: Little Ophiuchi-Altair": "ERBridge-00064"
+            "Bridge: Sirius-Wolf's Den": "ERBridge-00060",
+            "Bridge: Lalande-Kruger": "ERBridge-00061",
+            "Bridge: Van Maanen-Lacaille": "ERBridge-00062",
+            "Bridge: Tau Ceti-Cygni": "ERBridge-00063",
+            "Bridge: Rudra-Altair": "ERBridge-00064",
+            "Bridge: Little Ophiuchi-Altair": "ERBridge-00065"
           }
         }
       }

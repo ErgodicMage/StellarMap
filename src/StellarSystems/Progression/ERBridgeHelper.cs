@@ -51,40 +51,43 @@ public static class ERBridgeHelper
         Result guardResult = GuardClause.Null(map).Null(sector).NullOrWhiteSpace(starname1).NullOrWhiteSpace(starname2);
         if (!guardResult.Success) return guardResult;
 
-        sector.Map = map;
+        //sector.Map = map;
 
-        StarSystem? system1 = default;
-        Cluster? cluster1 = default;
-        StarSystem? system2 = default;
-        Cluster? cluster2 = default;
+        Result<StarSystem> system1 = Result.Error("");
+        Result<Cluster> cluster1 = Result.Error("");
+        Result<StarSystem> system2 = Result.Error("");
+        Result<Cluster> cluster2 = Result.Error("");
 
         foreach(var kvp in map.Clusters)
         {
-            if (system1 == null)
+            if (!system1.Success)
             {
                 system1 = kvp.Value.GetStarSystem(starname1);
-                if (system1 is not null)
+                if (system1.Success)
                     cluster1 = kvp.Value;
             }
-            if (system2 == null)
+            if (!system2.Success)
             {
                 system2 = kvp.Value.GetStarSystem(starname2);
-                if (system2 is not null)
+                if (system2.Success)
                     cluster2 = kvp.Value;
             }
 
-            if (system1 != null && system2 != null)
+            if (system1.Success && system2.Success)
                 break;
         }
 
 
-        if (system1 is null || system2 is null || cluster1 is null || cluster2 is null || cluster1.Identifier != cluster2.Identifier)
-            return default;
+        if (!system1.Success || !system2.Success || !cluster1.Success || !cluster2.Success)
+            return Result.Error("ERBridgeHelper:CreateClusterBridge Can not find system or cluser");
+
+        if (cluster1.Value.Identifier == cluster2.Value.Identifier)
+            return Result.Error("ERBridgeHelper:CreateClusterBridge Systems within same Cluster, use CreateStarSystemBridge");
 
         ERBridge bridge = new ERBridge(ProgressionConstants.BridgeTypes.Cluster, system1, system2);
 
-        system1.Add(bridge.Portals[0]);
-        system2.Add(bridge.Portals[1]);
+        system1.Value.Add(bridge.Portals[0]);
+        system2.Value.Add(bridge.Portals[1]);
 
         return bridge;
     }
