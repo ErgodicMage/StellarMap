@@ -25,9 +25,11 @@ public class SubsectorSECFileParser
                 continue;
             }
 
-            World world = worldParser.ParseWorld(map, line);
-
-            subsector.Add(world);
+            if (startWorlds)
+            {
+                World world = worldParser.ParseWorld(map, line);
+                subsector.Add(world);
+            }
         }
 
         return subsector;
