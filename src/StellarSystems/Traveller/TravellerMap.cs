@@ -93,7 +93,7 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
     #endregion
 
     #region Protected Methods
-    protected override IDictionary<string, T>? GetDictionary<T>(bool create)
+    protected override Result<IDictionary<string, T>> GetDictionary<T>(bool create)
     {
         IDictionary<string, T>? dict = default;
         Type dt = typeof(T);
@@ -118,9 +118,9 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
         }
 
         if (dict == null)
-            dict = base.GetDictionary<T>(create);
+            dict = base.GetDictionary<T>(create).Value;
 
-        return dict;
+        return dict is not null ? Result<IDictionary<string, T>>.Ok(dict) : Result.Error($"Traveller:GetDictionary can not get dictionary for {nameof(T)}"); ;
     }
 
     public override IList<string> GetBodyTypes()
@@ -134,73 +134,65 @@ public class TravellerMap : BaseStellarMap, IEqualityComparer<TravellerMap>
         return bodytypes;
     }
 
-    public override object? GetBody(string bodytype)
+    public override Result<object> GetBody(string bodytype)
     {
-        object? body = base.GetBody(bodytype);
+        Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
 
-        if (body == null)
+        Result<object> body = base.GetBody(bodytype);
+        if (body.Success) return body;
+
+#pragma warning disable CS8604 // Possible null reference argument.
+        return bodytype switch
         {
-            switch (bodytype)
-            {
-                case TravellerConstants.BodyType.World:
-                    body = Worlds;
-                    break;
-                case TravellerConstants.BodyType.Subsector:
-                    body = Subsectors;
-                    break;
-                case TravellerConstants.BodyType.Sector:
-                    body = Sectors;
-                    break;
-            }
-        }
-
-        return body;
+            TravellerConstants.BodyType.World => Worlds as object,
+            TravellerConstants.BodyType.Subsector => Subsectors as object,
+            TravellerConstants.BodyType.Sector => Sectors as object,
+            _ => Result.Error($"TravellerMap:GetBody can not get {bodytype}")
+        };
+#pragma warning restore CS8604 // Possible null reference argument.
     }
 
-    public override Type? GetTypeOfBody(string bodytype)
+    public override Result<Type> GetTypeOfBody(string bodytype)
     {
-        Type? t = base.GetTypeOfBody(bodytype);
+        Result guardResult = GuardClause.NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
 
-        if (t is null)
+        Result<Type> t = base.GetTypeOfBody(bodytype);
+        if (t.Success) return t;
+
+        return bodytype switch
         {
-            switch (bodytype)
-            {
-                case TravellerConstants.BodyType.World:
-                    t = typeof(Dictionary<string, World>);
-                    break;
-                case TravellerConstants.BodyType.Subsector:
-                    t = typeof(Dictionary<string, Subsector>);
-                    break;
-                case TravellerConstants.BodyType.Sector:
-                    t = typeof(Dictionary<string, Sector>);
-                    break;
-            }
-        }
-
-        return t;
+            TravellerConstants.BodyType.World => typeof(Dictionary<string, World>),
+            TravellerConstants.BodyType.Subsector => typeof(Dictionary<string, Subsector>),
+            TravellerConstants.BodyType.Sector => typeof(Dictionary<string, Subsector>),
+            _ => Result.Error($"TravellerMap:GetTypeOfBody can not get Type {bodytype}")
+        };
     }
 
-    public override bool SetBody(string bodytype, object data)
+    public override Result SetBody(string bodytype, object data)
     {
-        bool bret = base.SetBody(bodytype, data);
+        Result guardResult = GuardClause.Null(data).NullOrWhiteSpace(bodytype);
+        if (!guardResult.Success) return guardResult;
 
-        if (!bret)
+        Result result = base.SetBody(bodytype, data);
+        if (result.Success) return result;
+
+        bool bret = false;
+        switch (bodytype)
         {
-            switch (bodytype)
-            {
-                case TravellerConstants.BodyType.World:
-                    Worlds = (Dictionary<string, World>)data;
-                    bret = true;
-                    break;
-                case TravellerConstants.BodyType.Subsector:
-                    Subsectors = (Dictionary<string, Subsector>)data;
-                    bret = true;
-                    break;
-                case TravellerConstants.BodyType.Sector:
-                    Sectors = (Dictionary<string, Sector>)data;
-                    bret = true;
-                    break;
-            }
+            case TravellerConstants.BodyType.World:
+                Worlds = (Dictionary<string, World>)data;
+                bret = true;
+                break;
+            case TravellerConstants.BodyType.Subsector:
+                Subsectors = (Dictionary<string, Subsector>)data;
+                bret = true;
+                break;
+            case TravellerConstants.BodyType.Sector:
+                Sectors = (Dictionary<string, Sector>)data;
+                bret = true;
+                break;
         }
 
         return bret;

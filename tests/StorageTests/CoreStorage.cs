@@ -9,7 +9,9 @@ public class CoreStorage
     {
         IStellarMap map = SolarSystem.CreateSolSystem();
 
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.json");
 
@@ -17,7 +19,7 @@ public class CoreStorage
             File.Delete(filename);
 
         using StreamWriter writer = new StreamWriter(filename);
-        store.Store(map, writer);
+        store.Value.Store(map, writer);
     }
 
     [TestMethod]
@@ -29,15 +31,18 @@ public class CoreStorage
         if (!File.Exists(filename))
             JsonStoreSolarSystem();
 
-        IStellarMap map;
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         using StreamReader reader = new StreamReader(filename);
-        map = store.Retreive<BaseStellarMap>(reader);
+        Result<IStellarMap> map = store.Value.Retreive<BaseStellarMap>(reader);
+        Assert.IsTrue(map.Success);
+        Assert.IsNotNull(map.Value);
 
         IStellarMap generatedMap = SolarSystem.CreateSolSystem();
 
-        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
+        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map.Value as BaseStellarMap, generatedMap as BaseStellarMap));
     }
 
     [TestMethod]
@@ -46,7 +51,9 @@ public class CoreStorage
     {
         IStellarMap map = SolarSystem.CreateSolSystem();
 
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         string filename = Path.Combine(TestingUtilities.Config["DataPath"], "SolarSystem.zip");
 
@@ -54,7 +61,7 @@ public class CoreStorage
             File.Delete(filename);
 
         using StreamWriter writer = new StreamWriter(filename);
-        store.Store(map, writer);
+        store.Value.Store(map, writer);
     }
 
     [TestMethod]
@@ -66,11 +73,14 @@ public class CoreStorage
         if (!File.Exists(filename))
             ZipStoreSolarSystem();
 
-        IStellarMap map;
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         using StreamReader reader = new StreamReader(filename);
-        map = store.Retreive<BaseStellarMap>(reader);
+        Result<IStellarMap> map = store.Value.Retreive<BaseStellarMap>(reader);
+        Assert.IsTrue(map.Success);
+        Assert.IsNotNull(map.Value);
 
 #pragma warning disable S125
         //// now serialize it to json file to inspect
@@ -87,6 +97,6 @@ public class CoreStorage
 
         IStellarMap generatedMap = SolarSystem.CreateSolSystem();
 
-        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map as BaseStellarMap, generatedMap as BaseStellarMap));
+        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map.Value as BaseStellarMap, generatedMap as BaseStellarMap));
     }
 }

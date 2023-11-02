@@ -55,12 +55,12 @@ public class ZipMapStorage : IMapStorage
         map, writer);
     }
 
-    public Result<T> Retreive<T>(StreamReader reader)  where T : IStellarMap, new()
+    public Result<IStellarMap> Retreive<T>(StreamReader reader)  where T : IStellarMap, new()
     {
         Result guardResult = GuardClause.Null(reader);
         if (!guardResult.Success) return guardResult;
 
-        return Result<T>.Try<StreamReader>((reader) =>
+        return Result<IStellarMap>.Try<StreamReader>((reader) =>
             {
                 T map = new();
 
@@ -103,7 +103,7 @@ public class ZipMapStorage : IMapStorage
                 }
 
                 map.SetMap();
-                return map;
+                return map as IStellarMap;
             },
             reader);
     }

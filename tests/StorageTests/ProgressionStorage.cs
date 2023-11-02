@@ -15,7 +15,9 @@ public class ProgressionStorage
         LocalSectorMap create = new LocalSectorMap(localsector);
         create.CreateLocalSector();
 
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.json");
 
@@ -23,7 +25,7 @@ public class ProgressionStorage
             File.Delete(filename);
 
         using StreamWriter writer = new StreamWriter(filename);
-        store.Store(localsector, writer);
+        store.Value.Store(localsector, writer);
     }
 
     [TestMethod]
@@ -35,11 +37,21 @@ public class ProgressionStorage
         if (!File.Exists(filename))
             JsonStoreLocalSector();
 
-        IStellarMap map;
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         using StreamReader reader = new StreamReader(filename);
-        map = store.Retreive<ProgressionMap>(reader);
+        Result<IStellarMap> map = store.Value.Retreive<ProgressionMap>(reader);
+        Assert.IsTrue(map.Success);
+        Assert.IsNotNull(map.Value);
+
+        ProgressionMap localsector = new ProgressionMap("Local Sector");
+
+        LocalSectorMap create = new LocalSectorMap(localsector);
+        create.CreateLocalSector();
+
+        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map.Value as ProgressionMap, localsector as ProgressionMap));
     }
 
     [TestMethod]
@@ -51,7 +63,9 @@ public class ProgressionStorage
         LocalSectorMap create = new LocalSectorMap(localsector);
         create.CreateLocalSector();
 
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         string filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSector.zip");
 
@@ -59,7 +73,7 @@ public class ProgressionStorage
             File.Delete(filename);
 
         using StreamWriter writer = new StreamWriter(filename);
-        store.Store(localsector, writer);
+        store.Value.Store(localsector, writer);
     }
 
     [TestMethod]
@@ -71,22 +85,19 @@ public class ProgressionStorage
         if (!File.Exists(filename))
             ZipStoreLocalSector();
 
-        IStellarMap map;
-        IMapStorage store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Result<IMapStorage> store = MapStorageFactory.GetStorage(MapStorageFactory.ZipStorage);
+        Assert.IsTrue(store.Success);
+        Assert.IsNotNull(store.Value);
 
         using StreamReader reader = new StreamReader(filename);
-        map = store.Retreive<ProgressionMap>(reader);
+        Result<IStellarMap> map = store.Value.Retreive<ProgressionMap>(reader);
 
-        // now serialize it to json file to inspect
-        filename = Path.Combine(TestingUtilities.Config["DataPath"], "LocalSectorCheck.json");
+        ProgressionMap localsector = new ProgressionMap("Local Sector");
 
-        if (File.Exists(filename))
-            File.Delete(filename);
+        LocalSectorMap create = new LocalSectorMap(localsector);
+        create.CreateLocalSector();
 
-        store = MapStorageFactory.GetStorage(MapStorageFactory.JsonStorage);
-
-        using StreamWriter writer = new StreamWriter(filename);
-        store.Store(map, writer);
+        Assert.IsTrue(BaseStellarMapEqualityComparer.Comparer.Equals(map.Value as ProgressionMap, localsector as ProgressionMap));
     }
 
 }
