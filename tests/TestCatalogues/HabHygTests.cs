@@ -57,10 +57,10 @@ public class HabHygTests
         double length = 20;
             
         var records = reader.Catalogue.Where<HabHygRecord>(c => c.Distance < (2 * length / 3.261633));
-        IList<HabHygRecord> stars = records.ToList<HabHygRecord>();
+        var stars = records.ToList<HabHygRecord>();
 
         CubeAreaStarLocation areaLocations = new CubeAreaStarLocation();
-        IDictionary<string, IList<HabHygRecord>> areaMappings = areaLocations.GetAreaMappings(length, stars);
+        IDictionary<string, List<HabHygRecord>> areaMappings = areaLocations.GetAreaMappings(length, stars);
 
         string outfile = Path.Combine(TestingUtilities.Config["DataPath"], $"Areas{length}.csv");
         if (File.Exists(outfile))
@@ -112,7 +112,7 @@ public class HabHygTests
         p = MathFunctions.ConvertToCartesian(18.5, 5, 31, 27.4, -3, 40, 38.03);
 
 
-        Point3d p2 = new Point3d(p.x / 3.261633, p.y / 3.261633, p.z / 3.261633);
+        Point3d p2 = new(p.X / 3.261633, p.Y / 3.261633, p.Z / 3.261633);
         Console.WriteLine(p2);
     }
 }

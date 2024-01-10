@@ -140,10 +140,10 @@ static class Program
         reader.Load(catalogueFile);
 
         var records = reader.Catalogue.Where<HabHygRecord>(c => c.Distance < ((1.5 * ly) / 3.261633));
-        IList<HabHygRecord> stars = records.ToList<HabHygRecord>();
+        var stars = records.ToList<HabHygRecord>();
 
         CubeAreaStarLocation areaLocations = new CubeAreaStarLocation();
-        IDictionary<string, IList<HabHygRecord>> areaMappings = areaLocations.GetAreaMappings(ly, stars);
+        IDictionary<string, List<HabHygRecord>> areaMappings = areaLocations.GetAreaMappings(ly, stars);
 
         if (File.Exists(outfile))
             File.Delete(outfile);
